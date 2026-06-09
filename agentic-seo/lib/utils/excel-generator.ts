@@ -43,9 +43,10 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     const rows = []
 
     for (const t of campaignTasks) {
-      const state = (t as any).state as any
-      const targetUrl = state.client_target_url
-      const sourceUrl = state.target_site
+      const state = (t as any).state || {}
+      const targetUrl = state.client_target_url || 'N/A'
+      const sourceUrl = state.target_site || 'N/A'
+      const taskRunStatus = (t as any).status || 'pending'
       
       // Match the targetUrl with the keyword's landing_page
       const keyword = keywordMap[targetUrl] || state.keyword || 'N/A'
@@ -61,15 +62,35 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
 
       if (backlinksError) {
         console.error("Failed to fetch backlink:", backlinksError)
-        continue
       }
 
-      const backlink = backlinks?.[0]
-      const metadata = backlink?.metadata || {}
+      let backlink = backlinks?.[0]
+      let metadata = backlink?.metadata || {}
       
-      const liveUrl = backlink?.result_url || metadata?.live_url || "Pending/Not Found"
-      const date = backlink ? new Date(backlink.created_at).toLocaleDateString() : new Date().toLocaleDateString()
+      // Fallback: Check task_run_logs if no backlink but task is completed
+      if (!backlink && taskRunStatus === 'completed') {
+        const { data: logs } = await supabase
+          .from('task_run_logs')
+          .select('metadata')
+          .eq('task_run_id', (t as any).id)
+          .eq('role', 'assistant')
+          .order('created_at', { ascending: false })
+          
+        if (logs && logs.length > 0) {
+          for (const log of logs) {
+            const structuredData = (log.metadata as any)?.structured_data;
+            if (structuredData && structuredData.live_url) {
+              metadata = structuredData;
+              break;
+            }
+          }
+        }
+      }
+      
+      const liveUrl = backlink?.result_url || metadata?.live_url || (taskRunStatus === 'failed' ? 'Failed to generate' : 'Pending/Not Found')
+      const date = backlink ? new Date(backlink.created_at).toLocaleDateString() : new Date((t as any).created_at).toLocaleDateString()
       const title = metadata?.title || keyword || 'N/A'
+      const finalStatus = backlink?.status === 'verified' ? 'success' : (taskRunStatus === 'completed' ? 'success' : taskRunStatus)
 
       rows.push({
         'DATE': date,
@@ -79,7 +100,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
         'PA': 30,
         'client-site': targetUrl,
         'TITLE': title,
-        'STATUS': backlink?.status === 'verified' ? 'success' : (backlink?.status || 'pending'),
+        'STATUS': finalStatus,
         'RESULTS': liveUrl
       })
     }

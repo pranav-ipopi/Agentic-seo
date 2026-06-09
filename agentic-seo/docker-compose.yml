@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    container_name: agentic-seo-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - NEXT_PUBLIC_HERMES_URL=${NEXT_PUBLIC_HERMES_URL}
+      - HERMES_API_KEY=${HERMES_API_KEY}
+      - NEXT_PUBLIC_HERMES_ADVANCED_UI_URL=${NEXT_PUBLIC_HERMES_ADVANCED_UI_URL}
+    networks:
+      - agentic-seo
+
+  nginx:
+    image: nginx:alpine
+    container_name: agentic-seo-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - app
+    networks:
+      - agentic-seo
+
+networks:
+  agentic-seo:
+    driver: bridge

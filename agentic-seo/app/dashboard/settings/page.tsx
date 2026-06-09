@@ -2,16 +2,14 @@
 
 import { useState, useEffect } from 'react'
 
-import { useTheme } from 'next-themes'
 import { createClient } from '@/lib/supabase/client'
 import { useClient } from '@/components/layout/ClientProvider'
-import { Loader2, Plus, Building2, Globe, Save, Check, Monitor, Moon, Sun } from 'lucide-react'
+import { Loader2, Plus, Building2, Globe, Save, Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Profile } from '@/lib/supabase/types'
 
 export default function SettingsPage() {
   const supabase = createClient()
-  const { theme, setTheme } = useTheme()
   const { activeClient, clients, setClients } = useClient()
   const [profile, setProfile] = useState<Profile | null>(null)
   const [fullName, setFullName] = useState('')
@@ -104,47 +102,6 @@ export default function SettingsPage() {
                 </div>
               </div>
               
-              <div className="pt-2">
-                <label className="block text-xs font-medium text-gray-400 dark:text-gray-600 dark:text-gray-400 mb-2">Appearance</label>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setTheme('light')}
-                    className={cn(
-                      "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-colors",
-                      theme === 'light' 
-                        ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" 
-                        : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700"
-                    )}
-                  >
-                    <Sun className="w-4 h-4" />
-                    Light
-                  </button>
-                  <button
-                    onClick={() => setTheme('dark')}
-                    className={cn(
-                      "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-colors",
-                      theme === 'dark' 
-                        ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" 
-                        : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700"
-                    )}
-                  >
-                    <Moon className="w-4 h-4" />
-                    Dark
-                  </button>
-                  <button
-                    onClick={() => setTheme('system')}
-                    className={cn(
-                      "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-colors",
-                      theme === 'system' 
-                        ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" 
-                        : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700"
-                    )}
-                  >
-                    <Monitor className="w-4 h-4" />
-                    System
-                  </button>
-                </div>
-              </div>
 
               <button
                 onClick={saveProfile}

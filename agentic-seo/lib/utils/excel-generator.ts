@@ -21,7 +21,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     if (tasksError) throw tasksError
 
     // Fetch keywords from the database for mapping
-    const clientId = campaignTasks?.[0]?.state?.client_id;
+    const clientId = (campaignTasks as any[])?.[0]?.state?.client_id;
     let keywordMap: Record<string, string> = {};
     
     if (clientId) {
@@ -32,8 +32,8 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
         
       if (keywordsData) {
         keywordsData.forEach(k => {
-          if (k.landing_page) {
-            keywordMap[k.landing_page] = k.keyword;
+          if ((k as any).landing_page) {
+            keywordMap[(k as any).landing_page] = (k as any).keyword;
           }
         });
       }
@@ -43,7 +43,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     const rows = []
 
     for (const t of campaignTasks) {
-      const state = t.state as any
+      const state = (t as any).state as any
       const targetUrl = state.client_target_url
       const sourceUrl = state.target_site
       

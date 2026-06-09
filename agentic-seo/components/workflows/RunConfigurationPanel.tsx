@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import { useClient } from '@/components/layout/ClientProvider'
-import { Play, Settings2, ShieldCheck } from 'lucide-react'
+import { Play, Settings2, ShieldCheck, List } from 'lucide-react'
+import KeywordsModal from './KeywordsModal'
 
 export default function RunConfigurationPanel({
   template,
@@ -26,6 +27,7 @@ export default function RunConfigurationPanel({
   const [minDa, setMinDa] = useState(30)
   const [submissionType, setSubmissionType] = useState('bookmarking')
   const [clientTargetUrl, setClientTargetUrl] = useState('')
+  const [isKeywordsModalOpen, setIsKeywordsModalOpen] = useState(false)
 
   const handleStartExecution = async () => {
     if (!activeClient) {
@@ -73,23 +75,39 @@ export default function RunConfigurationPanel({
 
       if (campaignError) throw campaignError
 
-      // 3. Prepare the atomic task_runs for the Hermes worker to pick up
-      const taskRunsToInsert = targetSites.map((site: any) => ({
-        client_id: activeClient.id,
-        department_id: (template as any).department_id ?? null,
-        workflow_template_id: template.id,
-        status: 'pending',
-        current_step_index: 0,
-        state: {
-          campaign_id: campaign.id,
-          client_target_url: clientTargetUrl,
-          target_site: site.url,
-          category: submissionType,
-          min_da: minDa,
-        }
-      }))
+      // 3. Fetch keywords
+      const { data: keywords, error: keywordsError } = await supabase
+        .from('keywords')
+        .select('*')
+        .eq('client_id', activeClient.id)
 
-      // 4. Bulk insert task_runs
+      if (keywordsError) throw keywordsError
+
+      const activeKeywords = keywords && keywords.length > 0 ? keywords : [{ keyword: 'N/A' }]
+
+      // 4. Prepare the atomic task_runs for the Hermes worker to pick up
+      const taskRunsToInsert: any[] = []
+      targetSites.forEach((site: any) => {
+        activeKeywords.forEach((kw: any) => {
+          taskRunsToInsert.push({
+            client_id: activeClient.id,
+            department_id: (template as any).department_id ?? null,
+            workflow_template_id: template.id,
+            status: 'pending',
+            current_step_index: 0,
+            state: {
+              campaign_id: campaign.id,
+              client_target_url: clientTargetUrl,
+              target_site: site.url,
+              category: submissionType,
+              min_da: minDa,
+              keyword: kw.keyword,
+            }
+          })
+        })
+      })
+
+      // 5. Bulk insert task_runs
       const { data: insertedTaskRuns, error: taskRunsError } = await supabase
         .from('task_runs')
         .insert(taskRunsToInsert)
@@ -162,8 +180,16 @@ export default function RunConfigurationPanel({
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center justify-between">
-              <span>Target Backlinks (Max)</span>
+            <div className="flex items-center justify-between">
+              <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                <span>Target Backlinks (Max)</span>
+              </label>
+              <button onClick={() => setIsKeywordsModalOpen(true)} className="flex items-center gap-1.5 px-2.5 py-1 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-md text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors">
+                <List className="w-3.5 h-3.5" />
+                Keywords
+              </button>
+            </div>
+            <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center justify-end">
               <span className="text-gray-500 dark:text-gray-500">Number</span>
             </label>
             <input
@@ -218,6 +244,12 @@ export default function RunConfigurationPanel({
           {isSubmitting ? 'Starting...' : 'Start Campaign'}
         </button>
       </div>
+
+      <KeywordsModal 
+        isOpen={isKeywordsModalOpen} 
+        onClose={() => setIsKeywordsModalOpen(false)} 
+        clientId={activeClient?.id || ''} 
+      />
     </div>
   )
 }

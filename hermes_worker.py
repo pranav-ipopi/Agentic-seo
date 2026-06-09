@@ -4,7 +4,7 @@ import time
 import asyncio
 import logging
 import json
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 from supabase import create_client, Client
 import requests
 import datetime
@@ -50,14 +50,22 @@ POLL_INTERVAL_SECONDS = 10
 # Initialize Supabase
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-def run_local_hermes(instruction):
+def run_local_hermes(instruction, client_id=None):
     """
     Executes the task on the local VPS using Hermes AIAgent.
     """
     logging.info(f"Starting LOCAL execution...")
     try:
         from run_agent import AIAgent
-        model_name = os.environ.get("LLM_MODEL", "gemini-3.5-flash")
+        model_name = os.environ.get("LLM_MODEL", "gemini-2.5-flash")
+        
+        # We set this as an environment variable since the AIAgent class doesn't accept it directly.
+        # Because we will switch to ProcessPoolExecutor, this is completely safe and won't bleed into other tasks.
+        if client_id:
+            os.environ["HERMES_PROFILE"] = str(client_id)
+        elif "HERMES_PROFILE" in os.environ:
+            del os.environ["HERMES_PROFILE"]
+            
         agent = AIAgent(model=model_name, quiet_mode=True)
         result = agent.run_conversation(instruction)
         return {"status": "completed", "result": result}
@@ -154,12 +162,10 @@ def process_task_run(task_run):
         keyword = state.get('keyword', 'Target Keyword')
         
         instruction = (
-            f"I want you to create a bookmark on this backlinking site and register an account if needed and solve captchas along the way. "
-            f"Target Directory: {target_url} this is the site I want you to create backlink bookmark on. "
-            f"Client URL: {client_target_url} this is the site I want you to add as a link. "
-            f"This is the keyword: '{keyword}'. "
-            f"You have full access to your skills library and web_search. "
-            f"Use your browser tools to complete this task. Do not stop until you have successfully created the bookmark. "
+            f"Execute the 'execute_backlink' skill. "
+            f"Target Directory: {target_url} "
+            f"Client URL: {client_target_url} "
+            f"Keyword: '{keyword}' "
             f"Once you are completely done and have verified the live link, return your final response as a RAW JSON object exactly matching this schema: "
             f"{{\"live_url\": \"<the_actual_new_link>\", \"username\": \"<username>\", \"title\": \"<title>\", \"status\": \"success\"}}"
         )
@@ -198,7 +204,7 @@ def process_task_run(task_run):
             if tier == 'elite':
                 result = run_browser_use_cloud(instruction)
             else:
-                result = run_local_hermes(instruction)
+                result = run_local_hermes(instruction, client_id)
                 
             raw_res = result.get('result', result.get('error'))
             if isinstance(raw_res, dict) and 'final_response' in raw_res:
@@ -331,7 +337,7 @@ def poll_queue():
     """
     logging.info(f"Starting Hermes Worker Orchestrator... Max Concurrent Browsers: {MAX_CONCURRENT_BROWSERS}")
     
-    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_BROWSERS) as executor:
+    with ProcessPoolExecutor(max_workers=MAX_CONCURRENT_BROWSERS) as executor:
         while True:
             try:
                 response = supabase.table('task_runs') \

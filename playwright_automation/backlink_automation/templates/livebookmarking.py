@@ -88,13 +88,13 @@ from typing import Dict, Any, Optional
 from playwright.async_api import Page, BrowserContext, TimeoutError as PlaywrightTimeoutError
 
 from services.captcha_service import CaptchaService
-from playwright_local.browser import BrowserManager
+from methods.stealth_browser import StealthBrowserManager
 
 
 def _generate_random_credentials() -> Dict[str, str]:
     """Generate random registration credentials for this job."""
-    suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
-    username = f"backlink_{suffix}"
+    suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
+    username = f"backlink{suffix}"
     email = f"{username}@mailinator.com"  # Disposable-style; adjust if site blocks
     password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
     return {
@@ -105,18 +105,25 @@ def _generate_random_credentials() -> Dict[str, str]:
 
 
 class LiveBookmarkingTemplate:
-    """Site template for https://livebookmarking.com/"""
+    """
+    Implementation of the LiveBookmarking submission process.
+    Handles:
+    - Cloudflare Turnstile bypass natively
+    - Account Registration via Mailinator / dynamic forms
+    - Solving Captcha (SolveMedia via TrOCR local model)
+    - Submitting bookmark and returning the URL
+    """
 
     BASE_URL = "https://livebookmarking.com"
     REGISTER_URL = f"{BASE_URL}/register"
-    LOGIN_URL = f"{BASE_URL}/login"
     SUBMIT_URL = f"{BASE_URL}/submit"
 
-    INTERCEPT_SCRIPT = "" # Removed as we use programmatic clicking now
+    # We do NOT use camoufox or playwright intercept anymore. 
+    # SeleniumBase CDP natively handles the stealth!
 
     def __init__(
         self,
-        browser_manager: BrowserManager,
+        browser_manager: StealthBrowserManager,
         captcha_service: CaptchaService,
         logger: logging.Logger
     ):
@@ -179,13 +186,7 @@ class LiveBookmarkingTemplate:
 
         self.logger.info("Not logged in. Starting registration flow.")
         await self._register_account(page)
-
-        # Re-check after registration
-        await page.wait_for_timeout(2000)
-        logged_in = await self._is_logged_in(page)
-        if not logged_in:
-            self.logger.info("Not auto-logged after register. Performing explicit login.")
-            await self._login(page)
+        # We skip explicit login page as the user will be logged in after registration
 
     async def _is_logged_in(self, page: Page) -> bool:
         """Heuristic to detect logged-in state."""
@@ -208,6 +209,59 @@ class LiveBookmarkingTemplate:
         from methods.cloudflare import bypass_cloudflare
         return await bypass_cloudflare(page)
 
+    async def _solve_captcha_2captcha(self, page: Page) -> None:
+        self.logger.info("Attempting to solve SolveMedia captcha with 2captcha...")
+        try:
+            # 1. Target the iframe wrapper container
+            captcha_frame = page.frame_locator("#adcopy-puzzle-image-image iframe")
+            
+            # 2. Locate the direct <img> element inside that iframe body
+            captcha_img = captcha_frame.locator("img").first
+
+            # Fallback to direct page element if needed
+            if await captcha_img.count() == 0:
+                captcha_img = page.locator("img[src*='solvemedia']").first
+
+            if await captcha_img.count() > 0:
+                # Save the image locally
+                img_path = "solvemedia_captcha.png"
+                await captcha_img.screenshot(path=img_path)
+                
+                # 3. Use twocaptcha for solving
+                import asyncio
+                
+                def run_2captcha(image_path):
+                    from twocaptcha import TwoCaptcha
+                    api_key = '20205071fed24f4c1418d43380555585'
+                    solver = TwoCaptcha(api_key)
+                    # For solvemedia or normal image captchas
+                    result = solver.normal(image_path)
+                    return result.get('code', '') if isinstance(result, dict) else ''
+                
+                # Run network request outside the browser event thread
+                loop = asyncio.get_event_loop()
+                self.logger.info("Sending image to 2captcha service...")
+                pred = await loop.run_in_executor(None, run_2captcha, img_path)
+                
+                pred = pred.strip()
+                self.logger.info(f"2captcha predicted: '{pred}'")
+                
+                if pred:
+                    # 4. Fill the input field box on the main parent page layout
+                    response_field = page.locator("#adcopy_response")
+                    await response_field.fill(pred)
+                    
+                    # Small wait to ensure characters register natively before hitting submit buttons
+                    await page.wait_for_timeout(1000)
+                else:
+                    self.logger.warning("2captcha returned empty result.")
+            else:
+                self.logger.warning("SolveMedia image element could not be found inside the target layout frame.")
+        except ImportError:
+            self.logger.error("twocaptcha is not installed. Run: pip install 2captcha-python")
+        except Exception as e:
+            self.logger.error(f"Error solving captcha with 2captcha: {e}")
+
     async def _register_account(self, page: Page) -> None:
         """Perform registration with generated credentials."""
         self.credentials = _generate_random_credentials()
@@ -217,107 +271,49 @@ class LiveBookmarkingTemplate:
         await self._handle_cloudflare(page)
         await page.wait_for_timeout(1500)
 
-        # Fill registration form using exact IDs
-        await page.locator("#reg_username").fill(self.credentials["username"])
-        await page.locator("#reg_email").fill(self.credentials["email"])
-        await page.locator("#reg_password").fill(self.credentials["password"])
-        await page.locator("#reg_verify").fill(self.credentials["password"])
+        max_retries = 3
+        for attempt in range(max_retries):
+            self.logger.info(f"Registration attempt {attempt + 1}/{max_retries}")
+            
+            # Fill registration form using exact IDs
+            await page.locator("#reg_username").fill(self.credentials["username"])
+            await page.locator("#reg_email").fill(self.credentials["email"])
+            await page.locator("#reg_password").fill(self.credentials["password"])
+            await page.locator("#reg_verify").fill(self.credentials["password"])
 
-        # Handle Captcha using ddddocr (Pre-trained local model)
-        self.logger.info("Attempting to solve SolveMedia captcha with ddddocr...")
-        try:
-            # 1. Locate the captcha image
-            captcha_img = page.locator("img[src*='solvemedia']")
-            if await captcha_img.count() > 0:
-                # 2. Save it locally
-                img_path = "solvemedia_captcha.png"
-                await captcha_img.first.screenshot(path=img_path)
-                
-                # 3. Use Hugging Face TrOCR for offline, local solving (handles words and spaces)
-                from transformers import TrOCRProcessor, VisionEncoderDecoderModel
-                from PIL import Image
-                import asyncio
-                
-                self.logger.info("Loading TrOCR model (anuashok/ocr-captcha-v3) - this may take a moment...")
-                
-                # We define a synchronous helper function to run the model
-                def run_trocr(image_path):
-                    model_name = "microsoft/trocr-base-printed"
-                    processor = TrOCRProcessor.from_pretrained(model_name)
-                    model = VisionEncoderDecoderModel.from_pretrained(model_name)
-                    image = Image.open(image_path).convert("RGB")
-                    pixel_values = processor(images=image, return_tensors="pt").pixel_values
-                    generated_ids = model.generate(pixel_values)
-                    return processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
-                
-                # Run the heavy model inference in an executor so we don't freeze the Playwright event loop
-                loop = asyncio.get_event_loop()
-                pred = await loop.run_in_executor(None, run_trocr, img_path)
-                
-                self.logger.info(f"TrOCR predicted: {pred}")
-                
-                # 4. Fill the response box
-                await page.locator("#adcopy_response").fill(pred)
+            # Handle Captcha
+            await self._solve_captcha_2captcha(page)
+
+            # Submit registration using the specific submit button locator
+            submit_btn = page.locator("input.btn.btn-primary.reg_submit[value='Create user']")
+            if await submit_btn.count() == 0:
+                submit_btn = page.locator("input[value='Create user'], button:has-text('Create user'), input[type='submit']")
+            await submit_btn.first.click()
+
+            # Wait for registration to complete (success or error)
+            await page.wait_for_timeout(4000)
+            await page.wait_for_load_state("networkidle", timeout=30000)
+
+            current_url = page.url
+            if "/user/" in current_url:
+                self.logger.info("Registration successful, redirected to user page.")
+                break
+
+            # Check for success indicators (no error messages, or redirect)
+            body_text = (await page.inner_text("body")).lower()
+            if "invalid captcha" in body_text or ("captcha" in body_text and "invalid" in body_text) or "wrong answer" in body_text:
+                self.logger.warning("Invalid captcha detected. Retrying...")
+                continue
+            elif "error" in body_text or "already" in body_text:
+                self.logger.warning("Possible registration error or duplicate. Proceeding anyway.")
+                break
             else:
-                self.logger.warning("SolveMedia image not found on page.")
-        except ImportError:
-            self.logger.error("transformers is not installed. Run: pip install transformers torch torchvision pillow")
-        except Exception as e:
-            self.logger.error(f"Error solving captcha with TrOCR: {e}")
+                self.logger.info("Registration completed (assumed success without /user/ redirect)")
+                break
 
-        # Submit registration using the specific submit button locator
-        submit_btn = page.locator("input.btn.btn-primary.reg_submit[value='Create user']")
-        await submit_btn.first.click()
-
-        # Wait for registration to complete (success or error)
-        await page.wait_for_timeout(4000)
-        await page.wait_for_load_state("networkidle", timeout=30000)
-
-        # Check for success indicators (no error messages, or redirect)
-        body_text = (await page.inner_text("body")).lower()
-        if "error" in body_text or "already" in body_text or "invalid" in body_text:
-            # Could be duplicate username etc. Rare with random suffix.
-            self.logger.warning("Possible registration error or duplicate. Proceeding anyway.")
-        else:
-            self.logger.info("Registration completed (assumed success)")
-
-        # Many sites auto-login after register
         self.logger.info("Registration flow finished")
 
-    async def _login(self, page: Page) -> None:
-        """Login using previously generated (or provided) credentials."""
-        if not self.credentials:
-            raise Exception("No credentials available for login. Registration must precede login.")
 
-        self.logger.info("Login started")
-
-        await page.goto(self.LOGIN_URL, wait_until="networkidle", timeout=30000)
-        await page.wait_for_timeout(1000)
-
-        # Fill login form (labels from site analysis)
-        await page.get_by_label("Username/Email").fill(self.credentials["username"])
-        await page.get_by_label("Password").fill(self.credentials["password"])
-
-        # Remember me (optional)
-        remember = page.get_by_label("Remember", exact=False)
-        if await remember.count() > 0:
-            await remember.check()
-
-        # Submit
-        login_btn = page.get_by_role("button", name="Login|Sign In|Log In", exact=False)
-        if await login_btn.count() == 0:
-            login_btn = page.locator("input[type='submit'], button[type='submit']")
-
-        await login_btn.first.click()
-
-        await page.wait_for_timeout(3000)
-        await page.wait_for_load_state("networkidle", timeout=30000)
-
-        # Verify login success
-        if await self._is_logged_in(page):
-            self.logger.info("Login completed successfully")
-        else:
-            raise Exception("Login failed - could not confirm logged-in state")
 
     async def _submit_bookmark(self, page: Page, client_site: str, keyword: str) -> str:
         """Submit the bookmark and return the created story/backlink URL."""
@@ -327,70 +323,69 @@ class LiveBookmarkingTemplate:
         await self._handle_cloudflare(page)
         await page.wait_for_timeout(1500)
 
-        # Fill submission form (assumed Pligg-style fields + labels)
-        # Title
-        title_field = page.get_by_label("Title", exact=False)
-        if await title_field.count() == 0:
-            title_field = page.locator("input[name='title'], input[name*='story_title'], #title")
-        await title_field.first.fill(keyword)
-
-        # URL (the client site being bookmarked)
-        url_field = page.get_by_label("URL", exact=False)
+        # Step 1: Submit URL
+        self.logger.info("Step 1: Submitting URL")
+        url_field = page.locator("#url")
         if await url_field.count() == 0:
-            url_field = page.locator("input[name='url'], input[name*='story_url'], #url, input[type='url']")
+            url_field = page.locator("input[name='url'], input[name*='story_url'], input[type='url']")
         await url_field.first.fill(client_site)
 
-        # Description (short text)
-        desc_field = page.get_by_label("Description", exact=False)
-        if await desc_field.count() == 0:
-            desc_field = page.locator("textarea[name='description'], textarea[name*='story'], #description")
-        await desc_field.first.fill(f"Resource related to {keyword}. Automated bookmark submission.")
+        continue_btn = page.locator("input[value='Continue'], button:has-text('Continue')")
+        if await continue_btn.count() == 0:
+            continue_btn = page.locator("input[type='submit'], button[type='submit']")
+        await continue_btn.first.click()
 
-        # Tags
-        tags_field = page.get_by_label("Tags", exact=False)
-        if await tags_field.count() == 0:
-            tags_field = page.locator("input[name='tags'], input[name*='tag'], #tags")
-        await tags_field.first.fill(keyword)
+        await page.wait_for_load_state("domcontentloaded")
+        await page.wait_for_timeout(2000)
 
-        # Category - try to select "News" or first option
-        category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
-        if await category_select.count() > 0:
-            try:
-                # Try label "News" first
-                await category_select.first.select_option(label="News")
-            except Exception:
+        # Step 2: Article Details
+        self.logger.info("Step 2: Filling Article Details")
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            # Story title id (keyword) = title
+            await page.locator("#title").fill(keyword)
+
+            # Tags id (keyword specific tags)= tags
+            await page.locator("#tags").fill(keyword)
+
+            # Description id (here we add description) = bodytext
+            await page.locator("#bodytext").fill(f"Resource related to {keyword}. Automated bookmark submission.")
+
+            # Category - Try selecting first option if present
+            category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
+            if await category_select.count() > 0:
                 try:
-                    await category_select.first.select_option(index=1)  # skip "Select..."
+                    await category_select.first.select_option(index=1)
                 except Exception:
-                    self.logger.warning("Could not select category, proceeding without")
+                    pass
 
-        # Handle captcha on submit page if present
-        if await self.captcha_service.is_captcha_present(page):
-            self.logger.info("Captcha detected on submit page")
-            answer = await self.captcha_service.solve(page=page, captcha_type="unknown")
-            if answer:
-                captcha_input = page.locator(
-                    "input[name='adcopy_response'], input[name*='captcha'], input[placeholder*='answer']"
-                )
-                if await captcha_input.count() > 0:
-                    await captcha_input.first.fill(answer)
-                    self.logger.info("Filled submit captcha (stub)")
+            # Handle Captcha
+            self.logger.info(f"Solving captcha on submit page... (Attempt {attempt + 1}/{max_retries})")
+            await self._solve_captcha_2captcha(page)
 
-        # Submit the form
-        submit_btn = page.get_by_role("button", name="Submit|Submit Story|Post|Save", exact=False)
-        if await submit_btn.count() == 0:
-            submit_btn = page.locator("input[type='submit'], button[type='submit'], .submit")
+            # Submit the form: Save Changes and Submit
+            submit_btn = page.locator("input[value='Save Changes and Submit'], button:has-text('Save Changes and Submit')")
+            if await submit_btn.count() == 0:
+                submit_btn = page.locator("input[type='submit'], button[type='submit'], .submit")
 
-        await submit_btn.first.click()
+            await submit_btn.first.click()
 
-        self.logger.info("Bookmark form submitted. Waiting for result...")
+            self.logger.info("Bookmark form submitted. Waiting for result...")
 
-        # Wait for navigation or success indication
-        try:
-            await page.wait_for_load_state("networkidle", timeout=45000)
-            await page.wait_for_timeout(3000)
-        except PlaywrightTimeoutError:
-            self.logger.warning("Timeout waiting for submit result, attempting to extract URL anyway")
+            # Wait for navigation or success indication
+            try:
+                await page.wait_for_load_state("networkidle", timeout=15000)
+                await page.wait_for_timeout(3000)
+            except PlaywrightTimeoutError:
+                self.logger.warning("Timeout waiting for submit result...")
+
+            body_text = (await page.inner_text("body")).lower()
+            if "invalid captcha" in body_text or ("captcha" in body_text and "invalid" in body_text) or "wrong answer" in body_text:
+                self.logger.warning("Invalid captcha detected on submit. Retrying...")
+                continue
+            else:
+                break
 
         # Extract the created backlink URL
         backlink_url = await self._extract_backlink_url(page)

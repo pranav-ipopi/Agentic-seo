@@ -33,7 +33,7 @@ from dotenv import load_dotenv
 from services.supabase_service import SupabaseService
 from services.logging_service import setup_logger, log_event
 from services.captcha_service import CaptchaService
-from playwright_local.browser import BrowserManager
+from methods.stealth_browser import StealthBrowserManager
 from templates.livebookmarking import LiveBookmarkingTemplate
 
 
@@ -50,7 +50,7 @@ class BacklinkWorker:
         self.logger = setup_logger(level=getattr(__import__("logging"), LOG_LEVEL, 20))
         self.supabase = SupabaseService(logger=self.logger)
         self.captcha_service = CaptchaService(logger=self.logger)
-        self.browser_manager = BrowserManager(logger=self.logger)
+        self.browser_manager = StealthBrowserManager()
         self.template = LiveBookmarkingTemplate(
             browser_manager=self.browser_manager,
             captcha_service=self.captcha_service,
@@ -177,6 +177,7 @@ class BacklinkWorker:
     async def run(self):
         """Entry point."""
         try:
+            await self.browser_manager.start()
             await self.poll_loop()
         except Exception as e:
             self.logger.critical(f"Fatal worker error: {e}")

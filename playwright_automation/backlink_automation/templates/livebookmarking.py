@@ -242,7 +242,7 @@ class LiveBookmarkingTemplate:
                 
                 # We define a synchronous helper function to run the model
                 def run_trocr(image_path):
-                    model_name = "anuashok/ocr-captcha-v3"
+                    model_name = "microsoft/trocr-base-printed"
                     processor = TrOCRProcessor.from_pretrained(model_name)
                     model = VisionEncoderDecoderModel.from_pretrained(model_name)
                     image = Image.open(image_path).convert("RGB")

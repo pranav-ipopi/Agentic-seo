@@ -1,0 +1,1 @@
+python .\test_pligg.py --target_site "https://social-medialink.com/" --client_site "https://example.com" --keyword "test keyword"

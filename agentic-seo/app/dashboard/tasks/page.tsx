@@ -61,7 +61,9 @@ export default function TasksPage() {
         is_simple_task: !t.output?.campaign_id,
         payload: t.payload,
         result: t.result,
-        output: t.output
+        output: t.output,
+        // Convenience: pull the summary up so we don't have to drill into result every time
+        summary: t.result?.summary ?? null
       }))
 
       setTasks(formattedTasks as any)
@@ -175,14 +177,31 @@ export default function TasksPage() {
     }
   }
 
-  const statusBadge = (status: string) => {
+  const statusBadge = (status: string, summary?: { total: number; succeeded: number; failed: number } | null) => {
     const base = 'text-xs px-2 py-0.5 rounded-full font-medium'
     switch (status) {
       case 'running': return <span className={cn(base, 'bg-indigo-500/15 text-indigo-300')}>Running</span>
       case 'pending': return <span className={cn(base, 'bg-amber-500/15 text-amber-300')}>Pending</span>
       case 'waiting_approval': return <span className={cn(base, 'bg-amber-500/30 text-amber-400')}>Waiting Approval</span>
-      case 'completed': return <span className={cn(base, 'bg-emerald-500/15 text-emerald-300')}>Completed</span>
-      case 'failed': return <span className={cn(base, 'bg-red-500/15 text-red-300')}>Failed</span>
+      case 'completed':
+        if (summary) {
+          // Show breakdown even if overall status is completed
+          return (
+            <span className={cn(base, summary.failed > 0 ? 'bg-amber-500/15 text-amber-300' : 'bg-emerald-500/15 text-emerald-300')}>
+              {summary.succeeded} ✓&nbsp;&nbsp;{summary.failed} ✗
+            </span>
+          )
+        }
+        return <span className={cn(base, 'bg-emerald-500/15 text-emerald-300')}>Completed</span>
+      case 'failed':
+        if (summary) {
+          return (
+            <span className={cn(base, 'bg-red-500/15 text-red-300')}>
+              {summary.succeeded} ✓&nbsp;&nbsp;{summary.failed} ✗
+            </span>
+          )
+        }
+        return <span className={cn(base, 'bg-red-500/15 text-red-300')}>Failed</span>
       default: return <span className={cn(base, 'bg-gray-400 dark:bg-gray-500/15 text-gray-700 dark:text-gray-300 capitalize')}>{status.replace('_', ' ')}</span>
     }
   }
@@ -249,10 +268,13 @@ export default function TasksPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start gap-2">
                         <span className="text-sm font-medium text-gray-900 dark:text-white flex-1">{task.workflow_templates?.name || 'Workflow Run'}</span>
-                        {statusBadge(task.status)}
+                        {statusBadge(task.status, (task as any).summary)}
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1 line-clamp-2">
-                        Currently at Step {task.current_step_index + 1}
+                        {(task as any).summary
+                          ? `${(task as any).summary.succeeded} of ${(task as any).summary.total} sites succeeded · ${(task as any).summary.failed} failed`
+                          : `Currently at Step ${task.current_step_index + 1}`
+                        }
                       </p>
                       <p className="text-xs text-gray-400 dark:text-gray-600 mt-1.5">{formatRelativeTime(task.created_at)}</p>
                     </div>

@@ -34,7 +34,13 @@ browser_manager = StealthBrowserManager()
 captcha_service = CaptchaService(logger=logger)
 
 def check_and_update_parent_task(supabase_client: Client, state: dict):
-    """Checks if all task_runs for a parent task are done, and if so, updates the parent task status."""
+    """Checks if all task_runs for a parent task are done, and if so, updates the parent task status.
+    
+    Sets parent task status to:
+      - 'failed'    if ALL child runs failed
+      - 'completed' if at least one child run succeeded (even if others failed)
+    Also stores a result summary (succeeded/failed counts) on the tasks row.
+    """
     task_id = state.get('task_id')
     if not task_id:
         return
@@ -43,7 +49,32 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
         if res.data:
             all_done = all(r.get('status') in ['completed', 'failed'] for r in res.data)
             if all_done:
-                supabase_client.table('tasks').update({'status': 'completed'}).eq('id', task_id).execute()
+                succeeded = sum(1 for r in res.data if r.get('status') == 'completed')
+                failed    = sum(1 for r in res.data if r.get('status') == 'failed')
+                total     = len(res.data)
+
+                # Determine final task status
+                if succeeded == 0:
+                    final_status = 'failed'
+                else:
+                    final_status = 'completed'
+
+                logger.info(
+                    f"[Task {task_id}] All {total} runs done. "
+                    f"succeeded={succeeded}, failed={failed}. "
+                    f"Setting parent task status → '{final_status}'"
+                )
+
+                supabase_client.table('tasks').update({
+                    'status': final_status,
+                    'result': {
+                        'summary': {
+                            'total':     total,
+                            'succeeded': succeeded,
+                            'failed':    failed,
+                        }
+                    }
+                }).eq('id', task_id).execute()
     except Exception as e:
         logger.error(f"Failed to update parent task completion for {task_id}: {e}")
 

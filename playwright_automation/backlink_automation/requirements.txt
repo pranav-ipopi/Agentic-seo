@@ -1,5 +1,6 @@
 playwright==1.44.0
 camoufox[playwright]==1.3.11
+pytweening==1.2.0
 supabase==2.5.1
 python-dotenv==1.0.1
 pydantic==2.7.4

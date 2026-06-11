@@ -39,6 +39,27 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
       }
     }
 
+    // Fetch target sites data for DA, PA, SS
+    const uniqueSourceUrls = [...new Set(campaignTasks.map(t => (t as any).state?.target_site).filter(Boolean))];
+    let targetSitesMap: Record<string, { da: number | null, pa: number | null, spam_score: number | null }> = {};
+    
+    if (uniqueSourceUrls.length > 0) {
+      const { data: targetSitesData } = await supabase
+        .from('target_sites')
+        .select('url, da, pa, spam_score')
+        .in('url', uniqueSourceUrls);
+        
+      if (targetSitesData) {
+        targetSitesData.forEach(site => {
+          targetSitesMap[site.url] = {
+            da: site.da,
+            pa: site.pa,
+            spam_score: site.spam_score
+          };
+        });
+      }
+    }
+
     // Prepare rows for Excel
     const rows = []
 
@@ -92,12 +113,17 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
       const title = metadata?.title || keyword || 'N/A'
       const finalStatus = backlink?.status === 'verified' ? 'success' : (taskRunStatus === 'completed' ? 'success' : taskRunStatus)
 
+      const siteData = targetSitesMap[sourceUrl] || {}
+      const da = siteData.da ?? state.min_da ?? 30
+      const ss = siteData.spam_score ?? 0.01
+      const pa = siteData.pa ?? 30
+
       rows.push({
         'DATE': date,
         'target': sourceUrl,
-        'DA': state.min_da || 30,
-        'SS': 0.01,
-        'PA': 30,
+        'DA': da,
+        'SS': ss,
+        'PA': pa,
         'client-site': targetUrl,
         'TITLE': title,
         'STATUS': finalStatus,

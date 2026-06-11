@@ -882,3 +882,29 @@ waiting for get_by_role("navigation").get_by_role("link", name="dropdown")
 2026-06-11 10:02:59 | INFO     | backlink_automation | Found 1 pending workflow runs. Starting concurrent sessions...
 2026-06-11 10:02:59 | INFO     | backlink_automation | [TaskRun a8ee74dd-d54e-4c0c-9d98-fe23e3328db3] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
 2026-06-11 10:03:00 | INFO     | backlink_automation | [TaskRun a8ee74dd-d54e-4c0c-9d98-fe23e3328db3] Intercepted Reporting Step.
+2026-06-11 10:17:12 | INFO     | backlink_automation | Found 1 pending workflow runs. Starting concurrent sessions...
+2026-06-11 10:17:13 | INFO     | backlink_automation | [TaskRun a7887b67-3565-4129-ac11-6b6f488ed427] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 10:17:13 | INFO     | backlink_automation | [TaskRun a7887b67-3565-4129-ac11-6b6f488ed427] Routing to template: pligg
+2026-06-11 10:17:13 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 10:17:13 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 10:17:16 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 10:17:16 | INFO     | backlink_automation | Registration started with username=userrw9hi5d6
+2026-06-11 10:17:18 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 10:17:31 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 10:17:32 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 10:17:53 | INFO     | backlink_automation | 2captcha predicted: 'leave me alone'
+2026-06-11 10:18:01 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 10:18:01 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 10:18:01 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 10:18:03 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 10:18:07 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 10:18:37 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 10:18:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 10:18:37 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 10:18:48 | INFO     | backlink_automation | 2captcha predicted: 'enjoy life'
+2026-06-11 10:18:51 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 10:18:55 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21611074/taigun-price-in-kerala
+2026-06-11 10:18:56 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21611074/taigun-price-in-kerala
+2026-06-11 10:18:57 | INFO     | backlink_automation | Found 1 pending workflow runs. Starting concurrent sessions...
+2026-06-11 10:18:57 | INFO     | backlink_automation | [TaskRun a7887b67-3565-4129-ac11-6b6f488ed427] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-11 10:18:57 | INFO     | backlink_automation | [TaskRun a7887b67-3565-4129-ac11-6b6f488ed427] Intercepted Reporting Step.

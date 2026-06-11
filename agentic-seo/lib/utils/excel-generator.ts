@@ -1,4 +1,5 @@
-import * as XLSX from 'xlsx'
+import ExcelJS from 'exceljs'
+import { saveAs } from 'file-saver'
 import { createClient } from '@/lib/supabase/client'
 import type { TaskRun } from '@/lib/supabase/types'
 
@@ -136,16 +137,58 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
       return
     }
 
-    // Create workbook and worksheet
-    const worksheet = XLSX.utils.json_to_sheet(rows)
-    const workbook = XLSX.utils.book_new()
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Backlinks Report")
-
     // Generate filename
     const filename = `Backlinks_Report_${activeClientName.replace(/\s+/g, '_')}_${campaignId.slice(0, 8)}.xlsx`
 
+    // Create workbook and worksheet
+    const workbook = new ExcelJS.Workbook()
+    const worksheet = workbook.addWorksheet('Backlinks Report')
+
+    const headers = Object.keys(rows[0])
+
+    worksheet.addTable({
+      name: 'BacklinksTable',
+      ref: 'A1',
+      headerRow: true,
+      totalsRow: false,
+      style: {
+        theme: 'TableStyleMedium2',
+        showRowStripes: true,
+      },
+      columns: headers.map(h => ({ name: h, filterButton: true })),
+      rows: rows.map(r => headers.map(h => (r as Record<string, any>)[h as keyof typeof r]))
+    })
+
+    // Auto-fit columns
+    worksheet.columns.forEach(column => {
+        let maxLength = 0;
+        column.eachCell({ includeEmpty: true }, cell => {
+            const columnLength = cell.value ? cell.value.toString().length : 10;
+            if (columnLength > maxLength) {
+                maxLength = columnLength;
+            }
+        });
+        column.width = maxLength < 10 ? 10 : maxLength;
+    });
+
+    // Format the first row (headers) to have yellow highlight and black text
+    const headerRow = worksheet.getRow(1)
+    headerRow.eachCell((cell) => {
+      cell.fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'FFFFFF00' } // Yellow
+      }
+      cell.font = {
+        color: { argb: 'FF000000' }, // Black text
+        bold: true
+      }
+    })
+
     // Trigger download
-    XLSX.writeFile(workbook, filename)
+    const buffer = await workbook.xlsx.writeBuffer()
+    const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
+    saveAs(blob, filename)
     
   } catch (error) {
     console.error("Failed to generate Excel report:", error)

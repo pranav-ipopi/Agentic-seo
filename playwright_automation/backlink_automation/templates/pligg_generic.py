@@ -153,9 +153,9 @@ class PliggGenericTemplate:
             return False
 
     async def _handle_cloudflare(self, page: Page) -> bool:
-        """Delegates Cloudflare bypassing to our new reusable methods."""
-        from methods.cloudflare import bypass_cloudflare
-        return await bypass_cloudflare(page)
+        """Delegates Cloudflare bypassing to our enhanced human-mouse method."""
+        from methods.cloudflare import cloudflare_updated
+        return await cloudflare_updated(page)
 
     async def _solve_captcha_2captcha(self, page: Page) -> None:
         self.logger.info("Attempting to solve SolveMedia captcha with 2captcha...")

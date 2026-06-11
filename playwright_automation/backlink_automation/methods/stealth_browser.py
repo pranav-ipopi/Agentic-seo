@@ -35,8 +35,12 @@ class StealthBrowserManager:
         if not self.browser:
             raise Exception("Browser not started. Call start() first.")
         
-        # Always create a new isolated context for concurrency
-        context = await self.browser.new_context()
+        # Always create a new isolated context for concurrency.
+        # IMPORTANT: We explicitly set 1920x1080 — do NOT use no_viewport=True.
+        # no_viewport inherits the VPS/CDP window size which can be undefined or tiny in headless mode,
+        # causing responsive CSS to push the Submit button off-screen (reproduces the Playwright timeout).
+        # This was the fix from walkthrough c42e983e and must be kept.
+        context = await self.browser.new_context(viewport={"width": 1920, "height": 1080})
         return await context.new_page()
 
     async def close(self):

@@ -404,7 +404,12 @@ class LiveBookmarkingTemplate:
         """
         Try multiple strategies to find the newly created story URL.
         """
-        # Strategy 1: Look for links containing /story in the page
+        # Strategy 1: Current page URL
+        current_url = page.url
+        if "/story" in current_url and "login" not in current_url:
+            return current_url
+
+        # Strategy 2: Look for links containing /story in the page
         try:
             story_links = await page.locator("a[href*='/story']").all()
             for link in story_links:
@@ -417,11 +422,6 @@ class LiveBookmarkingTemplate:
                         return href
         except Exception:
             pass
-
-        # Strategy 2: Current page URL
-        current_url = page.url
-        if "/story" in current_url and "login" not in current_url:
-            return current_url
 
         # Strategy 3: Look for success text and nearby link
         try:

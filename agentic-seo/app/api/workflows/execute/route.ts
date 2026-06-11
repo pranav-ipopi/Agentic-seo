@@ -19,9 +19,10 @@ export async function POST(request: Request) {
     const runner = new WorkflowRunner(supabase)
 
     // Run asynchronously — fire and forget so the API returns immediately.
-    runner.executeStep(taskRunId).catch((err) => {
-      console.error('[API Execute Route] Async Execution Error:', err)
-    })
+    // [DISABLED] Node-by-node execution is now handled by vps_worker_playwright.py via polling.
+    // runner.executeStep(taskRunId).catch((err) => {
+    //   console.error('[API Execute Route] Async Execution Error:', err)
+    // })
 
     return NextResponse.json({ success: true, message: 'Execution started', taskRunId })
   } catch (error: any) {

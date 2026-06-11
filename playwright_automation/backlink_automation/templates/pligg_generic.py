@@ -29,7 +29,7 @@ from methods.stealth_browser import StealthBrowserManager
 def _generate_random_credentials() -> Dict[str, str]:
     """Generate random registration credentials for this job."""
     suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
-    username = f"user_{suffix}"
+    username = f"user{suffix}"
     email = f"{username}@mailinator.com"  # Disposable-style; adjust if site blocks
     password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
     return {
@@ -87,7 +87,12 @@ class PliggGenericTemplate:
             backlink_url = await self._submit_bookmark(page, client_site, keyword)
 
             # Step 4: Log out the user
-            await self._logout(page)
+            # Clicks the first dropdown-toggle element found on the page
+            await page.locator("a.dropdown-toggle[data-toggle='dropdown']").first.click()
+
+            # Clicks the logout button
+            await page.locator("a[href='#logout']").first.click()
+
 
             self.logger.info(f"Successfully created backlink: {backlink_url}")
             return {

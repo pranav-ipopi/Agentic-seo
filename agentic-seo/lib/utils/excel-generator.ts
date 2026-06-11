@@ -5,7 +5,7 @@ import type { TaskRun } from '@/lib/supabase/types'
 export async function downloadCampaignExcelReport(task: TaskRun, activeClientName: string) {
   try {
     const supabase = createClient()
-    const campaignId = (task.state as any)?.campaign_id
+    const campaignId = (task.state as any)?.campaign_id || (task.output as any)?.campaign_id
 
     if (!campaignId) {
       alert("No campaign ID found for this task run.")

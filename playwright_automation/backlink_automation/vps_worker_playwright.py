@@ -33,12 +33,31 @@ logger = setup_logger(level=logging.INFO)
 browser_manager = StealthBrowserManager()
 captcha_service = CaptchaService(logger=logger)
 
+def check_and_update_parent_task(supabase_client: Client, state: dict):
+    """Checks if all task_runs for a parent task are done, and if so, updates the parent task status."""
+    task_id = state.get('task_id')
+    if not task_id:
+        return
+    try:
+        res = supabase_client.table('task_runs').select('status').eq('state->>task_id', task_id).execute()
+        if res.data:
+            all_done = all(r.get('status') in ['completed', 'failed'] for r in res.data)
+            if all_done:
+                supabase_client.table('tasks').update({'status': 'completed'}).eq('id', task_id).execute()
+    except Exception as e:
+        logger.error(f"Failed to update parent task completion for {task_id}: {e}")
+
 async def route_and_execute(task_run, supabase_client: Client):
     """
     Executes a single step of a workflow task_run.
     Acts as a router based on site_id or target_site url.
     """
     task_run_id = task_run['id']
+    
+    # Stagger startups slightly to avoid CDP websocket race conditions on new_context
+    import random
+    await asyncio.sleep(random.uniform(0.5, 3.0))
+    
     try:
         template = task_run.get('workflow_templates', {})
         steps = template.get('steps', [])
@@ -149,6 +168,7 @@ async def route_and_execute(task_run, supabase_client: Client):
         # Advance step
         if result and result.get('status') == 'failed':
             supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
+            check_and_update_parent_task(supabase_client, state)
         else:
             next_index = current_index + 1
             if next_index >= len(steps):
@@ -156,6 +176,7 @@ async def route_and_execute(task_run, supabase_client: Client):
                     'current_step_index': next_index,
                     'status': 'completed'
                 }).eq('id', task_run_id).execute()
+                check_and_update_parent_task(supabase_client, state)
             else:
                 require_approval = state.get('requireApproval', False)
                 if require_approval and steps[next_index].get('type') == 'approval':
@@ -186,6 +207,7 @@ async def route_and_execute(task_run, supabase_client: Client):
         error_trace = traceback.format_exc()
         logger.error(f"[TaskRun {task_run_id}] Unexpected error:\n{error_trace}")
         supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
+        check_and_update_parent_task(supabase_client, task_run.get('state', {}))
         try:
             supabase_client.table('task_run_logs').insert({
                 'task_run_id': task_run_id,
@@ -203,38 +225,54 @@ async def poll_queue():
     """
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
     
-    await browser_manager.start()
+    browser_started = False
+    active_tasks = set()
     
     try:
         while True:
             try:
-                response = supabase.table('task_runs') \
-                    .select('*, workflow_templates(*)') \
-                    .eq('status', 'pending') \
-                    .order('created_at') \
-                    .limit(MAX_CONCURRENT_SESSIONS) \
-                    .execute()
+                # If we have room for more tasks, fetch them
+                if len(active_tasks) < MAX_CONCURRENT_SESSIONS:
+                    fetch_limit = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+                    response = supabase.table('task_runs') \
+                        .select('*, workflow_templates(*)') \
+                        .eq('status', 'pending') \
+                        .order('created_at') \
+                        .limit(fetch_limit) \
+                        .execute()
+                    
+                    task_runs = response.data
+                    
+                    if task_runs:
+                        if not browser_started:
+                            logger.info("Pending tasks found. Starting browser manager...")
+                            await browser_manager.start()
+                            browser_started = True
+
+                        logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
+                        
+                        for t in task_runs:
+                            supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
+                            task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
+                            active_tasks.add(task)
+                            task.add_done_callback(active_tasks.discard)
                 
-                task_runs = response.data
-                
-                if not task_runs:
+                if not active_tasks:
+                    if browser_started:
+                        logger.info("No active tasks. Closing browser to free resources...")
+                        await browser_manager.close()
+                        browser_started = False
                     await asyncio.sleep(POLL_INTERVAL_SECONDS)
-                    continue
-                
-                logger.info(f"Found {len(task_runs)} pending workflow runs. Starting concurrent sessions...")
-                
-                for t in task_runs:
-                    supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
-                
-                # We create tasks instead of just waiting so they can run concurrently
-                tasks = [asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY))) for t in task_runs]
-                await asyncio.gather(*tasks)
+                else:
+                    # Wait for at least one task to finish, or timeout after polling interval
+                    await asyncio.wait(active_tasks, return_when=asyncio.FIRST_COMPLETED, timeout=POLL_INTERVAL_SECONDS)
                     
             except Exception as e:
                 logger.error(f"Error polling queue: {str(e)}")
                 await asyncio.sleep(POLL_INTERVAL_SECONDS)
     finally:
-        await browser_manager.close()
+        if browser_started:
+            await browser_manager.close()
 
 if __name__ == "__main__":
     try:

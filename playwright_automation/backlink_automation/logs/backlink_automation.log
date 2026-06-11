@@ -1484,3 +1484,415 @@ waiting for locator("#tags")
   - elementHandle.type("Taigun price in kerala")
 
 2026-06-11 13:46:55 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 15:54:50 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-11 15:54:50 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-11 15:56:32 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 15:56:40 | INFO     | backlink_automation | Fetched 2 new workflow runs. Adding to active pool...
+2026-06-11 15:56:41 | INFO     | backlink_automation | [TaskRun 27274987-33d1-4a9b-b890-24a38760d64e] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-11 15:56:42 | INFO     | backlink_automation | [TaskRun 27274987-33d1-4a9b-b890-24a38760d64e] Routing to template: pligg
+2026-06-11 15:56:42 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://social-medialink.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 15:56:42 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 15:56:43 | INFO     | backlink_automation | [TaskRun 0df6b1db-53cf-4712-b423-fbe87441187a] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 15:56:43 | INFO     | backlink_automation | [TaskRun 0df6b1db-53cf-4712-b423-fbe87441187a] Routing to template: pligg
+2026-06-11 15:56:43 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 15:56:44 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 15:56:44 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 15:56:44 | INFO     | backlink_automation | Registration started with username=userhgm199gh
+2026-06-11 15:56:47 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 15:56:47 | INFO     | backlink_automation | Registration started with username=user49gk1fo4
+2026-06-11 15:56:57 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 15:56:58 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 15:57:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 15:57:09 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 15:57:10 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 15:57:10 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 15:57:30 | INFO     | backlink_automation | 2captcha predicted: 'abelian grape'
+2026-06-11 15:57:30 | ERROR    | backlink_automation | Error solving captcha with 2captcha: Locator.fill: Target page, context or browser has been closed
+2026-06-11 15:57:30 | ERROR    | backlink_automation | Automation failed: Locator.count: Target page, context or browser has been closed
+2026-06-11 15:57:30 | ERROR    | backlink_automation | [TaskRun 0df6b1db-53cf-4712-b423-fbe87441187a] Execution failed: Locator.count: Target page, context or browser has been closed
+2026-06-11 15:57:41 | INFO     | backlink_automation | 2captcha predicted: 'plainsailing'
+2026-06-11 15:57:41 | ERROR    | backlink_automation | Error solving captcha with 2captcha: Locator.fill: Target page, context or browser has been closed
+2026-06-11 15:57:41 | ERROR    | backlink_automation | Automation failed: Locator.count: Target page, context or browser has been closed
+2026-06-11 15:57:41 | ERROR    | backlink_automation | [TaskRun 27274987-33d1-4a9b-b890-24a38760d64e] Execution failed: BrowserContext.close: Target page, context or browser has been closed
+2026-06-11 15:57:42 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 16:02:11 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-11 16:02:11 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-11 16:02:52 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 16:02:54 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:02:57 | INFO     | backlink_automation | [TaskRun 7214e3b7-725e-47c6-9913-2d9f876adb6f] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:02:57 | INFO     | backlink_automation | [TaskRun 7214e3b7-725e-47c6-9913-2d9f876adb6f] Routing to template: pligg
+2026-06-11 16:02:57 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:02:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:03:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:03:01 | INFO     | backlink_automation | Registration started with username=useropgyj4l9
+2026-06-11 16:03:11 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:03:20 | ERROR    | backlink_automation | Automation failed: Locator.press_sequentially: Target page, context or browser has been closed
+Call log:
+waiting for locator("#reg_verify")
+  -   locator resolved to <input value="" size="25" tabindex="15" type="password"…/>
+  - elementHandle.type("hwQ90gG5Dr")
+
+2026-06-11 16:03:20 | ERROR    | backlink_automation | [TaskRun 7214e3b7-725e-47c6-9913-2d9f876adb6f] Execution failed: Locator.press_sequentially: Target page, context or browser has been closed
+Call log:
+waiting for locator("#reg_verify")
+  -   locator resolved to <input value="" size="25" tabindex="15" type="password"…/>
+  - elementHandle.type("hwQ90gG5Dr")
+
+2026-06-11 16:03:21 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 16:03:52 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 16:03:53 | INFO     | backlink_automation | Fetched 4 new workflow runs. Adding to active pool...
+2026-06-11 16:03:55 | INFO     | backlink_automation | [TaskRun 2d9cbb7b-3b4a-4a16-be85-b571843b5e64] Executing step 1/2: Submission on https://bookmark-vip.com
+2026-06-11 16:03:55 | INFO     | backlink_automation | [TaskRun 2d9cbb7b-3b4a-4a16-be85-b571843b5e64] Routing to template: pligg
+2026-06-11 16:03:55 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmark-vip.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:03:55 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:03:56 | INFO     | backlink_automation | [TaskRun dda927a0-ef88-4c2a-9524-08f028f44988] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:03:56 | INFO     | backlink_automation | [TaskRun dda927a0-ef88-4c2a-9524-08f028f44988] Routing to template: pligg
+2026-06-11 16:03:56 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:03:56 | INFO     | backlink_automation | [TaskRun 33b5802e-0ca4-4962-a582-0ae225283434] Executing step 1/2: Submission on https://maroonbookmarks.com
+2026-06-11 16:03:56 | INFO     | backlink_automation | [TaskRun 33b5802e-0ca4-4962-a582-0ae225283434] Routing to template: pligg
+2026-06-11 16:03:56 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://maroonbookmarks.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:03:56 | INFO     | backlink_automation | [TaskRun 816eee52-685d-4b25-a4da-a3e52bfc7d4d] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-11 16:03:57 | INFO     | backlink_automation | [TaskRun 816eee52-685d-4b25-a4da-a3e52bfc7d4d] Routing to template: pligg
+2026-06-11 16:03:57 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://social-medialink.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:03:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:03:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:03:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:03:59 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:03:59 | INFO     | backlink_automation | Registration started with username=userakp844px
+2026-06-11 16:04:00 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:04:00 | INFO     | backlink_automation | Registration started with username=userw9e23txm
+2026-06-11 16:04:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:04:01 | INFO     | backlink_automation | Registration started with username=userfqgemdf0
+2026-06-11 16:04:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:04:01 | INFO     | backlink_automation | Registration started with username=user97dqvtbo
+2026-06-11 16:04:15 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:04:15 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:04:16 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:04:16 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:04:26 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:04:26 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:04:27 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:04:27 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:04:28 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:04:28 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:04:29 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:04:29 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:04:40 | INFO     | backlink_automation | 2captcha predicted: 'wildwest'
+2026-06-11 16:04:47 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:04:47 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:04:48 | INFO     | backlink_automation | 2captcha predicted: 'candy apple'
+2026-06-11 16:04:54 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:04:54 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:04:54 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:04:56 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:04:59 | INFO     | backlink_automation | 2captcha predicted: 'leave me alone'
+2026-06-11 16:05:00 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:05:01 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:05:04 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:05:06 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:05:06 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:05:06 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:05:08 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:05:10 | INFO     | backlink_automation | 2captcha predicted: 'stopwasting time'
+2026-06-11 16:05:13 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:05:17 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:05:17 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:05:30 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:05:31 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:05:40 | ERROR    | backlink_automation | Timeout during automation: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Explore trusted information related to Taigun price in kerala, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.")
+
+2026-06-11 16:05:40 | ERROR    | backlink_automation | [TaskRun dda927a0-ef88-4c2a-9524-08f028f44988] Execution failed: Timeout: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Explore trusted information related to Taigun price in kerala, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.")
+
+2026-06-11 16:05:43 | INFO     | backlink_automation | 2captcha predicted: 'power tool'
+2026-06-11 16:05:49 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:05:49 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:05:49 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:05:50 | ERROR    | backlink_automation | Timeout during automation: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Learn more about Taigun price in kerala through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.")
+
+2026-06-11 16:05:50 | ERROR    | backlink_automation | [TaskRun 33b5802e-0ca4-4962-a582-0ae225283434] Execution failed: Timeout: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Learn more about Taigun price in kerala through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.")
+
+2026-06-11 16:05:51 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:05:56 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:06:02 | INFO     | backlink_automation | 2captcha predicted: 'candy cane'
+2026-06-11 16:06:02 | ERROR    | backlink_automation | Error solving captcha with 2captcha: Locator.fill: Target page, context or browser has been closed
+2026-06-11 16:06:02 | ERROR    | backlink_automation | Automation failed: Locator.count: Target page, context or browser has been closed
+2026-06-11 16:06:02 | ERROR    | backlink_automation | [TaskRun 816eee52-685d-4b25-a4da-a3e52bfc7d4d] Execution failed: Locator.count: Target page, context or browser has been closed
+2026-06-11 16:06:34 | ERROR    | backlink_automation | Timeout during automation: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Learn more about Taigun price in kerala through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.")
+
+2026-06-11 16:06:34 | ERROR    | backlink_automation | [TaskRun 2d9cbb7b-3b4a-4a16-be85-b571843b5e64] Execution failed: Timeout: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Learn more about Taigun price in kerala through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.")
+
+2026-06-11 16:06:35 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 16:07:36 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 16:07:38 | INFO     | backlink_automation | Fetched 2 new workflow runs. Adding to active pool...
+2026-06-11 16:07:40 | INFO     | backlink_automation | [TaskRun 18436fae-cc1b-4dc4-b443-31b63e78b722] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-11 16:07:40 | INFO     | backlink_automation | [TaskRun 18436fae-cc1b-4dc4-b443-31b63e78b722] Routing to template: pligg
+2026-06-11 16:07:40 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://social-medialink.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:07:40 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:07:41 | INFO     | backlink_automation | [TaskRun 895d39e4-7dcc-40b9-95c8-1a47db07cd4f] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:07:41 | INFO     | backlink_automation | [TaskRun 895d39e4-7dcc-40b9-95c8-1a47db07cd4f] Routing to template: pligg
+2026-06-11 16:07:41 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:07:42 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:07:44 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:07:44 | INFO     | backlink_automation | Registration started with username=userlcwx24zg
+2026-06-11 16:07:45 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:07:45 | INFO     | backlink_automation | Registration started with username=userdfc36vem
+2026-06-11 16:07:53 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:07:57 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:08:05 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:08:06 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:08:10 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:08:10 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:08:17 | INFO     | backlink_automation | 2captcha predicted: 'whoathere'
+2026-06-11 16:08:23 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:08:23 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:08:31 | INFO     | backlink_automation | 2captcha predicted: 'rowboat'
+2026-06-11 16:08:35 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:08:36 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:08:38 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:08:38 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:08:38 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:08:40 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:08:45 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:08:57 | INFO     | backlink_automation | 2captcha predicted: 'many hsppy returns'
+2026-06-11 16:09:05 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:09:05 | INFO     | backlink_automation | Registration attempt 3/3
+2026-06-11 16:09:13 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:09:14 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:09:22 | ERROR    | backlink_automation | Timeout during automation: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Discover valuable insights, expert guidance, and practical information about Taigun price in kerala. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.")
+
+2026-06-11 16:09:22 | ERROR    | backlink_automation | [TaskRun 18436fae-cc1b-4dc4-b443-31b63e78b722] Execution failed: Timeout: Locator.press_sequentially: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#bodytext")
+  -   locator resolved to <textarea rows="6" wrap="SOFT" tabindex="15" id="bodytext"…></textarea>
+  - elementHandle.type("Discover valuable insights, expert guidance, and practical information about Taigun price in kerala. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.")
+
+2026-06-11 16:09:35 | INFO     | backlink_automation | 2captcha predicted: 'push harder'
+2026-06-11 16:09:42 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:09:42 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:09:42 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:09:45 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:09:51 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:10:25 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:10:25 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:10:25 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:10:46 | INFO     | backlink_automation | 2captcha predicted: 'science class'
+2026-06-11 16:10:50 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:10:54 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21612218/taigun-price-in-kerala
+2026-06-11 16:10:55 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21612218/taigun-price-in-kerala
+2026-06-11 16:10:55 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:10:57 | INFO     | backlink_automation | [TaskRun 895d39e4-7dcc-40b9-95c8-1a47db07cd4f] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-11 16:10:57 | INFO     | backlink_automation | [TaskRun 895d39e4-7dcc-40b9-95c8-1a47db07cd4f] Intercepted Reporting Step.
+2026-06-11 16:10:58 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 16:15:57 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-11 16:15:57 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-11 16:18:01 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 16:18:03 | INFO     | backlink_automation | Fetched 3 new workflow runs. Adding to active pool...
+2026-06-11 16:18:04 | INFO     | backlink_automation | [TaskRun 33d4fb43-f11d-4bcf-b331-3a66c4be4806] Executing step 1/2: Submission on https://maroonbookmarks.com
+2026-06-11 16:18:05 | INFO     | backlink_automation | [TaskRun 33d4fb43-f11d-4bcf-b331-3a66c4be4806] Routing to template: pligg
+2026-06-11 16:18:05 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://maroonbookmarks.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:18:05 | INFO     | backlink_automation | [TaskRun e1b817b5-c6de-4633-99f3-50e240109232] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-11 16:18:05 | INFO     | backlink_automation | [TaskRun e1b817b5-c6de-4633-99f3-50e240109232] Routing to template: pligg
+2026-06-11 16:18:05 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://social-medialink.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:18:05 | INFO     | backlink_automation | [TaskRun dd56efe8-4c44-40c6-b2de-878df129d0c1] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:18:05 | INFO     | backlink_automation | [TaskRun dd56efe8-4c44-40c6-b2de-878df129d0c1] Routing to template: pligg
+2026-06-11 16:18:05 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:18:06 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:18:06 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:18:06 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:18:08 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:18:08 | INFO     | backlink_automation | Registration started with username=userhbptm067
+2026-06-11 16:18:09 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:18:09 | INFO     | backlink_automation | Registration started with username=userfs1fmw7f
+2026-06-11 16:18:10 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:18:10 | INFO     | backlink_automation | Registration started with username=usernnaih3le
+2026-06-11 16:18:21 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:18:23 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:18:23 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:18:32 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:18:32 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:18:34 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:18:34 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:18:36 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:18:36 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:18:47 | INFO     | backlink_automation | 2captcha predicted: 'double cross'
+2026-06-11 16:18:54 | INFO     | backlink_automation | 2captcha predicted: 'now look here'
+2026-06-11 16:18:55 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:18:55 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:18:55 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:18:56 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:19:02 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:19:02 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:19:02 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:19:02 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:19:04 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:19:06 | INFO     | backlink_automation | 2captcha predicted: 'magic'
+2026-06-11 16:19:09 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:19:09 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:19:09 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:19:09 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:19:13 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:19:13 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:19:16 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:19:16 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:19:16 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:19:23 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:19:24 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:19:30 | INFO     | backlink_automation | 2captcha predicted: 'tall building'
+2026-06-11 16:19:34 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:19:35 | INFO     | backlink_automation | 2captcha predicted: 'make my day'
+2026-06-11 16:19:38 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://maroonbookmarks.com/story21536857/taigun-price-in-kerala
+2026-06-11 16:19:39 | INFO     | backlink_automation | Successfully created backlink: https://maroonbookmarks.com/story21536857/taigun-price-in-kerala
+2026-06-11 16:19:39 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:19:42 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:19:42 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:19:42 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:19:42 | INFO     | backlink_automation | [TaskRun 33d4fb43-f11d-4bcf-b331-3a66c4be4806] Executing step 2/2: Verification & Reporting on https://maroonbookmarks.com
+2026-06-11 16:19:42 | INFO     | backlink_automation | [TaskRun 33d4fb43-f11d-4bcf-b331-3a66c4be4806] Intercepted Reporting Step.
+2026-06-11 16:19:44 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:19:48 | INFO     | backlink_automation | 2captcha predicted: 'grumpy cat'
+2026-06-11 16:19:51 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:19:55 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:19:59 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://social-medialink.com/story6673360/taigun-price-in-kerala
+2026-06-11 16:19:59 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:19:59 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:19:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:20:03 | INFO     | backlink_automation | Successfully created backlink: https://social-medialink.com/story6673360/taigun-price-in-kerala
+2026-06-11 16:20:03 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:20:06 | INFO     | backlink_automation | [TaskRun e1b817b5-c6de-4633-99f3-50e240109232] Executing step 2/2: Verification & Reporting on https://social-medialink.com
+2026-06-11 16:20:06 | INFO     | backlink_automation | [TaskRun e1b817b5-c6de-4633-99f3-50e240109232] Intercepted Reporting Step.
+2026-06-11 16:20:21 | INFO     | backlink_automation | 2captcha predicted: 'point to point'
+2026-06-11 16:20:24 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:20:28 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21612248/taigun-price-in-kerala
+2026-06-11 16:20:29 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21612248/taigun-price-in-kerala
+2026-06-11 16:20:29 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:20:31 | INFO     | backlink_automation | [TaskRun dd56efe8-4c44-40c6-b2de-878df129d0c1] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-11 16:20:31 | INFO     | backlink_automation | [TaskRun dd56efe8-4c44-40c6-b2de-878df129d0c1] Intercepted Reporting Step.
+2026-06-11 16:20:32 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-11 16:27:11 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-11 16:27:13 | INFO     | backlink_automation | Fetched 3 new workflow runs. Adding to active pool...
+2026-06-11 16:27:15 | INFO     | backlink_automation | [TaskRun 73d65684-e1ed-4bdd-ae76-e1945a4a7701] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:27:16 | INFO     | backlink_automation | [TaskRun 73d65684-e1ed-4bdd-ae76-e1945a4a7701] Routing to template: pligg
+2026-06-11 16:27:16 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:27:16 | INFO     | backlink_automation | [TaskRun a30a7332-8654-4234-9956-106a32549e31] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:27:16 | INFO     | backlink_automation | [TaskRun a30a7332-8654-4234-9956-106a32549e31] Routing to template: pligg
+2026-06-11 16:27:16 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=another test keyword
+2026-06-11 16:27:16 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:27:16 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:27:17 | INFO     | backlink_automation | [TaskRun e7c9f8a4-765d-4d1a-a418-8d5a0bb90a35] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-11 16:27:17 | INFO     | backlink_automation | [TaskRun e7c9f8a4-765d-4d1a-a418-8d5a0bb90a35] Routing to template: pligg
+2026-06-11 16:27:17 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=test keyword
+2026-06-11 16:27:17 | INFO     | backlink_automation | Navigating to home page
+2026-06-11 16:27:19 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:27:19 | INFO     | backlink_automation | Registration started with username=userat0qpypc
+2026-06-11 16:27:19 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:27:19 | INFO     | backlink_automation | Registration started with username=user5a8usv26
+2026-06-11 16:27:22 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-11 16:27:22 | INFO     | backlink_automation | Registration started with username=user0hobf4fp
+2026-06-11 16:27:33 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:27:34 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:27:37 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-11 16:27:44 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:27:44 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:27:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:27:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:27:50 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:27:50 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:28:06 | INFO     | backlink_automation | 2captcha predicted: 'Filthy rich'
+2026-06-11 16:28:12 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:28:12 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:28:16 | INFO     | backlink_automation | 2captcha predicted: 'filthu rich'
+2026-06-11 16:28:22 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:28:22 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-11 16:28:23 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:28:23 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:28:32 | INFO     | backlink_automation | 2captcha predicted: 'ivory tower'
+2026-06-11 16:28:34 | INFO     | backlink_automation | 2captcha predicted: 'double cross'
+2026-06-11 16:28:36 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:28:36 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:28:39 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:28:39 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:28:39 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=test keyword
+2026-06-11 16:28:41 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-11 16:28:41 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:28:41 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=another test keyword
+2026-06-11 16:28:41 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:28:43 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:28:46 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:28:47 | INFO     | backlink_automation | 2captcha predicted: '0'
+2026-06-11 16:28:49 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-11 16:28:52 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:28:52 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:28:52 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:28:53 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:28:53 | INFO     | backlink_automation | Registration attempt 3/3
+2026-06-11 16:28:56 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-11 16:28:56 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:28:56 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:29:03 | INFO     | backlink_automation | 2captcha predicted: 'howquaint'
+2026-06-11 16:29:04 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:29:04 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:29:06 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:29:11 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-11 16:29:16 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-11 16:29:16 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:29:16 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:29:18 | INFO     | backlink_automation | 2captcha predicted: 'you are happy'
+2026-06-11 16:29:21 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:29:25 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21612281/another-test-keyword
+2026-06-11 16:29:25 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21612281/another-test-keyword
+2026-06-11 16:29:27 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-11 16:29:27 | INFO     | backlink_automation | 2captcha predicted: 'benice'
+2026-06-11 16:29:28 | INFO     | backlink_automation | [TaskRun a30a7332-8654-4234-9956-106a32549e31] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-11 16:29:28 | INFO     | backlink_automation | [TaskRun a30a7332-8654-4234-9956-106a32549e31] Intercepted Reporting Step.
+2026-06-11 16:29:30 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:29:36 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-11 16:29:40 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 3/3)
+2026-06-11 16:29:40 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-11 16:29:40 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-11 16:30:02 | INFO     | backlink_automation | 2captcha predicted: 'picled pepper'
+2026-06-11 16:30:05 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-11 16:30:10 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-11 16:30:10 | ERROR    | backlink_automation | Automation failed: Could not extract backlink URL after submission. Check site changes.
+2026-06-11 16:30:10 | ERROR    | backlink_automation | [TaskRun e7c9f8a4-765d-4d1a-a418-8d5a0bb90a35] Execution failed: Could not extract backlink URL after submission. Check site changes.
+2026-06-11 16:30:48 | ERROR    | backlink_automation | Error solving captcha with 2captcha: ERROR_CAPTCHA_UNSOLVABLE
+2026-06-11 16:30:52 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-11 16:30:52 | INFO     | backlink_automation | Registration flow finished
+2026-06-11 16:30:52 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-11 16:30:55 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-11 16:31:08 | ERROR    | backlink_automation | Automation failed: Locator.fill: Target page, context or browser has been closed
+Call log:
+waiting for locator("input[name='url'], input[name*='story_url'], input[type='url']").first
+
+2026-06-11 16:31:08 | ERROR    | backlink_automation | [TaskRun 73d65684-e1ed-4bdd-ae76-e1945a4a7701] Execution failed: Locator.fill: Target page, context or browser has been closed
+Call log:
+waiting for locator("input[name='url'], input[name*='story_url'], input[type='url']").first
+
+2026-06-11 16:31:09 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

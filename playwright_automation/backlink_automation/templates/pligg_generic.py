@@ -303,16 +303,21 @@ class PliggGenericTemplate:
         max_retries = 3
         for attempt in range(max_retries):
             # Story title id (keyword) = title
+            # Use press_sequentially only for short fields (keyword) — safe within 30s
             await page.locator("#title").fill("")
-            await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 100))
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
             # Tags id (keyword specific tags)= tags
             await page.locator("#tags").fill("")
-            await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 100))
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
-            # Description id (here we add description) = bodytext
+            # Description id = bodytext
+            # IMPORTANT: Use fill() here — NOT press_sequentially.
+            # The description is ~200 chars. At 150ms/char that's 30s = exactly the Playwright
+            # action timeout, causing "Locator.press_sequentially: Timeout 30000ms exceeded".
+            # fill() is instant and safe for textareas.
             description_templates = [
                 "Discover valuable insights, expert guidance, and practical information about {keyword}. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.",
                 "Learn more about {keyword} through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.",
@@ -322,9 +327,8 @@ class PliggGenericTemplate:
                 "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
             ]
             description_text = random.choice(description_templates).format(keyword=keyword)
-            await page.locator("#bodytext").fill("")
-            await page.locator("#bodytext").press_sequentially(description_text, delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#bodytext").fill(description_text)
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
             # Category - Try selecting first option if present
             category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
@@ -343,7 +347,14 @@ class PliggGenericTemplate:
             if await submit_btn.count() == 0:
                 submit_btn = page.locator("input[type='submit'], button[type='submit'], .submit")
 
-            await submit_btn.first.click()
+            await submit_btn.first.scroll_into_view_if_needed()
+            await page.wait_for_timeout(500)
+
+            try:
+                await submit_btn.first.click(timeout=5000)
+            except Exception:
+                self.logger.warning("Normal click failed (element might be obscured). Forcing JS click.")
+                await submit_btn.first.evaluate("el => el.click()")
 
             self.logger.info("Bookmark form submitted. Waiting for result...")
 

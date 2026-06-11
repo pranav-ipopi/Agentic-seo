@@ -75,6 +75,21 @@ export default function RunConfigurationPanel({
 
       if (campaignError) throw campaignError
 
+      // 2b. Create the parent Task for the UI
+      const { data: parentTask, error: parentTaskError } = await supabase
+        .from('tasks')
+        .insert({
+          client_id: activeClient.id,
+          department_id: (template as any).department_id ?? null,
+          title: campaignName,
+          status: 'pending',
+          output: { campaign_id: campaign.id }
+        })
+        .select()
+        .single()
+
+      if (parentTaskError) throw parentTaskError
+
       // 3. Fetch keywords
       const { data: keywords, error: keywordsError } = await supabase
         .from('keywords')
@@ -97,6 +112,7 @@ export default function RunConfigurationPanel({
             current_step_index: 0,
             state: {
               campaign_id: campaign.id,
+              task_id: parentTask.id,
               client_target_url: clientTargetUrl,
               target_site: site.url,
               category: submissionType,

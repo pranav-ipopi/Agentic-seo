@@ -31,16 +31,13 @@ class StealthBrowserManager:
         return self.browser
 
     async def get_page(self):
-        """Retrieves the active page from the stealth browser session."""
+        """Creates and returns a new isolated page context from the stealth browser session."""
         if not self.browser:
             raise Exception("Browser not started. Call start() first.")
         
-        # cdp_driver opens a default page natively
-        if len(self.browser.contexts) > 0 and len(self.browser.contexts[0].pages) > 0:
-            return self.browser.contexts[0].pages[0]
-        else:
-            context = await self.browser.new_context()
-            return await context.new_page()
+        # Always create a new isolated context for concurrency
+        context = await self.browser.new_context()
+        return await context.new_page()
 
     async def close(self):
         """Closes the Playwright connection and stealth browser."""

@@ -74,6 +74,7 @@ class PliggGenericTemplate:
         """
         self.logger.info(f"Starting PliggGenericTemplate on {self.BASE_URL} for client_site={client_site}, keyword={keyword}")
 
+        page = None
         try:
             page = await self.browser_manager.get_page()
 
@@ -107,6 +108,9 @@ class PliggGenericTemplate:
         except Exception as e:
             self.logger.error(f"Automation failed: {e}")
             raise
+        finally:
+            if page and page.context:
+                await page.context.close()
 
     async def _navigate_home(self, page: Page) -> None:
         """Navigate to home page and wait for load."""
@@ -193,6 +197,7 @@ class PliggGenericTemplate:
                 if pred:
                     # 4. Fill the input field box on the main parent page layout
                     response_field = page.locator("#adcopy_response")
+                    await response_field.fill("")
                     await response_field.press_sequentially(pred, delay=random.randint(50, 150))
                     
                     # Small wait to ensure characters register natively before hitting submit buttons
@@ -219,13 +224,17 @@ class PliggGenericTemplate:
         for attempt in range(max_retries):
             self.logger.info(f"Registration attempt {attempt + 1}/{max_retries}")
             
-            # Fill registration form using exact IDs
+            # Fill registration form using exact IDs (Clear first before pressing sequentially for retries)
+            await page.locator("#reg_username").fill("")
             await page.locator("#reg_username").press_sequentially(self.credentials["username"], delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_email").fill("")
             await page.locator("#reg_email").press_sequentially(self.credentials["email"], delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_password").fill("")
             await page.locator("#reg_password").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_verify").fill("")
             await page.locator("#reg_verify").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
 
@@ -276,6 +285,7 @@ class PliggGenericTemplate:
         url_field = page.locator("#url")
         if await url_field.count() == 0:
             url_field = page.locator("input[name='url'], input[name*='story_url'], input[type='url']")
+        await url_field.first.fill("")
         await url_field.first.press_sequentially(client_site, delay=random.randint(50, 150))
         await asyncio.sleep(random.uniform(0.5, 2.0))
 
@@ -293,10 +303,12 @@ class PliggGenericTemplate:
         max_retries = 3
         for attempt in range(max_retries):
             # Story title id (keyword) = title
+            await page.locator("#title").fill("")
             await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
 
             # Tags id (keyword specific tags)= tags
+            await page.locator("#tags").fill("")
             await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
 
@@ -310,6 +322,7 @@ class PliggGenericTemplate:
                 "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
             ]
             description_text = random.choice(description_templates).format(keyword=keyword)
+            await page.locator("#bodytext").fill("")
             await page.locator("#bodytext").press_sequentially(description_text, delay=random.randint(50, 150))
             await asyncio.sleep(random.uniform(0.5, 2.0))
 

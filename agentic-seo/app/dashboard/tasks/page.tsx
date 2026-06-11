@@ -39,14 +39,7 @@ export default function TasksPage() {
       if (!activeClient) { setTasks([]); setLoading(false); return }
       setLoading(true)
       
-      const query1 = supabase
-        .from('task_runs')
-        .select('*, workflow_templates(name)')
-        .eq('client_id', activeClient.id)
-        .order('created_at', { ascending: false })
-        .limit(50)
-
-      const query2 = supabase
+      const query = supabase
         .from('tasks')
         .select('*')
         .eq('client_id', activeClient.id)
@@ -54,30 +47,24 @@ export default function TasksPage() {
         .limit(50)
 
       if (filter !== 'all') {
-        query1.eq('status', filter)
-        query2.eq('status', filter)
+        query.eq('status', filter)
       }
       
-      const [res1, res2] = await Promise.all([query1, query2])
+      const { data, error } = await query
       
-      const runs = res1.data ?? []
-      const simpleTasks = (res2.data ?? []).map((t: any) => ({
+      const formattedTasks = (data ?? []).map((t: any) => ({
         id: t.id,
         status: t.status,
         created_at: t.created_at,
         current_step_index: 0,
-        workflow_templates: { name: `Campaign Task: ${t.title || t.type}` },
-        is_simple_task: true,
+        workflow_templates: { name: `Campaign: ${t.title || t.type}` },
+        is_simple_task: !t.output?.campaign_id,
         payload: t.payload,
         result: t.result,
         output: t.output
       }))
 
-      const combined = [...runs, ...simpleTasks].sort(
-        (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-      )
-      
-      setTasks(combined as any)
+      setTasks(formattedTasks as any)
       setLoading(false)
     }
     load()
@@ -118,6 +105,28 @@ export default function TasksPage() {
       setLoadingLogs((prev) => ({ ...prev, [taskId]: true }))
       
       const taskObj = tasks.find(t => t.id === taskId)
+      
+      if (taskObj?.output?.campaign_id) {
+        // This is a Campaign Task containing multiple task_runs
+        const { data: campaignRuns } = await supabase
+          .from('task_runs')
+          .select('*')
+          .eq('state->>task_id', taskId)
+          .order('created_at', { ascending: true })
+          
+        const generatedLogs = (campaignRuns || []).map((run: any, idx: number) => ({
+          id: run.id,
+          step_index: idx,
+          role: 'system',
+          message: `Keyword: ${run.state?.keyword}\nTarget Site: ${run.state?.target_site}\nStatus: ${run.status}`,
+          created_at: run.created_at,
+          metadata: { step_name: `Job: ${run.state?.target_site}` }
+        }))
+        setLogs((prev) => ({ ...prev, [taskId]: generatedLogs as any }))
+        setLoadingLogs((prev) => ({ ...prev, [taskId]: false }))
+        return
+      }
+
       if (taskObj?.is_simple_task) {
         // Mock a log for the atomic task
         const logContent = {
@@ -137,6 +146,7 @@ export default function TasksPage() {
         return
       }
 
+      // Default fallback
       const { data } = await supabase
         .from('task_run_logs')
         .select('*')

@@ -3,47 +3,29 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { WorkflowTemplate, Client, Skill } from '@/lib/supabase/types'
+import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import WorkflowVisualizer from './WorkflowVisualizer'
-import SkillsPanel from './SkillsPanel'
 import RunConfigurationPanel from './RunConfigurationPanel'
 
 interface WorkflowDetailClientProps {
   template: WorkflowTemplate
   clients: Client[]
-  skills: Skill[]
 }
 
 export default function WorkflowDetailClient({
   template,
   clients,
-  skills,
 }: WorkflowDetailClientProps) {
   const steps = (template.steps as any[]) ?? []
 
   // Which executable node is currently selected in the canvas
   const [selectedNodeIndex, setSelectedNodeIndex] = useState<number | null>(null)
 
-  // Per-step skill overrides: { "0": "find_backlink_opportunities", "2": "submit_bookmarks" }
-  const [skillOverrides, setSkillOverrides] = useState<Record<string, string>>({})
-
-  const handleSkillSelect = (stepIndex: number, skillId: string) => {
-    setSkillOverrides(prev => ({ ...prev, [String(stepIndex)]: skillId }))
-  }
-
-  const handleSkillClear = (stepIndex: number) => {
-    setSkillOverrides(prev => {
-      const next = { ...prev }
-      delete next[String(stepIndex)]
-      return next
-    })
-  }
-
   return (
     <div className="flex h-full w-full bg-gray-50 dark:bg-gray-950 overflow-hidden">
 
       {/* ── Left: Visualizer Canvas ── */}
-      <div className="flex-1 min-w-0 border-r border-gray-200 dark:border-gray-800 relative">
+      <div className="flex-1 min-w-0 h-full border-r border-gray-200 dark:border-gray-800 relative flex flex-col">
 
         {/* Back button — absolute so it floats over the canvas */}
         <div className="absolute top-0 left-0 right-0 p-5 z-10 pointer-events-none">
@@ -57,30 +39,21 @@ export default function WorkflowDetailClient({
         </div>
 
         {/* React Flow canvas */}
-        <WorkflowVisualizer
-          steps={steps}
-          selectedNodeIndex={selectedNodeIndex}
-          skillOverrides={skillOverrides}
-          skills={skills}
-          onNodeSelect={setSelectedNodeIndex}
-        />
-
-        {/* Skills Panel (renders into LeftSidebar via React Portal) */}
-        <SkillsPanel
-          steps={steps}
-          selectedNodeIndex={selectedNodeIndex}
-          skillOverrides={skillOverrides}
-          skills={skills}
-          onSkillSelect={handleSkillSelect}
-          onSkillClear={handleSkillClear}
-        />
+        <div className="flex-1 relative w-full h-full">
+          <div className="absolute inset-0">
+            <WorkflowVisualizer
+              steps={steps}
+              selectedNodeIndex={selectedNodeIndex}
+              onNodeSelect={setSelectedNodeIndex}
+            />
+          </div>
+        </div>
       </div>
 
       {/* ── Right: Configuration Sidebar ── */}
       <RunConfigurationPanel
         template={template}
         clients={clients}
-        skillOverrides={skillOverrides}
       />
     </div>
   )

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { WorkflowTemplate, Client, Skill } from '@/lib/supabase/types'
+import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import WorkflowDetailClient from '@/components/workflows/WorkflowDetailClient'
 
 export const metadata = {
@@ -33,14 +33,10 @@ export default async function WorkflowDetailPage({
     m.clients ? [m.clients as Client] : []
   ) || []
 
-  // 3. Fetch skills
-  const { data: skills } = await supabase.from('skills').select('*').order('name')
-
   return (
     <WorkflowDetailClient
       template={rawTemplate}
       clients={clients}
-      skills={(skills as Skill[]) || []}
     />
   )
 }

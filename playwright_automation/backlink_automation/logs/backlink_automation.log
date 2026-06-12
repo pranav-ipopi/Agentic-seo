@@ -2875,3 +2875,121 @@ waiting for locator("#title")
 2026-06-12 12:57:19 | INFO     | backlink_automation | Received signal 2. Shutting down gracefully...
 2026-06-12 12:57:46 | INFO     | backlink_automation | Worker stopping. Closing browser...
 2026-06-12 12:57:46 | INFO     | backlink_automation | EVENT: worker_stopped
+2026-06-12 15:43:37 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 15:43:41 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 15:43:43 | INFO     | backlink_automation | [TaskRun 359b4320-2940-4d79-b015-da81be1cad68] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-12 15:43:43 | INFO     | backlink_automation | [TaskRun 359b4320-2940-4d79-b015-da81be1cad68] Routing to template: pligg
+2026-06-12 15:43:43 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=best search engine
+2026-06-12 15:43:43 | INFO     | backlink_automation | Navigating to home page
+2026-06-12 15:43:48 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-12 15:43:48 | INFO     | backlink_automation | Registration started with username=usere4ahe6nf
+2026-06-12 15:44:00 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-12 15:44:10 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-12 15:44:11 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-12 15:44:22 | INFO     | backlink_automation | 2captcha predicted: 'corblimey'
+2026-06-12 15:44:29 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-12 15:44:29 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-12 15:44:39 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-12 15:44:39 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-12 15:44:50 | INFO     | backlink_automation | 2captcha predicted: 'top drawer'
+2026-06-12 15:44:57 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-12 15:44:57 | INFO     | backlink_automation | Registration flow finished
+2026-06-12 15:44:57 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-12 15:44:58 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-12 15:45:03 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-12 15:45:09 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-12 15:45:09 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-12 15:45:09 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-12 15:45:41 | INFO     | backlink_automation | 2captcha predicted: 'half done'
+2026-06-12 15:45:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-12 15:45:48 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21617012/best-search-engine
+2026-06-12 15:45:49 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21617012/best-search-engine
+2026-06-12 15:45:49 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 15:45:52 | INFO     | backlink_automation | [TaskRun 359b4320-2940-4d79-b015-da81be1cad68] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-12 15:45:52 | INFO     | backlink_automation | [TaskRun 359b4320-2940-4d79-b015-da81be1cad68] Intercepted Reporting Step.
+2026-06-12 15:45:53 | INFO     | backlink_automation | [Task 10b0f26a-9bca-4dcd-8c50-39b8ce6ebed2] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-12 15:45:53 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 17:06:10 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 17:06:10 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-12 17:21:22 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 17:21:26 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 17:21:27 | INFO     | backlink_automation | [TaskRun 3ea3fb8b-782d-4185-8a9e-1f0e4f6cc21c] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-12 17:21:27 | INFO     | backlink_automation | [TaskRun 3ea3fb8b-782d-4185-8a9e-1f0e4f6cc21c] Routing to template: None (target_site_id=None)
+2026-06-12 17:21:27 | ERROR    | backlink_automation | [TaskRun 3ea3fb8b-782d-4185-8a9e-1f0e4f6cc21c] Cannot route: site_id is None for https://livebookmarking.com. Run the detect-site-templates edge function to fingerprint this site.
+2026-06-12 17:21:27 | ERROR    | backlink_automation | [TaskRun 3ea3fb8b-782d-4185-8a9e-1f0e4f6cc21c] Unexpected error:
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\vps_worker_playwright.py", line 190, in route_and_execute
+    result_message = f"Unknown site category: {site_category}"
+                                               ^^^^^^^^^^^^^
+NameError: name 'site_category' is not defined
+
+2026-06-12 17:21:27 | INFO     | backlink_automation | [Task 672e148d-ffb6-4ec1-a3ca-a45e712743e6] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-12 17:21:28 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 17:35:17 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 17:35:19 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 17:35:21 | INFO     | backlink_automation | [TaskRun b78f0bf5-ce84-4967-98be-3613fd742a40] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-12 17:35:22 | INFO     | backlink_automation | [TaskRun b78f0bf5-ce84-4967-98be-3613fd742a40] Routing to template: None (target_site_id=None)
+2026-06-12 17:35:22 | ERROR    | backlink_automation | [TaskRun b78f0bf5-ce84-4967-98be-3613fd742a40] Cannot route: site_id is None for https://social-medialink.com. Run the detect-site-templates edge function to fingerprint this site.
+2026-06-12 17:35:22 | ERROR    | backlink_automation | [TaskRun b78f0bf5-ce84-4967-98be-3613fd742a40] Unexpected error:
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\vps_worker_playwright.py", line 190, in route_and_execute
+    result_message = f"Unknown site category: {site_category}"
+                                               ^^^^^^^^^^^^^
+NameError: name 'site_category' is not defined
+
+2026-06-12 17:35:22 | INFO     | backlink_automation | [Task 36c5a7bb-defe-421c-b9b4-8cfb9f71ce1f] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-12 17:35:22 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 17:36:14 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 17:36:15 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 17:36:16 | INFO     | backlink_automation | [TaskRun a4c0e6e5-1f13-4a3d-8ba2-43aaa687292c] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-12 17:36:16 | INFO     | backlink_automation | [TaskRun a4c0e6e5-1f13-4a3d-8ba2-43aaa687292c] Routing to template: None (target_site_id=None)
+2026-06-12 17:36:16 | ERROR    | backlink_automation | [TaskRun a4c0e6e5-1f13-4a3d-8ba2-43aaa687292c] Cannot route: site_id is None for https://social-medialink.com. Run the detect-site-templates edge function to fingerprint this site.
+2026-06-12 17:36:16 | ERROR    | backlink_automation | [TaskRun a4c0e6e5-1f13-4a3d-8ba2-43aaa687292c] Unexpected error:
+Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\vps_worker_playwright.py", line 190, in route_and_execute
+    result_message = f"Unknown site category: {site_category}"
+                                               ^^^^^^^^^^^^^
+NameError: name 'site_category' is not defined
+
+2026-06-12 17:36:16 | INFO     | backlink_automation | [Task 93ca0403-6a8f-4206-86fb-2b268c9ecded] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-12 17:36:17 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 17:43:14 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 17:43:14 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-12 17:43:45 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 17:43:47 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 17:43:48 | INFO     | backlink_automation | [TaskRun ae3196f3-851d-4ae9-8a54-4de506dd657c] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-12 17:43:49 | INFO     | backlink_automation | [TaskRun ae3196f3-851d-4ae9-8a54-4de506dd657c] Routing to template: None (target_site_id=None)
+2026-06-12 17:43:49 | ERROR    | backlink_automation | [TaskRun ae3196f3-851d-4ae9-8a54-4de506dd657c] Cannot route: site_id is None for https://social-medialink.com. Run the detect-site-templates edge function to fingerprint this site.
+2026-06-12 17:43:49 | INFO     | backlink_automation | [Task 2dff719b-cfaf-4ae3-81df-5dc40efe375b] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-12 17:43:49 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 17:58:06 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 17:58:06 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-12 17:58:27 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-12 17:58:29 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 17:58:31 | INFO     | backlink_automation | [TaskRun eaa4bc40-ae65-4857-b741-531455f228c9] Executing step 1/2: Submission on https://social-medialink.com
+2026-06-12 17:58:32 | INFO     | backlink_automation | [TaskRun eaa4bc40-ae65-4857-b741-531455f228c9] Routing to template: 'pligg' (target_site_id=None)
+2026-06-12 17:58:32 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://social-medialink.com for client_site=https://google.com, keyword=best search engine
+2026-06-12 17:58:32 | INFO     | backlink_automation | Navigating to home page
+2026-06-12 17:58:36 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-12 17:58:36 | INFO     | backlink_automation | Registration started with username=userqrvs823l
+2026-06-12 17:58:49 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-12 17:59:01 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-12 17:59:01 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-12 17:59:34 | INFO     | backlink_automation | 2captcha predicted: 'fair and square'
+2026-06-12 17:59:41 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-12 17:59:41 | INFO     | backlink_automation | Registration flow finished
+2026-06-12 17:59:41 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-12 17:59:43 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-12 17:59:48 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-12 17:59:54 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-12 17:59:54 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-12 17:59:54 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-12 18:00:26 | INFO     | backlink_automation | 2captcha predicted: 'rack and ruin'
+2026-06-12 18:00:30 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-12 18:00:34 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://social-medialink.com/story6678693/best-search-engine
+2026-06-12 18:00:35 | INFO     | backlink_automation | Successfully created backlink: https://social-medialink.com/story6678693/best-search-engine
+2026-06-12 18:00:35 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-12 18:00:38 | INFO     | backlink_automation | [TaskRun eaa4bc40-ae65-4857-b741-531455f228c9] Executing step 2/2: Verification & Reporting on https://social-medialink.com
+2026-06-12 18:00:39 | INFO     | backlink_automation | [TaskRun eaa4bc40-ae65-4857-b741-531455f228c9] Intercepted Reporting Step.
+2026-06-12 18:00:39 | INFO     | backlink_automation | [Task efba13c4-43d7-4f4f-a047-33b14f22e169] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-12 18:00:39 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

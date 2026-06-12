@@ -76,8 +76,8 @@ export default async function WorkflowsPage() {
                     {template.description || 'No description provided.'}
                   </p>
 
-                  <div className="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-4">
-                    <div className="flex -space-x-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-t border-gray-200 dark:border-gray-800 pt-4">
+                    <div className="flex -space-x-2 shrink-0">
                       {/* Fake icons representing steps */}
                       <div className="w-7 h-7 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-900 flex items-center justify-center z-30 relative" title="Research">
                         <Sparkles className="w-3 h-3 text-emerald-400" />
@@ -90,9 +90,9 @@ export default async function WorkflowsPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg transition-all shadow-sm hover:shadow-indigo-500/25 active:scale-95 pointer-events-none">
-                      <Play className="w-4 h-4" />
-                      Run Workflow
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg transition-all shadow-sm hover:shadow-indigo-500/25 active:scale-95 pointer-events-none whitespace-nowrap">
+                      <Play className="w-4 h-4 shrink-0" />
+                      <span>Run Workflow</span>
                     </div>
                   </div>
                 </div>

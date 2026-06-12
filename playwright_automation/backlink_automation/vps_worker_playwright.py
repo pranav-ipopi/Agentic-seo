@@ -126,28 +126,58 @@ async def route_and_execute(task_run, supabase_client: Client):
             result_message = "Verification completed successfully. The report data is ready."
         else:
             # --- ROUTER LOGIC ---
-            # For now, default to PliggGenericTemplate
-            # In the future, lookup target_site_id from DB to determine category/template
-            
-            site_category = "pligg" # Default
-            
+            # Reads site_id from target_sites to determine which automation
+            # template to use. site_id is populated by the detect-site-templates
+            # Supabase edge function which fingerprints each site's CMS.
+
+            site_id = None
+
             if target_site_id:
-                # Fetch category from target_sites if needed
-                site_res = supabase_client.table('target_sites').select('category').eq('id', target_site_id).execute()
+                site_res = supabase_client.table('target_sites').select('site_id').eq('id', target_site_id).execute()
                 if site_res.data and len(site_res.data) > 0:
-                    site_category = site_res.data[0].get('category', 'pligg').lower()
-            
-            logger.info(f"[TaskRun {task_run_id}] Routing to template: {site_category}")
-            
-            if site_category == 'pligg':
+                    site_id = (site_res.data[0].get('site_id') or '').lower() or None
+            elif target_url:
+                # Fallback: if task didn't include target_site_id, try to match by url
+                # Strip trailing slash to match DB format if necessary
+                clean_url = target_url.rstrip('/')
+                site_res = supabase_client.table('target_sites').select('site_id').ilike('url', f"%{clean_url}%").execute()
+                if site_res.data and len(site_res.data) > 0:
+                    site_id = (site_res.data[0].get('site_id') or '').lower() or None
+
+            logger.info(f"[TaskRun {task_run_id}] Routing to template: {site_id!r} (target_site_id={target_site_id})")
+
+            template_runner = None
+
+            if site_id == 'pligg':
                 template_runner = PliggGenericTemplate(
                     target_url=target_url,
                     browser_manager=browser_manager,
                     captcha_service=captcha_service,
                     logger=logger
                 )
+            elif site_id == 'phpld':
+                # TODO: implement PHPLDTemplate
+                result = {'status': 'failed'}
+                result_message = f"[TaskRun {task_run_id}] PHPLD template is not yet implemented. Skipping {target_url}."
+                logger.warning(result_message)
+            elif site_id == 'scuttle':
+                # TODO: implement ScuttleTemplate
+                result = {'status': 'failed'}
+                result_message = f"[TaskRun {task_run_id}] Scuttle template is not yet implemented. Skipping {target_url}."
+                logger.warning(result_message)
+            elif site_id == 'drigg':
+                # TODO: implement DriggTemplate
+                result = {'status': 'failed'}
+                result_message = f"[TaskRun {task_run_id}] Drigg template is not yet implemented. Skipping {target_url}."
+                logger.warning(result_message)
             else:
-                template_runner = None
+                # site_id is None (not yet detected) or 'unknown'
+                result = {'status': 'failed'}
+                result_message = (
+                    f"[TaskRun {task_run_id}] Cannot route: site_id is {site_id!r} for {target_url}. "
+                    f"Run the detect-site-templates edge function to fingerprint this site."
+                )
+                logger.error(result_message)
 
             if template_runner:
                 try:
@@ -162,9 +192,7 @@ async def route_and_execute(task_run, supabase_client: Client):
                     logger.error(f"[TaskRun {task_run_id}] Execution failed: {e}")
                     result = {'status': 'failed'}
                     result_message = f"Agent failed. Error: {str(e)}"
-            else:
-                result = {'status': 'failed'}
-                result_message = f"Unknown site category: {site_category}"
+            # If template_runner is None, result and result_message are already set above.
 
         # Log result
         metadata = {'step_name': step.get('name'), 'status': result['status'] if result else 'completed'}

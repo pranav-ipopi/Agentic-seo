@@ -18,26 +18,17 @@ const nodeTypes = { template: TemplateNode }
 type WorkflowVisualizerProps = {
   steps: any[]
   selectedNodeIndex: number | null
-  skillOverrides: Record<string, string>
-  skills: Skill[]
   onNodeSelect: (index: number | null) => void
 }
 
 export default function WorkflowVisualizer({
   steps,
   selectedNodeIndex,
-  skillOverrides,
-  skills,
   onNodeSelect,
 }: WorkflowVisualizerProps) {
 
   const nodes: TemplateNodeType[] = useMemo(() => {
     return steps.map((step, index) => {
-      const overrideId = skillOverrides[String(index)]
-      const skill = overrideId
-        ? skills.find(s => s.skill_id === overrideId)
-        : undefined
-
       return {
         id: `step-${index}`,
         type: 'template' as const,
@@ -50,11 +41,10 @@ export default function WorkflowVisualizer({
           skill: step.skill,
           index,
           isSelected: index === selectedNodeIndex,
-          assignedSkillName: skill?.name ?? undefined,
         },
       }
     })
-  }, [steps, selectedNodeIndex, skillOverrides, skills])
+  }, [steps, selectedNodeIndex])
 
   const edges: Edge[] = useMemo(() => {
     return steps.slice(0, -1).map((_, i) => ({

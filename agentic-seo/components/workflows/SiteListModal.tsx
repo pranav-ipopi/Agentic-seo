@@ -85,6 +85,10 @@ export default function SiteListModal({
         }
       }
       
+      // Automatically trigger the edge function to detect templates for any new sites
+      // We don't await this so it runs in the background without blocking the UI
+      supabase.functions.invoke('detect-site-templates').catch(console.error)
+      
       await loadSites()
       onClose()
     } catch (e) {

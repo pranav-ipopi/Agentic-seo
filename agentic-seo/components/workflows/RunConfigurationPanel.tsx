@@ -12,11 +12,9 @@ import SiteListModal from './SiteListModal'
 export default function RunConfigurationPanel({
   template,
   clients,
-  skillOverrides = {},
 }: {
   template: WorkflowTemplate
   clients: Client[]
-  skillOverrides?: Record<string, string>
 }) {
   const router = useRouter()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -146,9 +144,6 @@ export default function RunConfigurationPanel({
     }
   }
 
-  // Count how many steps have a skill assigned
-  const assignedCount = Object.keys(skillOverrides).length
-
   return (
     <div className="w-[340px] flex-shrink-0 bg-white dark:bg-gray-900/50 overflow-y-auto flex flex-col h-full shadow-2xl relative z-20">
 
@@ -164,16 +159,6 @@ export default function RunConfigurationPanel({
           Configure parameters for the{' '}
           <span className="text-gray-700 dark:text-gray-300 font-medium">{template.name}</span> workflow.
         </p>
-
-        {/* Skill assignment summary */}
-        {assignedCount > 0 && (
-          <div className="mt-3 flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
-            <span className="text-sm">⚡</span>
-            <span className="text-xs text-amber-300 font-medium">
-              {assignedCount} skill{assignedCount > 1 ? 's' : ''} assigned
-            </span>
-          </div>
-        )}
       </div>
 
       <div className="p-6 flex-1 flex flex-col gap-6">

@@ -1490,3 +1490,9 @@ waiting for locator("#tags")
 2026-06-12 15:17:07 | INFO     | backlink_automation | SupabaseService initialized
 2026-06-12 15:17:07 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
 2026-06-12 15:17:07 | INFO     | backlink_automation | EVENT: worker_started | version=V1 | target=livebookmarking.com | poll_interval=30 | max_retries=3
+2026-06-12 15:31:24 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-12 15:31:24 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 15:31:24 | INFO     | backlink_automation | EVENT: worker_started | version=V1 | target=livebookmarking.com | poll_interval=30 | max_retries=3
+2026-06-12 16:18:17 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-12 16:18:17 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 16:18:18 | INFO     | backlink_automation | EVENT: worker_started | version=V1 | target=livebookmarking.com | poll_interval=30 | max_retries=3

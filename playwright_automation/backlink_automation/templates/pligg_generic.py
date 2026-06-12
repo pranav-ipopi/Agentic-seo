@@ -249,7 +249,7 @@ class PliggGenericTemplate:
 
             # Wait for registration to complete (success or error)
             await page.wait_for_timeout(4000)
-            await page.wait_for_load_state("networkidle", timeout=30000)
+            await page.wait_for_load_state("networkidle", timeout=40000)
 
             current_url = page.url
             if "/user/" in current_url:
@@ -351,16 +351,28 @@ class PliggGenericTemplate:
             await page.wait_for_timeout(500)
 
             try:
-                await submit_btn.first.click(timeout=5000)
+                await submit_btn.first.click(timeout=10000)
             except Exception:
                 self.logger.warning("Normal click failed (element might be obscured). Forcing JS click.")
-                await submit_btn.first.evaluate("el => el.click()")
+                # Re-query the button from the current DOM state before calling evaluate.
+                # Using the stale locator from before the failed click would cause
+                # Playwright to wait 30 s for an element that may no longer exist
+                # (e.g. page navigated / Cloudflare replaced the DOM).
+                try:
+                    fresh_btn = page.locator(
+                        "input[value='Save Changes and Submit'], "
+                        "button:has-text('Save Changes and Submit'), "
+                        "input[type='submit'], button[type='submit'], .submit"
+                    )
+                    await fresh_btn.first.evaluate("el => el.click()", timeout=10000)
+                except Exception as js_err:
+                    self.logger.warning(f"JS click also failed: {js_err}. Page may have already navigated.")
 
             self.logger.info("Bookmark form submitted. Waiting for result...")
 
             # Wait for navigation or success indication
             try:
-                await page.wait_for_load_state("networkidle", timeout=15000)
+                await page.wait_for_load_state("networkidle", timeout=30000)
                 await page.wait_for_timeout(3000)
             except PlaywrightTimeoutError:
                 self.logger.warning("Timeout waiting for submit result...")

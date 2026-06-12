@@ -76,15 +76,27 @@ export default function LeftSidebar() {
         ?? []
       setClients(clientList)
 
-      // Auto-select first client if none selected
-      if (clientList.length > 0 && !activeClient) {
-        setActiveClient(clientList[0])
-      }
-
       setLoading(false)
     }
     load()
   }, [])
+
+  // Auto-select first client or validate active client
+  useEffect(() => {
+    if (!loading && clients.length > 0) {
+      if (!activeClient) {
+        const stored = localStorage.getItem('agentic_seo_active_client')
+        if (!stored) {
+          setActiveClient(clients[0])
+        }
+      } else {
+        const isValid = clients.some(c => c.id === activeClient.id)
+        if (!isValid) {
+          setActiveClient(clients[0])
+        }
+      }
+    }
+  }, [loading, clients, activeClient, setActiveClient])
 
   // Load sessions for active client
   useEffect(() => {

@@ -11,41 +11,10 @@ except ImportError:
 async def bypass_cloudflare(page, max_retries=15):
     """
     Wait for Cloudflare to naturally pass due to our stealthy browser.
+    If it doesn't pass, attempt human-like interaction to bypass the Turnstile.
     Returns True if successfully bypassed, False if it times out.
     """
-    print("Checking for Cloudflare protection...")
-    
-    # Wait for up to max_retries seconds to see if the page clears Cloudflare automatically
-    for _ in range(max_retries):
-        try:
-            title = await page.title()
-            if "Just a moment" not in title and "Verify you are human" not in title:
-                print("Successfully bypassed Cloudflare (or no Cloudflare detected).")
-                return True
-                
-            print("Waiting for Cloudflare check to complete natively...")
-            
-            # Sometimes you might still get the Turnstile checkbox, even with a stealth browser.
-            # We attempt to click it if it appears.
-            cf_frames = await page.locator('iframe[src*="challenge-platform"], iframe[src*="turnstile"]').count()
-            if cf_frames > 0:
-                print("Clicking the Turnstile widget directly...")
-                iframe_element = await page.query_selector('iframe[src*="challenge-platform"], iframe[src*="turnstile"]')
-                if iframe_element:
-                    await iframe_element.click()
-        except Exception as e:
-            if "Execution context was destroyed" in str(e):
-                print("Navigation detected! Cloudflare check passed.")
-                # Give it a moment to finish loading the target page
-                await page.wait_for_timeout(2000)
-                return True
-            # Other temporary playwright errors during load
-            pass
-            
-        await page.wait_for_timeout(1000)
-        
-    print("Warning: Cloudflare might still be active, but continuing anyway.")
-    return False
+    return await cloudflare_updated(page, max_retries)
 
 
 # ---------------------------------------------------------------------------
@@ -184,40 +153,35 @@ async def cloudflare_updated(page, max_retries: int = 15) -> bool:
 
             print(f"Cloudflare challenge active (attempt {attempt + 1}/{max_retries})...")
 
-            # --- Check for a manual Turnstile iframe ---
-            iframe_count = await page.locator(IFRAME_SELECTOR).count()
+            # --- Check for a manual Turnstile iframe (searches all nested frames) ---
+            cf_frame = None
+            for frame in page.frames:
+                url = frame.url.lower()
+                if "challenge-platform" in url or "turnstile" in url or "challenges.cloudflare.com" in url:
+                    cf_frame = frame
+                    break
 
-            if iframe_count > 0:
+            if cf_frame:
                 print("Cloudflare manual verification detected! Executing human-mouse bypass...")
 
                 # Allow up to 5 s for the iframe to fully render its contents
-                await asyncio.sleep(2.5)
+                await asyncio.sleep(5.0)
 
-                iframe_element = await page.wait_for_selector(IFRAME_SELECTOR, timeout=5000)
+                # Retrieve the iframe's DOM element handle directly from the Frame object
+                iframe_element = await cf_frame.frame_element()
 
-                if iframe_element:
-                    # Enter the iframe's browsing context
-                    cf_frame = await iframe_element.content_frame()
-
-                    try:
-                        checkbox_element = await cf_frame.wait_for_selector(
-                            CHECKBOX_SELECTOR, timeout=3000
-                        )
-                    except Exception:
-                        # Widget not rendered yet — wait and retry next loop cycle
-                        print("Turnstile widget not yet rendered, retrying...")
-                        await page.wait_for_timeout(1000)
-                        continue
-
-                    # bounding_box() returns coords relative to the root viewport —
-                    # safe to use directly with page.mouse even inside an iframe
-                    box = await checkbox_element.bounding_box()
+                if await iframe_element.is_visible():
+                    # Retrieve the bounding box parameters of the Turnstile iframe directly
+                    # bypassing the need to search the inner shadow DOM
+                    box = await iframe_element.bounding_box()
 
                     if box:
-                        # Randomise the click point inside the widget boundary to
-                        # avoid always landing on the dead-centre (a bot signal)
-                        click_x = box["x"] + (box["width"] / 2) + random.randint(-8, 8)
-                        click_y = box["y"] + (box["height"] / 2) + random.randint(-8, 8)
+                        # Calculate the checkbox position (typically near the left side)
+                        # Offset slightly inward to hit the interactive target zone safely
+                        click_x = box["x"] + 30 + random.randint(-5, 5)
+                        click_y = box["y"] + (box["height"] / 2) + random.randint(-3, 3)
+
+                        print(f"Executing natural hover to coordinates X:{click_x:.2f}, Y:{click_y:.2f}...")
 
                         # Move the mouse along a natural curved path
                         await move_mouse_humanlike(page, click_x, click_y)

@@ -1484,3 +1484,9 @@ waiting for locator("#tags")
   - elementHandle.type("Taigun price in kerala")
 
 2026-06-11 13:46:55 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-12 15:15:04 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-12 15:15:04 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 15:15:06 | INFO     | backlink_automation | EVENT: worker_started | version=V1 | target=livebookmarking.com | poll_interval=30 | max_retries=3
+2026-06-12 15:17:07 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-12 15:17:07 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-12 15:17:07 | INFO     | backlink_automation | EVENT: worker_started | version=V1 | target=livebookmarking.com | poll_interval=30 | max_retries=3

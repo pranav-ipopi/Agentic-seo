@@ -79,13 +79,17 @@ No AI / LLM used during execution (per spec).
 """
 
 import asyncio
+import sys
+import os
 import random
 import string
-import os
 import logging
 
 from typing import Dict, Any, Optional
 from playwright.async_api import Page, BrowserContext, TimeoutError as PlaywrightTimeoutError
+
+# Add backlink_automation directory to python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from services.captcha_service import CaptchaService
 from methods.stealth_browser import StealthBrowserManager

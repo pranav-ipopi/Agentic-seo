@@ -35,6 +35,8 @@ from services.logging_service import setup_logger, log_event
 from services.captcha_service import CaptchaService
 from methods.stealth_browser import StealthBrowserManager
 from templates.livebookmarking import LiveBookmarkingTemplate
+from templates.pligg_generic import PliggGenericTemplate
+from templates.wordpress_submitpro_generic import WordPressSubmitProTemplate
 
 
 load_dotenv()
@@ -51,11 +53,7 @@ class BacklinkWorker:
         self.supabase = SupabaseService(logger=self.logger)
         self.captcha_service = CaptchaService(logger=self.logger)
         self.browser_manager = StealthBrowserManager()
-        self.template = LiveBookmarkingTemplate(
-            browser_manager=self.browser_manager,
-            captcha_service=self.captcha_service,
-            logger=self.logger
-        )
+        # Templates are instantiated dynamically per job in process_job()
         self.running = True
         self._setup_signal_handlers()
 
@@ -98,12 +96,76 @@ class BacklinkWorker:
         log_event(self.logger, "job_running", {"job_id": job_id})
 
         try:
-            # Execute the site-specific template
-            # V1 only supports livebookmarking.com
-            if target_site != "https://livebookmarking.com/":
-                raise ValueError(f"Unsupported target_site in V1: {target_site}")
+            # Execute the site-specific template dynamically based on target_site
+            if not target_site:
+                raise ValueError("Job state is missing target_site URL")
 
-            result = await self.template.run(client_site, keyword)
+            site_url = target_site.strip().rstrip('/')
+            
+            # List of all domains using the WordPress SubmitPro template engine
+            wordpress_submitpro_sites = [
+                "bookmarks2u.com",
+                "ukbookmarks.com",
+                "richbookmarks.com",
+                "hotbookmarking.com",
+                "bookmarkmaps.com",
+                "onlinewebmarks.com",
+                "submitportal.com",
+                "bookmarkdrive.com",
+                "indusdirectory.com",
+                "bookmarktalk.info",
+                "techbookmarks.com",
+                "a2zsocialnews.com",
+                "directoryposts.com",
+                "dailywebmarks.com",
+                "socialbookmarknow.info",
+                "openfaves.com",
+                "corpjunction.com",
+                "bookmark-template.com",
+                "leodirectory.com",
+                "submitindustry.com",
+                "bookmarkstumble.com",
+                "socialmarkz.com",
+                "socialmphl.com",
+                "bookmarkinglive.com",
+                "bookmarktheme.com",
+                "johsocial.com",
+                "productbookmarks.com",
+                "bouchesocial.com",
+                "kingslists.com",
+                "bookmarkvids.com",
+                "seosubmitbookmark.com",
+                "peoplebookmarks.com",
+                "teslabookmarks.com",
+                "socialevity.com",
+                "altbookmark.com"
+            ]
+            
+            if any(domain in site_url for domain in wordpress_submitpro_sites):
+                self.logger.info(f"Routing to WordPressSubmitProTemplate for {site_url}")
+                template = WordPressSubmitProTemplate(
+                    target_url=site_url,
+                    browser_manager=self.browser_manager,
+                    captcha_service=self.captcha_service,
+                    logger=self.logger
+                )
+            elif "livebookmarking.com" in site_url:
+                self.logger.info(f"Routing to LiveBookmarkingTemplate for {site_url}")
+                template = LiveBookmarkingTemplate(
+                    browser_manager=self.browser_manager,
+                    captcha_service=self.captcha_service,
+                    logger=self.logger
+                )
+            else:
+                self.logger.info(f"Routing to PliggGenericTemplate for {site_url}")
+                template = PliggGenericTemplate(
+                    target_url=site_url,
+                    browser_manager=self.browser_manager,
+                    captcha_service=self.captcha_service,
+                    logger=self.logger
+                )
+
+            result = await template.run(client_site, keyword)
 
             backlink_url = result.get("backlink_url")
             if not backlink_url:

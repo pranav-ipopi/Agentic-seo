@@ -1,82 +1,17 @@
 """
-LiveBookmarking.com Site Template - V1
+Generic Pligg/Kliqqi CMS Site Template
 
-This is the site-specific implementation for https://livebookmarking.com/
+This is a universal implementation that works for the vast majority of Pligg-based social bookmarking sites.
 
-Responsibilities (per spec):
+Responsibilities:
+- Accept any Pligg site URL
 - Navigate site
-- Register account if required (generates random credentials)
-- Login
+- Register account (generates random credentials)
 - Create bookmark/backlink (submit client_site + keyword)
 - Return created backlink URL
-
-Clean interface:
-    async def run(self, client_site: str, keyword: str) -> Dict[str, Any]
-
-The returned dict should contain at minimum:
-    {
-        "backlink_url": "https://livebookmarking.com/storyXXXXX/..." or None,
-        "success": bool,
-        "message": str
-    }
-
-Architecture notes for future sites:
-- All future templates MUST implement the exact same `run(client_site, keyword)` signature.
-- Site-specific logic (selectors, flows, captcha handling) lives ONLY inside the template.
-- No generic strategy pattern in V1 (per requirements: avoid premature abstractions).
-
-Analysis of livebookmarking.com (performed 2026-06-09):
-- It is a Pligg-like social news / bookmarking site.
-- Public pages show recent stories with user attribution.
-- /login : Username/Email + Password form. No captcha visible in text extraction.
-- /register : Username, Email, Password, Verify password + SolveMedia CAPTCHA (puzzle).
-  CAPTCHA appears as image + "Your Answer" input. Uses solvemedia/adcopy.
-- /submit (requires login): Redirects unauthenticated users to /login?return=/submit.
-- Submission flow (inferred from similar Pligg sites + site behavior):
-  - Title (keyword)
-  - URL (client_site)
-  - Description (short text with keyword)
-  - Tags (keyword)
-  - Category (often "News" or first available)
-  - Possible captcha on submit (not confirmed in V1 analysis due to auth wall).
-- After successful submit, site typically redirects to the new story page
-  (e.g. https://livebookmarking.com/story2160XXXX/slugified-title).
-- Backlink created = the story URL on livebookmarking.com (points to client_site).
-
-Selectors used (based on label text + common Pligg patterns):
-- Heavy use of Playwright's get_by_label / get_by_role for robustness.
-- CSS fallbacks for reliability.
-- Waits are generous (networkidle + explicit) because site can be slow.
-
-Captcha handling:
-- Calls CaptchaService when "CAPTCHA" text or solvemedia elements detected.
-- V1: Uses stub (will fail real captchas). See services/captcha_service.py
-- Future: Replace stub with real solver. The solve() call returns the answer string
-  to fill into the response field (typically name="adcopy_response" for SolveMedia).
-
-Retry / error handling:
-- Template raises on unrecoverable errors.
-- Worker catches and applies retry logic (max 3).
-
-Assumptions (documented for maintenance):
-1. Registration does not require email verification (common for these sites).
-2. New accounts can immediately login and submit.
-3. Category "News" exists and is selectable (value often "1" or label "News").
-4. Submit success can be detected by URL containing /story or success message.
-5. No rate limiting / IP blocks in V1 scope (VPS deployment will need proxies later).
-6. SolveMedia captcha on register (confirmed). Submit captcha unknown.
-7. Usernames must be unique; we append random suffix.
-8. Password min 5 chars (per register page).
-
-Future maintenance points:
-- If site changes form field names/labels -> update selectors here.
-- If new captcha appears on submit -> add detection + solve call.
-- When onboarding new sites via AI (future), this template serves as reference for structure.
-- Add more robust success detection (e.g. look for "story submitted" text).
-- Consider storing successful account credentials for reuse (future optimization, not V1).
-
-No AI / LLM used during execution (per spec).
 """
+
+
 
 import asyncio
 import random
@@ -94,7 +29,7 @@ from methods.stealth_browser import StealthBrowserManager
 def _generate_random_credentials() -> Dict[str, str]:
     """Generate random registration credentials for this job."""
     suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
-    username = f"backlink{suffix}"
+    username = f"user{suffix}"
     email = f"{username}@mailinator.com"  # Disposable-style; adjust if site blocks
     password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
     return {
@@ -104,29 +39,30 @@ def _generate_random_credentials() -> Dict[str, str]:
     }
 
 
-class LiveBookmarkingTemplate:
+class PliggGenericTemplate:
     """
-    Implementation of the LiveBookmarking submission process.
+    Generic implementation of the Pligg/Kliqqi submission process.
     Handles:
     - Cloudflare Turnstile bypass natively
     - Account Registration via Mailinator / dynamic forms
-    - Solving Captcha (SolveMedia via TrOCR local model)
+    - Solving SolveMedia Captcha using 2Captcha
     - Submitting bookmark and returning the URL
     """
-
-    BASE_URL = "https://moodjhomedia.com/"
-    REGISTER_URL = f"{BASE_URL}/register"
-    SUBMIT_URL = f"{BASE_URL}/submit"
 
     # We do NOT use camoufox or playwright intercept anymore. 
     # SeleniumBase CDP natively handles the stealth!
 
     def __init__(
         self,
+        target_url: str,
         browser_manager: StealthBrowserManager,
         captcha_service: CaptchaService,
         logger: logging.Logger
     ):
+        self.BASE_URL = target_url.rstrip('/')
+        self.REGISTER_URL = f"{self.BASE_URL}/register"
+        self.SUBMIT_URL = f"{self.BASE_URL}/submit"
+        
         self.browser_manager = browser_manager
         self.captcha_service = captcha_service
         self.logger = logger
@@ -136,8 +72,9 @@ class LiveBookmarkingTemplate:
         """
         Main entry point. Executes the full backlink creation flow.
         """
-        self.logger.info(f"Starting LiveBookmarkingTemplate for client_site={client_site}, keyword={keyword}")
+        self.logger.info(f"Starting PliggGenericTemplate on {self.BASE_URL} for client_site={client_site}, keyword={keyword}")
 
+        page = None
         try:
             page = await self.browser_manager.get_page()
 
@@ -149,6 +86,14 @@ class LiveBookmarkingTemplate:
 
             # Step 3: Create the bookmark / backlink
             backlink_url = await self._submit_bookmark(page, client_site, keyword)
+
+            # Step 4: Log out the user
+            # Clicks the first dropdown-toggle element found on the page
+            await page.locator("a.dropdown-toggle[data-toggle='dropdown']").first.click()
+
+            # Clicks the logout button
+            await page.locator("a[href='#logout']").first.click()
+
 
             self.logger.info(f"Successfully created backlink: {backlink_url}")
             return {
@@ -163,6 +108,9 @@ class LiveBookmarkingTemplate:
         except Exception as e:
             self.logger.error(f"Automation failed: {e}")
             raise
+        finally:
+            if page and page.context:
+                await page.context.close()
 
     async def _navigate_home(self, page: Page) -> None:
         """Navigate to home page and wait for load."""
@@ -205,9 +153,9 @@ class LiveBookmarkingTemplate:
             return False
 
     async def _handle_cloudflare(self, page: Page) -> bool:
-        """Delegates Cloudflare bypassing to our new reusable methods."""
-        from methods.cloudflare import bypass_cloudflare
-        return await bypass_cloudflare(page)
+        """Delegates Cloudflare bypassing to our enhanced human-mouse method."""
+        from methods.cloudflare import cloudflare_updated
+        return await cloudflare_updated(page)
 
     async def _solve_captcha_2captcha(self, page: Page) -> None:
         self.logger.info("Attempting to solve SolveMedia captcha with 2captcha...")
@@ -249,7 +197,8 @@ class LiveBookmarkingTemplate:
                 if pred:
                     # 4. Fill the input field box on the main parent page layout
                     response_field = page.locator("#adcopy_response")
-                    await response_field.fill(pred)
+                    await response_field.fill("")
+                    await response_field.press_sequentially(pred, delay=random.randint(50, 150))
                     
                     # Small wait to ensure characters register natively before hitting submit buttons
                     await page.wait_for_timeout(1000)
@@ -275,11 +224,19 @@ class LiveBookmarkingTemplate:
         for attempt in range(max_retries):
             self.logger.info(f"Registration attempt {attempt + 1}/{max_retries}")
             
-            # Fill registration form using exact IDs
-            await page.locator("#reg_username").fill(self.credentials["username"])
-            await page.locator("#reg_email").fill(self.credentials["email"])
-            await page.locator("#reg_password").fill(self.credentials["password"])
-            await page.locator("#reg_verify").fill(self.credentials["password"])
+            # Fill registration form using exact IDs (Clear first before pressing sequentially for retries)
+            await page.locator("#reg_username").fill("")
+            await page.locator("#reg_username").press_sequentially(self.credentials["username"], delay=random.randint(50, 150))
+            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_email").fill("")
+            await page.locator("#reg_email").press_sequentially(self.credentials["email"], delay=random.randint(50, 150))
+            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_password").fill("")
+            await page.locator("#reg_password").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+            await asyncio.sleep(random.uniform(0.5, 2.0))
+            await page.locator("#reg_verify").fill("")
+            await page.locator("#reg_verify").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+            await asyncio.sleep(random.uniform(0.5, 2.0))
 
             # Handle Captcha
             await self._solve_captcha_2captcha(page)
@@ -292,7 +249,7 @@ class LiveBookmarkingTemplate:
 
             # Wait for registration to complete (success or error)
             await page.wait_for_timeout(4000)
-            await page.wait_for_load_state("networkidle", timeout=30000)
+            await page.wait_for_load_state("networkidle", timeout=40000)
 
             current_url = page.url
             if "/user/" in current_url:
@@ -328,7 +285,9 @@ class LiveBookmarkingTemplate:
         url_field = page.locator("#url")
         if await url_field.count() == 0:
             url_field = page.locator("input[name='url'], input[name*='story_url'], input[type='url']")
-        await url_field.first.fill(client_site)
+        await url_field.first.fill("")
+        await url_field.first.press_sequentially(client_site, delay=random.randint(50, 150))
+        await asyncio.sleep(random.uniform(0.5, 2.0))
 
         continue_btn = page.locator("input[value='Continue'], button:has-text('Continue')")
         if await continue_btn.count() == 0:
@@ -344,13 +303,32 @@ class LiveBookmarkingTemplate:
         max_retries = 3
         for attempt in range(max_retries):
             # Story title id (keyword) = title
-            await page.locator("#title").fill(keyword)
+            # Use press_sequentially only for short fields (keyword) — safe within 30s
+            await page.locator("#title").fill("")
+            await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 100))
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
             # Tags id (keyword specific tags)= tags
-            await page.locator("#tags").fill(keyword)
+            await page.locator("#tags").fill("")
+            await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 100))
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
-            # Description id (here we add description) = bodytext
-            await page.locator("#bodytext").fill(f"Resource related to {keyword}. Automated bookmark submission.")
+            # Description id = bodytext
+            # IMPORTANT: Use fill() here — NOT press_sequentially.
+            # The description is ~200 chars. At 150ms/char that's 30s = exactly the Playwright
+            # action timeout, causing "Locator.press_sequentially: Timeout 30000ms exceeded".
+            # fill() is instant and safe for textareas.
+            description_templates = [
+                "Discover valuable insights, expert guidance, and practical information about {keyword}. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.",
+                "Learn more about {keyword} through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.",
+                "Explore trusted information related to {keyword}, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.",
+                "Stay informed with high-quality content focused on {keyword}. Discover relevant insights, best practices, and educational resources that can help improve knowledge, support decision-making, and provide a deeper understanding of important industry developments.",
+                "Find reliable resources and expert information about {keyword} in one place. Explore practical guidance, useful recommendations, and up-to-date insights designed to help users navigate challenges, identify opportunities, and make confident decisions.",
+                "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
+            ]
+            description_text = random.choice(description_templates).format(keyword=keyword)
+            await page.locator("#bodytext").fill(description_text)
+            await asyncio.sleep(random.uniform(0.5, 1.5))
 
             # Category - Try selecting first option if present
             category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
@@ -369,13 +347,32 @@ class LiveBookmarkingTemplate:
             if await submit_btn.count() == 0:
                 submit_btn = page.locator("input[type='submit'], button[type='submit'], .submit")
 
-            await submit_btn.first.click()
+            await submit_btn.first.scroll_into_view_if_needed()
+            await page.wait_for_timeout(500)
+
+            try:
+                await submit_btn.first.click(timeout=10000)
+            except Exception:
+                self.logger.warning("Normal click failed (element might be obscured). Forcing JS click.")
+                # Re-query the button from the current DOM state before calling evaluate.
+                # Using the stale locator from before the failed click would cause
+                # Playwright to wait 30 s for an element that may no longer exist
+                # (e.g. page navigated / Cloudflare replaced the DOM).
+                try:
+                    fresh_btn = page.locator(
+                        "input[value='Save Changes and Submit'], "
+                        "button:has-text('Save Changes and Submit'), "
+                        "input[type='submit'], button[type='submit'], .submit"
+                    )
+                    await fresh_btn.first.evaluate("el => el.click()", timeout=10000)
+                except Exception as js_err:
+                    self.logger.warning(f"JS click also failed: {js_err}. Page may have already navigated.")
 
             self.logger.info("Bookmark form submitted. Waiting for result...")
 
             # Wait for navigation or success indication
             try:
-                await page.wait_for_load_state("networkidle", timeout=15000)
+                await page.wait_for_load_state("networkidle", timeout=30000)
                 await page.wait_for_timeout(3000)
             except PlaywrightTimeoutError:
                 self.logger.warning("Timeout waiting for submit result...")
@@ -443,11 +440,25 @@ class LiveBookmarkingTemplate:
 
         return None
 
-    # Optional helper for future: logout if needed
     async def _logout(self, page: Page) -> None:
+        self.logger.info("Attempting to log out...")
         try:
+            # First try the specific logout link structure
+            logout_link = page.locator("a[href='#logout']")
+            if await logout_link.count() > 0:
+                await logout_link.first.click()
+                await page.wait_for_timeout(2000)
+                return
+
+            # Then try by text
             logout = page.get_by_text("logout", exact=False).first
             if await logout.count() > 0:
                 await logout.click()
-        except Exception:
-            pass
+                await page.wait_for_timeout(2000)
+                return
+
+            # Fallback to executing the JS function if it exists
+            await page.evaluate("if (typeof logout === 'function') { logout(); }")
+            await page.wait_for_timeout(2000)
+        except Exception as e:
+            self.logger.warning(f"Error during logout: {e}")

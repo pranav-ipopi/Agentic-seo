@@ -224,19 +224,30 @@ class PliggGenericTemplate:
         for attempt in range(max_retries):
             self.logger.info(f"Registration attempt {attempt + 1}/{max_retries}")
             
-            # Fill registration form using exact IDs (Clear first before pressing sequentially for retries)
-            await page.locator("#reg_username").fill("")
-            await page.locator("#reg_username").press_sequentially(self.credentials["username"], delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
-            await page.locator("#reg_email").fill("")
-            await page.locator("#reg_email").press_sequentially(self.credentials["email"], delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
-            await page.locator("#reg_password").fill("")
-            await page.locator("#reg_password").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
-            await page.locator("#reg_verify").fill("")
-            await page.locator("#reg_verify").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
-            await asyncio.sleep(random.uniform(0.5, 2.0))
+            if attempt == 0:
+                # Fill registration form using exact IDs (Clear first before pressing sequentially for retries)
+                await page.locator("#reg_username").fill("")
+                await page.locator("#reg_username").press_sequentially(self.credentials["username"], delay=random.randint(50, 150))
+                await asyncio.sleep(random.uniform(0.5, 2.0))
+                await page.locator("#reg_email").fill("")
+                await page.locator("#reg_email").press_sequentially(self.credentials["email"], delay=random.randint(50, 150))
+                await asyncio.sleep(random.uniform(0.5, 2.0))
+                await page.locator("#reg_password").fill("")
+                await page.locator("#reg_password").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+                await asyncio.sleep(random.uniform(0.5, 2.0))
+                await page.locator("#reg_verify").fill("")
+                await page.locator("#reg_verify").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+                await asyncio.sleep(random.uniform(0.5, 2.0))
+            else:
+                # On retry, check if password fields got cleared
+                if await page.locator("#reg_password").count() > 0 and await page.locator("#reg_password").input_value() == "":
+                    await page.locator("#reg_password").fill("")
+                    await page.locator("#reg_password").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+                    await asyncio.sleep(random.uniform(0.5, 2.0))
+                if await page.locator("#reg_verify").count() > 0 and await page.locator("#reg_verify").input_value() == "":
+                    await page.locator("#reg_verify").fill("")
+                    await page.locator("#reg_verify").press_sequentially(self.credentials["password"], delay=random.randint(50, 150))
+                    await asyncio.sleep(random.uniform(0.5, 2.0))
 
             # Handle Captcha
             await self._solve_captcha_2captcha(page)
@@ -300,43 +311,55 @@ class PliggGenericTemplate:
         # Step 2: Article Details
         self.logger.info("Step 2: Filling Article Details")
         
+        description_templates = [
+            "Discover valuable insights, expert guidance, and practical information about {keyword}. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.",
+            "Learn more about {keyword} through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.",
+            "Explore trusted information related to {keyword}, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.",
+            "Stay informed with high-quality content focused on {keyword}. Discover relevant insights, best practices, and educational resources that can help improve knowledge, support decision-making, and provide a deeper understanding of important industry developments.",
+            "Find reliable resources and expert information about {keyword} in one place. Explore practical guidance, useful recommendations, and up-to-date insights designed to help users navigate challenges, identify opportunities, and make confident decisions.",
+            "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
+        ]
+        description_text = random.choice(description_templates).format(keyword=keyword)
+
         max_retries = 3
         for attempt in range(max_retries):
-            # Story title id (keyword) = title
-            # Use press_sequentially only for short fields (keyword) — safe within 30s
-            await page.locator("#title").fill("")
-            await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 100))
-            await asyncio.sleep(random.uniform(0.5, 1.5))
+            if attempt == 0:
+                # Story title id (keyword) = title
+                # Use press_sequentially only for short fields (keyword) — safe within 30s
+                await page.locator("#title").fill("")
+                await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 100))
+                await asyncio.sleep(random.uniform(0.5, 1.5))
 
-            # Tags id (keyword specific tags)= tags
-            await page.locator("#tags").fill("")
-            await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 100))
-            await asyncio.sleep(random.uniform(0.5, 1.5))
+                # Tags id (keyword specific tags)= tags
+                await page.locator("#tags").fill("")
+                await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 100))
+                await asyncio.sleep(random.uniform(0.5, 1.5))
 
-            # Description id = bodytext
-            # IMPORTANT: Use fill() here — NOT press_sequentially.
-            # The description is ~200 chars. At 150ms/char that's 30s = exactly the Playwright
-            # action timeout, causing "Locator.press_sequentially: Timeout 30000ms exceeded".
-            # fill() is instant and safe for textareas.
-            description_templates = [
-                "Discover valuable insights, expert guidance, and practical information about {keyword}. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.",
-                "Learn more about {keyword} through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.",
-                "Explore trusted information related to {keyword}, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.",
-                "Stay informed with high-quality content focused on {keyword}. Discover relevant insights, best practices, and educational resources that can help improve knowledge, support decision-making, and provide a deeper understanding of important industry developments.",
-                "Find reliable resources and expert information about {keyword} in one place. Explore practical guidance, useful recommendations, and up-to-date insights designed to help users navigate challenges, identify opportunities, and make confident decisions.",
-                "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
-            ]
-            description_text = random.choice(description_templates).format(keyword=keyword)
-            await page.locator("#bodytext").fill(description_text)
-            await asyncio.sleep(random.uniform(0.5, 1.5))
+                # Description id = bodytext
+                # IMPORTANT: Use fill() here — NOT press_sequentially.
+                # The description is ~200 chars. At 150ms/char that's 30s = exactly the Playwright
+                # action timeout, causing "Locator.press_sequentially: Timeout 30000ms exceeded".
+                # fill() is instant and safe for textareas.
+                await page.locator("#bodytext").fill(description_text)
+                await asyncio.sleep(random.uniform(0.5, 1.5))
 
-            # Category - Try selecting first option if present
-            category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
-            if await category_select.count() > 0:
-                try:
-                    await category_select.first.select_option(index=1)
-                except Exception:
-                    pass
+                # Category - Try selecting first option if present
+                category_select = page.locator("select[name='category'], select[name='cat'], #category, select")
+                if await category_select.count() > 0:
+                    try:
+                        await category_select.first.select_option(index=1)
+                    except Exception:
+                        pass
+            else:
+                # On retry, check if fields are cleared and re-fill if necessary
+                if await page.locator("#title").count() > 0 and await page.locator("#title").input_value() == "":
+                    await page.locator("#title").fill("")
+                    await page.locator("#title").press_sequentially(keyword, delay=random.randint(50, 100))
+                if await page.locator("#tags").count() > 0 and await page.locator("#tags").input_value() == "":
+                    await page.locator("#tags").fill("")
+                    await page.locator("#tags").press_sequentially(keyword, delay=random.randint(50, 100))
+                if await page.locator("#bodytext").count() > 0 and await page.locator("#bodytext").input_value() == "":
+                    await page.locator("#bodytext").fill(description_text)
 
             # Handle Captcha
             self.logger.info(f"Solving captcha on submit page... (Attempt {attempt + 1}/{max_retries})")

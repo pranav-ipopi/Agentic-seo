@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import { useClient } from '@/components/layout/ClientProvider'
-import { Play, Settings2, ShieldCheck, List } from 'lucide-react'
+import { Play, Settings2, ShieldCheck, List, Globe } from 'lucide-react'
 import KeywordsModal from './KeywordsModal'
+import SiteListModal from './SiteListModal'
 
 export default function RunConfigurationPanel({
   template,
@@ -28,6 +29,7 @@ export default function RunConfigurationPanel({
   const [submissionType, setSubmissionType] = useState('bookmarking')
   const [clientTargetUrl, setClientTargetUrl] = useState('')
   const [isKeywordsModalOpen, setIsKeywordsModalOpen] = useState(false)
+  const [isSiteListModalOpen, setIsSiteListModalOpen] = useState(false)
 
   const handleStartExecution = async () => {
     if (!activeClient) {
@@ -204,25 +206,31 @@ export default function RunConfigurationPanel({
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center gap-1">
+              <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center gap-1">
                 <span>Target Backlinks (Max)</span>
               </label>
-              <button onClick={() => setIsKeywordsModalOpen(true)} className="flex items-center gap-1.5 px-2.5 py-1 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-md text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors">
-                <List className="w-3.5 h-3.5" />
-                Keywords
-              </button>
+              <span className="text-xs text-gray-500">Number</span>
             </div>
-            <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center justify-end">
-              <span className="text-gray-500 dark:text-gray-500">Number</span>
-            </label>
+            
             <input
               type="number"
               value={targetBacklinks}
               onChange={e => setTargetBacklinks(parseInt(e.target.value) || 0)}
               className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
             />
+
+            <div className="flex items-center gap-2">
+              <button onClick={() => setIsSiteListModalOpen(true)} className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors whitespace-nowrap">
+                <Globe className="w-3.5 h-3.5" />
+                Site List
+              </button>
+              <button onClick={() => setIsKeywordsModalOpen(true)} className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors whitespace-nowrap">
+                <List className="w-3.5 h-3.5" />
+                Keywords
+              </button>
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -274,6 +282,11 @@ export default function RunConfigurationPanel({
         isOpen={isKeywordsModalOpen} 
         onClose={() => setIsKeywordsModalOpen(false)} 
         clientId={activeClient?.id || ''} 
+      />
+      <SiteListModal
+        isOpen={isSiteListModalOpen}
+        onClose={() => setIsSiteListModalOpen(false)}
+        category={submissionType}
       />
     </div>
   )

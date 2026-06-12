@@ -113,7 +113,7 @@ export default function RunConfigurationPanel({
             state: {
               campaign_id: campaign.id,
               task_id: parentTask.id,
-              client_target_url: clientTargetUrl,
+              client_target_url: `https://${clientTargetUrl.trim()}`,
               target_site: site.url,
               category: submissionType,
               min_da: minDa,
@@ -183,16 +183,25 @@ export default function RunConfigurationPanel({
           </h3>
 
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center justify-between">
+            <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center justify-between">
               <span>Client Target URL <span className="text-rose-500">*</span></span>
             </label>
-            <input
-              type="url"
-              placeholder="https://client-site.com/page"
-              value={clientTargetUrl}
-              onChange={e => setClientTargetUrl(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
-            />
+            <div className="flex rounded-lg shadow-sm">
+              <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-sm">
+                https://
+              </span>
+              <input
+                type="text"
+                placeholder="client-site.com/page"
+                value={clientTargetUrl}
+                onChange={e => {
+                  let val = e.target.value;
+                  val = val.replace(/^https?:\/\//i, '');
+                  setClientTargetUrl(val);
+                }}
+                className="flex-1 min-w-0 block w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-none rounded-r-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -240,10 +249,10 @@ export default function RunConfigurationPanel({
               className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
             >
               <option value="bookmarking">Bookmarking Sites</option>
-              <option value="article_submission">Article Submission</option>
-              <option value="web20">Web 2.0</option>
-              <option value="profile">Profile Backlinks</option>
-              <option value="guest_post">Guest Post Outreach</option>
+              <option value="article_submission" disabled>Article Submission (Coming Soon)</option>
+              <option value="web20" disabled>Web 2.0 (Coming Soon)</option>
+              <option value="profile" disabled>Profile Backlinks (Coming Soon)</option>
+              <option value="guest_post" disabled>Guest Post Outreach (Coming Soon)</option>
             </select>
           </div>
         </div>

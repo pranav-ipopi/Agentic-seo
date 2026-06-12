@@ -2852,3 +2852,8 @@ waiting for locator("#title")
 Call log:
 waiting for locator("#title")
 
+2026-06-12 10:48:23 | ERROR    | backlink_automation | Error solving captcha with 2captcha: ERROR_CAPTCHA_UNSOLVABLE
+2026-06-12 10:48:23 | ERROR    | backlink_automation | Automation failed: Locator.count: Target page, context or browser has been closed
+2026-06-12 10:48:23 | ERROR    | backlink_automation | [TaskRun 119f581c-6869-43e6-ac04-778848bde664] Execution failed: BrowserContext.close: Target page, context or browser has been closed
+2026-06-12 10:48:24 | INFO     | backlink_automation | [Task cfe2dcc1-2a1f-465b-8df4-161893f65b9f] All 2 runs done. succeeded=0, failed=2. Setting parent task status → 'failed'
+2026-06-12 10:48:24 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

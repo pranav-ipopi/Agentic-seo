@@ -2,25 +2,20 @@
 Supabase Service for Backlink Automation V1
 
 Handles all database interactions with Supabase.
-Assumes the following table exists (as per project spec - no migrations provided):
 
-Table: backlink_jobs
-Columns (assumed):
-  - id: uuid or bigint (primary key)
-  - target_site: text (e.g. "https://livebookmarking.com/")
-  - client_site: text (the URL to create backlink for)
-  - keyword: text
-  - status: text (pending | running | success | failed)
-  - retry_count: int (default 0)
-  - backlink_url: text | null
-  - error: text | null
-  - created_at: timestamptz
-  - updated_at: timestamptz
+Tables used:
+  - task_runs:    Backlink automation jobs (poll/lock/update)
+  - target_sites: Known target sites. site_id column stores the detected
+                  CMS template (e.g. "wordpress_submitpro", "pligg").
+                  Template detection is performed by the Python worker using
+                  StealthBrowserManager (replaces the deleted Supabase Edge Function).
 
 Worker responsibilities implemented here:
-- Poll for pending jobs
+- Poll for pending jobs (task_runs)
 - Lock job to "running"
 - Update status, backlink_url, error, retry_count
+- Fetch sites with undetected templates (target_sites where site_id IS NULL)
+- Write detected template back to target_sites.site_id
 
 Keep simple - no queues, direct polling.
 
@@ -187,5 +182,64 @@ class SupabaseService:
         except Exception as e:
             self.logger.error(f"Error fetching job {job_id}: {e}")
             raise
+
+    # ----------------------------------------------------------------
+    # Template detection helpers (Playwright-based, replaces Edge Function)
+    # ----------------------------------------------------------------
+
+    def get_undetected_sites(self, limit: int = 5) -> list:
+        """
+        Return active target_sites rows where site_id has not been detected yet.
+
+        Args:
+            limit: Maximum number of sites to return per call.
+
+        Returns:
+            List of dicts with at least {'id': ..., 'url': ...}
+        """
+        try:
+            response = (
+                self.client.table("target_sites")
+                .select("id, url")
+                .is_("site_id", "null")
+                .eq("is_active", True)
+                .limit(limit)
+                .execute()
+            )
+            sites = response.data or []
+            if sites:
+                self.logger.info(
+                    f"[TemplateDetection] Found {len(sites)} undetected site(s) to fingerprint."
+                )
+            return sites
+        except Exception as e:
+            self.logger.error(f"[TemplateDetection] Error fetching undetected sites: {e}")
+            return []
+
+    def update_site_template(self, target_site_id: str, template_name: str) -> bool:
+        """
+        Write the detected CMS template back to target_sites.site_id.
+
+        Args:
+            target_site_id: The UUID of the target_sites row.
+            template_name:  The detected template string
+                            (e.g. "wordpress_submitpro", "pligg", "unknown").
+
+        Returns:
+            True on success, False on failure.
+        """
+        try:
+            self.client.table("target_sites").update(
+                {"site_id": template_name}
+            ).eq("id", target_site_id).execute()
+            self.logger.info(
+                f"[TemplateDetection] Updated target_site {target_site_id} → site_id={template_name}"
+            )
+            return True
+        except Exception as e:
+            self.logger.error(
+                f"[TemplateDetection] Failed to update site_id for {target_site_id}: {e}"
+            )
+            return False
 
     # For future: batch operations, etc. Keep V1 minimal.

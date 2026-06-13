@@ -35,6 +35,7 @@ from dotenv import load_dotenv
 from services.supabase_service import SupabaseService
 from services.logging_service import setup_logger, log_event
 from services.captcha_service import CaptchaService
+from services.template_detector import TemplateDetector
 from methods.stealth_browser import StealthBrowserManager
 from executor.runner import TemplateRunner
 from executor.failure_handler import FailureHandler
@@ -44,6 +45,8 @@ load_dotenv()
 
 # Configuration
 POLL_INTERVAL = int(os.getenv("POLL_INTERVAL_SECONDS", "30"))
+DETECT_INTERVAL = int(os.getenv("DETECT_INTERVAL_SECONDS", "60"))  # how often to scan for undetected sites
+DETECT_BATCH = int(os.getenv("DETECT_BATCH_SIZE", "5"))            # sites to fingerprint per cycle
 MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
 
@@ -55,6 +58,7 @@ class BacklinkWorker:
         self.captcha_service = CaptchaService(logger=self.logger)
         self.browser_manager = StealthBrowserManager()
         self.template_runner = TemplateRunner()
+        self.template_detector = TemplateDetector(self.browser_manager, self.logger)
         self.failure_handler = FailureHandler(self.supabase.client, self.logger)
         self.running = True
         self._setup_signal_handlers()
@@ -171,6 +175,61 @@ class BacklinkWorker:
                 level=40  # WARNING
             )
 
+    async def detect_loop(self):
+        """
+        Secondary loop: periodically scans for target_sites with no detected
+        template (site_id IS NULL) and fingerprints them via the stealth browser.
+
+        Runs concurrently with poll_loop() via asyncio.gather.
+        """
+        self.logger.info(
+            f"[DetectLoop] Started — interval={DETECT_INTERVAL}s, batch={DETECT_BATCH}"
+        )
+
+        while self.running:
+            try:
+                sites = self.supabase.get_undetected_sites(limit=DETECT_BATCH)
+
+                if not sites:
+                    self.logger.debug("[DetectLoop] No undetected sites. Sleeping...")
+                else:
+                    for site in sites:
+                        if not self.running:
+                            break
+                        site_id_db = site.get("id")
+                        url = site.get("url", "").strip()
+                        if not url:
+                            continue
+
+                        self.logger.info(f"[DetectLoop] Fingerprinting: {url}")
+                        try:
+                            detected = await self.template_detector.detect(url)
+                            if detected is not None:
+                                # Only write to DB when we have a confident match
+                                self.supabase.update_site_template(site_id_db, detected)
+                                log_event(
+                                    self.logger,
+                                    "template_detected",
+                                    {"url": url, "template": detected}
+                                )
+                            else:
+                                # Leave site_id = NULL so it retries next cycle
+                                self.logger.warning(
+                                    f"[DetectLoop] Could not fingerprint {url} — "
+                                    f"leaving site_id NULL for retry in {DETECT_INTERVAL}s"
+                                )
+                        except Exception as e:
+                            self.logger.error(
+                                f"[DetectLoop] Detection failed for {url}: {e}"
+                            )
+
+            except Exception as e:
+                self.logger.error(f"[DetectLoop] Unexpected error: {e}")
+
+            await asyncio.sleep(DETECT_INTERVAL)
+
+        self.logger.info("[DetectLoop] Stopped.")
+
     async def poll_loop(self):
         """Main polling loop."""
         log_event(self.logger, "worker_started", {
@@ -204,10 +263,13 @@ class BacklinkWorker:
         log_event(self.logger, "worker_stopped")
 
     async def run(self):
-        """Entry point."""
+        """Entry point — runs the job loop and detection loop concurrently."""
         try:
             await self.browser_manager.start()
-            await self.poll_loop()
+            await asyncio.gather(
+                self.poll_loop(),
+                self.detect_loop()
+            )
         except Exception as e:
             self.logger.critical(f"Fatal worker error: {e}")
             await self.browser_manager.close()

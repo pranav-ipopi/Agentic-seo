@@ -301,17 +301,20 @@ class WordPressSubmitProTemplate:
         # Rich description text
         desc_field = page.locator("#submitpro_desc, textarea[name*='desc']")
         if await desc_field.count() > 0:
-            description_text = (
-                f"Digital marketing is a multifaceted strategy designed to reach, engage, and convert customers online. "
-                f"In today's highly competitive digital landscape, businesses must utilize a variety of tactics to establish a robust online presence. "
-                f"Search Engine Optimization (SEO) is at the core of this effort, focusing on improving a website's visibility in organic search results. "
-                f"By optimizing on-page elements such as title tags, meta descriptions, and header tags, and by creating high-quality, relevant content, "
-                f"companies can attract targeted traffic. Furthermore, off-page optimization, primarily through link building, plays a crucial role in establishing domain authority. "
-                f"In addition to SEO, content marketing, social media marketing, email campaigns, and pay-per-click (PPC) advertising are essential components of a comprehensive digital marketing strategy. "
-                f"Integrating these diverse channels into a cohesive, data-driven plan enables businesses to optimize their marketing budget and maximize return on investment. "
-                f"Regular analysis of key performance metrics, such as traffic, bounce rate, conversion rate, and customer acquisition cost, is critical for continuous improvement. "
-                f"Ultimately, successful digital marketing for keyword {keyword} requires a deep understanding of the target audience, consistency in messaging, and agility to adapt to evolving search engine algorithms and industry trends."
-            )
+            if "velaather" in client_site.lower():
+                description_templates = [
+                    f"Discover the future of urban mobility with Vela Ather, the premier authorized partner for Ather electric scooters in Tamil Nadu. Our experience centers in Chennai and Trichy offer comprehensive sales, expert service, and authentic spare parts for models like the Ather 450X, 450S, Apex, and Rizta. Book a test ride today to feel the seamless performance, smart features, and eco-friendly efficiency of India's leading electric scooters. Experience a greener commute with Kaveri Group's dedicated automotive expertise supporting your EV journey for keyword {keyword}.",
+                    f"Vela Ather is your trusted gateway to Ather Energy's state-of-the-art electric vehicles in Chennai and Trichy. Operating under Vela Automobile Private Limited, we provide a complete ecosystem for electric scooter enthusiasts, including test ride bookings, sales consultation, and highly equipped service workshops. Explore the top-rated Ather Rizta and 450 series with advanced battery tech and smart navigation. Our customer-centric approach ensures you receive unmatched assistance, making your transition to electric mobility smooth, reliable, and highly rewarding for keyword {keyword}.",
+                    f"Experience the revolution of electric two-wheelers at Vela Ather, Tamil Nadu's leading showroom and service partner for Ather Energy. Part of the renowned Kaveri Group with decades of automotive excellence, Vela Ather brings eco-friendly riding solutions to Chennai (Guindy, Tambaram) and Trichy. Learn more about the latest Ather scooter models, charging solutions, and customized maintenance plans. Join thousands of happy riders who trust our expertise for booking test rides, purchase options, and reliable post-sale support for keyword {keyword}."
+                ]
+            else:
+                description_templates = [
+                    f"Digital marketing is a multifaceted strategy designed to reach, engage, and convert customers online. In today's highly competitive digital landscape, businesses must utilize a variety of tactics to establish a robust online presence. Search Engine Optimization (SEO) is at the core of this effort, focusing on improving a website's visibility in organic search results. By optimizing on-page elements such as title tags, meta descriptions, and header tags, and by creating high-quality, relevant content, companies can attract targeted traffic. Furthermore, off-page optimization, primarily through link building, plays a crucial role in establishing domain authority for keyword {keyword}.",
+                    f"Developing a successful online presence requires a mix of strategic planning, content marketing, and search engine optimization. Off-page marketing tactics, such as manual submission of high-quality backlinks and bookmarking, help search engines index resources faster and boost overall visibility. By focusing on target audience demands and optimizing website speed, structure, and link quality, businesses can build a sustainable organic search footprint that drives traffic and increases engagement for keyword {keyword}.",
+                    f"Modern digital strategies rely heavily on search engine visibility and user experience to capture customer interest. Through optimization of content, metadata, and high-relevancy links, companies can dramatically improve their rankings on major search engines. Integrating these diverse channels into a cohesive, data-driven plan enables businesses to optimize their marketing budget, improve conversion rates, and build authority within their niche for keyword {keyword}."
+                ]
+            
+            description_text = random.choice(description_templates)
             await desc_field.first.fill(description_text)
 
         # Check terms and agreements checkbox
@@ -449,44 +452,153 @@ async def main():
     
     # Sites to run on
     test_sites = [
-        "https://www.bookmarks2u.com",
-        "https://www.ukbookmarks.com",
-        "https://www.richbookmarks.com",
-        "https://www.hotbookmarking.com",
-        "https://www.bookmarkmaps.com",
-        "https://www.onlinewebmarks.com",
-        "https://www.submitportal.com",
-        "https://www.bookmarkdrive.com",
-        "https://www.indusdirectory.com",
-        "https://www.bookmarktalk.info",
-        "https://www.techbookmarks.com",
+        "https://www.a1bookmarks.com",
+        "https://www.a2zbookmarking.com",
+        "https://www.a2zbookmarks.com",
         "https://www.a2zsocialnews.com",
-        "https://www.directoryposts.com",
-        "https://www.dailywebmarks.com",
-        "https://www.socialbookmarknow.info",
-        "https://www.openfaves.com",
-        "https://www.corpjunction.com",
+        "https://www.a2ztopnews.com",
+        "https://www.activebookmarks.com",
+        "https://www.addbusinessnow.com",
+        "https://www.altbookmark.com",
+        "https://www.appbookmarks.com",
+        "https://www.articlebookmarks.com",
+        "https://www.articlemerits.com",
+        "https://www.articlevote.com",
+        "https://www.bizzsubmit.com",
         "https://www.bookmark-template.com",
-        "https://www.leodirectory.com",
-        "https://www.submitindustry.com",
+        "https://www.bookmarkbid.com",
+        "https://www.bookmarkbuzz.com",
+        "https://www.bookmarkcart.com",
+        "https://www.bookmarkcart.info",
+        "https://www.bookmarkcircle.com",
+        "https://www.bookmarkdaddy.com",
+        "https://www.bookmarkdeal.com",
+        "https://www.bookmarkdiary.com",
+        "https://www.bookmarkdrive.com",
+        "https://www.bookmarkfeeds.com",
+        "https://www.bookmarkfollow.com",
+        "https://www.bookmarkgroups.com",
+        "https://www.bookmarkidea.com",
+        "https://www.bookmarkinbox.com",
+        "https://www.bookmarkinbox.info",
+        "https://www.bookmarkinghost.com",
+        "https://www.bookmarkinghost.info",
+        "https://www.bookmarkinglive.com",
+        "https://www.bookmarkmaps.com",
+        "https://www.bookmarkpedia.com",
+        "https://www.bookmarks2u.com",
+        "https://www.bookmarkset.com",
+        "https://www.bookmarkspirit.com",
         "https://www.bookmarkstumble.com",
+        "https://www.bookmarktalk.com",
+        "https://www.bookmarktalk.info",
+        "https://www.bookmarktheme.com",
+        "https://www.bookmarktheme.info",
+        "https://www.bookmarkvids.com",
+        "https://www.bookmarkwiki.com",
+        "https://www.bouchesocial.com",
+        "https://www.bsocialbookmarking.info",
+        "https://www.businessdocker.com",
+        "https://www.businessfollow.com",
+        "https://www.businessmerits.com",
+        "https://www.businessnewsplace.com",
+        "https://www.businessorgs.com",
+        "https://www.businessveyor.com",
+        "https://www.businesswebmarks.com",
+        "https://www.cafebookmarks.com",
+        "https://www.corpbookmarks.com",
+        "https://www.corpdocker.com",
+        "https://www.corpfollow.com",
+        "https://www.corpjunction.com",
+        "https://www.corplistings.com",
+        "https://www.corpsubmit.com",
+        "https://www.corpvotes.com",
+        "https://www.craigsdirectory.com",
+        "https://www.crossbookmarks.com",
+        "https://www.dailywebmarks.com",
+        "https://www.directoryfaves.com",
+        "https://www.directoryfeeds.com",
+        "https://www.directoryfield.com",
+        "https://www.directoryfolks.com",
+        "https://www.directorymate.com",
+        "https://www.directoryminds.com",
+        "https://www.directorynode.com",
+        "https://www.directorypods.com",
+        "https://www.directoryposts.com",
+        "https://www.directoryrail.com",
+        "https://www.directorysection.com",
+        "https://www.directorystock.com",
+        "https://www.dockerdirectory.com",
+        "https://www.ewebmarks.com",
+        "https://www.globalwebmarks.com",
+        "https://www.greateststory.info",
+        "https://www.hdbookmarks.com",
+        "https://www.hexadirectory.com",
+        "https://www.hotbookmarking.com",
+        "https://www.indusdirectory.com",
+        "https://www.industrybookmarks.com",
+        "https://www.infradirectory.com",
+        "https://www.instantbookmarks.com",
+        "https://www.jobsmotive.com",
+        "https://www.jobsrail.com",
+        "https://www.johsocial.com",
+        "https://www.kingslists.com",
+        "https://www.legacydirectory.com",
+        "https://www.leodirectory.com",
+        "https://www.livewebmarks.com",
+        "https://www.masterbookmarks.com",
+        "https://www.nativebookmarks.com",
+        "https://www.newsciti.com",
+        "https://www.onlinewebmarks.com",
+        "https://www.openfaves.com",
+        "https://www.peoplebookmarks.com",
+        "https://www.postarticlenow.com",
+        "https://www.postbookmarks.com",
+        "https://www.prbookmarks.com",
+        "https://www.premiumbookmarks.com",
+        "https://www.productbookmarks.com",
+        "https://www.publicbuysell.com",
+        "https://www.readybookmarks.com",
+        "https://www.richbookmarks.com",
+        "https://www.rootbookmarks.com",
+        "https://www.seolinksubmit.com",
+        "https://www.seosubmitbookmark.com",
+        "https://www.serviceplaces.com",
+        "https://www.sitemapdirectory.com",
+        "https://www.socbookmarking.com",
+        "https://www.socialbookmarkiseasy.info",
+        "https://www.socialbookmarknow.info",
+        "https://www.socialbookmarkzone.info",
+        "https://www.socialevity.com",
         "https://www.socialmarkz.com",
         "https://www.socialmphl.com",
-        "https://www.bookmarkinglive.com",
-        "https://www.bookmarktheme.com",
-        "https://www.johsocial.com",
-        "https://www.productbookmarks.com",
-        "https://www.bouchesocial.com",
-        "https://www.kingslists.com",
-        "https://www.bookmarkvids.com",
-        "https://www.seosubmitbookmark.com",
-        "https://www.peoplebookmarks.com",
+        "https://www.socialwebmarks.com",
+        "https://www.stackbookmarks.com",
+        "https://www.storebookmarks.com",
+        "https://www.submitcorp.com",
+        "https://www.submitfeeds.com",
+        "https://www.submitindustry.com",
+        "https://www.submitportal.com",
+        "https://www.sudobookmarks.com",
+        "https://www.sudobusiness.com",
+        "https://www.systembookmarks.com",
+        "https://www.tagbookmarks.com",
+        "https://www.targetbookmarks.com",
+        "https://www.techbookmarks.com",
         "https://www.teslabookmarks.com",
-        "https://www.socialevity.com",
-        "https://www.altbookmark.com"
+        "https://www.topwebmarks.com",
+        "https://www.ukbookmarks.com",
+        "https://www.ultrabookmarks.com",
+        "https://www.urlvotes.com",
+        "https://www.usbookmarks.com",
+        "https://www.votearticles.com",
+        "https://www.votetags.com",
+        "https://www.votetags.info",
+        "https://www.wikicraigs.com"
     ]
     
-    client_site = "https://example.com"
+    # client_site = "https://example.com"
+    client_site = "https://velaather.com"
     keyword = "Digital Marketing Guidelines"
     
     print("=" * 60)
@@ -495,35 +607,34 @@ async def main():
     print(f"Keyword:     {keyword}")
     print("=" * 60)
     
-    browser_manager = StealthBrowserManager()
     captcha_service = CaptchaService(logger=logger)
     
-    print("Launching stealth browser...")
-    await browser_manager.start()
-    
-    try:
-        for site in test_sites:
-            print("\n" + "-" * 50)
-            print(f"Running submission on {site}...")
-            print("-" * 50)
+    for site in test_sites:
+        print("\n" + "-" * 50)
+        print(f"Running submission on {site}...")
+        print("-" * 50)
+        
+        browser_manager = StealthBrowserManager()
+        print("Launching stealth browser...")
+        await browser_manager.start()
+        
+        template = WordPressSubmitProTemplate(
+            target_url=site,
+            browser_manager=browser_manager,
+            captcha_service=captcha_service,
+            logger=logger
+        )
+        
+        try:
+            result = await template.run(client_site, keyword)
+            print(f"SUCCESS on {site}: {result}")
+        except Exception as e:
+            print(f"FAILED on {site}: {e}")
+        finally:
+            print("Closing stealth browser...")
+            await browser_manager.close()
             
-            template = WordPressSubmitProTemplate(
-                target_url=site,
-                browser_manager=browser_manager,
-                captcha_service=captcha_service,
-                logger=logger
-            )
-            
-            try:
-                result = await template.run(client_site, keyword)
-                print(f"SUCCESS on {site}: {result}")
-            except Exception as e:
-                print(f"FAILED on {site}: {e}")
-                
-    finally:
-        print("\nClosing stealth browser...")
-        await browser_manager.close()
-        print("Done!")
+    print("Done!")
 
 if __name__ == "__main__":
     asyncio.run(main())

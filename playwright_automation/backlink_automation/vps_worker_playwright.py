@@ -108,7 +108,14 @@ async def route_and_execute(task_run, supabase_client: Client):
             
             logger.info(f"[TaskRun {task_run_id}] Routing to template: {site_category}")
             
-            if site_category == 'pligg':
+            if "bookmarkingera.com" in target_url:
+                from templates.bookmarkingera import BookmarkingEraTemplate
+                template_runner = BookmarkingEraTemplate(
+                    browser_manager=browser_manager,
+                    captcha_service=captcha_service,
+                    logger=logger
+                )
+            elif site_category == 'pligg':
                 template_runner = PliggGenericTemplate(
                     target_url=target_url,
                     browser_manager=browser_manager,

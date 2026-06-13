@@ -1,10 +1,12 @@
 """
-Backlink Automation Engine V1 - Worker
+Backlink Automation Engine - Simple Worker
 
-Main entry point.
-- Polls Supabase for pending backlink jobs
+Simple polling worker for single-site execution.
+Uses TemplateRunner for config-driven template resolution.
+
+- Polls Supabase for pending backlink jobs (task_runs)
 - Processes one job at a time (simple polling, no queue)
-- Uses site templates for execution
+- Uses TemplateRunner for extensible template routing
 - Handles status transitions + retry logic (max 3 attempts)
 - Logs all major events
 
@@ -13,9 +15,6 @@ Run with:
 
 Environment:
     See .env.example
-
-V1 scope: Only livebookmarking.com
-Future: Add more templates in templates/ following the same interface.
 
 No Redis, no RabbitMQ, no complex orchestration (per requirements).
 """
@@ -28,13 +27,17 @@ import traceback
 from datetime import datetime
 from typing import Optional
 
+# Ensure we can import from the backlink_automation directory directly
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from dotenv import load_dotenv
 
 from services.supabase_service import SupabaseService
 from services.logging_service import setup_logger, log_event
 from services.captcha_service import CaptchaService
 from methods.stealth_browser import StealthBrowserManager
-from templates.livebookmarking import LiveBookmarkingTemplate
+from executor.runner import TemplateRunner
+from executor.failure_handler import FailureHandler
 
 
 load_dotenv()
@@ -51,11 +54,8 @@ class BacklinkWorker:
         self.supabase = SupabaseService(logger=self.logger)
         self.captcha_service = CaptchaService(logger=self.logger)
         self.browser_manager = StealthBrowserManager()
-        self.template = LiveBookmarkingTemplate(
-            browser_manager=self.browser_manager,
-            captcha_service=self.captcha_service,
-            logger=self.logger
-        )
+        self.template_runner = TemplateRunner()
+        self.failure_handler = FailureHandler(self.supabase.client, self.logger)
         self.running = True
         self._setup_signal_handlers()
 
@@ -69,13 +69,14 @@ class BacklinkWorker:
         signal.signal(signal.SIGINT, shutdown)
 
     async def process_job(self, job: dict) -> None:
-        """Process a single job using the template."""
+        """Process a single job using the TemplateRunner."""
         job_id = job.get("id")
         state = job.get("state", {})
         target_site = state.get("target_site")
         client_site = state.get("client_site")
         keyword = state.get("keyword")
         current_retry = state.get("retry_count", 0)
+        target_site_id = job.get("target_site_id")
 
         log_event(
             self.logger,
@@ -98,12 +99,30 @@ class BacklinkWorker:
         log_event(self.logger, "job_running", {"job_id": job_id})
 
         try:
-            # Execute the site-specific template
-            # V1 only supports livebookmarking.com
-            if target_site != "https://livebookmarking.com/":
-                raise ValueError(f"Unsupported target_site in V1: {target_site}")
+            # Determine site_id for routing
+            site_id = None
+            if target_site_id:
+                site_res = self.supabase.client.table('target_sites').select('site_id').eq('id', target_site_id).execute()
+                if site_res.data and len(site_res.data) > 0:
+                    site_id = (site_res.data[0].get('site_id') or '').lower() or None
 
-            result = await self.template.run(client_site, keyword)
+            if not site_id or not self.template_runner.is_supported(site_id):
+                raise ValueError(
+                    f"Unsupported or undetected template: site_id={site_id!r} for {target_site}. "
+                    f"Supported: {self.template_runner.get_supported_templates()}"
+                )
+
+            # Execute via TemplateRunner
+            result = await self.template_runner.execute(
+                site_id=site_id,
+                target_url=target_site,
+                target_site_db_id=target_site_id,
+                client_url=client_site,
+                keyword=keyword,
+                browser_manager=self.browser_manager,
+                captcha_service=self.captcha_service,
+                logger=self.logger
+            )
 
             backlink_url = result.get("backlink_url")
             if not backlink_url:
@@ -111,6 +130,7 @@ class BacklinkWorker:
 
             # Success path
             self.supabase.update_job_success(job_id, state, backlink_url)
+            await self.failure_handler.handle_success(target_site_id)
             log_event(
                 self.logger,
                 "success",
@@ -121,6 +141,15 @@ class BacklinkWorker:
             error_msg = f"{type(e).__name__}: {str(e)}"
             self.logger.error(f"Job {job_id} failed: {error_msg}")
             self.logger.error(traceback.format_exc())
+
+            # Classify and log failure
+            await self.failure_handler.handle_failure(
+                task_run_id=job_id,
+                target_site_id=target_site_id,
+                template_type=site_id if 'site_id' in locals() else "unknown",
+                error=e,
+                step="execution"
+            )
 
             # Apply retry logic
             self.supabase.update_job_failed(
@@ -145,8 +174,8 @@ class BacklinkWorker:
     async def poll_loop(self):
         """Main polling loop."""
         log_event(self.logger, "worker_started", {
-            "version": "V1",
-            "target": "livebookmarking.com",
+            "version": "V2",
+            "supported_templates": str(self.template_runner.get_supported_templates()),
             "poll_interval": POLL_INTERVAL,
             "max_retries": MAX_RETRIES
         })

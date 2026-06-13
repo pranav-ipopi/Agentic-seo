@@ -1,0 +1,49 @@
+{
+  "template_type": "wordpress_submitpro",
+  "registration": {
+    "register_path": "/register/",
+    "username_field": "#user_login",
+    "email_field": "#user_email",
+    "password_field": "#user_password",
+    "confirm_password_field": "#user_cpassword",
+    "nickname_field": "#nickname",
+    "submit_button": "input[value='Register'], input[type='submit'], #wp-submit"
+  },
+  "submission": {
+    "submit_path": "/submit/",
+    "url_field": "#articleUrl",
+    "title_field": "#submitpro_title",
+    "title_min_length": 30,
+    "title_suffix": " - Useful Resource and Discussion Link",
+    "category_container": "[id*='submitpro_category-container'], #select2-submitpro_category-container, .select2-submitpro_category-container",
+    "category_fallback": "#submitpro_category, select[name*='category']",
+    "tags_field": "#tagsinput, .tagsinput, input[name='tagsinput'], input[name*='tags']",
+    "default_tags": "seo, marketing, backlinks",
+    "location_container": "[id*='submitpro_location-container'], #select2-submitpro_location-container, .select2-submitpro_location-container",
+    "email_field": "#submitpro_email, input[name*='email']",
+    "phone_field": "#submitpro_phone, input[name*='phone']",
+    "address_field": "#submitpro_address, textarea[name*='address']",
+    "description_field": "#submitpro_desc, textarea[name*='desc']",
+    "agree_checkbox": "#agree-checkbox, input[name='agree'], input[type='checkbox']",
+    "submit_button": "input[value='Preview & Submit'], input[type='submit'], #submitpro_submit_btn",
+    "confirm_button": "input[value='Submit'], input[value='Confirm'], button:has-text('Submit'), button:has-text('Confirm')",
+    "default_phone": "+1 555-0199",
+    "default_address": "123 SEO Boulevard, Suite 100"
+  },
+  "captcha": {
+    "type": "recaptcha_v2",
+    "sitekey_selector": "[data-sitekey]",
+    "iframe_selector": "iframe[src*='recaptcha/api2/anchor']",
+    "fallback_sitekey": "6LeeMUYUAAAAAF34b51Fq6QIq4eG-zHJKx6g6BId"
+  },
+  "site_keys": {
+    "bookmarks2u.com": "6LeeMUYUAAAAAF34b51Fq6QIq4eG-zHJKx6g6BId",
+    "ukbookmarks.com": "6LdsLkYUAAAAANTUsS-k_S47l1bSpqHPRG-U0XiI"
+  },
+  "backlink_extraction": {
+    "story_link_selector": "a[href*='/story'], a[href*='/articles/']",
+    "post_container": ".preview-listing div.blog-box[id^='post-'], div.blog-box[id^='post-']",
+    "ignored_url_segments": ["/login", "/register", "/submit", "/dashboard", "/my-articles", "/wp-admin", "/my-account"],
+    "success_texts": ["submitted", "success", "published", "your story"]
+  }
+}

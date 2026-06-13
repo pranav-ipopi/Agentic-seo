@@ -13,7 +13,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 //     $$SELECT net.http_post(url:='<function_url>', headers:='{"Authorization":"Bearer <service_key>"}')$$);
 // ---------------------------------------------------------------------------
 
-type SiteTemplate = "pligg" | "phpld" | "scuttle" | "drigg" | "unknown";
+type SiteTemplate = "pligg" | "wordpress_submitpro" | "scuttle" | "drigg" | "unknown";
 
 const TIMEOUT_MS = 8_000;
 const BATCH_LIMIT = 50;
@@ -40,15 +40,16 @@ function detectTemplate(html: string, headers: Headers): SiteTemplate {
     return "pligg";
   }
 
-  // --- PHPLD (PHP Link Directory) ---
+  // --- WordPress SubmitPro / PHPLD (PHP Link Directory) ---
   if (
+    src.includes("submitpro") ||
     src.includes("phpld") ||
     src.includes("php link directory") ||
     src.includes("link_id=") ||
     formActionMatches(html, "submit.php") ||
-    metaGeneratorMatches(html, ["phpld", "php link directory"])
+    metaGeneratorMatches(html, ["phpld", "php link directory", "submitpro"])
   ) {
-    return "phpld";
+    return "wordpress_submitpro";
   }
 
   // --- Scuttle / SemanticScuttle ---
@@ -80,7 +81,7 @@ function detectTemplate(html: string, headers: Headers): SiteTemplate {
 
   if (combined.includes("pligg") || combined.includes("kliqqi"))
     return "pligg";
-  if (combined.includes("phpld")) return "phpld";
+  if (combined.includes("phpld") || combined.includes("submitpro")) return "wordpress_submitpro";
   if (combined.includes("scuttle")) return "scuttle";
   if (combined.includes("drigg")) return "drigg";
 

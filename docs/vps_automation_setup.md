@@ -34,10 +34,18 @@ Agentic_SEO/
         ├── methods/
         │   ├── stealth_browser.py    # Anti-bot browser configurations
         │   └── cloudflare.py         # Cloudflare bypass logics
-        ├── services/
-        │   └── captcha_service.py    # 2Captcha integrations
-        └── templates/
-            └── pligg_generic.py      # Generic execution template
+        ├── configs/
+        │   ├── config_loader.py      # Merges template defaults + site overrides
+        │   ├── templates/            # Default selectors per template
+        │   └── sites/                # Per-site JSON overrides
+        ├── executor/
+        │   ├── runner.py             # Config-aware template router
+        │   ├── failure_handler.py    # Error classification + site health tracking
+        │   └── errors.py             # Typed automation error classes
+        ├── templates/
+        │   ├── base_template.py      # Abstract base class
+        │   ├── pligg_generic.py      # Config-driven Pligg template
+        │   └── wordpress_submitpro.py # Config-driven WP template
 ```
 
 ---
@@ -113,7 +121,8 @@ pm2 restart playwright-worker
 ---
 
 ## 4. Expanding Templates
-To support new site architectures:
-1. Create a new file in `templates/` (e.g., `elgg_generic.py`).
-2. Implement an asynchronous `run()` method similar to `PliggGenericTemplate`.
-3. In `vps_worker_playwright.py`, update the router logic to map the new database category to your new template class.
+To support new site architectures (e.g., Scuttle):
+1. **Config File**: Create a new JSON file in `configs/templates/` (e.g., `scuttle.json`) with all the CSS selectors.
+2. **Template Class**: Create a new Python file in `templates/` (e.g., `scuttle.py`) that inherits from `BaseTemplate`. Use `self.get_selector()` to access config values.
+3. **Register Template**: Open `executor/runner.py` and add your new template to the `_build_registry()` map.
+4. **Edge Function**: Update the `detect-site-templates` edge function to recognize the new CMS and return the new template ID.

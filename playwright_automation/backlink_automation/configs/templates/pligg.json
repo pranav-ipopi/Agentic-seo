@@ -1,0 +1,51 @@
+{
+  "template_type": "pligg",
+  "registration": {
+    "register_path": "/register",
+    "username_field": "#reg_username",
+    "email_field": "#reg_email",
+    "password_field": "#reg_password",
+    "verify_field": "#reg_verify",
+    "submit_button": "input.btn.btn-primary.reg_submit[value='Create user']",
+    "submit_button_fallback": "input[value='Create user'], button:has-text('Create user'), input[type='submit']"
+  },
+  "submission": {
+    "submit_path": "/submit",
+    "url_field": "#url",
+    "url_field_fallback": "input[name='url'], input[name*='story_url'], input[type='url']",
+    "continue_button": "input[value='Continue'], button:has-text('Continue')",
+    "continue_button_fallback": "input[type='submit'], button[type='submit']",
+    "title_field": "#title",
+    "tags_field": "#tags",
+    "body_field": "#bodytext",
+    "category_select": "select[name='category'], select[name='cat'], #category, select",
+    "submit_button": "input[value='Save Changes and Submit'], button:has-text('Save Changes and Submit')",
+    "submit_button_fallback": "input[type='submit'], button[type='submit'], .submit"
+  },
+  "captcha": {
+    "type": "solvemedia",
+    "iframe_selector": "#adcopy-puzzle-image-image iframe",
+    "image_fallback": "img[src*='solvemedia']",
+    "response_field": "#adcopy_response"
+  },
+  "login_detection": {
+    "logged_in_texts": ["logout", "sign out", "log out"]
+  },
+  "logout": {
+    "dropdown_toggle": "a.dropdown-toggle[data-toggle='dropdown']",
+    "logout_link": "a[href='#logout']"
+  },
+  "backlink_extraction": {
+    "story_url_pattern": "/story",
+    "story_link_selector": "a[href*='/story']",
+    "success_texts": ["submitted", "success", "published", "your story"]
+  },
+  "description_templates": [
+    "Discover valuable insights, expert guidance, and practical information about {keyword}. Explore resources, trends, and helpful recommendations designed to help individuals and businesses make informed decisions, improve results, and stay updated with the latest developments.",
+    "Learn more about {keyword} through comprehensive resources, industry updates, and actionable information. Whether you're researching the topic or seeking reliable guidance, find useful content that supports better understanding, smarter decisions, and long-term success.",
+    "Explore trusted information related to {keyword}, including useful tips, current trends, expert perspectives, and practical solutions. Access valuable resources created to help users stay informed, discover opportunities, and achieve their goals more effectively.",
+    "Stay informed with high-quality content focused on {keyword}. Discover relevant insights, best practices, and educational resources that can help improve knowledge, support decision-making, and provide a deeper understanding of important industry developments.",
+    "Find reliable resources and expert information about {keyword} in one place. Explore practical guidance, useful recommendations, and up-to-date insights designed to help users navigate challenges, identify opportunities, and make confident decisions.",
+    "Access informative content and valuable resources related to {keyword}. From industry trends and expert insights to practical advice and educational materials, discover information that helps users stay current, improve understanding, and achieve better outcomes."
+  ]
+}

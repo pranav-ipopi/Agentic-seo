@@ -29,6 +29,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from methods.stealth_browser import StealthBrowserManager
 from services.captcha_service import CaptchaService
 from services.logging_service import setup_logger
+from services.template_detector import TemplateDetector
 from executor.runner import TemplateRunner
 from executor.failure_handler import FailureHandler
 
@@ -51,6 +52,9 @@ captcha_service = CaptchaService(logger=logger)
 
 # Template runner (extensible — add new templates in executor/runner.py)
 template_runner = TemplateRunner()
+
+# Template detector (bypasses CF via stealth browser)
+template_detector = TemplateDetector(browser_manager, logger)
 
 
 def check_and_update_parent_task(supabase_client: Client, state: dict):
@@ -97,6 +101,22 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
                 }).eq('id', task_id).execute()
     except Exception as e:
         logger.error(f"Failed to update parent task completion for {task_id}: {e}")
+
+async def detect_and_update(site_id_db: str, url: str):
+    """
+    Fingerprints an undetected site using the Playwright stealth browser
+    and writes the detected site_id (template) back to Supabase.
+    """
+    logger.info(f"[Detector] Fingerprinting: {url}")
+    try:
+        detected = await template_detector.detect(url)
+        if detected is not None:
+            supabase.table('target_sites').update({'site_id': detected}).eq('id', site_id_db).execute()
+            logger.info(f"[Detector] Updated {url} → {detected}")
+        else:
+            logger.warning(f"[Detector] Inconclusive detection for {url} — will retry later.")
+    except Exception as e:
+        logger.error(f"[Detector] Failed to detect {url}: {e}")
 
 async def route_and_execute(task_run, supabase_client: Client):
     """
@@ -305,6 +325,7 @@ async def poll_queue():
     
     browser_started = False
     active_tasks = set()
+    detecting_site_ids = set()  # Track which sites are currently being detected to avoid duplicates
     
     try:
         while True:
@@ -334,6 +355,36 @@ async def poll_queue():
                             task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
                             active_tasks.add(task)
                             task.add_done_callback(active_tasks.discard)
+                            
+                    # --- NEW: Template Detection Tasks ---
+                    # If we still have room in the concurrency pool, look for sites that need detection
+                    remaining_slots = fetch_limit - len(task_runs) if task_runs else fetch_limit
+                    if remaining_slots > 0:
+                        res_undetected = supabase.table('target_sites').select('id, url').is_('site_id', 'null').eq('is_active', True).limit(remaining_slots).execute()
+                        undetected_sites = res_undetected.data or []
+                        
+                        for site in undetected_sites:
+                            s_id = site.get('id')
+                            if s_id in detecting_site_ids:
+                                continue
+                                
+                            if not browser_started:
+                                logger.info("Undetected sites found. Starting browser manager...")
+                                await browser_manager.start()
+                                browser_started = True
+
+                            detecting_site_ids.add(s_id)
+                            
+                            # Wrapper to remove from detecting set when done
+                            async def do_detect(site_id_db, target_url):
+                                try:
+                                    await detect_and_update(site_id_db, target_url)
+                                finally:
+                                    detecting_site_ids.discard(site_id_db)
+                            
+                            det_task = asyncio.create_task(do_detect(s_id, site.get('url')))
+                            active_tasks.add(det_task)
+                            det_task.add_done_callback(active_tasks.discard)
                 
                 if not active_tasks:
                     if browser_started:

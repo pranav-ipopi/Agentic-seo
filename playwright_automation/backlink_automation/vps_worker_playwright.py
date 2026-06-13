@@ -1,9 +1,24 @@
+"""
+VPS Worker - Backlink Automation Orchestrator
+
+Polls Supabase for pending task_runs and executes them asynchronously
+using the TemplateRunner for config-driven template resolution.
+
+Features:
+    - Concurrent execution (configurable MAX_CONCURRENT_SESSIONS)
+    - Automatic browser lifecycle management
+    - Template routing via executor/runner.py (extensible registry)
+    - Failure classification + site health tracking via FailureHandler
+    - Parent task completion detection
+
+Run with:
+    python vps_worker_playwright.py
+"""
+
 import os
 import sys
-import time
 import asyncio
 import logging
-import json
 import traceback
 from supabase import create_client, Client
 from dotenv import load_dotenv
@@ -14,7 +29,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from methods.stealth_browser import StealthBrowserManager
 from services.captcha_service import CaptchaService
 from services.logging_service import setup_logger
-from templates.pligg_generic import PliggGenericTemplate
+from executor.runner import TemplateRunner
+from executor.failure_handler import FailureHandler
 
 load_dotenv()
 
@@ -32,6 +48,10 @@ logger = setup_logger(level=logging.INFO)
 # Global browser manager and captcha service
 browser_manager = StealthBrowserManager()
 captcha_service = CaptchaService(logger=logger)
+
+# Template runner (extensible — add new templates in executor/runner.py)
+template_runner = TemplateRunner()
+
 
 def check_and_update_parent_task(supabase_client: Client, state: dict):
     """Checks if all task_runs for a parent task are done, and if so, updates the parent task status.
@@ -81,13 +101,16 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
 async def route_and_execute(task_run, supabase_client: Client):
     """
     Executes a single step of a workflow task_run.
-    Acts as a router based on site_id or target_site url.
+    Uses TemplateRunner for config-driven template resolution and routing.
     """
     task_run_id = task_run['id']
     
     # Stagger startups slightly to avoid CDP websocket race conditions on new_context
     import random
     await asyncio.sleep(random.uniform(0.5, 3.0))
+    
+    # Initialize failure handler for this execution
+    failure_handler = FailureHandler(supabase_client, logger)
     
     try:
         template = task_run.get('workflow_templates', {})
@@ -125,7 +148,7 @@ async def route_and_execute(task_run, supabase_client: Client):
             result = {'status': 'completed'}
             result_message = "Verification completed successfully. The report data is ready."
         else:
-            # --- ROUTER LOGIC ---
+            # --- TEMPLATE ROUTING via TemplateRunner ---
             # Reads site_id from target_sites to determine which automation
             # template to use. site_id is populated by the detect-site-templates
             # Supabase edge function which fingerprints each site's CMS.
@@ -138,7 +161,6 @@ async def route_and_execute(task_run, supabase_client: Client):
                     site_id = (site_res.data[0].get('site_id') or '').lower() or None
             elif target_url:
                 # Fallback: if task didn't include target_site_id, try to match by url
-                # Strip trailing slash to match DB format if necessary
                 clean_url = target_url.rstrip('/')
                 site_res = supabase_client.table('target_sites').select('site_id').ilike('url', f"%{clean_url}%").execute()
                 if site_res.data and len(site_res.data) > 0:
@@ -146,53 +168,49 @@ async def route_and_execute(task_run, supabase_client: Client):
 
             logger.info(f"[TaskRun {task_run_id}] Routing to template: {site_id!r} (target_site_id={target_site_id})")
 
-            template_runner = None
-
-            if site_id == 'pligg':
-                template_runner = PliggGenericTemplate(
-                    target_url=target_url,
-                    browser_manager=browser_manager,
-                    captcha_service=captcha_service,
-                    logger=logger
-                )
-            elif site_id == 'phpld':
-                # TODO: implement PHPLDTemplate
-                result = {'status': 'failed'}
-                result_message = f"[TaskRun {task_run_id}] PHPLD template is not yet implemented. Skipping {target_url}."
-                logger.warning(result_message)
-            elif site_id == 'scuttle':
-                # TODO: implement ScuttleTemplate
-                result = {'status': 'failed'}
-                result_message = f"[TaskRun {task_run_id}] Scuttle template is not yet implemented. Skipping {target_url}."
-                logger.warning(result_message)
-            elif site_id == 'drigg':
-                # TODO: implement DriggTemplate
-                result = {'status': 'failed'}
-                result_message = f"[TaskRun {task_run_id}] Drigg template is not yet implemented. Skipping {target_url}."
-                logger.warning(result_message)
-            else:
-                # site_id is None (not yet detected) or 'unknown'
-                result = {'status': 'failed'}
-                result_message = (
-                    f"[TaskRun {task_run_id}] Cannot route: site_id is {site_id!r} for {target_url}. "
-                    f"Run the detect-site-templates edge function to fingerprint this site."
-                )
-                logger.error(result_message)
-
-            if template_runner:
+            # Use TemplateRunner for config-driven routing
+            if template_runner.is_supported(site_id):
                 try:
-                    res = await template_runner.run(client_target_url, keyword)
+                    res = await template_runner.execute(
+                        site_id=site_id,
+                        target_url=target_url,
+                        target_site_db_id=target_site_id,
+                        client_url=client_target_url,
+                        keyword=keyword,
+                        browser_manager=browser_manager,
+                        captcha_service=captcha_service,
+                        logger=logger
+                    )
                     result = {'status': 'completed'}
                     result_message = f"Success. Live URL: {res.get('backlink_url')}"
                     parsed_data = {
                         "live_url": res.get("backlink_url"),
                         "status": "success"
                     }
+                    # Update site health on success
+                    await failure_handler.handle_success(target_site_id)
                 except Exception as e:
                     logger.error(f"[TaskRun {task_run_id}] Execution failed: {e}")
                     result = {'status': 'failed'}
                     result_message = f"Agent failed. Error: {str(e)}"
-            # If template_runner is None, result and result_message are already set above.
+                    # Classify and log failure with evidence
+                    await failure_handler.handle_failure(
+                        task_run_id=task_run_id,
+                        target_site_id=target_site_id,
+                        template_type=site_id or "unknown",
+                        error=e,
+                        page=None,  # page is managed inside template
+                        step=step.get('name', 'execution')
+                    )
+            else:
+                # Unsupported template — no registered handler
+                result = {'status': 'failed'}
+                result_message = (
+                    f"[TaskRun {task_run_id}] Cannot route: site_id is {site_id!r} for {target_url}. "
+                    f"Supported templates: {template_runner.get_supported_templates()}. "
+                    f"Run the detect-site-templates edge function to fingerprint this site."
+                )
+                logger.error(result_message)
 
         # Log result
         metadata = {'step_name': step.get('name'), 'status': result['status'] if result else 'completed'}
@@ -283,6 +301,7 @@ async def poll_queue():
     Main loop: polls Supabase for pending task_runs and executes them asynchronously.
     """
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
+    logger.info(f"Supported templates: {template_runner.get_supported_templates()}")
     
     browser_started = False
     active_tasks = set()

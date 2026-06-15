@@ -4456,3 +4456,268 @@ navigating to "https://bookmarks2u.com/", waiting until "load"
 2026-06-13 18:29:30 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Timeout 40000ms exceeded.
 2026-06-13 18:29:31 | INFO     | backlink_automation | [Task e041dbd5-a863-4f66-9e40-0378e8bffadf] All 2 runs done. succeeded=1, failed=1. Setting parent task status → 'completed'
 2026-06-13 18:29:31 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-15 13:09:18 | INFO     | backlink_automation | Starting test of the failure logging pipeline...
+2026-06-15 13:09:18 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:09:18 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:09:18 | INFO     | backlink_automation | Generated fake task_run_id: 3b2f5f82-4dcd-428c-87c4-db5f6306de8e
+2026-06-15 13:09:31 | INFO     | backlink_automation | Attempting to run template on bad URL: https://httpstat.us/504
+2026-06-15 13:09:31 | INFO     | backlink_automation | [TemplateRunner] Routing https://httpstat.us/504 → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 13:09:31 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://httpstat.us/504 for client_site=https://example.com, keyword=test keyword
+2026-06-15 13:09:31 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 13:09:33 | ERROR    | backlink_automation | Caught exception as expected: NameError
+2026-06-15 13:09:33 | INFO     | backlink_automation | Handing failure over to FailureHandler to log to DB and Storage...
+2026-06-15 13:09:33 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: name 'AutomationError' is not defined
+2026-06-15 13:09:34 | ERROR    | backlink_automation | [FailureHandler] Failed to log failure to DB: {'code': '42501', 'details': None, 'hint': None, 'message': 'new row violates row-level security policy for table "task_run_logs"'}
+2026-06-15 13:09:34 | INFO     | backlink_automation | Test complete! Check Supabase:
+2026-06-15 13:09:34 | INFO     | backlink_automation | 1. Check 'task_run_logs' table for task_run_id: 3b2f5f82-4dcd-428c-87c4-db5f6306de8e
+2026-06-15 13:09:34 | INFO     | backlink_automation | 2. Check 'log_screenshots' bucket for the uploaded evidence.
+2026-06-15 13:10:13 | INFO     | backlink_automation | Starting test of the failure logging pipeline...
+2026-06-15 13:10:13 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:10:13 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:10:13 | INFO     | backlink_automation | Generated fake task_run_id: f8f7c07a-114c-4922-bc2a-22d7233d6237
+2026-06-15 13:10:14 | INFO     | backlink_automation | Attempting to run template on bad URL: https://httpstat.us/504
+2026-06-15 13:10:14 | INFO     | backlink_automation | [TemplateRunner] Routing https://httpstat.us/504 → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 13:10:14 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://httpstat.us/504 for client_site=https://example.com, keyword=test keyword
+2026-06-15 13:10:14 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 13:10:37 | WARNING  | backlink_automation | Connection error on https://httpstat.us/504 (attempt 1/3). Retrying in 5s...
+2026-06-15 13:10:44 | ERROR    | backlink_automation | Unexpected error at step 'Navigation': Page.goto: net::ERR_EMPTY_RESPONSE at https://httpstat.us/504
+Call log:
+navigating to "https://httpstat.us/504", waiting until "domcontentloaded"
+
+2026-06-15 13:10:45 | ERROR    | backlink_automation | [Storage] Failed to upload screenshot: {'statusCode': 400, 'error': 'Unauthorized', 'message': 'new row violates row-level security policy'}
+2026-06-15 13:10:45 | INFO     | backlink_automation | [Evidence] Screenshot captured for step 'Navigation'
+2026-06-15 13:10:45 | ERROR    | backlink_automation | [Storage] Failed to upload HTML dump: {'statusCode': 400, 'error': 'Unauthorized', 'message': 'new row violates row-level security policy'}
+2026-06-15 13:10:45 | ERROR    | backlink_automation | Caught exception as expected: Error
+2026-06-15 13:10:45 | INFO     | backlink_automation | Handing failure over to FailureHandler to log to DB and Storage...
+2026-06-15 13:10:45 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Page.goto: net::ERR_EMPTY_RESPONSE at https://httpstat.us/504
+Call log:
+navigating to "https://httpstat.us/504", waiting until "domcontentloaded"
+
+2026-06-15 13:10:46 | ERROR    | backlink_automation | [FailureHandler] Failed to log failure to DB: {'code': '42501', 'details': None, 'hint': None, 'message': 'new row violates row-level security policy for table "task_run_logs"'}
+2026-06-15 13:10:46 | INFO     | backlink_automation | Test complete! Check Supabase:
+2026-06-15 13:10:46 | INFO     | backlink_automation | 1. Check 'task_run_logs' table for task_run_id: f8f7c07a-114c-4922-bc2a-22d7233d6237
+2026-06-15 13:10:46 | INFO     | backlink_automation | 2. Check 'log_screenshots' bucket for the uploaded evidence.
+2026-06-15 13:14:43 | INFO     | backlink_automation | Starting test of the failure logging pipeline...
+2026-06-15 13:14:44 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:14:44 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:14:44 | INFO     | backlink_automation | Generated fake task_run_id: dee373bc-b099-45b8-8346-8948de84cf1f
+2026-06-15 13:14:45 | INFO     | backlink_automation | Attempting to run template on bad URL: https://httpstat.us/504
+2026-06-15 13:14:45 | INFO     | backlink_automation | [TemplateRunner] Routing https://httpstat.us/504 → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 13:14:45 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://httpstat.us/504 for client_site=https://example.com, keyword=test keyword
+2026-06-15 13:14:45 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 13:14:54 | ERROR    | backlink_automation | Unexpected error at step 'Navigation': Page.goto: net::ERR_EMPTY_RESPONSE at https://httpstat.us/504
+Call log:
+navigating to "https://httpstat.us/504", waiting until "domcontentloaded"
+
+2026-06-15 13:14:55 | INFO     | backlink_automation | [Storage] Screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-15/dee373bc-b099-45b8-8346-8948de84cf1f_navigation_1781509494.png?
+2026-06-15 13:14:55 | INFO     | backlink_automation | [Evidence] Screenshot captured for step 'Navigation'
+2026-06-15 13:14:55 | INFO     | backlink_automation | [Storage] HTML dump uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-15/dee373bc-b099-45b8-8346-8948de84cf1f_navigation_1781509495.html?
+2026-06-15 13:14:55 | ERROR    | backlink_automation | Caught exception as expected: Error
+2026-06-15 13:14:55 | INFO     | backlink_automation | Handing failure over to FailureHandler to log to DB and Storage...
+2026-06-15 13:14:55 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Page.goto: net::ERR_EMPTY_RESPONSE at https://httpstat.us/504
+Call log:
+navigating to "https://httpstat.us/504", waiting until "domcontentloaded"
+
+2026-06-15 13:14:56 | ERROR    | backlink_automation | [FailureHandler] Failed to log failure to DB: {'code': '23503', 'details': 'Key (task_run_id)=(dee373bc-b099-45b8-8346-8948de84cf1f) is not present in table "task_runs".', 'hint': None, 'message': 'insert or update on table "task_run_logs" violates foreign key constraint "task_run_logs_task_run_id_fkey"'}
+2026-06-15 13:14:56 | INFO     | backlink_automation | Test complete! Check Supabase:
+2026-06-15 13:14:56 | INFO     | backlink_automation | 1. Check 'task_run_logs' table for task_run_id: dee373bc-b099-45b8-8346-8948de84cf1f
+2026-06-15 13:14:56 | INFO     | backlink_automation | 2. Check 'log_screenshots' bucket for the uploaded evidence.
+2026-06-15 13:16:09 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:16:09 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:16:10 | INFO     | backlink_automation | EVENT: worker_started | version=V2 | supported_templates=['pligg', 'wordpress_submitpro', 'phpld'] | poll_interval=30 | max_retries=3
+2026-06-15 13:16:10 | INFO     | backlink_automation | [DetectLoop] Started — interval=60s, batch=5
+2026-06-15 13:33:19 | INFO     | backlink_automation | Found pending job id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:33:19 | INFO     | backlink_automation | EVENT: job_picked | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | target_site=https://naturalbookmarks.com | client_site=None | keyword=best search engine | retry_count=0
+2026-06-15 13:33:19 | INFO     | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 locked to running
+2026-06-15 13:33:19 | INFO     | backlink_automation | EVENT: job_running | job_id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:33:19 | ERROR    | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed: ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:33:19 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:33:19 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:33:19 | INFO     | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed (attempt 1), returning to pending
+2026-06-15 13:33:20 | ERROR    | backlink_automation | EVENT: failure | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | error=ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=1
+2026-06-15 13:33:50 | INFO     | backlink_automation | Found pending job id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:33:50 | INFO     | backlink_automation | EVENT: job_picked | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | target_site=https://livebookmarking.com | client_site=None | keyword=best search engine | retry_count=0
+2026-06-15 13:33:50 | INFO     | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e locked to running
+2026-06-15 13:33:50 | INFO     | backlink_automation | EVENT: job_running | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:33:50 | ERROR    | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed: ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:33:50 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:33:50 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:33:50 | INFO     | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed (attempt 1), returning to pending
+2026-06-15 13:33:50 | ERROR    | backlink_automation | EVENT: failure | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | error=ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=1
+2026-06-15 13:34:21 | INFO     | backlink_automation | Found pending job id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:34:21 | INFO     | backlink_automation | EVENT: job_picked | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | target_site=https://naturalbookmarks.com | client_site=None | keyword=best search engine | retry_count=1
+2026-06-15 13:34:21 | INFO     | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 locked to running
+2026-06-15 13:34:21 | INFO     | backlink_automation | EVENT: job_running | job_id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:34:21 | ERROR    | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed: ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:34:21 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:34:21 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:34:21 | INFO     | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed (attempt 2), returning to pending
+2026-06-15 13:34:21 | ERROR    | backlink_automation | EVENT: failure | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | error=ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=2
+2026-06-15 13:34:51 | INFO     | backlink_automation | Found pending job id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:34:51 | INFO     | backlink_automation | EVENT: job_picked | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | target_site=https://naturalbookmarks.com | client_site=None | keyword=best search engine | retry_count=2
+2026-06-15 13:34:52 | INFO     | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 locked to running
+2026-06-15 13:34:52 | INFO     | backlink_automation | EVENT: job_running | job_id=478e55d9-6c10-4818-b277-8f754ba19c16
+2026-06-15 13:34:52 | ERROR    | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed: ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:34:52 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:34:52 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:34:52 | WARNING  | backlink_automation | Job 478e55d9-6c10-4818-b277-8f754ba19c16 failed permanently after 3 attempts
+2026-06-15 13:34:52 | ERROR    | backlink_automation | EVENT: failure | job_id=478e55d9-6c10-4818-b277-8f754ba19c16 | error=ValueError: Unsupported or undetected template: site_id=None for https://naturalbookmarks.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=3
+2026-06-15 13:35:22 | INFO     | backlink_automation | Found pending job id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:35:22 | INFO     | backlink_automation | EVENT: job_picked | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | target_site=https://livebookmarking.com | client_site=None | keyword=best search engine | retry_count=1
+2026-06-15 13:35:22 | INFO     | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e locked to running
+2026-06-15 13:35:22 | INFO     | backlink_automation | EVENT: job_running | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:35:22 | ERROR    | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed: ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:35:22 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:35:22 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:35:22 | INFO     | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed (attempt 2), returning to pending
+2026-06-15 13:35:22 | ERROR    | backlink_automation | EVENT: failure | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | error=ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=2
+2026-06-15 13:35:53 | INFO     | backlink_automation | Found pending job id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:35:53 | INFO     | backlink_automation | EVENT: job_picked | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | target_site=https://livebookmarking.com | client_site=None | keyword=best search engine | retry_count=2
+2026-06-15 13:35:53 | INFO     | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e locked to running
+2026-06-15 13:35:53 | INFO     | backlink_automation | EVENT: job_running | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e
+2026-06-15 13:35:53 | ERROR    | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed: ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:35:53 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 116, in process_job
+    raise ValueError(
+ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+
+2026-06-15 13:35:53 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site None: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 13:35:53 | WARNING  | backlink_automation | Job 69318e9b-2c28-4eb6-ac70-2c8541997a9e failed permanently after 3 attempts
+2026-06-15 13:35:53 | ERROR    | backlink_automation | EVENT: failure | job_id=69318e9b-2c28-4eb6-ac70-2c8541997a9e | error=ValueError: Unsupported or undetected template: site_id=None for https://livebookmarking.com. Supported: ['pligg', 'wordpress_submitpro', 'phpld'] | retry_count=3
+2026-06-15 13:49:23 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:49:23 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:49:25 | INFO     | backlink_automation | EVENT: worker_started | version=V2 | supported_templates=['pligg', 'wordpress_submitpro', 'phpld'] | poll_interval=30 | max_retries=3
+2026-06-15 13:49:25 | INFO     | backlink_automation | [DetectLoop] Started — interval=60s, batch=5
+2026-06-15 13:50:26 | INFO     | backlink_automation | Found pending job id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff
+2026-06-15 13:50:26 | INFO     | backlink_automation | EVENT: job_picked | job_id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff | target_site=https://naturalbookmarks.com | client_site=None | keyword=best search engine | retry_count=0
+2026-06-15 13:50:26 | INFO     | backlink_automation | Job fb4aabf2-4a7e-4afb-b336-009ee3f306ff locked to running
+2026-06-15 13:50:26 | INFO     | backlink_automation | EVENT: job_running | job_id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff
+2026-06-15 13:50:26 | INFO     | backlink_automation | [TemplateRunner] Routing https://naturalbookmarks.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 13:50:26 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://naturalbookmarks.com for client_site=None, keyword=best search engine
+2026-06-15 13:50:26 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 13:50:31 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-15 13:50:31 | INFO     | backlink_automation | Registration started with username=userkiuygm8v
+2026-06-15 13:50:46 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-15 13:50:59 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-15 13:50:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-15 13:51:31 | INFO     | backlink_automation | 2captcha predicted: 'Wild and Woolly'
+2026-06-15 13:51:39 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-15 13:51:39 | INFO     | backlink_automation | Registration flow finished
+2026-06-15 13:51:39 | INFO     | backlink_automation | Bookmark submission started: url=None, keyword=best search engine
+2026-06-15 13:51:41 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-15 13:51:41 | ERROR    | backlink_automation | Unexpected error at step 'Submission': Frame.type() missing 1 required positional argument: 'text'
+2026-06-15 13:51:42 | INFO     | backlink_automation | [Storage] Screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-15/fb4aabf2-4a7e-4afb-b336-009ee3f306ff_submission_1781511701.png?
+2026-06-15 13:51:42 | INFO     | backlink_automation | [Evidence] Screenshot captured for step 'Submission'
+2026-06-15 13:51:42 | INFO     | backlink_automation | [Storage] HTML dump uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-15/fb4aabf2-4a7e-4afb-b336-009ee3f306ff_submission_1781511702.html?
+2026-06-15 13:51:42 | ERROR    | backlink_automation | Job fb4aabf2-4a7e-4afb-b336-009ee3f306ff failed: TypeError: Frame.type() missing 1 required positional argument: 'text'
+2026-06-15 13:51:42 | ERROR    | backlink_automation | Traceback (most recent call last):
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\worker.py", line 136, in process_job
+    result = await self.template_runner.execute(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\executor\runner.py", line 203, in execute
+    result = await template.run(client_url, keyword)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\templates\pligg_generic.py", line 88, in run
+    backlink_url = await self._submit_bookmark(page, client_site, keyword)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Agentic_SEO\playwright_automation\backlink_automation\templates\pligg_generic.py", line 345, in _submit_bookmark
+    await url_field.first.press_sequentially(client_site, delay=random.randint(50, 150))
+  File "C:\Users\HP\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\playwright\async_api\_generated.py", line 17017, in press_sequentially
+    await self._impl_obj.press_sequentially(
+  File "C:\Users\HP\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\playwright\_impl\_locator.py", line 634, in press_sequentially
+    await self.type(text, delay=delay, timeout=timeout, noWaitAfter=noWaitAfter)
+  File "C:\Users\HP\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\playwright\_impl\_locator.py", line 621, in type
+    return await self._frame.type(
+                 ^^^^^^^^^^^^^^^^^
+TypeError: Frame.type() missing 1 required positional argument: 'text'
+
+2026-06-15 13:51:42 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'execution' for site 7e7597dd-f68a-4ec3-bc84-1bed0cbecc4a: Frame.type() missing 1 required positional argument: 'text'
+2026-06-15 13:51:43 | INFO     | backlink_automation | [FailureHandler] Site 7e7597dd-f68a-4ec3-bc84-1bed0cbecc4a health updated: failures=1, status=active
+2026-06-15 13:51:43 | INFO     | backlink_automation | Job fb4aabf2-4a7e-4afb-b336-009ee3f306ff failed (attempt 1), returning to pending
+2026-06-15 13:51:43 | ERROR    | backlink_automation | EVENT: failure | job_id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff | error=TypeError: Frame.type() missing 1 required positional argument: 'text' | retry_count=1
+2026-06-15 13:52:13 | INFO     | backlink_automation | Found pending job id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff
+2026-06-15 13:52:13 | INFO     | backlink_automation | EVENT: job_picked | job_id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff | target_site=https://naturalbookmarks.com | client_site=None | keyword=best search engine | retry_count=1
+2026-06-15 13:52:13 | INFO     | backlink_automation | Job fb4aabf2-4a7e-4afb-b336-009ee3f306ff locked to running
+2026-06-15 13:52:13 | INFO     | backlink_automation | EVENT: job_running | job_id=fb4aabf2-4a7e-4afb-b336-009ee3f306ff
+2026-06-15 13:52:14 | INFO     | backlink_automation | [TemplateRunner] Routing https://naturalbookmarks.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 13:52:14 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://naturalbookmarks.com for client_site=None, keyword=best search engine
+2026-06-15 13:52:14 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 13:52:16 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-15 13:52:16 | INFO     | backlink_automation | Registration started with username=uservndlnzsx
+2026-06-15 13:52:24 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-15 13:52:34 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-15 13:52:34 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-15 13:53:11 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 13:53:11 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 13:53:13 | INFO     | backlink_automation | EVENT: worker_started | version=V2 | supported_templates=['pligg', 'wordpress_submitpro', 'phpld'] | poll_interval=30 | max_retries=3
+2026-06-15 13:53:13 | INFO     | backlink_automation | [DetectLoop] Started — interval=60s, batch=5
+2026-06-15 15:02:09 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 15:02:09 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 15:02:11 | INFO     | backlink_automation | EVENT: worker_started | version=V2 | supported_templates=['pligg', 'wordpress_submitpro', 'phpld'] | poll_interval=30 | max_retries=3
+2026-06-15 15:02:12 | INFO     | backlink_automation | [DetectLoop] Started — interval=60s, batch=5
+2026-06-15 15:04:49 | INFO     | backlink_automation | SupabaseService initialized
+2026-06-15 15:04:49 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 15:04:51 | INFO     | backlink_automation | EVENT: worker_started | version=V2 | supported_templates=['pligg', 'wordpress_submitpro', 'phpld'] | poll_interval=30 | max_retries=3
+2026-06-15 15:04:51 | INFO     | backlink_automation | [DetectLoop] Started — interval=60s, batch=5
+2026-06-15 15:15:01 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 15:15:01 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-15 15:15:01 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 15:15:15 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-15 15:15:15 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-15 15:15:15 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-15 15:15:46 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-15 15:15:48 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-15 15:15:49 | INFO     | backlink_automation | [TaskRun b0bb7852-8d72-4a02-9188-83ff5a37444e] Executing step 1/2: Submission on https://livebookmarking.com
+2026-06-15 15:15:50 | INFO     | backlink_automation | [TaskRun b0bb7852-8d72-4a02-9188-83ff5a37444e] Routing to template: 'pligg' (target_site_id=None)
+2026-06-15 15:15:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://livebookmarking.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-15 15:15:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://livebookmarking.com for client_site=https://google.com, keyword=best search engine
+2026-06-15 15:15:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-15 15:15:53 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-15 15:15:53 | INFO     | backlink_automation | Registration started with username=userknz43r0u
+2026-06-15 15:16:08 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-15 15:16:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-15 15:16:20 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-15 15:16:31 | INFO     | backlink_automation | 2captcha predicted: 'dustup'
+2026-06-15 15:16:37 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-15 15:16:37 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-15 15:16:38 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-15 15:16:38 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-15 15:16:49 | INFO     | backlink_automation | 2captcha predicted: 'cross the road'
+2026-06-15 15:16:57 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-15 15:16:57 | INFO     | backlink_automation | Registration flow finished
+2026-06-15 15:16:57 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-15 15:16:59 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-15 15:17:06 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-15 15:17:14 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-15 15:17:14 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-15 15:17:14 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-15 15:17:36 | INFO     | backlink_automation | 2captcha predicted: 'nth degree'
+2026-06-15 15:17:39 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-15 15:17:43 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://livebookmarking.com/story21631137/best-search-engine
+2026-06-15 15:17:43 | INFO     | backlink_automation | Attempting to log out...
+2026-06-15 15:17:46 | INFO     | backlink_automation | Successfully created backlink: https://livebookmarking.com/story21631137/best-search-engine
+2026-06-15 15:17:47 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-15 15:17:49 | INFO     | backlink_automation | [TaskRun b0bb7852-8d72-4a02-9188-83ff5a37444e] Executing step 2/2: Verification & Reporting on https://livebookmarking.com
+2026-06-15 15:17:50 | INFO     | backlink_automation | [TaskRun b0bb7852-8d72-4a02-9188-83ff5a37444e] Intercepted Reporting Step.
+2026-06-15 15:17:50 | INFO     | backlink_automation | [Task aeb2c7f5-3098-41a4-a387-6c9a3fd13ea6] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-15 15:17:50 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

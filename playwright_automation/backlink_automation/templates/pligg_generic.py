@@ -47,12 +47,11 @@ class PliggGenericTemplate(BaseTemplate):
     def __init__(
         self,
         target_url: str,
-        browser_manager,
         captcha_service,
         logger: logging.Logger,
         config: Dict[str, Any]
     ):
-        super().__init__(target_url, browser_manager, captcha_service, logger, config)
+        super().__init__(target_url, captcha_service, logger, config)
 
         # Build URLs from config paths
         register_path = self.get_config("registration", "register_path", "/register")
@@ -60,7 +59,7 @@ class PliggGenericTemplate(BaseTemplate):
         self.REGISTER_URL = f"{self.BASE_URL}{register_path}"
         self.SUBMIT_URL = f"{self.BASE_URL}{submit_path}"
 
-    async def run(self, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
         """
         Main entry point. Executes the full backlink creation flow.
         """
@@ -69,38 +68,24 @@ class PliggGenericTemplate(BaseTemplate):
             f"for client_site={client_site}, keyword={keyword}"
         )
 
-        page = None
-        try:
-            page = await self.browser_manager.get_page()
+        # Step 1: Navigate home
+        await self._navigate_home(page)
 
-            # Step 1: Navigate home
-            await self._navigate_home(page)
+        # Step 2: Ensure logged in (register if needed)
+        await self._ensure_logged_in(page)
 
-            # Step 2: Ensure logged in (register if needed)
-            await self._ensure_logged_in(page)
+        # Step 3: Submit the bookmark
+        backlink_url = await self._submit_bookmark(page, client_site, keyword)
 
-            # Step 3: Submit the bookmark
-            backlink_url = await self._submit_bookmark(page, client_site, keyword)
+        # Step 4: Logout
+        await self._logout(page)
 
-            # Step 4: Logout
-            await self._logout(page)
-
-            self.logger.info(f"Successfully created backlink: {backlink_url}")
-            return {
-                "backlink_url": backlink_url,
-                "success": True,
-                "message": "Bookmark submitted successfully"
-            }
-
-        except PlaywrightTimeoutError as e:
-            self.logger.error(f"Timeout during automation: {e}")
-            raise
-        except Exception as e:
-            self.logger.error(f"Automation failed: {e}")
-            raise
-        finally:
-            if page and page.context:
-                await page.context.close()
+        self.logger.info(f"Successfully created backlink: {backlink_url}")
+        return {
+            "backlink_url": backlink_url,
+            "success": True,
+            "message": "Bookmark submitted successfully"
+        }
 
     async def _navigate_home(self, page: Page) -> None:
         """Navigate to home page with retry logic and Cloudflare bypass."""

@@ -37,13 +37,11 @@ class BaseTemplate(ABC):
     def __init__(
         self,
         target_url: str,
-        browser_manager,
         captcha_service,
         logger: logging.Logger,
         config: Dict[str, Any]
     ):
         self.BASE_URL = target_url.rstrip('/')
-        self.browser_manager = browser_manager
         self.captcha_service = captcha_service
         self.logger = logger
         self.config = config
@@ -288,7 +286,7 @@ class BaseTemplate(ABC):
     # ----------------------------------------------------------------
 
     @abstractmethod
-    async def run(self, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
         """
         Execute the full backlink creation flow.
 

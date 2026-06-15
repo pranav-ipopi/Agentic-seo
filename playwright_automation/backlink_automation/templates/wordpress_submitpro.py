@@ -17,12 +17,11 @@ class WordPressSubmitProTemplate(BaseTemplate):
     def __init__(
         self,
         target_url: str,
-        browser_manager,
         captcha_service,
         logger: logging.Logger,
         config: Dict[str, Any]
     ):
-        super().__init__(target_url, browser_manager, captcha_service, logger, config)
+        super().__init__(target_url, captcha_service, logger, config)
         
         register_path = self.get_config("registration", "register_path", "/register/")
         submit_path = self.get_config("submission", "submit_path", "/submit/")
@@ -33,34 +32,21 @@ class WordPressSubmitProTemplate(BaseTemplate):
         # Sitekey fallback from config
         self.fallback_sitekey = self.get_config("captcha", "sitekey_fallback", "6LeeMUYUAAAAAF34b51Fq6QIq4eG-zHJKx6g6BId")
 
-    async def run(self, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
         self.logger.info(f"Starting WordPressSubmitProTemplate on {self.BASE_URL} for client_site={client_site}, keyword={keyword}")
         
-        page = None
-        try:
-            page = await self.browser_manager.get_page()
+        # Step 1: Register Account
+        await self._register_account(page)
 
-            # Step 1: Register Account
-            await self._register_account(page)
+        # Step 2: Submit Bookmark
+        backlink_url = await self._submit_bookmark(page, client_site, keyword)
 
-            # Step 2: Submit Bookmark
-            backlink_url = await self._submit_bookmark(page, client_site, keyword)
-
-            self.logger.info(f"Successfully created WordPress backlink: {backlink_url}")
-            return {
-                "backlink_url": backlink_url,
-                "success": True,
-                "message": "Bookmark submitted successfully via WordPress SubmitPro template"
-            }
-        except PlaywrightTimeoutError as e:
-            self.logger.error(f"Timeout during WordPress automation: {e}")
-            raise Exception(f"WordPress Timeout: {str(e)}") from e
-        except Exception as e:
-            self.logger.error(f"WordPress Automation failed: {e}")
-            raise
-        finally:
-            if page and page.context:
-                await page.context.close()
+        self.logger.info(f"Successfully created WordPress backlink: {backlink_url}")
+        return {
+            "backlink_url": backlink_url,
+            "success": True,
+            "message": "Bookmark submitted successfully via WordPress SubmitPro template"
+        }
 
     async def _solve_recaptcha_2captcha(self, page_url: str, sitekey: str) -> Optional[str]:
         self.logger.info(f"Solving Google reCAPTCHA v2 with 2captcha using sitekey: {sitekey}...")

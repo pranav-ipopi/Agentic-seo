@@ -30,6 +30,7 @@ export type Database = {
           domain: string | null
           logo_url: string | null
           description: string | null
+          category: string | null
           created_by: string | null
           created_at: string
           updated_at: string
@@ -40,6 +41,7 @@ export type Database = {
           domain?: string | null
           logo_url?: string | null
           description?: string | null
+          category?: string | null
           created_by?: string | null
           created_at?: string
           updated_at?: string

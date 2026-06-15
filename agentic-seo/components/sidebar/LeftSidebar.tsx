@@ -20,14 +20,12 @@ import {
   Workflow,
   MoreVertical,
   Trash2,
-  Zap,
 } from 'lucide-react'
 import { cn, getInitials, formatRelativeTime } from '@/lib/utils'
 import type { Client, ChatSession, Profile } from '@/lib/supabase/types'
 const NAV_ITEMS = [
   { href: '/dashboard/tasks', icon: CheckSquare, label: 'Tasks' },
   { href: '/dashboard/workflows', icon: Workflow, label: 'Workflows' },
-  { href: '/dashboard/skills', icon: Zap, label: 'Skills' },
   { href: '/dashboard/settings', icon: Settings, label: 'Settings' },
 ]
 

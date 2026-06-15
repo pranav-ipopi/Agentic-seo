@@ -17,6 +17,7 @@ CREATE TABLE public.clients (
   domain text,
   logo_url text,
   description text,
+  category text,
   created_by uuid,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),

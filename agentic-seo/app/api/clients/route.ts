@@ -24,14 +24,14 @@ export async function POST(request: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await request.json()
-  const { name, domain, description } = body
+  const { name, domain, description, category } = body
 
   if (!name) return NextResponse.json({ error: 'Client name is required' }, { status: 400 })
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: client, error: clientError } = await (supabase as any)
     .from('clients')
-    .insert({ name, domain, description, created_by: user.id })
+    .insert({ name, domain, description, category, created_by: user.id })
     .select()
     .single()
 

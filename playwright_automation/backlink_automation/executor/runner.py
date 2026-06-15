@@ -131,7 +131,7 @@ class TemplateRunner:
         target_site_db_id: Optional[str],
         client_url: str,
         keyword: str,
-        browser_manager,
+        page,
         captcha_service,
         logger: logging.Logger
     ) -> Dict[str, Any]:
@@ -145,7 +145,7 @@ class TemplateRunner:
             target_site_db_id:  The target_sites.id UUID (for config override lookup)
             client_url:         The client URL to create a backlink for
             keyword:            The target keyword
-            browser_manager:    StealthBrowserManager instance
+            page:               Playwright Page instance
             captcha_service:    CaptchaService instance
             logger:             Logger instance
 
@@ -188,13 +188,12 @@ class TemplateRunner:
         # Instantiate template with merged config
         template = template_class(
             target_url=target_url,
-            browser_manager=browser_manager,
             captcha_service=captcha_service,
             logger=logger,
             config=config
         )
 
         # Execute
-        result = await template.run(client_url, keyword)
+        result = await template.run(page, client_url, keyword)
 
         return result

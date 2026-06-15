@@ -190,14 +190,16 @@ async def route_and_execute(task_run, supabase_client: Client):
 
             # Use TemplateRunner for config-driven routing
             if template_runner.is_supported(site_id):
+                page = None
                 try:
+                    page = await browser_manager.get_page()
                     res = await template_runner.execute(
                         site_id=site_id,
                         target_url=target_url,
                         target_site_db_id=target_site_id,
                         client_url=client_target_url,
                         keyword=keyword,
-                        browser_manager=browser_manager,
+                        page=page,
                         captcha_service=captcha_service,
                         logger=logger
                     )
@@ -219,9 +221,12 @@ async def route_and_execute(task_run, supabase_client: Client):
                         target_site_id=target_site_id,
                         template_type=site_id or "unknown",
                         error=e,
-                        page=None,  # page is managed inside template
+                        page=page,
                         step=step.get('name', 'execution')
                     )
+                finally:
+                    if page and page.context:
+                        await page.context.close()
             else:
                 # Unsupported template — no registered handler
                 result = {'status': 'failed'}

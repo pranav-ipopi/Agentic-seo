@@ -79,13 +79,22 @@ class FailureHandler:
 
         # Screenshot
         try:
-            os.makedirs("logs/failures", exist_ok=True)
-            screenshot_path = f"logs/failures/{task_run_id}_{step}.png"
-            await page.screenshot(path=screenshot_path, full_page=True)
-            evidence["screenshot_path"] = screenshot_path
-            self.logger.info(f"Failure screenshot saved: {screenshot_path}")
+            screenshot_bytes = await page.screenshot(full_page=True)
+            file_name = f"{task_run_id}_{step}_{int(datetime.now(timezone.utc).timestamp())}.png"
+            
+            # Upload to Supabase Storage
+            self.supabase.storage.from_('log_screenshots').upload(
+                file_name,
+                screenshot_bytes,
+                {"content-type": "image/png"}
+            )
+            
+            # Get public URL
+            public_url = self.supabase.storage.from_('log_screenshots').get_public_url(file_name)
+            evidence["screenshot_path"] = public_url
+            self.logger.info(f"Failure screenshot uploaded: {public_url}")
         except Exception as e:
-            self.logger.warning(f"Failed to capture screenshot: {e}")
+            self.logger.warning(f"Failed to capture/upload screenshot: {e}")
 
         # HTML dump (truncated to 50KB to avoid bloating logs)
         try:
@@ -118,6 +127,12 @@ class FailureHandler:
         3. Log to task_run_logs with structured metadata
         4. Update target_sites health status
         """
+        import traceback
+        full_traceback = "".join(traceback.format_exception(type(error), error, error.__traceback__))
+
+        if isinstance(error, AutomationError) and getattr(error, 'step', None):
+            step = error.step
+
         error_type = self.classify_error(error)
 
         self.logger.error(
@@ -143,6 +158,7 @@ class FailureHandler:
                     'target_site_id': str(target_site_id) if target_site_id else None,
                     'screenshot_path': evidence.get('screenshot_path'),
                     'current_url': evidence.get('current_url'),
+                    'traceback': full_traceback
                 }
             }).execute()
         except Exception as e:

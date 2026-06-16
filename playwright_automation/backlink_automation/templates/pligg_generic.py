@@ -223,9 +223,7 @@ class PliggGenericTemplate(BaseTemplate):
             await self._solve_captcha_2captcha(page)
 
             # Submit registration
-            submit_btn = page.locator(submit_sel)
-            if await submit_btn.count() == 0:
-                submit_btn = page.locator(submit_fallback)
+            submit_btn = page.locator(f"{submit_sel}, {submit_fallback}")
             await submit_btn.first.click()
 
             # Wait for registration to complete
@@ -265,8 +263,11 @@ class PliggGenericTemplate(BaseTemplate):
         continue_fallback = self.get_selector("submission", "continue_button_fallback",
                                               "input[type='submit'], button[type='submit']")
         title_sel = self.get_selector("submission", "title_field", "#title")
+        title_fallback = self.get_selector("submission", "title_field_fallback", "input[name='title']")
         tags_sel = self.get_selector("submission", "tags_field", "#tags")
+        tags_fallback = self.get_selector("submission", "tags_field_fallback", "input[name='tags']")
         body_sel = self.get_selector("submission", "body_field", "#bodytext")
+        body_fallback = self.get_selector("submission", "body_field_fallback", "textarea[name='bodytext'], textarea[name='description']")
         category_sel = self.get_selector("submission", "category_select",
                                          "select[name='category'], select[name='cat'], #category, select")
         submit_sel = self.get_selector("submission", "submit_button",
@@ -286,16 +287,12 @@ class PliggGenericTemplate(BaseTemplate):
 
         # Step 1: Submit URL
         self.logger.info("Step 1: Submitting URL")
-        url_field = page.locator(url_sel)
-        if await url_field.count() == 0:
-            url_field = page.locator(url_fallback)
+        url_field = page.locator(f"{url_sel}, {url_fallback}")
         await url_field.first.fill("")
         await url_field.first.press_sequentially(client_site, delay=random.randint(50, 150))
         await asyncio.sleep(random.uniform(0.5, 2.0))
 
-        continue_btn = page.locator(continue_sel)
-        if await continue_btn.count() == 0:
-            continue_btn = page.locator(continue_fallback)
+        continue_btn = page.locator(f"{continue_sel}, {continue_fallback}")
         await continue_btn.first.click()
 
         await page.wait_for_load_state("domcontentloaded")
@@ -307,18 +304,21 @@ class PliggGenericTemplate(BaseTemplate):
         max_retries = 3
         for attempt in range(max_retries):
             if attempt == 0:
-                await page.locator(title_sel).fill("")
-                await page.locator(title_sel).press_sequentially(
+                title_loc = page.locator(f"{title_sel}, {title_fallback}")
+                await title_loc.first.fill("")
+                await title_loc.first.press_sequentially(
                     keyword, delay=random.randint(50, 100))
                 await asyncio.sleep(random.uniform(0.5, 1.5))
 
-                await page.locator(tags_sel).fill("")
-                await page.locator(tags_sel).press_sequentially(
+                tags_loc = page.locator(f"{tags_sel}, {tags_fallback}")
+                await tags_loc.first.fill("")
+                await tags_loc.first.press_sequentially(
                     keyword, delay=random.randint(50, 100))
                 await asyncio.sleep(random.uniform(0.5, 1.5))
 
                 # Use fill() for description — press_sequentially would timeout on long text
-                await page.locator(body_sel).fill(description_text)
+                body_loc = page.locator(f"{body_sel}, {body_fallback}")
+                await body_loc.first.fill(description_text)
                 await asyncio.sleep(random.uniform(0.5, 1.5))
 
                 # Category - Try selecting first option if present
@@ -330,25 +330,28 @@ class PliggGenericTemplate(BaseTemplate):
                         pass
             else:
                 # On retry, check if fields are cleared and re-fill if necessary
-                if await page.locator(title_sel).count() > 0 and await page.locator(title_sel).input_value() == "":
-                    await page.locator(title_sel).fill("")
-                    await page.locator(title_sel).press_sequentially(
+                title_loc = page.locator(f"{title_sel}, {title_fallback}")
+                if await title_loc.count() > 0 and await title_loc.first.input_value() == "":
+                    await title_loc.first.fill("")
+                    await title_loc.first.press_sequentially(
                         keyword, delay=random.randint(50, 100))
-                if await page.locator(tags_sel).count() > 0 and await page.locator(tags_sel).input_value() == "":
-                    await page.locator(tags_sel).fill("")
-                    await page.locator(tags_sel).press_sequentially(
+                
+                tags_loc = page.locator(f"{tags_sel}, {tags_fallback}")
+                if await tags_loc.count() > 0 and await tags_loc.first.input_value() == "":
+                    await tags_loc.first.fill("")
+                    await tags_loc.first.press_sequentially(
                         keyword, delay=random.randint(50, 100))
-                if await page.locator(body_sel).count() > 0 and await page.locator(body_sel).input_value() == "":
-                    await page.locator(body_sel).fill(description_text)
+                
+                body_loc = page.locator(f"{body_sel}, {body_fallback}")
+                if await body_loc.count() > 0 and await body_loc.first.input_value() == "":
+                    await body_loc.first.fill(description_text)
 
             # Handle Captcha
             self.logger.info(f"Solving captcha on submit page... (Attempt {attempt + 1}/{max_retries})")
             await self._solve_captcha_2captcha(page)
 
             # Submit the form
-            submit_btn = page.locator(submit_sel)
-            if await submit_btn.count() == 0:
-                submit_btn = page.locator(submit_fallback)
+            submit_btn = page.locator(f"{submit_sel}, {submit_fallback}")
 
             await submit_btn.first.scroll_into_view_if_needed()
             await page.wait_for_timeout(500)

@@ -106,32 +106,40 @@ class WordPressSubmitProTemplate(BaseTemplate):
         await self._handle_cloudflare(page)
         await page.wait_for_timeout(500)
 
-        login_form_sel = self.get_selector("registration", "login_form", "#user_login")
-        self.logger.info(f"Waiting for registration form {login_form_sel}...")
+        user_login_sel = self.get_selector("registration", "user_login", "#user_login, input[name='user_login'], input[name='log']")
+        user_email_sel = self.get_selector("registration", "user_email", "#user_email, input[name='user_email'], input[name='email']")
+        user_password_sel = self.get_selector("registration", "user_password", "#user_password, input[name='user_password'], input[name='pwd']")
+        user_cpassword_sel = self.get_selector("registration", "user_cpassword", "#user_cpassword, input[name='user_cpassword'], input[name='confirm_password']")
+        nickname_sel = self.get_selector("registration", "nickname", "#nickname, input[name='nickname']")
+        
+        login_form_sel = self.get_selector("registration", "login_form", f"{user_login_sel}, {user_email_sel}")
+        self.logger.info(f"Waiting for registration form...")
         try:
             await page.wait_for_selector(login_form_sel, timeout=30000)
-        except Exception:
-            pass
+        except Exception as e:
+            raise SubmissionFailedError(
+                message=f"Registration form failed to load. Elements not found: {e}",
+                step="registration_form_load",
+                url=self.REGISTER_URL
+            )
 
         # Fill registration form
         self.logger.info(f"Filling registration details for username={self.credentials['username']}")
         
-        user_login_sel = self.get_selector("registration", "user_login", "#user_login")
-        user_email_sel = self.get_selector("registration", "user_email", "#user_email")
-        user_password_sel = self.get_selector("registration", "user_password", "#user_password")
-        user_cpassword_sel = self.get_selector("registration", "user_cpassword", "#user_cpassword")
-        nickname_sel = self.get_selector("registration", "nickname", "#nickname")
-        
-        if await page.locator(user_login_sel).count() > 0:
-            await page.locator(user_login_sel).fill(self.credentials["username"])
-        if await page.locator(user_email_sel).count() > 0:
-            await page.locator(user_email_sel).fill(self.credentials["email"])
-        if await page.locator(user_password_sel).count() > 0:
-            await page.locator(user_password_sel).fill(self.credentials["password"])
-        if await page.locator(user_cpassword_sel).count() > 0:
-            await page.locator(user_cpassword_sel).fill(self.credentials["password"])
-        if await page.locator(nickname_sel).count() > 0:
-            await page.locator(nickname_sel).fill(self.credentials["username"])
+        # Helper to safely fill fields with a short timeout
+        async def safe_fill(sel, value, timeout=3000):
+            try:
+                loc = page.locator(sel).first
+                await loc.wait_for(state="visible", timeout=timeout)
+                await loc.fill(value)
+            except Exception:
+                pass
+
+        await safe_fill(user_login_sel, self.credentials["username"])
+        await safe_fill(user_email_sel, self.credentials["email"])
+        await safe_fill(user_password_sel, self.credentials["password"])
+        await safe_fill(user_cpassword_sel, self.credentials["password"])
+        await safe_fill(nickname_sel, self.credentials["username"])
 
         site_key = await self._get_sitekey(page)
 
@@ -160,17 +168,20 @@ class WordPressSubmitProTemplate(BaseTemplate):
             await page.wait_for_timeout(500)
 
         self.logger.info("Submitting registration form...")
-        submit_btn_sel = self.get_selector("registration", "submit_btn", "input[value='Register'], input[type='submit'], #wp-submit")
-        submit_btn = page.locator(submit_btn_sel)
-        if await submit_btn.count() > 0:
+        submit_btn_sel = self.get_selector("registration", "submit_btn", "input[value='Register'], input[type='submit'], #wp-submit, button[type='submit']")
+        submit_btn = page.locator(submit_btn_sel).first
+        try:
+            await submit_btn.wait_for(state="attached", timeout=5000)
             try:
-                await submit_btn.first.click(timeout=10000)
+                await submit_btn.click(timeout=10000)
             except Exception:
                 self.logger.warning("Normal registration click failed or timed out. Forcing JS click.")
                 try:
-                    await submit_btn.first.evaluate("el => el.click()", timeout=10000)
+                    await submit_btn.evaluate("el => el.click()", timeout=10000)
                 except Exception as js_err:
                     self.logger.warning(f"JS click also failed: {js_err}. Page may have already navigated.")
+        except Exception:
+            self.logger.warning("Registration submit button not found.")
 
         try:
             await page.wait_for_load_state("networkidle", timeout=8000)
@@ -189,12 +200,18 @@ class WordPressSubmitProTemplate(BaseTemplate):
         await self._handle_cloudflare(page)
         await page.wait_for_timeout(500)
 
-        article_url_sel = self.get_selector("submission", "article_url", "#articleUrl")
+        article_url_sel = self.get_selector("submission", "article_url", "#articleUrl, input[name='articleUrl'], input[name='url']")
+        title_sel = self.get_selector("submission", "title", "#submitpro_title, input[name='title'], input[name='submitpro_title']")
+        
         self.logger.info("Waiting for submission form fields...")
         try:
-            await page.wait_for_selector(article_url_sel, timeout=15000)
-        except Exception:
-            pass
+            await page.wait_for_selector(f"{article_url_sel}, {title_sel}", timeout=20000)
+        except Exception as e:
+            raise SubmissionFailedError(
+                message=f"Submission form failed to load. Elements not found: {e}",
+                step="submission_form_load",
+                url=self.SUBMIT_URL
+            )
 
         # Prepare title
         title = keyword
@@ -202,17 +219,28 @@ class WordPressSubmitProTemplate(BaseTemplate):
             title = f"{title} - Useful Resource and Discussion Link"
 
         self.logger.info("Filling article submission fields...")
-        if await page.locator(article_url_sel).count() > 0:
-            await page.locator(article_url_sel).first.fill(client_site)
-            
-        title_sel = self.get_selector("submission", "title", "#submitpro_title")
-        if await page.locator(title_sel).count() > 0:
-            await page.locator(title_sel).first.fill(title)
+        
+        async def safe_fill(sel, value, timeout=3000):
+            try:
+                loc = page.locator(sel).first
+                await loc.wait_for(state="visible", timeout=timeout)
+                await loc.fill(value)
+            except Exception:
+                pass
+
+        await safe_fill(article_url_sel, client_site)
+        await safe_fill(title_sel, title)
 
         # Select category via Select2 dropdown
         category_container_sel = self.get_selector("submission", "category_container", "[id*='submitpro_category-container'], #select2-submitpro_category-container, .select2-submitpro_category-container")
         category_container = page.locator(category_container_sel)
         
+        # Wait briefly to see if Select2 initializes
+        try:
+            await category_container.first.wait_for(state="attached", timeout=4000)
+        except Exception:
+            pass
+
         if await category_container.count() > 0:
             try:
                 # Sometimes there are multiple containers, trying the last one or first
@@ -260,13 +288,16 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
         # Fill tags
         tags_sel = self.get_selector("submission", "tags", "#tagsinput, .tagsinput, input[name='tagsinput'], input[name*='tags']")
-        tags_field = page.locator(tags_sel)
-        if await tags_field.count() > 0:
-            await tags_field.first.fill(f"seo, marketing, backlinks, {keyword}")
+        await safe_fill(tags_sel, f"seo, marketing, backlinks, {keyword}")
 
         # Select location via Select2 dropdown
         location_container_sel = self.get_selector("submission", "location_container", "[id*='submitpro_location-container'], #select2-submitpro_location-container, .select2-submitpro_location-container")
         location_container = page.locator(location_container_sel)
+        try:
+            await location_container.first.wait_for(state="attached", timeout=2000)
+        except Exception:
+            pass
+            
         if await location_container.count() > 0:
             try:
                 await location_container.first.click()
@@ -285,41 +316,33 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
         # Fill other generic fields
         email_sel = self.get_selector("submission", "email", "#submitpro_email, input[name*='email']")
-        email_field = page.locator(email_sel)
-        if await email_field.count() > 0:
-            await email_field.first.fill(f"contact_{int(random.random()*10000)}@mailinator.com")
+        await safe_fill(email_sel, f"contact_{int(random.random()*10000)}@mailinator.com")
 
         phone_sel = self.get_selector("submission", "phone", "#submitpro_phone, input[name*='phone']")
-        phone_field = page.locator(phone_sel)
-        if await phone_field.count() > 0:
-            await phone_field.first.fill("+1 555-0199")
+        await safe_fill(phone_sel, "+1 555-0199")
 
         address_sel = self.get_selector("submission", "address", "#submitpro_address, textarea[name*='address']")
-        address_field = page.locator(address_sel)
-        if await address_field.count() > 0:
-            await address_field.first.fill("123 SEO Boulevard, Suite 100")
+        await safe_fill(address_sel, "123 SEO Boulevard, Suite 100")
 
         # Rich description text
-        desc_sel = self.get_selector("submission", "desc", "#submitpro_desc, textarea[name*='desc']")
-        desc_field = page.locator(desc_sel)
-        if await desc_field.count() > 0:
-            default_templates = [
-                "Digital marketing is a multifaceted strategy designed to reach, engage, and convert customers online. By optimizing on-page elements such as title tags, meta descriptions, and header tags, and by creating high-quality, relevant content, companies can attract targeted traffic for keyword {keyword}.",
-                "Developing a successful online presence requires a mix of strategic planning, content marketing, and search engine optimization. Off-page marketing tactics, such as manual submission of high-quality backlinks and bookmarking, help search engines index resources faster and boost overall visibility for keyword {keyword}.",
-                "Modern digital strategies rely heavily on search engine visibility and user experience to capture customer interest. Through optimization of content, metadata, and high-relevancy links, companies can dramatically improve their rankings on major search engines for keyword {keyword}."
-            ]
-            description_templates = self.get_config("submission", "description_templates", default_templates)
-            description_text = random.choice(description_templates).format(keyword=keyword)
-            await desc_field.first.fill(description_text)
+        desc_sel = self.get_selector("submission", "desc", "#submitpro_desc, textarea[name*='desc'], textarea[name='description']")
+        default_templates = [
+            "Digital marketing is a multifaceted strategy designed to reach, engage, and convert customers online. By optimizing on-page elements such as title tags, meta descriptions, and header tags, and by creating high-quality, relevant content, companies can attract targeted traffic for keyword {keyword}.",
+            "Developing a successful online presence requires a mix of strategic planning, content marketing, and search engine optimization. Off-page marketing tactics, such as manual submission of high-quality backlinks and bookmarking, help search engines index resources faster and boost overall visibility for keyword {keyword}.",
+            "Modern digital strategies rely heavily on search engine visibility and user experience to capture customer interest. Through optimization of content, metadata, and high-relevancy links, companies can dramatically improve their rankings on major search engines for keyword {keyword}."
+        ]
+        description_templates = self.get_config("submission", "description_templates", default_templates)
+        description_text = random.choice(description_templates).format(keyword=keyword)
+        await safe_fill(desc_sel, description_text)
 
         # Check terms and agreements checkbox
         agree_sel = self.get_selector("submission", "agree_checkbox", "#agree-checkbox, input[name='agree'], input[type='checkbox']")
-        agree_checkbox = page.locator(agree_sel)
-        if await agree_checkbox.count() > 0:
-            try:
-                await page.evaluate(f"() => {{ const cb = document.querySelector('{agree_sel.split(',')[0]}') || document.querySelector('input[type=\"checkbox\"]'); if (cb) {{ cb.click(); if(!cb.checked) cb.checked = true; }} }}")
-            except Exception:
-                pass
+        try:
+            agree_checkbox = page.locator(agree_sel).first
+            await agree_checkbox.wait_for(state="attached", timeout=3000)
+            await page.evaluate(f"() => {{ const cb = document.querySelector('{agree_sel.split(',')[0]}') || document.querySelector('input[type=\"checkbox\"]'); if (cb) {{ cb.click(); if(!cb.checked) cb.checked = true; }} }}")
+        except Exception:
+            pass
 
         await page.wait_for_timeout(500)
 
@@ -343,9 +366,10 @@ class WordPressSubmitProTemplate(BaseTemplate):
             await page.wait_for_timeout(500)
 
         # Submit
-        submit_btn_sel = self.get_selector("submission", "submit_btn", "input[value='Preview & Submit'], input[type='submit'], #submitpro_submit_btn")
+        submit_btn_sel = self.get_selector("submission", "submit_btn", "input[value='Preview & Submit'], input[type='submit'], #submitpro_submit_btn, button[type='submit']")
         submit_btn = page.locator(submit_btn_sel).first
-        if await submit_btn.count() > 0:
+        try:
+            await submit_btn.wait_for(state="attached", timeout=5000)
             try:
                 await submit_btn.click(timeout=10000)
             except Exception:
@@ -354,6 +378,8 @@ class WordPressSubmitProTemplate(BaseTemplate):
                     await submit_btn.evaluate("el => el.click()", timeout=10000)
                 except Exception as js_err:
                     self.logger.warning(f"JS click also failed: {js_err}. Page may have already navigated.")
+        except Exception:
+            self.logger.warning("Submission submit button not found.")
 
         try:
             confirm_sel = self.get_selector("submission", "confirm_btn", "input[value='Submit'], input[value='Confirm'], button:has-text('Submit'), button:has-text('Confirm')")

@@ -43,6 +43,7 @@ export default function TasksPage() {
         .from('tasks')
         .select('*')
         .eq('client_id', activeClient.id)
+        .not('output->campaign_id', 'is', null)
         .order('created_at', { ascending: false })
         .limit(50)
 

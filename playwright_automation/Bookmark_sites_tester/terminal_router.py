@@ -30,17 +30,21 @@ async def execute_task(target_url, site_type, client_target_url, keyword, semaph
         logger.info(f"Starting task for {target_url} with site type {site_type}")
         
         try:
-            res = await template_runner.execute(
-                site_id=site_type,
-                target_url=target_url,
-                target_site_db_id=None,  # No DB UUID when running from terminal tester
-                client_url=client_target_url,
-                keyword=keyword,
-                browser_manager=browser_manager,
-                captcha_service=captcha_service,
-                logger=logger
-            )
-            logger.info(f"Success for {target_url}: {res}")
+            page = await browser_manager.get_page()
+            try:
+                res = await template_runner.execute(
+                    site_id=site_type,
+                    target_url=target_url,
+                    target_site_db_id=None,  # No DB UUID when running from terminal tester
+                    client_url=client_target_url,
+                    keyword=keyword,
+                    page=page,
+                    captcha_service=captcha_service,
+                    logger=logger
+                )
+                logger.info(f"Success for {target_url}: {res}")
+            finally:
+                await page.context.close()
         except Exception as e:
             logger.error(f"Execution failed for {target_url}: {e}")
 

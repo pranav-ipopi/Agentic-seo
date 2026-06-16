@@ -80,7 +80,8 @@ class FailureHandler:
         # Screenshot
         try:
             screenshot_bytes = await page.screenshot(full_page=True)
-            file_name = f"{task_run_id}_{step}_{int(datetime.now(timezone.utc).timestamp())}.png"
+            date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            file_name = f"failures/{date_str}/{task_run_id}_{step}_{int(datetime.now(timezone.utc).timestamp())}.png"
             
             # Upload to Supabase Storage
             self.supabase.storage.from_('log_screenshots').upload(
@@ -110,6 +111,55 @@ class FailureHandler:
             pass
 
         return evidence
+
+    async def capture_console_logs(self, task_run_id: str, step: str) -> Optional[str]:
+        """
+        Extract logs for the specific task run and upload to Supabase.
+        """
+        import re
+        try:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            log_path = os.path.join(base_dir, "logs", "backlink_automation.log")
+            if not os.path.exists(log_path):
+                return None
+
+            with open(log_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+            
+            job_logs = []
+            capturing = False
+            log_start_pattern = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \| ")
+            
+            for line in lines:
+                if str(task_run_id) in line:
+                    job_logs.append(line)
+                    capturing = True
+                elif capturing and not log_start_pattern.match(line):
+                    job_logs.append(line)
+                else:
+                    capturing = False
+                    
+            if job_logs:
+                log_content = "".join(job_logs)
+                date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                file_name = f"failures/{date_str}/{task_run_id}_{step}_logs_{int(datetime.now(timezone.utc).timestamp())}.txt"
+                
+                # Upload to Supabase Storage
+                self.supabase.storage.from_('log_screenshots').upload(
+                    file_name,
+                    log_content.encode('utf-8'),
+                    {"content-type": "text/plain"}
+                )
+                
+                # Get public URL
+                public_url = self.supabase.storage.from_('log_screenshots').get_public_url(file_name)
+                self.logger.info(f"Failure logs uploaded: {public_url}")
+                return public_url
+                
+        except Exception as e:
+            self.logger.warning(f"Failed to capture/upload console logs: {e}")
+            
+        return None
 
     async def handle_failure(
         self,
@@ -143,6 +193,11 @@ class FailureHandler:
         evidence = {}
         if page:
             evidence = await self.capture_evidence(page, task_run_id, step)
+            
+        # Capture console logs
+        console_logs_url = await self.capture_console_logs(task_run_id, step)
+        if console_logs_url:
+            evidence['console_logs_path'] = console_logs_url
 
         # Log to task_run_logs with structured metadata
         try:
@@ -157,6 +212,7 @@ class FailureHandler:
                     'template': template_type,
                     'target_site_id': str(target_site_id) if target_site_id else None,
                     'screenshot_path': evidence.get('screenshot_path'),
+                    'console_logs_path': evidence.get('console_logs_path'),
                     'current_url': evidence.get('current_url'),
                     'traceback': full_traceback
                 }

@@ -20,6 +20,7 @@ CREATE TABLE public.clients (
   created_by uuid,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  category text,
   CONSTRAINT clients_pkey PRIMARY KEY (id),
   CONSTRAINT clients_created_by_fkey FOREIGN KEY (created_by) REFERENCES public.profiles(id)
 );
@@ -257,4 +258,13 @@ CREATE TABLE public.target_sites (
   consecutive_failures integer NOT NULL DEFAULT 0,
   health_status text NOT NULL DEFAULT 'active'::text CHECK (health_status = ANY (ARRAY['active'::text, 'failing'::text, 'down'::text, 'disabled'::text])),
   CONSTRAINT target_sites_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.client_site_usage (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  client_id uuid NOT NULL,
+  site_url text NOT NULL,
+  usage_count integer NOT NULL DEFAULT 0,
+  last_used_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT client_site_usage_pkey PRIMARY KEY (id),
+  CONSTRAINT client_site_usage_client_id_fkey FOREIGN KEY (client_id) REFERENCES public.clients(id)
 );

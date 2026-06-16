@@ -104,7 +104,10 @@ export default function SiteListModal({
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">Manage Target Sites ({category})</h3>
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white">Manage Target Sites</h3>
+            <p className="text-xs text-gray-500 mt-0.5">Showing all {sites.length} {category} sites in the database (unfiltered)</p>
+          </div>
           <button onClick={onClose} className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
             <X className="w-5 h-5" />
           </button>

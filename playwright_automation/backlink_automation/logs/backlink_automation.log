@@ -4820,3 +4820,281 @@ TypeError: Frame.type() missing 1 required positional argument: 'text'
 2026-06-15 18:27:35 | INFO     | backlink_automation | [TaskRun 59a982d8-fb41-4d24-b8e7-7b130986caa6] Intercepted Reporting Step.
 2026-06-15 18:27:35 | INFO     | backlink_automation | [Task 83d9fad1-e6c4-40f0-9899-2b5a8b75515c] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
 2026-06-15 18:27:36 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-16 09:03:08 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 09:03:08 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 09:03:08 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 10:36:32 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-16 10:36:45 | INFO     | backlink_automation | Fetched 4 new workflow runs. Adding to active pool...
+2026-06-16 10:36:47 | INFO     | backlink_automation | [TaskRun 350c91ba-056e-494a-9300-534e14f7e90c] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-16 10:36:48 | INFO     | backlink_automation | [TaskRun 350c91ba-056e-494a-9300-534e14f7e90c] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 10:36:49 | INFO     | backlink_automation | [TaskRun f6fed200-1a14-4c07-bcd1-bb3f7b0aff04] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-16 10:36:49 | INFO     | backlink_automation | [TaskRun f6fed200-1a14-4c07-bcd1-bb3f7b0aff04] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 10:36:49 | INFO     | backlink_automation | [TaskRun 6fa3f1be-d8b1-4c71-b95d-ebe34603d14f] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-16 10:36:49 | INFO     | backlink_automation | [TaskRun 6fa3f1be-d8b1-4c71-b95d-ebe34603d14f] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 10:36:49 | INFO     | backlink_automation | [TaskRun 64abdd3f-3b7f-4a61-861f-0bebf08a1c99] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-16 10:36:50 | INFO     | backlink_automation | [TaskRun 64abdd3f-3b7f-4a61-861f-0bebf08a1c99] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 10:36:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 10:36:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-16 10:36:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 10:36:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 10:36:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://google.com, keyword=test keyword
+2026-06-16 10:36:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 10:36:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 10:36:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://google.com, keyword=Taigun price in kerala
+2026-06-16 10:36:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 10:36:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 10:36:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://google.com, keyword=test keyword
+2026-06-16 10:36:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 10:36:53 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 10:36:53 | INFO     | backlink_automation | Registration started with username=userkr3fr4q2
+2026-06-16 10:36:54 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 10:36:54 | INFO     | backlink_automation | Registration started with username=userob2v68z8
+2026-06-16 10:36:54 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 10:36:54 | INFO     | backlink_automation | Registration started with username=user3wh84ta0
+2026-06-16 10:36:54 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 10:36:54 | INFO     | backlink_automation | Registration started with username=useri2exv3l3
+2026-06-16 10:37:07 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 10:37:08 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 10:37:08 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 10:37:08 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 10:37:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:19 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:19 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:20 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:20 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:29 | INFO     | backlink_automation | 2captcha predicted: 'wildwest'
+2026-06-16 10:37:30 | INFO     | backlink_automation | 2captcha predicted: 'missyou'
+2026-06-16 10:37:31 | INFO     | backlink_automation | 2captcha predicted: 'are you the keymaster'
+2026-06-16 10:37:35 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-16 10:37:35 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-16 10:37:35 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:35 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:37 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-16 10:37:37 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-16 10:37:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:37 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:39 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 10:37:39 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 10:37:39 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=test keyword
+2026-06-16 10:37:40 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 10:37:42 | INFO     | backlink_automation | 2captcha predicted: 'raspberry tart'
+2026-06-16 10:37:46 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 10:37:46 | INFO     | backlink_automation | 2captcha predicted: 'be nice'
+2026-06-16 10:37:48 | INFO     | backlink_automation | 2captcha predicted: 'wild west'
+2026-06-16 10:37:50 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 10:37:50 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 10:37:50 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-16 10:37:51 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 10:37:52 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 10:37:52 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:37:52 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:37:53 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 10:37:53 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 10:37:53 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=test keyword
+2026-06-16 10:37:54 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 10:37:54 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 10:37:54 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=Taigun price in kerala
+2026-06-16 10:37:55 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 10:37:56 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 10:37:56 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 10:38:01 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 10:38:01 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 10:38:03 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 10:38:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:38:04 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:38:04 | INFO     | backlink_automation | 2captcha predicted: 'good as gold'
+2026-06-16 10:38:06 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 10:38:06 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:38:07 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:38:07 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 10:38:08 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 10:38:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:38:09 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:38:11 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://gorillasocialwork.com/story27507713/test-keyword
+2026-06-16 10:38:11 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 10:38:14 | INFO     | backlink_automation | Successfully created backlink: https://gorillasocialwork.com/story27507713/test-keyword
+2026-06-16 10:38:15 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 10:38:17 | INFO     | backlink_automation | [TaskRun 64abdd3f-3b7f-4a61-861f-0bebf08a1c99] Executing step 2/2: Verification & Reporting on https://gorillasocialwork.com/
+2026-06-16 10:38:17 | INFO     | backlink_automation | [TaskRun 64abdd3f-3b7f-4a61-861f-0bebf08a1c99] Intercepted Reporting Step.
+2026-06-16 10:38:25 | INFO     | backlink_automation | 2captcha predicted: 'tro7o7o7o7'
+2026-06-16 10:38:28 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 10:38:28 | INFO     | backlink_automation | 2captcha predicted: 'this or that'
+2026-06-16 10:38:32 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 10:38:34 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-16 10:38:36 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkloves.com/story24133100/test-keyword
+2026-06-16 10:38:36 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 10:38:37 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-16 10:38:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 10:38:37 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 10:38:39 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkloves.com/story24133100/test-keyword
+2026-06-16 10:38:39 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 10:38:41 | INFO     | backlink_automation | 2captcha predicted: 'moot point'
+2026-06-16 10:38:42 | INFO     | backlink_automation | [TaskRun f6fed200-1a14-4c07-bcd1-bb3f7b0aff04] Executing step 2/2: Verification & Reporting on https://bookmarkloves.com/
+2026-06-16 10:38:42 | INFO     | backlink_automation | [TaskRun f6fed200-1a14-4c07-bcd1-bb3f7b0aff04] Intercepted Reporting Step.
+2026-06-16 10:38:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 10:38:48 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://gorillasocialwork.com/story27507719/taigun-price-in-kerala
+2026-06-16 10:38:48 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 10:38:51 | INFO     | backlink_automation | Successfully created backlink: https://gorillasocialwork.com/story27507719/taigun-price-in-kerala
+2026-06-16 10:38:51 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 10:38:54 | INFO     | backlink_automation | [TaskRun 350c91ba-056e-494a-9300-534e14f7e90c] Executing step 2/2: Verification & Reporting on https://gorillasocialwork.com/
+2026-06-16 10:38:54 | INFO     | backlink_automation | [TaskRun 350c91ba-056e-494a-9300-534e14f7e90c] Intercepted Reporting Step.
+2026-06-16 10:38:59 | INFO     | backlink_automation | 2captcha predicted: 'all of the above'
+2026-06-16 10:39:03 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 10:39:06 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkloves.com/story24133104/taigun-price-in-kerala
+2026-06-16 10:39:06 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 10:39:09 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkloves.com/story24133104/taigun-price-in-kerala
+2026-06-16 10:39:10 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 10:39:11 | INFO     | backlink_automation | [TaskRun 6fa3f1be-d8b1-4c71-b95d-ebe34603d14f] Executing step 2/2: Verification & Reporting on https://bookmarkloves.com/
+2026-06-16 10:39:12 | INFO     | backlink_automation | [TaskRun 6fa3f1be-d8b1-4c71-b95d-ebe34603d14f] Intercepted Reporting Step.
+2026-06-16 10:39:12 | INFO     | backlink_automation | [Task 819058b1-b606-4168-83dc-2e7c9e2278d4] All 4 runs done. succeeded=4, failed=0. Setting parent task status → 'completed'
+2026-06-16 10:39:12 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-16 10:49:49 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 10:49:49 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 10:49:49 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 13:12:12 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 13:12:12 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 13:12:12 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 13:16:21 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-16 13:16:26 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 13:16:28 | INFO     | backlink_automation | [TaskRun 05960083-45cc-43c2-9474-b9ad8fb39ea7] Executing step 1/2: Submission on https://prbookmarkingwebsites.com/
+2026-06-16 13:16:28 | INFO     | backlink_automation | [TaskRun 05960083-45cc-43c2-9474-b9ad8fb39ea7] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 13:16:29 | INFO     | backlink_automation | [TemplateRunner] Routing https://prbookmarkingwebsites.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 13:16:29 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://prbookmarkingwebsites.com for client_site=https://google.com, keyword=best search engine
+2026-06-16 13:16:29 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 13:16:32 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 13:16:32 | INFO     | backlink_automation | Registration started with username=users47he4m7
+2026-06-16 13:16:46 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 13:17:00 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 13:17:01 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 13:17:07 | ERROR    | backlink_automation | Error solving captcha with 2captcha: bad response: 500
+2026-06-16 13:17:12 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-16 13:17:12 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-16 13:17:12 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 13:17:12 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 13:17:19 | ERROR    | backlink_automation | Error solving captcha with 2captcha: bad response: 500
+2026-06-16 13:17:23 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-16 13:17:23 | INFO     | backlink_automation | Registration attempt 3/3
+2026-06-16 13:17:23 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 13:17:24 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 13:17:27 | ERROR    | backlink_automation | Error solving captcha with 2captcha: ERROR_NO_SLOT_AVAILABLE
+2026-06-16 13:17:31 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-16 13:17:31 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 13:17:31 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-16 13:17:33 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 13:18:03 | ERROR    | backlink_automation | [TaskRun 05960083-45cc-43c2-9474-b9ad8fb39ea7] Execution failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("input[name='url'], input[name*='story_url'], input[type='url']").first
+
+2026-06-16 13:18:03 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("input[name='url'], input[name*='story_url'], input[type='url']").first
+
+2026-06-16 13:18:05 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/05960083-45cc-43c2-9474-b9ad8fb39ea7_Submission_1781596084.png?
+2026-06-16 13:18:05 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/05960083-45cc-43c2-9474-b9ad8fb39ea7_Submission_logs_1781596085.txt?
+2026-06-16 13:18:06 | INFO     | backlink_automation | [Task 42b53b0a-ca31-4784-85c9-d976afba963e] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-16 13:18:06 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-16 13:19:45 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 13:19:45 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 13:19:45 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 13:22:00 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-16 13:22:04 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 13:22:05 | INFO     | backlink_automation | [TaskRun 106e96cd-24fe-4cb0-8522-0f62553f3f1d] Executing step 1/2: Submission on https://opensocialfactory.com/
+2026-06-16 13:22:05 | INFO     | backlink_automation | [TaskRun 106e96cd-24fe-4cb0-8522-0f62553f3f1d] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 13:22:06 | INFO     | backlink_automation | [TemplateRunner] Routing https://opensocialfactory.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 13:22:06 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://opensocialfactory.com for client_site=https://google.com, keyword=best search engine
+2026-06-16 13:22:06 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 13:22:09 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 13:22:09 | INFO     | backlink_automation | Registration started with username=usery49vqx5g
+2026-06-16 13:22:25 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 13:22:34 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 13:22:35 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 13:22:57 | INFO     | backlink_automation | 2captcha predicted: 'vorpal sword'
+2026-06-16 13:23:03 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 13:23:03 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 13:23:03 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-16 13:23:05 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 13:23:10 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 13:23:17 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 13:23:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 13:23:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 13:23:39 | INFO     | backlink_automation | 2captcha predicted: 'ROWBOAT'
+2026-06-16 13:23:42 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 13:23:46 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://opensocialfactory.com/story26415308/best-search-engine
+2026-06-16 13:23:46 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 13:23:49 | INFO     | backlink_automation | Successfully created backlink: https://opensocialfactory.com/story26415308/best-search-engine
+2026-06-16 13:23:50 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 13:23:52 | INFO     | backlink_automation | [TaskRun 106e96cd-24fe-4cb0-8522-0f62553f3f1d] Executing step 2/2: Verification & Reporting on https://opensocialfactory.com/
+2026-06-16 13:23:52 | INFO     | backlink_automation | [TaskRun 106e96cd-24fe-4cb0-8522-0f62553f3f1d] Intercepted Reporting Step.
+2026-06-16 13:23:52 | INFO     | backlink_automation | [Task ae53cb66-f4e5-4619-9c82-e59326baccc9] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-16 13:23:53 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-16 13:31:31 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 13:31:31 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 13:31:31 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 15:41:09 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-16 15:41:09 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-16 15:41:09 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-16 15:47:53 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-16 15:47:55 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 15:47:57 | INFO     | backlink_automation | [TaskRun 07baa162-2f5c-403e-a833-47ab362f64e7] Executing step 1/2: Submission on https://socialnetworkadsinfo.com/
+2026-06-16 15:47:57 | INFO     | backlink_automation | [TaskRun 07baa162-2f5c-403e-a833-47ab362f64e7] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 15:47:57 | INFO     | backlink_automation | [TemplateRunner] Routing https://socialnetworkadsinfo.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 15:47:57 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://socialnetworkadsinfo.com for client_site=https://google.com, keyword=best search engine
+2026-06-16 15:47:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 15:48:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 15:48:01 | INFO     | backlink_automation | Registration started with username=usernjm2fakb
+2026-06-16 15:48:15 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 15:48:26 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 15:48:27 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 15:48:59 | INFO     | backlink_automation | 2captcha predicted: 'check your work'
+2026-06-16 15:49:06 | WARNING  | backlink_automation | Possible registration error or duplicate. Proceeding anyway.
+2026-06-16 15:49:06 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 15:49:06 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-16 15:49:09 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 15:49:15 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 15:49:20 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 15:49:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 15:49:21 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 15:49:32 | INFO     | backlink_automation | 2captcha predicted: 'roll again'
+2026-06-16 15:49:35 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 15:49:39 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://socialnetworkadsinfo.com/story23332845/best-search-engine
+2026-06-16 15:49:39 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 15:49:42 | INFO     | backlink_automation | Successfully created backlink: https://socialnetworkadsinfo.com/story23332845/best-search-engine
+2026-06-16 15:49:43 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 15:49:45 | INFO     | backlink_automation | [TaskRun 07baa162-2f5c-403e-a833-47ab362f64e7] Executing step 2/2: Verification & Reporting on https://socialnetworkadsinfo.com/
+2026-06-16 15:49:45 | INFO     | backlink_automation | [TaskRun 07baa162-2f5c-403e-a833-47ab362f64e7] Intercepted Reporting Step.
+2026-06-16 15:49:45 | INFO     | backlink_automation | [Task 8a6a6686-7005-4502-ad7e-be351afa288a] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-16 15:49:46 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-16 15:56:09 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-16 15:56:11 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 15:56:13 | INFO     | backlink_automation | [TaskRun a3f90fd4-cfe3-4373-a4c0-57d69932bc08] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-16 15:56:14 | INFO     | backlink_automation | [TaskRun a3f90fd4-cfe3-4373-a4c0-57d69932bc08] Routing to template: 'pligg' (target_site_id=None)
+2026-06-16 15:56:14 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-16 15:56:14 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://google.com, keyword=google near me
+2026-06-16 15:56:14 | INFO     | backlink_automation | Navigating to home page
+2026-06-16 15:56:18 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-16 15:56:18 | INFO     | backlink_automation | Registration started with username=uservkrpoald
+2026-06-16 15:56:33 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-16 15:56:44 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 15:56:45 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 15:57:17 | INFO     | backlink_automation | 2captcha predicted: 'love is automatic'
+2026-06-16 15:57:26 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-16 15:57:26 | INFO     | backlink_automation | Registration flow finished
+2026-06-16 15:57:26 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=google near me
+2026-06-16 15:57:28 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-16 15:57:35 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-16 15:57:40 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-16 15:57:40 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-16 15:57:40 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-16 15:58:01 | INFO     | backlink_automation | 2captcha predicted: 'pie chart'
+2026-06-16 15:58:04 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-16 15:58:08 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://gorillasocialwork.com/story27510813/google-near-me
+2026-06-16 15:58:08 | INFO     | backlink_automation | Attempting to log out...
+2026-06-16 15:58:11 | INFO     | backlink_automation | Successfully created backlink: https://gorillasocialwork.com/story27510813/google-near-me
+2026-06-16 15:58:12 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-16 15:58:15 | INFO     | backlink_automation | [TaskRun a3f90fd4-cfe3-4373-a4c0-57d69932bc08] Executing step 2/2: Verification & Reporting on https://gorillasocialwork.com/
+2026-06-16 15:58:15 | INFO     | backlink_automation | [TaskRun a3f90fd4-cfe3-4373-a4c0-57d69932bc08] Intercepted Reporting Step.
+2026-06-16 15:58:15 | INFO     | backlink_automation | [Task b3c6db09-361c-4ede-915e-66174f2d3290] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-16 15:58:16 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

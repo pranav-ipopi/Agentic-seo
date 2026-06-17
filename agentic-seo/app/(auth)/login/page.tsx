@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Loader2, Mail, Lock, Eye, EyeOff } from 'lucide-react'
+import { Loader2, Mail, Lock, Eye, EyeOff, Building } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export default function LoginPage() {
@@ -11,6 +11,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [selectedDomain, setSelectedDomain] = useState('seo')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [mode, setMode] = useState<'login' | 'signup' | 'forgot'>('login')
@@ -34,7 +35,10 @@ export default function LoginPage() {
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: { emailRedirectTo: `${window.location.origin}/dashboard` },
+          options: { 
+            emailRedirectTo: `${window.location.origin}/dashboard`,
+            data: { department: selectedDomain }
+          },
         })
         if (error) throw error
         setMessage('Check your email to confirm your account.')
@@ -85,6 +89,27 @@ export default function LoginPage() {
             />
           </div>
         </div>
+
+        {mode === 'signup' && (
+          <div>
+            <label htmlFor="domain" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              Domain / Department
+            </label>
+            <div className="relative">
+              <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-500" />
+              <select
+                id="domain"
+                value={selectedDomain}
+                onChange={(e) => setSelectedDomain(e.target.value)}
+                className="w-full pl-10 pr-10 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors appearance-none cursor-pointer"
+              >
+                <option value="seo">SEO</option>
+                <option value="design" disabled>Design</option>
+                <option value="executive" disabled>Executive</option>
+              </select>
+            </div>
+          </div>
+        )}
 
         {mode !== 'forgot' && (
           <div>

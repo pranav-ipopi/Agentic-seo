@@ -18,7 +18,7 @@ import { cn, formatRelativeTime } from '@/lib/utils'
 import type { Task, Approval, TaskRun } from '@/lib/supabase/types'
 import ApprovalCard from '@/components/approvals/ApprovalCard'
 
-type TaskRunExtended = TaskRun & { workflow_templates?: { name: string } | null }
+type TaskRunExtended = TaskRun & { workflow_templates?: { name: string } | null, is_simple_task?: boolean }
 
 export default function RightSidebar() {
   const supabase = createClient()
@@ -32,14 +32,7 @@ export default function RightSidebar() {
   const loadData = useCallback(async () => {
     if (!activeClient) return
 
-    const [tasksRes, simpleTasksRes, approvalsRes] = await Promise.all([
-      supabase
-        .from('task_runs')
-        .select('*, workflow_templates(name)')
-        .eq('client_id', activeClient.id)
-        .in('status', ['running', 'pending', 'waiting_approval'])
-        .order('created_at', { ascending: false })
-        .limit(10),
+    const [simpleTasksRes, approvalsRes] = await Promise.all([
       supabase
         .from('tasks')
         .select('*')
@@ -56,14 +49,13 @@ export default function RightSidebar() {
         .limit(10),
     ])
 
-    const runs = tasksRes.data ?? []
     const simpleTasks = (simpleTasksRes.data ?? []).map((t: any) => ({
       ...t,
       workflow_templates: { name: `Campaign Task: ${t.title || t.type}` },
       is_simple_task: true,
     }))
 
-    const combined = [...runs, ...simpleTasks]
+    const combined = [...simpleTasks]
       .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
       .slice(0, 10)
 
@@ -78,39 +70,6 @@ export default function RightSidebar() {
   // Supabase Realtime subscriptions
   useEffect(() => {
     if (!activeClient) return
-
-    const tasksChannel = supabase
-      .channel(`task_runs-${activeClient.id}`)
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'task_runs', filter: `client_id=eq.${activeClient.id}` },
-        async (payload) => {
-          if (payload.eventType === 'INSERT') {
-            if (!['running', 'pending', 'waiting_approval'].includes(payload.new.status)) return
-            const { data } = await supabase
-              .from('workflow_templates')
-              .select('name')
-              .eq('id', payload.new.workflow_template_id)
-              .single()
-            const newTaskRun = { ...payload.new, workflow_templates: data } as TaskRunExtended
-            setTaskRuns((prev) => [newTaskRun, ...prev].slice(0, 10))
-          } else if (payload.eventType === 'UPDATE') {
-            setTaskRuns((prev) => {
-              if (!['running', 'pending', 'waiting_approval'].includes(payload.new.status)) {
-                return prev.filter((t) => t.id !== payload.new.id)
-              }
-              const exists = prev.some(t => t.id === payload.new.id)
-              if (exists) {
-                return prev.map((t) => t.id === payload.new.id ? { ...payload.new, workflow_templates: t.workflow_templates } as TaskRunExtended : t)
-              }
-              return prev // Should refetch if it wasn't there but now is? Ignoring for now
-            })
-          } else if (payload.eventType === 'DELETE') {
-            setTaskRuns((prev) => prev.filter((t) => t.id !== payload.old.id))
-          }
-        }
-      )
-      .subscribe()
 
     const simpleTasksChannel = supabase
       .channel(`tasks-${activeClient.id}`)
@@ -163,7 +122,6 @@ export default function RightSidebar() {
       .subscribe()
 
     return () => {
-      supabase.removeChannel(tasksChannel)
       supabase.removeChannel(simpleTasksChannel)
       supabase.removeChannel(approvalsChannel)
     }

@@ -127,17 +127,12 @@ class FailureHandler:
                 lines = f.readlines()
             
             job_logs = []
-            capturing = False
-            log_start_pattern = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \| ")
             
-            for line in lines:
-                if str(task_run_id) in line:
-                    job_logs.append(line)
-                    capturing = True
-                elif capturing and not log_start_pattern.match(line):
-                    job_logs.append(line)
-                else:
-                    capturing = False
+            # Capture the last 300 lines of the log file to show "nearby" logs globally
+            recent_lines = lines[-300:] if len(lines) > 300 else lines
+            
+            job_logs.append("--- RECENT CONSOLE LOGS (LAST 300 LINES) ---\n")
+            job_logs.extend(recent_lines)
                     
             if job_logs:
                 log_content = "".join(job_logs)

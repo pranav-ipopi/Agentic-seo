@@ -305,6 +305,18 @@ async def route_and_execute(task_run, supabase_client: Client):
                         'status': 'pending'
                     }).eq('id', task_run_id).execute()
                 
+    except asyncio.CancelledError:
+        logger.warning(f"[TaskRun {task_run_id}] Execution was cancelled by the user.")
+        supabase_client.table('task_run_logs').insert({
+            'task_run_id': task_run_id,
+            'step_index': task_run.get('current_step_index', 0),
+            'role': 'system',
+            'message': "Job was cancelled by the user.",
+            'metadata': {'status': 'failed'}
+        }).execute()
+        supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
+        check_and_update_parent_task(supabase_client, task_run.get('state', {}))
+        return
     except Exception as e:
         error_trace = traceback.format_exc()
         logger.error(f"[TaskRun {task_run_id}] Unexpected error:\n{error_trace}")
@@ -330,11 +342,24 @@ async def poll_queue():
     
     browser_started = False
     active_tasks = set()
+    task_mapping = {}  # Map asyncio.Task -> parent_task_id
     detecting_site_ids = set()  # Track which sites are currently being detected to avoid duplicates
     
     try:
         while True:
             try:
+                # --- Check for cancelled tasks ---
+                if task_mapping:
+                    parent_ids = list(set(task_mapping.values()))
+                    if parent_ids:
+                        res_cancelled = supabase.table('tasks').select('id, status').in_('id', parent_ids).eq('status', 'failed').execute()
+                        if res_cancelled.data:
+                            cancelled_ids = [r['id'] for r in res_cancelled.data]
+                            for t_task, p_id in list(task_mapping.items()):
+                                if p_id in cancelled_ids:
+                                    logger.info(f"Parent task {p_id} was failed. Cancelling associated task_run.")
+                                    t_task.cancel()
+
                 # If we have room for more tasks, fetch them
                 if len(active_tasks) < MAX_CONCURRENT_SESSIONS:
                     fetch_limit = MAX_CONCURRENT_SESSIONS - len(active_tasks)
@@ -359,7 +384,16 @@ async def poll_queue():
                             supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
                             task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
                             active_tasks.add(task)
-                            task.add_done_callback(active_tasks.discard)
+                            
+                            parent_task_id = t.get('state', {}).get('task_id')
+                            if parent_task_id:
+                                task_mapping[task] = parent_task_id
+                                
+                            def cleanup_task(fut, t_ref=task):
+                                active_tasks.discard(t_ref)
+                                task_mapping.pop(t_ref, None)
+                                
+                            task.add_done_callback(cleanup_task)
                             
                     # --- NEW: Template Detection Tasks ---
                     # If we still have room in the concurrency pool, look for sites that need detection

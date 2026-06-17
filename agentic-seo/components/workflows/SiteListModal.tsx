@@ -26,20 +26,20 @@ export default function SiteListModal({
 
   const loadSites = async () => {
     setIsLoading(true)
-    const { data, error } = await supabase
-      .from('target_sites')
-      .select('*')
-      .eq('category', category)
-      .order('created_at', { ascending: true })
-      
-    if (!error && data) {
-      setSites(data.map(s => ({ 
-        id: s.id, 
-        url: s.url, 
-        da: s.da ?? '', 
-        pa: s.pa ?? '', 
-        spam_score: s.spam_score ?? '' 
-      })))
+    try {
+      const res = await fetch(`/api/target_sites?category=${category}`)
+      if (res.ok) {
+        const data = await res.json()
+        setSites(data.map((s: any) => ({ 
+          id: s.id, 
+          url: s.url, 
+          da: s.da ?? '', 
+          pa: s.pa ?? '', 
+          spam_score: s.spam_score ?? '' 
+        })))
+      }
+    } catch (e) {
+      console.error(e)
     }
     setIsLoading(false)
   }
@@ -52,7 +52,7 @@ export default function SiteListModal({
     const item = sites[index]
     if (item.id) {
       // Delete from db
-      await supabase.from('target_sites').delete().eq('id', item.id)
+      await fetch(`/api/target_sites/${item.id}`, { method: 'DELETE' })
     }
     setSites(sites.filter((_, i) => i !== index))
   }
@@ -69,21 +69,20 @@ export default function SiteListModal({
       // Filter out empties
       const validSites = sites.filter(s => s.url.trim() !== '')
       
-      for (const site of validSites) {
-        const payload = {
-          url: site.url,
-          category: category,
-          da: site.da === '' ? null : Number(site.da),
-          pa: site.pa === '' ? null : Number(site.pa),
-          spam_score: site.spam_score === '' ? null : Number(site.spam_score)
-        }
+      const sitesPayload = validSites.map(site => ({
+        id: site.id,
+        url: site.url,
+        category: category,
+        da: site.da === '' ? null : Number(site.da),
+        pa: site.pa === '' ? null : Number(site.pa),
+        spam_score: site.spam_score === '' ? null : Number(site.spam_score)
+      }))
 
-        if (site.id) {
-          await supabase.from('target_sites').update(payload).eq('id', site.id)
-        } else {
-          await supabase.from('target_sites').insert(payload)
-        }
-      }
+      await fetch('/api/target_sites', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sites: sitesPayload, category })
+      })
       
       // Automatically trigger the edge function to detect templates for any new sites
       // We don't await this so it runs in the background without blocking the UI

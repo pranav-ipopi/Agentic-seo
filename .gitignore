@@ -1,0 +1,17 @@
+# Environments
+.env
+.env.local
+playwright_automation/backlink_automation/.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Node
+node_modules/
+
+# Logs
+logs/
+*.log

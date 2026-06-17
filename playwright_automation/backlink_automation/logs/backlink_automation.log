@@ -6499,3 +6499,128 @@ waiting for locator("#url, input[name='url'], input[name*='story_url'], input[ty
 2026-06-17 18:08:40 | INFO     | backlink_automation | [TaskRun 09325bba-aab3-402f-b804-1d38da132a12] Intercepted Reporting Step.
 2026-06-17 18:08:40 | INFO     | backlink_automation | [Task 5c50a4de-a487-48a7-a0cf-da4eea383a13] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
 2026-06-17 18:08:40 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-17 21:23:31 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:23:31 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:23:31 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:24:04 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:24:04 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:24:04 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:32:36 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-17 21:32:52 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:32:54 | INFO     | backlink_automation | [TaskRun cf04cd2c-dde9-4dee-96d4-532965cb1b43] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-17 21:32:55 | INFO     | backlink_automation | [TaskRun cf04cd2c-dde9-4dee-96d4-532965cb1b43] Routing to template: 'pligg' (target_site_id=None)
+2026-06-17 21:32:56 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-17 21:32:56 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://google.com, keyword=best search engine
+2026-06-17 21:32:56 | INFO     | backlink_automation | Navigating to home page
+2026-06-17 21:32:56 | ERROR    | backlink_automation | [TaskRun cf04cd2c-dde9-4dee-96d4-532965cb1b43] Execution failed: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://gorillasocialwork.com/
+Call log:
+navigating to "https://gorillasocialwork.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:32:56 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://gorillasocialwork.com/
+Call log:
+navigating to "https://gorillasocialwork.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:32:57 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/cf04cd2c-dde9-4dee-96d4-532965cb1b43_Submission_1781712176.png?
+2026-06-17 21:32:58 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/cf04cd2c-dde9-4dee-96d4-532965cb1b43_Submission_logs_1781712177.txt?
+2026-06-17 21:32:59 | INFO     | backlink_automation | [Task 64759d56-821c-4eda-8454-703c335c5bcd] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-17 21:33:00 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-17 21:35:02 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:35:02 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:35:02 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:38:54 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:38:54 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:38:54 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:41:02 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-17 21:41:04 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:41:06 | INFO     | backlink_automation | [TaskRun 907e2819-5efe-44aa-9825-07234d1abbb5] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-17 21:41:07 | INFO     | backlink_automation | [TaskRun 907e2819-5efe-44aa-9825-07234d1abbb5] Routing to template: 'pligg' (target_site_id=None)
+2026-06-17 21:41:07 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-17 21:41:07 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://google.com, keyword=best search engine
+2026-06-17 21:41:07 | INFO     | backlink_automation | Navigating to home page
+2026-06-17 21:41:07 | ERROR    | backlink_automation | [TaskRun 907e2819-5efe-44aa-9825-07234d1abbb5] Execution failed: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://bookmarkloves.com/
+Call log:
+navigating to "https://bookmarkloves.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:41:07 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://bookmarkloves.com/
+Call log:
+navigating to "https://bookmarkloves.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:41:09 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/907e2819-5efe-44aa-9825-07234d1abbb5_Submission_1781712668.png?
+2026-06-17 21:41:10 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/907e2819-5efe-44aa-9825-07234d1abbb5_Submission_logs_1781712669.txt?
+2026-06-17 21:41:11 | INFO     | backlink_automation | [Task 8031ada0-e750-4899-bc32-6e0947f9ae11] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-17 21:41:11 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-17 21:43:18 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:43:18 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:43:18 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:44:33 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-17 21:44:35 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:44:37 | INFO     | backlink_automation | [TaskRun 0ed132e5-1043-41ff-b933-76cd5ead9e3e] Executing step 1/2: Submission on https://getsocialpr.com/
+2026-06-17 21:44:38 | INFO     | backlink_automation | [TaskRun 0ed132e5-1043-41ff-b933-76cd5ead9e3e] Routing to template: 'pligg' (target_site_id=None)
+2026-06-17 21:44:38 | INFO     | backlink_automation | [TemplateRunner] Routing https://getsocialpr.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-17 21:44:38 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://getsocialpr.com for client_site=https://google.com, keyword=best search engine
+2026-06-17 21:44:38 | INFO     | backlink_automation | Navigating to home page
+2026-06-17 21:44:38 | ERROR    | backlink_automation | [TaskRun 0ed132e5-1043-41ff-b933-76cd5ead9e3e] Execution failed: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://getsocialpr.com/
+Call log:
+navigating to "https://getsocialpr.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:44:38 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://getsocialpr.com/
+Call log:
+navigating to "https://getsocialpr.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:44:39 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/0ed132e5-1043-41ff-b933-76cd5ead9e3e_Submission_1781712879.png?
+2026-06-17 21:44:40 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/0ed132e5-1043-41ff-b933-76cd5ead9e3e_Submission_logs_1781712880.txt?
+2026-06-17 21:44:41 | INFO     | backlink_automation | [Task c71742d5-b7ca-4ebd-acf7-cb9d9e0d6a3b] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-17 21:44:42 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-17 21:45:34 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-17 21:45:36 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:45:39 | INFO     | backlink_automation | [TaskRun fb97573a-226d-4f36-83e3-7769136d133a] Executing step 1/2: Submission on https://dirstop.com/
+2026-06-17 21:45:39 | INFO     | backlink_automation | [TaskRun fb97573a-226d-4f36-83e3-7769136d133a] Routing to template: 'pligg' (target_site_id=None)
+2026-06-17 21:45:39 | INFO     | backlink_automation | [TemplateRunner] Routing https://dirstop.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-17 21:45:39 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://dirstop.com for client_site=https://google.com, keyword=best search engine
+2026-06-17 21:45:39 | INFO     | backlink_automation | Navigating to home page
+2026-06-17 21:45:40 | ERROR    | backlink_automation | [TaskRun fb97573a-226d-4f36-83e3-7769136d133a] Execution failed: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://dirstop.com/
+Call log:
+navigating to "https://dirstop.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:45:40 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.goto: net::ERR_INVALID_AUTH_CREDENTIALS at https://dirstop.com/
+Call log:
+navigating to "https://dirstop.com/", waiting until "domcontentloaded"
+
+2026-06-17 21:45:40 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/fb97573a-226d-4f36-83e3-7769136d133a_Submission_1781712940.png?
+2026-06-17 21:45:41 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-17/fb97573a-226d-4f36-83e3-7769136d133a_Submission_logs_1781712940.txt?
+2026-06-17 21:45:42 | INFO     | backlink_automation | [Task 1be50fde-b2e6-4eb2-bbab-afffd576a66b] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-17 21:45:42 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-17 21:55:29 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-17 21:55:29 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-17 21:55:29 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-17 21:56:03 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-17 21:56:05 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:56:08 | INFO     | backlink_automation | [TaskRun 99aff464-5546-41ca-b2b8-ccec88e1a8d3] Executing step 1/2: Submission on https://socialnetworkadsinfo.com/
+2026-06-17 21:56:09 | INFO     | backlink_automation | [TaskRun 99aff464-5546-41ca-b2b8-ccec88e1a8d3] Routing to template: 'pligg' (target_site_id=None)
+2026-06-17 21:56:09 | INFO     | backlink_automation | [TemplateRunner] Routing https://socialnetworkadsinfo.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-17 21:56:09 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://socialnetworkadsinfo.com for client_site=https://google.com, keyword=best search engine
+2026-06-17 21:56:09 | INFO     | backlink_automation | Navigating to home page
+2026-06-17 21:56:25 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-17 21:56:25 | INFO     | backlink_automation | Registration started with username=userzqf0kq0l
+2026-06-17 21:57:01 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-17 21:57:15 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-17 21:57:16 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-17 21:57:30 | INFO     | backlink_automation | 2captcha predicted: 'raspberry tart'
+2026-06-17 21:57:39 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-17 21:57:39 | INFO     | backlink_automation | Registration flow finished
+2026-06-17 21:57:39 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-17 21:57:44 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-17 21:57:52 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-17 21:57:58 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-17 21:57:58 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-17 21:57:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-17 21:58:24 | INFO     | backlink_automation | 2captcha predicted: 'lovey dovey'
+2026-06-17 21:58:32 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-17 21:58:42 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://socialnetworkadsinfo.com/story23340058/best-search-engine
+2026-06-17 21:58:42 | INFO     | backlink_automation | Attempting to log out...
+2026-06-17 21:58:46 | INFO     | backlink_automation | Successfully created backlink: https://socialnetworkadsinfo.com/story23340058/best-search-engine
+2026-06-17 21:58:48 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-17 21:58:52 | INFO     | backlink_automation | [TaskRun 99aff464-5546-41ca-b2b8-ccec88e1a8d3] Executing step 2/2: Verification & Reporting on https://socialnetworkadsinfo.com/
+2026-06-17 21:58:53 | INFO     | backlink_automation | [TaskRun 99aff464-5546-41ca-b2b8-ccec88e1a8d3] Intercepted Reporting Step.
+2026-06-17 21:58:53 | INFO     | backlink_automation | [Task ff3600b6-184f-4502-a82f-190b788a8a6b] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-17 21:58:54 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

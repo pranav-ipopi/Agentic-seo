@@ -1,4 +1,5 @@
 import asyncio
+import os
 from seleniumbase import cdp_driver
 from playwright.async_api import async_playwright
 
@@ -17,7 +18,16 @@ class StealthBrowserManager:
     async def start(self):
         """Starts the stealth browser and attaches Playwright."""
         print("Starting Stealth Browser (SeleniumBase CDP)...")
-        # cdp_driver.start_async creates an undetected-chromedriver stealthy session.
+        use_proxy = os.getenv("USE_PROXY", "false").lower() == "true"
+        proxy_url = os.getenv("PROXY_URL") if use_proxy else None
+        
+        if proxy_url:
+            print(f"Proxy enabled. Will apply proxy to Playwright context.")
+        else:
+            print("Running without proxy (USE_PROXY is false or missing)")
+            
+        # Do NOT pass proxy to start_async, otherwise Chromium prompts for auth natively!
+        # We will handle it in the Playwright context.
         self.driver = await cdp_driver.start_async()
         endpoint_url = self.driver.get_endpoint_url()
         print(f"CDP Endpoint URL: {endpoint_url}")
@@ -35,12 +45,28 @@ class StealthBrowserManager:
         if not self.browser:
             raise Exception("Browser not started. Call start() first.")
         
+        use_proxy = os.getenv("USE_PROXY", "false").lower() == "true"
+        proxy_url = os.getenv("PROXY_URL") if use_proxy else None
+        proxy_dict = None
+        
+        if proxy_url:
+            from urllib.parse import urlparse
+            parsed = urlparse(proxy_url)
+            if parsed.username and parsed.password:
+                proxy_dict = {
+                    "server": f"{parsed.scheme}://{parsed.hostname}:{parsed.port}",
+                    "username": parsed.username,
+                    "password": parsed.password
+                }
+            else:
+                proxy_dict = {"server": proxy_url}
+        
         # Always create a new isolated context for concurrency.
-        # IMPORTANT: We explicitly set 1920x1080 — do NOT use no_viewport=True.
-        # no_viewport inherits the VPS/CDP window size which can be undefined or tiny in headless mode,
-        # causing responsive CSS to push the Submit button off-screen (reproduces the Playwright timeout).
-        # This was the fix from walkthrough c42e983e and must be kept.
-        context = await self.browser.new_context(viewport={"width": 1920, "height": 1080})
+        # We pass the proxy configuration directly into the context to bypass native auth popups.
+        context = await self.browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            proxy=proxy_dict
+        )
         return await context.new_page()
 
     async def close(self):

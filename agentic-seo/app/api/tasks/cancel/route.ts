@@ -27,7 +27,8 @@ export async function POST(request: NextRequest) {
 
     // Use service client to bypass RLS for the UPDATE operation
     const adminSupabase = createServiceClient()
-    const { error: updateError } = await adminSupabase
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error: updateError } = await (adminSupabase as any)
       .from('tasks')
       .update({ status: 'failed', result: newResult, updated_at: new Date().toISOString() })
       .eq('id', taskId)

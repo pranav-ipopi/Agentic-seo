@@ -30,9 +30,10 @@ export async function POST(request: NextRequest) {
   // Loop and upsert to bypass RLS
   for (const kw of keywords) {
     if (kw.id) {
-      await adminClient.from('keywords').update({ keyword: kw.keyword }).eq('id', kw.id)
+      // @ts-ignore
+      await adminClient.from('keywords').update({ keyword: kw.keyword } as any).eq('id', kw.id)
     } else {
-      await adminClient.from('keywords').insert({ client_id: clientId, keyword: kw.keyword })
+      await adminClient.from('keywords').insert({ client_id: clientId, keyword: kw.keyword } as any)
     }
   }
 

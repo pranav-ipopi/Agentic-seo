@@ -6,7 +6,7 @@ import type { TaskRun } from '@/lib/supabase/types'
 export async function downloadCampaignExcelReport(task: TaskRun, activeClientName: string) {
   try {
     const supabase = createClient()
-    const campaignId = (task.state as any)?.campaign_id || (task.output as any)?.campaign_id
+    const campaignId = (task as any).state?.campaign_id || (task as any).output?.campaign_id
 
     if (!campaignId) {
       alert("No campaign ID found for this task run.")
@@ -51,7 +51,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
         .in('url', uniqueSourceUrls);
         
       if (targetSitesData) {
-        targetSitesData.forEach(site => {
+        targetSitesData.forEach((site: any) => {
           targetSitesMap[site.url] = {
             da: site.da,
             pa: site.pa,
@@ -86,7 +86,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
         console.error("Failed to fetch backlink:", backlinksError)
       }
 
-      let backlink = backlinks?.[0]
+      let backlink = (backlinks as any)?.[0]
       let metadata = backlink?.metadata || {}
       
       // Fallback: Check task_run_logs if no backlink but task is completed
@@ -100,7 +100,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
           
         if (logs && logs.length > 0) {
           for (const log of logs) {
-            const structuredData = (log.metadata as any)?.structured_data;
+            const structuredData = ((log as any).metadata as any)?.structured_data;
             if (structuredData && structuredData.live_url) {
               metadata = structuredData;
               break;
@@ -162,7 +162,7 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     // Auto-fit columns
     worksheet.columns.forEach(column => {
         let maxLength = 0;
-        column.eachCell({ includeEmpty: true }, cell => {
+        column?.eachCell?.({ includeEmpty: true }, cell => {
             const columnLength = cell.value ? cell.value.toString().length : 10;
             if (columnLength > maxLength) {
                 maxLength = columnLength;

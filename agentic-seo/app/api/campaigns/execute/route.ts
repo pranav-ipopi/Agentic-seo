@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 1c. Merge usage counts and Sort
-    const sitesWithUsage = allTargetSites.map(s => ({
+    const sitesWithUsage = allTargetSites.map((s: any) => ({
       ...s,
       usage_count: usageMap.get(s.url) || 0
     }))
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
         type: 'backlink_campaign',
         status: 'running',
         created_by: userId,
-      })
+      } as any)
       .select()
       .single()
 
@@ -101,8 +101,8 @@ export async function POST(request: NextRequest) {
         user_id: userId,
         title: finalCampaignName,
         status: 'pending',
-        output: { campaign_id: campaign.id }
-      })
+        output: { campaign_id: (campaign as any).id }
+      } as any)
       .select()
       .single()
 
@@ -133,8 +133,8 @@ export async function POST(request: NextRequest) {
           status: 'pending',
           current_step_index: 0,
           state: {
-            campaign_id: campaign.id,
-            task_id: parentTask.id,
+            campaign_id: (campaign as any).id,
+            task_id: (parentTask as any).id,
             client_target_url: `https://${clientTargetUrl.trim()}`,
             target_site: site.url,
             category: submissionType,
@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
     // 5. Bulk insert task_runs
     const { data: insertedTaskRuns, error: taskRunsError } = await adminClient
       .from('task_runs')
-      .insert(taskRunsToInsert)
+      .insert(taskRunsToInsert as any)
       .select()
 
     if (taskRunsError) throw taskRunsError
@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
 
       await adminClient
         .from('client_site_usage')
-        .upsert(upsertUsageData, { onConflict: 'client_id, site_url' })
+        .upsert(upsertUsageData as any, { onConflict: 'client_id, site_url' })
     } catch (err) {
       console.warn('Failed to update site usage tracking', err)
     }

@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
   const { data: client, error: clientError } = await supabaseAdmin
     .from('clients')
-    .insert({ name, domain, description, category, created_by: user.id })
+    .insert({ name, domain, description, category, created_by: user.id } as any)
     .select()
     .single()
 

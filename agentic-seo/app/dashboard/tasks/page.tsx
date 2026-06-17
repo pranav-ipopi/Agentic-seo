@@ -233,7 +233,7 @@ export default function TasksPage() {
           )
         }
         return <span className={cn(base, 'bg-red-500/15 text-red-300')}>Failed</span>
-      default: return <span className={cn(base, 'bg-gray-400 dark:bg-gray-500/15 text-gray-700 dark:text-gray-300 capitalize')}>{status.replace('_', ' ')}</span>
+      default: return <span className={cn(base, 'bg-gray-400 dark:bg-gray-500/15 text-gray-700 dark:text-gray-300 capitalize')}>{String(status).replace('_', ' ')}</span>
     }
   }
 

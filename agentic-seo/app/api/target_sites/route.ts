@@ -49,9 +49,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (site.id) {
-      await adminClient.from('target_sites').update(payload).eq('id', site.id)
+      // @ts-ignore
+      await adminClient.from('target_sites').update(payload as any).eq('id', site.id)
     } else {
-      await adminClient.from('target_sites').insert(payload)
+      await adminClient.from('target_sites').insert(payload as any)
     }
   }
 

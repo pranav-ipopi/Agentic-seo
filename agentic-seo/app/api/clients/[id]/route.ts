@@ -40,7 +40,8 @@ export async function PATCH(
 
   const { data: updatedClient, error } = await adminClient
     .from('clients')
-    .update({ name, domain, description, category })
+    // @ts-ignore
+    .update({ name, domain, description, category } as any)
     .eq('id', id)
     .select()
     .single()

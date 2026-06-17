@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Add rewrites to proxy requests to your VPS raw IP securely
+  async rewrites() {
+    return [
+      {
+        source: '/api/hermes/:path*',
+        destination: 'http://13.140.131.128:8642/:path*', // Proxy to VPS Hermes Server
+      },
+    ]
+  },
   // Headers for SSE support
   async headers() {
     return [

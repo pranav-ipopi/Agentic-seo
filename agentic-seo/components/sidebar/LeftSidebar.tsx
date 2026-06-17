@@ -20,6 +20,7 @@ import {
   Workflow,
   MoreVertical,
   Trash2,
+  Users,
 } from 'lucide-react'
 import { cn, getInitials, formatRelativeTime } from '@/lib/utils'
 import type { Client, ChatSession, Profile } from '@/lib/supabase/types'
@@ -62,17 +63,16 @@ export default function LeftSidebar() {
         .single()
       if (profileData) setProfile(profileData)
 
-      // Load clients via membership
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data: memberData } = await (supabase as any)
-        .from('client_members')
-        .select('clients(*)')
-        .eq('user_id', user.id)
-      const clientList = memberData
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ?.flatMap((m: any) => (m.clients ? [m.clients as Client] : []))
-        ?? []
-      setClients(clientList)
+      // Load all clients for the domain team
+      try {
+        const res = await fetch('/api/clients')
+        if (res.ok) {
+          const clientList = await res.json()
+          setClients(clientList)
+        }
+      } catch (err) {
+        console.error('Failed to load clients', err)
+      }
 
       setLoading(false)
     }
@@ -353,6 +353,14 @@ export default function LeftSidebar() {
               {profile?.role?.replace('_', ' ') ?? 'Loading...'}
             </span>
           </div>
+          <Link
+            href="/dashboard/settings/team"
+            title="Team Settings"
+            className="opacity-0 group-hover:opacity-100 text-gray-500 dark:text-gray-500 hover:text-indigo-400 transition-all p-1 rounded"
+            aria-label="Team Settings"
+          >
+            <Users className="w-3.5 h-3.5" />
+          </Link>
           <button
             id="sign-out-btn"
             onClick={handleSignOut}

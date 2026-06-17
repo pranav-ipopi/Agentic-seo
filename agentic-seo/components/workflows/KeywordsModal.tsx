@@ -26,14 +26,14 @@ export default function KeywordsModal({
 
   const loadKeywords = async () => {
     setIsLoading(true)
-    const { data, error } = await supabase
-      .from('keywords')
-      .select('*')
-      .eq('client_id', clientId)
-      .order('created_at', { ascending: true })
-      
-    if (!error && data) {
-      setKeywords(data.map(k => ({ id: k.id, keyword: k.keyword })))
+    try {
+      const res = await fetch(`/api/keywords?client_id=${clientId}`)
+      if (res.ok) {
+        const data = await res.json()
+        setKeywords(data.map((k: any) => ({ id: k.id, keyword: k.keyword })))
+      }
+    } catch (e) {
+      console.error(e)
     }
     setIsLoading(false)
   }
@@ -46,7 +46,7 @@ export default function KeywordsModal({
     const item = keywords[index]
     if (item.id) {
       // Delete from db
-      await supabase.from('keywords').delete().eq('id', item.id)
+      await fetch(`/api/keywords/${item.id}`, { method: 'DELETE' })
     }
     setKeywords(keywords.filter((_, i) => i !== index))
   }
@@ -63,13 +63,11 @@ export default function KeywordsModal({
       // Filter out empties
       const validKw = keywords.filter(k => k.keyword.trim() !== '')
       
-      for (const kw of validKw) {
-        if (kw.id) {
-          await supabase.from('keywords').update({ keyword: kw.keyword }).eq('id', kw.id)
-        } else {
-          await supabase.from('keywords').insert({ client_id: clientId, keyword: kw.keyword })
-        }
-      }
+      await fetch('/api/keywords', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ keywords: validKw, clientId })
+      })
       
       await loadKeywords()
       onClose()

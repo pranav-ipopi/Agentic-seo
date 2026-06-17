@@ -28,6 +28,8 @@ export default function RunConfigurationPanel({
   const [maxSpamScore, setMaxSpamScore] = useState(4)
   const [submissionType, setSubmissionType] = useState('bookmarking')
   const [clientTargetUrl, setClientTargetUrl] = useState('')
+  const [campaignName, setCampaignName] = useState('')
+  const [isNameEdited, setIsNameEdited] = useState(false)
   const [isKeywordsModalOpen, setIsKeywordsModalOpen] = useState(false)
   const [isSiteListModalOpen, setIsSiteListModalOpen] = useState(false)
   const [keywordCount, setKeywordCount] = useState(0)
@@ -45,23 +47,36 @@ export default function RunConfigurationPanel({
     }
   }, [showSuccessNotification])
 
+  React.useEffect(() => {
+    if (!isNameEdited && activeClient && template) {
+      setCampaignName(`${template.name} for ${activeClient.name} (${submissionType})`)
+    }
+  }, [activeClient, template, submissionType, isNameEdited])
+
   // Fetch max available sites when filters change
   React.useEffect(() => {
     const fetchMaxSites = async () => {
-      const { count } = await supabase
-        .from('target_sites')
-        .select('*', { count: 'exact', head: true })
-        .eq('category', submissionType)
-        .gte('da', minDa)
-        .gte('pa', minPa)
-        .lte('spam_score', maxSpamScore)
-      
-      setMaxAvailableSites(count || 0)
-      if (targetSitesCount > (count || 0)) {
-        setTargetSitesCount(count || 0)
-        // Trigger pulse effect
-        setIsPulsing(true)
-        setTimeout(() => setIsPulsing(false), 2000)
+      try {
+        const queryParams = new URLSearchParams({
+          category: submissionType,
+          minDa: minDa.toString(),
+          minPa: minPa.toString(),
+          maxSpamScore: maxSpamScore.toString(),
+          countOnly: 'true'
+        })
+        const res = await fetch(`/api/target_sites?${queryParams}`)
+        if (res.ok) {
+          const { count } = await res.json()
+          setMaxAvailableSites(count || 0)
+          if (targetSitesCount > (count || 0)) {
+            setTargetSitesCount(count || 0)
+            // Trigger pulse effect
+            setIsPulsing(true)
+            setTimeout(() => setIsPulsing(false), 2000)
+          }
+        }
+      } catch (err) {
+        console.error('Failed to fetch max sites count:', err)
       }
     }
     fetchMaxSites()
@@ -70,12 +85,15 @@ export default function RunConfigurationPanel({
   React.useEffect(() => {
     if (activeClient) {
       const fetchKeywords = async () => {
-        const { count } = await supabase
-          .from('keywords')
-          .select('*', { count: 'exact', head: true })
-          .eq('client_id', activeClient.id)
-        
-        setKeywordCount(count || 0)
+        try {
+          const res = await fetch(`/api/keywords?client_id=${activeClient.id}`)
+          if (res.ok) {
+            const data = await res.json()
+            setKeywordCount(data.length)
+          }
+        } catch (e) {
+          console.error(e)
+        }
       }
       fetchKeywords()
     }
@@ -89,6 +107,11 @@ export default function RunConfigurationPanel({
 
     if (!clientTargetUrl.trim()) {
       setErrorMessage('Please provide the Client Target URL.')
+      return
+    }
+
+    if (!campaignName.trim()) {
+      setErrorMessage('Please provide a Campaign Name.')
       return
     }
 
@@ -110,150 +133,34 @@ export default function RunConfigurationPanel({
     setIsSubmitting(true)
 
     try {
-      // 1. Fetch available target sites from inventory (ALL matching criteria)
-      const { data: allTargetSites, error: sitesError } = await supabase
-        .from('target_sites')
-        .select('url, da')
-        .eq('category', submissionType)
-        .gte('da', minDa)
-        .gte('pa', minPa)
-        .lte('spam_score', maxSpamScore)
-
-      if (sitesError) throw sitesError
-
-      if (!allTargetSites || allTargetSites.length === 0) {
-        setErrorMessage('No target sites found matching your criteria. Try lowering the minimum DA or choosing a different category.')
-        setIsSubmitting(false)
-        return
+      const payload = {
+        clientId: activeClient?.id,
+        clientName: activeClient?.name,
+        templateId: template.id,
+        templateName: template.name,
+        departmentId: (template as any).department_id ?? null,
+        submissionType,
+        minDa,
+        minPa,
+        maxSpamScore,
+        targetSitesCount,
+        clientTargetUrl: clientTargetUrl.trim(),
+        campaignName: campaignName.trim()
       }
 
-      // 1b. Fetch usage tracking for this client to ensure even distribution
-      const { data: usageData, error: usageError } = await supabase
-        .from('client_site_usage')
-        .select('site_url, usage_count')
-        .eq('client_id', activeClient.id)
-
-      if (usageError && usageError.code !== '42P01') {
-        // Ignore 42P01 (table does not exist yet) to not break before migration
-        console.warn('Could not fetch usage tracking', usageError)
-      }
-
-      const usageMap = new Map()
-      if (usageData) {
-        usageData.forEach((u: any) => usageMap.set(u.site_url, u.usage_count))
-      }
-
-      // 1c. Merge usage counts and Sort: Lowest usage first, then highest DA
-      const sitesWithUsage = allTargetSites.map(s => ({
-        ...s,
-        usage_count: usageMap.get(s.url) || 0
-      }))
-
-      sitesWithUsage.sort((a, b) => {
-        if (a.usage_count !== b.usage_count) {
-          return a.usage_count - b.usage_count
-        }
-        return b.da - a.da
+      const res = await fetch('/api/campaigns/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       })
 
-      // 1d. Select the top N target sites
-      const targetSites = sitesWithUsage.slice(0, targetSitesCount)
+      const data = await res.json()
 
-      // 2. Create the parent Campaign
-      const campaignName = `${template.name} for ${activeClient.name} (${submissionType})`
-      const { data: campaign, error: campaignError } = await supabase
-        .from('campaigns')
-        .insert({
-          client_id: activeClient.id,
-          department_id: (template as any).department_id ?? null,
-          name: campaignName,
-          type: 'backlink_campaign',
-          status: 'running',
-        })
-        .select()
-        .single()
-
-      if (campaignError) throw campaignError
-
-      // 2b. Create the parent Task for the UI
-      const { data: parentTask, error: parentTaskError } = await supabase
-        .from('tasks')
-        .insert({
-          client_id: activeClient.id,
-          department_id: (template as any).department_id ?? null,
-          title: campaignName,
-          status: 'pending',
-          output: { campaign_id: campaign.id }
-        })
-        .select()
-        .single()
-
-      if (parentTaskError) throw parentTaskError
-
-      // 3. Fetch keywords
-      const { data: keywords, error: keywordsError } = await supabase
-        .from('keywords')
-        .select('*')
-        .eq('client_id', activeClient.id)
-
-      if (keywordsError) throw keywordsError
-
-      const activeKeywords = keywords && keywords.length > 0 ? keywords : []
-
-      // 4. Prepare the atomic task_runs for the Hermes worker to pick up
-      const taskRunsToInsert: any[] = []
-      targetSites.forEach((site: any) => {
-        activeKeywords.forEach((kw: any) => {
-          taskRunsToInsert.push({
-            client_id: activeClient.id,
-            department_id: (template as any).department_id ?? null,
-            workflow_template_id: template.id,
-            status: 'pending',
-            current_step_index: 0,
-            state: {
-              campaign_id: campaign.id,
-              task_id: parentTask.id,
-              client_target_url: `https://${clientTargetUrl.trim()}`,
-              target_site: site.url,
-              category: submissionType,
-              min_da: minDa,
-              min_pa: minPa,
-              max_spam_score: maxSpamScore,
-              keyword: kw.keyword,
-            }
-          })
-        })
-      })
-
-      // 5. Bulk insert task_runs
-      const { data: insertedTaskRuns, error: taskRunsError } = await supabase
-        .from('task_runs')
-        .insert(taskRunsToInsert)
-        .select()
-
-      if (taskRunsError) throw taskRunsError
-
-      // 6. Update usage tracking
-      try {
-        const upsertUsageData = targetSites.map((s: any) => ({
-          client_id: activeClient.id,
-          site_url: s.url,
-          usage_count: s.usage_count + 1,
-          last_used_at: new Date().toISOString()
-        }))
-
-        // We use upsert to insert new or update existing
-        await supabase
-          .from('client_site_usage')
-          .upsert(upsertUsageData, { onConflict: 'client_id, site_url' })
-      } catch (err) {
-        console.warn('Failed to update site usage tracking. (Check if migration was run)', err)
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to start campaign')
       }
 
-      // Note: We no longer call `/api/workflows/execute`. Hermes will autonomously 
-      // pick up task_runs where status = 'pending'.
-
-      setQueuedRunsCount(taskRunsToInsert.length)
+      setQueuedRunsCount(data.queuedRunsCount)
       setShowSuccessNotification(true)
     } catch (err: any) {
       console.error(err)
@@ -287,6 +194,22 @@ export default function RunConfigurationPanel({
           <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-600 dark:text-gray-400 uppercase tracking-wider">
             Campaign Parameters
           </h3>
+
+          <div className="space-y-2">
+            <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center justify-between">
+              <span>Campaign Name <span className="text-rose-500">*</span></span>
+            </label>
+            <input
+              type="text"
+              placeholder="Campaign Name"
+              value={campaignName}
+              onChange={e => {
+                setCampaignName(e.target.value);
+                setIsNameEdited(true);
+              }}
+              className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+            />
+          </div>
 
           <div className="space-y-2">
             <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center justify-between">

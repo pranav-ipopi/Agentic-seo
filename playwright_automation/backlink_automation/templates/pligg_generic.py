@@ -127,14 +127,17 @@ class PliggGenericTemplate(BaseTemplate):
                 captcha_img = page.locator(image_fallback_sel).first
 
             if await captcha_img.count() > 0:
-                # Save the image locally
-                img_path = "solvemedia_captcha.png"
+                import uuid
+                import os
+                # Save the image locally with a unique name to avoid concurrency issues
+                unique_id = uuid.uuid4().hex
+                img_path = f"solvemedia_captcha_{unique_id}.png"
                 await captcha_img.screenshot(path=img_path)
 
                 # 3. Use twocaptcha for solving
                 def run_2captcha(image_path):
                     from twocaptcha import TwoCaptcha
-                    api_key = '20205071fed24f4c1418d43380555585'
+                    api_key = os.environ.get('TWOCAPTCHA_API_KEY', '20205071fed24f4c1418d43380555585') # Fallback to existing if not set
                     solver = TwoCaptcha(api_key)
                     result = solver.normal(image_path)
                     return result.get('code', '') if isinstance(result, dict) else ''
@@ -142,7 +145,16 @@ class PliggGenericTemplate(BaseTemplate):
                 # Run network request outside the browser event thread
                 loop = asyncio.get_event_loop()
                 self.logger.info("Sending image to 2captcha service...")
-                pred = await loop.run_in_executor(None, run_2captcha, img_path)
+                
+                try:
+                    pred = await loop.run_in_executor(None, run_2captcha, img_path)
+                finally:
+                    # Clean up the file after sending
+                    if os.path.exists(img_path):
+                        try:
+                            os.remove(img_path)
+                        except Exception as cleanup_err:
+                            self.logger.warning(f"Could not remove temporary captcha file {img_path}: {cleanup_err}")
 
                 pred = pred.strip()
                 self.logger.info(f"2captcha predicted: '{pred}'")
@@ -240,6 +252,12 @@ class PliggGenericTemplate(BaseTemplate):
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:
                 self.logger.warning("Invalid captcha detected. Retrying...")
+                if attempt == max_retries - 1:
+                    raise CaptchaFailedError(
+                        message="Max retries exceeded due to persistent invalid captcha on registration.",
+                        step="register",
+                        url=self.REGISTER_URL
+                    )
                 continue
             elif "error" in body_text or "already" in body_text:
                 self.logger.warning("Possible registration error or duplicate. Proceeding anyway.")
@@ -379,6 +397,12 @@ class PliggGenericTemplate(BaseTemplate):
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:
                 self.logger.warning("Invalid captcha detected on submit. Retrying...")
+                if attempt == max_retries - 1:
+                    raise CaptchaFailedError(
+                        message="Max retries exceeded due to persistent invalid captcha on submit.",
+                        step="submit_bookmark",
+                        url=self.BASE_URL
+                    )
                 continue
             else:
                 break

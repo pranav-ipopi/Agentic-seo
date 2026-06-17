@@ -51,4 +51,10 @@ class StealthBrowserManager:
         if self._playwright_context_manager:
             await self._playwright_context_manager.__aexit__(None, None, None)
             
+        if self.driver:
+            try:
+                self.driver.quit()
+            except Exception as e:
+                print(f"Error closing cdp_driver: {e}")
+                
         print("Stealth Browser closed.")

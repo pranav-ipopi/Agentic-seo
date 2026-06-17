@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 
 import { createClient } from '@/lib/supabase/client'
 import { useClient } from '@/components/layout/ClientProvider'
-import { Loader2, Plus, Building2, Globe, Save, Check, Trash2, AlertTriangle, X, Pencil } from 'lucide-react'
+import { Loader2, Plus, Building2, Globe, Save, Check, Trash2, AlertTriangle, X, Pencil, Users } from 'lucide-react'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import type { Profile, Client } from '@/lib/supabase/types'
 
@@ -172,14 +173,23 @@ export default function SettingsPage() {
               </div>
               
 
-              <button
-                onClick={saveProfile}
-                disabled={saving}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 text-white text-sm font-medium rounded-lg transition-colors"
-              >
-                {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : saved ? <Check className="w-4 h-4" /> : <Save className="w-4 h-4" />}
-                {saved ? 'Saved!' : 'Save Changes'}
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={saveProfile}
+                  disabled={saving}
+                  className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : saved ? <Check className="w-4 h-4" /> : <Save className="w-4 h-4" />}
+                  {saved ? 'Saved!' : 'Save Changes'}
+                </button>
+                <Link
+                  href="/dashboard/settings/team"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  <Users className="w-4 h-4" />
+                  Manage Team
+                </Link>
+              </div>
             </div>
           </div>
         )}

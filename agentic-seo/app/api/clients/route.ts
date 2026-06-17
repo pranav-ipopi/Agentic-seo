@@ -1,14 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
 
 export async function GET() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const supabaseAdmin = createServiceClient()
 
-  // Since RLS is enforced on the clients table, we can just query it directly.
-  // The 'Members can view their clients' policy ensures users only see their clients.
-  const { data, error } = await supabase.from('clients').select('*').order('name')
+  // To allow all team members to see all clients (domain-wide sharing),
+  // we bypass RLS using the service role key.
+  const { data, error } = await supabaseAdmin.from('clients').select('*').order('name')
   
   if (error) {
     console.error('Supabase query error in GET /api/clients:', error)
@@ -19,6 +17,8 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const supabaseAdmin = createServiceClient()
+  const { createClient } = await import('@/lib/supabase/server')
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -28,18 +28,13 @@ export async function POST(request: NextRequest) {
 
   if (!name) return NextResponse.json({ error: 'Client name is required' }, { status: 400 })
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: client, error: clientError } = await (supabase as any)
+  const { data: client, error: clientError } = await supabaseAdmin
     .from('clients')
     .insert({ name, domain, description, category, created_by: user.id })
     .select()
     .single()
 
   if (clientError) return NextResponse.json({ error: clientError.message }, { status: 500 })
-
-  // Add creator as member
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  await (supabase as any).from('client_members').insert({ client_id: client.id, user_id: user.id })
 
   return NextResponse.json(client, { status: 201 })
 }

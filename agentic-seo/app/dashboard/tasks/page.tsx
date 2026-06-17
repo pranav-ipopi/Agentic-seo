@@ -13,6 +13,7 @@ import AnimatedTerminal from '@/components/tasks/AnimatedTerminal'
 
 type TaskRunExtended = TaskRun & { 
   workflow_templates?: { name: string } | null,
+  profiles?: { id: string, full_name: string, avatar_url: string } | null,
   is_simple_task?: boolean,
   output?: any,
   result?: any,
@@ -33,6 +34,7 @@ export default function TasksPage() {
   const [expandedTaskId, setExpandedTaskId] = useState<string | null>(null)
   const [logs, setLogs] = useState<Record<string, TaskRunLog[]>>({})
   const [loadingLogs, setLoadingLogs] = useState<Record<string, boolean>>({})
+  const [taskToCancel, setTaskToCancel] = useState<string | null>(null)
 
   useEffect(() => {
     async function load() {
@@ -41,7 +43,7 @@ export default function TasksPage() {
       
       const query = supabase
         .from('tasks')
-        .select('*')
+        .select('*, profiles(id, full_name, avatar_url)')
         .eq('client_id', activeClient.id)
         .not('output->campaign_id', 'is', null)
         .order('created_at', { ascending: false })
@@ -59,6 +61,7 @@ export default function TasksPage() {
         created_at: t.created_at,
         current_step_index: 0,
         workflow_templates: { name: `Campaign: ${t.title || t.type}` },
+        profiles: t.profiles,
         is_simple_task: !t.output?.campaign_id,
         payload: t.payload,
         result: t.result,
@@ -167,6 +170,26 @@ export default function TasksPage() {
     }
   }
 
+  const handleCancelTask = async (taskId: string) => {
+    // Optimistically update the UI
+    setTasks(prev => prev.map(t => t.id === taskId ? { ...t, status: 'failed', result: { ...(t.result || {}), is_cancelled: true } } as any : t))
+    setTaskToCancel(null)
+    
+    try {
+      const res = await fetch('/api/tasks/cancel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ taskId })
+      })
+      if (!res.ok) {
+        const errorText = await res.text()
+        console.error('Failed to cancel task on server:', res.status, errorText)
+      }
+    } catch (err) {
+      console.error('Error cancelling task:', err)
+    }
+  }
+
   const statusIcon = (status: string) => {
     switch (status) {
       case 'running': return <Loader2 className="w-4 h-4 text-indigo-400 animate-spin" />
@@ -178,8 +201,12 @@ export default function TasksPage() {
     }
   }
 
-  const statusBadge = (status: string, summary?: { total: number; succeeded: number; failed: number } | null) => {
+  const statusBadge = (task: TaskRunExtended) => {
     const base = 'text-xs px-2 py-0.5 rounded-full font-medium'
+    const status = task.status
+    const summary = (task as any).summary
+    const isCancelled = task.result?.is_cancelled
+
     switch (status) {
       case 'running': return <span className={cn(base, 'bg-indigo-500/15 text-indigo-300')}>Running</span>
       case 'pending': return <span className={cn(base, 'bg-amber-500/15 text-amber-300')}>Pending</span>
@@ -195,6 +222,9 @@ export default function TasksPage() {
         }
         return <span className={cn(base, 'bg-emerald-500/15 text-emerald-300')}>Completed</span>
       case 'failed':
+        if (isCancelled) {
+          return <span className={cn(base, 'bg-gray-500/15 text-gray-400')}>Cancelled by User</span>
+        }
         if (summary) {
           return (
             <span className={cn(base, 'bg-red-500/15 text-red-300')}>
@@ -269,7 +299,7 @@ export default function TasksPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start gap-2">
                         <span className="text-sm font-medium text-gray-900 dark:text-white flex-1">{task.workflow_templates?.name || 'Workflow Run'}</span>
-                        {statusBadge(task.status, (task as any).summary)}
+                        {statusBadge(task)}
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1 line-clamp-2">
                         {(task as any).summary
@@ -277,7 +307,26 @@ export default function TasksPage() {
                           : `Currently at Step ${task.current_step_index + 1}`
                         }
                       </p>
-                      <p className="text-xs text-gray-400 dark:text-gray-600 mt-1.5">{formatRelativeTime(task.created_at)}</p>
+                      <div className="flex items-center gap-2 mt-1.5">
+                        <p className="text-xs text-gray-400 dark:text-gray-600">{formatRelativeTime(task.created_at)}</p>
+                        {task.profiles && (
+                          <>
+                            <span className="text-gray-600 dark:text-gray-400 text-xs">•</span>
+                            <div className="flex items-center gap-1.5 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full border border-gray-200 dark:border-gray-700">
+                              {task.profiles.avatar_url ? (
+                                <img src={task.profiles.avatar_url} alt="avatar" className="w-3.5 h-3.5 rounded-full object-cover" />
+                              ) : (
+                                <div className="w-3.5 h-3.5 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                                  <span className="text-[8px] font-bold text-indigo-400">{task.profiles.full_name?.charAt(0) || 'U'}</span>
+                                </div>
+                              )}
+                              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-300">
+                                {task.profiles.full_name || 'Unknown User'}
+                              </span>
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                     <div className="text-gray-500 dark:text-gray-500">
                       {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -290,15 +339,26 @@ export default function TasksPage() {
                       
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200">Execution Logs</h3>
-                        {task.status === 'completed' && (
-                          <button
-                            onClick={() => handleDownloadPDF(task)}
-                            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 rounded text-xs font-medium transition-colors"
-                          >
-                            <Download className="w-3.5 h-3.5" />
-                            Download Report
-                          </button>
-                        )}
+                        <div className="flex items-center gap-2">
+                          {(task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval') && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); setTaskToCancel(task.id); }}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 text-red-500 hover:bg-red-500/20 rounded text-xs font-medium transition-colors"
+                            >
+                              <XCircle className="w-3.5 h-3.5" />
+                              Cancel Job
+                            </button>
+                          )}
+                          {task.status === 'completed' && (
+                            <button
+                              onClick={() => handleDownloadPDF(task)}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 rounded text-xs font-medium transition-colors"
+                            >
+                              <Download className="w-3.5 h-3.5" />
+                              Download Report
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {isLogsLoading ? (
@@ -356,6 +416,32 @@ export default function TasksPage() {
           </div>
         )}
       </div>
+
+      {/* Cancel Confirmation Modal */}
+      {taskToCancel && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 max-w-sm w-full shadow-xl">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Cancel Job</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+              Are you sure you want to cancel this job? This action will mark the job as failed and stop any running background tasks.
+            </p>
+            <div className="flex items-center justify-end gap-3">
+              <button
+                onClick={() => setTaskToCancel(null)}
+                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Go Back
+              </button>
+              <button
+                onClick={() => handleCancelTask(taskToCancel)}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors"
+              >
+                Confirm Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

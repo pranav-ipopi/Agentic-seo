@@ -17,6 +17,15 @@ interface ChatMessagesProps {
   isStreaming: boolean
   streamingContent: string
   toolProgress: ToolStep[]
+  onPromptSelect?: (prompt: string) => void
+}
+
+const PROMPT_MAPPING: Record<string, string> = {
+  'Find backlink opportunities': 'Analyze my website and identify high-quality backlink opportunities. Include relevant websites, directories, resource pages, guest posting prospects, and competitor backlink gaps that could improve my domain authority and rankings.',
+  'Analyze competitor keywords': "Analyze my top competitors and identify the keywords they rank for that I don't. Highlight high-value, low-competition opportunities, estimated search volume, ranking difficulty, and content ideas to target these keywords.",
+  'Audit technical SEO issues': 'Perform a technical SEO audit of my website. Identify issues affecting crawlability, indexing, site speed, mobile usability, Core Web Vitals, internal linking, structured data, redirects, and metadata. Prioritize fixes by impact.',
+  'Research content gaps': "Compare my website's content against leading competitors and identify content gaps. Recommend topics, pages, and questions my audience is searching for that are currently missing from my site.",
+  'Build a keyword cluster': 'Create a keyword cluster around my primary keyword. Organize related keywords into topic clusters, identify search intent, suggest pillar pages and supporting content, and recommend an internal linking structure to improve topical authority.',
 }
 
 function renderMarkdown(text: string): string {
@@ -69,7 +78,7 @@ function ToolProgressCard({ steps }: { steps: ToolStep[] }) {
   )
 }
 
-export default function ChatMessages({ messages, isStreaming, streamingContent, toolProgress }: ChatMessagesProps) {
+export default function ChatMessages({ messages, isStreaming, streamingContent, toolProgress, onPromptSelect }: ChatMessagesProps) {
   if (messages.length === 0 && !isStreaming) {
     return (
       <div className="flex flex-col items-center justify-center min-h-full py-20 px-6 text-center">
@@ -81,19 +90,14 @@ export default function ChatMessages({ messages, isStreaming, streamingContent, 
           Ask me to research keywords, analyse competitors, audit your site, find backlink opportunities, or plan content.
         </p>
         <div className="mt-6 flex flex-wrap gap-2 justify-center max-w-md">
-          {[
-            'Find backlink opportunities',
-            'Analyze competitor keywords',
-            'Audit technical SEO issues',
-            'Research content gaps',
-            'Build a keyword cluster',
-          ].map((prompt) => (
-            <span
-              key={prompt}
-              className="text-xs px-3 py-1.5 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-gray-400 dark:text-gray-600 dark:text-gray-400 cursor-default hover:border-indigo-500/50 transition-colors"
+          {Object.keys(PROMPT_MAPPING).map((promptLabel) => (
+            <button
+              key={promptLabel}
+              onClick={() => onPromptSelect?.(PROMPT_MAPPING[promptLabel])}
+              className="text-xs px-3 py-1.5 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-gray-400 dark:text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer hover:border-indigo-500/50 transition-colors"
             >
-              {prompt}
-            </span>
+              {promptLabel}
+            </button>
           ))}
         </div>
       </div>

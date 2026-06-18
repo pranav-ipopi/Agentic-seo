@@ -1,26 +1,23 @@
 'use client'
 
-import { useState, useRef, useCallback, KeyboardEvent } from 'react'
-import { Send, ExternalLink, Loader2 } from 'lucide-react'
+import { useState, useRef, useCallback, useEffect, KeyboardEvent } from 'react'
+import { Send, Loader2, Square } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface PromptInputProps {
   onSend: (content: string) => void
   disabled?: boolean
   clientName?: string
+  onStop?: () => void
+  value?: string
+  onChange?: (val: string) => void
 }
 
-const EXAMPLE_PROMPTS = [
-  'Find backlink opportunities for this domain',
-  'Analyze top 5 competitor keywords',
-  'Run a technical SEO audit',
-  'Research content gaps vs competitors',
-  'Identify quick-win keyword opportunities',
-]
-
-export default function PromptInput({ onSend, disabled, clientName }: PromptInputProps) {
-  const [value, setValue] = useState('')
-  const [showSuggestions, setShowSuggestions] = useState(false)
+export default function PromptInput({ onSend, disabled, clientName, onStop, value: externalValue, onChange: externalOnChange }: PromptInputProps) {
+  const [localValue, setLocalValue] = useState('')
+  const isControlled = externalValue !== undefined
+  const value = isControlled ? externalValue : localValue
+  const setValue = isControlled ? externalOnChange! : setLocalValue
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const handleSend = useCallback(() => {
@@ -47,28 +44,14 @@ export default function PromptInput({ onSend, disabled, clientName }: PromptInpu
     }
   }, [])
 
-  const handleAdvancedMode = () => {
-    const url = process.env.NEXT_PUBLIC_HERMES_ADVANCED_UI_URL ?? 'http://localhost:8642'
-    window.open(url, '_blank', 'noopener,noreferrer')
-  }
+  useEffect(() => {
+    handleInput()
+  }, [value, handleInput])
+
+
 
   return (
     <div className="space-y-2">
-      {/* Quick suggestions */}
-      {showSuggestions && value.length === 0 && (
-        <div className="flex flex-wrap gap-1.5 animate-fade-in">
-          {EXAMPLE_PROMPTS.map((prompt) => (
-            <button
-              key={prompt}
-              onClick={() => { setValue(prompt); setShowSuggestions(false); textareaRef.current?.focus() }}
-              className="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700 hover:border-indigo-500/50 rounded-lg text-gray-400 dark:text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-all"
-            >
-              {prompt}
-            </button>
-          ))}
-        </div>
-      )}
-
       <div className="flex items-end gap-2">
         {/* Textarea */}
         <div className="flex-1 relative">
@@ -79,8 +62,6 @@ export default function PromptInput({ onSend, disabled, clientName }: PromptInpu
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={handleKeyDown}
             onInput={handleInput}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
             disabled={disabled}
             rows={1}
             placeholder={
@@ -101,15 +82,21 @@ export default function PromptInput({ onSend, disabled, clientName }: PromptInpu
         </div>
 
         {/* Action buttons */}
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <button
-            id="advanced-mode-btn"
-            onClick={handleAdvancedMode}
-            title="Open Hermes Advanced UI"
-            className="p-2.5 text-gray-500 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-xl transition-all"
-          >
-            <ExternalLink className="w-4 h-4" />
-          </button>
+        <div className="flex items-center gap-2 flex-shrink-0 mb-1">
+          {disabled && onStop && (
+            <button
+              id="stop-message-btn"
+              onClick={onStop}
+              title="Stop generating"
+              className={cn(
+                'p-2.5 rounded-xl transition-all',
+                'bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/20'
+              )}
+            >
+              <Square className="w-4 h-4 fill-current" />
+            </button>
+          )}
+
           <button
             id="send-message-btn"
             onClick={handleSend}

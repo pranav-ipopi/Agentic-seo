@@ -24,6 +24,15 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
   const [streamingContent, setStreamingContent] = useState('')
   const [toolProgress, setToolProgress] = useState<{ tool: string; status: 'started' | 'running' | 'completed' | 'failed'; message?: string }[]>([])
   const bottomRef = useRef<HTMLDivElement>(null)
+  const abortControllerRef = useRef<AbortController | null>(null)
+  const [promptValue, setPromptValue] = useState('')
+
+  const handleStop = useCallback(() => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort()
+      abortControllerRef.current = null
+    }
+  }, [])
 
   // Load session and messages
   useEffect(() => {
@@ -48,9 +57,31 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
   }, [messages, streamingContent])
 
   const handleSend = useCallback(async (content: string) => {
-    if (!activeClient || !session) return
+    if (!activeClient) return
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
+
+    let currentSession = session
+    if (!currentSession) {
+      const { data, error } = await supabase
+        .from('chat_sessions')
+        .insert({
+          id: sessionId,
+          client_id: activeClient.id,
+          user_id: user.id,
+          title: content.length > 50 ? content.slice(0, 47) + '...' : content
+        })
+        .select()
+        .single()
+      
+      if (data) {
+        currentSession = data
+        setSession(data)
+      } else {
+        console.error('Failed to create session:', error)
+        return
+      }
+    }
 
     setIsStreaming(true)
     setStreamingContent('')
@@ -92,9 +123,17 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
     }))
     hermesMessages.push({ role: 'user', content })
 
+    let accumulated = ''
+    let timeoutId: NodeJS.Timeout | null = null
     try {
-      let accumulated = ''
+      const abortController = new AbortController()
+      abortControllerRef.current = abortController
       
+      // Auto-stop after 5 minutes
+      timeoutId = setTimeout(() => {
+        abortController.abort()
+      }, 5 * 60 * 1000)
+
       const stream = streamHermesChat({
         messages: hermesMessages,
         clientId: activeClient.id,
@@ -102,6 +141,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         clientDomain: activeClient.domain,
         sessionId,
         department: 'seo', // Phase 1: SEO only. Will be dynamic in Phase 3.
+        signal: abortController.signal
       })
 
       for await (const chunk of stream) {
@@ -128,7 +168,27 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         }
       }
 
-      // Save assistant message
+      // Update task status
+      if (taskRes.data) {
+        await supabase
+          .from('tasks')
+          .update({ status: 'completed', updated_at: new Date().toISOString() })
+          .eq('id', taskRes.data.id)
+      }
+    } catch (err: any) {
+      if (err.name === 'AbortError' || err.message?.includes('abort')) {
+        console.log('Chat stream aborted by user')
+      } else {
+        console.error('Chat error:', err)
+      }
+      if (taskRes.data) {
+        await supabase
+          .from('tasks')
+          .update({ status: 'failed', updated_at: new Date().toISOString() })
+          .eq('id', taskRes.data.id)
+      }
+    } finally {
+      // Save assistant message even if aborted or failed
       if (accumulated) {
         const assistantMsgRes = await supabase
           .from('chat_messages')
@@ -148,29 +208,15 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         if (messages.length === 0) {
           const title = content.length > 50 ? content.slice(0, 47) + '...' : content
           await supabase.from('chat_sessions').update({ title, updated_at: new Date().toISOString() }).eq('id', sessionId)
-          if (session) setSession({ ...session, title })
+          if (currentSession) setSession({ ...currentSession, title })
         }
       }
 
-      // Update task status
-      if (taskRes.data) {
-        await supabase
-          .from('tasks')
-          .update({ status: 'completed', updated_at: new Date().toISOString() })
-          .eq('id', taskRes.data.id)
-      }
-    } catch (err) {
-      console.error('Chat error:', err)
-      if (taskRes.data) {
-        await supabase
-          .from('tasks')
-          .update({ status: 'failed', updated_at: new Date().toISOString() })
-          .eq('id', taskRes.data.id)
-      }
-    } finally {
+      if (timeoutId) clearTimeout(timeoutId)
       setIsStreaming(false)
       setStreamingContent('')
       setToolProgress([])
+      abortControllerRef.current = null
     }
   }, [activeClient, session, messages, sessionId])
 
@@ -211,6 +257,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
           isStreaming={isStreaming}
           streamingContent={streamingContent}
           toolProgress={toolProgress}
+          onPromptSelect={setPromptValue}
         />
         <div ref={bottomRef} />
       </div>
@@ -218,7 +265,10 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
       {/* Input */}
       <div className="border-t border-gray-200 dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50">
         <PromptInput
+          value={promptValue}
+          onChange={setPromptValue}
           onSend={handleSend}
+          onStop={handleStop}
           disabled={isStreaming || !activeClient}
           clientName={activeClient.name}
         />

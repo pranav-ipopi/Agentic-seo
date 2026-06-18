@@ -105,10 +105,12 @@ export async function* streamHermesChat(params: {
   clientDomain?: string | null
   sessionId: string
   department?: string | null
+  signal?: AbortSignal
 }): AsyncGenerator<HermesChunk> {
   const response = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    signal: params.signal,
     body: JSON.stringify({ ...params, stream: true }),
   })
 

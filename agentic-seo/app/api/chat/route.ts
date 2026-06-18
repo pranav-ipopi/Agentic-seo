@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${HERMES_API_KEY}`,
       },
+      signal: request.signal,
       body: JSON.stringify({
         model: 'hermes-agent',
         messages: [systemMessage, ...messages],
@@ -57,6 +58,20 @@ export async function POST(request: NextRequest) {
         const reader = hermesResponse.body!.getReader()
         const decoder = new TextDecoder()
         let buffer = ''
+        let isClosed = false
+
+        const safeEnqueue = (data: Uint8Array) => {
+          if (!isClosed) {
+            try { controller.enqueue(data) } catch (e) { console.error('Enqueue error:', e) }
+          }
+        }
+        
+        const safeClose = () => {
+          if (!isClosed) {
+            isClosed = true
+            try { controller.close() } catch (e) { console.error('Close error:', e) }
+          }
+        }
 
         try {
           while (true) {
@@ -83,8 +98,8 @@ export async function POST(request: NextRequest) {
               if (trimmed.startsWith('data: ')) {
                 const data = trimmed.slice(6)
                 if (data === '[DONE]') {
-                  controller.enqueue(encoder.encode('data: [DONE]\n\n'))
-                  controller.close()
+                  safeEnqueue(encoder.encode('data: [DONE]\n\n'))
+                  safeClose()
                   return
                 }
 
@@ -97,7 +112,7 @@ export async function POST(request: NextRequest) {
                       type: 'tool_progress',
                       tool: typeof parsed.tool === 'object' && parsed.tool !== null ? parsed.tool : parsed,
                     })
-                    controller.enqueue(encoder.encode(`data: ${chunk}\n\n`))
+                    safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
                     prevEventType = ''
                     continue
                   }
@@ -106,7 +121,7 @@ export async function POST(request: NextRequest) {
                   const delta = parsed.choices?.[0]?.delta?.content
                   if (delta) {
                     const chunk = JSON.stringify({ type: 'text', content: delta })
-                    controller.enqueue(encoder.encode(`data: ${chunk}\n\n`))
+                    safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
                   }
                 } catch {
                   // Ignore parse errors
@@ -114,11 +129,17 @@ export async function POST(request: NextRequest) {
               }
             }
           }
-        } catch (err) {
+          safeClose()
+        } catch (err: any) {
+          if (err.name === 'AbortError' || err.message?.includes('abort')) {
+             console.log('[Chat API] Request aborted by client')
+             safeClose()
+             return
+          }
           console.error('[Chat API] Stream processing error:', err)
           const chunk = JSON.stringify({ type: 'error', error: String(err) })
-          controller.enqueue(encoder.encode(`data: ${chunk}\n\n`))
-          controller.close()
+          safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
+          safeClose()
         } finally {
           reader.releaseLock()
         }

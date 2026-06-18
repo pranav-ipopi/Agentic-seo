@@ -6624,3 +6624,515 @@ navigating to "https://dirstop.com/", waiting until "domcontentloaded"
 2026-06-17 21:58:53 | INFO     | backlink_automation | [TaskRun 99aff464-5546-41ca-b2b8-ccec88e1a8d3] Intercepted Reporting Step.
 2026-06-17 21:58:53 | INFO     | backlink_automation | [Task ff3600b6-184f-4502-a82f-190b788a8a6b] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
 2026-06-17 21:58:54 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 09:32:17 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 09:32:17 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 09:32:17 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 09:33:40 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 09:33:52 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 09:33:55 | INFO     | backlink_automation | [TaskRun 9ddcb9c3-1979-4596-a5c0-4b32bb4e131e] Executing step 1/2: Submission on https://mediajx.com/
+2026-06-18 09:33:56 | INFO     | backlink_automation | [TaskRun 9ddcb9c3-1979-4596-a5c0-4b32bb4e131e] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 09:33:56 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 09:33:56 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 09:33:56 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 09:34:05 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 09:34:05 | INFO     | backlink_automation | Registration started with username=usersurwp2rw
+2026-06-18 09:34:25 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 09:34:38 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 09:34:39 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 09:35:00 | INFO     | backlink_automation | 2captcha predicted: 'george washington'
+2026-06-18 09:35:10 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 09:35:10 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 09:35:10 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 09:35:14 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 09:35:20 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 09:35:28 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 09:35:28 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 09:35:28 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 09:35:39 | INFO     | backlink_automation | 2captcha predicted: 'cut the mustard'
+2026-06-18 09:35:43 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 09:35:51 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://mediajx.com/story28583289/best-search-engine
+2026-06-18 09:35:51 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 09:35:54 | INFO     | backlink_automation | Successfully created backlink: https://mediajx.com/story28583289/best-search-engine
+2026-06-18 09:35:55 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 09:35:58 | INFO     | backlink_automation | [TaskRun 9ddcb9c3-1979-4596-a5c0-4b32bb4e131e] Executing step 2/2: Verification & Reporting on https://mediajx.com/
+2026-06-18 09:35:58 | INFO     | backlink_automation | [TaskRun 9ddcb9c3-1979-4596-a5c0-4b32bb4e131e] Intercepted Reporting Step.
+2026-06-18 09:35:59 | INFO     | backlink_automation | [Task 2ee4a10b-c42c-46b0-9d7d-16328f422d4d] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-18 09:35:59 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 10:05:51 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 10:05:51 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 10:05:51 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 10:07:04 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 10:07:06 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 10:07:07 | INFO     | backlink_automation | [TaskRun 29a403bd-3706-48aa-b174-ea9aa0175004] Executing step 1/2: Submission on https://prbookmarkingwebsites.com/
+2026-06-18 10:07:07 | INFO     | backlink_automation | [TaskRun 29a403bd-3706-48aa-b174-ea9aa0175004] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 10:07:08 | INFO     | backlink_automation | [TemplateRunner] Routing https://prbookmarkingwebsites.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 10:07:08 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://prbookmarkingwebsites.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 10:07:08 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 10:07:14 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 10:07:14 | INFO     | backlink_automation | Registration started with username=userlgpsepa8
+2026-06-18 10:07:42 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 10:08:12 | ERROR    | backlink_automation | [TaskRun 29a403bd-3706-48aa-b174-ea9aa0175004] Execution failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:08:12 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:08:13 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/29a403bd-3706-48aa-b174-ea9aa0175004_Submission_1781757492.png?
+2026-06-18 10:08:13 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/29a403bd-3706-48aa-b174-ea9aa0175004_Submission_logs_1781757493.txt?
+2026-06-18 10:08:14 | INFO     | backlink_automation | [Task 46622168-7d25-479c-bea8-a9068ebcc0e2] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 10:08:14 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 10:12:17 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 10:12:17 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 10:12:17 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 10:12:59 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 10:13:00 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 10:13:02 | INFO     | backlink_automation | [TaskRun 293e7c25-5e2c-4d81-a005-d179ced4d120] Executing step 1/2: Submission on https://opensocialfactory.com/
+2026-06-18 10:13:03 | INFO     | backlink_automation | [TaskRun 293e7c25-5e2c-4d81-a005-d179ced4d120] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 10:13:03 | INFO     | backlink_automation | [TemplateRunner] Routing https://opensocialfactory.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 10:13:03 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://opensocialfactory.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 10:13:03 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 10:13:17 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 10:13:17 | INFO     | backlink_automation | Registration started with username=usermne72hrl
+2026-06-18 10:14:29 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 10:14:59 | ERROR    | backlink_automation | [TaskRun 293e7c25-5e2c-4d81-a005-d179ced4d120] Execution failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:14:59 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:15:00 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/293e7c25-5e2c-4d81-a005-d179ced4d120_Submission_1781757900.png?
+2026-06-18 10:15:01 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/293e7c25-5e2c-4d81-a005-d179ced4d120_Submission_logs_1781757900.txt?
+2026-06-18 10:15:02 | INFO     | backlink_automation | [Task 9ea85e72-f7e1-4707-b221-de83b5056440] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 10:15:02 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 10:21:14 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 10:21:14 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 10:21:14 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 10:22:06 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 10:22:07 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 10:22:08 | INFO     | backlink_automation | [TaskRun 00f6d79f-7d53-47fc-88f8-a749858f0696] Executing step 1/2: Submission on https://socialmediastore.net/
+2026-06-18 10:22:09 | INFO     | backlink_automation | [TaskRun 00f6d79f-7d53-47fc-88f8-a749858f0696] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 10:22:09 | INFO     | backlink_automation | [TemplateRunner] Routing https://socialmediastore.net/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 10:22:09 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://socialmediastore.net for client_site=https://google.com, keyword=best search engine
+2026-06-18 10:22:09 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 10:22:20 | WARNING  | backlink_automation | Connection error on https://socialmediastore.net (attempt 1/3). Retrying in 5s...
+2026-06-18 10:22:33 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 10:22:33 | INFO     | backlink_automation | Registration started with username=user77pm8tba
+2026-06-18 10:23:24 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 10:23:54 | ERROR    | backlink_automation | [TaskRun 00f6d79f-7d53-47fc-88f8-a749858f0696] Execution failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:23:54 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#reg_username")
+
+2026-06-18 10:23:55 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/00f6d79f-7d53-47fc-88f8-a749858f0696_Submission_1781758434.png?
+2026-06-18 10:23:55 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/00f6d79f-7d53-47fc-88f8-a749858f0696_Submission_logs_1781758435.txt?
+2026-06-18 10:23:56 | INFO     | backlink_automation | [Task 8225d2d9-4238-49aa-82c2-7e0c31ad36bf] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 10:23:56 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 10:34:29 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 10:34:29 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 10:34:29 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 10:35:41 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 10:35:43 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 10:35:46 | INFO     | backlink_automation | [TaskRun 6a8e4c7c-5c35-4738-9f94-bd2d78f874ea] Executing step 1/2: Submission on https://socialrus.com/
+2026-06-18 10:35:46 | INFO     | backlink_automation | [TaskRun 6a8e4c7c-5c35-4738-9f94-bd2d78f874ea] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 10:35:46 | INFO     | backlink_automation | [TemplateRunner] Routing https://socialrus.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 10:35:46 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://socialrus.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 10:35:46 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 10:36:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 10:36:01 | INFO     | backlink_automation | Registration started with username=usersbrih1nm
+2026-06-18 10:37:11 | ERROR    | backlink_automation | [TaskRun 6a8e4c7c-5c35-4738-9f94-bd2d78f874ea] Execution failed: Page.wait_for_selector: Timeout 45000ms exceeded.
+Call log:
+waiting for locator("#reg_username") to be visible
+
+2026-06-18 10:37:11 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Page.wait_for_selector: Timeout 45000ms exceeded.
+Call log:
+waiting for locator("#reg_username") to be visible
+
+2026-06-18 10:37:12 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/6a8e4c7c-5c35-4738-9f94-bd2d78f874ea_Submission_1781759231.png?
+2026-06-18 10:37:12 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/6a8e4c7c-5c35-4738-9f94-bd2d78f874ea_Submission_logs_1781759232.txt?
+2026-06-18 10:37:13 | INFO     | backlink_automation | [Task d7f32aa7-85f4-466e-ba6e-62b18410227f] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 10:37:13 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 11:12:42 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 11:12:42 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 11:12:42 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 11:13:24 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 11:13:25 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 11:13:28 | INFO     | backlink_automation | [TaskRun a0c0d58d-c045-4dae-8b2c-ca7cf1b80371] Executing step 1/2: Submission on https://bookmarkbirth.com/
+2026-06-18 11:13:28 | INFO     | backlink_automation | [TaskRun a0c0d58d-c045-4dae-8b2c-ca7cf1b80371] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 11:13:28 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkbirth.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 11:13:28 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkbirth.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 11:13:28 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 11:13:33 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 11:13:33 | INFO     | backlink_automation | Registration started with username=useridcb8dof
+2026-06-18 11:14:34 | ERROR    | backlink_automation | [TaskRun a0c0d58d-c045-4dae-8b2c-ca7cf1b80371] Execution failed: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+2026-06-18 11:14:34 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+2026-06-18 11:14:35 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/a0c0d58d-c045-4dae-8b2c-ca7cf1b80371_Submission_1781761474.png?
+2026-06-18 11:14:35 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/a0c0d58d-c045-4dae-8b2c-ca7cf1b80371_Submission_logs_1781761475.txt?
+2026-06-18 11:14:36 | INFO     | backlink_automation | [Task 6671080e-3cf5-4f9b-8bcf-f5ac41289689] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 11:14:36 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 12:17:39 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:17:39 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:17:39 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:18:24 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:18:24 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:18:24 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:25:00 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 12:25:02 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:25:03 | INFO     | backlink_automation | [TaskRun b0260079-f878-4e66-a4ca-eaadbca4e5e7] Executing step 1/2: Submission on https://bookmark-dofollow.com/
+2026-06-18 12:25:03 | INFO     | backlink_automation | [TaskRun b0260079-f878-4e66-a4ca-eaadbca4e5e7] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:25:04 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmark-dofollow.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:25:04 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmark-dofollow.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:25:04 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:25:07 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:25:07 | INFO     | backlink_automation | Registration started with username=usermniywvae
+2026-06-18 12:26:05 | ERROR    | backlink_automation | [TaskRun b0260079-f878-4e66-a4ca-eaadbca4e5e7] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-18 12:26:05 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-18 12:26:06 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/b0260079-f878-4e66-a4ca-eaadbca4e5e7_Submission_1781765766.png?
+2026-06-18 12:26:07 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/b0260079-f878-4e66-a4ca-eaadbca4e5e7_Submission_logs_1781765766.txt?
+2026-06-18 12:26:08 | INFO     | backlink_automation | [Task e25e67cb-cb3f-467d-bb08-6f0cffbe8655] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 12:26:08 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 12:29:38 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:29:38 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:29:38 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:30:35 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:30:35 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:30:35 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:30:56 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 12:30:57 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:31:00 | INFO     | backlink_automation | [TaskRun d71f13fe-bf0f-4842-8e16-5dbc1ed2a829] Executing step 1/2: Submission on https://bookmark-template.com/
+2026-06-18 12:31:01 | INFO     | backlink_automation | [TaskRun d71f13fe-bf0f-4842-8e16-5dbc1ed2a829] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:31:01 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmark-template.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:31:01 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmark-template.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:31:01 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:31:05 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:31:05 | INFO     | backlink_automation | Registration started with username=user0zivukki
+2026-06-18 12:31:19 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:31:25 | ERROR    | backlink_automation | [TaskRun d71f13fe-bf0f-4842-8e16-5dbc1ed2a829] Execution failed: Locator.fill: Target page, context or browser has been closed
+2026-06-18 12:31:25 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Locator.fill: Target page, context or browser has been closed
+2026-06-18 12:31:25 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-18 12:31:26 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-18/d71f13fe-bf0f-4842-8e16-5dbc1ed2a829_Submission_logs_1781766085.txt?
+2026-06-18 12:31:27 | INFO     | backlink_automation | [Task 777e9db4-219d-4f25-bd79-130fd8b63759] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-18 12:31:28 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 12:34:12 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:34:12 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:34:12 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:38:31 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 12:38:32 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:38:33 | INFO     | backlink_automation | [TaskRun 108a6d68-7f1a-4ee5-b091-507a0a7a28d2] Executing step 1/2: Submission on https://bookmarkstime.com/
+2026-06-18 12:38:34 | INFO     | backlink_automation | [TaskRun 108a6d68-7f1a-4ee5-b091-507a0a7a28d2] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:38:34 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkstime.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:38:34 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkstime.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:38:34 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:38:37 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:38:37 | INFO     | backlink_automation | Registration started with username=userlafgstxn
+2026-06-18 12:38:50 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:39:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:39:04 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:39:36 | INFO     | backlink_automation | 2captcha predicted: 'scienceclass'
+2026-06-18 12:39:43 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-18 12:39:43 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-18 12:39:43 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:39:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:39:55 | INFO     | backlink_automation | 2captcha predicted: 'wild west'
+2026-06-18 12:40:01 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 12:40:01 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 12:40:01 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 12:40:02 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 12:40:09 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 12:40:16 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 12:40:16 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:40:16 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:40:28 | INFO     | backlink_automation | 2captcha predicted: 'words of wisdom'
+2026-06-18 12:40:32 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 12:40:36 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkstime.com/story22350906/best-search-engine
+2026-06-18 12:40:36 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 12:40:39 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkstime.com/story22350906/best-search-engine
+2026-06-18 12:40:40 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:40:41 | INFO     | backlink_automation | [TaskRun 108a6d68-7f1a-4ee5-b091-507a0a7a28d2] Executing step 2/2: Verification & Reporting on https://bookmarkstime.com/
+2026-06-18 12:40:41 | INFO     | backlink_automation | [TaskRun 108a6d68-7f1a-4ee5-b091-507a0a7a28d2] Intercepted Reporting Step.
+2026-06-18 12:40:42 | INFO     | backlink_automation | [Task 61f74c6c-3f10-45b3-9093-7ec949b40bdc] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-18 12:40:42 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 12:42:30 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:42:30 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:42:30 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:43:43 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 12:43:45 | INFO     | backlink_automation | Fetched 2 new workflow runs. Adding to active pool...
+2026-06-18 12:43:46 | INFO     | backlink_automation | [TaskRun fc0f28ff-d93e-49d5-a19d-5eaa7c1b219b] Executing step 1/2: Submission on https://hindibookmark.com/
+2026-06-18 12:43:46 | INFO     | backlink_automation | [TaskRun fc0f28ff-d93e-49d5-a19d-5eaa7c1b219b] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:43:46 | INFO     | backlink_automation | [TemplateRunner] Routing https://hindibookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:43:46 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://hindibookmark.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:43:46 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:43:47 | INFO     | backlink_automation | [TaskRun 38799216-c2e2-4623-b0f2-9927b38c6b27] Executing step 1/2: Submission on https://bookmarkextent.com/
+2026-06-18 12:43:48 | INFO     | backlink_automation | [TaskRun 38799216-c2e2-4623-b0f2-9927b38c6b27] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:43:48 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkextent.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:43:48 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkextent.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:43:48 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:43:52 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:43:52 | INFO     | backlink_automation | Registration started with username=uservln01r1t
+2026-06-18 12:43:57 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:43:57 | INFO     | backlink_automation | Registration started with username=user0xq9x3b6
+2026-06-18 12:44:24 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:44:33 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:44:33 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:44:43 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:44:45 | INFO     | backlink_automation | 2captcha predicted: 'cole slaw'
+2026-06-18 12:44:51 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 12:44:51 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 12:44:51 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 12:44:52 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 12:44:53 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:44:53 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:44:58 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 12:45:06 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 12:45:06 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:45:06 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:45:14 | INFO     | backlink_automation | 2captcha predicted: 'bob loblaw'
+2026-06-18 12:45:17 | INFO     | backlink_automation | 2captcha predicted: 'ticked off'
+2026-06-18 12:45:20 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 12:45:27 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://hindibookmark.com/story23697063/best-search-engine
+2026-06-18 12:45:27 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 12:45:27 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 12:45:27 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 12:45:27 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 12:45:30 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 12:45:30 | INFO     | backlink_automation | Successfully created backlink: https://hindibookmark.com/story23697063/best-search-engine
+2026-06-18 12:45:31 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:45:33 | INFO     | backlink_automation | [TaskRun fc0f28ff-d93e-49d5-a19d-5eaa7c1b219b] Executing step 2/2: Verification & Reporting on https://hindibookmark.com/
+2026-06-18 12:45:33 | INFO     | backlink_automation | [TaskRun fc0f28ff-d93e-49d5-a19d-5eaa7c1b219b] Intercepted Reporting Step.
+2026-06-18 12:45:37 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 12:45:43 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 12:45:43 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:45:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:46:07 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:46:07 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:46:07 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:47:04 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:47:04 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:47:04 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:49:09 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 12:49:10 | INFO     | backlink_automation | Fetched 2 new workflow runs. Adding to active pool...
+2026-06-18 12:49:13 | INFO     | backlink_automation | [TaskRun 65be68f4-5226-4cd3-b96d-8b3611f9877f] Executing step 1/2: Submission on https://trackbookmark.com/
+2026-06-18 12:49:13 | INFO     | backlink_automation | [TaskRun 65be68f4-5226-4cd3-b96d-8b3611f9877f] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:49:13 | INFO     | backlink_automation | [TaskRun 1f244c38-c349-4af2-808e-19fafd029715] Executing step 1/2: Submission on https://bookmarkrange.com/
+2026-06-18 12:49:14 | INFO     | backlink_automation | [TaskRun 1f244c38-c349-4af2-808e-19fafd029715] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 12:49:14 | INFO     | backlink_automation | [TemplateRunner] Routing https://trackbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:49:14 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://trackbookmark.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:49:14 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:49:14 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkrange.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 12:49:14 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkrange.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 12:49:14 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 12:49:21 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:49:21 | INFO     | backlink_automation | Registration started with username=usersme1lmtl
+2026-06-18 12:49:23 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 12:49:23 | INFO     | backlink_automation | Registration started with username=userwa0ho59m
+2026-06-18 12:49:39 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:49:51 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:49:52 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:50:03 | INFO     | backlink_automation | 2captcha predicted: 'gimme pizza'
+2026-06-18 12:50:08 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 12:50:10 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 12:50:10 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 12:50:10 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 12:50:12 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 12:50:20 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 12:50:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:50:20 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:50:26 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 12:50:26 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:50:26 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:50:37 | INFO     | backlink_automation | 2captcha predicted: 'wild and woolly'
+2026-06-18 12:50:42 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 12:50:42 | INFO     | backlink_automation | 2captcha predicted: 'space is big'
+2026-06-18 12:50:49 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkrange.com/story23549860/best-search-engine
+2026-06-18 12:50:49 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 12:50:51 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 12:50:51 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 12:50:51 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 12:50:52 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkrange.com/story23549860/best-search-engine
+2026-06-18 12:50:53 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:50:54 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 12:50:55 | INFO     | backlink_automation | [TaskRun 1f244c38-c349-4af2-808e-19fafd029715] Executing step 2/2: Verification & Reporting on https://bookmarkrange.com/
+2026-06-18 12:50:55 | INFO     | backlink_automation | [TaskRun 1f244c38-c349-4af2-808e-19fafd029715] Intercepted Reporting Step.
+2026-06-18 12:51:02 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 12:51:08 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 12:51:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 12:51:08 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 12:51:19 | INFO     | backlink_automation | 2captcha predicted: 'roll again'
+2026-06-18 12:51:22 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 12:51:31 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://trackbookmark.com/story23475368/best-search-engine
+2026-06-18 12:51:31 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 12:51:34 | INFO     | backlink_automation | Successfully created backlink: https://trackbookmark.com/story23475368/best-search-engine
+2026-06-18 12:51:35 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 12:51:38 | INFO     | backlink_automation | [TaskRun 65be68f4-5226-4cd3-b96d-8b3611f9877f] Executing step 2/2: Verification & Reporting on https://trackbookmark.com/
+2026-06-18 12:51:38 | INFO     | backlink_automation | [TaskRun 65be68f4-5226-4cd3-b96d-8b3611f9877f] Intercepted Reporting Step.
+2026-06-18 12:51:38 | INFO     | backlink_automation | [Task 5eea8367-63ae-4da5-b8df-5003f4b6649d] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
+2026-06-18 12:51:39 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 12:55:17 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:55:17 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:55:17 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 12:59:40 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 12:59:40 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 12:59:40 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 13:00:22 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 13:00:23 | INFO     | backlink_automation | Fetched 3 new workflow runs. Adding to active pool...
+2026-06-18 13:00:25 | INFO     | backlink_automation | [TaskRun dd6f9d8c-f6eb-4bff-a5ba-7ecea2cf122c] Executing step 1/2: Submission on https://altbookmark.com/
+2026-06-18 13:00:25 | INFO     | backlink_automation | [TaskRun dd6f9d8c-f6eb-4bff-a5ba-7ecea2cf122c] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 13:00:26 | INFO     | backlink_automation | [TemplateRunner] Routing https://altbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 13:00:26 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://altbookmark.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 13:00:26 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 13:00:26 | INFO     | backlink_automation | [TaskRun c7fb8a87-5d8b-4c67-8233-4d516db39e41] Executing step 1/2: Submission on https://bookmarkja.com/
+2026-06-18 13:00:26 | INFO     | backlink_automation | [TaskRun c7fb8a87-5d8b-4c67-8233-4d516db39e41] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 13:00:26 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkja.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 13:00:26 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkja.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 13:00:26 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 13:00:26 | INFO     | backlink_automation | [TaskRun 813afd5f-d444-4428-8357-048d6f2c0f4f] Executing step 1/2: Submission on https://bookmarksknot.com/
+2026-06-18 13:00:27 | INFO     | backlink_automation | [TaskRun 813afd5f-d444-4428-8357-048d6f2c0f4f] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 13:00:27 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarksknot.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 13:00:27 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarksknot.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 13:00:27 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 13:00:29 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 13:00:29 | INFO     | backlink_automation | Registration started with username=userok9lm0r4
+2026-06-18 13:00:29 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 13:00:29 | INFO     | backlink_automation | Registration started with username=user89hyim55
+2026-06-18 13:00:30 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 13:00:30 | INFO     | backlink_automation | Registration started with username=user0m5ukhix
+2026-06-18 13:00:31 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 13:00:43 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 13:00:43 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:00:45 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:00:57 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:00:57 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:01:07 | INFO     | backlink_automation | 2captcha predicted: 'ABELIANGRAPE'
+2026-06-18 13:01:08 | INFO     | backlink_automation | 2captcha predicted: 'oh wait'
+2026-06-18 13:01:14 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 13:01:14 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 13:01:14 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 13:01:14 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-18 13:01:14 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-18 13:01:14 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:01:15 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 13:01:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:01:21 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 13:01:27 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 13:01:27 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:01:28 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:01:28 | INFO     | backlink_automation | 2captcha predicted: 'gimme pizza'
+2026-06-18 13:01:35 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 13:01:35 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 13:01:35 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 13:01:35 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 13:01:35 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 13:01:39 | INFO     | backlink_automation | 2captcha predicted: 'cor blimey'
+2026-06-18 13:01:42 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 13:01:42 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 13:01:46 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:01:46 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarksknot.com/story23674477/best-search-engine
+2026-06-18 13:01:46 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 13:01:48 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:01:49 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 13:01:49 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:01:50 | INFO     | backlink_automation | Successfully created backlink: https://bookmarksknot.com/story23674477/best-search-engine
+2026-06-18 13:01:51 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 13:01:51 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:01:52 | INFO     | backlink_automation | [TaskRun 813afd5f-d444-4428-8357-048d6f2c0f4f] Executing step 2/2: Verification & Reporting on https://bookmarksknot.com/
+2026-06-18 13:01:52 | INFO     | backlink_automation | [TaskRun 813afd5f-d444-4428-8357-048d6f2c0f4f] Intercepted Reporting Step.
+2026-06-18 13:01:59 | INFO     | backlink_automation | 2captcha predicted: 'namby-pamby'
+2026-06-18 13:02:07 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 13:02:07 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 13:02:07 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 13:02:08 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 13:02:12 | INFO     | backlink_automation | 2captcha predicted: 'trolololol'
+2026-06-18 13:02:14 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 13:02:15 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 13:02:19 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkja.com/story24500236/best-search-engine
+2026-06-18 13:02:19 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 13:02:20 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 13:02:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:02:22 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:02:22 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkja.com/story24500236/best-search-engine
+2026-06-18 13:02:23 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 13:02:24 | INFO     | backlink_automation | [TaskRun c7fb8a87-5d8b-4c67-8233-4d516db39e41] Executing step 2/2: Verification & Reporting on https://bookmarkja.com/
+2026-06-18 13:02:24 | INFO     | backlink_automation | [TaskRun c7fb8a87-5d8b-4c67-8233-4d516db39e41] Intercepted Reporting Step.
+2026-06-18 13:02:33 | INFO     | backlink_automation | 2captcha predicted: 'deep waters'
+2026-06-18 13:02:36 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 13:02:41 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://altbookmark.com/story23606068/best-search-engine
+2026-06-18 13:02:41 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 13:02:44 | INFO     | backlink_automation | Successfully created backlink: https://altbookmark.com/story23606068/best-search-engine
+2026-06-18 13:02:45 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 13:02:47 | INFO     | backlink_automation | [TaskRun dd6f9d8c-f6eb-4bff-a5ba-7ecea2cf122c] Executing step 2/2: Verification & Reporting on https://altbookmark.com/
+2026-06-18 13:02:47 | INFO     | backlink_automation | [TaskRun dd6f9d8c-f6eb-4bff-a5ba-7ecea2cf122c] Intercepted Reporting Step.
+2026-06-18 13:02:47 | INFO     | backlink_automation | [Task 5da43247-7b3a-4feb-8150-2ae8bab3545d] All 3 runs done. succeeded=3, failed=0. Setting parent task status → 'completed'
+2026-06-18 13:02:48 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-18 13:09:07 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 13:09:07 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 13:09:07 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 13:15:46 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 13:15:46 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 13:15:46 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 13:23:51 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-18 13:23:51 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-18 13:23:51 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-18 13:24:22 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-18 13:24:24 | INFO     | backlink_automation | Fetched 2 new workflow runs. Adding to active pool...
+2026-06-18 13:24:26 | INFO     | backlink_automation | [TaskRun fb555940-e4ca-4982-bd0b-8b5a22f756ea] Executing step 1/2: Submission on https://bookmarkswing.com/
+2026-06-18 13:24:26 | INFO     | backlink_automation | [TaskRun fb555940-e4ca-4982-bd0b-8b5a22f756ea] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 13:24:26 | INFO     | backlink_automation | [TaskRun 81c37163-9eeb-4aba-a057-d9500d8b8bc5] Executing step 1/2: Submission on https://funny-lists.com/
+2026-06-18 13:24:26 | INFO     | backlink_automation | [TaskRun 81c37163-9eeb-4aba-a057-d9500d8b8bc5] Routing to template: 'pligg' (target_site_id=None)
+2026-06-18 13:24:26 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkswing.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 13:24:26 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkswing.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 13:24:26 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 13:24:27 | INFO     | backlink_automation | [TemplateRunner] Routing https://funny-lists.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-18 13:24:27 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://funny-lists.com for client_site=https://google.com, keyword=best search engine
+2026-06-18 13:24:27 | INFO     | backlink_automation | Navigating to home page
+2026-06-18 13:24:29 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 13:24:29 | INFO     | backlink_automation | Registration started with username=usereginpn9a
+2026-06-18 13:24:29 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-18 13:24:29 | INFO     | backlink_automation | Registration started with username=userd9f05sp8
+2026-06-18 13:24:43 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 13:24:43 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-18 13:24:55 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:24:55 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:24:57 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:24:57 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:24:58 | INFO     | backlink_automation | 2captcha predicted: 'pepperoni pizza'
+2026-06-18 13:25:05 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 13:25:05 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 13:25:05 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 13:25:06 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 13:25:07 | INFO     | backlink_automation | 2captcha predicted: 'the cat lady'
+2026-06-18 13:25:12 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 13:25:13 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-18 13:25:13 | INFO     | backlink_automation | Registration flow finished
+2026-06-18 13:25:13 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-18 13:25:14 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-18 13:25:18 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 13:25:18 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:25:18 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-18 13:25:18 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:25:24 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-18 13:25:24 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-18 13:25:25 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-18 13:25:36 | INFO     | backlink_automation | 2captcha predicted: 'what even'
+2026-06-18 13:25:39 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 13:25:43 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkswing.com/story23408320/best-search-engine
+2026-06-18 13:25:43 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 13:25:46 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkswing.com/story23408320/best-search-engine
+2026-06-18 13:25:47 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 13:25:49 | INFO     | backlink_automation | [TaskRun fb555940-e4ca-4982-bd0b-8b5a22f756ea] Executing step 2/2: Verification & Reporting on https://bookmarkswing.com/
+2026-06-18 13:25:49 | INFO     | backlink_automation | [TaskRun fb555940-e4ca-4982-bd0b-8b5a22f756ea] Intercepted Reporting Step.
+2026-06-18 13:25:50 | INFO     | backlink_automation | 2captcha predicted: 'surf and turf'
+2026-06-18 13:25:54 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-18 13:25:59 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://funny-lists.com/story22996265/best-search-engine
+2026-06-18 13:25:59 | INFO     | backlink_automation | Attempting to log out...
+2026-06-18 13:26:02 | INFO     | backlink_automation | Successfully created backlink: https://funny-lists.com/story22996265/best-search-engine
+2026-06-18 13:26:02 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-18 13:26:05 | INFO     | backlink_automation | [TaskRun 81c37163-9eeb-4aba-a057-d9500d8b8bc5] Executing step 2/2: Verification & Reporting on https://funny-lists.com/
+2026-06-18 13:26:06 | INFO     | backlink_automation | [TaskRun 81c37163-9eeb-4aba-a057-d9500d8b8bc5] Intercepted Reporting Step.
+2026-06-18 13:26:06 | INFO     | backlink_automation | [Task e595c8cb-860b-4961-ae13-cdc3457b9323] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
+2026-06-18 13:26:06 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

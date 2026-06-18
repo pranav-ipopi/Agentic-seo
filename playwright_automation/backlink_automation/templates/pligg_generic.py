@@ -24,6 +24,7 @@ from typing import Dict, Any, Optional
 from playwright.async_api import Page, TimeoutError as PlaywrightTimeoutError
 
 from templates.base_template import BaseTemplate
+from methods.cloudflare import cloudflare_updated
 from executor.errors import (
     SelectorNotFoundError,
     RegistrationFailedError,
@@ -91,7 +92,9 @@ class PliggGenericTemplate(BaseTemplate):
         """Navigate to home page with retry logic and Cloudflare bypass."""
         self.logger.info("Navigating to home page")
         await self.safe_goto(page, self.BASE_URL)
-        await self._handle_cloudflare(page)
+        cf_cleared = await cloudflare_updated(page)
+        if not cf_cleared:
+            raise Exception("Cloudflare challenge could not be cleared on home page")
         await page.wait_for_timeout(1500)
 
     async def _ensure_logged_in(self, page: Page) -> None:
@@ -190,8 +193,12 @@ class PliggGenericTemplate(BaseTemplate):
                                             "input[value='Create user'], button:has-text('Create user'), input[type='submit']")
 
         await self.safe_goto(page, self.REGISTER_URL)
-        await self._handle_cloudflare(page)
-        await page.wait_for_timeout(1500)
+        cf_cleared = await cloudflare_updated(page)
+        if not cf_cleared:
+            raise Exception("Cloudflare challenge could not be cleared on registration page")
+        
+        # Now safe to interact with the form
+        await page.wait_for_selector(username_sel, timeout=45000)
 
         max_retries = 3
         for attempt in range(max_retries):
@@ -300,8 +307,11 @@ class PliggGenericTemplate(BaseTemplate):
         description_text = random.choice(desc_templates).format(keyword=keyword)
 
         await self.safe_goto(page, self.SUBMIT_URL)
-        await self._handle_cloudflare(page)
-        await page.wait_for_timeout(1500)
+        cf_cleared = await cloudflare_updated(page)
+        if not cf_cleared:
+            raise Exception("Cloudflare challenge could not be cleared on submit page")
+        
+        await page.wait_for_selector(f"{url_sel}, {url_fallback}", timeout=45000)
 
         # Step 1: Submit URL
         self.logger.info("Step 1: Submitting URL")

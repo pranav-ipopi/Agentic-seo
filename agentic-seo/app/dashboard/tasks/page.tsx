@@ -307,6 +307,11 @@ export default function TasksPage() {
                           : `Currently at Step ${task.current_step_index + 1}`
                         }
                       </p>
+                      {task.status === 'running' && task.result?.next_job_at && (
+                        <p className="text-xs font-medium text-indigo-500 dark:text-indigo-400 mt-1">
+                          Next job scheduled at: {new Date(task.result.next_job_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                      )}
                       <div className="flex items-center gap-2 mt-1.5">
                         <p className="text-xs text-gray-400 dark:text-gray-600">{formatRelativeTime(task.created_at)}</p>
                         {task.profiles && (

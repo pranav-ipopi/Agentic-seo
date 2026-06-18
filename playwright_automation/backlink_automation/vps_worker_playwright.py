@@ -55,7 +55,8 @@ template_runner = TemplateRunner()
 
 # Template detector (bypasses CF via stealth browser)
 template_detector = TemplateDetector(browser_manager, logger)
-
+# Global tracker for rate limiter
+NEXT_JOB_ALLOWED_TIME_GLOBAL = 0
 
 def check_and_update_parent_task(supabase_client: Client, state: dict):
     """Checks if all task_runs for a parent task are done, and if so, updates the parent task status.
@@ -63,6 +64,7 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
     Sets parent task status to:
       - 'failed'    if ALL child runs failed
       - 'completed' if at least one child run succeeded (even if others failed)
+      - 'running'   if there are still jobs pending, but we want to show progress
     Also stores a result summary (succeeded/failed counts) on the tasks row.
     """
     task_id = state.get('task_id')
@@ -71,12 +73,12 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
     try:
         res = supabase_client.table('task_runs').select('status').eq('state->>task_id', task_id).execute()
         if res.data:
-            all_done = all(r.get('status') in ['completed', 'failed'] for r in res.data)
-            if all_done:
-                succeeded = sum(1 for r in res.data if r.get('status') == 'completed')
-                failed    = sum(1 for r in res.data if r.get('status') == 'failed')
-                total     = len(res.data)
+            succeeded = sum(1 for r in res.data if r.get('status') == 'completed')
+            failed    = sum(1 for r in res.data if r.get('status') == 'failed')
+            total     = len(res.data)
+            all_done  = all(r.get('status') in ['completed', 'failed'] for r in res.data)
 
+            if all_done:
                 # Determine final task status
                 if succeeded == 0:
                     final_status = 'failed'
@@ -88,17 +90,31 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
                     f"succeeded={succeeded}, failed={failed}. "
                     f"Setting parent task status → '{final_status}'"
                 )
+            else:
+                final_status = 'running'
+                logger.info(
+                    f"[Task {task_id}] Progress update: {succeeded}/{total} completed, {failed} failed. "
+                    f"Setting parent task status → 'running'"
+                )
 
-                supabase_client.table('tasks').update({
-                    'status': final_status,
-                    'result': {
-                        'summary': {
-                            'total':     total,
-                            'succeeded': succeeded,
-                            'failed':    failed,
-                        }
-                    }
-                }).eq('id', task_id).execute()
+            # Build result object with the next job timestamp if applicable
+            result_obj = {
+                'summary': {
+                    'total':     total,
+                    'succeeded': succeeded,
+                    'failed':    failed,
+                }
+            }
+            
+            global NEXT_JOB_ALLOWED_TIME_GLOBAL
+            if not all_done and NEXT_JOB_ALLOWED_TIME_GLOBAL > 0:
+                from datetime import datetime, timezone
+                result_obj['next_job_at'] = datetime.fromtimestamp(NEXT_JOB_ALLOWED_TIME_GLOBAL, tz=timezone.utc).isoformat()
+
+            supabase_client.table('tasks').update({
+                'status': final_status,
+                'result': result_obj
+            }).eq('id', task_id).execute()
     except Exception as e:
         logger.error(f"Failed to update parent task completion for {task_id}: {e}")
 
@@ -344,6 +360,7 @@ async def poll_queue():
     """
     Main loop: polls Supabase for pending task_runs and executes them asynchronously.
     """
+    global supabase
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
     logger.info(f"Supported templates: {template_runner.get_supported_templates()}")
     
@@ -351,6 +368,12 @@ async def poll_queue():
     active_tasks = set()
     task_mapping = {}  # Map asyncio.Task -> parent_task_id
     detecting_site_ids = set()  # Track which sites are currently being detected to avoid duplicates
+    
+    import time
+    import random
+    next_job_allowed_time = 0
+    jobs_per_day = int(os.environ.get('TARGET_JOBS_PER_DAY', 100))
+    base_interval = (24 * 60 * 60) / jobs_per_day
     
     try:
         while True:
@@ -367,12 +390,47 @@ async def poll_queue():
                                     logger.info(f"Parent task {p_id} was failed. Cancelling associated task_run.")
                                     t_task.cancel()
 
-                # If we have room for more tasks, fetch them
-                if len(active_tasks) < MAX_CONCURRENT_SESSIONS:
-                    fetch_limit = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+                current_time = time.time()
+                can_start_job = current_time >= next_job_allowed_time
+                available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+                
+                # 1. Fetch CONTINUING jobs (bypassing rate limit)
+                if available_slots > 0:
+                    res_cont = supabase.table('task_runs') \
+                        .select('*, workflow_templates(*)') \
+                        .eq('status', 'pending') \
+                        .gt('current_step_index', 0) \
+                        .order('created_at') \
+                        .limit(available_slots) \
+                        .execute()
+                    
+                    continuing_runs = res_cont.data or []
+                    for t in continuing_runs:
+                        supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
+                        task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
+                        active_tasks.add(task)
+                        
+                        parent_task_id = t.get('state', {}).get('task_id')
+                        if parent_task_id:
+                            task_mapping[task] = parent_task_id
+                            
+                        def cleanup_task_cont(fut, t_ref=task):
+                            active_tasks.discard(t_ref)
+                            task_mapping.pop(t_ref, None)
+                            
+                        task.add_done_callback(cleanup_task_cont)
+
+                # Update available slots after potentially fetching continuing jobs
+                available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+
+                # 2. Fetch NEW jobs (enforcing strict rate limit)
+                if available_slots > 0 and can_start_job:
+                    # Enforce strict spreading by only fetching 1 job per interval
+                    fetch_limit = 1
                     response = supabase.table('task_runs') \
                         .select('*, workflow_templates(*)') \
                         .eq('status', 'pending') \
+                        .eq('current_step_index', 0) \
                         .order('created_at') \
                         .limit(fetch_limit) \
                         .execute()
@@ -388,6 +446,17 @@ async def poll_queue():
                         logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
                         
                         for t in task_runs:
+                            # Calculate next allowed time with jitter (between 30 sec and 2 mins)
+                            # We use +/- so it averages out to exactly 0, keeping the 100 jobs/day math perfect
+                            sign = random.choice([-1, 1])
+                            jitter = sign * random.uniform(30, 120)
+                            next_job_allowed_time = current_time + base_interval + jitter
+                            
+                            global NEXT_JOB_ALLOWED_TIME_GLOBAL
+                            NEXT_JOB_ALLOWED_TIME_GLOBAL = next_job_allowed_time
+                            
+                            logger.info(f"Rate Limiter: Next job will run in {(base_interval + jitter)/60:.2f} minutes.")
+
                             supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
                             task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
                             active_tasks.add(task)
@@ -401,36 +470,36 @@ async def poll_queue():
                                 task_mapping.pop(t_ref, None)
                                 
                             task.add_done_callback(cleanup_task)
-                            
-                    # --- NEW: Template Detection Tasks ---
-                    # If we still have room in the concurrency pool, look for sites that need detection
-                    remaining_slots = fetch_limit - len(task_runs) if task_runs else fetch_limit
-                    if remaining_slots > 0:
-                        res_undetected = supabase.table('target_sites').select('id, url').is_('site_id', 'null').eq('is_active', True).limit(remaining_slots).execute()
-                        undetected_sites = res_undetected.data or []
-                        
-                        for site in undetected_sites:
-                            s_id = site.get('id')
-                            if s_id in detecting_site_ids:
-                                continue
-                                
-                            if not browser_started:
-                                logger.info("Undetected sites found. Starting browser manager...")
-                                await browser_manager.start()
-                                browser_started = True
 
-                            detecting_site_ids.add(s_id)
+                # --- NEW: Template Detection Tasks ---
+                # If we still have room in the concurrency pool, look for sites that need detection
+                remaining_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+                if remaining_slots > 0:
+                    res_undetected = supabase.table('target_sites').select('id, url').is_('site_id', 'null').eq('is_active', True).limit(remaining_slots).execute()
+                    undetected_sites = res_undetected.data or []
+                    
+                    for site in undetected_sites:
+                        s_id = site.get('id')
+                        if s_id in detecting_site_ids:
+                            continue
                             
-                            # Wrapper to remove from detecting set when done
-                            async def do_detect(site_id_db, target_url):
-                                try:
-                                    await detect_and_update(site_id_db, target_url)
-                                finally:
-                                    detecting_site_ids.discard(site_id_db)
-                            
-                            det_task = asyncio.create_task(do_detect(s_id, site.get('url')))
-                            active_tasks.add(det_task)
-                            det_task.add_done_callback(active_tasks.discard)
+                        if not browser_started:
+                            logger.info("Undetected sites found. Starting browser manager...")
+                            await browser_manager.start()
+                            browser_started = True
+
+                        detecting_site_ids.add(s_id)
+                        
+                        # Wrapper to remove from detecting set when done
+                        async def do_detect(site_id_db, target_url):
+                            try:
+                                await detect_and_update(site_id_db, target_url)
+                            finally:
+                                detecting_site_ids.discard(site_id_db)
+                        
+                        det_task = asyncio.create_task(do_detect(s_id, site.get('url')))
+                        active_tasks.add(det_task)
+                        det_task.add_done_callback(active_tasks.discard)
                 
                 if not active_tasks:
                     if browser_started:
@@ -444,6 +513,13 @@ async def poll_queue():
                     
             except Exception as e:
                 logger.error(f"Error polling queue: {str(e)}")
+                
+                # Recover from dropped connections by recreating the client
+                try:
+                    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+                except Exception:
+                    pass
+                    
                 await asyncio.sleep(POLL_INTERVAL_SECONDS)
     finally:
         if browser_started:

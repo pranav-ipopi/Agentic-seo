@@ -112,17 +112,6 @@ async def handle_cloudflare_challenge(page, max_retries: int = 15) -> bool:
 
     for attempt in range(max_retries):
         try:
-            # --- Fast path: check if challenge already cleared ---
-            title = await page.title()
-            if "Just a moment" not in title and "Verify you are human" not in title:
-                if attempt == 0:
-                    print("No Cloudflare challenge detected — proceeding.")
-                else:
-                    print("Cloudflare challenge cleared automatically. Continuing.")
-                return True
-
-            print(f"Cloudflare challenge active (attempt {attempt + 1}/{max_retries})...")
-
             # --- Check for a manual Turnstile iframe (searches all nested frames) ---
             cf_frame = None
             for frame in page.frames:
@@ -130,6 +119,18 @@ async def handle_cloudflare_challenge(page, max_retries: int = 15) -> bool:
                 if "challenge-platform" in url or "turnstile" in url or "challenges.cloudflare.com" in url:
                     cf_frame = frame
                     break
+
+            # --- Fast path: check if challenge already cleared ---
+            title = await page.title()
+            if not cf_frame and "Just a moment" not in title and "Verify you are human" not in title:
+                if attempt == 0:
+                    print("No Cloudflare challenge detected — proceeding.")
+                else:
+                    print("Cloudflare challenge cleared. Continuing.")
+                return True
+
+            print(f"Cloudflare challenge active (attempt {attempt + 1}/{max_retries})...")
+
 
             if cf_frame:
                 async with _cf_lock:

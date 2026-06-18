@@ -131,11 +131,7 @@ export default function PromptInput({ onSend, disabled, clientName }: PromptInpu
       </div>
 
       <p className="text-xs text-gray-400 dark:text-gray-600 text-center">
-        Enter to send • Shift+Enter for new line •{' '}
-        <button onClick={handleAdvancedMode} className="text-indigo-500 hover:text-indigo-400 transition-colors">
-          Advanced Mode
-        </button>
-        {' '}for full Hermes UI
+        Enter to send • Shift+Enter for new line
       </p>
     </div>
   )

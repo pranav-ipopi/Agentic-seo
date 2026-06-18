@@ -100,10 +100,14 @@ export default function LeftSidebar() {
   useEffect(() => {
     if (!activeClient) { setSessions([]); return }
     async function loadSessions() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+
       const { data } = await supabase
         .from('chat_sessions')
         .select('*')
         .eq('client_id', activeClient!.id)
+        .eq('user_id', user.id)
         .order('updated_at', { ascending: false })
         .limit(20)
       setSessions(data ?? [])

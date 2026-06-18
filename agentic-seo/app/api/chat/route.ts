@@ -15,6 +15,9 @@ export async function POST(request: NextRequest) {
 
     const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, sessionId, department })
 
+    console.log(`[Chat API] Sending request to Hermes at ${HERMES_URL}`)
+    console.log(`[Chat API] Client ID: ${clientId}, Session ID: ${sessionId}`)
+
     // Forward to Hermes
     const hermesResponse = await fetch(`${HERMES_URL}/v1/chat/completions`, {
       method: 'POST',
@@ -31,11 +34,14 @@ export async function POST(request: NextRequest) {
 
     if (!hermesResponse.ok) {
       const errorText = await hermesResponse.text()
+      console.error(`[Chat API] Hermes error: ${hermesResponse.status} ${errorText}`)
       return NextResponse.json(
         { error: `Hermes error: ${hermesResponse.status} ${errorText}` },
         { status: 502 }
       )
     }
+    
+    console.log(`[Chat API] Hermes connected successfully. Streaming: ${stream}`)
 
     if (!stream) {
       const data = await hermesResponse.json()
@@ -64,6 +70,9 @@ export async function POST(request: NextRequest) {
             for (const line of lines) {
               const trimmed = line.trim()
               if (!trimmed) continue
+
+              // Log raw data from Hermes to debug streaming issues
+              console.log(`[Chat API Raw] ${trimmed}`)
 
               // Track event type
               if (trimmed.startsWith('event:')) {
@@ -106,6 +115,7 @@ export async function POST(request: NextRequest) {
             }
           }
         } catch (err) {
+          console.error('[Chat API] Stream processing error:', err)
           const chunk = JSON.stringify({ type: 'error', error: String(err) })
           controller.enqueue(encoder.encode(`data: ${chunk}\n\n`))
           controller.close()
@@ -124,7 +134,7 @@ export async function POST(request: NextRequest) {
       },
     })
   } catch (err) {
-    console.error('Chat API error:', err)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('[Chat API] Fatal error:', err)
+    return NextResponse.json({ error: 'Internal server error', details: String(err) }, { status: 500 })
   }
 }

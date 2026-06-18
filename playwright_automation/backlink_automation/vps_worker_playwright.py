@@ -225,8 +225,15 @@ async def route_and_execute(task_run, supabase_client: Client):
                         step=step.get('name', 'execution')
                     )
                 finally:
-                    if page and page.context:
-                        await page.context.close()
+                    # Close the entire context, not just the page.
+                    # Each job gets a fresh isolated context (see StealthBrowserManager)
+                    # so closing it here is correct and frees all context-level resources
+                    # (cookies, CF clearance tokens, local storage, cached routes).
+                    if page:
+                        try:
+                            await page.context.close()
+                        except Exception:
+                            pass
             else:
                 # Unsupported template — no registered handler
                 result = {'status': 'failed'}

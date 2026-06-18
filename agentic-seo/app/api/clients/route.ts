@@ -36,5 +36,21 @@ export async function POST(request: NextRequest) {
 
   if (clientError) return NextResponse.json({ error: clientError.message }, { status: 500 })
 
+  // Add ALL team members to client_members so everyone has access to the client
+  const { data: users, error: usersError } = await supabaseAdmin.from('profiles').select('id')
+  if (!usersError && users) {
+    const memberInserts = users.map((u: any) => ({
+      client_id: client.id,
+      user_id: u.id
+    }))
+    const { error: memberError } = await supabaseAdmin
+      .from('client_members')
+      .insert(memberInserts)
+    
+    if (memberError) console.error('Failed to add team to client_members:', memberError)
+  } else {
+    console.error('Failed to fetch profiles to add to client_members:', usersError)
+  }
+
   return NextResponse.json(client, { status: 201 })
 }

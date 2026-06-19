@@ -7436,3 +7436,193 @@ waiting for locator("#reg_username") to be visible
 2026-06-18 17:55:11 | INFO     | backlink_automation | [TaskRun 040fcdad-d12a-4411-8e85-d9fd9b1b25a1] Intercepted Reporting Step.
 2026-06-18 17:55:12 | INFO     | backlink_automation | [Task 5d7402aa-1c62-49f0-9720-1eca4ef15a91] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
 2026-06-18 17:55:12 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-19 11:01:47 | INFO     | backlink_automation | Debug run starting...
+2026-06-19 11:01:47 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-19 11:02:01 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:02:01 | INFO     | backlink_automation | [thefairlist] Starting test → https://thefairlist.com/
+2026-06-19 11:02:01 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:02:01 | INFO     | backlink_automation | [TemplateRunner] Routing https://thefairlist.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:02:01 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://thefairlist.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:02:01 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:02:06 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:02:06 | INFO     | backlink_automation | Registration started with username=users539xq28
+2026-06-19 11:02:20 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:02:32 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:02:32 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:03:26 | INFO     | backlink_automation | 2captcha predicted: 'boxiellyfish'
+2026-06-19 11:03:34 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-19 11:03:34 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-19 11:03:34 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:03:34 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:03:45 | INFO     | backlink_automation | 2captcha predicted: 'king arthur'
+2026-06-19 11:03:51 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-19 11:03:51 | INFO     | backlink_automation | Registration attempt 3/3
+2026-06-19 11:03:51 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:03:52 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:04:03 | INFO     | backlink_automation | 2captcha predicted: 'would you believe'
+2026-06-19 11:04:11 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:04:11 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:04:11 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:04:12 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:04:17 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:04:24 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:04:24 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:04:24 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:04:46 | INFO     | backlink_automation | 2captcha predicted: 'keep calm'
+2026-06-19 11:04:50 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:04:54 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://thefairlist.com/story11905904/best-search-engine
+2026-06-19 11:04:54 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:04:57 | INFO     | backlink_automation | Successfully created backlink: https://thefairlist.com/story11905904/best-search-engine
+2026-06-19 11:04:57 | INFO     | backlink_automation | [thefairlist] ✅ SUCCESS → backlink: https://thefairlist.com/story11905904/best-search-engine
+2026-06-19 11:05:00 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:05:00 | INFO     | backlink_automation | [bookmarkstumble] Starting test → https://bookmarkstumble.com/
+2026-06-19 11:05:00 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:05:01 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkstumble.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:05:01 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkstumble.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:05:01 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:05:03 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:05:03 | INFO     | backlink_automation | Registration started with username=userzwcytuqf
+2026-06-19 11:05:15 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:05:25 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:05:26 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:05:37 | INFO     | backlink_automation | 2captcha predicted: 'george'
+2026-06-19 11:05:43 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-19 11:05:43 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-19 11:05:43 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:05:43 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:06:05 | INFO     | backlink_automation | 2captcha predicted: 'george washington'
+2026-06-19 11:06:13 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:06:13 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:06:13 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:06:14 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:06:20 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:06:27 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:06:27 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:06:27 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:06:28 | INFO     | backlink_automation | 2captcha predicted: 'year dot'
+2026-06-19 11:06:31 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:06:36 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkstumble.com/story23713326/best-search-engine
+2026-06-19 11:06:36 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:06:39 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkstumble.com/story23713326/best-search-engine
+2026-06-19 11:06:39 | INFO     | backlink_automation | [bookmarkstumble] ✅ SUCCESS → backlink: https://bookmarkstumble.com/story23713326/best-search-engine
+2026-06-19 11:06:42 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:06:42 | INFO     | backlink_automation | [letusbookmark] Starting test → https://letusbookmark.com/
+2026-06-19 11:06:42 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:06:42 | INFO     | backlink_automation | [TemplateRunner] Routing https://letusbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:06:42 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://letusbookmark.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:06:42 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:06:45 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:06:45 | INFO     | backlink_automation | Registration started with username=useragrsvkzx
+2026-06-19 11:06:57 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:07:11 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:07:11 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:07:22 | INFO     | backlink_automation | 2captcha predicted: 'pepperoni pizza'
+2026-06-19 11:07:29 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:07:29 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:07:29 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:07:30 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:07:36 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:07:42 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:07:42 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:07:42 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:07:53 | INFO     | backlink_automation | 2captcha predicted: 'lefty loosey'
+2026-06-19 11:07:57 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:08:01 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://letusbookmark.com/story23631872/best-search-engine
+2026-06-19 11:08:01 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:08:04 | INFO     | backlink_automation | Successfully created backlink: https://letusbookmark.com/story23631872/best-search-engine
+2026-06-19 11:08:04 | INFO     | backlink_automation | [letusbookmark] ✅ SUCCESS → backlink: https://letusbookmark.com/story23631872/best-search-engine
+2026-06-19 11:08:07 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:08:07 | INFO     | backlink_automation | [sparxsocial] Starting test → https://sparxsocial.com/
+2026-06-19 11:08:07 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:08:07 | INFO     | backlink_automation | [TemplateRunner] Routing https://sparxsocial.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:08:07 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://sparxsocial.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:08:07 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:08:10 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:08:10 | INFO     | backlink_automation | Registration started with username=user6r0ot5t9
+2026-06-19 11:08:22 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:08:35 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:08:35 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:08:47 | INFO     | backlink_automation | 2captcha predicted: 'hear hear'
+2026-06-19 11:08:53 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:08:53 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:08:53 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:08:54 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:09:00 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:09:06 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:09:06 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:09:06 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:09:07 | INFO     | backlink_automation | 2captcha predicted: 'hug me'
+2026-06-19 11:09:10 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:09:15 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://sparxsocial.com/story490880/best-search-engine
+2026-06-19 11:09:15 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:09:18 | INFO     | backlink_automation | Successfully created backlink: https://sparxsocial.com/story490880/best-search-engine
+2026-06-19 11:09:18 | INFO     | backlink_automation | [sparxsocial] ✅ SUCCESS → backlink: https://sparxsocial.com/story490880/best-search-engine
+2026-06-19 11:09:21 | INFO     | backlink_automation | Debug run complete.
+2026-06-19 11:47:16 | INFO     | backlink_automation | Debug run starting...
+2026-06-19 11:47:16 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-19 11:47:17 | INFO     | backlink_automation | [thefairlist] SKIPPED (not in RUN_ONLY)
+2026-06-19 11:47:21 | INFO     | backlink_automation | [bookmarkstumble] SKIPPED (not in RUN_ONLY)
+2026-06-19 11:47:24 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:47:24 | INFO     | backlink_automation | [letusbookmark] Starting test → https://letusbookmark.com/
+2026-06-19 11:47:24 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:47:24 | INFO     | backlink_automation | [TemplateRunner] Routing https://letusbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:47:24 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://letusbookmark.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:47:24 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:47:26 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:47:26 | INFO     | backlink_automation | Registration started with username=user74wzfa50
+2026-06-19 11:47:41 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:47:53 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:47:54 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:48:06 | INFO     | backlink_automation | 2captcha predicted: 'letseat'
+2026-06-19 11:48:12 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-19 11:48:12 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-19 11:48:12 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:48:12 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:48:23 | INFO     | backlink_automation | 2captcha predicted: 'lefty loosey'
+2026-06-19 11:48:31 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:48:31 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:48:31 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:48:31 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:48:37 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:48:44 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:48:44 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:48:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:48:55 | INFO     | backlink_automation | 2captcha predicted: 'sea shell'
+2026-06-19 11:48:58 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:49:03 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://letusbookmark.com/story23632032/best-search-engine
+2026-06-19 11:49:03 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:49:05 | INFO     | backlink_automation | Successfully created backlink: https://letusbookmark.com/story23632032/best-search-engine
+2026-06-19 11:49:05 | INFO     | backlink_automation | [letusbookmark] ✅ SUCCESS → backlink: https://letusbookmark.com/story23632032/best-search-engine
+2026-06-19 11:49:09 | INFO     | backlink_automation | 
+============================================================
+2026-06-19 11:49:09 | INFO     | backlink_automation | [sparxsocial] Starting test → https://sparxsocial.com/
+2026-06-19 11:49:09 | INFO     | backlink_automation | ============================================================
+2026-06-19 11:49:09 | INFO     | backlink_automation | [TemplateRunner] Routing https://sparxsocial.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-19 11:49:09 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://sparxsocial.com for client_site=https://google.com, keyword=best search engine
+2026-06-19 11:49:09 | INFO     | backlink_automation | Navigating to home page
+2026-06-19 11:49:11 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-19 11:49:11 | INFO     | backlink_automation | Registration started with username=user5yw77otc
+2026-06-19 11:49:23 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-19 11:49:33 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:49:34 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:49:34 | INFO     | backlink_automation | 2captcha predicted: 'banana split'
+2026-06-19 11:49:41 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-19 11:49:41 | INFO     | backlink_automation | Registration flow finished
+2026-06-19 11:49:41 | INFO     | backlink_automation | Bookmark submission started: url=https://google.com, keyword=best search engine
+2026-06-19 11:49:41 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-19 11:49:48 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-19 11:49:53 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-19 11:49:53 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-19 11:49:54 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-19 11:50:26 | INFO     | backlink_automation | 2captcha predicted: 'kundalini express'
+2026-06-19 11:50:30 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-19 11:50:35 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://sparxsocial.com/story491014/best-search-engine
+2026-06-19 11:50:35 | INFO     | backlink_automation | Attempting to log out...
+2026-06-19 11:50:37 | INFO     | backlink_automation | Successfully created backlink: https://sparxsocial.com/story491014/best-search-engine
+2026-06-19 11:50:37 | INFO     | backlink_automation | [sparxsocial] ✅ SUCCESS → backlink: https://sparxsocial.com/story491014/best-search-engine
+2026-06-19 11:50:41 | INFO     | backlink_automation | Debug run complete.

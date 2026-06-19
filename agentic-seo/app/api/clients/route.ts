@@ -28,11 +28,13 @@ export async function POST(request: NextRequest) {
 
   if (!name) return NextResponse.json({ error: 'Client name is required' }, { status: 400 })
 
-  const { data: client, error: clientError } = await supabaseAdmin
+  const { data, error: clientError } = await supabaseAdmin
     .from('clients')
     .insert({ name, domain, description, category, created_by: user.id } as any)
     .select()
     .single()
+
+  const client = data as any;
 
   if (clientError) return NextResponse.json({ error: clientError.message }, { status: 500 })
 
@@ -45,7 +47,7 @@ export async function POST(request: NextRequest) {
     }))
     const { error: memberError } = await supabaseAdmin
       .from('client_members')
-      .insert(memberInserts)
+      .insert(memberInserts as any)
     
     if (memberError) console.error('Failed to add team to client_members:', memberError)
   } else {

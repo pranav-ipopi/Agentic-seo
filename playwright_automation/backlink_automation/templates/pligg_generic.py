@@ -196,7 +196,19 @@ class PliggGenericTemplate(BaseTemplate):
         cf_cleared = await cloudflare_updated(page)
         if not cf_cleared:
             raise Exception("Cloudflare challenge could not be cleared on registration page")
-        
+
+        # Wait for the form to become fully interactive.
+        # Cloudflare can fire a second challenge after the initial page load when it
+        # suspects bot activity — this networkidle wait + second CF check ensures any
+        # re-trigger is resolved before we touch the form fields.
+        try:
+            await page.wait_for_load_state("networkidle", timeout=15000)
+        except Exception:
+            pass  # networkidle is best-effort; continue regardless
+        cf_cleared = await cloudflare_updated(page)
+        if not cf_cleared:
+            raise Exception("Secondary Cloudflare challenge could not be cleared on registration page")
+
         # Now safe to interact with the form
         await page.wait_for_selector(username_sel, timeout=45000)
 
@@ -270,7 +282,24 @@ class PliggGenericTemplate(BaseTemplate):
                 self.logger.warning("Possible registration error or duplicate. Proceeding anyway.")
                 break
             else:
-                self.logger.info("Registration completed (assumed success without /user/ redirect)")
+                self.logger.info(
+                    "Registration completed (assumed success without /user/ redirect). "
+                    "Verifying login state..."
+                )
+                # Under concurrent load the /user/ redirect can be slow.
+                # Give the page extra time then confirm we are actually authenticated
+                # before proceeding — avoids the submit page silently redirecting to login.
+                await page.wait_for_timeout(2000)
+                if not await self._is_logged_in(page):
+                    self.logger.warning(
+                        "Assumed-success registration but login state not confirmed. "
+                        "Session not authenticated — treating as failure."
+                    )
+                    raise RegistrationFailedError(
+                        message="Registration appeared to succeed but session could not be verified.",
+                        step="register",
+                        url=self.REGISTER_URL
+                    )
                 break
 
         self.logger.info("Registration flow finished")
@@ -310,7 +339,20 @@ class PliggGenericTemplate(BaseTemplate):
         cf_cleared = await cloudflare_updated(page)
         if not cf_cleared:
             raise Exception("Cloudflare challenge could not be cleared on submit page")
-        
+
+        # Guard: if the site redirected us to login/register, the session was not
+        # authenticated. Raise immediately instead of timing out 30s on a missing URL field.
+        _current_url = page.url.lower()
+        if any(p in _current_url for p in ("/login", "/register", "sign-in", "signin")):
+            raise RegistrationFailedError(
+                message=(
+                    f"Submit page redirected to login ({page.url}). "
+                    f"Session was not authenticated after registration."
+                ),
+                step="submit_bookmark",
+                url=self.BASE_URL
+            )
+
         await page.wait_for_selector(f"{url_sel}, {url_fallback}", timeout=45000)
 
         # Step 1: Submit URL

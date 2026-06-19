@@ -124,6 +124,27 @@ class BaseTemplate(ABC):
 
             except Exception as e:
                 error_str = str(e).lower()
+
+                # Proxy auth failure — retry with back-off before giving up.
+                # ERR_INVALID_AUTH_CREDENTIALS is thrown by Playwright when the proxy
+                # responds with 407 Proxy Auth Required (bad/expired credentials).
+                # A single retry covers transient proxy hiccups without killing the job.
+                is_proxy_auth_error = 'err_invalid_auth_credentials' in error_str
+                if is_proxy_auth_error:
+                    if attempt < max_retries - 1:
+                        wait = 2 * (attempt + 1)  # 2s, 4s, 6s
+                        self.logger.warning(
+                            f"Proxy auth error on {url} (attempt {attempt + 1}/{max_retries}). "
+                            f"Retrying in {wait}s..."
+                        )
+                        await asyncio.sleep(wait)
+                        continue
+                    else:
+                        raise RuntimeError(
+                            f"Proxy authentication failed after {max_retries} retries on {url}. "
+                            f"Check USE_PROXY / PROXY_URL in .env — proxy may have expired credentials."
+                        ) from e
+
                 is_connection_error = any(
                     err in error_str
                     for err in ['net::err_connection', 'net::err_name', 'dns', 'net::err_aborted']

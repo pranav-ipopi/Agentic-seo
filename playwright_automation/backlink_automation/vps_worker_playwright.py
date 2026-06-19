@@ -443,6 +443,34 @@ async def poll_queue():
                             await browser_manager.start()
                             browser_started = True
 
+                            # One-time proxy health-check (runs once per worker session, not per job).
+                            # If the proxy is unreachable or credentials are bad, fall back to
+                            # direct connection for all jobs in this session.
+                            if browser_manager._proxy_url:
+                                proxy_ok = False
+                                check_page = None
+                                try:
+                                    check_page = await browser_manager.get_page()
+                                    await check_page.goto(
+                                        "http://httpbin.org/ip",
+                                        wait_until="domcontentloaded",
+                                        timeout=8000
+                                    )
+                                    proxy_ok = True
+                                    logger.info("Proxy health-check passed. Running with proxy.")
+                                except Exception as proxy_err:
+                                    logger.critical(
+                                        f"Proxy unreachable ({proxy_err}). "
+                                        f"Falling back to direct connection for this session."
+                                    )
+                                    browser_manager._proxy_url = None
+                                finally:
+                                    if check_page and not check_page.is_closed():
+                                        try:
+                                            await check_page.context.close()
+                                        except Exception:
+                                            pass
+
                         logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
                         
                         for t in task_runs:

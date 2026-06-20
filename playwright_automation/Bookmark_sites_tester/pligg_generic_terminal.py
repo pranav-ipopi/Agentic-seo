@@ -112,11 +112,45 @@ class PliggGenericTemplate:
             if page and page.context:
                 await page.context.close()
 
+    async def navigate_and_verify(self, page: Page, url: str, timeout_ms: int = 45000) -> bool:
+        """
+        Safely navigates to a URL and immediately executes active Turnstile 
+        handling if a challenge page intercepts the loading process.
+        """
+        from executor.errors import SiteDownError
+        try:
+            self.logger.info(f"Navigating to {url}...")
+            # Use wait_until="commit" so we don't time out if Cloudflare hangs the page load
+            response = await page.goto(url, wait_until="commit", timeout=timeout_ms)
+            
+            if not response:
+                self.logger.error(f"No response received from {url}")
+                return False
+
+            if response.status in [403, 503, 520]:
+                self.logger.warning(f"Hit potential block page (Status {response.status}). Checking for Cloudflare...")
+
+            from methods.cloudflare import cloudflare_updated
+            challenge_resolved = await cloudflare_updated(page)
+            
+            if challenge_resolved:
+                self.logger.info("Cloudflare active challenge successfully bypassed or absent.")
+                return True
+            else:
+                self.logger.error("Cloudflare remained active. Navigation failed.")
+                return False
+
+        except Exception as e:
+            self.logger.error(f"Navigation failed to {url}: {str(e)}")
+            return False
+
     async def _navigate_home(self, page: Page) -> None:
         """Navigate to home page and wait for load."""
         self.logger.info("Navigating to home page")
-        await page.goto(self.BASE_URL, wait_until="domcontentloaded")
-        await self._handle_cloudflare(page)
+        nav_success = await self.navigate_and_verify(page, self.BASE_URL)
+        if not nav_success:
+            from executor.errors import SiteDownError
+            raise SiteDownError(url=self.BASE_URL, message="Failed to load home page or clear Cloudflare.")
         await page.wait_for_timeout(1500)
 
     async def _ensure_logged_in(self, page: Page) -> None:
@@ -152,10 +186,7 @@ class PliggGenericTemplate:
         except Exception:
             return False
 
-    async def _handle_cloudflare(self, page: Page) -> bool:
-        """Delegates Cloudflare bypassing to our enhanced human-mouse method."""
-        from methods.cloudflare import cloudflare_updated
-        return await cloudflare_updated(page)
+    # Removed obsolete _handle_cloudflare
 
     async def _solve_captcha_2captcha(self, page: Page) -> None:
         self.logger.info("Attempting to solve SolveMedia captcha with 2captcha...")
@@ -216,8 +247,11 @@ class PliggGenericTemplate:
         self.credentials = _generate_random_credentials()
         self.logger.info(f"Registration started with username={self.credentials['username']}")
 
-        await page.goto(self.REGISTER_URL, wait_until="domcontentloaded")
-        await self._handle_cloudflare(page)
+        nav_success = await self.navigate_and_verify(page, self.REGISTER_URL)
+        if not nav_success:
+            from executor.errors import SiteDownError
+            raise SiteDownError(url=self.REGISTER_URL, message="Aborting registration: Page blocked by Cloudflare or down.")
+        
         await page.wait_for_timeout(1500)
 
         max_retries = 3
@@ -225,7 +259,14 @@ class PliggGenericTemplate:
             self.logger.info(f"Registration attempt {attempt + 1}/{max_retries}")
             
             if attempt == 0:
-                # Fill registration form using exact IDs (Clear first before pressing sequentially for retries)
+                # Wait for field to exist securely post-navigation
+                try:
+                    await page.locator("#reg_username").wait_for(state="visible", timeout=15000)
+                except PlaywrightTimeoutError as e:
+                    self.logger.error("Registration form failed to render even after security clearance.")
+                    raise Exception("ElementTimeoutError: Registration fields missing") from e
+
+                # Fill registration form using exact IDs
                 await page.locator("#reg_username").fill("")
                 await page.locator("#reg_username").press_sequentially(self.credentials["username"], delay=random.randint(50, 150))
                 await asyncio.sleep(random.uniform(0.5, 2.0))
@@ -287,15 +328,24 @@ class PliggGenericTemplate:
         """Submit the bookmark and return the created story/backlink URL."""
         self.logger.info(f"Bookmark submission started: url={client_site}, keyword={keyword}")
 
-        await page.goto(self.SUBMIT_URL, wait_until="domcontentloaded")
-        await self._handle_cloudflare(page)
+        nav_success = await self.navigate_and_verify(page, self.SUBMIT_URL)
+        if not nav_success:
+            from executor.errors import SiteDownError
+            raise SiteDownError(url=self.SUBMIT_URL, message="Aborting submit: Page blocked by Cloudflare or down.")
+
         await page.wait_for_timeout(1500)
 
         # Step 1: Submit URL
         self.logger.info("Step 1: Submitting URL")
-        url_field = page.locator("#url")
-        if await url_field.count() == 0:
-            url_field = page.locator("input[name='url'], input[name*='story_url'], input[type='url']")
+        try:
+            url_field = page.locator("#url")
+            if await url_field.count() == 0:
+                url_field = page.locator("input[name='url'], input[name*='story_url'], input[type='url']")
+            await url_field.first.wait_for(state="visible", timeout=15000)
+        except PlaywrightTimeoutError as e:
+            self.logger.error("Submit URL field failed to render.")
+            raise Exception("ElementTimeoutError: Submit fields missing") from e
+
         await url_field.first.fill("")
         await url_field.first.press_sequentially(client_site, delay=random.randint(50, 150))
         await asyncio.sleep(random.uniform(0.5, 2.0))

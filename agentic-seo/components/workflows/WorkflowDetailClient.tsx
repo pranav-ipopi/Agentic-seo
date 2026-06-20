@@ -6,6 +6,7 @@ import { ArrowLeft } from 'lucide-react'
 import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import WorkflowVisualizer from './WorkflowVisualizer'
 import RunConfigurationPanel from './RunConfigurationPanel'
+import ArticleRunConfigurationPanel from './ArticleRunConfigurationPanel'
 
 interface WorkflowDetailClientProps {
   template: WorkflowTemplate
@@ -20,6 +21,9 @@ export default function WorkflowDetailClient({
 
   // Which executable node is currently selected in the canvas
   const [selectedNodeIndex, setSelectedNodeIndex] = useState<number | null>(null)
+
+  // Detect article workflow by template name
+  const isArticleWorkflow = template.name?.toLowerCase().includes('article')
 
   return (
     <div className="flex h-full w-full bg-gray-50 dark:bg-gray-950 overflow-hidden">
@@ -51,10 +55,17 @@ export default function WorkflowDetailClient({
       </div>
 
       {/* ── Right: Configuration Sidebar ── */}
-      <RunConfigurationPanel
-        template={template}
-        clients={clients}
-      />
+      {isArticleWorkflow ? (
+        <ArticleRunConfigurationPanel
+          template={template}
+          clients={clients}
+        />
+      ) : (
+        <RunConfigurationPanel
+          template={template}
+          clients={clients}
+        />
+      )}
     </div>
   )
 }

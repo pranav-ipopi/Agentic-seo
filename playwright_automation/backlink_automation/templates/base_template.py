@@ -69,109 +69,79 @@ class BaseTemplate(ABC):
     # Safe navigation with retry
     # ----------------------------------------------------------------
 
-    async def safe_goto(self, page: Page, url: str, max_retries: int = 3, timeout: int = 60000):
+    async def safe_goto(self, page: Page, url: str, max_retries: int = 3, timeout: int = 60000) -> bool:
         """
-        Navigate to URL with connection timeout retry logic.
-
-        Retries on:
-        - Connection timeouts (net::ERR_CONNECTION_TIMED_OUT)
-        - Connection refused (net::ERR_CONNECTION_REFUSED)
-        - DNS resolution failures
-
-        Does NOT retry on:
-        - HTTP 4xx errors (site is up but rejects us)
-        - Successful loads
-
-        Returns the Response object on success.
-        Raises SiteDownError or ConnectionTimeoutError on permanent failure.
+        Centralized defensive navigation. Handles network-level retries,
+        forces 'commit' wait states, and hooks directly into the active Cloudflare bypass.
+        Returns True if successful, raises SiteDownError or returns False on failure.
         """
         from executor.errors import SiteDownError, ConnectionTimeoutError
+        from methods.cloudflare import cloudflare_updated
 
         for attempt in range(max_retries):
             try:
-                response = await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-
+                self.logger.info(f"Navigating to {url} (Attempt {attempt + 1}/{max_retries})")
+                
+                # Use 'commit' to prevent timing out on intercept pages
+                response = await page.goto(url, wait_until="commit", timeout=timeout)
+                
                 if not response:
-                    raise SiteDownError(
-                        url=url,
-                        message=f"No response from {url}"
-                    )
+                    self.logger.warning(f"No response received from {url}. Retrying...")
+                    continue
 
-                if response.status >= 500:
-                    raise SiteDownError(
-                        url=url,
-                        message=f"Server error {response.status} from {url}"
-                    )
+                # Check for explicit network blocks or drop states
+                if response.status in [403, 503, 520]:
+                    self.logger.warning(f"Hit intercept status code: {response.status} at {url}")
+                elif response.status >= 500 and response.status != 520:
+                    raise SiteDownError(url=url, message=f"Server error {response.status} from {url}")
 
-                return response  # Success
+                # Call active mouse emulation logic immediately
+                # cloudflare_updated handles its own 15-iteration internal retry
+                challenge_cleared = await cloudflare_updated(page)
+                
+                if challenge_cleared:
+                    self.logger.info(f"Navigation and security check successfully passed for {url}")
+                    return True
+                else:
+                    self.logger.error(f"Cloudflare remained un-cleared on attempt {attempt + 1}")
 
             except PlaywrightTimeoutError as e:
                 if attempt < max_retries - 1:
-                    wait = (attempt + 1) * 5  # 5s, 10s, 15s
-                    self.logger.warning(
-                        f"Connection timeout on {url} (attempt {attempt + 1}/{max_retries}). "
-                        f"Retrying in {wait}s..."
-                    )
+                    wait = (attempt + 1) * 5
+                    self.logger.warning(f"Connection timeout on {url} (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
                     await asyncio.sleep(wait)
                 else:
-                    raise ConnectionTimeoutError(
-                        url=url,
-                        message=f"Connection timed out after {max_retries} attempts: {url}"
-                    ) from e
+                    raise ConnectionTimeoutError(url=url, message=f"Connection timed out after {max_retries} attempts: {url}") from e
 
-            except (SiteDownError,):
-                raise  # Don't retry site down
+            except (SiteDownError, ConnectionTimeoutError):
+                raise  # Propagate explicitly raised errors
 
             except Exception as e:
                 error_str = str(e).lower()
-
-                # Proxy auth failure — retry with back-off before giving up.
-                # ERR_INVALID_AUTH_CREDENTIALS is thrown by Playwright when the proxy
-                # responds with 407 Proxy Auth Required (bad/expired credentials).
-                # A single retry covers transient proxy hiccups without killing the job.
                 is_proxy_auth_error = 'err_invalid_auth_credentials' in error_str
                 if is_proxy_auth_error:
                     if attempt < max_retries - 1:
-                        wait = 2 * (attempt + 1)  # 2s, 4s, 6s
-                        self.logger.warning(
-                            f"Proxy auth error on {url} (attempt {attempt + 1}/{max_retries}). "
-                            f"Retrying in {wait}s..."
-                        )
+                        wait = 2 * (attempt + 1)
+                        self.logger.warning(f"Proxy auth error on {url}. Retrying in {wait}s...")
                         await asyncio.sleep(wait)
                         continue
                     else:
-                        raise RuntimeError(
-                            f"Proxy authentication failed after {max_retries} retries on {url}. "
-                            f"Check USE_PROXY / PROXY_URL in .env — proxy may have expired credentials."
-                        ) from e
+                        raise RuntimeError(f"Proxy authentication failed after {max_retries} retries on {url}. Check proxy credentials.") from e
 
-                is_connection_error = any(
-                    err in error_str
-                    for err in ['net::err_connection', 'net::err_name', 'dns', 'net::err_aborted']
-                )
+                is_connection_error = any(err in error_str for err in ['net::err_connection', 'net::err_name', 'dns', 'net::err_aborted'])
                 if is_connection_error and attempt < max_retries - 1:
                     wait = (attempt + 1) * 5
-                    self.logger.warning(
-                        f"Connection error on {url} (attempt {attempt + 1}/{max_retries}). "
-                        f"Retrying in {wait}s..."
-                    )
+                    self.logger.warning(f"Connection error on {url}. Retrying in {wait}s...")
                     await asyncio.sleep(wait)
                 elif is_connection_error:
-                    raise SiteDownError(
-                        url=url,
-                        message=f"Site unreachable after {max_retries} attempts: {url}"
-                    ) from e
+                    raise SiteDownError(url=url, message=f"Site unreachable after {max_retries} attempts: {url}") from e
                 else:
-                    raise  # Non-retriable error, let caller handle
+                    self.logger.error(f"Network error during safe_goto to {url}: {str(e)}")
+                    await page.wait_for_timeout(2000)
 
-    # ----------------------------------------------------------------
-    # Cloudflare bypass
-    # ----------------------------------------------------------------
+        return False
 
-    async def _handle_cloudflare(self, page: Page) -> bool:
-        """Delegates Cloudflare bypassing to the enhanced human-mouse method."""
-        from methods.cloudflare import cloudflare_updated
-        return await cloudflare_updated(page)
+
 
     # ----------------------------------------------------------------
     # Login detection (config-driven)

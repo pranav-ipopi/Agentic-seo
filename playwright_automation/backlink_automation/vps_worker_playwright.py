@@ -30,6 +30,7 @@ from methods.stealth_browser import StealthBrowserManager
 from services.captcha_service import CaptchaService
 from services.logging_service import setup_logger
 from services.template_detector import TemplateDetector
+from services.proxy_manager import ProxyManager
 from executor.runner import TemplateRunner
 from executor.failure_handler import FailureHandler
 
@@ -46,8 +47,9 @@ POLL_INTERVAL_SECONDS = 10
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 logger = setup_logger(level=logging.INFO)
 
-# Global browser manager and captcha service
+# Global browser manager, proxy manager and captcha service
 browser_manager = StealthBrowserManager()
+proxy_manager = ProxyManager(logger=logger)
 captcha_service = CaptchaService(logger=logger)
 
 # Template runner (extensible — add new templates in executor/runner.py)
@@ -447,33 +449,9 @@ async def poll_queue():
                             await browser_manager.start()
                             browser_started = True
 
-                            # One-time proxy health-check (runs once per worker session, not per job).
-                            # If the proxy is unreachable or credentials are bad, fall back to
-                            # direct connection for all jobs in this session.
-                            if browser_manager._proxy_url:
-                                proxy_ok = False
-                                check_page = None
-                                try:
-                                    check_page = await browser_manager.get_page()
-                                    await check_page.goto(
-                                        "http://httpbin.org/ip",
-                                        wait_until="domcontentloaded",
-                                        timeout=8000
-                                    )
-                                    proxy_ok = True
-                                    logger.info("Proxy health-check passed. Running with proxy.")
-                                except Exception as proxy_err:
-                                    logger.critical(
-                                        f"Proxy unreachable ({proxy_err}). "
-                                        f"Falling back to direct connection for this session."
-                                    )
-                                    browser_manager._proxy_url = None
-                                finally:
-                                    if check_page and not check_page.is_closed():
-                                        try:
-                                            await check_page.context.close()
-                                        except Exception:
-                                            pass
+                            # Automatically test and inject a working proxy for this session
+                            # It handles fallbacks, shuffling, and setting it on the browser_manager
+                            await proxy_manager.get_working_proxy(browser_manager)
 
                         logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
                         

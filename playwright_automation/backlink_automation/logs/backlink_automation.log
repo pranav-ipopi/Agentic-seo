@@ -7857,3 +7857,413 @@ waiting for locator("#reg_username") to be visible
 2026-06-20 10:56:10 | INFO     | backlink_automation | Registration started with username=user8dqn40ao
 2026-06-20 10:56:10 | INFO     | backlink_automation | Navigating to https://worldlistpro.com/register (Attempt 1/3)
 2026-06-20 10:56:10 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://worldlistpro.com/register
+2026-06-20 21:57:39 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 21:57:39 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 21:57:39 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 21:58:17 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 21:58:17 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 21:58:17 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:00:18 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:00:20 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:00:20 | INFO     | backlink_automation | Rate Limiter: Next job will run in 1.41 minutes.
+2026-06-20 22:00:22 | INFO     | backlink_automation | [TaskRun a9759a04-c187-42d9-ad3a-e8cfec31a4f8] Executing step 1/2: Submission on https://thesocialroi.com
+2026-06-20 22:00:23 | INFO     | backlink_automation | [TaskRun a9759a04-c187-42d9-ad3a-e8cfec31a4f8] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:00:24 | INFO     | backlink_automation | [TemplateRunner] Routing https://thesocialroi.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:00:24 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://thesocialroi.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:00:24 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:00:24 | INFO     | backlink_automation | Navigating to https://thesocialroi.com (Attempt 1/3)
+2026-06-20 22:00:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://thesocialroi.com
+2026-06-20 22:00:26 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:00:26 | INFO     | backlink_automation | Registration started with username=userbjmzqe57
+2026-06-20 22:00:26 | INFO     | backlink_automation | Navigating to https://thesocialroi.com/register (Attempt 1/3)
+2026-06-20 22:00:27 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://thesocialroi.com/register
+2026-06-20 22:00:46 | INFO     | backlink_automation | Navigation and security check successfully passed for https://thesocialroi.com/register
+2026-06-20 22:00:46 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:00:58 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:00:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:01:22 | INFO     | backlink_automation | 2captcha predicted: 'pickled pepper'
+2026-06-20 22:01:32 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:01:32 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:01:32 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:01:32 | INFO     | backlink_automation | Navigating to https://thesocialroi.com/submit (Attempt 1/3)
+2026-06-20 22:01:33 | INFO     | backlink_automation | Navigation and security check successfully passed for https://thesocialroi.com/submit
+2026-06-20 22:01:35 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:01:43 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:01:47 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:01:47 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.98 minutes.
+2026-06-20 22:01:48 | ERROR    | backlink_automation | [TaskRun a9759a04-c187-42d9-ad3a-e8cfec31a4f8] Execution failed: Locator.press_sequentially: Target page, context or browser has been closed
+Call log:
+waiting for locator("#tags, input[name='tags']").first
+  -   locator resolved to <input value="" id="tags" type="text" name="tags" tabin…/>
+  - elementHandle.type("Best marketing agency")
+
+2026-06-20 22:01:48 | ERROR    | backlink_automation | [FailureHandler] SELECTOR_NOT_FOUND at step 'Submission' for site None: Locator.press_sequentially: Target page, context or browser has been closed
+Call log:
+waiting for locator("#tags, input[name='tags']").first
+  -   locator resolved to <input value="" id="tags" type="text" name="tags" tabin…/>
+  - elementHandle.type("Best marketing agency")
+
+2026-06-20 22:01:48 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-20 22:01:49 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-20/a9759a04-c187-42d9-ad3a-e8cfec31a4f8_Submission_logs_1781973108.txt?
+2026-06-20 22:01:50 | INFO     | backlink_automation | [Task f308191d-2e2d-4669-8a70-235820d0d21b] Progress update: 0/2 completed, 1 failed. Setting parent task status → 'running'
+2026-06-20 22:01:51 | INFO     | backlink_automation | [TaskRun 477d75ea-0ee0-4f9b-bb06-7b0d03d36a90] Executing step 1/2: Submission on https://getidealist.com/
+2026-06-20 22:01:51 | INFO     | backlink_automation | [TaskRun 477d75ea-0ee0-4f9b-bb06-7b0d03d36a90] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:01:51 | ERROR    | backlink_automation | [TaskRun 477d75ea-0ee0-4f9b-bb06-7b0d03d36a90] Execution failed: Browser.new_context: Target page, context or browser has been closed
+2026-06-20 22:01:51 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Browser.new_context: Target page, context or browser has been closed
+2026-06-20 22:01:52 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-20/477d75ea-0ee0-4f9b-bb06-7b0d03d36a90_Submission_logs_1781973111.txt?
+2026-06-20 22:01:53 | INFO     | backlink_automation | [Task f308191d-2e2d-4669-8a70-235820d0d21b] All 2 runs done. succeeded=0, failed=2. Setting parent task status → 'failed'
+2026-06-20 22:01:54 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:02:39 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 22:02:39 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 22:02:39 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:03:45 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:03:53 | CRITICAL | backlink_automation | Proxy unreachable (Page.goto: net::ERR_PROXY_CONNECTION_FAILED at http://httpbin.org/ip
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "domcontentloaded"
+). Falling back to direct connection for this session.
+2026-06-20 22:03:54 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:03:54 | INFO     | backlink_automation | Rate Limiter: Next job will run in 1.56 minutes.
+2026-06-20 22:03:55 | INFO     | backlink_automation | [TaskRun 7034d84e-c7e5-4cd7-a853-f7b6453d93da] Executing step 1/2: Submission on https://socialrator.com/
+2026-06-20 22:03:56 | INFO     | backlink_automation | [TaskRun 7034d84e-c7e5-4cd7-a853-f7b6453d93da] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:03:56 | INFO     | backlink_automation | [TemplateRunner] Routing https://socialrator.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:03:56 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://socialrator.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:03:56 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:03:56 | INFO     | backlink_automation | Navigating to https://socialrator.com (Attempt 1/3)
+2026-06-20 22:03:57 | INFO     | backlink_automation | Navigation and security check successfully passed for https://socialrator.com
+2026-06-20 22:03:58 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:03:58 | INFO     | backlink_automation | Registration started with username=usersya3e7q7
+2026-06-20 22:03:58 | INFO     | backlink_automation | Navigating to https://socialrator.com/register (Attempt 1/3)
+2026-06-20 22:03:59 | INFO     | backlink_automation | Navigation and security check successfully passed for https://socialrator.com/register
+2026-06-20 22:04:01 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:04:12 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:04:13 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:04:25 | INFO     | backlink_automation | 2captcha predicted: 'filthy rich'
+2026-06-20 22:04:32 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:04:32 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:04:32 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:04:32 | INFO     | backlink_automation | Navigating to https://socialrator.com/submit (Attempt 1/3)
+2026-06-20 22:04:33 | INFO     | backlink_automation | Navigation and security check successfully passed for https://socialrator.com/submit
+2026-06-20 22:04:33 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:04:41 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:04:48 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 22:04:48 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:04:49 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:05:03 | INFO     | backlink_automation | 2captcha predicted: 'zombie prom'
+2026-06-20 22:05:06 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:05:13 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-20 22:05:15 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-20 22:05:15 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:05:16 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:05:22 | INFO     | backlink_automation | 2captcha predicted: 'back to basics'
+2026-06-20 22:05:26 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:05:32 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://socialrator.com/story13042810/best-marketing-agency
+2026-06-20 22:05:32 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 22:05:35 | INFO     | backlink_automation | Successfully created backlink: https://socialrator.com/story13042810/best-marketing-agency
+2026-06-20 22:05:38 | INFO     | backlink_automation | [TaskRun 7034d84e-c7e5-4cd7-a853-f7b6453d93da] Executing step 2/2: Verification & Reporting on https://socialrator.com/
+2026-06-20 22:05:38 | INFO     | backlink_automation | [TaskRun 7034d84e-c7e5-4cd7-a853-f7b6453d93da] Intercepted Reporting Step.
+2026-06-20 22:05:39 | INFO     | backlink_automation | [Task 8eed2abc-9ad9-4ff5-a522-f35d9e96bcd6] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-20 22:05:40 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:07:17 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:07:25 | CRITICAL | backlink_automation | Proxy unreachable (Page.goto: net::ERR_PROXY_CONNECTION_FAILED at http://httpbin.org/ip
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "domcontentloaded"
+). Falling back to direct connection for this session.
+2026-06-20 22:07:26 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:07:26 | INFO     | backlink_automation | Rate Limiter: Next job will run in 1.22 minutes.
+2026-06-20 22:07:28 | INFO     | backlink_automation | [TaskRun 15dd58c8-4841-4a20-afbe-6426c8420d15] Executing step 1/2: Submission on https://johsocial.com/
+2026-06-20 22:07:29 | INFO     | backlink_automation | [TaskRun 15dd58c8-4841-4a20-afbe-6426c8420d15] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:07:29 | INFO     | backlink_automation | [TemplateRunner] Routing https://johsocial.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:07:29 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://johsocial.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:07:29 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:07:29 | INFO     | backlink_automation | Navigating to https://johsocial.com (Attempt 1/3)
+2026-06-20 22:07:31 | INFO     | backlink_automation | Navigation and security check successfully passed for https://johsocial.com
+2026-06-20 22:07:33 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:07:33 | INFO     | backlink_automation | Registration started with username=userjgyyff6l
+2026-06-20 22:07:33 | INFO     | backlink_automation | Navigating to https://johsocial.com/register (Attempt 1/3)
+2026-06-20 22:08:33 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:08:33 | INFO     | backlink_automation | Rate Limiter: Next job will run in 4.86 minutes.
+2026-06-20 22:08:33 | WARNING  | backlink_automation | Connection timeout on https://johsocial.com/register (attempt 1/3). Retrying in 5s...
+2026-06-20 22:08:35 | INFO     | backlink_automation | [TaskRun 53e39b16-a9fc-4865-b579-6b512f227da3] Executing step 1/2: Submission on https://fatallisto.com/
+2026-06-20 22:08:35 | INFO     | backlink_automation | [TaskRun 53e39b16-a9fc-4865-b579-6b512f227da3] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:08:35 | INFO     | backlink_automation | [TemplateRunner] Routing https://fatallisto.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:08:35 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://fatallisto.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:08:35 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:08:35 | INFO     | backlink_automation | Navigating to https://fatallisto.com (Attempt 1/3)
+2026-06-20 22:08:37 | INFO     | backlink_automation | Navigation and security check successfully passed for https://fatallisto.com
+2026-06-20 22:08:38 | INFO     | backlink_automation | Navigating to https://johsocial.com/register (Attempt 2/3)
+2026-06-20 22:08:39 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:08:39 | INFO     | backlink_automation | Registration started with username=user16ltzv3v
+2026-06-20 22:08:39 | INFO     | backlink_automation | Navigating to https://fatallisto.com/register (Attempt 1/3)
+2026-06-20 22:08:40 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://fatallisto.com/register
+2026-06-20 22:08:41 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://johsocial.com/register
+2026-06-20 22:08:56 | INFO     | backlink_automation | Navigation and security check successfully passed for https://fatallisto.com/register
+2026-06-20 22:08:56 | INFO     | backlink_automation | Navigation and security check successfully passed for https://johsocial.com/register
+2026-06-20 22:08:56 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:09:00 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:09:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:09:08 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:09:10 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:09:11 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:09:12 | INFO     | backlink_automation | 2captcha predicted: 'the other side'
+2026-06-20 22:09:23 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:09:23 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:09:23 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:09:23 | INFO     | backlink_automation | Navigating to https://johsocial.com/submit (Attempt 1/3)
+2026-06-20 22:09:23 | INFO     | backlink_automation | Navigation and security check successfully passed for https://johsocial.com/submit
+2026-06-20 22:09:24 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:09:32 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:09:32 | INFO     | backlink_automation | 2captcha predicted: 'aprilshowers'
+2026-06-20 22:09:39 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 22:09:39 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:09:40 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:09:41 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-20 22:09:41 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-20 22:09:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:09:41 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:09:43 | INFO     | backlink_automation | 2captcha predicted: 'whole shebang'
+2026-06-20 22:09:46 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:09:54 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://johsocial.com/story12343821/best-marketing-agency
+2026-06-20 22:09:54 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 22:09:55 | INFO     | backlink_automation | 2captcha predicted: 'go further'
+2026-06-20 22:09:58 | INFO     | backlink_automation | Successfully created backlink: https://johsocial.com/story12343821/best-marketing-agency
+2026-06-20 22:10:00 | INFO     | backlink_automation | [TaskRun 15dd58c8-4841-4a20-afbe-6426c8420d15] Executing step 2/2: Verification & Reporting on https://johsocial.com/
+2026-06-20 22:10:00 | INFO     | backlink_automation | [TaskRun 15dd58c8-4841-4a20-afbe-6426c8420d15] Intercepted Reporting Step.
+2026-06-20 22:10:01 | INFO     | backlink_automation | [Task d3efa7ee-b5c0-418a-ad44-ca9e1a5e515e] Progress update: 1/2 completed, 0 failed. Setting parent task status → 'running'
+2026-06-20 22:10:03 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:10:03 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:10:03 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:10:03 | INFO     | backlink_automation | Navigating to https://fatallisto.com/submit (Attempt 1/3)
+2026-06-20 22:10:03 | INFO     | backlink_automation | Navigation and security check successfully passed for https://fatallisto.com/submit
+2026-06-20 22:10:03 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:10:08 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:10:15 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 22:10:15 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:10:15 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:10:18 | INFO     | backlink_automation | 2captcha predicted: 'cole slaw'
+2026-06-20 22:10:21 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:10:26 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://fatallisto.com/story11779340/best-marketing-agency
+2026-06-20 22:10:26 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 22:10:29 | INFO     | backlink_automation | Successfully created backlink: https://fatallisto.com/story11779340/best-marketing-agency
+2026-06-20 22:10:33 | INFO     | backlink_automation | [TaskRun 53e39b16-a9fc-4865-b579-6b512f227da3] Executing step 2/2: Verification & Reporting on https://fatallisto.com/
+2026-06-20 22:10:33 | INFO     | backlink_automation | [TaskRun 53e39b16-a9fc-4865-b579-6b512f227da3] Intercepted Reporting Step.
+2026-06-20 22:10:34 | INFO     | backlink_automation | [Task d3efa7ee-b5c0-418a-ad44-ca9e1a5e515e] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
+2026-06-20 22:10:34 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:12:37 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 22:12:37 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 22:12:37 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:17:40 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:17:47 | INFO     | backlink_automation | Proxy health-check passed. Running with proxy.
+2026-06-20 22:17:47 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:17:47 | INFO     | backlink_automation | Rate Limiter: Next job will run in 1.41 minutes.
+2026-06-20 22:17:49 | INFO     | backlink_automation | [TaskRun a2f3eb20-fa04-486d-95ac-01a4eef2734b] Executing step 1/2: Submission on https://dftsocial.com/
+2026-06-20 22:17:49 | INFO     | backlink_automation | [TaskRun a2f3eb20-fa04-486d-95ac-01a4eef2734b] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:17:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://dftsocial.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:17:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://dftsocial.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:17:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:17:50 | INFO     | backlink_automation | Navigating to https://dftsocial.com (Attempt 1/3)
+2026-06-20 22:17:54 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dftsocial.com
+2026-06-20 22:17:56 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:17:56 | INFO     | backlink_automation | Registration started with username=user0caixbx4
+2026-06-20 22:17:56 | INFO     | backlink_automation | Navigating to https://dftsocial.com/register (Attempt 1/3)
+2026-06-20 22:18:56 | WARNING  | backlink_automation | Connection timeout on https://dftsocial.com/register (attempt 1/3). Retrying in 5s...
+2026-06-20 22:19:01 | INFO     | backlink_automation | Navigating to https://dftsocial.com/register (Attempt 2/3)
+2026-06-20 22:19:13 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://dftsocial.com/register
+2026-06-20 22:19:15 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:19:15 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.58 minutes.
+2026-06-20 22:19:18 | INFO     | backlink_automation | [TaskRun f6e75e30-e406-4af4-a95e-410367dfe552] Executing step 1/2: Submission on https://nimmansocial.com/
+2026-06-20 22:19:18 | INFO     | backlink_automation | [TaskRun f6e75e30-e406-4af4-a95e-410367dfe552] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:19:19 | INFO     | backlink_automation | [TemplateRunner] Routing https://nimmansocial.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:19:19 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://nimmansocial.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:19:19 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:19:19 | INFO     | backlink_automation | Navigating to https://nimmansocial.com (Attempt 1/3)
+2026-06-20 22:19:23 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nimmansocial.com
+2026-06-20 22:19:25 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:19:25 | INFO     | backlink_automation | Registration started with username=user77853x1u
+2026-06-20 22:19:25 | INFO     | backlink_automation | Navigating to https://nimmansocial.com/register (Attempt 1/3)
+2026-06-20 22:19:30 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-20 22:19:30 | INFO     | backlink_automation | Navigating to https://dftsocial.com/register (Attempt 3/3)
+2026-06-20 22:19:44 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://dftsocial.com/register
+2026-06-20 22:20:00 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-20 22:20:16 | ERROR    | backlink_automation | [TaskRun a2f3eb20-fa04-486d-95ac-01a4eef2734b] Execution failed: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:20:16 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:20:16 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-20 22:20:18 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-20/a2f3eb20-fa04-486d-95ac-01a4eef2734b_Submission_logs_1781974216.txt?
+2026-06-20 22:20:18 | WARNING  | backlink_automation | Connection error on https://nimmansocial.com/register. Retrying in 5s...
+2026-06-20 22:20:19 | INFO     | backlink_automation | [Task b331f14d-478e-4fd6-be6c-7ebd57b7d4c4] Progress update: 0/2 completed, 1 failed. Setting parent task status → 'running'
+2026-06-20 22:20:23 | INFO     | backlink_automation | Navigating to https://nimmansocial.com/register (Attempt 2/3)
+2026-06-20 22:20:23 | ERROR    | backlink_automation | Network error during safe_goto to https://nimmansocial.com/register: Page.goto: Target page, context or browser has been closed
+2026-06-20 22:20:23 | ERROR    | backlink_automation | [TaskRun f6e75e30-e406-4af4-a95e-410367dfe552] Execution failed: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:20:23 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:20:23 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-20 22:20:24 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-20/f6e75e30-e406-4af4-a95e-410367dfe552_Submission_logs_1781974223.txt?
+2026-06-20 22:20:25 | INFO     | backlink_automation | [Task b331f14d-478e-4fd6-be6c-7ebd57b7d4c4] All 2 runs done. succeeded=0, failed=2. Setting parent task status → 'failed'
+2026-06-20 22:20:26 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:26:29 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 22:26:29 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 22:26:29 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:28:18 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 22:28:18 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 22:28:18 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:30:06 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:30:09 | CRITICAL | backlink_automation | Proxy unreachable (Browser.new_context: Browser does not support socks5 proxy authentication). Falling back to direct connection for this session.
+2026-06-20 22:30:09 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:30:09 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.58 minutes.
+2026-06-20 22:30:11 | INFO     | backlink_automation | [TaskRun f4c21f53-3429-4157-857f-b07e76e1dbef] Executing step 1/2: Submission on https://travialist.com/
+2026-06-20 22:30:12 | INFO     | backlink_automation | [TaskRun f4c21f53-3429-4157-857f-b07e76e1dbef] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:30:13 | INFO     | backlink_automation | [TemplateRunner] Routing https://travialist.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:30:13 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://travialist.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:30:13 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:30:13 | INFO     | backlink_automation | Navigating to https://travialist.com (Attempt 1/3)
+2026-06-20 22:30:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://travialist.com
+2026-06-20 22:30:16 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:30:16 | INFO     | backlink_automation | Registration started with username=user0hvust2r
+2026-06-20 22:30:16 | INFO     | backlink_automation | Navigating to https://travialist.com/register (Attempt 1/3)
+2026-06-20 22:30:17 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://travialist.com/register
+2026-06-20 22:30:18 | ERROR    | backlink_automation | Network error during safe_goto to https://travialist.com/register: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:30:18 | ERROR    | backlink_automation | [TaskRun f4c21f53-3429-4157-857f-b07e76e1dbef] Execution failed: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:30:18 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-20 22:30:18 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-20 22:30:19 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-20/f4c21f53-3429-4157-857f-b07e76e1dbef_Submission_logs_1781974818.txt?
+2026-06-20 22:30:21 | INFO     | backlink_automation | [Task d0fec235-a69a-4e12-a17f-7e4bf148a598] All 1 runs done. succeeded=0, failed=1. Setting parent task status → 'failed'
+2026-06-20 22:30:22 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:39:58 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 22:39:58 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 22:39:58 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 22:41:48 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:41:57 | INFO     | backlink_automation | Proxy health-check passed. Running with proxy. Active IP: {
+  "origin": "96.250.83.191"
+}
+2026-06-20 22:41:57 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:41:57 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.91 minutes.
+2026-06-20 22:41:58 | INFO     | backlink_automation | [TaskRun f852de5b-9f3e-4880-9fde-9c9dae35c43d] Executing step 1/2: Submission on https://webcastlist.com/
+2026-06-20 22:41:59 | INFO     | backlink_automation | [TaskRun f852de5b-9f3e-4880-9fde-9c9dae35c43d] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:42:00 | INFO     | backlink_automation | [TemplateRunner] Routing https://webcastlist.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:42:00 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://webcastlist.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:42:00 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:42:00 | INFO     | backlink_automation | Navigating to https://webcastlist.com (Attempt 1/3)
+2026-06-20 22:42:03 | INFO     | backlink_automation | Navigation and security check successfully passed for https://webcastlist.com
+2026-06-20 22:42:05 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:42:05 | INFO     | backlink_automation | Registration started with username=userec3a15pe
+2026-06-20 22:42:05 | INFO     | backlink_automation | Navigating to https://webcastlist.com/register (Attempt 1/3)
+2026-06-20 22:42:06 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://webcastlist.com/register
+2026-06-20 22:42:43 | INFO     | backlink_automation | Navigation and security check successfully passed for https://webcastlist.com/register
+2026-06-20 22:42:50 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:43:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:43:05 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:43:06 | ERROR    | backlink_automation | Error solving captcha with 2captcha: bad response: 429
+2026-06-20 22:43:15 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-20 22:43:15 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-20 22:43:15 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:43:15 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:43:17 | INFO     | backlink_automation | 2captcha predicted: 'plain sailing'
+2026-06-20 22:43:25 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:43:25 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:43:25 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:43:25 | INFO     | backlink_automation | Navigating to https://webcastlist.com/submit (Attempt 1/3)
+2026-06-20 22:43:26 | INFO     | backlink_automation | Navigation and security check successfully passed for https://webcastlist.com/submit
+2026-06-20 22:43:28 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:43:35 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:43:42 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 22:43:42 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:43:42 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:43:44 | INFO     | backlink_automation | 2captcha predicted: 'coffee can'
+2026-06-20 22:43:48 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:44:01 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-20 22:44:02 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-20 22:44:02 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:44:03 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:44:07 | INFO     | backlink_automation | 2captcha predicted: 'wild and woolly'
+2026-06-20 22:44:12 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:44:19 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://webcastlist.com/story23157966/best-marketing-agency
+2026-06-20 22:44:19 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 22:44:23 | INFO     | backlink_automation | Successfully created backlink: https://webcastlist.com/story23157966/best-marketing-agency
+2026-06-20 22:44:27 | INFO     | backlink_automation | [TaskRun f852de5b-9f3e-4880-9fde-9c9dae35c43d] Executing step 2/2: Verification & Reporting on https://webcastlist.com/
+2026-06-20 22:44:27 | INFO     | backlink_automation | [TaskRun f852de5b-9f3e-4880-9fde-9c9dae35c43d] Intercepted Reporting Step.
+2026-06-20 22:44:28 | INFO     | backlink_automation | [Task 676d00b6-bfb6-4e7e-b8e0-67e241dc5655] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-20 22:44:29 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 22:55:20 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 22:55:25 | INFO     | backlink_automation | Proxy health-check passed. Running with proxy. Active IP: {
+  "origin": "96.250.83.191"
+}
+2026-06-20 22:55:25 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 22:55:25 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.53 minutes.
+2026-06-20 22:55:29 | INFO     | backlink_automation | [TaskRun 31d7c456-37d7-436e-b578-88036182c554] Executing step 1/2: Submission on https://bookmarkshut.com
+2026-06-20 22:55:29 | INFO     | backlink_automation | [TaskRun 31d7c456-37d7-436e-b578-88036182c554] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 22:55:30 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkshut.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 22:55:30 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkshut.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:55:30 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 22:55:30 | INFO     | backlink_automation | Navigating to https://bookmarkshut.com (Attempt 1/3)
+2026-06-20 22:55:33 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkshut.com
+2026-06-20 22:55:35 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 22:55:35 | INFO     | backlink_automation | Registration started with username=userqg1jzvb3
+2026-06-20 22:55:35 | INFO     | backlink_automation | Navigating to https://bookmarkshut.com/register (Attempt 1/3)
+2026-06-20 22:55:38 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkshut.com/register
+2026-06-20 22:55:46 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 22:55:59 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:56:00 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:56:14 | INFO     | backlink_automation | 2captcha predicted: 'pickle juice'
+2026-06-20 22:56:22 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 22:56:22 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 22:56:22 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 22:56:22 | INFO     | backlink_automation | Navigating to https://bookmarkshut.com/submit (Attempt 1/3)
+2026-06-20 22:56:23 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkshut.com/submit
+2026-06-20 22:56:24 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 22:56:33 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 22:56:42 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 22:56:42 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 22:56:43 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 22:56:55 | INFO     | backlink_automation | 2captcha predicted: 'how quaint'
+2026-06-20 22:56:59 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 22:57:06 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkshut.com/story23283256/best-marketing-agency
+2026-06-20 22:57:06 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 22:57:10 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkshut.com/story23283256/best-marketing-agency
+2026-06-20 22:57:13 | INFO     | backlink_automation | [TaskRun 31d7c456-37d7-436e-b578-88036182c554] Executing step 2/2: Verification & Reporting on https://bookmarkshut.com
+2026-06-20 22:57:13 | INFO     | backlink_automation | [TaskRun 31d7c456-37d7-436e-b578-88036182c554] Intercepted Reporting Step.
+2026-06-20 22:57:14 | INFO     | backlink_automation | [Task c13d1960-7720-48d9-bb5c-4807c71a9d10] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-20 22:57:15 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-20 23:09:42 | INFO     | backlink_automation | [ProxyManager] Loaded 1 primary proxies and 0 fallback proxies.
+2026-06-20 23:09:42 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-20 23:09:42 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 5
+2026-06-20 23:09:42 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-20 23:13:21 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-20 23:13:24 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-VvDNJASmf-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-20 23:13:26 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "88.97.178.155"
+}
+2026-06-20 23:13:26 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-20 23:13:26 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.83 minutes.
+2026-06-20 23:13:29 | INFO     | backlink_automation | [TaskRun a568e31c-a172-44db-ad2a-812198f1667a] Executing step 1/2: Submission on https://wearethelist.com
+2026-06-20 23:13:30 | INFO     | backlink_automation | [TaskRun a568e31c-a172-44db-ad2a-812198f1667a] Routing to template: 'pligg' (target_site_id=None)
+2026-06-20 23:13:30 | INFO     | backlink_automation | [TemplateRunner] Routing https://wearethelist.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-20 23:13:30 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://wearethelist.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 23:13:30 | INFO     | backlink_automation | Navigating to home page
+2026-06-20 23:13:30 | INFO     | backlink_automation | Navigating to https://wearethelist.com (Attempt 1/3)
+2026-06-20 23:13:34 | INFO     | backlink_automation | Navigation and security check successfully passed for https://wearethelist.com
+2026-06-20 23:13:35 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-20 23:13:35 | INFO     | backlink_automation | Registration started with username=userqvtg9rl9
+2026-06-20 23:13:35 | INFO     | backlink_automation | Navigating to https://wearethelist.com/register (Attempt 1/3)
+2026-06-20 23:13:36 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://wearethelist.com/register
+2026-06-20 23:14:07 | INFO     | backlink_automation | Navigation and security check successfully passed for https://wearethelist.com/register
+2026-06-20 23:14:11 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-20 23:14:25 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 23:14:25 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 23:15:02 | INFO     | backlink_automation | 2captcha predicted: 'blinded by science'
+2026-06-20 23:15:11 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-20 23:15:11 | INFO     | backlink_automation | Registration flow finished
+2026-06-20 23:15:11 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-20 23:15:11 | INFO     | backlink_automation | Navigating to https://wearethelist.com/submit (Attempt 1/3)
+2026-06-20 23:15:11 | INFO     | backlink_automation | Navigation and security check successfully passed for https://wearethelist.com/submit
+2026-06-20 23:15:12 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-20 23:15:20 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-20 23:15:28 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-20 23:15:28 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-20 23:15:28 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-20 23:15:29 | INFO     | backlink_automation | 2captcha predicted: 'orange juice'
+2026-06-20 23:15:33 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-20 23:15:39 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://wearethelist.com/story23846436/best-marketing-agency
+2026-06-20 23:15:39 | INFO     | backlink_automation | Attempting to log out...
+2026-06-20 23:15:43 | INFO     | backlink_automation | Successfully created backlink: https://wearethelist.com/story23846436/best-marketing-agency
+2026-06-20 23:15:46 | INFO     | backlink_automation | [TaskRun a568e31c-a172-44db-ad2a-812198f1667a] Executing step 2/2: Verification & Reporting on https://wearethelist.com
+2026-06-20 23:15:46 | INFO     | backlink_automation | [TaskRun a568e31c-a172-44db-ad2a-812198f1667a] Intercepted Reporting Step.
+2026-06-20 23:15:47 | INFO     | backlink_automation | [Task 18a69023-d702-42cd-903d-cf4688c4fc90] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-20 23:15:48 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...

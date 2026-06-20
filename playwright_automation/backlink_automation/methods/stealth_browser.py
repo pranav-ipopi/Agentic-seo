@@ -218,11 +218,15 @@ class StealthBrowserManager:
         self.browser = None
         self._proxy_url: str | None = None
 
+    def set_proxy(self, proxy_url: str | None):
+        self._proxy_url = proxy_url
+
     async def start(self):
         print("Starting Stealth Browser (SeleniumBase CDP)...")
         use_proxy = os.getenv("USE_PROXY", "false").lower() == "true"
-        self._proxy_url = os.getenv("PROXY_URL") if use_proxy else None
-        print("Proxy enabled." if self._proxy_url else "Running without proxy.")
+        # We start with None. ProxyManager will inject the active proxy later via set_proxy()
+        self._proxy_url = None
+        print("Stealth browser started. Proxy status depends on ProxyManager injection.")
 
         chrome_args = [
             "--disable-blink-features=AutomationControlled",
@@ -259,14 +263,52 @@ class StealthBrowserManager:
     def _build_proxy_dict(self) -> dict | None:
         if not self._proxy_url:
             return None
-        parsed = urlparse(self._proxy_url)
-        if parsed.username and parsed.password:
+        
+        url = self._proxy_url
+        
+        # Determine scheme
+        scheme = 'http'
+        if url.startswith('https://'):
+            scheme = 'https'
+            core = url[8:]
+        elif url.startswith('http://'):
+            scheme = 'http'
+            core = url[7:]
+        elif url.startswith('socks5://'):
+            scheme = 'socks5'
+            core = url[9:]
+        elif url.startswith('socks4://'):
+            scheme = 'socks4'
+            core = url[9:]
+        else:
+            # Default to http if no scheme provided
+            scheme = 'http'
+            core = url
+            url = f"http://{url}"
+            
+        if '@' in core:
+            parsed = urlparse(url)
+            if parsed.username and parsed.password:
+                return {
+                    "server": f"{parsed.scheme}://{parsed.hostname}:{parsed.port}",
+                    "username": parsed.username,
+                    "password": parsed.password,
+                }
+            return {"server": url}
+        
+        parts = core.split(':')
+        if len(parts) >= 4:
+            host = parts[0]
+            port = parts[1]
+            user = parts[2]
+            password = ':'.join(parts[3:])
             return {
-                "server": f"{parsed.scheme}://{parsed.hostname}:{parsed.port}",
-                "username": parsed.username,
-                "password": parsed.password,
+                "server": f"{scheme}://{host}:{port}",
+                "username": user,
+                "password": password,
             }
-        return {"server": self._proxy_url}
+            
+        return {"server": url}
 
     async def _new_context(self, allow_images: bool = True):
         if not self.browser:

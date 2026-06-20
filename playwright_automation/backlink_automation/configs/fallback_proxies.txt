@@ -1,0 +1,3 @@
+# Paste your fallback IPRoyal proxies here, one per line.
+# Format: http://user:pass@host:port or http://host:port:user:pass
+# This list is ONLY used if ALL primary proxies fail the health check.

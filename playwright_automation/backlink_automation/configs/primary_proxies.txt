@@ -1,0 +1,54 @@
+# Paste your 50+ primary 2Captcha proxies here, one per line.
+# Format: http://user:pass@host:port or http://host:port:user:pass
+# Example:
+# http://u7744f283557105b7-zone-custom-session-BhRSP54JE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-Qj5MrqRkY-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-XuqgbzDtH-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-NUOFloB0x-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-0QnktFnxj-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-YMdVkOzRE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-I67xTyh9n-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-gaqHWlenW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-eUGA2LCLB-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-lYw5K2mvh-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-of7ESOumX-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-RgMhPo6JI-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-XN0Ww633N-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-fkqdF1Ak8-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-xdoxuFKnN-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-5x7ngYnUp-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-SZibq3IKW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-wZ2V09xuX-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-g49PsDVUW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-Cmh1d6LHE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-BBkI4zF9n-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-GKqWDxA1l-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-WwY0ZOZDz-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-EGCG49uKL-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-H1CKIpMYz-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-2cvtfxAvo-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-QVGYXLMY9-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-34Tp4lbkF-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-DMCbQP61x-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-4x3CsMroy-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-EPqox2Fhc-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-9vH9A0GwK-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-oJDK3ssER-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-VW9sRQVB1-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-RKkpxt4Wc-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-RHvEJTPho-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-F7RM6xskC-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-fUFGmmcQ6-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-tUrgQ1LKe-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-duyQ3ZJeq-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-cb4GdtZut-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-NnCXWv6nU-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-6Mqg0xksq-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-uaT5QpehJ-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-qJPxHimjx-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-zNHzsp2In-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-mCisUZ9Fz-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-P7K36i6By-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-2cKxCrCvA-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-9lh1Y8MDT-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+http://u7744f283557105b7-zone-custom-session-DTebb7W8K-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334

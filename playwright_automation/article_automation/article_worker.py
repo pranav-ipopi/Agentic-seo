@@ -46,15 +46,10 @@ POLL_INTERVAL         = int(os.getenv("POLL_INTERVAL_SECONDS", "60"))
 MAX_RETRIES           = int(os.getenv("MAX_RETRIES", "3"))
 LOG_LEVEL             = os.getenv("LOG_LEVEL", "INFO").upper()
 
-BROWSER_USE_BASE      = "https://api.browser-use.com/api/v3"
-BROWSER_USE_HEADERS   = {
-    "X-Browser-Use-API-Key": BROWSER_USE_API_KEY,
-    "Content-Type": "application/json",
-}
+from methods.stealth_browser import StealthBrowserManager
+from templates import get_template
 
-# Timeout to wait for BrowserUse session completion (seconds)
-SESSION_TIMEOUT       = int(os.getenv("SESSION_TIMEOUT_SECONDS", "600"))   # 10 min
-SESSION_POLL_INTERVAL = 10  # seconds between status checks
+PROFILES_DIR = os.path.join(os.path.dirname(__file__), "profiles")
 
 
 # ── Logger ────────────────────────────────────────────────────────────────
@@ -275,60 +270,7 @@ def _fallback_article_body(title: str, description: str, keyword: str, client_ur
     )
 
 
-# ── BrowserUse API ────────────────────────────────────────────────────────
-
-async def create_browser_session(profile_id: str, task: str) -> str:
-    """Create a BrowserUse v3 session with the given profile and task. Returns session_id."""
-    async with httpx.AsyncClient(timeout=30) as client:
-        res = await client.post(
-            f"{BROWSER_USE_BASE}/sessions",
-            headers=BROWSER_USE_HEADERS,
-            json={"profile_id": profile_id, "task": task},
-        )
-        res.raise_for_status()
-        data = res.json()
-        session_id = data.get("id") or data.get("session_id")
-        if not session_id:
-            raise ValueError(f"No session_id in BrowserUse response: {data}")
-        logger.info(f"BrowserUse session created: {session_id}")
-        return session_id
-
-
-async def wait_for_session(session_id: str) -> dict:
-    """Poll the session until it's completed or failed. Returns final session data."""
-    deadline = time.time() + SESSION_TIMEOUT
-    async with httpx.AsyncClient(timeout=30) as client:
-        while time.time() < deadline:
-            res = await client.get(
-                f"{BROWSER_USE_BASE}/sessions/{session_id}",
-                headers=BROWSER_USE_HEADERS,
-            )
-            res.raise_for_status()
-            data = res.json()
-            status = data.get("status", "").lower()
-            logger.debug(f"BrowserUse session {session_id} status: {status}")
-
-            if status in ("completed", "finished", "success"):
-                return data
-            if status in ("failed", "error", "stopped"):
-                raise RuntimeError(f"BrowserUse session {session_id} ended with status: {status}")
-
-            await asyncio.sleep(SESSION_POLL_INTERVAL)
-
-    raise TimeoutError(f"BrowserUse session {session_id} timed out after {SESSION_TIMEOUT}s")
-
-
-async def stop_browser_session(session_id: str) -> None:
-    """Stop a BrowserUse session to persist profile state."""
-    try:
-        async with httpx.AsyncClient(timeout=15) as client:
-            await client.post(
-                f"{BROWSER_USE_BASE}/sessions/{session_id}/stop",
-                headers=BROWSER_USE_HEADERS,
-            )
-        logger.info(f"BrowserUse session {session_id} stopped — profile state saved.")
-    except Exception as e:
-        logger.warning(f"Failed to stop session {session_id}: {e}")
+# ── Native Playwright Integration ──────────────────────────────────────────
 
 
 # ── Job Processor ─────────────────────────────────────────────────────────
@@ -373,7 +315,6 @@ async def process_job(sb: Client, job: dict) -> None:
               f"Starting article submission to {platform_name} for keyword: '{keyword}'",
               {"status": "running", "platform": platform_name})
 
-    session_id = None
     try:
         # ── Step 1: Generate article body via LLM ──
         logger.info(f"[Job {job_id}] Generating article body via LLM...")
@@ -386,40 +327,47 @@ async def process_job(sb: Client, job: dict) -> None:
         )
         logger.info(f"[Job {job_id}] Article body generated ({len(article_body)} chars)")
 
-        # ── Step 2 & 3: Build task and create BrowserUse session ──
-        browser_task = (
-            f"Go to {platform_url} and log in using the existing account in this browser profile. "
-            f"Create a new article/post/blog with the following:\n\n"
-            f"Title: {article_title}\n\n"
-            f"Body:\n{article_body}\n\n"
-            f"Make sure the article includes a hyperlink to: {client_target_url}\n"
-            f"Publish the article. "
-            f"After publishing, return the URL of the published article."
-        )
+        # ── Step 2: Native Playwright Execution ──
+        template_func = get_template(platform_name)
+        if not template_func:
+            raise ValueError(f"No automation template available for platform: '{platform_name}'")
 
-        logger.info(f"[Job {job_id}] Creating BrowserUse session with profile {profile_id} and submitting task...")
-        session_id = await create_browser_session(profile_id, browser_task)
+        storage_state_path = os.path.join(PROFILES_DIR, f"{profile_id}.json") if profile_id else None
+        if storage_state_path and not os.path.exists(storage_state_path):
+            logger.warning(f"[Job {job_id}] Profile '{profile_id}' not found at {storage_state_path}. Proceeding without authentication state.")
+            storage_state_path = None
 
+        logger.info(f"[Job {job_id}] Starting StealthBrowserManager for native execution...")
         log_to_db(sb, job_id, 0, "assistant",
-                  f"BrowserUse session started. Submitting article to {platform_name}...",
-                  {"session_id": session_id, "status": "browser_running"})
+                  f"Starting native Playwright session. Submitting article to {platform_name}...",
+                  {"status": "browser_running", "profile_id": profile_id})
 
-        # ── Step 4: Poll until done ──
-        logger.info(f"[Job {job_id}] Waiting for BrowserUse session to complete...")
-        session_data = await wait_for_session(session_id)
-
-        # Extract result URL if available
-        result_url = (
-            session_data.get("result")
-            or session_data.get("output")
-            or session_data.get("final_url")
-            or f"https://{platform_url}"
-        )
-        if isinstance(result_url, dict):
-            result_url = result_url.get("url") or str(result_url)
-
-        # ── Step 5: Stop session (saves profile state) ──
-        await stop_browser_session(session_id)
+        browser_manager = StealthBrowserManager()
+        page = None
+        result_url = ""
+        
+        try:
+            await browser_manager.start()
+            page = await browser_manager.get_page(storage_state_path=storage_state_path)
+            
+            logger.info(f"[Job {job_id}] Executing native Playwright template for {platform_name}...")
+            result_url = await template_func(
+                page=page,
+                title=article_title,
+                body=article_body,
+                target_url=client_target_url
+            )
+            
+            # ── Step 3: Stop session (saves profile state) ──
+            if storage_state_path and page and not page.is_closed():
+                try:
+                    await page.context.storage_state(path=storage_state_path)
+                    logger.info(f"[Job {job_id}] Updated storage state saved to {storage_state_path}")
+                except Exception as e:
+                    logger.warning(f"Failed to update storage state: {e}")
+                    
+        finally:
+            await browser_manager.close()
 
         # ── Success ──
         mark_success(sb, job_id, state, str(result_url))
@@ -435,10 +383,6 @@ async def process_job(sb: Client, job: dict) -> None:
         error_msg = f"{type(e).__name__}: {str(e)}"
         logger.error(f"[Job {job_id}] [FAIL] Failed: {error_msg}")
         logger.error(traceback.format_exc())
-
-        # Try to stop session gracefully to preserve profile
-        if session_id:
-            await stop_browser_session(session_id)
 
         mark_failed(sb, job_id, state, error_msg, retry_count)
         update_parent_task(sb, task_id)

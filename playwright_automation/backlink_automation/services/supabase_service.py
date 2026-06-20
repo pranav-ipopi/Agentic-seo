@@ -64,7 +64,9 @@ class SupabaseService:
 
     def get_pending_job(self) -> Optional[Dict[str, Any]]:
         """
-        Fetch the oldest pending job.
+        Fetch the oldest pending backlink job.
+        NOTE: Filters to type='backlink' only — article_submission jobs are
+        handled exclusively by article_worker.py.
         Returns the full job dict or None.
         """
         try:
@@ -72,6 +74,7 @@ class SupabaseService:
                 self.client.table(self.table_name)
                 .select("*")
                 .eq("status", "pending")
+                .eq("type", "backlink")       # Only pick up backlink jobs
                 .order("created_at", desc=False)
                 .limit(1)
                 .execute()

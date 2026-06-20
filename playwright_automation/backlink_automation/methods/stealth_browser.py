@@ -224,7 +224,29 @@ class StealthBrowserManager:
         self._proxy_url = os.getenv("PROXY_URL") if use_proxy else None
         print("Proxy enabled." if self._proxy_url else "Running without proxy.")
 
-        self.driver = await cdp_driver.start_async()
+        chrome_args = [
+            "--disable-blink-features=AutomationControlled",
+            "--start-maximized",
+            "--window-size=1920,1080",
+            "--disable-component-update",
+            "--no-sandbox",
+        ]
+
+        # Use environment variable to determine if running on VPS (or default to true on linux)
+        running_on_vps = os.getenv("RUNNING_ON_VPS", str(os.name == "posix")).lower() in ("true", "1")
+        if running_on_vps:
+            chrome_args.extend([
+                "--use-gl=angle",
+                "--use-angle=gl",
+            ])
+
+        try:
+            self.driver = await cdp_driver.start_async(browser_args=chrome_args)
+        except Exception as e:
+            print(f"Failed to start CDP driver, retrying... Error: {e}")
+            await asyncio.sleep(2)
+            self.driver = await cdp_driver.start_async(browser_args=chrome_args)
+            
         endpoint_url = self.driver.get_endpoint_url()
         print(f"CDP Endpoint URL: {endpoint_url}")
 

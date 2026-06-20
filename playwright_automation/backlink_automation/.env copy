@@ -1,0 +1,19 @@
+# Supabase (use service role key — worker needs full read/write access)
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+
+# BrowserUse Cloud API
+# Get your key at: https://cloud.browser-use.com/settings
+BROWSER_USE_API_KEY=bu_your_key_here
+
+# OpenAI — used to generate article body from title + description + keyword
+# Leave empty to use the built-in template fallback (no LLM)
+OPENAI_API_KEY=sk-your-openai-key-here
+
+# Worker tuning
+POLL_INTERVAL_SECONDS=60     # How often to check for new jobs
+MAX_RETRIES=3                 # How many times to retry a failed job
+LOG_LEVEL=INFO                # DEBUG, INFO, WARNING, ERROR
+
+# BrowserUse session timeout (seconds) — max time to wait for article submission
+SESSION_TIMEOUT_SECONDS=600   # 10 minutes

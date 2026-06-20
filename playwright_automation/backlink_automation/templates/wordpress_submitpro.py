@@ -98,12 +98,16 @@ class WordPressSubmitProTemplate(BaseTemplate):
         self.credentials = self.generate_natural_credentials()
         self.logger.info(f"Navigating to registration page: {self.REGISTER_URL}")
         
+        nav_success = False
         try:
-            await self.safe_goto(page, self.REGISTER_URL, max_retries=3)
+            nav_success = await self.safe_goto(page, self.REGISTER_URL, max_retries=3)
         except Exception as e:
             self.logger.warning(f"Initial navigation to registration page had warning/error: {e}")
 
-        await self._handle_cloudflare(page)
+        if not nav_success:
+            from executor.errors import SiteDownError
+            raise SiteDownError(url=self.REGISTER_URL, message="Aborting registration: Page blocked by Cloudflare or down.")
+
         await page.wait_for_timeout(500)
 
         user_login_sel = self.get_selector("registration", "user_login", "#user_login, input[name='user_login'], input[name='log']")
@@ -115,10 +119,11 @@ class WordPressSubmitProTemplate(BaseTemplate):
         login_form_sel = self.get_selector("registration", "login_form", f"{user_login_sel}, {user_email_sel}")
         self.logger.info(f"Waiting for registration form...")
         try:
-            await page.wait_for_selector(login_form_sel, timeout=30000)
+            # Reduced timeout to 15s since safe_goto guarantees page load/bypass already
+            await page.wait_for_selector(login_form_sel, timeout=15000)
         except Exception as e:
             raise SubmissionFailedError(
-                message=f"Registration form failed to load. Elements not found: {e}",
+                message=f"Registration form failed to load after security clearance. Elements not found: {e}",
                 step="registration_form_load",
                 url=self.REGISTER_URL
             )
@@ -192,12 +197,16 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
     async def _submit_bookmark(self, page: Page, client_site: str, keyword: str) -> str:
         self.logger.info(f"Navigating to submit page: {self.SUBMIT_URL}")
+        nav_success = False
         try:
-            await self.safe_goto(page, self.SUBMIT_URL, max_retries=3)
+            nav_success = await self.safe_goto(page, self.SUBMIT_URL, max_retries=3)
         except Exception as e:
             self.logger.warning(f"Initial navigation to submit page had warning/error: {e}")
 
-        await self._handle_cloudflare(page)
+        if not nav_success:
+            from executor.errors import SiteDownError
+            raise SiteDownError(url=self.SUBMIT_URL, message="Aborting submit: Page blocked by Cloudflare or down.")
+
         await page.wait_for_timeout(500)
 
         article_url_sel = self.get_selector("submission", "article_url", "#articleUrl, input[name='articleUrl'], input[name='url']")
@@ -205,10 +214,11 @@ class WordPressSubmitProTemplate(BaseTemplate):
         
         self.logger.info("Waiting for submission form fields...")
         try:
-            await page.wait_for_selector(f"{article_url_sel}, {title_sel}", timeout=20000)
+            # Reduced timeout to 15s since safe_goto guarantees page load/bypass already
+            await page.wait_for_selector(f"{article_url_sel}, {title_sel}", timeout=15000)
         except Exception as e:
             raise SubmissionFailedError(
-                message=f"Submission form failed to load. Elements not found: {e}",
+                message=f"Submission form failed to load after security clearance. Elements not found: {e}",
                 step="submission_form_load",
                 url=self.SUBMIT_URL
             )

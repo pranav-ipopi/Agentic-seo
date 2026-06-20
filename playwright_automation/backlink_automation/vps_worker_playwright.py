@@ -395,10 +395,12 @@ async def poll_queue():
                 available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
                 
                 # 1. Fetch CONTINUING jobs (bypassing rate limit)
+                # NOTE: type='backlink' filter keeps this worker isolated from article_submission jobs
                 if available_slots > 0:
                     res_cont = supabase.table('task_runs') \
                         .select('*, workflow_templates(*)') \
                         .eq('status', 'pending') \
+                        .eq('type', 'backlink') \
                         .gt('current_step_index', 0) \
                         .order('created_at') \
                         .limit(available_slots) \
@@ -424,12 +426,14 @@ async def poll_queue():
                 available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
 
                 # 2. Fetch NEW jobs (enforcing strict rate limit)
+                # NOTE: type='backlink' filter keeps this worker isolated from article_submission jobs
                 if available_slots > 0 and can_start_job:
                     # Enforce strict spreading by only fetching 1 job per interval
                     fetch_limit = 1
                     response = supabase.table('task_runs') \
                         .select('*, workflow_templates(*)') \
                         .eq('status', 'pending') \
+                        .eq('type', 'backlink') \
                         .eq('current_step_index', 0) \
                         .order('created_at') \
                         .limit(fetch_limit) \

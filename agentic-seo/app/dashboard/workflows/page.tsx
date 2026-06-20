@@ -17,6 +17,10 @@ export default async function WorkflowsPage() {
     .select('*')
     .order('created_at', { ascending: false })
 
+  const visibleTemplates = templates?.filter(
+    (template: WorkflowTemplate) => !template.name.toLowerCase().includes('article')
+  ) || []
+
   return (
     <div className="h-full w-full bg-gray-50 dark:bg-gray-950 flex flex-col">
       {/* Header */}
@@ -38,7 +42,7 @@ export default async function WorkflowsPage() {
           <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
             Failed to load workflow templates. Please check your database connection.
           </div>
-        ) : templates?.length === 0 ? (
+        ) : visibleTemplates.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-64 text-center">
             <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-4 border border-gray-300 dark:border-gray-700">
               <Workflow className="w-8 h-8 text-gray-500 dark:text-gray-500" />
@@ -50,7 +54,7 @@ export default async function WorkflowsPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {templates?.map((template: WorkflowTemplate) => (
+            {visibleTemplates.map((template: WorkflowTemplate) => (
               <Link 
                 href={`/dashboard/workflows/${template.id}`}
                 key={template.id} 

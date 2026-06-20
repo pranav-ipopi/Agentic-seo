@@ -272,6 +272,7 @@ export type Database = {
           client_id: string
           workflow_template_id: string
           department_id: string | null
+          type: string                    // 'backlink' | 'article_submission' — default 'backlink'
           status: 'pending' | 'running' | 'waiting_approval' | 'completed' | 'failed'
           current_step_index: number
           state: Record<string, unknown>
@@ -283,6 +284,7 @@ export type Database = {
           client_id: string
           workflow_template_id: string
           department_id?: string | null
+          type?: string                   // optional — DB default = 'backlink'
           status?: 'pending' | 'running' | 'waiting_approval' | 'completed' | 'failed'
           current_step_index?: number
           state?: Record<string, unknown>

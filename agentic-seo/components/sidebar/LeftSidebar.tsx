@@ -38,6 +38,7 @@ export default function LeftSidebar() {
   const [sessions, setSessions] = useState<ChatSession[]>([])
   const [profile, setProfile] = useState<Profile | null>(null)
   const [clientOpen, setClientOpen] = useState(false)
+  const [clientSearch, setClientSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [openMenuId, setOpenMenuId] = useState<string | null>(null)
   const clientSelectorRef = useRef<HTMLDivElement>(null)
@@ -191,7 +192,7 @@ export default function LeftSidebar() {
         <div className="relative" ref={clientSelectorRef}>
           <button
             id="client-selector"
-            onClick={() => setClientOpen(!clientOpen)}
+            onClick={() => { setClientOpen(!clientOpen); setClientSearch('') }}
             className="w-full flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-750 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 transition-all text-left"
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0 text-xs font-bold text-white shadow-sm">
@@ -210,30 +211,69 @@ export default function LeftSidebar() {
 
           {clientOpen && (
             <div className="absolute top-full left-0 right-0 mt-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-xl z-50 overflow-hidden animate-fade-in">
-              {clients.length === 0 ? (
-                <div className="p-3 text-center text-sm text-gray-500 dark:text-gray-500">No clients yet</div>
-              ) : (
-                <div className="py-1 max-h-48 overflow-y-auto">
-                  {clients.map((client) => (
+              {/* Search bar */}
+              <div className="p-2 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 px-2.5 py-1.5 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-600 focus-within:border-indigo-400 transition-colors">
+                  <Search className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
+                  <input
+                    id="client-search-input"
+                    type="text"
+                    autoFocus
+                    placeholder="Search clients…"
+                    value={clientSearch}
+                    onChange={(e) => setClientSearch(e.target.value)}
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex-1 bg-transparent text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 outline-none min-w-0"
+                  />
+                  {clientSearch && (
                     <button
-                      key={client.id}
-                      onClick={() => { setActiveClient(client); setClientOpen(false) }}
-                      className={cn(
-                        'w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors',
-                        activeClient?.id === client.id && 'bg-indigo-500/10 text-indigo-300'
-                      )}
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setClientSearch('') }}
+                      className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                      aria-label="Clear search"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">
-                        {getInitials(client.name)}
-                      </div>
-                      <div className="flex-1 min-w-0 text-left">
-                        <div className="font-medium text-gray-900 dark:text-white truncate">{client.name}</div>
-                        {client.domain && <div className="text-xs text-gray-500 dark:text-gray-500 truncate">{client.domain}</div>}
-                      </div>
+                      ×
                     </button>
-                  ))}
+                  )}
                 </div>
-              )}
+              </div>
+
+              {(() => {
+                const filtered = clients.filter((c) => {
+                  const q = clientSearch.toLowerCase()
+                  return (
+                    c.name.toLowerCase().includes(q) ||
+                    (c.domain ?? '').toLowerCase().includes(q)
+                  )
+                })
+                return filtered.length === 0 ? (
+                  <div className="px-3 py-4 text-center text-sm text-gray-500 dark:text-gray-500">
+                    {clients.length === 0 ? 'No clients yet' : 'No matching clients'}
+                  </div>
+                ) : (
+                  <div className="py-1 max-h-44 overflow-y-auto">
+                    {filtered.map((client) => (
+                      <button
+                        key={client.id}
+                        onClick={() => { setActiveClient(client); setClientOpen(false); setClientSearch('') }}
+                        className={cn(
+                          'w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors',
+                          activeClient?.id === client.id && 'bg-indigo-500/10 text-indigo-300'
+                        )}
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">
+                          {getInitials(client.name)}
+                        </div>
+                        <div className="flex-1 min-w-0 text-left">
+                          <div className="font-medium text-gray-900 dark:text-white truncate">{client.name}</div>
+                          {client.domain && <div className="text-xs text-gray-500 dark:text-gray-500 truncate">{client.domain}</div>}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )
+              })()}
+
               <div className="border-t border-gray-300 dark:border-gray-700 p-1">
                 <Link
                   href="/dashboard/settings?tab=clients"

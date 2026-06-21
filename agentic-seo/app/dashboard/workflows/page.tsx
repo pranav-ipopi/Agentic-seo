@@ -17,9 +17,7 @@ export default async function WorkflowsPage() {
     .select('*')
     .order('created_at', { ascending: false })
 
-  const visibleTemplates = templates?.filter(
-    (template: WorkflowTemplate) => !template.name.toLowerCase().includes('article')
-  ) || []
+  const visibleTemplates = (templates || []).filter((t: WorkflowTemplate) => !t.name.toLowerCase().includes('article'))
 
   return (
     <div className="h-full w-full bg-gray-50 dark:bg-gray-950 flex flex-col">

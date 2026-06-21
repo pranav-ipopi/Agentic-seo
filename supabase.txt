@@ -4,10 +4,10 @@
 CREATE TABLE public.profiles (
   id uuid NOT NULL,
   full_name text,
-  role text NOT NULL DEFAULT 'seo_executive'::text CHECK (role = ANY (ARRAY['admin'::text, 'seo_manager'::text, 'seo_executive'::text, 'content_writer'::text])),
   avatar_url text,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  role text NOT NULL DEFAULT 'seo_executive'::text CHECK (role = ANY (ARRAY['admin'::text, 'seo_manager'::text, 'seo_executive'::text, 'content_writer'::text])),
   CONSTRAINT profiles_pkey PRIMARY KEY (id),
   CONSTRAINT profiles_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id)
 );
@@ -147,6 +147,7 @@ CREATE TABLE public.task_runs (
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
   department_id uuid,
   target_site_id uuid,
+  type text NOT NULL DEFAULT 'backlink'::text,
   CONSTRAINT task_runs_pkey PRIMARY KEY (id),
   CONSTRAINT task_runs_client_id_fkey FOREIGN KEY (client_id) REFERENCES public.clients(id),
   CONSTRAINT task_runs_workflow_template_id_fkey FOREIGN KEY (workflow_template_id) REFERENCES public.workflow_templates(id),

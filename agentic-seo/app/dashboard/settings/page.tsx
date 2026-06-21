@@ -14,6 +14,7 @@ export default function SettingsPage() {
   const { activeClient, clients, setClients } = useClient()
   const [profile, setProfile] = useState<Profile | null>(null)
   const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [activeTab, setActiveTab] = useState<'profile' | 'clients'>('profile')
@@ -37,6 +38,7 @@ export default function SettingsPage() {
     async function load() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
+      setEmail(user.email ?? '')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { data } = await (supabase as any).from('profiles').select('*').eq('id', user.id).single()
       if (data) { setProfile(data); setFullName(data.full_name ?? '') }
@@ -144,7 +146,7 @@ export default function SettingsPage() {
               onClick={() => setActiveTab(tab)}
               className={cn(
                 'px-4 py-1.5 text-sm font-medium rounded-md capitalize transition-colors',
-                activeTab === tab ? 'bg-indigo-600 text-gray-900 dark:text-white' : 'text-gray-400 dark:text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+                activeTab === tab ? 'bg-indigo-600 text-white' : 'text-gray-400 dark:text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               )}
             >
               {tab}
@@ -156,6 +158,12 @@ export default function SettingsPage() {
           <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
             <h2 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Profile</h2>
             <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-gray-400 dark:text-gray-600 dark:text-gray-400 mb-1.5">Email</label>
+                <div className="px-3 py-2 bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-400 dark:text-gray-600 dark:text-gray-400">
+                  {email || 'Loading...'}
+                </div>
+              </div>
               <div>
                 <label className="block text-xs font-medium text-gray-400 dark:text-gray-600 dark:text-gray-400 mb-1.5">Full Name</label>
                 <input
@@ -196,60 +204,6 @@ export default function SettingsPage() {
 
         {activeTab === 'clients' && (
           <div className="space-y-4">
-            {/* Existing clients */}
-            <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
-              <h2 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Your Clients</h2>
-              {clients.length === 0 ? (
-                <p className="text-sm text-gray-500 dark:text-gray-500">No clients yet. Add one below.</p>
-              ) : (
-                <div className="space-y-2">
-                  {clients.map((c) => (
-                    <div key={c.id} className="flex items-center gap-3 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">
-                        {c.name[0].toUpperCase()}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium text-gray-900 dark:text-white">{c.name}</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-2">
-                          {c.domain && <span>{c.domain}</span>}
-                          {c.domain && c.category && <span>•</span>}
-                          {c.category && <span className="capitalize">{c.category}</span>}
-                        </div>
-                      </div>
-                      {activeClient?.id === c.id && (
-                        <span className="text-xs text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full">Active</span>
-                      )}
-                      <div className="flex items-center gap-1">
-                        <button
-                          onClick={() => {
-                            setClientToEdit(c)
-                            setEditClientName(c.name)
-                            setEditClientDomain(c.domain || '')
-                            setEditClientDescription(c.description || '')
-                            setEditClientCategory(c.category || '')
-                          }}
-                          className="p-1.5 text-gray-400 hover:text-indigo-500 hover:bg-indigo-500/10 rounded-md transition-colors"
-                          title="Edit client"
-                        >
-                          <Pencil className="w-4 h-4" />
-                        </button>
-                        <button
-                          onClick={() => {
-                            setClientToDelete(c)
-                            setDeleteConfirmationName('')
-                          }}
-                          className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-500/10 rounded-md transition-colors"
-                          title="Delete client"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* Add new client */}
             <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
               <h2 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Add Client</h2>
@@ -317,6 +271,60 @@ export default function SettingsPage() {
                   Add Client
                 </button>
               </div>
+            </div>
+
+            {/* Existing clients */}
+            <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
+              <h2 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Your Clients</h2>
+              {clients.length === 0 ? (
+                <p className="text-sm text-gray-500 dark:text-gray-500">No clients yet. Add one below.</p>
+              ) : (
+                <div className="space-y-2">
+                  {clients.map((c) => (
+                    <div key={c.id} className="flex items-center gap-3 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">
+                        {c.name[0].toUpperCase()}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">{c.name}</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-2">
+                          {c.domain && <span>{c.domain}</span>}
+                          {c.domain && c.category && <span>•</span>}
+                          {c.category && <span className="capitalize">{c.category}</span>}
+                        </div>
+                      </div>
+                      {activeClient?.id === c.id && (
+                        <span className="text-xs text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full">Active</span>
+                      )}
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => {
+                            setClientToEdit(c)
+                            setEditClientName(c.name)
+                            setEditClientDomain(c.domain || '')
+                            setEditClientDescription(c.description || '')
+                            setEditClientCategory(c.category || '')
+                          }}
+                          className="p-1.5 text-gray-400 hover:text-indigo-500 hover:bg-indigo-500/10 rounded-md transition-colors"
+                          title="Edit client"
+                        >
+                          <Pencil className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => {
+                            setClientToDelete(c)
+                            setDeleteConfirmationName('')
+                          }}
+                          className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-500/10 rounded-md transition-colors"
+                          title="Delete client"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}

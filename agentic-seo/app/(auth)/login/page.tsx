@@ -10,6 +10,7 @@ export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [fullName, setFullName] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [selectedDomain, setSelectedDomain] = useState('seo')
   const [loading, setLoading] = useState(false)
@@ -37,7 +38,7 @@ export default function LoginPage() {
           password,
           options: { 
             emailRedirectTo: `${window.location.origin}/dashboard`,
-            data: { department: selectedDomain }
+            data: { department: selectedDomain, full_name: fullName }
           },
         })
         if (error) throw error
@@ -91,24 +92,42 @@ export default function LoginPage() {
         </div>
 
         {mode === 'signup' && (
-          <div>
-            <label htmlFor="domain" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Domain / Department
-            </label>
-            <div className="relative">
-              <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-500" />
-              <select
-                id="domain"
-                value={selectedDomain}
-                onChange={(e) => setSelectedDomain(e.target.value)}
-                className="w-full pl-10 pr-10 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors appearance-none cursor-pointer"
-              >
-                <option value="seo">SEO</option>
-                <option value="design" disabled>Design</option>
-                <option value="executive" disabled>Executive</option>
-              </select>
+          <>
+            <div>
+              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Full Name
+              </label>
+              <div className="relative mb-4">
+                <input
+                  id="fullName"
+                  type="text"
+                  required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                />
+              </div>
             </div>
-          </div>
+            <div>
+              <label htmlFor="domain" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Domain / Department
+              </label>
+              <div className="relative">
+                <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-500" />
+                <select
+                  id="domain"
+                  value={selectedDomain}
+                  onChange={(e) => setSelectedDomain(e.target.value)}
+                  className="w-full pl-10 pr-10 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors appearance-none cursor-pointer"
+                >
+                  <option value="seo">SEO</option>
+                  <option value="design" disabled>Design</option>
+                  <option value="executive" disabled>Executive</option>
+                </select>
+              </div>
+            </div>
+          </>
         )}
 
         {mode !== 'forgot' && (

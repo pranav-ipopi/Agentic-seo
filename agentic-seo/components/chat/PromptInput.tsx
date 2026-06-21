@@ -106,7 +106,7 @@ export default function PromptInput({ onSend, disabled, clientName, onStop, valu
               'p-2.5 rounded-xl transition-all',
               disabled || !value.trim()
                 ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed border border-gray-300 dark:border-gray-700'
-                : 'bg-indigo-600 hover:bg-indigo-500 text-gray-900 dark:text-white shadow-sm shadow-indigo-600/30 border border-indigo-500'
+                : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm shadow-indigo-600/30 border border-indigo-500'
             )}
           >
             {disabled

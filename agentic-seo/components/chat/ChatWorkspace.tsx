@@ -139,6 +139,8 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         clientId: activeClient.id,
         clientName: activeClient.name,
         clientDomain: activeClient.domain,
+        clientDescription: activeClient.description,
+        clientCategory: activeClient.category,
         sessionId,
         department: 'seo', // Phase 1: SEO only. Will be dynamic in Phase 3.
         signal: abortController.signal

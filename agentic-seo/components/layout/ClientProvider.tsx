@@ -18,12 +18,25 @@ export function ClientProvider({ children }: { children: ReactNode }) {
   const [activeClient, setActiveClientState] = useState<Client | null>(null)
   const [clients, setClients] = useState<Client[]>([])
 
-  // Rehydrate from localStorage
+  // Rehydrate active client from localStorage
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY)
       if (stored) {
         setActiveClientState(JSON.parse(stored))
+      }
+    } catch {}
+  }, [])
+
+  // Rehydrate clients list from cache (so sidebar is populated before API responds)
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('agentic_seo_clients_cache')
+      if (raw) {
+        const { data: cachedClients } = JSON.parse(raw)
+        if (Array.isArray(cachedClients) && cachedClients.length > 0) {
+          setClients(cachedClients)
+        }
       }
     } catch {}
   }, [])

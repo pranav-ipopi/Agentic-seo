@@ -3,7 +3,12 @@ import { saveAs } from 'file-saver'
 import { createClient } from '@/lib/supabase/client'
 import type { TaskRun } from '@/lib/supabase/types'
 
-export async function downloadCampaignExcelReport(task: TaskRun, activeClientName: string) {
+export async function downloadCampaignExcelReport(
+  task: TaskRun,
+  activeClientName: string,
+  groupRowCount: number = 10,
+  includeFailed: boolean = false
+) {
   try {
     const supabase = createClient()
     const campaignId = (task as any).state?.campaign_id || (task as any).output?.campaign_id
@@ -62,7 +67,18 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     }
 
     // Prepare rows for Excel
-    const rows = []
+    const rows: {
+      keyword: string
+      DATE: string
+      SOURCE: string
+      DA: number
+      SS: number
+      PA: number
+      'TARGET URL': string
+      TITLE: string
+      STATUS: string
+      RESULTS: string
+    }[] = []
 
     for (const t of campaignTasks) {
       const state = (t as any).state || {}
@@ -112,7 +128,11 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
       const liveUrl = backlink?.result_url || metadata?.live_url || (taskRunStatus === 'failed' ? 'Failed to generate' : 'Pending/Not Found')
       const date = backlink ? new Date(backlink.created_at).toLocaleDateString() : new Date((t as any).created_at).toLocaleDateString()
       const title = metadata?.title || keyword || 'N/A'
-      const finalStatus = backlink?.status === 'verified' ? 'success' : (taskRunStatus === 'completed' ? 'success' : taskRunStatus)
+      const finalStatus = backlink?.status === 'verified' ? 'Submitted' : (taskRunStatus === 'completed' ? 'Submitted' : taskRunStatus)
+
+      if (!includeFailed && (taskRunStatus === 'failed' || finalStatus === 'failed')) {
+        continue;
+      }
 
       const siteData = targetSitesMap[sourceUrl] || {}
       const da = siteData.da ?? state.min_da ?? 30
@@ -120,21 +140,29 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
       const pa = siteData.pa ?? 30
 
       rows.push({
-        'DATE': date,
-        'target': sourceUrl,
-        'DA': da,
-        'SS': ss,
-        'PA': pa,
-        'client-site': targetUrl,
-        'TITLE': title,
-        'STATUS': finalStatus,
-        'RESULTS': liveUrl
+        keyword,
+        DATE: date,
+        SOURCE: sourceUrl,
+        DA: da,
+        SS: ss,
+        PA: pa,
+        'TARGET URL': targetUrl,
+        TITLE: title,
+        STATUS: finalStatus,
+        RESULTS: liveUrl
       })
     }
 
     if (rows.length === 0) {
       alert("No data available for this campaign yet.")
       return
+    }
+
+    // Group rows by keyword, then slice to groupRowCount per keyword
+    const grouped: Record<string, typeof rows> = {}
+    for (const row of rows) {
+      if (!grouped[row.keyword]) grouped[row.keyword] = []
+      grouped[row.keyword].push(row)
     }
 
     // Generate filename
@@ -144,35 +172,31 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
     const workbook = new ExcelJS.Workbook()
     const worksheet = workbook.addWorksheet('Backlinks Report')
 
-    const headers = Object.keys(rows[0])
+    // Column definitions (excluding internal 'keyword' field)
+    const dataColumns = ['DATE', 'SOURCE', 'DA', 'SS', 'PA', 'TARGET URL', 'TITLE', 'STATUS', 'RESULTS'] as const
+    const totalCols = dataColumns.length
 
-    worksheet.addTable({
-      name: 'BacklinksTable',
-      ref: 'A1',
-      headerRow: true,
-      totalsRow: false,
-      style: {
-        theme: 'TableStyleMedium2',
-        showRowStripes: true,
-      },
-      columns: headers.map(h => ({ name: h, filterButton: true })),
-      rows: rows.map(r => headers.map(h => (r as Record<string, any>)[h as keyof typeof r]))
-    })
+    // ── Row 1: Client name header (merged across all columns, grey bg) ──
+    worksheet.addRow([activeClientName, ...Array(totalCols - 1).fill('')])
+    worksheet.mergeCells(1, 1, 1, totalCols)
+    const clientHeaderCell = worksheet.getCell(1, 1)
+    clientHeaderCell.value = activeClientName
+    clientHeaderCell.fill = {
+      type: 'pattern',
+      pattern: 'solid',
+      fgColor: { argb: 'FFD3D3D3' } // Light grey
+    }
+    clientHeaderCell.font = {
+      bold: true,
+      size: 13,
+      color: { argb: 'FF333333' }
+    }
+    clientHeaderCell.alignment = { horizontal: 'center', vertical: 'middle' }
+    worksheet.getRow(1).height = 22
 
-    // Auto-fit columns
-    worksheet.columns.forEach(column => {
-        let maxLength = 0;
-        column?.eachCell?.({ includeEmpty: true }, cell => {
-            const columnLength = cell.value ? cell.value.toString().length : 10;
-            if (columnLength > maxLength) {
-                maxLength = columnLength;
-            }
-        });
-        column.width = maxLength < 10 ? 10 : maxLength;
-    });
-
-    // Format the first row (headers) to have yellow highlight and black text
-    const headerRow = worksheet.getRow(1)
+    // ── Row 2: Column headers (yellow background, bold black) ──
+    worksheet.addRow(dataColumns as unknown as string[])
+    const headerRow = worksheet.getRow(2)
     headerRow.eachCell((cell) => {
       cell.fill = {
         type: 'pattern',
@@ -180,9 +204,56 @@ export async function downloadCampaignExcelReport(task: TaskRun, activeClientNam
         fgColor: { argb: 'FFFFFF00' } // Yellow
       }
       cell.font = {
-        color: { argb: 'FF000000' }, // Black text
+        color: { argb: 'FF000000' },
         bold: true
       }
+      cell.alignment = { horizontal: 'center', vertical: 'middle' }
+    })
+    headerRow.height = 18
+
+    // ── Data rows: grouped by keyword, with blank separator row between groups ──
+    const keywords = Object.keys(grouped)
+
+    for (let ki = 0; ki < keywords.length; ki++) {
+      const kw = keywords[ki]
+      // Slice to groupRowCount
+      const kwRows = grouped[kw].slice(0, groupRowCount)
+
+      for (let rIdx = 0; rIdx < kwRows.length; rIdx++) {
+        const rowData = kwRows[rIdx]
+        
+        const rowArray = dataColumns.map(col => {
+          // Only show DATE on the very first row of the keyword group
+          if (col === 'DATE' && rIdx > 0) return ''
+          return (rowData as Record<string, any>)[col]
+        })
+
+        const excelRow = worksheet.addRow(rowArray)
+        // No fill / no stripe formatting for data rows
+        excelRow.eachCell({ includeEmpty: true }, (cell) => {
+          cell.fill = {
+            type: 'pattern',
+            pattern: 'none'
+          }
+          cell.font = {}
+          cell.border = {}
+        })
+      }
+
+      // Blank separator row after each keyword group (except the last)
+      if (ki < keywords.length - 1) {
+        worksheet.addRow(Array(totalCols).fill(''))
+      }
+    }
+
+    // ── Auto-fit columns ──
+    worksheet.columns.forEach((column, colIdx) => {
+      let maxLength = dataColumns[colIdx] ? dataColumns[colIdx].length : 10
+      column?.eachCell?.({ includeEmpty: false }, cell => {
+        const len = cell.value ? cell.value.toString().length : 0
+        if (len > maxLength) maxLength = len
+      })
+      column.width = Math.min(Math.max(maxLength + 2, 10), 60)
     })
 
     // Trigger download

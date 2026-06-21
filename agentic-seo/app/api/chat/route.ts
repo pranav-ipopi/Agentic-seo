@@ -7,13 +7,13 @@ const HERMES_API_KEY = process.env.HERMES_API_KEY ?? ''
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { messages, clientId, clientName, clientDomain, sessionId, department, stream = true } = body
+    const { messages, clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, department, stream = true } = body
 
     if (!messages || !clientId || !clientName || !sessionId) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, sessionId, department })
+    const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, department })
 
     console.log(`[Chat API] Sending request to Hermes at ${HERMES_URL}`)
     console.log(`[Chat API] Client ID: ${clientId}, Session ID: ${sessionId}`)

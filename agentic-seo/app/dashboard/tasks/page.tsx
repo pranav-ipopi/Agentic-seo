@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useClient } from '@/components/layout/ClientProvider'
 import {
@@ -20,7 +20,7 @@ type TaskRunExtended = TaskRun & {
   payload?: any
 }
 
-const STATUS_FILTERS = ['all', 'running', 'pending', 'waiting_approval', 'completed', 'failed'] as const
+const STATUS_FILTERS = ['all', 'running', 'pending', 'completed', 'failed'] as const
 type StatusFilter = typeof STATUS_FILTERS[number]
 
 export default function TasksPage() {
@@ -29,6 +29,8 @@ export default function TasksPage() {
   const [tasks, setTasks] = useState<TaskRunExtended[]>([])
   const [filter, setFilter] = useState<StatusFilter>('all')
   const [loading, setLoading] = useState(true)
+  // Cache task results per client+filter key to avoid loading flash on re-visit
+  const tasksCache = useRef<Record<string, TaskRunExtended[]>>({})
   
   // State for expanded tasks
   const [expandedTaskId, setExpandedTaskId] = useState<string | null>(null)
@@ -39,8 +41,17 @@ export default function TasksPage() {
   useEffect(() => {
     async function load() {
       if (!activeClient) { setTasks([]); setLoading(false); return }
-      setLoading(true)
-      
+
+      const cacheKey = `${activeClient.id}_${filter}`
+
+      // Show cached data immediately if available
+      if (tasksCache.current[cacheKey]) {
+        setTasks(tasksCache.current[cacheKey])
+        setLoading(false)
+      } else {
+        setLoading(true)
+      }
+
       const query = supabase
         .from('tasks')
         .select('*, profiles(id, full_name, avatar_url)')
@@ -66,10 +77,10 @@ export default function TasksPage() {
         payload: t.payload,
         result: t.result,
         output: t.output,
-        // Convenience: pull the summary up so we don't have to drill into result every time
         summary: t.result?.summary ?? null
       }))
 
+      tasksCache.current[cacheKey] = formattedTasks as any
       setTasks(formattedTasks as any)
       setLoading(false)
     }
@@ -256,7 +267,7 @@ export default function TasksPage() {
                   className={cn(
                     'px-3 py-1.5 text-xs font-medium rounded-md capitalize transition-colors',
                     filter === s
-                      ? 'bg-indigo-600 text-gray-900 dark:text-white'
+                      ? 'bg-indigo-600 text-white'
                       : 'text-gray-400 dark:text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
                   )}
                 >

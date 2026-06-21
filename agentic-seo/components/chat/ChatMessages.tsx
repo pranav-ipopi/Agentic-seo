@@ -131,7 +131,7 @@ export default function ChatMessages({ messages, isStreaming, streamingContent, 
           <div className={cn(
             'max-w-[80%] rounded-2xl px-4 py-3',
             msg.role === 'user'
-              ? 'bg-indigo-600 text-gray-900 dark:text-white rounded-tr-sm'
+              ? 'bg-indigo-600 text-white rounded-tr-sm'
               : 'bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-tl-sm'
           )}>
             {msg.role === 'user' ? (

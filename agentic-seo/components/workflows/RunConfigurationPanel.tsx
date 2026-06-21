@@ -22,10 +22,15 @@ export default function RunConfigurationPanel({
   const { activeClient } = useClient()
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [targetSitesCount, setTargetSitesCount] = useState(50)
-  const [minDa, setMinDa] = useState(30)
-  const [minPa, setMinPa] = useState(30)
-  const [maxSpamScore, setMaxSpamScore] = useState(4)
+  const [targetSitesCount, setTargetSitesCount] = useState<number | string>(50)
+  const [minDa, setMinDa] = useState<number | string>(30)
+  const [minPa, setMinPa] = useState<number | string>(30)
+  const [maxSpamScore, setMaxSpamScore] = useState<number | string>(4)
+
+  const effectiveTargetSites = typeof targetSitesCount === 'number' ? targetSitesCount : (parseInt(targetSitesCount) || 0)
+  const effectiveMinDa = typeof minDa === 'number' ? minDa : (parseInt(minDa) || 0)
+  const effectiveMinPa = typeof minPa === 'number' ? minPa : (parseInt(minPa) || 0)
+  const effectiveMaxSpamScore = typeof maxSpamScore === 'number' ? maxSpamScore : (parseInt(maxSpamScore) || 0)
   const [submissionType, setSubmissionType] = useState('bookmarking')
   const [clientTargetUrl, setClientTargetUrl] = useState('')
   const [campaignName, setCampaignName] = useState('')
@@ -59,16 +64,16 @@ export default function RunConfigurationPanel({
       try {
         const queryParams = new URLSearchParams({
           category: submissionType,
-          minDa: minDa.toString(),
-          minPa: minPa.toString(),
-          maxSpamScore: maxSpamScore.toString(),
+          minDa: effectiveMinDa.toString(),
+          minPa: effectiveMinPa.toString(),
+          maxSpamScore: effectiveMaxSpamScore.toString(),
           countOnly: 'true'
         })
         const res = await fetch(`/api/target_sites?${queryParams}`)
         if (res.ok) {
           const { count } = await res.json()
           setMaxAvailableSites(count || 0)
-          if (targetSitesCount > (count || 0)) {
+          if (effectiveTargetSites > (count || 0)) {
             setTargetSitesCount(count || 0)
             // Trigger pulse effect
             setIsPulsing(true)
@@ -120,7 +125,7 @@ export default function RunConfigurationPanel({
       return
     }
 
-    if (Math.min(targetSitesCount, maxAvailableSites) === 0) {
+    if (Math.min(effectiveTargetSites, maxAvailableSites) === 0) {
       setErrorMessage('No target sites available. Please adjust your filters or add target sites.')
       return
     }
@@ -140,10 +145,10 @@ export default function RunConfigurationPanel({
         templateName: template.name,
         departmentId: (template as any).department_id ?? null,
         submissionType,
-        minDa,
-        minPa,
-        maxSpamScore,
-        targetSitesCount,
+        minDa: effectiveMinDa,
+        minPa: effectiveMinPa,
+        maxSpamScore: effectiveMaxSpamScore,
+        targetSitesCount: effectiveTargetSites,
         clientTargetUrl: clientTargetUrl.trim(),
         campaignName: campaignName.trim()
       }
@@ -250,6 +255,10 @@ export default function RunConfigurationPanel({
               max={maxAvailableSites}
               min={0}
               onChange={e => {
+                if (e.target.value === '') {
+                  setTargetSitesCount('');
+                  return;
+                }
                 let val = parseInt(e.target.value);
                 if (isNaN(val)) val = 0;
                 if (maxAvailableSites > 0 && val > maxAvailableSites) {
@@ -277,13 +286,13 @@ export default function RunConfigurationPanel({
               </button>
             </div>
             <div className="flex flex-col gap-2 mt-2">
-              {targetSitesCount > maxAvailableSites && maxAvailableSites > 0 && (
+              {effectiveTargetSites > maxAvailableSites && maxAvailableSites > 0 && (
                 <div className="text-[10px] text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded border border-amber-200 dark:border-amber-800/50 flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-amber-500"></span>
                   Only {maxAvailableSites} sites match your DA requirement. We will use {maxAvailableSites}.
                 </div>
               )}
-              {targetSitesCount > 0 && maxAvailableSites === 0 && (
+              {effectiveTargetSites > 0 && maxAvailableSites === 0 && (
                 <div className="text-[10px] text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/20 px-2 py-1 rounded border border-rose-200 dark:border-rose-800/50 flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-rose-500"></span>
                   0 sites match your DA requirement. No backlinks will be created.
@@ -291,8 +300,8 @@ export default function RunConfigurationPanel({
               )}
               <div className="text-xs text-gray-500 dark:text-gray-500 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-2 rounded-lg text-center">
                 <span className="font-medium text-gray-700 dark:text-gray-300">
-                  {Math.min(targetSitesCount, maxAvailableSites)}
-                </span> target sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{keywordCount}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{Math.min(targetSitesCount, maxAvailableSites) * keywordCount}</span> total target backlinks
+                  {Math.min(effectiveTargetSites, maxAvailableSites)}
+                </span> target sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{keywordCount}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{Math.min(effectiveTargetSites, maxAvailableSites) * keywordCount}</span> total target backlinks
               </div>
             </div>
           </div>
@@ -307,7 +316,10 @@ export default function RunConfigurationPanel({
                 min={1}
                 max={100}
                 value={minDa}
-                onChange={e => setMinDa(parseInt(e.target.value) || 0)}
+                onChange={e => {
+                  if (e.target.value === '') { setMinDa(''); return; }
+                  setMinDa(parseInt(e.target.value) || 0);
+                }}
                 className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
               />
             </div>
@@ -321,7 +333,10 @@ export default function RunConfigurationPanel({
                 min={1}
                 max={100}
                 value={minPa}
-                onChange={e => setMinPa(parseInt(e.target.value) || 0)}
+                onChange={e => {
+                  if (e.target.value === '') { setMinPa(''); return; }
+                  setMinPa(parseInt(e.target.value) || 0);
+                }}
                 className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
               />
             </div>
@@ -336,6 +351,7 @@ export default function RunConfigurationPanel({
                 max={4}
                 value={maxSpamScore}
                 onChange={e => {
+                  if (e.target.value === '') { setMaxSpamScore(''); return; }
                   let val = parseInt(e.target.value) || 0;
                   if (val > 4) val = 4;
                   setMaxSpamScore(val);
@@ -345,23 +361,7 @@ export default function RunConfigurationPanel({
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs text-gray-400 dark:text-gray-600 dark:text-gray-400 flex items-center justify-between">
-              <span>Submission Category</span>
-              <span className="text-gray-500 dark:text-gray-500">Select</span>
-            </label>
-            <select
-              value={submissionType}
-              onChange={e => setSubmissionType(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
-            >
-              <option value="bookmarking">Bookmarking Sites</option>
-              <option value="article_submission" disabled>Article Submission (Coming Soon)</option>
-              <option value="web20" disabled>Web 2.0 (Coming Soon)</option>
-              <option value="profile" disabled>Profile Backlinks (Coming Soon)</option>
-              <option value="guest_post" disabled>Guest Post Outreach (Coming Soon)</option>
-            </select>
-          </div>
+
         </div>
       </div>
 
@@ -374,7 +374,7 @@ export default function RunConfigurationPanel({
             !activeClient || 
             !clientTargetUrl.trim() || 
             maxAvailableSites === 0 || 
-            targetSitesCount <= 0 ||
+            effectiveTargetSites <= 0 ||
             keywordCount === 0
           }
           className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-600/50 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-900/20 active:scale-[0.98]"
@@ -407,9 +407,9 @@ export default function RunConfigurationPanel({
               <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-6 border border-gray-200 dark:border-gray-800">
                 <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                   <li className="flex justify-between"><span className="font-medium">Target URL:</span> <span className="text-right truncate ml-4" title={clientTargetUrl}>{clientTargetUrl || 'None'}</span></li>
-                  <li className="flex justify-between"><span className="font-medium">Target Sites:</span> <span>{Math.min(targetSitesCount, maxAvailableSites)}</span></li>
+                  <li className="flex justify-between"><span className="font-medium">Target Sites:</span> <span>{Math.min(effectiveTargetSites, maxAvailableSites)}</span></li>
                   <li className="flex justify-between"><span className="font-medium">Keywords:</span> <span>{keywordCount}</span></li>
-                  <li className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white"><span className="font-medium text-gray-900 dark:text-white">Total Backlinks:</span> <span>{Math.min(targetSitesCount, maxAvailableSites) * keywordCount}</span></li>
+                  <li className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white"><span className="font-medium text-gray-900 dark:text-white">Total Backlinks:</span> <span>{Math.min(effectiveTargetSites, maxAvailableSites) * keywordCount}</span></li>
                 </ul>
               </div>
               <div className="flex justify-end gap-3">

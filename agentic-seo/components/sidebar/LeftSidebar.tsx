@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -40,10 +40,16 @@ export default function LeftSidebar() {
   const [clientOpen, setClientOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const [openMenuId, setOpenMenuId] = useState<string | null>(null)
+  const clientSelectorRef = useRef<HTMLDivElement>(null)
+  // Cache sessions keyed by clientId to avoid re-fetching on client switch
+  const sessionsCache = useRef<Record<string, ChatSession[]>>({})
 
   useEffect(() => {
-    function handleClickOutside() {
+    function handleClickOutside(e: MouseEvent) {
       setOpenMenuId(null)
+      if (clientSelectorRef.current && !clientSelectorRef.current.contains(e.target as Node)) {
+        setClientOpen(false)
+      }
     }
     document.addEventListener('click', handleClickOutside)
     return () => document.removeEventListener('click', handleClickOutside)
@@ -63,12 +69,26 @@ export default function LeftSidebar() {
         .single()
       if (profileData) setProfile(profileData)
 
-      // Load all clients for the domain team
+      // Load clients — serve from localStorage cache first (5-min TTL), then refresh in background
+      const CLIENTS_CACHE_KEY = 'agentic_seo_clients_cache'
+      const CLIENTS_CACHE_TTL = 5 * 60 * 1000 // 5 minutes
+      try {
+        const raw = localStorage.getItem(CLIENTS_CACHE_KEY)
+        if (raw) {
+          const { data: cachedClients, ts } = JSON.parse(raw)
+          if (Date.now() - ts < CLIENTS_CACHE_TTL && Array.isArray(cachedClients) && cachedClients.length > 0) {
+            setClients(cachedClients)
+            setLoading(false)
+          }
+        }
+      } catch {}
+
       try {
         const res = await fetch('/api/clients')
         if (res.ok) {
           const clientList = await res.json()
           setClients(clientList)
+          localStorage.setItem(CLIENTS_CACHE_KEY, JSON.stringify({ data: clientList, ts: Date.now() }))
         }
       } catch (err) {
         console.error('Failed to load clients', err)
@@ -96,9 +116,16 @@ export default function LeftSidebar() {
     }
   }, [loading, clients, activeClient, setActiveClient])
 
-  // Load sessions for active client
+  // Load sessions for active client — cached per clientId
   useEffect(() => {
     if (!activeClient) { setSessions([]); return }
+
+    // Serve from cache immediately (no loading flash)
+    if (sessionsCache.current[activeClient.id]) {
+      setSessions(sessionsCache.current[activeClient.id])
+      // Still refresh in background so new sessions appear
+    }
+
     async function loadSessions() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
@@ -110,7 +137,9 @@ export default function LeftSidebar() {
         .eq('user_id', user.id)
         .order('updated_at', { ascending: false })
         .limit(20)
-      setSessions(data ?? [])
+      const result = data ?? []
+      sessionsCache.current[activeClient!.id] = result
+      setSessions(result)
     }
     loadSessions()
   }, [activeClient?.id])
@@ -159,7 +188,7 @@ export default function LeftSidebar() {
     <aside className="flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
       {/* Header — Client Selector */}
       <div className="p-3 border-b border-gray-200 dark:border-gray-800">
-        <div className="relative">
+        <div className="relative" ref={clientSelectorRef}>
           <button
             id="client-selector"
             onClick={() => setClientOpen(!clientOpen)}

@@ -62,6 +62,8 @@ export function buildClientSystemMessage(params: {
   clientId: string
   clientName: string
   clientDomain?: string | null
+  clientDescription?: string | null
+  clientCategory?: string | null
   sessionId: string
   department?: string | null  // department slug: 'seo' | 'execution' | 'design'
 }): HermesMessage {
@@ -75,6 +77,8 @@ export function buildClientSystemMessage(params: {
 Client ID: ${params.clientId}
 Client Name: ${params.clientName}
 ${params.clientDomain ? `Client Domain: ${params.clientDomain}` : ''}
+${params.clientDescription ? `Client Description: ${params.clientDescription}` : ''}
+${params.clientCategory ? `Client Category: ${params.clientCategory}` : ''}
 Session ID: ${params.sessionId}
 Department: ${dept.toUpperCase()}
 
@@ -103,6 +107,8 @@ export async function* streamHermesChat(params: {
   clientId: string
   clientName: string
   clientDomain?: string | null
+  clientDescription?: string | null
+  clientCategory?: string | null
   sessionId: string
   department?: string | null
   signal?: AbortSignal
@@ -172,6 +178,8 @@ export async function chatWithHermes(params: {
   clientId: string
   clientName: string
   clientDomain?: string | null
+  clientDescription?: string | null
+  clientCategory?: string | null
   sessionId: string
   department?: string | null
 }): Promise<string> {

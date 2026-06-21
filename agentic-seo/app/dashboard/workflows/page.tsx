@@ -1,7 +1,24 @@
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { unstable_cache } from 'next/cache'
+import { createServiceClient } from '@/lib/supabase/server'
 import { WorkflowTemplate } from '@/lib/supabase/types'
 import { Workflow, Play, Settings2, Sparkles, Network } from 'lucide-react'
+
+// workflow_templates is global, no user-specific data.
+// Use createServiceClient() so cookies() is never called inside the cache.
+// revalidate: false = cached until server restarts or revalidateTag('workflow-templates')
+const getCachedTemplates = unstable_cache(
+  async () => {
+    const supabase = createServiceClient()
+    const { data, error } = await supabase
+      .from('workflow_templates')
+      .select('*')
+      .order('created_at', { ascending: false })
+    return { data, error }
+  },
+  ['workflow-templates'],
+  { revalidate: false }
+)
 
 export const metadata = {
   title: 'Workflows | Agentic SEO',
@@ -9,13 +26,7 @@ export const metadata = {
 }
 
 export default async function WorkflowsPage() {
-  const supabase = await createClient()
-
-  // Fetch all workflow templates
-  const { data: templates, error } = await supabase
-    .from('workflow_templates')
-    .select('*')
-    .order('created_at', { ascending: false })
+  const { data: templates, error } = await getCachedTemplates()
 
   const visibleTemplates = (templates || []).filter((t: WorkflowTemplate) => !t.name.toLowerCase().includes('article'))
 
@@ -47,7 +58,7 @@ export default async function WorkflowsPage() {
             </div>
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-1">No Templates Found</h3>
             <p className="text-sm text-gray-400 dark:text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-              You haven't defined any workflow templates in the database yet. Run the Supabase migrations to seed initial data.
+              You haven&apos;t defined any workflow templates in the database yet. Run the Supabase migrations to seed initial data.
             </p>
           </div>
         ) : (

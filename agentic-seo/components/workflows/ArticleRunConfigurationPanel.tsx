@@ -15,9 +15,7 @@ import KeywordsModal from './KeywordsModal'
 const DEFAULT_PLATFORMS = [
   { id: 'blogger',      name: 'Blogger',        url: 'blogger.com',      icon: '📝', color: 'orange' },
   { id: 'tumblr',       name: 'Tumblr',          url: 'tumblr.com',       icon: '📖', color: 'indigo' },
-  { id: 'slideshare',   name: 'SlideShare',      url: 'slideshare.net',   icon: '📊', color: 'blue' },
   { id: 'wordpress',    name: 'WordPress.com',   url: 'wordpress.com',    icon: '🌐', color: 'cyan' },
-  { id: 'googleslides', name: 'Google Slides',   url: 'slides.google.com',icon: '🎯', color: 'green' },
 ]
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -47,6 +45,7 @@ export default function ArticleRunConfigurationPanel({
   const [customPlatforms, setCustomPlatforms]   = useState<Array<{ id: string; name: string; url: string; icon?: string; color?: string }>>([])
   const [showCustomInput, setShowCustomInput]   = useState(false)
   const [customPlatformInput, setCustomPlatformInput] = useState('')
+  const [isPlatformsDropdownOpen, setIsPlatformsDropdownOpen] = useState(false)
 
   // BrowserUse profiles
   const [profiles, setProfiles]               = useState<Array<{ id: string; name: string }>>([])
@@ -322,7 +321,7 @@ export default function ArticleRunConfigurationPanel({
         </section>
 
         {/* ── Platform Selection ── */}
-        <section className="space-y-3 pt-4 border-t border-gray-200 dark:border-gray-800/50">
+        <section className="space-y-3 pt-4 border-t border-gray-200 dark:border-gray-800/50 relative z-30">
           <div className="flex items-center justify-between">
             <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
               Platforms
@@ -332,78 +331,97 @@ export default function ArticleRunConfigurationPanel({
             </span>
           </div>
 
-          <div className="space-y-1.5">
-            {allPlatforms.map(platform => (
-              <label
-                key={platform.id}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all border ${
-                  selectedPlatforms.has(platform.id)
-                    ? 'bg-violet-50 dark:bg-violet-900/20 border-violet-200 dark:border-violet-700/50'
-                    : 'bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={selectedPlatforms.has(platform.id)}
-                  onChange={() => togglePlatform(platform.id)}
-                  className="w-3.5 h-3.5 rounded accent-violet-600 flex-shrink-0"
-                />
-                <span className="text-base leading-none">{platform.icon || '🔗'}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-gray-800 dark:text-gray-200 truncate">
-                    {platform.name}
-                  </div>
-                  <div className="text-[10px] text-gray-400 dark:text-gray-500 truncate">{platform.url}</div>
-                </div>
-                {customPlatforms.some(c => c.id === platform.id) && (
-                  <button
-                    type="button"
-                    onClick={e => {
-                      e.preventDefault()
-                      setCustomPlatforms(prev => prev.filter(c => c.id !== platform.id))
-                      setSelectedPlatforms(prev => { const n = new Set(prev); n.delete(platform.id); return n })
-                    }}
-                    className="text-gray-400 hover:text-rose-400 transition-colors flex-shrink-0"
-                  >
-                    <Trash2 className="w-3 h-3" />
-                  </button>
-                )}
-              </label>
-            ))}
+          <div className="relative">
+            <button
+              onClick={() => setIsPlatformsDropdownOpen(!isPlatformsDropdownOpen)}
+              className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500/50 flex items-center justify-between transition-colors hover:border-violet-300 dark:hover:border-violet-700"
+            >
+              <span className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-gray-400" />
+                Select Platforms...
+              </span>
+              <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isPlatformsDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
 
-            {/* Add custom platform */}
-            {showCustomInput ? (
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  autoFocus
-                  placeholder="e.g. medium.com"
-                  value={customPlatformInput}
-                  onChange={e => setCustomPlatformInput(e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Enter') addCustomPlatform(); if (e.key === 'Escape') setShowCustomInput(false) }}
-                  className="flex-1 bg-gray-50 dark:bg-gray-950 border border-violet-300 dark:border-violet-700 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500/50"
-                />
-                <button
-                  onClick={addCustomPlatform}
-                  className="px-3 py-2 bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold rounded-lg transition-colors"
-                >
-                  Add
-                </button>
-                <button
-                  onClick={() => setShowCustomInput(false)}
-                  className="px-2 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-lg transition-colors"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
+            {isPlatformsDropdownOpen && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl z-50 overflow-hidden flex flex-col max-h-[300px]">
+                <div className="p-2 overflow-y-auto space-y-1.5">
+                  {allPlatforms.map(platform => (
+                    <label
+                      key={platform.id}
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all border ${
+                        selectedPlatforms.has(platform.id)
+                          ? 'bg-violet-50 dark:bg-violet-900/20 border-violet-200 dark:border-violet-700/50'
+                          : 'bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={selectedPlatforms.has(platform.id)}
+                        onChange={() => togglePlatform(platform.id)}
+                        className="w-3.5 h-3.5 rounded accent-violet-600 flex-shrink-0"
+                      />
+                      <span className="text-base leading-none">{platform.icon || '🔗'}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-gray-800 dark:text-gray-200 truncate">
+                          {platform.name}
+                        </div>
+                        <div className="text-[10px] text-gray-400 dark:text-gray-500 truncate">{platform.url}</div>
+                      </div>
+                      {customPlatforms.some(c => c.id === platform.id) && (
+                        <button
+                          type="button"
+                          onClick={e => {
+                            e.preventDefault()
+                            setCustomPlatforms(prev => prev.filter(c => c.id !== platform.id))
+                            setSelectedPlatforms(prev => { const n = new Set(prev); n.delete(platform.id); return n })
+                          }}
+                          className="text-gray-400 hover:text-rose-400 transition-colors flex-shrink-0"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                        </button>
+                      )}
+                    </label>
+                  ))}
+
+                  {/* Add custom platform */}
+                  {showCustomInput ? (
+                    <div className="flex gap-2 pt-1 border-t border-gray-100 dark:border-gray-800 mt-2">
+                      <input
+                        type="text"
+                        autoFocus
+                        placeholder="e.g. medium.com"
+                        value={customPlatformInput}
+                        onChange={e => setCustomPlatformInput(e.target.value)}
+                        onKeyDown={e => { if (e.key === 'Enter') addCustomPlatform(); if (e.key === 'Escape') setShowCustomInput(false) }}
+                        className="flex-1 bg-gray-50 dark:bg-gray-950 border border-violet-300 dark:border-violet-700 rounded-lg px-2 py-1.5 text-xs text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500/50"
+                      />
+                      <button
+                        onClick={addCustomPlatform}
+                        className="px-2 py-1.5 bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold rounded-lg transition-colors"
+                      >
+                        Add
+                      </button>
+                      <button
+                        onClick={() => setShowCustomInput(false)}
+                        className="px-2 py-1.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-lg transition-colors"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="pt-1 border-t border-gray-100 dark:border-gray-800 mt-2">
+                      <button
+                        onClick={() => setShowCustomInput(true)}
+                        className="w-full flex items-center justify-center gap-1.5 px-3 py-2 border border-dashed border-gray-300 dark:border-gray-700 text-gray-400 dark:text-gray-500 hover:border-violet-400 dark:hover:border-violet-600 hover:text-violet-500 dark:hover:text-violet-400 rounded-lg text-xs font-medium transition-colors"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        Add Platform
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
-            ) : (
-              <button
-                onClick={() => setShowCustomInput(true)}
-                className="w-full flex items-center justify-center gap-1.5 px-3 py-2 border border-dashed border-gray-300 dark:border-gray-700 text-gray-400 dark:text-gray-500 hover:border-violet-400 dark:hover:border-violet-600 hover:text-violet-500 dark:hover:text-violet-400 rounded-lg text-xs font-medium transition-colors"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                Add Platform
-              </button>
             )}
           </div>
         </section>

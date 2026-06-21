@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useClient } from '@/components/layout/ClientProvider'
 import {
-  CheckCircle2, XCircle, Clock, Loader2, RefreshCw, Filter, ChevronDown, ChevronUp, Download, MonitorPlay
+  CheckCircle2, XCircle, Clock, Loader2, RefreshCw, Filter, ChevronDown, ChevronUp, Download, MonitorPlay, FileSpreadsheet
 } from 'lucide-react'
 import { cn, formatRelativeTime } from '@/lib/utils'
 import type { TaskRun, TaskRunLog } from '@/lib/supabase/types'
@@ -37,6 +37,11 @@ export default function TasksPage() {
   const [logs, setLogs] = useState<Record<string, TaskRunLog[]>>({})
   const [loadingLogs, setLoadingLogs] = useState<Record<string, boolean>>({})
   const [taskToCancel, setTaskToCancel] = useState<string | null>(null)
+
+  // State for download report
+  const [groupRowCount, setGroupRowCount] = useState<string>("10")
+  const [includeFailed, setIncludeFailed] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   useEffect(() => {
     async function load() {
@@ -176,8 +181,13 @@ export default function TasksPage() {
   }
 
   const handleDownloadPDF = async (task: TaskRunExtended) => {
-    if (activeClient) {
-      await downloadCampaignExcelReport(task, activeClient.name)
+    if (!activeClient) return
+    setIsDownloading(true)
+    try {
+      const rowCount = parseInt(groupRowCount) || 10
+      await downloadCampaignExcelReport(task, activeClient.name, rowCount, includeFailed)
+    } finally {
+      setIsDownloading(false)
     }
   }
 
@@ -366,13 +376,36 @@ export default function TasksPage() {
                             </button>
                           )}
                           {task.status === 'completed' && (
-                            <button
-                              onClick={() => handleDownloadPDF(task)}
-                              className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 rounded text-xs font-medium transition-colors"
-                            >
-                              <Download className="w-3.5 h-3.5" />
-                              Download Report
-                            </button>
+                            <div className="flex items-center gap-2">
+                              <label className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={includeFailed}
+                                  onChange={(e) => setIncludeFailed(e.target.checked)}
+                                  className="w-3.5 h-3.5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-600"
+                                />
+                                <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Include Failed</span>
+                              </label>
+                              <div className="flex items-center gap-2 px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700">
+                                <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Group By:</span>
+                                <input
+                                  type="number"
+                                  min="1"
+                                  value={groupRowCount}
+                                  onChange={(e) => setGroupRowCount(e.target.value)}
+                                  className="w-12 text-xs bg-transparent border-none p-0 focus:ring-0 text-gray-900 dark:text-white"
+                                  placeholder="Rows"
+                                />
+                              </div>
+                              <button
+                                onClick={() => handleDownloadPDF(task)}
+                                disabled={isDownloading}
+                                className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 rounded text-xs font-medium transition-colors disabled:opacity-50"
+                              >
+                                {isDownloading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+                                Download Report
+                              </button>
+                            </div>
                           )}
                         </div>
                       </div>

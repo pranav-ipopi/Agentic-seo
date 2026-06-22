@@ -8912,3 +8912,1218 @@ navigating to "http://httpbin.org/ip", waiting until "). Trying next...
 2026-06-22 12:34:12 | INFO     | backlink_automation | Registration attempt 1/3
 2026-06-22 12:34:24 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
 2026-06-22 12:34:25 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:34:46 | INFO     | backlink_automation | 2captcha predicted: 'april showers'
+2026-06-22 12:34:54 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:34:54 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:34:54 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:34:54 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/submit (Attempt 1/3)
+2026-06-22 12:34:54 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com/submit
+2026-06-22 12:34:55 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:35:06 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:35:15 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:35:15 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:35:15 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:35:48 | INFO     | backlink_automation | 2captcha predicted: 'the other side'
+2026-06-22 12:35:52 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 12:36:06 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 12:36:06 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 12:36:06 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 12:36:06 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 12:36:07 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 12:36:12 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-qJPxHimjx-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:36:20 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 12:36:20 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-XuqgbzDtH-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:36:26 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "117.94.59.189"
+}
+2026-06-22 12:36:26 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:36:26 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.05 minutes.
+2026-06-22 12:36:28 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Executing step 1/2: Submission on https://nybookmark.com/
+2026-06-22 12:36:28 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:36:29 | INFO     | backlink_automation | [TemplateRunner] Routing https://nybookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:36:29 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://nybookmark.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:36:29 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:36:29 | INFO     | backlink_automation | Navigating to https://nybookmark.com (Attempt 1/3)
+2026-06-22 12:36:34 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nybookmark.com
+2026-06-22 12:36:36 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:36:36 | INFO     | backlink_automation | Registration started with username=usernm7fguos
+2026-06-22 12:36:36 | INFO     | backlink_automation | Navigating to https://nybookmark.com/register (Attempt 1/3)
+2026-06-22 12:36:37 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:36:37 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.25 minutes.
+2026-06-22 12:36:37 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://nybookmark.com/register
+2026-06-22 12:36:40 | INFO     | backlink_automation | [TaskRun ff191b6a-f20f-4836-b436-54ce178b02eb] Executing step 1/2: Submission on https://nybookmark.com/
+2026-06-22 12:36:41 | INFO     | backlink_automation | [TaskRun ff191b6a-f20f-4836-b436-54ce178b02eb] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:36:41 | INFO     | backlink_automation | [TemplateRunner] Routing https://nybookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:36:41 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://nybookmark.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:36:41 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:36:41 | INFO     | backlink_automation | Navigating to https://nybookmark.com (Attempt 1/3)
+2026-06-22 12:36:45 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nybookmark.com
+2026-06-22 12:36:46 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:36:46 | INFO     | backlink_automation | Registration started with username=userstnionu9
+2026-06-22 12:36:46 | INFO     | backlink_automation | Navigating to https://nybookmark.com/register (Attempt 1/3)
+2026-06-22 12:36:48 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://nybookmark.com/register
+2026-06-22 12:37:01 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 12:37:01 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 12:37:01 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 12:37:01 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 12:37:01 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 12:37:03 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-cb4GdtZut-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:37:11 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 12:37:11 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-VW9sRQVB1-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:37:14 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 12:37:14 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:37:14 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.08 minutes.
+2026-06-22 12:37:17 | INFO     | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Executing step 1/2: Submission on https://bookmarkspring.com/
+2026-06-22 12:37:18 | INFO     | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:37:18 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkspring.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:37:18 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkspring.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:37:18 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:37:18 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com (Attempt 1/3)
+2026-06-22 12:37:20 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkspring.com
+2026-06-22 12:37:21 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:37:21 | INFO     | backlink_automation | Registration started with username=userohis84kw
+2026-06-22 12:37:21 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 1/3)
+2026-06-22 12:37:25 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:37:25 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.90 minutes.
+2026-06-22 12:37:28 | INFO     | backlink_automation | [TaskRun 2ae06e92-dfb9-447e-aae3-2788e65aa591] Executing step 1/2: Submission on https://bookmarkspring.com/
+2026-06-22 12:37:29 | INFO     | backlink_automation | [TaskRun 2ae06e92-dfb9-447e-aae3-2788e65aa591] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:37:29 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkspring.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:37:29 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkspring.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:37:29 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:37:29 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com (Attempt 1/3)
+2026-06-22 12:37:31 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkspring.com
+2026-06-22 12:37:33 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:37:33 | INFO     | backlink_automation | Registration started with username=userzdzk4tvf
+2026-06-22 12:37:33 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 1/3)
+2026-06-22 12:37:45 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:37:54 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:38:01 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 12:38:01 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 2/3)
+2026-06-22 12:38:10 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 12:38:10 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 2/3)
+2026-06-22 12:38:11 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:38:15 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:38:27 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 12:38:27 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 3/3)
+2026-06-22 12:38:31 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 12:38:31 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 3/3)
+2026-06-22 12:38:33 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:38:36 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 12:38:48 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 12:38:52 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 12:39:04 | ERROR    | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 12:39:04 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 12:39:05 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/6321227c-287c-4a7d-98d8-8a69e9b75b0a_Submission_1782112144.png?
+2026-06-22 12:39:06 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/6321227c-287c-4a7d-98d8-8a69e9b75b0a_Submission_logs_1782112145.txt?
+2026-06-22 12:39:07 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 39/60 completed, 9 failed. Setting parent task status → 'running'
+2026-06-22 12:39:09 | ERROR    | backlink_automation | [TaskRun 2ae06e92-dfb9-447e-aae3-2788e65aa591] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 12:39:09 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 12:39:09 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/2ae06e92-dfb9-447e-aae3-2788e65aa591_Submission_1782112149.png?
+2026-06-22 12:39:10 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/2ae06e92-dfb9-447e-aae3-2788e65aa591_Submission_logs_1782112149.txt?
+2026-06-22 12:39:11 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 39/60 completed, 10 failed. Setting parent task status → 'running'
+2026-06-22 12:39:11 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 12:40:25 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 12:40:32 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-of7ESOumX-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:40:36 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 12:40:37 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:40:37 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.37 minutes.
+2026-06-22 12:40:38 | INFO     | backlink_automation | [TaskRun f12dc8e8-0f9d-41cc-ac4d-568d640d55ab] Executing step 1/2: Submission on https://bookmarkrange.com/
+2026-06-22 12:40:38 | INFO     | backlink_automation | [TaskRun f12dc8e8-0f9d-41cc-ac4d-568d640d55ab] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:40:38 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkrange.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:40:38 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkrange.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:40:38 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:40:38 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com (Attempt 1/3)
+2026-06-22 12:40:42 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com
+2026-06-22 12:40:44 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:40:44 | INFO     | backlink_automation | Registration started with username=user71eigh6c
+2026-06-22 12:40:44 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com/register (Attempt 1/3)
+2026-06-22 12:40:45 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkrange.com/register
+2026-06-22 12:40:48 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:40:48 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.49 minutes.
+2026-06-22 12:40:50 | INFO     | backlink_automation | [TaskRun 5a19178c-7fb9-4648-864f-6b5d2ced56d6] Executing step 1/2: Submission on https://mediajx.com/
+2026-06-22 12:40:50 | INFO     | backlink_automation | [TaskRun 5a19178c-7fb9-4648-864f-6b5d2ced56d6] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:40:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:40:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:40:50 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:40:50 | INFO     | backlink_automation | Navigating to https://mediajx.com (Attempt 1/3)
+2026-06-22 12:40:54 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com
+2026-06-22 12:40:56 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:40:56 | INFO     | backlink_automation | Registration started with username=uservwtzikd2
+2026-06-22 12:40:56 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 1/3)
+2026-06-22 12:40:57 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mediajx.com/register
+2026-06-22 12:41:05 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com/register
+2026-06-22 12:41:12 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:41:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/register
+2026-06-22 12:41:21 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:41:21 | INFO     | backlink_automation | Rate Limiter: Next job will run in 1.97 minutes.
+2026-06-22 12:41:22 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:41:22 | INFO     | backlink_automation | [TaskRun 7a956b7a-847e-40b1-9909-50e255688be6] Executing step 1/2: Submission on https://opensocialfactory.com/
+2026-06-22 12:41:22 | INFO     | backlink_automation | [TaskRun 7a956b7a-847e-40b1-9909-50e255688be6] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:41:24 | INFO     | backlink_automation | [TemplateRunner] Routing https://opensocialfactory.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:41:24 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://opensocialfactory.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:41:24 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:41:24 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com (Attempt 1/3)
+2026-06-22 12:41:27 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:41:29 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com
+2026-06-22 12:41:29 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:41:31 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:41:31 | INFO     | backlink_automation | Registration started with username=userz0phvr5v
+2026-06-22 12:41:31 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/register (Attempt 1/3)
+2026-06-22 12:41:33 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://opensocialfactory.com/register
+2026-06-22 12:41:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:41:38 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:41:41 | INFO     | backlink_automation | 2captcha predicted: 'saveit'
+2026-06-22 12:41:50 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/register
+2026-06-22 12:41:54 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-22 12:41:54 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-22 12:41:54 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:41:54 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:41:57 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:41:59 | INFO     | backlink_automation | 2captcha predicted: 'the car lady'
+2026-06-22 12:42:05 | INFO     | backlink_automation | 2captcha predicted: 'win hands down'
+2026-06-22 12:42:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:42:08 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:42:12 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-22 12:42:12 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-22 12:42:12 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:42:12 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:42:13 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:42:13 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:42:13 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:42:13 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com/submit (Attempt 1/3)
+2026-06-22 12:42:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com/submit
+2026-06-22 12:42:15 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:42:22 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:42:23 | INFO     | backlink_automation | 2captcha predicted: 'gimme pizza'
+2026-06-22 12:42:29 | INFO     | backlink_automation | 2captcha predicted: 'are you the keymaster'
+2026-06-22 12:42:31 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:42:31 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:42:31 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:42:31 | INFO     | backlink_automation | Navigating to https://mediajx.com/submit (Attempt 1/3)
+2026-06-22 12:42:32 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:42:32 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:42:32 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/submit
+2026-06-22 12:42:32 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:42:33 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:42:41 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:42:41 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:42:41 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:42:41 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/submit (Attempt 1/3)
+2026-06-22 12:42:42 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/submit
+2026-06-22 12:42:43 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:42:44 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:42:51 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:42:52 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:42:52 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:42:52 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:42:58 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 12:42:58 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 12:42:58 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 12:42:58 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 12:42:58 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 12:43:00 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-RKkpxt4Wc-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:43:06 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "49.3.16.206"
+}
+2026-06-22 12:43:06 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:43:06 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.00 minutes.
+2026-06-22 12:43:09 | INFO     | backlink_automation | [TaskRun 0f2e77f7-6e62-4b4b-98ac-30e1ccec8663] Executing step 1/2: Submission on https://bookmarkrange.com/
+2026-06-22 12:43:09 | INFO     | backlink_automation | [TaskRun 0f2e77f7-6e62-4b4b-98ac-30e1ccec8663] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:43:10 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkrange.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:43:10 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkrange.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:43:10 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:43:10 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com (Attempt 1/3)
+2026-06-22 12:43:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com
+2026-06-22 12:43:16 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:43:16 | INFO     | backlink_automation | Registration started with username=useram19ulkj
+2026-06-22 12:43:16 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com/register (Attempt 1/3)
+2026-06-22 12:43:18 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkrange.com/register
+2026-06-22 12:43:39 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com/register
+2026-06-22 12:43:48 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:44:00 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:44:01 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:44:12 | INFO     | backlink_automation | 2captcha predicted: 'pickle juice'
+2026-06-22 12:44:21 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:44:21 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:44:21 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:44:21 | INFO     | backlink_automation | Navigating to https://bookmarkrange.com/submit (Attempt 1/3)
+2026-06-22 12:44:22 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkrange.com/submit
+2026-06-22 12:44:23 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:44:29 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:44:38 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:44:38 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:44:38 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:44:49 | INFO     | backlink_automation | 2captcha predicted: 'electro head'
+2026-06-22 12:44:54 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 12:45:01 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkrange.com/story23569876/ather-showroom-in-bangalore
+2026-06-22 12:45:01 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 12:45:03 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:45:03 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.37 minutes.
+2026-06-22 12:45:05 | INFO     | backlink_automation | [TaskRun 7185cc4d-39de-49b7-813c-57e824c762c6] Executing step 1/2: Submission on https://bookmarksknot.com/
+2026-06-22 12:45:06 | INFO     | backlink_automation | [TaskRun 7185cc4d-39de-49b7-813c-57e824c762c6] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:45:06 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkrange.com/story23569876/ather-showroom-in-bangalore
+2026-06-22 12:45:07 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarksknot.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:45:07 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarksknot.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:45:07 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:45:07 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com (Attempt 1/3)
+2026-06-22 12:45:08 | INFO     | backlink_automation | [TaskRun 0f2e77f7-6e62-4b4b-98ac-30e1ccec8663] Executing step 2/2: Verification & Reporting on https://bookmarkrange.com/
+2026-06-22 12:45:09 | INFO     | backlink_automation | [TaskRun 0f2e77f7-6e62-4b4b-98ac-30e1ccec8663] Intercepted Reporting Step.
+2026-06-22 12:45:09 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 45/60 completed, 9 failed. Setting parent task status → 'running'
+2026-06-22 12:45:13 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com
+2026-06-22 12:45:15 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:45:15 | INFO     | backlink_automation | Registration started with username=userwl76tmn0
+2026-06-22 12:45:15 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/register (Attempt 1/3)
+2026-06-22 12:45:16 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarksknot.com/register
+2026-06-22 12:45:31 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:45:31 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.54 minutes.
+2026-06-22 12:45:33 | INFO     | backlink_automation | [TaskRun 72b5205e-b852-40b4-8af4-765f1194310a] Executing step 1/2: Submission on https://mysitesname.com/
+2026-06-22 12:45:33 | INFO     | backlink_automation | [TaskRun 72b5205e-b852-40b4-8af4-765f1194310a] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:45:33 | INFO     | backlink_automation | [TemplateRunner] Routing https://mysitesname.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:45:33 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mysitesname.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 12:45:33 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:45:33 | INFO     | backlink_automation | Navigating to https://mysitesname.com (Attempt 1/3)
+2026-06-22 12:45:37 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mysitesname.com
+2026-06-22 12:45:39 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:45:39 | INFO     | backlink_automation | Registration started with username=userwiid680i
+2026-06-22 12:45:39 | INFO     | backlink_automation | Navigating to https://mysitesname.com/register (Attempt 1/3)
+2026-06-22 12:45:40 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mysitesname.com/register
+2026-06-22 12:45:44 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com/register
+2026-06-22 12:45:52 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:46:04 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:46:04 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:46:08 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mysitesname.com/register
+2026-06-22 12:46:17 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 12:46:29 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:46:29 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:46:37 | INFO     | backlink_automation | 2captcha predicted: 'rise and shine'
+2026-06-22 12:46:46 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:46:46 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:46:46 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:46:46 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/submit (Attempt 1/3)
+2026-06-22 12:46:47 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com/submit
+2026-06-22 12:46:48 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:46:56 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:47:05 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:47:05 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:47:07 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:47:38 | INFO     | backlink_automation | 2captcha predicted: 'cut the mustard'
+2026-06-22 12:47:42 | INFO     | backlink_automation | 2captcha predicted: 'fair and square'
+2026-06-22 12:47:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 12:47:52 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarksknot.com/story23693827/ather-showroom-in-bangalore
+2026-06-22 12:47:52 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 12:47:53 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 12:47:53 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 12:47:53 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 12:47:53 | INFO     | backlink_automation | Navigating to https://mysitesname.com/submit (Attempt 1/3)
+2026-06-22 12:47:54 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mysitesname.com/submit
+2026-06-22 12:47:55 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 12:47:55 | INFO     | backlink_automation | Successfully created backlink: https://bookmarksknot.com/story23693827/ather-showroom-in-bangalore
+2026-06-22 12:47:59 | INFO     | backlink_automation | [TaskRun 7185cc4d-39de-49b7-813c-57e824c762c6] Executing step 2/2: Verification & Reporting on https://bookmarksknot.com/
+2026-06-22 12:48:00 | INFO     | backlink_automation | [TaskRun 7185cc4d-39de-49b7-813c-57e824c762c6] Intercepted Reporting Step.
+2026-06-22 12:48:00 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 9 failed. Setting parent task status → 'running'
+2026-06-22 12:48:05 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 12:48:12 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 12:48:12 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:48:12 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:48:33 | INFO     | backlink_automation | 2captcha predicted: 'raspberrytart'
+2026-06-22 12:48:38 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 12:48:51 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-22 12:48:53 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-22 12:48:53 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 12:48:53 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 12:49:14 | INFO     | backlink_automation | 2captcha predicted: 'tight lipped'
+2026-06-22 12:49:18 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 12:49:26 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://mysitesname.com/story11624486/best-marketing-agency
+2026-06-22 12:49:26 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 12:49:31 | INFO     | backlink_automation | Successfully created backlink: https://mysitesname.com/story11624486/best-marketing-agency
+2026-06-22 12:49:35 | INFO     | backlink_automation | [TaskRun 72b5205e-b852-40b4-8af4-765f1194310a] Executing step 2/2: Verification & Reporting on https://mysitesname.com/
+2026-06-22 12:49:35 | INFO     | backlink_automation | [TaskRun 72b5205e-b852-40b4-8af4-765f1194310a] Intercepted Reporting Step.
+2026-06-22 12:49:35 | INFO     | backlink_automation | [Task 373f2369-1599-4b35-9c9a-373370e0b630] All 2 runs done. succeeded=1, failed=1. Setting parent task status → 'completed'
+2026-06-22 12:49:36 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 12:55:44 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 12:55:46 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-gaqHWlenW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 12:55:51 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "188.18.238.56"
+}
+2026-06-22 12:55:51 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:55:51 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.55 minutes.
+2026-06-22 12:55:53 | INFO     | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-22 12:55:53 | INFO     | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:55:53 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:55:53 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:55:53 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:55:53 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com (Attempt 1/3)
+2026-06-22 12:55:55 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com
+2026-06-22 12:55:57 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:55:57 | INFO     | backlink_automation | Registration started with username=useridg05jl9
+2026-06-22 12:55:57 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 1/3)
+2026-06-22 12:56:21 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 12:56:23 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:56:23 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.56 minutes.
+2026-06-22 12:56:27 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-22 12:56:27 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:56:27 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:56:27 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:56:27 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:56:27 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+2026-06-22 12:57:12 | WARNING  | backlink_automation | Connection error on https://bookmarkloves.com. Retrying in 5s...
+2026-06-22 12:57:17 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 2/3)
+2026-06-22 12:57:34 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 12:57:34 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 2/3)
+2026-06-22 12:57:46 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 12:58:02 | WARNING  | backlink_automation | Connection error on https://bookmarkloves.com. Retrying in 10s...
+2026-06-22 12:58:12 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 3/3)
+2026-06-22 12:58:52 | ERROR    | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Execution failed: Site unreachable after 3 attempts: https://bookmarkloves.com
+2026-06-22 12:58:52 | ERROR    | backlink_automation | [FailureHandler] SITE_DOWN at step 'Submission' for site None: Site unreachable after 3 attempts: https://bookmarkloves.com
+2026-06-22 12:58:53 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0_Submission_1782113332.png?
+2026-06-22 12:58:54 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0_Submission_logs_1782113334.txt?
+2026-06-22 12:58:55 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 1 failed. Setting parent task status → 'running'
+2026-06-22 12:59:00 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 12:59:00 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 3/3)
+2026-06-22 12:59:06 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:59:06 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.50 minutes.
+2026-06-22 12:59:08 | INFO     | backlink_automation | [TaskRun a52d5c62-b6ed-4cfb-8db2-ec549af9a543] Executing step 1/2: Submission on https://letusbookmark.com/
+2026-06-22 12:59:08 | INFO     | backlink_automation | [TaskRun a52d5c62-b6ed-4cfb-8db2-ec549af9a543] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:59:08 | INFO     | backlink_automation | [TemplateRunner] Routing https://letusbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:59:08 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://letusbookmark.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 12:59:08 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:59:08 | INFO     | backlink_automation | Navigating to https://letusbookmark.com (Attempt 1/3)
+2026-06-22 12:59:11 | INFO     | backlink_automation | Navigation and security check successfully passed for https://letusbookmark.com
+2026-06-22 12:59:12 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:59:12 | INFO     | backlink_automation | Registration started with username=usern2n52keo
+2026-06-22 12:59:12 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 1/3)
+2026-06-22 12:59:12 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 12:59:17 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 12:59:17 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.52 minutes.
+2026-06-22 12:59:19 | INFO     | backlink_automation | [TaskRun f2dc11be-4bdf-4946-9a8a-f8c5751d46dd] Executing step 1/2: Submission on https://letusbookmark.com/
+2026-06-22 12:59:19 | INFO     | backlink_automation | [TaskRun f2dc11be-4bdf-4946-9a8a-f8c5751d46dd] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 12:59:19 | INFO     | backlink_automation | [TemplateRunner] Routing https://letusbookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 12:59:19 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://letusbookmark.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 12:59:19 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 12:59:19 | INFO     | backlink_automation | Navigating to https://letusbookmark.com (Attempt 1/3)
+2026-06-22 12:59:21 | INFO     | backlink_automation | Navigation and security check successfully passed for https://letusbookmark.com
+2026-06-22 12:59:23 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 12:59:23 | INFO     | backlink_automation | Registration started with username=usertf74eiz9
+2026-06-22 12:59:23 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 1/3)
+2026-06-22 12:59:36 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 12:59:47 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 13:00:56 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:01:43 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:01:43 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 2/3)
+2026-06-22 13:01:52 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:01:52 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 2/3)
+2026-06-22 13:01:55 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:01:55 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.00 minutes.
+2026-06-22 13:01:55 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 13:01:56 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Executing step 1/2: Submission on https://bookmarkstumble.com/
+2026-06-22 13:01:57 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:01:57 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkstumble.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:01:57 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkstumble.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 13:01:57 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:01:57 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com (Attempt 1/3)
+2026-06-22 13:02:00 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkstumble.com
+2026-06-22 13:02:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:02:01 | INFO     | backlink_automation | Registration started with username=useruymfnw76
+2026-06-22 13:02:01 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com/register (Attempt 1/3)
+2026-06-22 13:02:03 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 13:02:26 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkstumble.com/register
+2026-06-22 13:04:09 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:04:09 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 3/3)
+2026-06-22 13:04:21 | ERROR    | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Execution failed: Secondary Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:04:21 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Secondary Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:04:22 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa_Submission_1782113661.png?
+2026-06-22 13:04:24 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa_Submission_logs_1782113663.txt?
+2026-06-22 13:04:24 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 13:04:24 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:04:24 | INFO     | backlink_automation | Navigating to https://letusbookmark.com/register (Attempt 3/3)
+2026-06-22 13:04:25 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 2 failed. Setting parent task status → 'running'
+2026-06-22 13:04:25 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:04:25 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.13 minutes.
+2026-06-22 13:04:27 | INFO     | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Executing step 1/2: Submission on https://bookmarkspring.com/
+2026-06-22 13:04:27 | INFO     | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:04:28 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkspring.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:04:28 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkspring.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 13:04:28 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:04:28 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com (Attempt 1/3)
+2026-06-22 13:04:31 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkspring.com
+2026-06-22 13:04:32 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:04:32 | INFO     | backlink_automation | Registration started with username=userhr0rrbbh
+2026-06-22 13:04:32 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 1/3)
+2026-06-22 13:04:36 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://letusbookmark.com/register
+2026-06-22 13:04:52 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:04:52 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com/register (Attempt 2/3)
+2026-06-22 13:04:58 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 13:04:59 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkstumble.com/register
+2026-06-22 13:07:12 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:07:28 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:08:01 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:08:01 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com/register (Attempt 3/3)
+2026-06-22 13:08:02 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkstumble.com/register
+2026-06-22 13:08:03 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:08:03 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 2/3)
+2026-06-22 13:08:04 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 13:10:03 | ERROR    | backlink_automation | [TaskRun a52d5c62-b6ed-4cfb-8db2-ec549af9a543] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:10:03 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:10:04 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a52d5c62-b6ed-4cfb-8db2-ec549af9a543_Submission_1782114004.png?
+2026-06-22 13:10:05 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a52d5c62-b6ed-4cfb-8db2-ec549af9a543_Submission_logs_1782114005.txt?
+2026-06-22 13:10:06 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 3 failed. Setting parent task status → 'running'
+2026-06-22 13:10:20 | ERROR    | backlink_automation | [TaskRun f2dc11be-4bdf-4946-9a8a-f8c5751d46dd] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:10:20 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:10:21 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/f2dc11be-4bdf-4946-9a8a-f8c5751d46dd_Submission_1782114021.png?
+2026-06-22 13:10:22 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/f2dc11be-4bdf-4946-9a8a-f8c5751d46dd_Submission_logs_1782114021.txt?
+2026-06-22 13:10:23 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 4 failed. Setting parent task status → 'running'
+2026-06-22 13:10:48 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:10:50 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:10:50 | INFO     | backlink_automation | Navigating to https://bookmarkspring.com/register (Attempt 3/3)
+2026-06-22 13:10:51 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkspring.com/register
+2026-06-22 13:12:42 | ERROR    | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:12:42 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:12:43 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/e030f82c-08d6-460e-a462-ced2c3b13f5c_Submission_1782114163.png?
+2026-06-22 13:12:44 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/e030f82c-08d6-460e-a462-ced2c3b13f5c_Submission_logs_1782114164.txt?
+2026-06-22 13:12:45 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 47/60 completed, 6 failed. Setting parent task status → 'running'
+2026-06-22 13:12:47 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:13:45 | ERROR    | backlink_automation | [TaskRun 6321227c-287c-4a7d-98d8-8a69e9b75b0a] Execution failed: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-22 13:13:45 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-06-22 13:13:45 | WARNING  | backlink_automation | Failed to capture/upload screenshot: Page.screenshot: Target page, context or browser has been closed
+2026-06-22 13:13:45 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/6321227c-287c-4a7d-98d8-8a69e9b75b0a_Submission_logs_1782114225.txt?
+2026-06-22 13:13:46 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 48/60 completed, 8 failed. Setting parent task status → 'running'
+2026-06-22 13:13:47 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 13:14:03 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 13:14:03 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 13:14:03 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 13:14:03 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 13:15:27 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 13:15:29 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-P7K36i6By-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:15:38 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 13:15:38 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-Cmh1d6LHE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:15:46 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 13:15:46 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-gaqHWlenW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:15:54 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 13:15:54 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-NUOFloB0x-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:15:59 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "78.29.48.71"
+}
+2026-06-22 13:15:59 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:15:59 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.31 minutes.
+2026-06-22 13:16:02 | INFO     | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Executing step 1/2: Submission on https://gorillasocialwork.com/
+2026-06-22 13:16:02 | INFO     | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:16:02 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:16:02 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 13:16:02 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:16:02 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com (Attempt 1/3)
+2026-06-22 13:16:04 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com
+2026-06-22 13:16:06 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:16:06 | INFO     | backlink_automation | Registration started with username=user65k2t1g4
+2026-06-22 13:16:06 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 1/3)
+2026-06-22 13:16:10 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:16:10 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.45 minutes.
+2026-06-22 13:16:13 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Executing step 1/2: Submission on https://bookmarksknot.com/
+2026-06-22 13:16:13 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:16:13 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarksknot.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:16:13 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarksknot.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 13:16:13 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:16:13 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com (Attempt 1/3)
+2026-06-22 13:16:15 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com
+2026-06-22 13:16:17 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:16:17 | INFO     | backlink_automation | Registration started with username=usersxjcvuun
+2026-06-22 13:16:17 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/register (Attempt 1/3)
+2026-06-22 13:16:35 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 13:16:40 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarksknot.com/register
+2026-06-22 13:16:42 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:16:42 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.13 minutes.
+2026-06-22 13:16:45 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-22 13:16:45 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:16:45 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:16:45 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 13:16:45 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:16:45 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+2026-06-22 13:16:51 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:16:51 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 2/3)
+2026-06-22 13:16:56 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 13:16:56 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/register (Attempt 2/3)
+2026-06-22 13:16:57 | ERROR    | backlink_automation | Network error during safe_goto to https://bookmarkloves.com: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://bookmarkloves.com/
+Call log:
+navigating to "https://bookmarkloves.com/", waiting until "commit"
+
+2026-06-22 13:16:59 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 2/3)
+2026-06-22 13:17:01 | ERROR    | backlink_automation | Network error during safe_goto to https://bookmarkloves.com: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://bookmarkloves.com/
+Call log:
+navigating to "https://bookmarkloves.com/", waiting until "commit"
+
+2026-06-22 13:17:03 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 3/3)
+2026-06-22 13:17:07 | ERROR    | backlink_automation | Network error during safe_goto to https://bookmarkloves.com: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://bookmarkloves.com/
+Call log:
+navigating to "https://bookmarkloves.com/", waiting until "commit"
+
+2026-06-22 13:17:08 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarksknot.com/register
+2026-06-22 13:17:08 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 13:17:10 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:17:10 | INFO     | backlink_automation | Registration started with username=userlz6f5qn2
+2026-06-22 13:17:10 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 1/3)
+2026-06-22 13:17:23 | ERROR    | backlink_automation | Network error during safe_goto to https://bookmarkloves.com/register: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://bookmarkloves.com/register
+Call log:
+navigating to "https://bookmarkloves.com/register", waiting until "commit"
+
+2026-06-22 13:17:24 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:17:24 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/register (Attempt 3/3)
+2026-06-22 13:17:24 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 13:17:24 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 3/3)
+2026-06-22 13:17:25 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 2/3)
+2026-06-22 13:17:25 | WARNING  | backlink_automation | Connection error on https://bookmarkloves.com/register. Retrying in 10s...
+2026-06-22 13:17:35 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarksknot.com/register
+2026-06-22 13:17:35 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 3/3)
+2026-06-22 13:17:41 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+2026-06-22 13:17:46 | ERROR    | backlink_automation | Network error during safe_goto to https://bookmarkloves.com/register: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://bookmarkloves.com/register
+Call log:
+navigating to "https://bookmarkloves.com/register", waiting until "commit"
+
+2026-06-22 13:17:51 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:17:57 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 13:18:07 | ERROR    | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:18:07 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:18:07 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b_Submission_1782114487.png?
+2026-06-22 13:18:08 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b_Submission_logs_1782114488.txt?
+2026-06-22 13:18:09 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 49/60 completed, 1 failed. Setting parent task status → 'running'
+2026-06-22 13:18:14 | ERROR    | backlink_automation | [TaskRun 8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:18:14 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 13:18:15 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa_Submission_1782114494.png?
+2026-06-22 13:18:15 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/8bd4e7d8-cc41-4e32-b0f3-1d32abbb9aaa_Submission_logs_1782114495.txt?
+2026-06-22 13:18:16 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 48/60 completed, 2 failed. Setting parent task status → 'running'
+2026-06-22 13:18:33 | ERROR    | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Execution failed: Page.wait_for_selector: Timeout 45000ms exceeded.
+Call log:
+waiting for locator("#reg_username") to be visible
+
+2026-06-22 13:18:33 | ERROR    | backlink_automation | [FailureHandler] TIMEOUT at step 'Submission' for site None: Page.wait_for_selector: Timeout 45000ms exceeded.
+Call log:
+waiting for locator("#reg_username") to be visible
+
+2026-06-22 13:18:34 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0_Submission_1782114514.png?
+2026-06-22 13:18:34 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0_Submission_logs_1782114514.txt?
+2026-06-22 13:18:35 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 50/60 completed, 3 failed. Setting parent task status → 'running'
+2026-06-22 13:18:36 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 13:30:48 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 13:30:48 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 13:30:48 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 13:30:48 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 13:47:27 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 13:47:27 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 13:47:27 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 13:47:27 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 13:50:10 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 13:50:10 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 13:50:10 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 13:50:10 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 13:50:42 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 13:50:44 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-g49PsDVUW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:50:52 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 13:50:52 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-0QnktFnxj-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 13:50:58 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "59.182.141.71"
+}
+2026-06-22 13:50:58 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 13:50:58 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.57 minutes.
+2026-06-22 13:50:59 | INFO     | backlink_automation | [TaskRun 2c7acfe0-7d15-440d-bace-199386a45ad1] Executing step 1/2: Submission on https://classifylist.com/
+2026-06-22 13:51:00 | INFO     | backlink_automation | [TaskRun 2c7acfe0-7d15-440d-bace-199386a45ad1] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 13:51:00 | INFO     | backlink_automation | [TemplateRunner] Routing https://classifylist.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 13:51:00 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://classifylist.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 13:51:00 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 13:51:00 | INFO     | backlink_automation | Navigating to https://classifylist.com (Attempt 1/3)
+2026-06-22 13:51:03 | INFO     | backlink_automation | Navigation and security check successfully passed for https://classifylist.com
+2026-06-22 13:51:05 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 13:51:05 | INFO     | backlink_automation | Registration started with username=user2bdimzh2
+2026-06-22 13:51:05 | INFO     | backlink_automation | Navigating to https://classifylist.com/register (Attempt 1/3)
+2026-06-22 13:51:06 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://classifylist.com/register
+2026-06-22 13:51:24 | INFO     | backlink_automation | Navigation and security check successfully passed for https://classifylist.com/register
+2026-06-22 13:51:32 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 13:51:43 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 13:51:44 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 13:51:55 | INFO     | backlink_automation | 2captcha predicted: 'sea shell'
+2026-06-22 13:52:02 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 13:52:02 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 13:52:02 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 13:52:02 | INFO     | backlink_automation | Navigating to https://classifylist.com/submit (Attempt 1/3)
+2026-06-22 13:52:03 | INFO     | backlink_automation | Navigation and security check successfully passed for https://classifylist.com/submit
+2026-06-22 13:52:04 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 13:52:10 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 13:52:17 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 13:52:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 13:52:18 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 13:52:39 | INFO     | backlink_automation | 2captcha predicted: 'great unwashed'
+2026-06-22 13:52:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 13:52:51 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://classifylist.com/story23653317/best-marketing-agency
+2026-06-22 13:52:51 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 13:52:55 | INFO     | backlink_automation | Successfully created backlink: https://classifylist.com/story23653317/best-marketing-agency
+2026-06-22 13:52:56 | INFO     | backlink_automation | [TaskRun 2c7acfe0-7d15-440d-bace-199386a45ad1] Executing step 2/2: Verification & Reporting on https://classifylist.com/
+2026-06-22 13:52:57 | INFO     | backlink_automation | [TaskRun 2c7acfe0-7d15-440d-bace-199386a45ad1] Intercepted Reporting Step.
+2026-06-22 13:52:57 | INFO     | backlink_automation | [Task 373f2369-1599-4b35-9c9a-373370e0b630] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
+2026-06-22 13:52:58 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 16:13:04 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 16:13:06 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-RKkpxt4Wc-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 16:13:11 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 16:13:11 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 16:13:11 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.97 minutes.
+2026-06-22 16:13:12 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Executing step 1/2: Submission on https://nybookmark.com/
+2026-06-22 16:13:13 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 16:13:13 | INFO     | backlink_automation | [TemplateRunner] Routing https://nybookmark.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 16:13:13 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://nybookmark.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 16:13:13 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 16:13:13 | INFO     | backlink_automation | Navigating to https://nybookmark.com (Attempt 1/3)
+2026-06-22 16:13:16 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nybookmark.com
+2026-06-22 16:13:17 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 16:13:17 | INFO     | backlink_automation | Registration started with username=usero6kah4lg
+2026-06-22 16:13:17 | INFO     | backlink_automation | Navigating to https://nybookmark.com/register (Attempt 1/3)
+2026-06-22 16:13:18 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://nybookmark.com/register
+2026-06-22 16:13:50 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nybookmark.com/register
+2026-06-22 16:14:03 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 16:14:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:14:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:14:29 | INFO     | backlink_automation | 2captcha predicted: 'you are happy'
+2026-06-22 16:14:38 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 16:14:38 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 16:14:38 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 16:14:38 | INFO     | backlink_automation | Navigating to https://nybookmark.com/submit (Attempt 1/3)
+2026-06-22 16:14:39 | INFO     | backlink_automation | Navigation and security check successfully passed for https://nybookmark.com/submit
+2026-06-22 16:14:41 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 16:14:49 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 16:14:58 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 16:14:58 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:14:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:14:59 | INFO     | backlink_automation | 2captcha predicted: 'banana bread'
+2026-06-22 16:15:03 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 16:15:11 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://nybookmark.com/story23603517/ather-showroom-in-bangalore
+2026-06-22 16:15:11 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 16:15:14 | INFO     | backlink_automation | Successfully created backlink: https://nybookmark.com/story23603517/ather-showroom-in-bangalore
+2026-06-22 16:15:18 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Executing step 2/2: Verification & Reporting on https://nybookmark.com/
+2026-06-22 16:15:18 | INFO     | backlink_automation | [TaskRun 5bddca46-0981-4a9f-aacc-95b6e5bb3524] Intercepted Reporting Step.
+2026-06-22 16:15:19 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 51/60 completed, 6 failed. Setting parent task status → 'running'
+2026-06-22 16:15:19 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 16:16:11 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 16:16:14 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-Cmh1d6LHE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 16:16:17 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 16:16:17 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 16:16:17 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.22 minutes.
+2026-06-22 16:16:19 | INFO     | backlink_automation | [TaskRun 5a19178c-7fb9-4648-864f-6b5d2ced56d6] Executing step 1/2: Submission on https://mediajx.com/
+2026-06-22 16:16:19 | INFO     | backlink_automation | [TaskRun 5a19178c-7fb9-4648-864f-6b5d2ced56d6] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 16:16:20 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 16:16:20 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 16:16:20 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 16:16:20 | INFO     | backlink_automation | Navigating to https://mediajx.com (Attempt 1/3)
+2026-06-22 16:16:22 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com
+2026-06-22 16:16:24 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 16:16:24 | INFO     | backlink_automation | Registration started with username=user4q13s56a
+2026-06-22 16:16:24 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 1/3)
+2026-06-22 16:16:45 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mediajx.com/register
+2026-06-22 16:17:01 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 1
+2026-06-22 16:17:01 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 2/3)
+2026-06-22 16:17:06 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mediajx.com/register
+2026-06-22 16:17:22 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 2
+2026-06-22 16:17:22 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 3/3)
+2026-06-22 16:17:27 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mediajx.com/register
+2026-06-22 16:17:42 | ERROR    | backlink_automation | Cloudflare remained un-cleared on attempt 3
+2026-06-22 16:17:58 | ERROR    | backlink_automation | [TaskRun 5a19178c-7fb9-4648-864f-6b5d2ced56d6] Execution failed: Cloudflare challenge could not be cleared on registration page
+2026-06-22 16:17:58 | ERROR    | backlink_automation | [FailureHandler] UNKNOWN at step 'Submission' for site None: Cloudflare challenge could not be cleared on registration page
+2026-06-22 16:17:59 | INFO     | backlink_automation | Failure screenshot uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/5a19178c-7fb9-4648-864f-6b5d2ced56d6_Submission_1782125278.png?
+2026-06-22 16:18:00 | INFO     | backlink_automation | Failure logs uploaded: https://khstglciczoumdvktejr.supabase.co/storage/v1/object/public/log_screenshots/failures/2026-06-22/5a19178c-7fb9-4648-864f-6b5d2ced56d6_Submission_logs_1782125279.txt?
+2026-06-22 16:18:00 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 52/60 completed, 7 failed. Setting parent task status → 'running'
+2026-06-22 16:18:01 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 16:33:47 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 16:33:49 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-I67xTyh9n-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 16:33:57 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://httpbin.org/ip
+Call log:
+navigating to "htt). Trying next...
+2026-06-22 16:33:57 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-SZibq3IKW-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 16:33:59 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 16:33:59 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 16:33:59 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.83 minutes.
+2026-06-22 16:34:01 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Executing step 1/2: Submission on https://bookmarksknot.com/
+2026-06-22 16:34:02 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 16:34:02 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarksknot.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 16:34:02 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarksknot.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 16:34:02 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 16:34:02 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com (Attempt 1/3)
+2026-06-22 16:34:05 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com
+2026-06-22 16:34:07 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 16:34:07 | INFO     | backlink_automation | Registration started with username=userkx3ownkt
+2026-06-22 16:34:07 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/register (Attempt 1/3)
+2026-06-22 16:34:08 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarksknot.com/register
+2026-06-22 16:34:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com/register
+2026-06-22 16:34:32 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 16:34:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:34:42 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:34:53 | INFO     | backlink_automation | 2captcha predicted: 'just dance'
+2026-06-22 16:35:00 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 16:35:00 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 16:35:00 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 16:35:00 | INFO     | backlink_automation | Navigating to https://bookmarksknot.com/submit (Attempt 1/3)
+2026-06-22 16:35:01 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarksknot.com/submit
+2026-06-22 16:35:02 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 16:35:08 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 16:35:17 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 16:35:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:35:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:35:28 | INFO     | backlink_automation | 2captcha predicted: 'double crossed'
+2026-06-22 16:35:32 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 16:35:39 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarksknot.com/story23694554/ather-dealership-in-bangalore
+2026-06-22 16:35:39 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 16:35:43 | INFO     | backlink_automation | Successfully created backlink: https://bookmarksknot.com/story23694554/ather-dealership-in-bangalore
+2026-06-22 16:35:44 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Executing step 2/2: Verification & Reporting on https://bookmarksknot.com/
+2026-06-22 16:35:45 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Intercepted Reporting Step.
+2026-06-22 16:35:45 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 55/60 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 16:35:46 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 16:36:18 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Executing step 2/2: Verification & Reporting on https://bookmarksknot.com/
+2026-06-22 16:36:19 | INFO     | backlink_automation | [TaskRun 2f00dd00-a6c4-44f4-bd1b-a9813e3e0d5b] Intercepted Reporting Step.
+2026-06-22 16:36:19 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 56/60 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 16:36:40 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 16:36:44 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-Cmh1d6LHE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 16:36:48 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 16:36:48 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 16:36:48 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.15 minutes.
+2026-06-22 16:36:50 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Executing step 1/2: Submission on https://bookmarkloves.com/
+2026-06-22 16:36:51 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 16:36:51 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 16:36:51 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 16:36:51 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 16:36:51 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+2026-06-22 16:36:55 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com
+2026-06-22 16:36:56 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 16:36:56 | INFO     | backlink_automation | Registration started with username=user27wzof9j
+2026-06-22 16:36:56 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 1/3)
+2026-06-22 16:36:57 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkloves.com/register
+2026-06-22 16:36:59 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 16:36:59 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.25 minutes.
+2026-06-22 16:37:03 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Executing step 1/2: Submission on https://bookmarkstumble.com/
+2026-06-22 16:37:03 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 16:37:03 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkstumble.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 16:37:03 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkstumble.com for client_site=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 16:37:03 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 16:37:03 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com (Attempt 1/3)
+2026-06-22 16:37:07 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkstumble.com
+2026-06-22 16:37:08 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 16:37:08 | INFO     | backlink_automation | Registration started with username=user4bz0sk1p
+2026-06-22 16:37:08 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com/register (Attempt 1/3)
+2026-06-22 16:37:10 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkstumble.com/register
+2026-06-22 16:37:38 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/register
+2026-06-22 16:37:44 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 16:37:49 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkstumble.com/register
+2026-06-22 16:37:54 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:37:55 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:37:55 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 16:38:06 | INFO     | backlink_automation | 2captcha predicted: 'filthy rich'
+2026-06-22 16:38:08 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:38:08 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:38:14 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 16:38:14 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 16:38:14 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Showroom in Bangalore 
+2026-06-22 16:38:14 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/submit (Attempt 1/3)
+2026-06-22 16:38:15 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/submit
+2026-06-22 16:38:15 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 16:38:19 | INFO     | backlink_automation | 2captcha predicted: 'puppy love'
+2026-06-22 16:38:24 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 16:38:27 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 16:38:27 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 16:38:27 | INFO     | backlink_automation | Bookmark submission started: url=https://biaather.com/, keyword=Ather Dealership in Bangalore 
+2026-06-22 16:38:27 | INFO     | backlink_automation | Navigating to https://bookmarkstumble.com/submit (Attempt 1/3)
+2026-06-22 16:38:27 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkstumble.com/submit
+2026-06-22 16:38:29 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 16:38:33 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 16:38:33 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:38:33 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:38:36 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 16:38:44 | INFO     | backlink_automation | 2captcha predicted: 'trolololol'
+2026-06-22 16:38:45 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 16:38:45 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 16:38:45 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 16:38:47 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 16:38:54 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkloves.com/story24166784/ather-showroom-in-bangalore
+2026-06-22 16:38:54 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 16:38:58 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkloves.com/story24166784/ather-showroom-in-bangalore
+2026-06-22 16:39:00 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Executing step 2/2: Verification & Reporting on https://bookmarkloves.com/
+2026-06-22 16:39:00 | INFO     | backlink_automation | [TaskRun a4e5147f-0ece-41a8-ac79-0ee4d5cd95f0] Intercepted Reporting Step.
+2026-06-22 16:39:00 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 58/60 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 16:39:07 | INFO     | backlink_automation | 2captcha predicted: 'george washington'
+2026-06-22 16:39:11 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 16:39:18 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkstumble.com/story23729825/ather-dealership-in-bangalore
+2026-06-22 16:39:18 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 16:39:21 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkstumble.com/story23729825/ather-dealership-in-bangalore
+2026-06-22 16:39:23 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Executing step 2/2: Verification & Reporting on https://bookmarkstumble.com/
+2026-06-22 16:39:24 | INFO     | backlink_automation | [TaskRun e030f82c-08d6-460e-a462-ced2c3b13f5c] Intercepted Reporting Step.
+2026-06-22 16:39:24 | INFO     | backlink_automation | [Task 7713bbd5-1614-43f4-84f1-111a50cbdf28] Progress update: 59/60 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 16:39:25 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 17:01:42 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:01:42 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:01:42 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 17:01:42 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 17:18:10 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 17:18:15 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-Cmh1d6LHE-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 17:18:23 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 17:18:24 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-EPqox2Fhc-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 17:18:30 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "45.161.33.96"
+}
+2026-06-22 17:18:30 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 17:18:30 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.31 minutes.
+2026-06-22 17:18:33 | INFO     | backlink_automation | [TaskRun ad413083-6488-45eb-aa77-2f81d51b35c7] Executing step 1/2: Submission on https://toplistar.com/
+2026-06-22 17:18:33 | INFO     | backlink_automation | [TaskRun ad413083-6488-45eb-aa77-2f81d51b35c7] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 17:18:33 | INFO     | backlink_automation | [TemplateRunner] Routing https://toplistar.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 17:18:33 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://toplistar.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:18:33 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 17:18:33 | INFO     | backlink_automation | Navigating to https://toplistar.com (Attempt 1/3)
+2026-06-22 17:18:37 | INFO     | backlink_automation | Navigation and security check successfully passed for https://toplistar.com
+2026-06-22 17:18:38 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 17:18:38 | INFO     | backlink_automation | Registration started with username=usertqytu939
+2026-06-22 17:18:38 | INFO     | backlink_automation | Navigating to https://toplistar.com/register (Attempt 1/3)
+2026-06-22 17:18:39 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://toplistar.com/register
+2026-06-22 17:18:58 | INFO     | backlink_automation | Navigation and security check successfully passed for https://toplistar.com/register
+2026-06-22 17:19:05 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 17:19:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:19:17 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:19:40 | INFO     | backlink_automation | 2captcha predicted: 'THIS OR THAT'
+2026-06-22 17:19:48 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 17:19:48 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 17:19:48 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:19:48 | INFO     | backlink_automation | Navigating to https://toplistar.com/submit (Attempt 1/3)
+2026-06-22 17:19:49 | INFO     | backlink_automation | Navigation and security check successfully passed for https://toplistar.com/submit
+2026-06-22 17:19:50 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 17:19:56 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 17:20:04 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 17:20:04 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:20:04 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:20:15 | INFO     | backlink_automation | 2captcha predicted: 'halp meh'
+2026-06-22 17:20:19 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 17:20:26 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://toplistar.com/story23829781/best-marketing-agency
+2026-06-22 17:20:26 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 17:20:30 | INFO     | backlink_automation | Successfully created backlink: https://toplistar.com/story23829781/best-marketing-agency
+2026-06-22 17:20:31 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 17:20:31 | INFO     | backlink_automation | Rate Limiter: Next job will run in 0.70 minutes.
+2026-06-22 17:20:33 | INFO     | backlink_automation | [TaskRun ad413083-6488-45eb-aa77-2f81d51b35c7] Executing step 2/2: Verification & Reporting on https://toplistar.com/
+2026-06-22 17:20:33 | INFO     | backlink_automation | [TaskRun ad413083-6488-45eb-aa77-2f81d51b35c7] Intercepted Reporting Step.
+2026-06-22 17:20:33 | INFO     | backlink_automation | [Task 94d7065e-48f8-4e8d-b789-870ab2090729] Progress update: 1/2 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 17:20:34 | INFO     | backlink_automation | [TaskRun ea0860ff-0070-498b-ae9b-89214c80d87d] Executing step 1/2: Submission on https://sitesrow.com
+2026-06-22 17:20:34 | INFO     | backlink_automation | [TaskRun ea0860ff-0070-498b-ae9b-89214c80d87d] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 17:20:35 | INFO     | backlink_automation | [TemplateRunner] Routing https://sitesrow.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 17:20:35 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://sitesrow.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:20:35 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 17:20:35 | INFO     | backlink_automation | Navigating to https://sitesrow.com (Attempt 1/3)
+2026-06-22 17:20:39 | INFO     | backlink_automation | Navigation and security check successfully passed for https://sitesrow.com
+2026-06-22 17:20:41 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 17:20:41 | INFO     | backlink_automation | Registration started with username=user2v2lidcr
+2026-06-22 17:20:41 | INFO     | backlink_automation | Navigating to https://sitesrow.com/register (Attempt 1/3)
+2026-06-22 17:20:42 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://sitesrow.com/register
+2026-06-22 17:20:57 | INFO     | backlink_automation | Navigation and security check successfully passed for https://sitesrow.com/register
+2026-06-22 17:21:04 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 17:21:14 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:21:14 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:21:25 | INFO     | backlink_automation | 2captcha predicted: 'ohwait'
+2026-06-22 17:21:35 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-22 17:21:35 | INFO     | backlink_automation | Registration attempt 2/3
+2026-06-22 17:21:35 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:21:35 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:21:47 | INFO     | backlink_automation | 2captcha predicted: 'coffee can'
+2026-06-22 17:21:58 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+2026-06-22 17:21:58 | INFO     | backlink_automation | Registration attempt 3/3
+2026-06-22 17:21:58 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:21:59 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:22:10 | INFO     | backlink_automation | 2captcha predicted: 'moot point'
+2026-06-22 17:22:18 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 17:22:18 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 17:22:18 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:22:18 | INFO     | backlink_automation | Navigating to https://sitesrow.com/submit (Attempt 1/3)
+2026-06-22 17:22:20 | INFO     | backlink_automation | Navigation and security check successfully passed for https://sitesrow.com/submit
+2026-06-22 17:22:20 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 17:22:28 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 17:22:35 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 17:22:35 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:22:35 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:22:46 | INFO     | backlink_automation | 2captcha predicted: 'hug me'
+2026-06-22 17:22:50 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 17:22:57 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://sitesrow.com/story11697590/best-marketing-agency
+2026-06-22 17:22:57 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 17:23:01 | INFO     | backlink_automation | Successfully created backlink: https://sitesrow.com/story11697590/best-marketing-agency
+2026-06-22 17:23:04 | INFO     | backlink_automation | [TaskRun ea0860ff-0070-498b-ae9b-89214c80d87d] Executing step 2/2: Verification & Reporting on https://sitesrow.com
+2026-06-22 17:23:05 | INFO     | backlink_automation | [TaskRun ea0860ff-0070-498b-ae9b-89214c80d87d] Intercepted Reporting Step.
+2026-06-22 17:23:05 | INFO     | backlink_automation | [Task 94d7065e-48f8-4e8d-b789-870ab2090729] All 2 runs done. succeeded=2, failed=0. Setting parent task status → 'completed'
+2026-06-22 17:23:06 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 17:32:28 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:28 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:30 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:30 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:32 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:32 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:34 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:34 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:36 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:36 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:38 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:38 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:40 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:40 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:42 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:42 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:44 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:44 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:46 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:46 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:48 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:48 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:50 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:50 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:52 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:52 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:55 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:32:55 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:32:55 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 17:32:55 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 17:32:55 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 17:33:30 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:33:30 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:33:30 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 17:33:30 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 17:33:30 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 17:39:02 | INFO     | backlink_automation | Popped job 9bfe64b7-ecc3-436c-a9ff-f05f9aabd2f1 from Redis queue 'backlink_queue'
+2026-06-22 17:39:02 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 17:39:04 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-F7RM6xskC-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 17:39:13 | WARNING  | backlink_automation | [ProxyManager] Proxy failed (Page.goto: Timeout 8000ms exceeded.
+Call log:
+navigating to "http://httpbin.org/ip", waiting until "). Trying next...
+2026-06-22 17:39:13 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-2cvtfxAvo-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 17:39:15 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: 503 Service Temporarily Unavailable
+2026-06-22 17:39:15 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 17:39:16 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.13 minutes.
+2026-06-22 17:39:19 | INFO     | backlink_automation | [TaskRun 9bfe64b7-ecc3-436c-a9ff-f05f9aabd2f1] Executing step 1/2: Submission on https://bbsocialclub.com/
+2026-06-22 17:39:19 | INFO     | backlink_automation | [TaskRun 9bfe64b7-ecc3-436c-a9ff-f05f9aabd2f1] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 17:39:20 | INFO     | backlink_automation | [TemplateRunner] Routing https://bbsocialclub.com/ → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 17:39:20 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bbsocialclub.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:39:20 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 17:39:20 | INFO     | backlink_automation | Navigating to https://bbsocialclub.com (Attempt 1/3)
+2026-06-22 17:39:23 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bbsocialclub.com
+2026-06-22 17:39:25 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 17:39:25 | INFO     | backlink_automation | Registration started with username=userdyx7etjv
+2026-06-22 17:39:25 | INFO     | backlink_automation | Navigating to https://bbsocialclub.com/register (Attempt 1/3)
+2026-06-22 17:39:26 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bbsocialclub.com/register
+2026-06-22 17:39:43 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bbsocialclub.com/register
+2026-06-22 17:39:52 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 17:40:04 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:40:05 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:40:16 | INFO     | backlink_automation | 2captcha predicted: 'chicken salad'
+2026-06-22 17:40:24 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 17:40:24 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 17:40:24 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:40:24 | INFO     | backlink_automation | Navigating to https://bbsocialclub.com/submit (Attempt 1/3)
+2026-06-22 17:40:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bbsocialclub.com/submit
+2026-06-22 17:40:26 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 17:40:33 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 17:40:40 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 17:40:40 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:40:41 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:40:41 | INFO     | backlink_automation | 2captcha predicted: 'coffee can'
+2026-06-22 17:40:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 17:40:55 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+2026-06-22 17:40:57 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+2026-06-22 17:40:57 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:40:57 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:41:08 | INFO     | backlink_automation | 2captcha predicted: 'leave me alone'
+2026-06-22 17:41:11 | INFO     | backlink_automation | Popped job f789ae4d-2af2-4c21-a3a4-c029cb3dd1a1 from Redis queue 'backlink_queue'
+2026-06-22 17:41:12 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 17:41:12 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.16 minutes.
+2026-06-22 17:41:12 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 17:41:14 | INFO     | backlink_automation | [TaskRun f789ae4d-2af2-4c21-a3a4-c029cb3dd1a1] Executing step 1/2: Submission on https://rotatesites.com
+2026-06-22 17:41:14 | INFO     | backlink_automation | [TaskRun f789ae4d-2af2-4c21-a3a4-c029cb3dd1a1] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 17:41:15 | INFO     | backlink_automation | [TemplateRunner] Routing https://rotatesites.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 17:41:15 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://rotatesites.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:41:15 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 17:41:15 | INFO     | backlink_automation | Navigating to https://rotatesites.com (Attempt 1/3)
+2026-06-22 17:41:17 | INFO     | backlink_automation | Navigation and security check successfully passed for https://rotatesites.com
+2026-06-22 17:41:19 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 17:41:19 | INFO     | backlink_automation | Registration started with username=user3ehcmjp4
+2026-06-22 17:41:19 | INFO     | backlink_automation | Navigating to https://rotatesites.com/register (Attempt 1/3)
+2026-06-22 17:41:19 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bbsocialclub.com/story23890330/best-marketing-agency
+2026-06-22 17:41:19 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 17:41:20 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://rotatesites.com/register
+2026-06-22 17:41:23 | INFO     | backlink_automation | Successfully created backlink: https://bbsocialclub.com/story23890330/best-marketing-agency
+2026-06-22 17:41:35 | INFO     | backlink_automation | [TaskRun 9bfe64b7-ecc3-436c-a9ff-f05f9aabd2f1] Executing step 2/2: Verification & Reporting on https://bbsocialclub.com/
+2026-06-22 17:41:35 | INFO     | backlink_automation | [TaskRun 9bfe64b7-ecc3-436c-a9ff-f05f9aabd2f1] Intercepted Reporting Step.
+2026-06-22 17:41:35 | INFO     | backlink_automation | [Task 58807c7e-2304-4141-a5e1-d530e668ff2c] Progress update: 1/2 completed, 0 failed. Setting parent task status → 'running'
+2026-06-22 17:41:36 | INFO     | backlink_automation | Navigation and security check successfully passed for https://rotatesites.com/register
+2026-06-22 17:41:42 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 17:41:57 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:41:57 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:42:08 | INFO     | backlink_automation | 2captcha predicted: 'nap time'
+2026-06-22 17:42:16 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 17:42:16 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 17:42:16 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 17:42:16 | INFO     | backlink_automation | Navigating to https://rotatesites.com/submit (Attempt 1/3)
+2026-06-22 17:42:16 | INFO     | backlink_automation | Navigation and security check successfully passed for https://rotatesites.com/submit
+2026-06-22 17:42:17 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 17:42:23 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 17:42:31 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 17:42:31 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 17:42:31 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 17:42:42 | INFO     | backlink_automation | 2captcha predicted: 'double crossed'
+2026-06-22 17:42:46 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 17:42:53 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://rotatesites.com/story23225271/best-marketing-agency
+2026-06-22 17:42:53 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 17:42:57 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 17:42:57 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 17:42:57 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 17:42:57 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 17:42:57 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:00:18 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 18:00:18 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:00:18 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:00:18 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:00:18 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:00:19 | INFO     | backlink_automation | Redis Background Listener Started (0 idle commands).
+2026-06-22 18:00:24 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:29 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:34 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:39 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:45 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:50 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:00:55 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:00 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:05 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:10 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:16 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:21 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:26 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:31 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:36 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:41 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:47 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:52 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:01:57 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:02 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:07 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:12 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:18 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:23 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:28 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:33 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:38 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:43 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:49 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:54 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:02:59 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:04 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:09 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:15 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:20 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:25 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:30 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:35 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:40 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 18:03:40 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:03:40 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:03:40 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:03:40 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:03:40 | INFO     | backlink_automation | Redis Background Listener Started (0 idle commands).
+2026-06-22 18:03:45 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:51 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:03:56 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:01 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:06 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:11 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:16 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:22 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:27 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:32 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:37 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:42 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:47 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:53 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:04:58 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:03 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:08 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:13 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:19 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:24 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:29 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:34 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:39 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:44 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:50 | ERROR    | backlink_automation | Error popping job from Redis: Timeout reading from trusty-sculpin-102589.upstash.io:6379
+2026-06-22 18:05:55 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 18:05:55 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:05:55 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:05:55 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:05:55 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:05:55 | INFO     | backlink_automation | Redis Background Listener Started (0 idle commands).
+2026-06-22 18:25:06 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 18:25:06 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:25:06 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:25:06 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:25:06 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:25:14 | INFO     | backlink_automation | [ProxyManager] Loaded 50 primary proxies and 0 fallback proxies.
+2026-06-22 18:25:14 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:25:14 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:25:14 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:25:14 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:26:51 | INFO     | backlink_automation | Popped job 72a601f4-6ff9-4ed9-8a0a-ad8b310fe5f8 from Redis queue 'backlink_queue'
+2026-06-22 18:26:52 | INFO     | backlink_automation | Pending tasks found. Starting browser manager...
+2026-06-22 18:26:54 | INFO     | backlink_automation | [ProxyManager] Testing proxy: http://u7744f283557105b7-zone-custom-session-xdoxuFKnN-sessTime-15:u7744f283557105b7@ap.proxy.2captcha.com:2334
+2026-06-22 18:27:00 | INFO     | backlink_automation | [ProxyManager] Proxy health-check passed. Active IP: {
+  "origin": "90.109.194.120"
+}
+2026-06-22 18:27:01 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+2026-06-22 18:27:01 | INFO     | backlink_automation | Rate Limiter: Next job will run in -0.26 minutes.
+2026-06-22 18:27:03 | INFO     | backlink_automation | [TaskRun 72a601f4-6ff9-4ed9-8a0a-ad8b310fe5f8] Executing step 1/2: Submission on https://kingslists.com
+2026-06-22 18:27:04 | INFO     | backlink_automation | [TaskRun 72a601f4-6ff9-4ed9-8a0a-ad8b310fe5f8] Routing to template: 'pligg' (target_site_id=None)
+2026-06-22 18:27:04 | INFO     | backlink_automation | [TemplateRunner] Routing https://kingslists.com → PliggGenericTemplate (site_id=pligg, config=pligg)
+2026-06-22 18:27:04 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://kingslists.com for client_site=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 18:27:04 | INFO     | backlink_automation | Navigating to home page
+2026-06-22 18:27:04 | INFO     | backlink_automation | Navigating to https://kingslists.com (Attempt 1/3)
+2026-06-22 18:27:06 | INFO     | backlink_automation | Navigation and security check successfully passed for https://kingslists.com
+2026-06-22 18:27:08 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+2026-06-22 18:27:08 | INFO     | backlink_automation | Registration started with username=userjxh8elvr
+2026-06-22 18:27:08 | INFO     | backlink_automation | Navigating to https://kingslists.com/register (Attempt 1/3)
+2026-06-22 18:27:09 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://kingslists.com/register
+2026-06-22 18:27:24 | INFO     | backlink_automation | Navigation and security check successfully passed for https://kingslists.com/register
+2026-06-22 18:27:28 | INFO     | backlink_automation | Registration attempt 1/3
+2026-06-22 18:27:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 18:27:42 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 18:27:45 | INFO     | backlink_automation | 2captcha predicted: 'electro head'
+2026-06-22 18:27:52 | INFO     | backlink_automation | Registration successful, redirected to user page.
+2026-06-22 18:27:52 | INFO     | backlink_automation | Registration flow finished
+2026-06-22 18:27:52 | INFO     | backlink_automation | Bookmark submission started: url=https://ipopi.in, keyword=Best marketing agency
+2026-06-22 18:27:52 | INFO     | backlink_automation | Navigating to https://kingslists.com/submit (Attempt 1/3)
+2026-06-22 18:27:53 | INFO     | backlink_automation | Navigation and security check successfully passed for https://kingslists.com/submit
+2026-06-22 18:27:53 | INFO     | backlink_automation | Step 1: Submitting URL
+2026-06-22 18:28:01 | INFO     | backlink_automation | Step 2: Filling Article Details
+2026-06-22 18:28:07 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+2026-06-22 18:28:07 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha with 2captcha...
+2026-06-22 18:28:07 | INFO     | backlink_automation | Sending image to 2captcha service...
+2026-06-22 18:28:34 | INFO     | backlink_automation | 2captcha predicted: 'with bells on'
+2026-06-22 18:28:37 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+2026-06-22 18:28:43 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://kingslists.com/story23100069/best-marketing-agency
+2026-06-22 18:28:43 | INFO     | backlink_automation | Attempting to log out...
+2026-06-22 18:28:46 | INFO     | backlink_automation | Successfully created backlink: https://kingslists.com/story23100069/best-marketing-agency
+2026-06-22 18:28:47 | INFO     | backlink_automation | [TaskRun 72a601f4-6ff9-4ed9-8a0a-ad8b310fe5f8] Executing step 2/2: Verification & Reporting on https://kingslists.com
+2026-06-22 18:28:47 | INFO     | backlink_automation | [TaskRun 72a601f4-6ff9-4ed9-8a0a-ad8b310fe5f8] Intercepted Reporting Step.
+2026-06-22 18:28:48 | INFO     | backlink_automation | [Task c94af362-1e25-4c26-b906-e7a4a596338f] All 1 runs done. succeeded=1, failed=0. Setting parent task status → 'completed'
+2026-06-22 18:28:48 | INFO     | backlink_automation | No active tasks. Closing browser to free resources...
+2026-06-22 18:49:34 | INFO     | backlink_automation | [ProxyManager] Loaded 1 primary proxies and 50 fallback proxies.
+2026-06-22 18:49:34 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:49:34 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:49:34 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:49:34 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 18:50:37 | INFO     | backlink_automation | [ProxyManager] Loaded 1 primary proxies and 50 fallback proxies.
+2026-06-22 18:50:37 | INFO     | backlink_automation | CaptchaService initialized with provider=stub
+2026-06-22 18:50:37 | INFO     | backlink_automation | RedisService initialized
+2026-06-22 18:50:37 | INFO     | backlink_automation | Starting Playwright Worker Orchestrator... Max Concurrent Sessions: 4
+2026-06-22 18:50:37 | INFO     | backlink_automation | Supported templates: ['pligg', 'wordpress_submitpro', 'phpld']
+2026-06-22 19:20:32 | ERROR    | backlink_automation | Error polling queue: [Errno 11001] getaddrinfo failed
+2026-06-22 20:51:54 | ERROR    | backlink_automation | Error popping job from Redis: Error 22 while writing to socket. The network connection was aborted by the local system.

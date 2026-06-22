@@ -33,6 +33,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from dotenv import load_dotenv
 
 from services.supabase_service import SupabaseService
+from services.redis_service import RedisService
 from services.logging_service import setup_logger, log_event
 from services.captcha_service import CaptchaService
 from services.template_detector import TemplateDetector
@@ -55,6 +56,7 @@ class BacklinkWorker:
     def __init__(self):
         self.logger = setup_logger(level=getattr(__import__("logging"), LOG_LEVEL, 20))
         self.supabase = SupabaseService(logger=self.logger)
+        self.redis = RedisService(logger=self.logger)
         self.captcha_service = CaptchaService(logger=self.logger)
         self.browser_manager = StealthBrowserManager()
         self.template_runner = TemplateRunner()
@@ -236,18 +238,24 @@ class BacklinkWorker:
             "version": "V2",
             "supported_templates": str(self.template_runner.get_supported_templates()),
             "poll_interval": POLL_INTERVAL,
-            "max_retries": MAX_RETRIES
+            "max_retries": MAX_RETRIES,
+            "queue_mode": "redis" if self.redis.client else "supabase"
         })
 
         while self.running:
             try:
-                job = self.supabase.get_pending_job()
+                if self.redis.client:
+                    # Block for up to 5 seconds to allow graceful shutdown
+                    job = await self.redis.pop_job(timeout=5)
+                else:
+                    job = self.supabase.get_pending_job()
+                
                 if job:
                     await self.process_job(job)
                 else:
-                    self.logger.debug("No pending jobs. Sleeping...")
-
-                await asyncio.sleep(POLL_INTERVAL)
+                    if not self.redis.client:
+                        self.logger.debug("No pending jobs. Sleeping...")
+                        await asyncio.sleep(POLL_INTERVAL)
 
             except KeyboardInterrupt:
                 self.running = False

@@ -317,6 +317,7 @@ class StealthBrowserManager:
         context = await self.browser.new_context(
             viewport={"width": 1920, "height": 1080},
             proxy=self._build_proxy_dict(),
+            ignore_https_errors=True,
         )
 
         allow = allow_images

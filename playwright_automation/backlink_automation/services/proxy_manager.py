@@ -11,8 +11,8 @@ class ProxyManager:
 
     def load_proxies(self):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        primary_path = os.path.join(base_dir, 'configs', 'primary_proxies.txt')
-        fallback_path = os.path.join(base_dir, 'configs', 'fallback_proxies.txt')
+        primary_path = os.path.join(base_dir, 'configs', 'proxies.txt')
+        fallback_path = os.path.join(base_dir, 'configs', '2captcha_proxies.txt')
         
         # Load from .env if present (legacy support)
         env_proxy = os.getenv("PROXY_URL")
@@ -24,6 +24,8 @@ class ProxyManager:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith('#'):
+                        if not line.startswith(('http://', 'https://', 'socks')):
+                            line = f'http://{line}'
                         if line not in self.primary_proxies:
                             self.primary_proxies.append(line)
                             
@@ -32,6 +34,8 @@ class ProxyManager:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith('#'):
+                        if not line.startswith(('http://', 'https://', 'socks')):
+                            line = f'http://{line}'
                         if line not in self.fallback_proxies:
                             self.fallback_proxies.append(line)
                             

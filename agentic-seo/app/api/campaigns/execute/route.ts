@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient, createClient } from '@/lib/supabase/server'
+import Redis from 'ioredis'
 
 export async function POST(request: NextRequest) {
   try {
@@ -154,6 +155,28 @@ export async function POST(request: NextRequest) {
       .select()
 
     if (taskRunsError) throw taskRunsError
+
+    // 5b. Push jobs to Redis queue for workers
+    if (insertedTaskRuns && insertedTaskRuns.length > 0) {
+      if (process.env.REDIS_URL) {
+        try {
+          const redis = new Redis(process.env.REDIS_URL)
+          const pipeline = redis.pipeline()
+          // Ensure we push jobs using the exact same structure the worker expects
+          insertedTaskRuns.forEach(run => {
+            pipeline.lpush('backlink_queue', JSON.stringify(run))
+          })
+          await pipeline.exec()
+          await redis.quit()
+          console.log(`Pushed ${insertedTaskRuns.length} jobs to Redis backlink_queue`)
+        } catch (redisError) {
+          console.error('Failed to push jobs to Redis queue:', redisError)
+          // We don't throw here to ensure the campaign still registers as created
+        }
+      } else {
+        console.warn('REDIS_URL is not set. Jobs created in Supabase but not pushed to Redis queue.')
+      }
+    }
 
     // 6. Update usage tracking
     try {

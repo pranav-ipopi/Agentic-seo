@@ -33,6 +33,7 @@ from services.template_detector import TemplateDetector
 from services.proxy_manager import ProxyManager
 from executor.runner import TemplateRunner
 from executor.failure_handler import FailureHandler
+from services.redis_service import RedisService
 
 load_dotenv()
 
@@ -41,7 +42,7 @@ SUPABASE_URL = os.environ.get("NEXT_PUBLIC_SUPABASE_URL") or os.environ.get("SUP
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "YOUR_SUPABASE_SERVICE_ROLE_KEY")
 
 MAX_CONCURRENT_SESSIONS = int(os.environ.get("MAX_CONCURRENT_SESSIONS", 4))
-POLL_INTERVAL_SECONDS = 10
+POLL_INTERVAL_SECONDS = 30
 
 # Initialize global Supabase client (can be shared for async reading)
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -57,6 +58,10 @@ template_runner = TemplateRunner()
 
 # Template detector (bypasses CF via stealth browser)
 template_detector = TemplateDetector(browser_manager, logger)
+
+# Global redis service
+redis_service = RedisService(logger=logger)
+
 # Global tracker for rate limiter
 NEXT_JOB_ALLOWED_TIME_GLOBAL = 0
 
@@ -455,18 +460,30 @@ async def poll_queue():
                 # 2. Fetch NEW jobs (enforcing strict rate limit)
                 # NOTE: type='backlink' filter keeps this worker isolated from article_submission jobs
                 if available_slots > 0 and can_start_job:
-                    # Enforce strict spreading by only fetching 1 job per interval
-                    fetch_limit = 1
-                    response = supabase.table('task_runs') \
-                        .select('*, workflow_templates(*)') \
-                        .eq('status', 'pending') \
-                        .eq('type', 'backlink') \
-                        .eq('current_step_index', 0) \
-                        .order('created_at') \
-                        .limit(fetch_limit) \
-                        .execute()
+                    task_runs = []
                     
-                    task_runs = response.data
+                    if redis_service.client:
+                        # Fast atomic pop from Redis
+                        job = await redis_service.pop_job(timeout=1)
+                        if job:
+                            # Fetch joined data from Supabase using the ID
+                            res = supabase.table('task_runs').select('*, workflow_templates(*)').eq('id', job.get('id')).execute()
+                            if res.data:
+                                task_runs = res.data
+                            else:
+                                logger.warning(f"Job {job.get('id')} popped from Redis but not found in Supabase")
+                    else:
+                        # Fallback to Supabase polling
+                        fetch_limit = 1
+                        response = supabase.table('task_runs') \
+                            .select('*, workflow_templates(*)') \
+                            .eq('status', 'pending') \
+                            .eq('type', 'backlink') \
+                            .eq('current_step_index', 0) \
+                            .order('created_at') \
+                            .limit(fetch_limit) \
+                            .execute()
+                        task_runs = response.data
                     
                     if task_runs:
                         if not browser_started:

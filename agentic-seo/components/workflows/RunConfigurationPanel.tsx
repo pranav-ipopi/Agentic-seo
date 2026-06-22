@@ -241,14 +241,14 @@ export default function RunConfigurationPanel({
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center gap-1">
-                <span>Target Sites</span>
+                <span>Target Bookmark Sites</span>
                 <span className="text-[10px] text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-1.5 py-0.5 rounded ml-1 font-medium">
                   {maxAvailableSites} match filter
                 </span>
               </label>
               <span className="text-xs text-gray-500">Number</span>
             </div>
-            
+
             <input
               type="number"
               value={targetSitesCount}
@@ -370,10 +370,10 @@ export default function RunConfigurationPanel({
         <button
           onClick={handleStartCampaignClick}
           disabled={
-            isSubmitting || 
-            !activeClient || 
-            !clientTargetUrl.trim() || 
-            maxAvailableSites === 0 || 
+            isSubmitting ||
+            !activeClient ||
+            !clientTargetUrl.trim() ||
+            maxAvailableSites === 0 ||
             effectiveTargetSites <= 0 ||
             keywordCount === 0
           }
@@ -384,10 +384,10 @@ export default function RunConfigurationPanel({
         </button>
       </div>
 
-      <KeywordsModal 
-        isOpen={isKeywordsModalOpen} 
-        onClose={() => setIsKeywordsModalOpen(false)} 
-        clientId={activeClient?.id || ''} 
+      <KeywordsModal
+        isOpen={isKeywordsModalOpen}
+        onClose={() => setIsKeywordsModalOpen(false)}
+        clientId={activeClient?.id || ''}
       />
       <SiteListModal
         isOpen={isSiteListModalOpen}
@@ -438,24 +438,24 @@ export default function RunConfigurationPanel({
               Successfully queued <span className="font-bold text-gray-900 dark:text-white">{queuedRunsCount}</span> workflow runs.
             </p>
             <div className="flex items-center gap-2">
-              <button 
+              <button
                 onClick={() => {
                   setShowSuccessNotification(false)
                   router.push('/dashboard/tasks')
-                }} 
+                }}
                 className="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg transition-all shadow-md shadow-indigo-900/20"
               >
                 View Tasks
               </button>
-              <button 
-                onClick={() => setShowSuccessNotification(false)} 
+              <button
+                onClick={() => setShowSuccessNotification(false)}
                 className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-bold rounded-lg transition-all"
               >
                 Dismiss
               </button>
             </div>
           </div>
-          <button 
+          <button
             onClick={() => setShowSuccessNotification(false)}
             className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 absolute top-3 right-3"
           >
@@ -476,8 +476,8 @@ export default function RunConfigurationPanel({
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
                 {errorMessage}
               </p>
-              <button 
-                onClick={() => setErrorMessage('')} 
+              <button
+                onClick={() => setErrorMessage('')}
                 className="w-full px-4 py-2.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-sm font-bold rounded-lg transition-all"
               >
                 Okay

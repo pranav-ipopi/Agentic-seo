@@ -364,9 +364,26 @@ export default function TasksPage() {
                           : `Currently at Step ${task.current_step_index + 1}`
                         }
                       </p>
-                      {task.status === 'running' && task.result?.next_job_at && (
+                      {task.status === 'running' && (
                         <p className="text-xs font-medium text-indigo-500 dark:text-indigo-400 mt-1">
-                          Next job scheduled at: {new Date(task.result.next_job_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          {(() => {
+                            const summary = (task as any).summary;
+                            if (summary) {
+                              const remaining = Math.max(0, summary.total - (summary.succeeded + summary.failed));
+                              if (remaining > 0) {
+                                // Read configurable metrics from environment variables
+                                const concurrentTabs = Number(process.env.NEXT_PUBLIC_CONCURRENT_TABS || 4);
+                                const timePerTask = Number(process.env.NEXT_PUBLIC_TIME_PER_TASK_MINS || 5);
+                                const remainingBatches = Math.ceil(remaining / concurrentTabs);
+                                const remainingMinutes = remainingBatches * timePerTask;
+                                const completionDate = new Date(Date.now() + remainingMinutes * 60000);
+                                const isToday = completionDate.toDateString() === new Date().toDateString();
+                                const timeStr = completionDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                                return `Estimated completion: ${isToday ? timeStr : completionDate.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' at ' + timeStr}`;
+                              }
+                            }
+                            return 'Estimated completion: Shortly...';
+                          })()}
                         </p>
                       )}
                       <div className="flex items-center gap-2 mt-1.5">

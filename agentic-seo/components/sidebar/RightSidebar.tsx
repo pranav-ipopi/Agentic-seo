@@ -13,6 +13,8 @@ import {
   ChevronRight,
   Zap,
   AlertTriangle,
+  Bell,
+  Info,
 } from 'lucide-react'
 import { cn, formatRelativeTime } from '@/lib/utils'
 import type { Task, TaskRun } from '@/lib/supabase/types'
@@ -25,6 +27,8 @@ export default function RightSidebar() {
   const [taskRuns, setTaskRuns] = useState<TaskRunExtended[]>([])
   const [suggestions] = useState<string[]>([])
   const [realtimeOpen, setRealtimeOpen] = useState(true)
+  const [suggestionsOpen, setSuggestionsOpen] = useState(true)
+  const [updatesOpen, setUpdatesOpen] = useState(true)
 
   const loadData = useCallback(async () => {
     if (!activeClient) return
@@ -116,12 +120,12 @@ export default function RightSidebar() {
   }
 
   return (
-    <aside className="flex flex-col h-full bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 overflow-y-auto">
+    <aside className="flex flex-col h-full bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800">
       {/* Realtime Activity */}
-      <div className="border-b border-gray-200 dark:border-gray-800">
+      <div className={cn("border-b border-gray-200 dark:border-gray-800 flex flex-col", realtimeOpen ? "flex-1 min-h-0" : "")}>
         <button
           onClick={() => setRealtimeOpen(!realtimeOpen)}
-          className="w-full flex items-center justify-between px-4 py-3 text-xs font-semibold text-gray-400 dark:text-gray-600 dark:text-gray-400 uppercase tracking-wider hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
+          className="w-full flex items-center justify-between px-4 py-3 text-xs font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-wider hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
         >
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
@@ -131,7 +135,7 @@ export default function RightSidebar() {
         </button>
 
         {realtimeOpen && (
-          <div className="px-3 pb-3 space-y-2">
+          <div className="px-3 pb-3 space-y-2 overflow-y-auto flex-1">
             {taskRuns.length === 0 ? (
               <div className="text-center py-4 text-gray-400 dark:text-gray-600 text-xs">
                 <Activity className="w-6 h-6 mx-auto mb-1.5 opacity-30" />
@@ -160,30 +164,69 @@ export default function RightSidebar() {
       </div>
 
       {/* Suggestions */}
-      <div className="flex-1">
-        <div className="w-full flex items-center px-4 py-3 text-xs font-semibold text-gray-400 dark:text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+      <div className={cn("border-b border-gray-200 dark:border-gray-800 flex flex-col", suggestionsOpen ? "flex-1 min-h-0" : "")}>
+        <button
+          onClick={() => setSuggestionsOpen(!suggestionsOpen)}
+          className="w-full flex items-center justify-between px-4 py-3 text-xs font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-wider hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
+        >
           <div className="flex items-center gap-2">
             <Zap className="w-3.5 h-3.5 text-amber-400" />
             <span>AI Suggestions</span>
           </div>
-        </div>
+          {suggestionsOpen ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
+        </button>
 
-        <div className="px-3 pb-3 space-y-2">
-          {suggestions.length === 0 ? (
+        {suggestionsOpen && (
+          <div className="px-3 pb-3 space-y-2 overflow-y-auto flex-1">
+            {suggestions.length === 0 ? (
+              <div className="text-center py-4 text-gray-400 dark:text-gray-600 text-xs">
+                <Zap className="w-6 h-6 mx-auto mb-1.5 opacity-30" />
+                No new suggestions
+              </div>
+            ) : (
+              suggestions.map((s, i) => (
+                <button
+                  key={i}
+                  className="w-full text-left text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-750 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 transition-colors hover:border-indigo-500/50"
+                >
+                  {s}
+                </button>
+              ))
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Updates */}
+      <div className={cn("flex flex-col", updatesOpen ? "flex-1 min-h-0" : "")}>
+        <button
+          onClick={() => setUpdatesOpen(!updatesOpen)}
+          className="w-full flex items-center justify-between px-4 py-3 text-xs font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-wider hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
+        >
+          <div className="flex items-center gap-2">
+            <Bell className="w-3.5 h-3.5 text-blue-400" />
+            <span>Updates</span>
+          </div>
+          {updatesOpen ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
+        </button>
+
+        {updatesOpen && (
+          <div className="px-3 pb-3 space-y-2 overflow-y-auto flex-1">
             <div className="text-center py-4 text-gray-400 dark:text-gray-600 text-xs">
-              <Zap className="w-6 h-6 mx-auto mb-1.5 opacity-30" />
-              No new suggestions
+              <Bell className="w-6 h-6 mx-auto mb-1.5 opacity-30" />
+              No new updates
             </div>
-          ) : (
-            suggestions.map((s, i) => (
-              <button
-                key={i}
-                className="w-full text-left text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-750 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 transition-colors hover:border-indigo-500/50"
-              >
-                {s}
-              </button>
-            ))
-          )}
+          </div>
+        )}
+      </div>
+
+      {/* Beta Notification */}
+      <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 mt-auto shrink-0">
+        <div className="flex items-start gap-2 text-gray-400 dark:text-gray-500">
+          <Info className="w-4 h-4 shrink-0 mt-0.5" />
+          <p className="text-[10px] leading-relaxed">
+            We're currently in beta testing. Some tasks may fail.
+          </p>
         </div>
       </div>
     </aside>

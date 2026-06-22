@@ -130,6 +130,10 @@ export async function downloadCampaignExcelReport(
       const title = metadata?.title || keyword || 'N/A'
       const finalStatus = backlink?.status === 'verified' ? 'Submitted' : (taskRunStatus === 'completed' ? 'Submitted' : taskRunStatus)
 
+      if (['pending', 'running', 'waiting_approval'].includes(taskRunStatus)) {
+        continue;
+      }
+
       if (!includeFailed && (taskRunStatus === 'failed' || finalStatus === 'failed')) {
         continue;
       }

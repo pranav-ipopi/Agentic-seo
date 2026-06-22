@@ -221,10 +221,10 @@ export default function RightSidebar() {
       </div>
 
       {/* Beta Notification */}
-      <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 mt-auto shrink-0">
-        <div className="flex items-start gap-2 text-gray-400 dark:text-gray-500">
+      <div className="p-4 border-t border-orange-200 dark:border-orange-900/50 bg-orange-50 dark:bg-orange-900/20 mt-auto shrink-0">
+        <div className="flex items-start gap-2 text-orange-600 dark:text-orange-400">
           <Info className="w-4 h-4 shrink-0 mt-0.5" />
-          <p className="text-[10px] leading-relaxed">
+          <p className="text-[11px] font-medium leading-relaxed">
             We're currently in beta testing. Some tasks may fail.
           </p>
         </div>

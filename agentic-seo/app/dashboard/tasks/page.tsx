@@ -37,6 +37,7 @@ export default function TasksPage() {
   const [logs, setLogs] = useState<Record<string, TaskRunLog[]>>({})
   const [loadingLogs, setLoadingLogs] = useState<Record<string, boolean>>({})
   const [taskToCancel, setTaskToCancel] = useState<string | null>(null)
+  const [retryingTasks, setRetryingTasks] = useState<Record<string, boolean>>({})
 
   // State for download report
   const [groupRowCount, setGroupRowCount] = useState<string>("10")
@@ -211,6 +212,41 @@ export default function TasksPage() {
     }
   }
 
+  const handleRetryFailed = async (taskId: string) => {
+    setRetryingTasks(prev => ({ ...prev, [taskId]: true }))
+    try {
+      const res = await fetch('/api/tasks/retry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ taskId })
+      })
+      if (!res.ok) {
+        const errorText = await res.text()
+        console.error('Failed to retry tasks on server:', res.status, errorText)
+      } else {
+        // Optimistically update the UI
+        setTasks(prev => prev.map(t => {
+          if (t.id === taskId) {
+            return { 
+              ...t, 
+              status: 'pending',
+              result: {
+                ...(t.result || {}),
+                summary: t.result?.summary ? { ...t.result.summary, failed: 0 } : undefined
+              },
+              summary: (t as any).summary ? { ...(t as any).summary, failed: 0 } : undefined
+            } as any
+          }
+          return t
+        }))
+      }
+    } catch (err) {
+      console.error('Error retrying tasks:', err)
+    } finally {
+      setRetryingTasks(prev => ({ ...prev, [taskId]: false }))
+    }
+  }
+
   const statusIcon = (status: string) => {
     switch (status) {
       case 'running': return <Loader2 className="w-4 h-4 text-indigo-400 animate-spin" />
@@ -366,6 +402,16 @@ export default function TasksPage() {
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200">Execution Logs</h3>
                         <div className="flex items-center gap-2">
+                          {!task.is_simple_task && (task as any).summary?.failed > 0 && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleRetryFailed(task.id); }}
+                              disabled={retryingTasks[task.id]}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 text-amber-600 dark:text-amber-500 hover:bg-amber-500/20 rounded text-xs font-medium transition-colors disabled:opacity-50"
+                            >
+                              {retryingTasks[task.id] ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
+                              Retry Failed
+                            </button>
+                          )}
                           {(task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval') && (
                             <button
                               onClick={(e) => { e.stopPropagation(); setTaskToCancel(task.id); }}
@@ -375,7 +421,7 @@ export default function TasksPage() {
                               Cancel Job
                             </button>
                           )}
-                          {task.status === 'completed' && (
+                          {(task.status === 'completed' || (!task.is_simple_task && (task.status === 'running' || task.status === 'pending'))) && (
                             <div className="flex items-center gap-2">
                               <label className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 cursor-pointer">
                                 <input

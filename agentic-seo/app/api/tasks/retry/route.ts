@@ -25,7 +25,8 @@ export async function POST(request: NextRequest) {
     const adminSupabase = createServiceClient()
 
     // 1. Update failed task_runs to pending
-    const { error: runUpdateError } = await adminSupabase
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error: runUpdateError } = await (adminSupabase as any)
       .from('task_runs')
       .update({ status: 'pending', updated_at: new Date().toISOString() })
       .eq('state->>task_id', taskId)
@@ -43,7 +44,8 @@ export async function POST(request: NextRequest) {
       newResult.summary.failed = 0
     }
 
-    const { error: updateError } = await adminSupabase
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error: updateError } = await (adminSupabase as any)
       .from('tasks')
       .update({ status: 'pending', result: newResult, updated_at: new Date().toISOString() })
       .eq('id', taskId)

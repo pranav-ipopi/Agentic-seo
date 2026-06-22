@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
     const currentResult = (task as any).result || {}
     const newResult = { ...currentResult, is_cancelled: true, error: 'Cancelled by user' }
 
-    // Use service client to bypass RLS for the UPDATE operation
     const adminSupabase = createServiceClient()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error: updateError } = await (adminSupabase as any)
@@ -36,6 +35,14 @@ export async function POST(request: NextRequest) {
     if (updateError) {
       return NextResponse.json({ error: updateError.message }, { status: 500 })
     }
+
+    // Cancel all pending or running child task_runs so the worker doesn't pick them up
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (adminSupabase as any)
+      .from('task_runs')
+      .update({ status: 'failed', updated_at: new Date().toISOString() })
+      .eq('state->>task_id', taskId)
+      .in('status', ['pending', 'running', 'waiting_approval'])
 
     return NextResponse.json({ success: true })
   } catch (err: any) {

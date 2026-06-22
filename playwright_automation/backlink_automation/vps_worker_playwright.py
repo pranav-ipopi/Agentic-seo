@@ -60,6 +60,19 @@ template_detector = TemplateDetector(browser_manager, logger)
 # Global tracker for rate limiter
 NEXT_JOB_ALLOWED_TIME_GLOBAL = 0
 
+def mark_parent_task_running(supabase_client: Client, task_id: str):
+    """Bumps a parent task's status from 'pending' to 'running' when a child task_run starts."""
+    if not task_id:
+        return
+    try:
+        supabase_client.table('tasks') \
+            .update({'status': 'running'}) \
+            .eq('id', task_id) \
+            .eq('status', 'pending') \
+            .execute()
+    except Exception as e:
+        logger.error(f"[Task {task_id}] Failed to mark parent task as running: {e}")
+
 def check_and_update_parent_task(supabase_client: Client, state: dict):
     """Checks if all task_runs for a parent task are done, and if so, updates the parent task status.
     
@@ -73,6 +86,14 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
     if not task_id:
         return
     try:
+        # First get the current parent task to preserve result keys and check if cancelled
+        parent_res = supabase_client.table('tasks').select('status, result').eq('id', task_id).execute()
+        if not parent_res.data:
+            return
+        parent_task = parent_res.data[0]
+        current_result = parent_task.get('result') or {}
+        is_cancelled = current_result.get('is_cancelled', False)
+
         res = supabase_client.table('task_runs').select('status').eq('state->>task_id', task_id).execute()
         if res.data:
             succeeded = sum(1 for r in res.data if r.get('status') == 'completed')
@@ -80,7 +101,10 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
             total     = len(res.data)
             all_done  = all(r.get('status') in ['completed', 'failed'] for r in res.data)
 
-            if all_done:
+            if is_cancelled:
+                final_status = 'failed'
+                logger.info(f"[Task {task_id}] Task is cancelled. Maintaining 'failed' status. Progress: {succeeded}/{total} completed, {failed} failed.")
+            elif all_done:
                 # Determine final task status
                 if succeeded == 0:
                     final_status = 'failed'
@@ -100,16 +124,15 @@ def check_and_update_parent_task(supabase_client: Client, state: dict):
                 )
 
             # Build result object with the next job timestamp if applicable
-            result_obj = {
-                'summary': {
-                    'total':     total,
-                    'succeeded': succeeded,
-                    'failed':    failed,
-                }
+            result_obj = dict(current_result)
+            result_obj['summary'] = {
+                'total':     total,
+                'succeeded': succeeded,
+                'failed':    failed,
             }
             
             global NEXT_JOB_ALLOWED_TIME_GLOBAL
-            if not all_done and NEXT_JOB_ALLOWED_TIME_GLOBAL > 0:
+            if not all_done and not is_cancelled and NEXT_JOB_ALLOWED_TIME_GLOBAL > 0:
                 from datetime import datetime, timezone
                 result_obj['next_job_at'] = datetime.fromtimestamp(NEXT_JOB_ALLOWED_TIME_GLOBAL, tz=timezone.utc).isoformat()
 
@@ -411,10 +434,12 @@ async def poll_queue():
                     continuing_runs = res_cont.data or []
                     for t in continuing_runs:
                         supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
+                        parent_task_id = t.get('state', {}).get('task_id')
+                        if parent_task_id:
+                            mark_parent_task_running(supabase, parent_task_id)
                         task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
                         active_tasks.add(task)
                         
-                        parent_task_id = t.get('state', {}).get('task_id')
                         if parent_task_id:
                             task_mapping[task] = parent_task_id
                             
@@ -468,10 +493,12 @@ async def poll_queue():
                             logger.info(f"Rate Limiter: Next job will run in {(base_interval + jitter)/60:.2f} minutes.")
 
                             supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
+                            parent_task_id = t.get('state', {}).get('task_id')
+                            if parent_task_id:
+                                mark_parent_task_running(supabase, parent_task_id)
                             task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
                             active_tasks.add(task)
                             
-                            parent_task_id = t.get('state', {}).get('task_id')
                             if parent_task_id:
                                 task_mapping[task] = parent_task_id
                                 

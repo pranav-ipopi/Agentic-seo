@@ -280,7 +280,7 @@ export default function TasksPage() {
         return <span className={cn(base, 'bg-emerald-500/15 text-emerald-300')}>Completed</span>
       case 'failed':
         if (isCancelled) {
-          return <span className={cn(base, 'bg-gray-500/15 text-gray-400')}>Cancelled by User</span>
+          return <span className={cn(base, 'bg-gray-500/15 text-gray-400')}>Stopped by User</span>
         }
         if (summary) {
           return (
@@ -435,10 +435,10 @@ export default function TasksPage() {
                               className="flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 text-red-500 hover:bg-red-500/20 rounded text-xs font-medium transition-colors"
                             >
                               <XCircle className="w-3.5 h-3.5" />
-                              Cancel Job
+                              Stop Job
                             </button>
                           )}
-                          {(task.status === 'completed' || (!task.is_simple_task && (task.status === 'running' || task.status === 'pending'))) && (
+                          {(task.status === 'completed' || task.status === 'failed' || (!task.is_simple_task && (task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval'))) && (
                             <div className="flex items-center gap-2">
                               <label className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 cursor-pointer">
                                 <input
@@ -533,9 +533,9 @@ export default function TasksPage() {
       {taskToCancel && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
           <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 max-w-sm w-full shadow-xl">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Cancel Job</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Stop Job</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-              Are you sure you want to cancel this job? This action will mark the job as failed and stop any running background tasks.
+              Are you sure you want to stop this job? This action will halt background tasks. You can resume it later.
             </p>
             <div className="flex items-center justify-end gap-3">
               <button
@@ -548,7 +548,7 @@ export default function TasksPage() {
                 onClick={() => handleCancelTask(taskToCancel)}
                 className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors"
               >
-                Confirm Cancel
+                Confirm Stop
               </button>
             </div>
           </div>

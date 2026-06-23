@@ -774,16 +774,6 @@
     "ast_hash": "c7619160251c4e5e458c8deddd1e0867",
     "semantic_hash": ""
   },
-  "help.txt": {
-    "mtime": 1782228628.653665,
-    "ast_hash": "a2d7f718aa29b38b3b6c89dff6a1d264",
-    "semantic_hash": ""
-  },
-  "help8.txt": {
-    "mtime": 1782228644.0205917,
-    "ast_hash": "390731e1b2d9327c3d08313b6e4ba1e3",
-    "semantic_hash": ""
-  },
   "playwright_worker/.local/share/pki/nssdb/pkcs11.txt": {
     "mtime": 1781057815.3302014,
     "ast_hash": "ca1851518de99074202a677cf48760a0",
@@ -867,6 +857,46 @@
   "playwright_worker/Bookmark_sites_tester/solvemedia_captcha.png": {
     "mtime": 1781258551.4839857,
     "ast_hash": "1da4b028e333089ab6bcad42dd49261a",
+    "semantic_hash": ""
+  },
+  ".agents/rules/ponytail.md": {
+    "mtime": 1782230354.5502467,
+    "ast_hash": "4adeee23ff91b6122183041c9aa0e835",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail-audit/SKILL.md": {
+    "mtime": 1782230239.9563003,
+    "ast_hash": "741076540e91247a0bace7b89c27ac6b",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail-debt/SKILL.md": {
+    "mtime": 1782230239.957409,
+    "ast_hash": "19c1eef33c9b109abb5805a762a545c8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail-gain/SKILL.md": {
+    "mtime": 1782230239.957409,
+    "ast_hash": "8f9cd980326238785d2fc23a9cfddc96",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail-help/SKILL.md": {
+    "mtime": 1782230239.957409,
+    "ast_hash": "1249040527776216867a9f422d9f51e4",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail-review/SKILL.md": {
+    "mtime": 1782230239.957409,
+    "ast_hash": "52f93e973047baa9a906c6dc5879a4a6",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail/SKILL.md": {
+    "mtime": 1782230239.9624875,
+    "ast_hash": "b8c2df06e57a19e5319b64b13f645d99",
+    "semantic_hash": ""
+  },
+  "docs/graphify_setup.md": {
+    "mtime": 1782229838.2601905,
+    "ast_hash": "2780df1ddb23d25ff73c45ccde8788bb",
     "semantic_hash": ""
   }
 }

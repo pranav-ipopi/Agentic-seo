@@ -64,7 +64,9 @@ export async function POST(request: NextRequest) {
        // Update
        const { data, error } = await adminClient
          .from('saved_campaign_configs')
+         // @ts-ignore
          .update({ config, updated_at: new Date().toISOString() })
+         // @ts-ignore
          .eq('id', existing.id)
          .select('*, profiles:created_by (full_name)')
          .single()

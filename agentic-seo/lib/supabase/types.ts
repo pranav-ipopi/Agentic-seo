@@ -389,6 +389,29 @@ export type Database = {
         }
         Update: Partial<Database['public']['Tables']['task_run_logs']['Insert']>
       }
+      saved_campaign_configs: {
+        Row: {
+          id: string
+          client_id: string
+          template_id: string
+          name: string
+          config: any
+          created_by: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          client_id: string
+          template_id: string
+          name: string
+          config: any
+          created_by: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: Partial<Database['public']['Tables']['saved_campaign_configs']['Insert']>
+      }
     }
   }
 }

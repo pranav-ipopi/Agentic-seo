@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import Redis from 'ioredis'
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +25,15 @@ export async function POST(request: NextRequest) {
 
     const adminSupabase = createServiceClient()
 
-    // 1. Update failed task_runs to pending
+    // 1a. Fetch the runs we are about to retry so we can push them to Redis if needed
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data: runsToRetry } = await (adminSupabase as any)
+      .from('task_runs')
+      .select('*, workflow_templates(*)')
+      .eq('state->>task_id', taskId)
+      .eq('status', 'failed')
+
+    // 1b. Update failed task_runs to pending
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error: runUpdateError } = await (adminSupabase as any)
       .from('task_runs')
@@ -52,6 +61,31 @@ export async function POST(request: NextRequest) {
 
     if (updateError) {
       return NextResponse.json({ error: updateError.message }, { status: 500 })
+    }
+
+    // 3. Push new jobs (current_step_index === 0) to Redis
+    if (runsToRetry && runsToRetry.length > 0 && process.env.REDIS_URL) {
+      try {
+        const redis = new Redis(process.env.REDIS_URL)
+        const pipeline = redis.pipeline()
+        let pushedCount = 0
+
+        for (const run of runsToRetry) {
+          // Worker expects new jobs to be at step 0
+          if (run.current_step_index === 0) {
+            pipeline.lpush('backlink_queue', JSON.stringify(run))
+            pushedCount++
+          }
+        }
+
+        if (pushedCount > 0) {
+          await pipeline.exec()
+        }
+        await redis.quit()
+        console.log(`Pushed ${pushedCount} retried jobs to Redis`)
+      } catch (redisError) {
+        console.error('Failed to push retried jobs to Redis:', redisError)
+      }
     }
 
     return NextResponse.json({ success: true })

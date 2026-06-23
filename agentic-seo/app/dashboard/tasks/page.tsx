@@ -232,7 +232,8 @@ export default function TasksPage() {
               status: 'pending',
               result: {
                 ...(t.result || {}),
-                summary: t.result?.summary ? { ...t.result.summary, failed: 0 } : undefined
+                summary: t.result?.summary ? { ...t.result.summary, failed: 0 } : undefined,
+                is_cancelled: false
               },
               summary: (t as any).summary ? { ...(t as any).summary, failed: 0 } : undefined
             } as any
@@ -419,14 +420,14 @@ export default function TasksPage() {
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200">Execution Logs</h3>
                         <div className="flex items-center gap-2">
-                          {!task.is_simple_task && (task as any).summary?.failed > 0 && (
+                          {!task.is_simple_task && ((task as any).summary?.failed > 0 || task.result?.is_cancelled) && (
                             <button
                               onClick={(e) => { e.stopPropagation(); handleRetryFailed(task.id); }}
                               disabled={retryingTasks[task.id]}
                               className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 text-amber-600 dark:text-amber-500 hover:bg-amber-500/20 rounded text-xs font-medium transition-colors disabled:opacity-50"
                             >
                               {retryingTasks[task.id] ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
-                              Retry Failed
+                              {task.result?.is_cancelled ? 'Resume Job' : 'Retry Failed'}
                             </button>
                           )}
                           {(task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval') && (

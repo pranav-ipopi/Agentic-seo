@@ -60,6 +60,7 @@ export default function RunConfigurationPanel({
   const [isSavingTemplate, setIsSavingTemplate] = useState(false)
   const [loadedTemplateId, setLoadedTemplateId] = useState<string | null>(null)
   const [templateSearchQuery, setTemplateSearchQuery] = useState('')
+  const [targetToDelete, setTargetToDelete] = useState<number | null>(null)
 
   // Draft feature
   const [hasDraft, setHasDraft] = useState(false)
@@ -509,7 +510,7 @@ export default function RunConfigurationPanel({
                return (
                  <div key={target.id} className="p-4 bg-gray-50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl space-y-3 relative group">
                    {targets.length > 1 && (
-                     <button onClick={() => removeTarget(index)} className="absolute top-2 right-2 p-1.5 text-gray-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+                     <button onClick={() => setTargetToDelete(index)} className="absolute top-2 right-2 p-1.5 text-gray-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
                        <Trash2 className="w-3.5 h-3.5" />
                      </button>
                    )}
@@ -764,6 +765,28 @@ export default function RunConfigurationPanel({
               >
                 Okay
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Target Delete Confirmation Modal */}
+      {targetToDelete !== null && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-200">
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Remove Target Block</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Are you sure you want to remove this target block and all its associated keywords? This action cannot be undone.
+              </p>
+              <div className="flex justify-end gap-3">
+                <button onClick={() => setTargetToDelete(null)} className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                  Cancel
+                </button>
+                <button onClick={() => { removeTarget(targetToDelete); setTargetToDelete(null); }} className="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white text-sm font-medium rounded-lg transition-all shadow-md shadow-rose-900/20">
+                  Remove
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,13 +1,20 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import { useClient } from '@/components/layout/ClientProvider'
-import { Play, Settings2, ShieldCheck, List, Globe, X } from 'lucide-react'
-import KeywordsModal from './KeywordsModal'
+import { Play, Settings2, ShieldCheck, Globe, X, Plus, Trash2, Save, ChevronDown, User, AlertTriangle } from 'lucide-react'
 import SiteListModal from './SiteListModal'
+
+interface TargetConfig {
+  id: string;
+  clientTargetUrl: string;
+  targetSitesCount: number | string;
+  keywords: string[];
+  currentKeywordInput: string;
+}
 
 export default function RunConfigurationPanel({
   template,
@@ -22,44 +29,191 @@ export default function RunConfigurationPanel({
   const { activeClient } = useClient()
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [targetSitesCount, setTargetSitesCount] = useState<number | string>(50)
   const [minDa, setMinDa] = useState<number | string>(30)
   const [minPa, setMinPa] = useState<number | string>(30)
   const [maxSpamScore, setMaxSpamScore] = useState<number | string>(4)
 
-  const effectiveTargetSites = typeof targetSitesCount === 'number' ? targetSitesCount : (parseInt(targetSitesCount) || 0)
   const effectiveMinDa = typeof minDa === 'number' ? minDa : (parseInt(minDa) || 0)
   const effectiveMinPa = typeof minPa === 'number' ? minPa : (parseInt(minPa) || 0)
   const effectiveMaxSpamScore = typeof maxSpamScore === 'number' ? maxSpamScore : (parseInt(maxSpamScore) || 0)
+  
   const [submissionType, setSubmissionType] = useState('bookmarking')
-  const [clientTargetUrl, setClientTargetUrl] = useState('')
   const [campaignName, setCampaignName] = useState('')
   const [isNameEdited, setIsNameEdited] = useState(false)
-  const [isKeywordsModalOpen, setIsKeywordsModalOpen] = useState(false)
   const [isSiteListModalOpen, setIsSiteListModalOpen] = useState(false)
-  const [keywordCount, setKeywordCount] = useState(0)
   const [maxAvailableSites, setMaxAvailableSites] = useState(0)
-  const [isPulsing, setIsPulsing] = useState(false)
   const [showConfirmModal, setShowConfirmModal] = useState(false)
   const [showSuccessNotification, setShowSuccessNotification] = useState(false)
   const [queuedRunsCount, setQueuedRunsCount] = useState(0)
   const [errorMessage, setErrorMessage] = useState('')
 
-  React.useEffect(() => {
+  const [targets, setTargets] = useState<TargetConfig[]>([
+    { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }
+  ])
+
+  // Saved Campaigns Feature
+  const [savedCampaigns, setSavedCampaigns] = useState<any[]>([])
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [showSaveModal, setShowSaveModal] = useState(false)
+  const [saveTemplateName, setSaveTemplateName] = useState('')
+  const [isSavingTemplate, setIsSavingTemplate] = useState(false)
+  const [loadedTemplateId, setLoadedTemplateId] = useState<string | null>(null)
+  const [templateSearchQuery, setTemplateSearchQuery] = useState('')
+
+  // Draft feature
+  const [hasDraft, setHasDraft] = useState(false)
+  const draftKey = `draft_workflow_${template?.id}_${activeClient?.id}`
+
+  useEffect(() => {
     if (showSuccessNotification) {
       const timer = setTimeout(() => setShowSuccessNotification(false), 5000)
       return () => clearTimeout(timer)
     }
   }, [showSuccessNotification])
 
-  React.useEffect(() => {
-    if (!isNameEdited && activeClient && template) {
-      setCampaignName(`${template.name} for ${activeClient.name} (${submissionType})`)
+  // Fetch saved campaigns
+  useEffect(() => {
+    if (activeClient && template) {
+      fetch(`/api/campaigns/saved?client_id=${activeClient.id}&template_id=${template.id}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            setSavedCampaigns(data.data)
+          }
+        })
+        .catch(console.error)
     }
-  }, [activeClient, template, submissionType, isNameEdited])
+  }, [activeClient, template])
+
+  // Load draft on mount
+  useEffect(() => {
+    if (activeClient && template) {
+      const draftStr = localStorage.getItem(draftKey)
+      if (draftStr) {
+        try {
+          const draft = JSON.parse(draftStr)
+          setCampaignName(draft.campaignName || '')
+          setMinDa(draft.minDa ?? 30)
+          setMinPa(draft.minPa ?? 30)
+          setMaxSpamScore(draft.maxSpamScore ?? 4)
+          if (draft.targets && draft.targets.length > 0) {
+             setTargets(draft.targets)
+          }
+          setIsNameEdited(true)
+          setHasDraft(true)
+        } catch(e) {}
+      } else if (!isNameEdited) {
+        setCampaignName(`${template.name} for ${activeClient.name} (${submissionType})`)
+      }
+    }
+  }, [activeClient, template, draftKey])
+
+  // Auto-save draft on change
+  useEffect(() => {
+    if (activeClient && template) {
+      const draft = { campaignName, minDa, minPa, maxSpamScore, targets }
+      localStorage.setItem(draftKey, JSON.stringify(draft))
+      setHasDraft(true)
+    }
+  }, [campaignName, minDa, minPa, maxSpamScore, targets, activeClient, template, draftKey])
+
+  // Click outside to close dropdown
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  // Browser Warning if leaving with unsaved draft
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (hasDraft) {
+        e.preventDefault()
+        e.returnValue = ''
+      }
+    }
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [hasDraft])
+
+  const discardDraft = () => {
+    localStorage.removeItem(draftKey)
+    setHasDraft(false)
+    setIsNameEdited(false)
+    setCampaignName(`${template.name} for ${activeClient?.name} (${submissionType})`)
+    setMinDa(30)
+    setMinPa(30)
+    setMaxSpamScore(4)
+    setTargets([{ id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }])
+    setLoadedTemplateId(null)
+  }
+
+  const loadSavedTemplate = (id: string) => {
+    setIsDropdownOpen(false)
+    const sc = savedCampaigns.find(c => c.id === id)
+    if (sc && sc.config) {
+      setMinDa(sc.config.minDa ?? 30)
+      setMinPa(sc.config.minPa ?? 30)
+      setMaxSpamScore(sc.config.maxSpamScore ?? 4)
+      if (sc.config.targets && sc.config.targets.length > 0) {
+         setTargets(sc.config.targets)
+      }
+      setCampaignName(sc.name)
+      setIsNameEdited(true)
+      setLoadedTemplateId(id)
+      setSaveTemplateName(sc.name)
+    }
+  }
+
+  const handleSaveTemplate = async () => {
+    if (!saveTemplateName.trim()) {
+       setErrorMessage('Template name is required')
+       return
+    }
+    setIsSavingTemplate(true)
+    try {
+      const config = { minDa: effectiveMinDa, minPa: effectiveMinPa, maxSpamScore: effectiveMaxSpamScore, targets }
+      const res = await fetch('/api/campaigns/saved', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          clientId: activeClient?.id,
+          templateId: template.id,
+          name: saveTemplateName.trim(),
+          config
+        })
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSavedCampaigns(prev => {
+          const idx = prev.findIndex(c => c.id === data.data.id);
+          if (idx !== -1) {
+            const copy = [...prev];
+            copy[idx] = data.data;
+            return copy;
+          }
+          return [data.data, ...prev];
+        })
+        setLoadedTemplateId(data.data.id)
+        setShowSaveModal(false)
+        setSaveTemplateName('')
+      } else {
+        setErrorMessage(data.error)
+      }
+    } catch(e:any) {
+      setErrorMessage(e.message)
+    } finally {
+      setIsSavingTemplate(false)
+    }
+  }
 
   // Fetch max available sites when filters change
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchMaxSites = async () => {
       try {
         const queryParams = new URLSearchParams({
@@ -73,12 +227,6 @@ export default function RunConfigurationPanel({
         if (res.ok) {
           const { count } = await res.json()
           setMaxAvailableSites(count || 0)
-          if (effectiveTargetSites > (count || 0)) {
-            setTargetSitesCount(count || 0)
-            // Trigger pulse effect
-            setIsPulsing(true)
-            setTimeout(() => setIsPulsing(false), 2000)
-          }
         }
       } catch (err) {
         console.error('Failed to fetch max sites count:', err)
@@ -87,48 +235,69 @@ export default function RunConfigurationPanel({
     fetchMaxSites()
   }, [submissionType, minDa, minPa, maxSpamScore])
 
-  React.useEffect(() => {
-    if (activeClient) {
-      const fetchKeywords = async () => {
-        try {
-          const res = await fetch(`/api/keywords?client_id=${activeClient.id}`)
-          if (res.ok) {
-            const data = await res.json()
-            setKeywordCount(data.length)
-          }
-        } catch (e) {
-          console.error(e)
-        }
+  const addKeywordToTarget = async (index: number, kwRaw: string) => {
+    const kw = kwRaw.trim();
+    if (!kw) return;
+    const newTargets = [...targets];
+    if (!newTargets[index].keywords.includes(kw)) {
+      newTargets[index].keywords.push(kw);
+      
+      const targetUrl = newTargets[index].clientTargetUrl.trim();
+      if (activeClient && targetUrl) {
+         try {
+           await fetch('/api/keywords', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({
+               clientId: activeClient.id,
+               targetUrl: targetUrl,
+               keywords: [{ keyword: kw }]
+             })
+           });
+         } catch (e) {
+           console.error("Failed to autosave keyword", e);
+         }
       }
-      fetchKeywords()
     }
-  }, [activeClient, isKeywordsModalOpen])
+    newTargets[index].currentKeywordInput = '';
+    setTargets(newTargets);
+  }
+
+  const updateTarget = (index: number, field: keyof TargetConfig, value: any) => {
+    const newTargets = [...targets];
+    newTargets[index] = { ...newTargets[index], [field]: value };
+    setTargets(newTargets);
+  }
+  
+  const removeTarget = (index: number) => {
+    const newTargets = targets.filter((_, i) => i !== index);
+    setTargets(newTargets);
+  }
+
+  const removeKeyword = (targetIndex: number, keywordIndex: number) => {
+    const newTargets = [...targets];
+    newTargets[targetIndex].keywords.splice(keywordIndex, 1);
+    setTargets(newTargets);
+  }
+
+  const totalBacklinks = targets.reduce((sum, t) => {
+    const effectiveCount = typeof t.targetSitesCount === 'number' ? t.targetSitesCount : (parseInt(t.targetSitesCount as string) || 0)
+    const count = Math.min(effectiveCount, maxAvailableSites)
+    return sum + (count * t.keywords.length)
+  }, 0)
 
   const handleStartCampaignClick = () => {
-    if (!activeClient) {
-      setErrorMessage('Please select a client from the sidebar first.')
-      return
+    if (!activeClient) return setErrorMessage('Please select a client from the sidebar first.')
+    if (!campaignName.trim()) return setErrorMessage('Please provide a Campaign Name.')
+    if (targets.length === 0) return setErrorMessage('Please add at least one target configuration.')
+
+    for (let i = 0; i < targets.length; i++) {
+      const t = targets[i];
+      if (!t.clientTargetUrl.trim()) return setErrorMessage(`Target ${i+1} is missing a Client Target URL.`);
+      if (t.keywords.length === 0) return setErrorMessage(`Target ${i+1} must have at least one keyword.`);
     }
 
-    if (!clientTargetUrl.trim()) {
-      setErrorMessage('Please provide the Client Target URL.')
-      return
-    }
-
-    if (!campaignName.trim()) {
-      setErrorMessage('Please provide a Campaign Name.')
-      return
-    }
-
-    if (keywordCount === 0) {
-      setErrorMessage('Please add at least one keyword for this client.')
-      return
-    }
-
-    if (Math.min(effectiveTargetSites, maxAvailableSites) === 0) {
-      setErrorMessage('No target sites available. Please adjust your filters or add target sites.')
-      return
-    }
+    if (maxAvailableSites === 0) return setErrorMessage('No target sites available. Please adjust your DA/PA filters.')
 
     setShowConfirmModal(true)
   }
@@ -148,8 +317,11 @@ export default function RunConfigurationPanel({
         minDa: effectiveMinDa,
         minPa: effectiveMinPa,
         maxSpamScore: effectiveMaxSpamScore,
-        targetSitesCount: effectiveTargetSites,
-        clientTargetUrl: clientTargetUrl.trim(),
+        targets: targets.map(t => ({
+           clientTargetUrl: t.clientTargetUrl.trim(),
+           targetSitesCount: typeof t.targetSitesCount === 'number' ? t.targetSitesCount : (parseInt(t.targetSitesCount as string) || 0),
+           keywords: t.keywords
+        })),
         campaignName: campaignName.trim()
       }
 
@@ -167,6 +339,9 @@ export default function RunConfigurationPanel({
 
       setQueuedRunsCount(data.queuedRunsCount)
       setShowSuccessNotification(true)
+      // Discard draft on successful launch to avoid stale configs
+      localStorage.removeItem(draftKey)
+      setHasDraft(false)
     } catch (err: any) {
       console.error(err)
       setErrorMessage('Failed to start execution: ' + err.message)
@@ -176,30 +351,71 @@ export default function RunConfigurationPanel({
   }
 
   return (
-    <div className="w-[340px] flex-shrink-0 bg-white dark:bg-gray-900/50 overflow-y-auto flex flex-col h-full shadow-2xl relative z-20">
+    <div className="w-[380px] flex-shrink-0 bg-white dark:bg-gray-900/50 overflow-y-auto flex flex-col h-full shadow-2xl relative z-20">
 
       {/* Header */}
-      <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-        <div className="flex items-center gap-2.5 mb-2">
+      <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 relative flex flex-col gap-4">
+        <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
             <Settings2 className="w-4 h-4" />
           </div>
           <h2 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">Run Configuration</h2>
         </div>
-        <p className="text-sm text-gray-400 dark:text-gray-600 dark:text-gray-400">
-          Configure parameters for the{' '}
-          <span className="text-gray-700 dark:text-gray-300 font-medium">{template.name}</span> workflow.
-        </p>
+        
+        <div className="relative w-full" ref={dropdownRef}>
+          <button 
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="w-full flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-sm"
+          >
+            Saved Templates <ChevronDown className="w-4 h-4 text-gray-400" />
+          </button>
+          {isDropdownOpen && (
+            <div className="absolute left-0 right-0 top-full mt-1.5 w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xl z-50 overflow-hidden">
+                  <div className="p-2 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+                    <input 
+                      type="text" 
+                      placeholder="Search templates..."
+                      value={templateSearchQuery}
+                      onChange={e => setTemplateSearchQuery(e.target.value)}
+                      className="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded px-2.5 py-1.5 text-xs text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-indigo-500/50"
+                      autoFocus
+                    />
+                  </div>
+                  <div className="max-h-60 overflow-y-auto p-1">
+                    <button 
+                      onClick={() => { discardDraft(); setIsDropdownOpen(false); }}
+                      className="w-full flex items-center gap-2 px-3 py-2.5 mb-1 rounded-lg text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors text-sm font-medium"
+                    >
+                      <Plus className="w-4 h-4" /> Create New Template
+                    </button>
+                    <div className="h-px bg-gray-100 dark:bg-gray-800 my-1"></div>
+                    {savedCampaigns.filter(sc => sc.name.toLowerCase().includes(templateSearchQuery.toLowerCase())).length === 0 ? (
+                      <div className="p-3 text-center text-xs text-gray-500">No templates found.</div>
+                    ) : (
+                      savedCampaigns.filter(sc => sc.name.toLowerCase().includes(templateSearchQuery.toLowerCase())).map(sc => (
+                        <button 
+                          key={sc.id} 
+                          onClick={() => loadSavedTemplate(sc.id)}
+                          className="w-full text-left px-3 py-2 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors group"
+                        >
+                          <div className="text-sm font-medium text-gray-900 dark:text-white truncate">{sc.name}</div>
+                          <div className="flex items-center gap-1 mt-1">
+                            <User className="w-3 h-3 text-gray-400" />
+                            <span className="text-[10px] text-gray-500 bg-gray-100 dark:bg-gray-800 px-1.5 rounded">{sc.profiles?.full_name || 'Unknown User'}</span>
+                          </div>
+                        </button>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
       </div>
 
       <div className="p-6 flex-1 flex flex-col gap-6">
 
-        {/* Campaign Parameters */}
-        <div className="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-800/50">
-          <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-            Campaign Parameters
-          </h3>
-
+        {/* Global Settings */}
+        <div className="space-y-4">
           <div className="space-y-2">
             <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center justify-between">
               <span>Campaign Name <span className="text-rose-500">*</span></span>
@@ -214,96 +430,6 @@ export default function RunConfigurationPanel({
               }}
               className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
             />
-          </div>
-
-          <div className="space-y-2">
-            <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center justify-between">
-              <span>Client Target URL <span className="text-rose-500">*</span></span>
-            </label>
-            <div className="flex rounded-lg shadow-sm">
-              <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-sm">
-                https://
-              </span>
-              <input
-                type="text"
-                placeholder="client-site.com/page"
-                value={clientTargetUrl}
-                onChange={e => {
-                  let val = e.target.value;
-                  val = val.replace(/^https?:\/\//i, '');
-                  setClientTargetUrl(val);
-                }}
-                className="flex-1 min-w-0 block w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-none rounded-r-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <label className="text-xs text-gray-400 dark:text-gray-600 flex items-center gap-1">
-                <span>Target Bookmark Sites</span>
-                <span className="text-[10px] text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-1.5 py-0.5 rounded ml-1 font-medium">
-                  {maxAvailableSites} match filter
-                </span>
-              </label>
-              <span className="text-xs text-gray-500">Number</span>
-            </div>
-
-            <input
-              type="number"
-              value={targetSitesCount}
-              max={maxAvailableSites}
-              min={0}
-              onChange={e => {
-                if (e.target.value === '') {
-                  setTargetSitesCount('');
-                  return;
-                }
-                let val = parseInt(e.target.value);
-                if (isNaN(val)) val = 0;
-                if (maxAvailableSites > 0 && val > maxAvailableSites) {
-                  val = maxAvailableSites;
-                  setIsPulsing(true);
-                  setTimeout(() => setIsPulsing(false), 2000);
-                } else if (maxAvailableSites === 0 && val > 0) {
-                  val = 0;
-                  setIsPulsing(true);
-                  setTimeout(() => setIsPulsing(false), 2000);
-                }
-                setTargetSitesCount(val);
-              }}
-              className={`w-full bg-gray-50 dark:bg-gray-950 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none transition-all duration-500 ${isPulsing ? 'border border-rose-500 ring-2 ring-rose-500/50 shadow-[0_0_15px_rgba(244,63,94,0.4)]' : 'border border-gray-200 dark:border-gray-800 focus:ring-2 focus:ring-indigo-500/50'}`}
-            />
-
-            <div className="flex items-center gap-2">
-              <button onClick={() => setIsSiteListModalOpen(true)} className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors whitespace-nowrap">
-                <Globe className="w-3.5 h-3.5" />
-                Site List
-              </button>
-              <button onClick={() => setIsKeywordsModalOpen(true)} className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors whitespace-nowrap">
-                <List className="w-3.5 h-3.5" />
-                Keywords
-              </button>
-            </div>
-            <div className="flex flex-col gap-2 mt-2">
-              {effectiveTargetSites > maxAvailableSites && maxAvailableSites > 0 && (
-                <div className="text-[10px] text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded border border-amber-200 dark:border-amber-800/50 flex items-center gap-1.5">
-                  <span className="w-1 h-1 rounded-full bg-amber-500"></span>
-                  Only {maxAvailableSites} sites match your DA requirement. We will use {maxAvailableSites}.
-                </div>
-              )}
-              {effectiveTargetSites > 0 && maxAvailableSites === 0 && (
-                <div className="text-[10px] text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/20 px-2 py-1 rounded border border-rose-200 dark:border-rose-800/50 flex items-center gap-1.5">
-                  <span className="w-1 h-1 rounded-full bg-rose-500"></span>
-                  0 sites match your DA requirement. No backlinks will be created.
-                </div>
-              )}
-              <div className="text-xs text-gray-500 dark:text-gray-500 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-2 rounded-lg text-center">
-                <span className="font-medium text-gray-700 dark:text-gray-300">
-                  {Math.min(effectiveTargetSites, maxAvailableSites)}
-                </span> target sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{keywordCount}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{Math.min(effectiveTargetSites, maxAvailableSites) * keywordCount}</span> total target backlinks
-              </div>
-            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-3">
@@ -360,40 +486,196 @@ export default function RunConfigurationPanel({
               />
             </div>
           </div>
+          
+          <button onClick={() => setIsSiteListModalOpen(true)} className="w-full flex items-center justify-center gap-1.5 px-3 py-2 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors">
+            <Globe className="w-4 h-4" />
+            View Available Sites ({maxAvailableSites})
+          </button>
+        </div>
 
+        {/* Target Configurations */}
+        <div className="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-800/50">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+              Target URLs & Keywords
+            </h3>
+          </div>
+
+          <div className="space-y-4">
+            {targets.map((target, index) => {
+               const effectiveTargetSites = typeof target.targetSitesCount === 'number' ? target.targetSitesCount : (parseInt(target.targetSitesCount as string) || 0);
+               const actualSites = Math.min(effectiveTargetSites, maxAvailableSites);
+               
+               return (
+                 <div key={target.id} className="p-4 bg-gray-50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl space-y-3 relative group">
+                   {targets.length > 1 && (
+                     <button onClick={() => removeTarget(index)} className="absolute top-2 right-2 p-1.5 text-gray-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+                       <Trash2 className="w-3.5 h-3.5" />
+                     </button>
+                   )}
+                   
+                   <div className="space-y-1.5">
+                     <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Target URL</label>
+                     <div className="flex rounded-lg shadow-sm">
+                        <span className="inline-flex items-center px-2.5 rounded-l-lg border border-r-0 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-xs">
+                          https://
+                        </span>
+                        <input
+                          type="text"
+                          placeholder="site.com/page"
+                          value={target.clientTargetUrl}
+                          onChange={e => {
+                            let val = e.target.value.replace(/^https?:\/\//i, '');
+                            updateTarget(index, 'clientTargetUrl', val);
+                          }}
+                          className="flex-1 min-w-0 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-none rounded-r-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                        />
+                     </div>
+                   </div>
+
+                   <div className="space-y-1.5">
+                     <div className="flex justify-between items-center">
+                       <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Keywords</label>
+                       <span className="text-[10px] text-gray-400">{target.keywords.length} added</span>
+                     </div>
+                     <div className="flex flex-wrap gap-1.5 mb-2">
+                       {target.keywords.map((kw, kwIdx) => (
+                         <span key={kwIdx} className="bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded text-[11px] flex items-center gap-1">
+                           {kw} 
+                           <X className="w-3 h-3 cursor-pointer hover:text-indigo-900 dark:hover:text-indigo-100" onClick={() => removeKeyword(index, kwIdx)} />
+                         </span>
+                       ))}
+                     </div>
+                     <div className="flex gap-2">
+                       <input 
+                         type="text" 
+                         placeholder="Type keyword and press Enter"
+                         value={target.currentKeywordInput}
+                         onChange={e => updateTarget(index, 'currentKeywordInput', e.target.value)}
+                         onKeyDown={e => {
+                           if (e.key === 'Enter') {
+                             e.preventDefault();
+                             addKeywordToTarget(index, target.currentKeywordInput);
+                           }
+                         }}
+                         className="flex-1 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                       />
+                       <button onClick={() => addKeywordToTarget(index, target.currentKeywordInput)} className="px-2.5 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-xs font-medium">
+                         Add
+                       </button>
+                     </div>
+                   </div>
+
+                   <div className="space-y-1.5 pt-1">
+                     <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Bookmarking Sites (Limit)</label>
+                     <input
+                       type="number"
+                       value={target.targetSitesCount}
+                       min={0}
+                       onChange={e => {
+                         if (e.target.value === '') { updateTarget(index, 'targetSitesCount', ''); return; }
+                         let val = parseInt(e.target.value) || 0;
+                         updateTarget(index, 'targetSitesCount', val);
+                       }}
+                       className="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                     />
+                   </div>
+
+                   <div className="mt-2 text-xs text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-2 rounded-lg text-center shadow-sm">
+                     <span className="font-medium text-gray-700 dark:text-gray-300">{actualSites}</span> sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{target.keywords.length}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{actualSites * target.keywords.length}</span> target backlinks
+                   </div>
+                 </div>
+               )
+            })}
+          </div>
+
+          <button 
+            onClick={() => setTargets([...targets, { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }])}
+            className="w-full flex items-center justify-center gap-2 py-2.5 border border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors text-sm font-medium mt-4"
+          >
+            <Plus className="w-4 h-4" /> Add Another Target
+          </button>
 
         </div>
       </div>
 
       {/* Footer Action */}
-      <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 mt-auto">
-        <button
-          onClick={handleStartCampaignClick}
-          disabled={
-            isSubmitting ||
-            !activeClient ||
-            !clientTargetUrl.trim() ||
-            maxAvailableSites === 0 ||
-            effectiveTargetSites <= 0 ||
-            keywordCount === 0
-          }
-          className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-600/50 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-900/20 active:scale-[0.98]"
-        >
-          <Play className="w-4 h-4" />
-          {isSubmitting ? 'Starting...' : 'Start Campaign'}
-        </button>
+      <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 mt-auto shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <div className="flex items-center justify-between mb-3 px-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Total Backlinks</span>
+          <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{totalBacklinks}</span>
+        </div>
+        
+        <div className="flex gap-2">
+          <button
+            onClick={() => { 
+              if (!saveTemplateName) setSaveTemplateName(campaignName); 
+              setShowSaveModal(true); 
+            }}
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-sm font-bold rounded-xl transition-all shadow-sm active:scale-[0.98]"
+          >
+            <Save className="w-4 h-4" /> {loadedTemplateId ? 'Update' : 'Save'}
+          </button>
+          
+          <button
+            onClick={handleStartCampaignClick}
+            disabled={
+              isSubmitting ||
+              !activeClient ||
+              targets.length === 0 ||
+              maxAvailableSites === 0 ||
+              totalBacklinks === 0
+            }
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-600/50 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-900/20 active:scale-[0.98]"
+          >
+            <Play className="w-4 h-4" />
+            {isSubmitting ? 'Starting...' : 'Start'}
+          </button>
+        </div>
       </div>
 
-      <KeywordsModal
-        isOpen={isKeywordsModalOpen}
-        onClose={() => setIsKeywordsModalOpen(false)}
-        clientId={activeClient?.id || ''}
-      />
       <SiteListModal
         isOpen={isSiteListModalOpen}
         onClose={() => setIsSiteListModalOpen(false)}
         category={submissionType}
       />
+
+      {/* Save Template Modal */}
+      {showSaveModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-200">
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                {loadedTemplateId ? 'Update Campaign Template' : 'Save Campaign Template'}
+              </h3>
+              <p className="text-xs text-gray-500 mb-4">
+                {loadedTemplateId ? 'Save changes to the current template, or change the name to save as a new template.' : 'Save these settings to easily re-run this exact campaign later.'}
+              </p>
+              
+              <div className="space-y-2 mb-6">
+                <label className="text-xs font-medium text-gray-700 dark:text-gray-300">Template Name</label>
+                <input 
+                  type="text"
+                  value={saveTemplateName}
+                  onChange={e => setSaveTemplateName(e.target.value)}
+                  placeholder="e.g. Monthly Standard Bookmarking"
+                  className="w-full bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+                  autoFocus
+                />
+              </div>
+
+              <div className="flex justify-end gap-3">
+                <button onClick={() => setShowSaveModal(false)} className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                  Cancel
+                </button>
+                <button onClick={handleSaveTemplate} disabled={isSavingTemplate} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-all shadow-md shadow-indigo-900/20 flex items-center gap-2">
+                  {isSavingTemplate ? 'Saving...' : (loadedTemplateId && saveTemplateName.trim() === savedCampaigns.find(c => c.id === loadedTemplateId)?.name ? 'Update Original' : 'Save as New')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Confirmation Modal */}
       {showConfirmModal && (
@@ -406,10 +688,10 @@ export default function RunConfigurationPanel({
               </p>
               <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-6 border border-gray-200 dark:border-gray-800">
                 <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                  <li className="flex justify-between"><span className="font-medium">Target URL:</span> <span className="text-right truncate ml-4" title={clientTargetUrl}>{clientTargetUrl || 'None'}</span></li>
-                  <li className="flex justify-between"><span className="font-medium">Target Sites:</span> <span>{Math.min(effectiveTargetSites, maxAvailableSites)}</span></li>
-                  <li className="flex justify-between"><span className="font-medium">Keywords:</span> <span>{keywordCount}</span></li>
-                  <li className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white"><span className="font-medium text-gray-900 dark:text-white">Total Backlinks:</span> <span>{Math.min(effectiveTargetSites, maxAvailableSites) * keywordCount}</span></li>
+                  <li className="flex justify-between"><span className="font-medium">Targets:</span> <span>{targets.length}</span></li>
+                  <li className="flex justify-between"><span className="font-medium">Max Sites / Target:</span> <span>Up to {Math.max(...targets.map(t => typeof t.targetSitesCount === 'number' ? t.targetSitesCount : parseInt(t.targetSitesCount as string) || 0))}</span></li>
+                  <li className="flex justify-between"><span className="font-medium">Total Keywords:</span> <span>{targets.reduce((sum, t) => sum + t.keywords.length, 0)}</span></li>
+                  <li className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white"><span className="font-medium text-gray-900 dark:text-white">Total Backlinks:</span> <span className="text-indigo-600 dark:text-indigo-400">{totalBacklinks}</span></li>
                 </ul>
               </div>
               <div className="flex justify-end gap-3">
@@ -489,4 +771,3 @@ export default function RunConfigurationPanel({
     </div>
   )
 }
-

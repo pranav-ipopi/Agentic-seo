@@ -25,13 +25,12 @@ export async function POST(request: NextRequest) {
       minDa, 
       minPa, 
       maxSpamScore, 
-      targetSitesCount,
-      clientTargetUrl,
+      targets,
       campaignName
     } = body
 
-    if (!clientId || !templateId || !clientTargetUrl) {
-      return NextResponse.json({ error: 'Missing required parameters' }, { status: 400 })
+    if (!clientId || !templateId || !targets || !Array.isArray(targets) || targets.length === 0) {
+      return NextResponse.json({ error: 'Missing required parameters or targets array' }, { status: 400 })
     }
 
     // 1. Fetch available target sites from inventory
@@ -73,8 +72,7 @@ export async function POST(request: NextRequest) {
       return b.da - a.da
     })
 
-    // 1d. Select the top N target sites
-    const targetSites = sitesWithUsage.slice(0, targetSitesCount)
+    // We don't slice targetSites globally anymore, we do it per target later.
 
     // 2. Create the parent Campaign
     const finalCampaignName = campaignName || `${templateName} for ${clientName} (${submissionType})`
@@ -109,44 +107,43 @@ export async function POST(request: NextRequest) {
 
     if (parentTaskError) throw parentTaskError
 
-    // 3. Fetch keywords
-    const { data: keywords, error: keywordsError } = await adminClient
-      .from('keywords')
-      .select('*')
-      .eq('client_id', clientId)
-
-    if (keywordsError) throw keywordsError
-
-    const activeKeywords = keywords && keywords.length > 0 ? keywords : []
-    
-    if (activeKeywords.length === 0) {
-        return NextResponse.json({ error: 'No keywords found for this client.' }, { status: 400 })
-    }
-
-    // 4. Prepare task_runs
+    // 3. Prepare task_runs
     const taskRunsToInsert: any[] = []
-    targetSites.forEach((site: any) => {
-      activeKeywords.forEach((kw: any) => {
-        taskRunsToInsert.push({
-          client_id: clientId,
-          department_id: departmentId || null,
-          workflow_template_id: templateId,
-          status: 'pending',
-          current_step_index: 0,
-          state: {
-            campaign_id: (campaign as any).id,
-            task_id: (parentTask as any).id,
-            client_target_url: `https://${clientTargetUrl.trim()}`,
-            target_site: site.url,
-            category: submissionType,
-            min_da: minDa,
-            min_pa: minPa,
-            max_spam_score: maxSpamScore,
-            keyword: kw.keyword,
-          }
+    
+    for (const target of targets) {
+      const { clientTargetUrl, targetSitesCount, keywords } = target
+      
+      if (!clientTargetUrl || !keywords || keywords.length === 0) continue
+      
+      const targetSpecificSites = sitesWithUsage.slice(0, targetSitesCount || 0)
+      
+      targetSpecificSites.forEach((site: any) => {
+        keywords.forEach((kwStr: string) => {
+          taskRunsToInsert.push({
+            client_id: clientId,
+            department_id: departmentId || null,
+            workflow_template_id: templateId,
+            status: 'pending',
+            current_step_index: 0,
+            state: {
+              campaign_id: (campaign as any).id,
+              task_id: (parentTask as any).id,
+              client_target_url: clientTargetUrl.startsWith('http') ? clientTargetUrl.trim() : `https://${clientTargetUrl.trim()}`,
+              target_site: site.url,
+              category: submissionType,
+              min_da: minDa,
+              min_pa: minPa,
+              max_spam_score: maxSpamScore,
+              keyword: kwStr,
+            }
+          })
         })
       })
-    })
+    }
+    
+    if (taskRunsToInsert.length === 0) {
+      return NextResponse.json({ error: 'No task runs generated. Check targets and keywords.' }, { status: 400 })
+    }
 
     // 5. Bulk insert task_runs
     const { data: insertedTaskRuns, error: taskRunsError } = await adminClient
@@ -180,12 +177,21 @@ export async function POST(request: NextRequest) {
 
     // 6. Update usage tracking
     try {
-      const upsertUsageData = targetSites.map((s: any) => ({
-        client_id: clientId,
-        site_url: s.url,
-        usage_count: s.usage_count + 1,
-        last_used_at: new Date().toISOString()
-      }))
+      const allSitesUsed = new Set<string>()
+      targets.forEach((t: any) => {
+        const sites = sitesWithUsage.slice(0, t.targetSitesCount || 0)
+        sites.forEach((s: any) => allSitesUsed.add(s.url))
+      })
+
+      const upsertUsageData = Array.from(allSitesUsed).map(url => {
+        const siteData = sitesWithUsage.find((s: any) => s.url === url)
+        return {
+          client_id: clientId,
+          site_url: url,
+          usage_count: (siteData?.usage_count || 0) + 1,
+          last_used_at: new Date().toISOString()
+        }
+      })
 
       await adminClient
         .from('client_site_usage')

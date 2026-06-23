@@ -34,12 +34,12 @@ export default function RightSidebar() {
     if (!activeClient) return
 
     const simpleTasksRes = await supabase
-        .from('tasks')
-        .select('*')
-        .eq('client_id', activeClient.id)
-        .in('status', ['running', 'pending', 'waiting_approval'])
-        .order('created_at', { ascending: false })
-        .limit(10)
+      .from('tasks')
+      .select('*')
+      .eq('client_id', activeClient.id)
+      .in('status', ['running', 'pending', 'waiting_approval'])
+      .order('created_at', { ascending: false })
+      .limit(10)
 
     const simpleTasks = (simpleTasksRes.data ?? []).map((t: any) => ({
       ...t,
@@ -81,8 +81,8 @@ export default function RightSidebar() {
               if (exists) {
                 return prev.map((t) => t.id === payload.new.id ? { ...payload.new, workflow_templates: t.workflow_templates, is_simple_task: true } as any : t)
               } else {
-                 const newTask = { ...payload.new, workflow_templates: { name: `Campaign Task: ${payload.new.title || payload.new.type}` }, is_simple_task: true } as any
-                 return [newTask, ...prev].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 10)
+                const newTask = { ...payload.new, workflow_templates: { name: `Campaign Task: ${payload.new.title || payload.new.type}` }, is_simple_task: true } as any
+                return [newTask, ...prev].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 10)
               }
             })
           } else if (payload.eventType === 'DELETE') {
@@ -225,7 +225,7 @@ export default function RightSidebar() {
         <div className="flex items-start gap-2 text-orange-600 dark:text-orange-400">
           <Info className="w-4 h-4 shrink-0 mt-0.5" />
           <p className="text-[11px] font-medium leading-relaxed">
-            We're currently in beta testing. Some tasks may fail.
+            Beta Testing. If you have any improvement suggestions contact <span className="font-semibold">Pranav</span>
           </p>
         </div>
       </div>

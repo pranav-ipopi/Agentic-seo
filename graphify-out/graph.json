@@ -4,14 +4,94 @@
   "graph": {},
   "nodes": [
     {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "retry_route",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "retry_route_post",
+      "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "dashboard_layout",
+      "community": 31,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "dashboard_layout_metadata",
+      "community": 31,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "DashboardLayout()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "dashboard_layout_dashboardlayout",
+      "community": 31,
+      "norm_label": "dashboardlayout()"
+    },
+    {
+      "label": "RightSidebar.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "sidebar_rightsidebar",
+      "community": 31,
+      "norm_label": "rightsidebar.tsx"
+    },
+    {
+      "label": "TaskRunExtended",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "sidebar_rightsidebar_taskrunextended",
+      "community": 31,
+      "norm_label": "taskrunextended"
+    },
+    {
+      "label": "RightSidebar()",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "sidebar_rightsidebar_rightsidebar",
+      "community": 31,
+      "norm_label": "rightsidebar()"
+    },
+    {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "rules_graphify",
       "community": 80,
-      "norm_label": "graphify.md"
+      "norm_label": "graphify.md",
+      "id": "rules_graphify"
     },
     {
       "label": "graphify",
@@ -19,9 +99,9 @@
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "rules_graphify_graphify",
       "community": 80,
-      "norm_label": "graphify"
+      "norm_label": "graphify",
+      "id": "rules_graphify_graphify"
     },
     {
       "label": "ponytail.md",
@@ -29,9 +109,9 @@
       "source_file": ".agents/rules/ponytail.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "rules_ponytail",
       "community": 104,
-      "norm_label": "ponytail.md"
+      "norm_label": "ponytail.md",
+      "id": "rules_ponytail"
     },
     {
       "label": "ponytail",
@@ -39,9 +119,9 @@
       "source_file": ".agents/rules/ponytail.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "rules_ponytail_ponytail",
       "community": 104,
-      "norm_label": "ponytail"
+      "norm_label": "ponytail",
+      "id": "rules_ponytail_ponytail"
     },
     {
       "label": "SKILL.md",
@@ -49,9 +129,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "graphify_skill",
       "community": 5,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "graphify_skill"
     },
     {
       "label": "/graphify",
@@ -59,9 +139,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "graphify_skill_graphify",
       "community": 5,
-      "norm_label": "/graphify"
+      "norm_label": "/graphify",
+      "id": "graphify_skill_graphify"
     },
     {
       "label": "Usage",
@@ -69,9 +149,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "graphify_skill_usage",
       "community": 5,
-      "norm_label": "usage"
+      "norm_label": "usage",
+      "id": "graphify_skill_usage"
     },
     {
       "label": "What graphify is for",
@@ -79,9 +159,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "graphify_skill_what_graphify_is_for",
       "community": 5,
-      "norm_label": "what graphify is for"
+      "norm_label": "what graphify is for",
+      "id": "graphify_skill_what_graphify_is_for"
     },
     {
       "label": "What You Must Do When Invoked",
@@ -89,9 +169,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "graphify_skill_what_you_must_do_when_invoked",
       "community": 5,
-      "norm_label": "what you must do when invoked"
+      "norm_label": "what you must do when invoked",
+      "id": "graphify_skill_what_you_must_do_when_invoked"
     },
     {
       "label": "Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)",
@@ -99,9 +179,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L61",
       "_origin": "ast",
-      "id": "graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths",
       "community": 5,
-      "norm_label": "step 0 - github repos and multi-path merge (only if a url or several paths)"
+      "norm_label": "step 0 - github repos and multi-path merge (only if a url or several paths)",
+      "id": "graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths"
     },
     {
       "label": "Step 1 - Ensure graphify is installed",
@@ -109,9 +189,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L65",
       "_origin": "ast",
-      "id": "graphify_skill_step_1_ensure_graphify_is_installed",
       "community": 5,
-      "norm_label": "step 1 - ensure graphify is installed"
+      "norm_label": "step 1 - ensure graphify is installed",
+      "id": "graphify_skill_step_1_ensure_graphify_is_installed"
     },
     {
       "label": "Step 2 - Detect files",
@@ -119,9 +199,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L107",
       "_origin": "ast",
-      "id": "graphify_skill_step_2_detect_files",
       "community": 5,
-      "norm_label": "step 2 - detect files"
+      "norm_label": "step 2 - detect files",
+      "id": "graphify_skill_step_2_detect_files"
     },
     {
       "label": "Step 2.5 - Video and audio (only if video files detected)",
@@ -129,9 +209,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L144",
       "_origin": "ast",
-      "id": "graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected",
       "community": 5,
-      "norm_label": "step 2.5 - video and audio (only if video files detected)"
+      "norm_label": "step 2.5 - video and audio (only if video files detected)",
+      "id": "graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected"
     },
     {
       "label": "Step 3 - Extract entities and relationships",
@@ -139,9 +219,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L148",
       "_origin": "ast",
-      "id": "graphify_skill_step_3_extract_entities_and_relationships",
       "community": 5,
-      "norm_label": "step 3 - extract entities and relationships"
+      "norm_label": "step 3 - extract entities and relationships",
+      "id": "graphify_skill_step_3_extract_entities_and_relationships"
     },
     {
       "label": "Part A - Structural extraction for code files",
@@ -149,9 +229,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L165",
       "_origin": "ast",
-      "id": "graphify_skill_part_a_structural_extraction_for_code_files",
       "community": 5,
-      "norm_label": "part a - structural extraction for code files"
+      "norm_label": "part a - structural extraction for code files",
+      "id": "graphify_skill_part_a_structural_extraction_for_code_files"
     },
     {
       "label": "Part B - Semantic extraction (parallel subagents)",
@@ -159,9 +239,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L191",
       "_origin": "ast",
-      "id": "graphify_skill_part_b_semantic_extraction_parallel_subagents",
       "community": 5,
-      "norm_label": "part b - semantic extraction (parallel subagents)"
+      "norm_label": "part b - semantic extraction (parallel subagents)",
+      "id": "graphify_skill_part_b_semantic_extraction_parallel_subagents"
     },
     {
       "label": "Part C - Merge AST + semantic into final extraction",
@@ -169,9 +249,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L351",
       "_origin": "ast",
-      "id": "graphify_skill_part_c_merge_ast_semantic_into_final_extraction",
       "community": 5,
-      "norm_label": "part c - merge ast + semantic into final extraction"
+      "norm_label": "part c - merge ast + semantic into final extraction",
+      "id": "graphify_skill_part_c_merge_ast_semantic_into_final_extraction"
     },
     {
       "label": "Step 4 - Build graph, cluster, analyze, generate outputs",
@@ -179,9 +259,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L385",
       "_origin": "ast",
-      "id": "graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs",
       "community": 5,
-      "norm_label": "step 4 - build graph, cluster, analyze, generate outputs"
+      "norm_label": "step 4 - build graph, cluster, analyze, generate outputs",
+      "id": "graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs"
     },
     {
       "label": "Step 4.5 - Graph health check (read-only integrity gate)",
@@ -189,9 +269,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L448",
       "_origin": "ast",
-      "id": "graphify_skill_step_4_5_graph_health_check_read_only_integrity_gate",
       "community": 5,
-      "norm_label": "step 4.5 - graph health check (read-only integrity gate)"
+      "norm_label": "step 4.5 - graph health check (read-only integrity gate)",
+      "id": "graphify_skill_step_4_5_graph_health_check_read_only_integrity_gate"
     },
     {
       "label": "Step 5 - Label communities",
@@ -199,9 +279,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L474",
       "_origin": "ast",
-      "id": "graphify_skill_step_5_label_communities",
       "community": 5,
-      "norm_label": "step 5 - label communities"
+      "norm_label": "step 5 - label communities",
+      "id": "graphify_skill_step_5_label_communities"
     },
     {
       "label": "Step 6 - Generate Obsidian vault (opt-in) + HTML",
@@ -209,9 +289,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L515",
       "_origin": "ast",
-      "id": "graphify_skill_step_6_generate_obsidian_vault_opt_in_html",
       "community": 5,
-      "norm_label": "step 6 - generate obsidian vault (opt-in) + html"
+      "norm_label": "step 6 - generate obsidian vault (opt-in) + html",
+      "id": "graphify_skill_step_6_generate_obsidian_vault_opt_in_html"
     },
     {
       "label": "Steps 6b-8 - Wiki, Neo4j, FalkorDB, SVG, GraphML, MCP, benchmark (only on their flags)",
@@ -219,9 +299,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L535",
       "_origin": "ast",
-      "id": "graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags",
       "community": 5,
-      "norm_label": "steps 6b-8 - wiki, neo4j, falkordb, svg, graphml, mcp, benchmark (only on their flags)"
+      "norm_label": "steps 6b-8 - wiki, neo4j, falkordb, svg, graphml, mcp, benchmark (only on their flags)",
+      "id": "graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags"
     },
     {
       "label": "Step 9 - Save manifest, update cost tracker, clean up, and report",
@@ -229,9 +309,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L541",
       "_origin": "ast",
-      "id": "graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report",
       "community": 5,
-      "norm_label": "step 9 - save manifest, update cost tracker, clean up, and report"
+      "norm_label": "step 9 - save manifest, update cost tracker, clean up, and report",
+      "id": "graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report"
     },
     {
       "label": "Interpreter guard for subcommands",
@@ -239,9 +319,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L621",
       "_origin": "ast",
-      "id": "graphify_skill_interpreter_guard_for_subcommands",
       "community": 5,
-      "norm_label": "interpreter guard for subcommands"
+      "norm_label": "interpreter guard for subcommands",
+      "id": "graphify_skill_interpreter_guard_for_subcommands"
     },
     {
       "label": "For --update and --cluster-only",
@@ -249,9 +329,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L639",
       "_origin": "ast",
-      "id": "graphify_skill_for_update_and_cluster_only",
       "community": 5,
-      "norm_label": "for --update and --cluster-only"
+      "norm_label": "for --update and --cluster-only",
+      "id": "graphify_skill_for_update_and_cluster_only"
     },
     {
       "label": "For /graphify query",
@@ -259,9 +339,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L645",
       "_origin": "ast",
-      "id": "graphify_skill_for_graphify_query",
       "community": 5,
-      "norm_label": "for /graphify query"
+      "norm_label": "for /graphify query",
+      "id": "graphify_skill_for_graphify_query"
     },
     {
       "label": "For /graphify add and --watch",
@@ -269,9 +349,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L657",
       "_origin": "ast",
-      "id": "graphify_skill_for_graphify_add_and_watch",
       "community": 5,
-      "norm_label": "for /graphify add and --watch"
+      "norm_label": "for /graphify add and --watch",
+      "id": "graphify_skill_for_graphify_add_and_watch"
     },
     {
       "label": "For the commit hook and native CLAUDE.md integration",
@@ -279,9 +359,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L663",
       "_origin": "ast",
-      "id": "graphify_skill_for_the_commit_hook_and_native_claude_md_integration",
       "community": 5,
-      "norm_label": "for the commit hook and native claude.md integration"
+      "norm_label": "for the commit hook and native claude.md integration",
+      "id": "graphify_skill_for_the_commit_hook_and_native_claude_md_integration"
     },
     {
       "label": "Honesty Rules",
@@ -289,9 +369,9 @@
       "source_file": ".agents/skills/graphify/SKILL.md",
       "source_location": "L669",
       "_origin": "ast",
-      "id": "graphify_skill_honesty_rules",
       "community": 5,
-      "norm_label": "honesty rules"
+      "norm_label": "honesty rules",
+      "id": "graphify_skill_honesty_rules"
     },
     {
       "label": "add-watch.md",
@@ -299,9 +379,9 @@
       "source_file": ".agents/skills/graphify/references/add-watch.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_add_watch",
       "community": 52,
-      "norm_label": "add-watch.md"
+      "norm_label": "add-watch.md",
+      "id": "references_add_watch"
     },
     {
       "label": "graphify reference: add a URL and watch a folder",
@@ -309,9 +389,9 @@
       "source_file": ".agents/skills/graphify/references/add-watch.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
       "community": 52,
-      "norm_label": "graphify reference: add a url and watch a folder"
+      "norm_label": "graphify reference: add a url and watch a folder",
+      "id": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder"
     },
     {
       "label": "For /graphify add",
@@ -319,9 +399,9 @@
       "source_file": ".agents/skills/graphify/references/add-watch.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_add_watch_for_graphify_add",
       "community": 52,
-      "norm_label": "for /graphify add"
+      "norm_label": "for /graphify add",
+      "id": "references_add_watch_for_graphify_add"
     },
     {
       "label": "For --watch",
@@ -329,9 +409,9 @@
       "source_file": ".agents/skills/graphify/references/add-watch.md",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "references_add_watch_for_watch",
       "community": 52,
-      "norm_label": "for --watch"
+      "norm_label": "for --watch",
+      "id": "references_add_watch_for_watch"
     },
     {
       "label": "exports.md",
@@ -339,9 +419,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_exports",
       "community": 39,
-      "norm_label": "exports.md"
+      "norm_label": "exports.md",
+      "id": "references_exports"
     },
     {
       "label": "graphify reference: extra exports and benchmark",
@@ -349,9 +429,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_exports_graphify_reference_extra_exports_and_benchmark",
       "community": 39,
-      "norm_label": "graphify reference: extra exports and benchmark"
+      "norm_label": "graphify reference: extra exports and benchmark",
+      "id": "references_exports_graphify_reference_extra_exports_and_benchmark"
     },
     {
       "label": "Step 6b - Wiki (only if --wiki flag)",
@@ -359,9 +439,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_exports_step_6b_wiki_only_if_wiki_flag",
       "community": 39,
-      "norm_label": "step 6b - wiki (only if --wiki flag)"
+      "norm_label": "step 6b - wiki (only if --wiki flag)",
+      "id": "references_exports_step_6b_wiki_only_if_wiki_flag"
     },
     {
       "label": "Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag)",
@@ -369,9 +449,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag",
       "community": 39,
-      "norm_label": "step 7 - neo4j export (only if --neo4j or --neo4j-push flag)"
+      "norm_label": "step 7 - neo4j export (only if --neo4j or --neo4j-push flag)",
+      "id": "references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag"
     },
     {
       "label": "Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag)",
@@ -379,9 +459,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag",
       "community": 39,
-      "norm_label": "step 7a - falkordb export (only if --falkordb or --falkordb-push flag)"
+      "norm_label": "step 7a - falkordb export (only if --falkordb or --falkordb-push flag)",
+      "id": "references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag"
     },
     {
       "label": "Step 7b - SVG export (only if --svg flag)",
@@ -389,9 +469,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "references_exports_step_7b_svg_export_only_if_svg_flag",
       "community": 39,
-      "norm_label": "step 7b - svg export (only if --svg flag)"
+      "norm_label": "step 7b - svg export (only if --svg flag)",
+      "id": "references_exports_step_7b_svg_export_only_if_svg_flag"
     },
     {
       "label": "Step 7c - GraphML export (only if --graphml flag)",
@@ -399,9 +479,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "references_exports_step_7c_graphml_export_only_if_graphml_flag",
       "community": 39,
-      "norm_label": "step 7c - graphml export (only if --graphml flag)"
+      "norm_label": "step 7c - graphml export (only if --graphml flag)",
+      "id": "references_exports_step_7c_graphml_export_only_if_graphml_flag"
     },
     {
       "label": "Step 7d - MCP server (only if --mcp flag)",
@@ -409,9 +489,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "references_exports_step_7d_mcp_server_only_if_mcp_flag",
       "community": 39,
-      "norm_label": "step 7d - mcp server (only if --mcp flag)"
+      "norm_label": "step 7d - mcp server (only if --mcp flag)",
+      "id": "references_exports_step_7d_mcp_server_only_if_mcp_flag"
     },
     {
       "label": "Step 8 - Token reduction benchmark (only if total_words > 5000)",
@@ -419,9 +499,9 @@
       "source_file": ".agents/skills/graphify/references/exports.md",
       "source_location": "L79",
       "_origin": "ast",
-      "id": "references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000",
       "community": 39,
-      "norm_label": "step 8 - token reduction benchmark (only if total_words > 5000)"
+      "norm_label": "step 8 - token reduction benchmark (only if total_words > 5000)",
+      "id": "references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000"
     },
     {
       "label": "extraction-spec.md",
@@ -429,9 +509,9 @@
       "source_file": ".agents/skills/graphify/references/extraction-spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_extraction_spec",
       "community": 79,
-      "norm_label": "extraction-spec.md"
+      "norm_label": "extraction-spec.md",
+      "id": "references_extraction_spec"
     },
     {
       "label": "graphify reference: extraction subagent prompt",
@@ -439,9 +519,9 @@
       "source_file": ".agents/skills/graphify/references/extraction-spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_extraction_spec_graphify_reference_extraction_subagent_prompt",
       "community": 79,
-      "norm_label": "graphify reference: extraction subagent prompt"
+      "norm_label": "graphify reference: extraction subagent prompt",
+      "id": "references_extraction_spec_graphify_reference_extraction_subagent_prompt"
     },
     {
       "label": "github-and-merge.md",
@@ -449,9 +529,9 @@
       "source_file": ".agents/skills/graphify/references/github-and-merge.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_github_and_merge",
       "community": 61,
-      "norm_label": "github-and-merge.md"
+      "norm_label": "github-and-merge.md",
+      "id": "references_github_and_merge"
     },
     {
       "label": "graphify reference: GitHub clone and cross-repo merge",
@@ -459,9 +539,9 @@
       "source_file": ".agents/skills/graphify/references/github-and-merge.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
       "community": 61,
-      "norm_label": "graphify reference: github clone and cross-repo merge"
+      "norm_label": "graphify reference: github clone and cross-repo merge",
+      "id": "references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge"
     },
     {
       "label": "Step 0 - Clone GitHub repo(s) (only if a GitHub URL was given)",
@@ -469,9 +549,9 @@
       "source_file": ".agents/skills/graphify/references/github-and-merge.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given",
       "community": 61,
-      "norm_label": "step 0 - clone github repo(s) (only if a github url was given)"
+      "norm_label": "step 0 - clone github repo(s) (only if a github url was given)",
+      "id": "references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given"
     },
     {
       "label": "hooks.md",
@@ -479,9 +559,9 @@
       "source_file": ".agents/skills/graphify/references/hooks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_hooks",
       "community": 53,
-      "norm_label": "hooks.md"
+      "norm_label": "hooks.md",
+      "id": "references_hooks"
     },
     {
       "label": "graphify reference: commit hook and native CLAUDE.md integration",
@@ -489,9 +569,9 @@
       "source_file": ".agents/skills/graphify/references/hooks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration",
       "community": 53,
-      "norm_label": "graphify reference: commit hook and native claude.md integration"
+      "norm_label": "graphify reference: commit hook and native claude.md integration",
+      "id": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration"
     },
     {
       "label": "For git commit hook",
@@ -499,9 +579,9 @@
       "source_file": ".agents/skills/graphify/references/hooks.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_hooks_for_git_commit_hook",
       "community": 53,
-      "norm_label": "for git commit hook"
+      "norm_label": "for git commit hook",
+      "id": "references_hooks_for_git_commit_hook"
     },
     {
       "label": "For native CLAUDE.md integration",
@@ -509,9 +589,9 @@
       "source_file": ".agents/skills/graphify/references/hooks.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "references_hooks_for_native_claude_md_integration",
       "community": 53,
-      "norm_label": "for native claude.md integration"
+      "norm_label": "for native claude.md integration",
+      "id": "references_hooks_for_native_claude_md_integration"
     },
     {
       "label": "query.md",
@@ -519,9 +599,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_query",
       "community": 49,
-      "norm_label": "query.md"
+      "norm_label": "query.md",
+      "id": "references_query"
     },
     {
       "label": "graphify reference: query, path, explain",
@@ -529,9 +609,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_query_graphify_reference_query_path_explain",
       "community": 49,
-      "norm_label": "graphify reference: query, path, explain"
+      "norm_label": "graphify reference: query, path, explain",
+      "id": "references_query_graphify_reference_query_path_explain"
     },
     {
       "label": "Step 0 \u2014 Constrained query expansion (REQUIRED before traversal)",
@@ -539,9 +619,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "references_query_step_0_constrained_query_expansion_required_before_traversal",
       "community": 49,
-      "norm_label": "step 0 \u2014 constrained query expansion (required before traversal)"
+      "norm_label": "step 0 \u2014 constrained query expansion (required before traversal)",
+      "id": "references_query_step_0_constrained_query_expansion_required_before_traversal"
     },
     {
       "label": "Step 1 \u2014 Traversal",
@@ -549,9 +629,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L61",
       "_origin": "ast",
-      "id": "references_query_step_1_traversal",
       "community": 49,
-      "norm_label": "step 1 \u2014 traversal"
+      "norm_label": "step 1 \u2014 traversal",
+      "id": "references_query_step_1_traversal"
     },
     {
       "label": "For /graphify path",
@@ -559,9 +639,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L178",
       "_origin": "ast",
-      "id": "references_query_for_graphify_path",
       "community": 49,
-      "norm_label": "for /graphify path"
+      "norm_label": "for /graphify path",
+      "id": "references_query_for_graphify_path"
     },
     {
       "label": "For /graphify explain",
@@ -569,9 +649,9 @@
       "source_file": ".agents/skills/graphify/references/query.md",
       "source_location": "L246",
       "_origin": "ast",
-      "id": "references_query_for_graphify_explain",
       "community": 49,
-      "norm_label": "for /graphify explain"
+      "norm_label": "for /graphify explain",
+      "id": "references_query_for_graphify_explain"
     },
     {
       "label": "transcribe.md",
@@ -579,9 +659,9 @@
       "source_file": ".agents/skills/graphify/references/transcribe.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_transcribe",
       "community": 62,
-      "norm_label": "transcribe.md"
+      "norm_label": "transcribe.md",
+      "id": "references_transcribe"
     },
     {
       "label": "graphify reference: transcribe video and audio",
@@ -589,9 +669,9 @@
       "source_file": ".agents/skills/graphify/references/transcribe.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_transcribe_graphify_reference_transcribe_video_and_audio",
       "community": 62,
-      "norm_label": "graphify reference: transcribe video and audio"
+      "norm_label": "graphify reference: transcribe video and audio",
+      "id": "references_transcribe_graphify_reference_transcribe_video_and_audio"
     },
     {
       "label": "Step 2.5 - Transcribe video / audio files (only if video files detected)",
@@ -599,9 +679,9 @@
       "source_file": ".agents/skills/graphify/references/transcribe.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected",
       "community": 62,
-      "norm_label": "step 2.5 - transcribe video / audio files (only if video files detected)"
+      "norm_label": "step 2.5 - transcribe video / audio files (only if video files detected)",
+      "id": "references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected"
     },
     {
       "label": "update.md",
@@ -609,9 +689,9 @@
       "source_file": ".agents/skills/graphify/references/update.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_update",
       "community": 54,
-      "norm_label": "update.md"
+      "norm_label": "update.md",
+      "id": "references_update"
     },
     {
       "label": "graphify reference: incremental update and cluster-only",
@@ -619,9 +699,9 @@
       "source_file": ".agents/skills/graphify/references/update.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "references_update_graphify_reference_incremental_update_and_cluster_only",
       "community": 54,
-      "norm_label": "graphify reference: incremental update and cluster-only"
+      "norm_label": "graphify reference: incremental update and cluster-only",
+      "id": "references_update_graphify_reference_incremental_update_and_cluster_only"
     },
     {
       "label": "For --update (incremental re-extraction)",
@@ -629,9 +709,9 @@
       "source_file": ".agents/skills/graphify/references/update.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "references_update_for_update_incremental_re_extraction",
       "community": 54,
-      "norm_label": "for --update (incremental re-extraction)"
+      "norm_label": "for --update (incremental re-extraction)",
+      "id": "references_update_for_update_incremental_re_extraction"
     },
     {
       "label": "For --cluster-only",
@@ -639,9 +719,9 @@
       "source_file": ".agents/skills/graphify/references/update.md",
       "source_location": "L184",
       "_origin": "ast",
-      "id": "references_update_for_cluster_only",
       "community": 54,
-      "norm_label": "for --cluster-only"
+      "norm_label": "for --cluster-only",
+      "id": "references_update_for_cluster_only"
     },
     {
       "label": "SKILL.md",
@@ -649,9 +729,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_audit_skill",
       "community": 99,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_audit_skill"
     },
     {
       "label": "Tags",
@@ -659,9 +739,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "ponytail_audit_skill_tags",
       "community": 99,
-      "norm_label": "tags"
+      "norm_label": "tags",
+      "id": "ponytail_audit_skill_tags"
     },
     {
       "label": "Hunt",
@@ -669,9 +749,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "ponytail_audit_skill_hunt",
       "community": 99,
-      "norm_label": "hunt"
+      "norm_label": "hunt",
+      "id": "ponytail_audit_skill_hunt"
     },
     {
       "label": "Output",
@@ -679,9 +759,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "ponytail_audit_skill_output",
       "community": 99,
-      "norm_label": "output"
+      "norm_label": "output",
+      "id": "ponytail_audit_skill_output"
     },
     {
       "label": "Boundaries",
@@ -689,9 +769,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "ponytail_audit_skill_boundaries",
       "community": 99,
-      "norm_label": "boundaries"
+      "norm_label": "boundaries",
+      "id": "ponytail_audit_skill_boundaries"
     },
     {
       "label": "SKILL.md",
@@ -699,9 +779,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_debt_skill",
       "community": 102,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_debt_skill"
     },
     {
       "label": "Scan",
@@ -709,9 +789,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "ponytail_debt_skill_scan",
       "community": 102,
-      "norm_label": "scan"
+      "norm_label": "scan",
+      "id": "ponytail_debt_skill_scan"
     },
     {
       "label": "Output",
@@ -719,9 +799,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "ponytail_debt_skill_output",
       "community": 102,
-      "norm_label": "output"
+      "norm_label": "output",
+      "id": "ponytail_debt_skill_output"
     },
     {
       "label": "Boundaries",
@@ -729,9 +809,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "ponytail_debt_skill_boundaries",
       "community": 102,
-      "norm_label": "boundaries"
+      "norm_label": "boundaries",
+      "id": "ponytail_debt_skill_boundaries"
     },
     {
       "label": "SKILL.md",
@@ -739,9 +819,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_gain_skill",
       "community": 100,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_gain_skill"
     },
     {
       "label": "Ponytail Gain",
@@ -749,9 +829,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "ponytail_gain_skill_ponytail_gain",
       "community": 100,
-      "norm_label": "ponytail gain"
+      "norm_label": "ponytail gain",
+      "id": "ponytail_gain_skill_ponytail_gain"
     },
     {
       "label": "Scoreboard",
@@ -759,9 +839,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "ponytail_gain_skill_scoreboard",
       "community": 100,
-      "norm_label": "scoreboard"
+      "norm_label": "scoreboard",
+      "id": "ponytail_gain_skill_scoreboard"
     },
     {
       "label": "Honesty boundary",
@@ -769,9 +849,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "ponytail_gain_skill_honesty_boundary",
       "community": 100,
-      "norm_label": "honesty boundary"
+      "norm_label": "honesty boundary",
+      "id": "ponytail_gain_skill_honesty_boundary"
     },
     {
       "label": "Boundaries",
@@ -779,9 +859,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "ponytail_gain_skill_boundaries",
       "community": 100,
-      "norm_label": "boundaries"
+      "norm_label": "boundaries",
+      "id": "ponytail_gain_skill_boundaries"
     },
     {
       "label": "SKILL.md",
@@ -789,9 +869,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_help_skill",
       "community": 95,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_help_skill"
     },
     {
       "label": "Ponytail Help",
@@ -799,9 +879,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "ponytail_help_skill_ponytail_help",
       "community": 95,
-      "norm_label": "ponytail help"
+      "norm_label": "ponytail help",
+      "id": "ponytail_help_skill_ponytail_help"
     },
     {
       "label": "Levels",
@@ -809,9 +889,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "ponytail_help_skill_levels",
       "community": 95,
-      "norm_label": "levels"
+      "norm_label": "levels",
+      "id": "ponytail_help_skill_levels"
     },
     {
       "label": "Skills",
@@ -819,9 +899,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "ponytail_help_skill_skills",
       "community": 95,
-      "norm_label": "skills"
+      "norm_label": "skills",
+      "id": "ponytail_help_skill_skills"
     },
     {
       "label": "Deactivate",
@@ -829,9 +909,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "ponytail_help_skill_deactivate",
       "community": 95,
-      "norm_label": "deactivate"
+      "norm_label": "deactivate",
+      "id": "ponytail_help_skill_deactivate"
     },
     {
       "label": "Configure Default Mode",
@@ -839,9 +919,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "ponytail_help_skill_configure_default_mode",
       "community": 95,
-      "norm_label": "configure default mode"
+      "norm_label": "configure default mode",
+      "id": "ponytail_help_skill_configure_default_mode"
     },
     {
       "label": "Update",
@@ -849,9 +929,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L61",
       "_origin": "ast",
-      "id": "ponytail_help_skill_update",
       "community": 95,
-      "norm_label": "update"
+      "norm_label": "update",
+      "id": "ponytail_help_skill_update"
     },
     {
       "label": "More",
@@ -859,9 +939,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "ponytail_help_skill_more",
       "community": 95,
-      "norm_label": "more"
+      "norm_label": "more",
+      "id": "ponytail_help_skill_more"
     },
     {
       "label": "SKILL.md",
@@ -869,9 +949,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_review_skill",
       "community": 101,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_review_skill"
     },
     {
       "label": "Format",
@@ -879,9 +959,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "ponytail_review_skill_format",
       "community": 101,
-      "norm_label": "format"
+      "norm_label": "format",
+      "id": "ponytail_review_skill_format"
     },
     {
       "label": "Examples",
@@ -889,9 +969,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "ponytail_review_skill_examples",
       "community": 101,
-      "norm_label": "examples"
+      "norm_label": "examples",
+      "id": "ponytail_review_skill_examples"
     },
     {
       "label": "Scoring",
@@ -899,9 +979,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "ponytail_review_skill_scoring",
       "community": 101,
-      "norm_label": "scoring"
+      "norm_label": "scoring",
+      "id": "ponytail_review_skill_scoring"
     },
     {
       "label": "Boundaries",
@@ -909,9 +989,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "ponytail_review_skill_boundaries",
       "community": 101,
-      "norm_label": "boundaries"
+      "norm_label": "boundaries",
+      "id": "ponytail_review_skill_boundaries"
     },
     {
       "label": "SKILL.md",
@@ -919,9 +999,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ponytail_skill",
       "community": 92,
-      "norm_label": "skill.md"
+      "norm_label": "skill.md",
+      "id": "ponytail_skill"
     },
     {
       "label": "Ponytail",
@@ -929,9 +1009,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "ponytail_skill_ponytail",
       "community": 92,
-      "norm_label": "ponytail"
+      "norm_label": "ponytail",
+      "id": "ponytail_skill_ponytail"
     },
     {
       "label": "Persistence",
@@ -939,9 +1019,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "ponytail_skill_persistence",
       "community": 92,
-      "norm_label": "persistence"
+      "norm_label": "persistence",
+      "id": "ponytail_skill_persistence"
     },
     {
       "label": "The ladder",
@@ -949,9 +1029,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "ponytail_skill_the_ladder",
       "community": 92,
-      "norm_label": "the ladder"
+      "norm_label": "the ladder",
+      "id": "ponytail_skill_the_ladder"
     },
     {
       "label": "Rules",
@@ -959,9 +1039,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "ponytail_skill_rules",
       "community": 92,
-      "norm_label": "rules"
+      "norm_label": "rules",
+      "id": "ponytail_skill_rules"
     },
     {
       "label": "Output",
@@ -969,9 +1049,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "ponytail_skill_output",
       "community": 92,
-      "norm_label": "output"
+      "norm_label": "output",
+      "id": "ponytail_skill_output"
     },
     {
       "label": "Intensity",
@@ -979,9 +1059,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "ponytail_skill_intensity",
       "community": 92,
-      "norm_label": "intensity"
+      "norm_label": "intensity",
+      "id": "ponytail_skill_intensity"
     },
     {
       "label": "When NOT to be lazy",
@@ -989,9 +1069,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L87",
       "_origin": "ast",
-      "id": "ponytail_skill_when_not_to_be_lazy",
       "community": 92,
-      "norm_label": "when not to be lazy"
+      "norm_label": "when not to be lazy",
+      "id": "ponytail_skill_when_not_to_be_lazy"
     },
     {
       "label": "Boundaries",
@@ -999,9 +1079,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L111",
       "_origin": "ast",
-      "id": "ponytail_skill_boundaries",
       "community": 92,
-      "norm_label": "boundaries"
+      "norm_label": "boundaries",
+      "id": "ponytail_skill_boundaries"
     },
     {
       "label": "graphify.md",
@@ -1009,9 +1089,9 @@
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "workflows_graphify",
       "community": 84,
-      "norm_label": "graphify.md"
+      "norm_label": "graphify.md",
+      "id": "workflows_graphify"
     },
     {
       "label": "Workflow: graphify",
@@ -1019,9 +1099,9 @@
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "workflows_graphify_workflow_graphify",
       "community": 84,
-      "norm_label": "workflow: graphify"
+      "norm_label": "workflow: graphify",
+      "id": "workflows_graphify_workflow_graphify"
     },
     {
       "label": "graphify_setup.md",
@@ -1029,9 +1109,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_graphify_setup",
       "community": 47,
-      "norm_label": "graphify_setup.md"
+      "norm_label": "graphify_setup.md",
+      "id": "docs_graphify_setup"
     },
     {
       "label": "Graphify Setup & Usage Guide",
@@ -1039,9 +1119,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_graphify_setup_graphify_setup_usage_guide",
       "community": 47,
-      "norm_label": "graphify setup & usage guide"
+      "norm_label": "graphify setup & usage guide",
+      "id": "docs_graphify_setup_graphify_setup_usage_guide"
     },
     {
       "label": "What is Graphify?",
@@ -1049,9 +1129,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "docs_graphify_setup_what_is_graphify",
       "community": 47,
-      "norm_label": "what is graphify?"
+      "norm_label": "what is graphify?",
+      "id": "docs_graphify_setup_what_is_graphify"
     },
     {
       "label": "Why is it Helpful?",
@@ -1059,9 +1139,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "docs_graphify_setup_why_is_it_helpful",
       "community": 47,
-      "norm_label": "why is it helpful?"
+      "norm_label": "why is it helpful?",
+      "id": "docs_graphify_setup_why_is_it_helpful"
     },
     {
       "label": "How the Initial Setup Was Done",
@@ -1069,9 +1149,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_graphify_setup_how_the_initial_setup_was_done",
       "community": 47,
-      "norm_label": "how the initial setup was done"
+      "norm_label": "how the initial setup was done",
+      "id": "docs_graphify_setup_how_the_initial_setup_was_done"
     },
     {
       "label": "How to Use It",
@@ -1079,9 +1159,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_graphify_setup_how_to_use_it",
       "community": 47,
-      "norm_label": "how to use it"
+      "norm_label": "how to use it",
+      "id": "docs_graphify_setup_how_to_use_it"
     },
     {
       "label": "For Developers",
@@ -1089,9 +1169,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "docs_graphify_setup_for_developers",
       "community": 47,
-      "norm_label": "for developers"
+      "norm_label": "for developers",
+      "id": "docs_graphify_setup_for_developers"
     },
     {
       "label": "Keeping It Updated",
@@ -1099,9 +1179,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "docs_graphify_setup_keeping_it_updated",
       "community": 47,
-      "norm_label": "keeping it updated"
+      "norm_label": "keeping it updated",
+      "id": "docs_graphify_setup_keeping_it_updated"
     },
     {
       "label": "AI Agent Integration",
@@ -1109,9 +1189,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "docs_graphify_setup_ai_agent_integration",
       "community": 47,
-      "norm_label": "ai agent integration"
+      "norm_label": "ai agent integration",
+      "id": "docs_graphify_setup_ai_agent_integration"
     },
     {
       "label": "layout.tsx",
@@ -1516,26 +1596,6 @@
     {
       "label": "route.ts",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "route.ts",
-      "id": "retry_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "post()",
-      "id": "retry_route_post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
       "source_file": "agentic-seo/app/api/tasks/route.ts",
       "source_location": "L1",
       "_origin": "ast",
@@ -1702,36 +1762,6 @@
       "community": 71,
       "norm_label": "chatindexpage()",
       "id": "chat_page_chatindexpage"
-    },
-    {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "layout.tsx",
-      "id": "dashboard_layout"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "metadata",
-      "id": "dashboard_layout_metadata"
-    },
-    {
-      "label": "DashboardLayout()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "dashboardlayout()",
-      "id": "dashboard_layout_dashboardlayout"
     },
     {
       "label": "loading.tsx",
@@ -2372,36 +2402,6 @@
       "community": 98,
       "norm_label": "leftsidebar()",
       "id": "sidebar_leftsidebar_leftsidebar"
-    },
-    {
-      "label": "RightSidebar.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "rightsidebar.tsx",
-      "id": "sidebar_rightsidebar"
-    },
-    {
-      "label": "TaskRunExtended",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "taskrunextended",
-      "id": "sidebar_rightsidebar_taskrunextended"
-    },
-    {
-      "label": "RightSidebar()",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "rightsidebar()",
-      "id": "sidebar_rightsidebar_rightsidebar"
     },
     {
       "label": "AnimatedTerminal.tsx",
@@ -9658,6 +9658,331 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "retry_route_post"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "dashboard_layout_dashboardlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "dashboard_layout_metadata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "layout_clientprovider_clientprovider"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "sidebar_leftsidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "sidebar_rightsidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "dashboard_layout_dashboardlayout",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "lib_utils_formatrelativetime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "sidebar_rightsidebar_rightsidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "sidebar_rightsidebar_taskrunextended"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types_task"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "sidebar_rightsidebar_rightsidebar",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "sidebar_rightsidebar_rightsidebar",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "sidebar_rightsidebar_rightsidebar",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -9671,9 +9996,9 @@
       "source_file": ".agents/rules/ponytail.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "rules_ponytail",
-      "target": "rules_ponytail_ponytail",
-      "confidence_score": 1.0
+      "target": "rules_ponytail_ponytail"
     },
     {
       "relation": "contains",
@@ -10191,9 +10516,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_audit_skill",
-      "target": "ponytail_audit_skill_boundaries",
-      "confidence_score": 1.0
+      "target": "ponytail_audit_skill_boundaries"
     },
     {
       "relation": "contains",
@@ -10201,9 +10526,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_audit_skill",
-      "target": "ponytail_audit_skill_hunt",
-      "confidence_score": 1.0
+      "target": "ponytail_audit_skill_hunt"
     },
     {
       "relation": "contains",
@@ -10211,9 +10536,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_audit_skill",
-      "target": "ponytail_audit_skill_output",
-      "confidence_score": 1.0
+      "target": "ponytail_audit_skill_output"
     },
     {
       "relation": "contains",
@@ -10221,9 +10546,9 @@
       "source_file": ".agents/skills/ponytail-audit/SKILL.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_audit_skill",
-      "target": "ponytail_audit_skill_tags",
-      "confidence_score": 1.0
+      "target": "ponytail_audit_skill_tags"
     },
     {
       "relation": "contains",
@@ -10231,9 +10556,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_debt_skill",
-      "target": "ponytail_debt_skill_boundaries",
-      "confidence_score": 1.0
+      "target": "ponytail_debt_skill_boundaries"
     },
     {
       "relation": "contains",
@@ -10241,9 +10566,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_debt_skill",
-      "target": "ponytail_debt_skill_output",
-      "confidence_score": 1.0
+      "target": "ponytail_debt_skill_output"
     },
     {
       "relation": "contains",
@@ -10251,9 +10576,9 @@
       "source_file": ".agents/skills/ponytail-debt/SKILL.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_debt_skill",
-      "target": "ponytail_debt_skill_scan",
-      "confidence_score": 1.0
+      "target": "ponytail_debt_skill_scan"
     },
     {
       "relation": "contains",
@@ -10261,9 +10586,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_gain_skill",
-      "target": "ponytail_gain_skill_ponytail_gain",
-      "confidence_score": 1.0
+      "target": "ponytail_gain_skill_ponytail_gain"
     },
     {
       "relation": "contains",
@@ -10271,9 +10596,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_gain_skill_ponytail_gain",
-      "target": "ponytail_gain_skill_boundaries",
-      "confidence_score": 1.0
+      "target": "ponytail_gain_skill_boundaries"
     },
     {
       "relation": "contains",
@@ -10281,9 +10606,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_gain_skill_ponytail_gain",
-      "target": "ponytail_gain_skill_honesty_boundary",
-      "confidence_score": 1.0
+      "target": "ponytail_gain_skill_honesty_boundary"
     },
     {
       "relation": "contains",
@@ -10291,9 +10616,9 @@
       "source_file": ".agents/skills/ponytail-gain/SKILL.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_gain_skill_ponytail_gain",
-      "target": "ponytail_gain_skill_scoreboard",
-      "confidence_score": 1.0
+      "target": "ponytail_gain_skill_scoreboard"
     },
     {
       "relation": "contains",
@@ -10301,9 +10626,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill",
-      "target": "ponytail_help_skill_ponytail_help",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_ponytail_help"
     },
     {
       "relation": "contains",
@@ -10311,9 +10636,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_configure_default_mode",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_configure_default_mode"
     },
     {
       "relation": "contains",
@@ -10321,9 +10646,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_deactivate",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_deactivate"
     },
     {
       "relation": "contains",
@@ -10331,9 +10656,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_levels",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_levels"
     },
     {
       "relation": "contains",
@@ -10341,9 +10666,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_more",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_more"
     },
     {
       "relation": "contains",
@@ -10351,9 +10676,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_skills",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_skills"
     },
     {
       "relation": "contains",
@@ -10361,9 +10686,9 @@
       "source_file": ".agents/skills/ponytail-help/SKILL.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_help_skill_ponytail_help",
-      "target": "ponytail_help_skill_update",
-      "confidence_score": 1.0
+      "target": "ponytail_help_skill_update"
     },
     {
       "relation": "contains",
@@ -10371,9 +10696,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_review_skill",
-      "target": "ponytail_review_skill_boundaries",
-      "confidence_score": 1.0
+      "target": "ponytail_review_skill_boundaries"
     },
     {
       "relation": "contains",
@@ -10381,9 +10706,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_review_skill",
-      "target": "ponytail_review_skill_examples",
-      "confidence_score": 1.0
+      "target": "ponytail_review_skill_examples"
     },
     {
       "relation": "contains",
@@ -10391,9 +10716,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_review_skill",
-      "target": "ponytail_review_skill_format",
-      "confidence_score": 1.0
+      "target": "ponytail_review_skill_format"
     },
     {
       "relation": "contains",
@@ -10401,9 +10726,9 @@
       "source_file": ".agents/skills/ponytail-review/SKILL.md",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_review_skill",
-      "target": "ponytail_review_skill_scoring",
-      "confidence_score": 1.0
+      "target": "ponytail_review_skill_scoring"
     },
     {
       "relation": "contains",
@@ -10411,9 +10736,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill",
-      "target": "ponytail_skill_ponytail",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_ponytail"
     },
     {
       "relation": "contains",
@@ -10421,9 +10746,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_boundaries",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_boundaries"
     },
     {
       "relation": "contains",
@@ -10431,9 +10756,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_intensity",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_intensity"
     },
     {
       "relation": "contains",
@@ -10441,9 +10766,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_output",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_output"
     },
     {
       "relation": "contains",
@@ -10451,9 +10776,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_persistence",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_persistence"
     },
     {
       "relation": "contains",
@@ -10461,9 +10786,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_rules",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_rules"
     },
     {
       "relation": "contains",
@@ -10471,9 +10796,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_the_ladder",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_the_ladder"
     },
     {
       "relation": "contains",
@@ -10481,9 +10806,9 @@
       "source_file": ".agents/skills/ponytail/SKILL.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ponytail_skill_ponytail",
-      "target": "ponytail_skill_when_not_to_be_lazy",
-      "confidence_score": 1.0
+      "target": "ponytail_skill_when_not_to_be_lazy"
     },
     {
       "relation": "contains",
@@ -10501,9 +10826,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup",
-      "target": "docs_graphify_setup_graphify_setup_usage_guide",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_graphify_setup_usage_guide"
     },
     {
       "relation": "contains",
@@ -10511,9 +10836,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_graphify_setup_usage_guide",
-      "target": "docs_graphify_setup_ai_agent_integration",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_ai_agent_integration"
     },
     {
       "relation": "contains",
@@ -10521,9 +10846,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_graphify_setup_usage_guide",
-      "target": "docs_graphify_setup_how_the_initial_setup_was_done",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_how_the_initial_setup_was_done"
     },
     {
       "relation": "contains",
@@ -10531,9 +10856,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_graphify_setup_usage_guide",
-      "target": "docs_graphify_setup_how_to_use_it",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_how_to_use_it"
     },
     {
       "relation": "contains",
@@ -10541,9 +10866,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_graphify_setup_usage_guide",
-      "target": "docs_graphify_setup_what_is_graphify",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_what_is_graphify"
     },
     {
       "relation": "contains",
@@ -10551,9 +10876,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_graphify_setup_usage_guide",
-      "target": "docs_graphify_setup_why_is_it_helpful",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_why_is_it_helpful"
     },
     {
       "relation": "contains",
@@ -10561,9 +10886,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_how_to_use_it",
-      "target": "docs_graphify_setup_for_developers",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_for_developers"
     },
     {
       "relation": "contains",
@@ -10571,9 +10896,9 @@
       "source_file": "docs/graphify_setup.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_graphify_setup_how_to_use_it",
-      "target": "docs_graphify_setup_keeping_it_updated",
-      "confidence_score": 1.0
+      "target": "docs_graphify_setup_keeping_it_updated"
     },
     {
       "relation": "contains",
@@ -11531,71 +11856,6 @@
       "target": "supabase_server_createserviceclient"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "retry_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11979,103 +12239,6 @@
       "confidence_score": 1.0,
       "source": "chat_page",
       "target": "chat_page_chatindexpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "dashboard_layout_dashboardlayout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "dashboard_layout_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "layout_clientprovider_clientprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "sidebar_leftsidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "sidebar_rightsidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "dashboard_layout_dashboardlayout",
-      "target": "supabase_server_createclient"
     },
     {
       "relation": "contains",
@@ -13513,17 +13676,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -13573,28 +13725,6 @@
       "source_location": "L37",
       "weight": 1.0,
       "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "sidebar_rightsidebar_rightsidebar",
       "target": "layout_clientprovider_useclient"
     },
     {
@@ -13802,136 +13932,6 @@
       "source_location": "L36",
       "weight": 1.0,
       "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "lib_utils_formatrelativetime"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "sidebar_rightsidebar_rightsidebar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "sidebar_rightsidebar_taskrunextended"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types_task"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L125",
-      "weight": 1.0,
-      "source": "sidebar_rightsidebar_rightsidebar",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "sidebar_rightsidebar_rightsidebar",
       "target": "supabase_client_createclient"
     },
     {
@@ -24242,5 +24242,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ab1603118d454e35b2dd785e320a33ccd3a7b5ae"
+  "built_at_commit": "09fec8a46b326b35cf271533e35c261b1841fb07"
 }

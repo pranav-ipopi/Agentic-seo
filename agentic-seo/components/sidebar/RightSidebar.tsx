@@ -21,7 +21,13 @@ import {
 import { cn, formatRelativeTime } from '@/lib/utils'
 import type { Task, TaskRun } from '@/lib/supabase/types'
 
-type TaskRunExtended = TaskRun & { workflow_templates?: { name: string } | null, is_simple_task?: boolean }
+type TaskRunExtended = TaskRun & { 
+  workflow_templates?: { name: string } | null, 
+  is_simple_task?: boolean,
+  title?: string,
+  user_id?: string,
+  type?: string
+}
 
 export default function RightSidebar() {
   const router = useRouter()
@@ -39,10 +45,10 @@ export default function RightSidebar() {
 
   useEffect(() => {
     supabase.from('clients').select('*').then(({ data }) => {
-      if (data) setClientsCache(data.reduce((acc, c) => ({ ...acc, [c.id]: c }), {}))
+      if (data) setClientsCache(data.reduce((acc: any, c: any) => ({ ...acc, [c.id]: c }), {}))
     })
     supabase.from('profiles').select('id, full_name').then(({ data }) => {
-      if (data) setProfilesCache(data.reduce((acc, p) => ({ ...acc, [p.id]: p.full_name || 'System' }), {}))
+      if (data) setProfilesCache(data.reduce((acc: any, p: any) => ({ ...acc, [p.id]: p.full_name || 'System' }), {}))
     })
   }, [supabase])
 

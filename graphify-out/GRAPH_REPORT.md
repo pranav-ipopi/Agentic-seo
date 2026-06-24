@@ -1,7 +1,7 @@
-# Graph Report - Agentic_SEO  (2026-06-23)
+# Graph Report - Agentic_SEO  (2026-06-24)
 
 ## Corpus Check
-- 165 files · ~85,012 words
+- 165 files · ~85,594 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ab160311`
+- Built from commit: `09fec8a4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -119,10 +119,10 @@
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
 - `route_and_execute()` --references--> `Client`  [EXTRACTED]
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
+- `DashboardLayout()` --calls--> `createClient()`  [EXTRACTED]
+  agentic-seo/app/dashboard/layout.tsx → agentic-seo/lib/supabase/server.ts
 - `POST()` --calls--> `createServiceClient()`  [INFERRED]
   agentic-seo/app/api/campaigns/execute/route.ts → agentic-seo/lib/supabase/server.ts
-- `DELETE()` --calls--> `createServiceClient()`  [INFERRED]
-  agentic-seo/app/api/clients/[id]/route.ts → agentic-seo/lib/supabase/server.ts
 
 ## Import Cycles
 - None detected.
@@ -394,7 +394,7 @@ Cohesion: 0.67
 Nodes (3): Documents, Hermes Agency OS — Project Documentation, Quick Reference
 
 ## Knowledge Gaps
-- **331 isolated node(s):** `graphify`, `ponytail`, `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)` (+326 more)
+- **331 isolated node(s):** `metadata`, `TaskRunExtended`, `graphify`, `ponytail`, `Usage` (+326 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -409,7 +409,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Are the 6 inferred relationships involving `createServiceClient()` (e.g. with `POST()` and `DELETE()`) actually correct?**
   _`createServiceClient()` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `graphify`, `ponytail`, `Usage` to the rest of the system?**
+- **What connects `metadata`, `TaskRunExtended`, `graphify` to the rest of the system?**
   _456 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.06861239119303636 - nodes in this community are weakly interconnected._

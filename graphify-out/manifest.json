@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/retry/route.ts": {
-    "mtime": 1782211735.0550287,
-    "ast_hash": "afac7766f31ac5d9930683763f9e99ed",
+    "mtime": 1782231666.0855443,
+    "ast_hash": "42da86f1e2a3aab3ec4fcd374d7d3526",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/route.ts": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/dashboard/layout.tsx": {
-    "mtime": 1780969952.596991,
-    "ast_hash": "caa333e1d4d787e2b5d943d860a00937",
+    "mtime": 1782273797.0315464,
+    "ast_hash": "a594b38148ab0ca9a33a0ff74f250b25",
     "semantic_hash": ""
   },
   "agentic-seo/app/dashboard/loading.tsx": {
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/components/sidebar/RightSidebar.tsx": {
-    "mtime": 1782181236.7129228,
-    "ast_hash": "8ed36f768490bc323b344d25e29cdcf3",
+    "mtime": 1782273213.7743301,
+    "ast_hash": "4fd4d51f50d1157917e8249fe5b3bb49",
     "semantic_hash": ""
   },
   "agentic-seo/components/tasks/AnimatedTerminal.tsx": {

@@ -4,56 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "retry_route",
-      "community": 0,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "retry_route_post",
-      "community": 0,
-      "norm_label": "post()"
-    },
-    {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "dashboard_layout",
-      "community": 31,
-      "norm_label": "layout.tsx"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "dashboard_layout_metadata",
-      "community": 31,
-      "norm_label": "metadata"
-    },
-    {
-      "label": "DashboardLayout()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "dashboard_layout_dashboardlayout",
-      "community": 31,
-      "norm_label": "dashboardlayout()"
-    },
-    {
       "label": "RightSidebar.tsx",
       "file_type": "code",
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
@@ -77,11 +27,61 @@
       "label": "RightSidebar()",
       "file_type": "code",
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L26",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "sidebar_rightsidebar_rightsidebar",
       "community": 31,
       "norm_label": "rightsidebar()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "route.ts",
+      "id": "retry_route"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "post()",
+      "id": "retry_route_post"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "layout.tsx",
+      "id": "dashboard_layout"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "metadata",
+      "id": "dashboard_layout_metadata"
+    },
+    {
+      "label": "DashboardLayout()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "dashboardlayout()",
+      "id": "dashboard_layout_dashboardlayout"
     },
     {
       "label": "graphify.md",
@@ -9656,124 +9656,6 @@
   ],
   "links": [
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "retry_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "dashboard_layout_dashboardlayout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "dashboard_layout_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "layout_clientprovider_clientprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "sidebar_leftsidebar"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9783,39 +9665,6 @@
       "confidence_score": 1.0,
       "source": "dashboard_layout",
       "target": "sidebar_rightsidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "dashboard_layout_dashboardlayout",
-      "target": "supabase_server_createclient"
     },
     {
       "relation": "imports_from",
@@ -9979,6 +9828,157 @@
       "weight": 1.0,
       "source": "sidebar_rightsidebar_rightsidebar",
       "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "retry_route_post"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "dashboard_layout_dashboardlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "dashboard_layout_metadata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "layout_clientprovider_clientprovider"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "sidebar_leftsidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "dashboard_layout_dashboardlayout",
+      "target": "supabase_server_createclient"
     },
     {
       "relation": "contains",
@@ -24242,5 +24242,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "09fec8a46b326b35cf271533e35c261b1841fb07"
+  "built_at_commit": "49057043202370835b45b6dc14123bbb6f3349d6"
 }

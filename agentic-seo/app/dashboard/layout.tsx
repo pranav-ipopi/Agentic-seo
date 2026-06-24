@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server'
 import { ClientProvider } from '@/components/layout/ClientProvider'
 import LeftSidebar from '@/components/sidebar/LeftSidebar'
 import RightSidebar from '@/components/sidebar/RightSidebar'
-import { Bell } from 'lucide-react'
+import { Bell, ChevronLeft } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,10 +34,13 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <div className="w-[300px] h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col pointer-events-none group-hover:pointer-events-auto">
               <RightSidebar />
             </div>
-            <div className="absolute top-0 right-0 w-[40px] h-full flex flex-col items-center py-[14px] opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none border-l border-transparent">
+            <div className="absolute top-0 right-0 w-[40px] h-full flex flex-col items-center justify-center gap-6 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none border-l border-transparent">
               <div className="relative">
                 <Bell className="w-4 h-4 text-gray-400 dark:text-gray-500" />
                 <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-blue-500" />
+              </div>
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 dark:text-emerald-500 transition-colors shadow-sm border border-emerald-100 dark:border-emerald-800/50">
+                <ChevronLeft className="w-4 h-4 animate-pulse pr-0.5" />
               </div>
             </div>
           </div>

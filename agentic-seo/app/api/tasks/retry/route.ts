@@ -33,11 +33,11 @@ export async function POST(request: NextRequest) {
       .eq('state->>task_id', taskId)
       .eq('status', 'failed')
 
-    // 1b. Update failed task_runs to pending
+    // 1b. Update failed task_runs to pending and reset step index
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error: runUpdateError } = await (adminSupabase as any)
       .from('task_runs')
-      .update({ status: 'pending', updated_at: new Date().toISOString() })
+      .update({ status: 'pending', current_step_index: 0, updated_at: new Date().toISOString() })
       .eq('state->>task_id', taskId)
       .eq('status', 'failed')
 
@@ -71,11 +71,10 @@ export async function POST(request: NextRequest) {
         let pushedCount = 0
 
         for (const run of runsToRetry) {
-          // Worker expects new jobs to be at step 0
-          if (run.current_step_index === 0) {
-            pipeline.lpush('backlink_queue', JSON.stringify(run))
-            pushedCount++
-          }
+          // Push retried jobs to Redis and force step index to 0
+          run.current_step_index = 0;
+          pipeline.lpush('backlink_queue', JSON.stringify(run));
+          pushedCount++;
         }
 
         if (pushedCount > 0) {

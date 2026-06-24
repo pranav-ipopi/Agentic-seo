@@ -185,7 +185,7 @@ export default function TasksPage() {
     if (!activeClient) return
     setIsDownloading(true)
     try {
-      const rowCount = parseInt(groupRowCount) || 10
+      const rowCount = groupRowCount === "" ? 0 : (parseInt(groupRowCount) || 0)
       await downloadCampaignExcelReport(task, activeClient.name, rowCount, includeFailed)
     } finally {
       setIsDownloading(false)
@@ -458,7 +458,7 @@ export default function TasksPage() {
                                   value={groupRowCount}
                                   onChange={(e) => setGroupRowCount(e.target.value)}
                                   className="w-12 text-xs bg-transparent border-none p-0 focus:ring-0 text-gray-900 dark:text-white"
-                                  placeholder="Rows"
+                                  placeholder="All"
                                 />
                               </div>
                               <button

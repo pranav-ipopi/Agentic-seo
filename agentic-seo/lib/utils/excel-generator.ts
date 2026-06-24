@@ -66,6 +66,43 @@ export async function downloadCampaignExcelReport(
       }
     }
 
+    // Batch fetch all backlinks for this client/campaign to avoid N+1 queries
+    let allBacklinks: any[] = [];
+    if (uniqueSourceUrls.length > 0) {
+      const chunkSize = 200; // Chunk to avoid URI too long or huge payloads
+      for (let i = 0; i < uniqueSourceUrls.length; i += chunkSize) {
+        const chunk = uniqueSourceUrls.slice(i, i + chunkSize);
+        const { data: backlinksData } = await supabase
+          .from('backlinks')
+          .select('*')
+          .in('source_url', chunk);
+        if (backlinksData) {
+          allBacklinks.push(...backlinksData);
+        }
+      }
+    }
+
+    // Batch fetch all assistant logs for completed tasks
+    let allTaskLogs: any[] = [];
+    const completedTaskIds = campaignTasks
+      .filter((t: any) => t.status === 'completed')
+      .map((t: any) => t.id);
+      
+    if (completedTaskIds.length > 0) {
+      const chunkSize = 100;
+      for (let i = 0; i < completedTaskIds.length; i += chunkSize) {
+        const chunk = completedTaskIds.slice(i, i + chunkSize);
+        const { data: logsData } = await supabase
+          .from('task_run_logs')
+          .select('task_run_id, metadata, created_at')
+          .in('task_run_id', chunk)
+          .eq('role', 'assistant');
+        if (logsData) {
+          allTaskLogs.push(...logsData);
+        }
+      }
+    }
+
     // Prepare rows for Excel
     const rows: {
       keyword: string
@@ -89,38 +126,23 @@ export async function downloadCampaignExcelReport(
       // Match the targetUrl with the keyword's landing_page
       const keyword = keywordMap[targetUrl] || state.keyword || 'N/A'
       
-      // Fetch the verified backlink for this specific target and source
-      const { data: backlinks, error: backlinksError } = await supabase
-        .from('backlinks')
-        .select('*')
-        .eq('target_url', targetUrl)
-        .eq('source_url', sourceUrl)
-        .order('created_at', { ascending: false })
-        .limit(1)
-
-      if (backlinksError) {
-        console.error("Failed to fetch backlink:", backlinksError)
-      }
-
-      let backlink = (backlinks as any)?.[0]
+      // Fetch the verified backlink for this specific target and source from memory
+      const matchedBacklinks = allBacklinks.filter(b => b.target_url === targetUrl && b.source_url === sourceUrl);
+      matchedBacklinks.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+      
+      let backlink = matchedBacklinks[0]
       let metadata = backlink?.metadata || {}
       
       // Fallback: Check task_run_logs if no backlink but task is completed
       if (!backlink && taskRunStatus === 'completed') {
-        const { data: logs } = await supabase
-          .from('task_run_logs')
-          .select('metadata')
-          .eq('task_run_id', (t as any).id)
-          .eq('role', 'assistant')
-          .order('created_at', { ascending: false })
-          
-        if (logs && logs.length > 0) {
-          for (const log of logs) {
-            const structuredData = ((log as any).metadata as any)?.structured_data;
-            if (structuredData && structuredData.live_url) {
-              metadata = structuredData;
-              break;
-            }
+        const matchedLogs = allTaskLogs.filter(l => l.task_run_id === (t as any).id);
+        matchedLogs.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+        
+        for (const log of matchedLogs) {
+          const structuredData = ((log as any).metadata as any)?.structured_data;
+          if (structuredData && structuredData.live_url) {
+            metadata = structuredData;
+            break;
           }
         }
       }
@@ -220,8 +242,7 @@ export async function downloadCampaignExcelReport(
 
     for (let ki = 0; ki < keywords.length; ki++) {
       const kw = keywords[ki]
-      // Slice to groupRowCount
-      const kwRows = grouped[kw].slice(0, groupRowCount)
+      const kwRows = grouped[kw] // Keep all rows
 
       for (let rIdx = 0; rIdx < kwRows.length; rIdx++) {
         const rowData = kwRows[rIdx]
@@ -242,6 +263,11 @@ export async function downloadCampaignExcelReport(
           cell.font = {}
           cell.border = {}
         })
+
+        // Add a blank separator row every groupRowCount rows, unless it's the very last row of the keyword
+        if (groupRowCount > 0 && (rIdx + 1) % groupRowCount === 0 && rIdx !== kwRows.length - 1) {
+          worksheet.addRow(Array(totalCols).fill(''))
+        }
       }
 
       // Blank separator row after each keyword group (except the last)

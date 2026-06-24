@@ -172,7 +172,7 @@ export async function POST(request: NextRequest) {
           const redis = new Redis(process.env.REDIS_URL)
           const pipeline = redis.pipeline()
           // Ensure we push jobs using the exact same structure the worker expects
-          insertedTaskRuns.forEach(run => {
+          insertedTaskRuns.forEach((run: any) => {
             const redisJob = {
               ...run,
               workflow_templates: workflowTemplate || null

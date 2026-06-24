@@ -1,7 +1,7 @@
 # Graph Report - Agentic_SEO  (2026-06-24)
 
 ## Corpus Check
-- 166 files · ~86,351 words
+- 166 files · ~86,487 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e43c829c`
+- Built from commit: `e5489fb1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -118,10 +118,10 @@
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
 - `route_and_execute()` --references--> `Client`  [EXTRACTED]
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
+- `BacklinkWorker` --uses--> `RedisService`  [INFERRED]
+  playwright_worker/worker.py → playwright_worker/services/redis_service.py
 - `DashboardLayout()` --calls--> `createClient()`  [EXTRACTED]
   agentic-seo/app/dashboard/layout.tsx → agentic-seo/lib/supabase/server.ts
-- `DELETE()` --calls--> `createServiceClient()`  [INFERRED]
-  agentic-seo/app/api/clients/[id]/route.ts → agentic-seo/lib/supabase/server.ts
 
 ## Import Cycles
 - None detected.
@@ -393,7 +393,7 @@ Cohesion: 0.67
 Nodes (3): Documents, Hermes Agency OS — Project Documentation, Quick Reference
 
 ## Knowledge Gaps
-- **334 isolated node(s):** `1. The "Permanently Pending" Bug (Read-After-Write Race Condition)`, `2. The 30-Second "Staggering" Bottleneck (Queue Freezing)`, `3. Artificial Global Rate Limiting`, `TaskRunExtended`, `metadata` (+329 more)
+- **334 isolated node(s):** `TaskRunExtended`, `1. The "Permanently Pending" Bug (Read-After-Write Race Condition)`, `2. The 30-Second "Staggering" Bottleneck (Queue Freezing)`, `3. Artificial Global Rate Limiting`, `metadata` (+329 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -408,7 +408,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `createServiceClient()` (e.g. with `DELETE()` and `DELETE()`) actually correct?**
   _`createServiceClient()` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `1. The "Permanently Pending" Bug (Read-After-Write Race Condition)`, `2. The 30-Second "Staggering" Bottleneck (Queue Freezing)`, `3. Artificial Global Rate Limiting` to the rest of the system?**
+- **What connects `TaskRunExtended`, `Block and pop a job from the Redis queue.         timeout=0 means it will block`, `1. The "Permanently Pending" Bug (Read-After-Write Race Condition)` to the rest of the system?**
   _459 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.06758832565284179 - nodes in this community are weakly interconnected._

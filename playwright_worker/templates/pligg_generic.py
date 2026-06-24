@@ -142,15 +142,14 @@ class PliggGenericTemplate(BaseTemplate):
                     from twocaptcha import TwoCaptcha
                     api_key = os.environ.get('TWOCAPTCHA_API_KEY', '20205071fed24f4c1418d43380555585') # Fallback to existing if not set
                     solver = TwoCaptcha(api_key)
-                    result = solver.normal(image_path)
-                    return result.get('code', '') if isinstance(result, dict) else ''
+                    return solver.normal(image_path)
 
                 # Run network request outside the browser event thread
                 loop = asyncio.get_event_loop()
                 self.logger.info("Sending image to 2captcha service...")
                 
                 try:
-                    pred = await loop.run_in_executor(None, run_2captcha, img_path)
+                    result = await loop.run_in_executor(None, run_2captcha, img_path)
                 finally:
                     # Clean up the file after sending
                     if os.path.exists(img_path):
@@ -159,7 +158,12 @@ class PliggGenericTemplate(BaseTemplate):
                         except Exception as cleanup_err:
                             self.logger.warning(f"Could not remove temporary captcha file {img_path}: {cleanup_err}")
 
-                pred = pred.strip()
+                if isinstance(result, dict):
+                    pred = result.get('code', '').strip()
+                    self.last_captcha_id = result.get('captchaId')
+                else:
+                    pred = str(result).strip()
+                    self.last_captcha_id = None
                 self.logger.info(f"2captcha predicted: '{pred}'")
 
                 if pred:
@@ -176,6 +180,24 @@ class PliggGenericTemplate(BaseTemplate):
             self.logger.error("twocaptcha is not installed. Run: pip install 2captcha-python")
         except Exception as e:
             self.logger.error(f"Error solving captcha with 2captcha: {e}")
+
+    async def _report_bad_captcha(self) -> None:
+        """Report incorrect captcha solution to 2Captcha."""
+        if getattr(self, 'last_captcha_id', None):
+            self.logger.info(f"Reporting incorrect captcha solution for ID: {self.last_captcha_id}")
+            def run_report(captcha_id):
+                from twocaptcha import TwoCaptcha
+                import os
+                api_key = os.environ.get('TWOCAPTCHA_API_KEY', '20205071fed24f4c1418d43380555585')
+                solver = TwoCaptcha(api_key)
+                try:
+                    solver.report(captcha_id, False)
+                except Exception as err:
+                    self.logger.warning(f"Failed to report bad captcha to 2captcha: {err}")
+            
+            loop = asyncio.get_event_loop()
+            await loop.run_in_executor(None, run_report, self.last_captcha_id)
+            self.last_captcha_id = None
 
     async def _register_account(self, page: Page) -> None:
         """Perform registration with generated credentials. All selectors from config."""
@@ -271,6 +293,7 @@ class PliggGenericTemplate(BaseTemplate):
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:
                 self.logger.warning("Invalid captcha detected. Retrying...")
+                await self._report_bad_captcha()
                 if attempt == max_retries - 1:
                     raise CaptchaFailedError(
                         message="Max retries exceeded due to persistent invalid captcha on registration.",
@@ -449,6 +472,7 @@ class PliggGenericTemplate(BaseTemplate):
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:
                 self.logger.warning("Invalid captcha detected on submit. Retrying...")
+                await self._report_bad_captcha()
                 if attempt == max_retries - 1:
                     raise CaptchaFailedError(
                         message="Max retries exceeded due to persistent invalid captcha on submit.",

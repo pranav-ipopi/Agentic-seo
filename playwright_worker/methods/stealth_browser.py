@@ -234,6 +234,8 @@ class StealthBrowserManager:
             "--window-size=1920,1080",
             "--disable-component-update",
             "--no-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-site-isolation-trials",
         ]
 
         # Use environment variable to determine if running on VPS (or default to true on linux)

@@ -12,6 +12,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing taskId' }, { status: 400 })
     }
 
+    if (!process.env.REDIS_URL) {
+      console.error('[CRITICAL ERROR] REDIS_URL environment variable is missing. Task retry aborted to prevent silent queue failure.')
+      return NextResponse.json({ error: 'System Configuration Error: REDIS_URL is not set. Please add it to your Vercel environment variables.' }, { status: 500 })
+    }
+
     // Verify the user has access to the task
     const { data: task, error: fetchError } = await supabase
       .from('tasks')

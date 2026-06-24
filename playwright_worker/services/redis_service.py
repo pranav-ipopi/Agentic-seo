@@ -13,7 +13,10 @@ class RedisService:
         self.logger = logger or logging.getLogger(__name__)
         
         if not self.url:
-            self.logger.warning("REDIS_URL not set in environment. Redis polling will not work.")
+            self.logger.critical("=====================================================")
+            self.logger.critical("[CRITICAL ERROR] REDIS_URL environment variable is NOT SET.")
+            self.logger.critical("Redis polling is disabled. Worker will fallback to database polling which causes high DB load!")
+            self.logger.critical("=====================================================")
             self.client = None
         else:
             self.client = redis.Redis.from_url(self.url, decode_responses=True)

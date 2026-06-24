@@ -26,7 +26,8 @@ type TaskRunExtended = TaskRun & {
   is_simple_task?: boolean,
   title?: string,
   user_id?: string,
-  type?: string
+  type?: string,
+  result?: any
 }
 
 export default function RightSidebar() {
@@ -203,6 +204,11 @@ export default function RightSidebar() {
                   <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
                     {notif.workflow_templates?.name || notif.title || notif.type || 'Workflow Run'}
                   </p>
+                  {notif.result?.summary && (
+                    <p className="text-[10px] text-gray-500 dark:text-gray-400">
+                      {notif.result.summary.succeeded} of {notif.result.summary.total} sites succeeded · {notif.result.summary.failed} failed
+                    </p>
+                  )}
                   <div className="flex items-center gap-1.5">
                     <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 truncate max-w-[120px]">
                       {clientsCache[notif.client_id]?.name || 'Unknown Client'}
@@ -285,6 +291,11 @@ export default function RightSidebar() {
                       <div className="text-xs font-medium text-gray-800 dark:text-gray-200 truncate">
                         {taskRun.workflow_templates?.name || 'Workflow Run'}
                       </div>
+                      {taskRun.result?.summary && (
+                        <div className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">
+                          {taskRun.result.summary.succeeded} of {taskRun.result.summary.total} sites succeeded · {taskRun.result.summary.failed} failed
+                        </div>
+                      )}
                       <div className="flex items-center gap-2 mt-1">
                         <span className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 truncate max-w-[80px]">
                           {clientsCache[taskRun.client_id]?.name || 'Unknown'}

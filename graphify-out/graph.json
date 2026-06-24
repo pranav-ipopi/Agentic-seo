@@ -4,14 +4,234 @@
   "graph": {},
   "nodes": [
     {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "execute_route",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "execute_route_post",
+      "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "redis-concurrency-troubleshooting.md",
+      "file_type": "document",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_redis_concurrency_troubleshooting",
+      "community": 94,
+      "norm_label": "redis-concurrency-troubleshooting.md"
+    },
+    {
+      "label": "Redis Queue & Concurrency Troubleshooting Guide",
+      "file_type": "document",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_redis_concurrency_troubleshooting_redis_queue_concurrency_troubleshooting_guide",
+      "community": 94,
+      "norm_label": "redis queue & concurrency troubleshooting guide"
+    },
+    {
+      "label": "1. The \"Permanently Pending\" Bug (Read-After-Write Race Condition)",
+      "file_type": "document",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "docs_redis_concurrency_troubleshooting_1_the_permanently_pending_bug_read_after_write_race_condition",
+      "community": 94,
+      "norm_label": "1. the \"permanently pending\" bug (read-after-write race condition)"
+    },
+    {
+      "label": "2. The 30-Second \"Staggering\" Bottleneck (Queue Freezing)",
+      "file_type": "document",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "docs_redis_concurrency_troubleshooting_2_the_30_second_staggering_bottleneck_queue_freezing",
+      "community": 94,
+      "norm_label": "2. the 30-second \"staggering\" bottleneck (queue freezing)"
+    },
+    {
+      "label": "3. Artificial Global Rate Limiting",
+      "file_type": "document",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "docs_redis_concurrency_troubleshooting_3_artificial_global_rate_limiting",
+      "community": 94,
+      "norm_label": "3. artificial global rate limiting"
+    },
+    {
+      "label": "vps_worker_playwright.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright",
+      "community": 17,
+      "norm_label": "vps_worker_playwright.py"
+    },
+    {
+      "label": "mark_parent_task_running()",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
+      "community": 17,
+      "norm_label": "mark_parent_task_running()"
+    },
+    {
+      "label": "Client",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "client",
+      "community": 17,
+      "norm_label": "client"
+    },
+    {
+      "label": "check_and_update_parent_task()",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
+      "community": 17,
+      "norm_label": "check_and_update_parent_task()"
+    },
+    {
+      "label": "detect_and_update()",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L151",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_detect_and_update",
+      "community": 17,
+      "norm_label": "detect_and_update()"
+    },
+    {
+      "label": "route_and_execute()",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L167",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "community": 17,
+      "norm_label": "route_and_execute()"
+    },
+    {
+      "label": "poll_queue()",
+      "file_type": "code",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L389",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_poll_queue",
+      "community": 17,
+      "norm_label": "poll_queue()"
+    },
+    {
+      "label": "VPS Worker - Backlink Automation Orchestrator  Polls Supabase for pending task",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_1",
+      "community": 17,
+      "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task"
+    },
+    {
+      "label": "Bumps a parent task's status from 'pending' to 'running' when a child task_run s",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_69",
+      "community": 17,
+      "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s"
+    },
+    {
+      "label": "Checks if all task_runs for a parent task are done, and if so, updates the paren",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_82",
+      "community": 17,
+      "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren"
+    },
+    {
+      "label": "Fingerprints an undetected site using the Playwright stealth browser     and wr",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_152",
+      "community": 17,
+      "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wr"
+    },
+    {
+      "label": "Executes a single step of a workflow task_run.     Uses TemplateRunner for conf",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L168",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_168",
+      "community": 17,
+      "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for conf"
+    },
+    {
+      "label": "Main loop: polls Supabase for pending task_runs and executes them asynchronously",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L390",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_390",
+      "community": 17,
+      "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously"
+    },
+    {
+      "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L426",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_426",
+      "community": 17,
+      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio"
+    },
+    {
+      "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L459",
+      "_origin": "ast",
+      "id": "playwright_worker_vps_worker_playwright_rationale_459",
+      "community": 17,
+      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio"
+    },
+    {
       "label": "RightSidebar.tsx",
       "file_type": "code",
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "sidebar_rightsidebar",
       "community": 31,
-      "norm_label": "rightsidebar.tsx"
+      "norm_label": "rightsidebar.tsx",
+      "id": "sidebar_rightsidebar"
     },
     {
       "label": "TaskRunExtended",
@@ -19,9 +239,9 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "sidebar_rightsidebar_taskrunextended",
       "community": 31,
-      "norm_label": "taskrunextended"
+      "norm_label": "taskrunextended",
+      "id": "sidebar_rightsidebar_taskrunextended"
     },
     {
       "label": "RightSidebar()",
@@ -29,9 +249,9 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "sidebar_rightsidebar_rightsidebar",
       "community": 31,
-      "norm_label": "rightsidebar()"
+      "norm_label": "rightsidebar()",
+      "id": "sidebar_rightsidebar_rightsidebar"
     },
     {
       "label": "route.ts",
@@ -1322,26 +1542,6 @@
       "community": 0,
       "norm_label": "post()",
       "id": "execute_articles_route_post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "route.ts",
-      "id": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "post()",
-      "id": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route_post"
     },
     {
       "label": "route.ts",
@@ -4269,7 +4469,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 4,
       "norm_label": "pligg_generic_terminal.py",
       "id": "bookmark_sites_tester_pligg_generic_terminal"
     },
@@ -4279,7 +4479,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 7,
+      "community": 4,
       "norm_label": "_generate_random_credentials()",
       "id": "bookmark_sites_tester_pligg_generic_terminal_generate_random_credentials"
     },
@@ -4299,7 +4499,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 33,
+      "community": 4,
       "norm_label": ".__init__()",
       "id": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init"
     },
@@ -4439,7 +4639,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 4,
       "norm_label": "generic pligg/kliqqi cms site template  this is a universal implementation tha",
       "id": "bookmark_sites_tester_pligg_generic_terminal_rationale_1"
     },
@@ -4449,7 +4649,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 7,
+      "community": 4,
       "norm_label": "generate random registration credentials for this job.",
       "id": "bookmark_sites_tester_pligg_generic_terminal_rationale_30"
     },
@@ -4549,7 +4749,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L389",
       "_origin": "ast",
-      "community": 21,
+      "community": 4,
       "norm_label": "# important: use fill() here \u2014 not press_sequentially.",
       "id": "bookmark_sites_tester_pligg_generic_terminal_rationale_389"
     },
@@ -5049,7 +5249,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "debug_sites.py",
       "id": "playwright_worker_debug_sites"
     },
@@ -5059,7 +5259,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "run_site()",
       "id": "playwright_worker_debug_sites_run_site"
     },
@@ -5069,7 +5269,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "main()",
       "id": "playwright_worker_debug_sites_main"
     },
@@ -5079,7 +5279,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "debug script: run pligggenerictemplate against failing sites to reproduce and di",
       "id": "playwright_worker_debug_sites_rationale_1"
     },
@@ -5089,7 +5289,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "run one site test and print result / exception.",
       "id": "playwright_worker_debug_sites_rationale_53"
     },
@@ -5359,7 +5559,7 @@
       "source_file": "playwright_worker/executor/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "__init__.py",
       "id": "executor_init"
     },
@@ -5609,7 +5809,7 @@
       "source_file": "playwright_worker/executor/failure_handler.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 35,
+      "community": 17,
       "norm_label": "failure_handler.py",
       "id": "executor_failure_handler"
     },
@@ -5699,7 +5899,7 @@
       "source_file": "playwright_worker/executor/failure_handler.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 35,
+      "community": 17,
       "norm_label": "failure handler for backlink automation  responsibilities:     - classify errors",
       "id": "executor_failure_handler_rationale_1"
     },
@@ -5779,7 +5979,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "runner.py",
       "id": "executor_runner"
     },
@@ -5809,7 +6009,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L100",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "templaterunner",
       "id": "executor_runner_templaterunner"
     },
@@ -5819,7 +6019,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L119",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": ".get_supported_templates()",
       "id": "executor_runner_templaterunner_get_supported_templates"
     },
@@ -5829,7 +6029,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L123",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": ".is_supported()",
       "id": "executor_runner_templaterunner_is_supported"
     },
@@ -5849,7 +6049,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "template runner for backlink automation  centralized template resolution + confi",
       "id": "executor_runner_rationale_1"
     },
@@ -5879,7 +6079,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L101",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "resolves the correct template class + merged config for a given site,     then e",
       "id": "executor_runner_rationale_101"
     },
@@ -5889,7 +6089,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L120",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "return list of registered site_id values.",
       "id": "executor_runner_rationale_120"
     },
@@ -5899,7 +6099,7 @@
       "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L124",
       "_origin": "ast",
-      "community": 25,
+      "community": 35,
       "norm_label": "check if a site_id has a registered template.",
       "id": "executor_runner_rationale_124"
     },
@@ -5919,7 +6119,7 @@
       "source_file": "playwright_worker/methods/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "__init__.py",
       "id": "methods_init"
     },
@@ -5929,7 +6129,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "cloudflare.py",
       "id": "methods_cloudflare"
     },
@@ -5939,7 +6139,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "bypass_cloudflare()",
       "id": "methods_cloudflare_bypass_cloudflare"
     },
@@ -5949,7 +6149,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "calculate_human_path()",
       "id": "methods_cloudflare_calculate_human_path"
     },
@@ -5959,7 +6159,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "move_mouse_humanlike()",
       "id": "methods_cloudflare_move_mouse_humanlike"
     },
@@ -5979,7 +6179,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "wait for cloudflare to naturally pass due to our stealthy browser.     if it doe",
       "id": "methods_cloudflare_rationale_12"
     },
@@ -5989,7 +6189,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "generates a smooth, human-like curved mouse path between two coordinates.      u",
       "id": "methods_cloudflare_rationale_25"
     },
@@ -5999,7 +6199,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 94,
+      "community": 4,
       "norm_label": "moves playwright's mouse from a random starting position to the target     coord",
       "id": "methods_cloudflare_rationale_71"
     },
@@ -6059,7 +6259,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L199",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "stealthbrowsermanager",
       "id": "methods_stealth_browser_stealthbrowsermanager"
     },
@@ -6069,7 +6269,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L214",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".__init__()",
       "id": "methods_stealth_browser_stealthbrowsermanager_init"
     },
@@ -6079,7 +6279,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L221",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".set_proxy()",
       "id": "methods_stealth_browser_stealthbrowsermanager_set_proxy"
     },
@@ -6089,7 +6289,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L224",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".start()",
       "id": "methods_stealth_browser_stealthbrowsermanager_start"
     },
@@ -6099,7 +6299,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L263",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "._build_proxy_dict()",
       "id": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
     },
@@ -6109,7 +6309,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L313",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "._new_context()",
       "id": "methods_stealth_browser_stealthbrowsermanager_new_context"
     },
@@ -6119,7 +6319,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L334",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".get_page()",
       "id": "methods_stealth_browser_stealthbrowsermanager_get_page"
     },
@@ -6129,7 +6329,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L339",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".get_captcha_page()",
       "id": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
     },
@@ -6139,7 +6339,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L344",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": ".close()",
       "id": "methods_stealth_browser_stealthbrowsermanager_close"
     },
@@ -6179,7 +6379,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L200",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "manages an undetected chromium session (seleniumbase cdp) with playwright.",
       "id": "methods_stealth_browser_rationale_200"
     },
@@ -6189,7 +6389,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L335",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "fresh isolated context, images allowed to pass cloudflare. close via page.contex",
       "id": "methods_stealth_browser_rationale_335"
     },
@@ -6199,7 +6399,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L340",
       "_origin": "ast",
-      "community": 41,
+      "community": 4,
       "norm_label": "fresh isolated context, images allowed (solvmedia needs them).",
       "id": "methods_stealth_browser_rationale_340"
     },
@@ -6269,7 +6469,7 @@
       "source_file": "playwright_worker/services/captcha_service.py",
       "source_location": "L121",
       "_origin": "ast",
-      "community": 7,
+      "community": 33,
       "norm_label": ".is_captcha_present()",
       "id": "services_captcha_service_captchaservice_is_captcha_present"
     },
@@ -6319,7 +6519,7 @@
       "source_file": "playwright_worker/services/captcha_service.py",
       "source_location": "L122",
       "_origin": "ast",
-      "community": 7,
+      "community": 33,
       "norm_label": "helper to detect if a captcha is visible on the current page.         templates",
       "id": "services_captcha_service_rationale_122"
     },
@@ -6329,7 +6529,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 21,
       "norm_label": "logging_service.py",
       "id": "services_logging_service"
     },
@@ -6339,7 +6539,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "setup_logger()",
       "id": "services_logging_service_setup_logger"
     },
@@ -6359,7 +6559,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 21,
       "norm_label": "logging service for backlink automation engine v1  provides rotating file loggin",
       "id": "services_logging_service_rationale_1"
     },
@@ -6369,7 +6569,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 25,
+      "community": 21,
       "norm_label": "setup rotating file logger with console output.",
       "id": "services_logging_service_rationale_38"
     },
@@ -6389,7 +6589,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": "proxy_manager.py",
       "id": "services_proxy_manager"
     },
@@ -6399,7 +6599,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": "proxymanager",
       "id": "services_proxy_manager_proxymanager"
     },
@@ -6409,7 +6609,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": ".__init__()",
       "id": "services_proxy_manager_proxymanager_init"
     },
@@ -6419,7 +6619,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": ".load_proxies()",
       "id": "services_proxy_manager_proxymanager_load_proxies"
     },
@@ -6429,7 +6629,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": ".get_working_proxy()",
       "id": "services_proxy_manager_proxymanager_get_working_proxy"
     },
@@ -6439,7 +6639,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 97,
+      "community": 17,
       "norm_label": "attempts to find a working proxy by sequentially testing them.         returns t",
       "id": "services_proxy_manager_rationale_45"
     },
@@ -6449,7 +6649,7 @@
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": "redis_service.py",
       "id": "services_redis_service"
     },
@@ -6459,7 +6659,7 @@
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": "redisservice",
       "id": "services_redis_service_redisservice"
     },
@@ -6469,7 +6669,7 @@
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": ".__init__()",
       "id": "services_redis_service_redisservice_init"
     },
@@ -6479,7 +6679,7 @@
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 25,
+      "community": 41,
       "norm_label": ".pop_job()",
       "id": "services_redis_service_redisservice_pop_job"
     },
@@ -6489,7 +6689,7 @@
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 25,
+      "community": 41,
       "norm_label": "block and pop a job from the redis queue.         timeout=0 means it will block",
       "id": "services_redis_service_rationale_23"
     },
@@ -7494,146 +7694,6 @@
       "id": "playwright_worker_test_proxy_main"
     },
     {
-      "label": "vps_worker_playwright.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "vps_worker_playwright.py",
-      "id": "playwright_worker_vps_worker_playwright"
-    },
-    {
-      "label": "mark_parent_task_running()",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L68",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "mark_parent_task_running()",
-      "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
-    },
-    {
-      "label": "check_and_update_parent_task()",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L81",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "check_and_update_parent_task()",
-      "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
-    },
-    {
-      "label": "detect_and_update()",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L151",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "detect_and_update()",
-      "id": "playwright_worker_vps_worker_playwright_detect_and_update"
-    },
-    {
-      "label": "route_and_execute()",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L167",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "route_and_execute()",
-      "id": "playwright_worker_vps_worker_playwright_route_and_execute"
-    },
-    {
-      "label": "poll_queue()",
-      "file_type": "code",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L389",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "poll_queue()",
-      "id": "playwright_worker_vps_worker_playwright_poll_queue"
-    },
-    {
-      "label": "VPS Worker - Backlink Automation Orchestrator  Polls Supabase for pending task",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task",
-      "id": "playwright_worker_vps_worker_playwright_rationale_1"
-    },
-    {
-      "label": "Bumps a parent task's status from 'pending' to 'running' when a child task_run s",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L69",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
-      "id": "playwright_worker_vps_worker_playwright_rationale_69"
-    },
-    {
-      "label": "Checks if all task_runs for a parent task are done, and if so, updates the paren",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L82",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
-      "id": "playwright_worker_vps_worker_playwright_rationale_82"
-    },
-    {
-      "label": "Fingerprints an undetected site using the Playwright stealth browser     and wr",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L152",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wr",
-      "id": "playwright_worker_vps_worker_playwright_rationale_152"
-    },
-    {
-      "label": "Executes a single step of a workflow task_run.     Uses TemplateRunner for conf",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L168",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for conf",
-      "id": "playwright_worker_vps_worker_playwright_rationale_168"
-    },
-    {
-      "label": "Main loop: polls Supabase for pending task_runs and executes them asynchronously",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L390",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously",
-      "id": "playwright_worker_vps_worker_playwright_rationale_390"
-    },
-    {
-      "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L426",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
-      "id": "playwright_worker_vps_worker_playwright_rationale_426"
-    },
-    {
-      "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L459",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
-      "id": "playwright_worker_vps_worker_playwright_rationale_459"
-    },
-    {
       "label": "worker.py",
       "file_type": "code",
       "source_file": "playwright_worker/worker.py",
@@ -7659,7 +7719,7 @@
       "source_file": "playwright_worker/worker.py",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": ".__init__()",
       "id": "playwright_worker_worker_backlinkworker_init"
     },
@@ -7669,7 +7729,7 @@
       "source_file": "playwright_worker/worker.py",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": "._setup_signal_handlers()",
       "id": "playwright_worker_worker_backlinkworker_setup_signal_handlers"
     },
@@ -7739,7 +7799,7 @@
       "source_file": "playwright_worker/worker.py",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 26,
+      "community": 41,
       "norm_label": "graceful shutdown on sigterm / sigint (docker friendly).",
       "id": "playwright_worker_worker_rationale_69"
     },
@@ -9656,6 +9716,406 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "execute_route",
+      "target": "execute_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createserviceclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_redis_concurrency_troubleshooting",
+      "target": "docs_redis_concurrency_troubleshooting_redis_queue_concurrency_troubleshooting_guide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "docs_redis_concurrency_troubleshooting_redis_queue_concurrency_troubleshooting_guide",
+      "target": "docs_redis_concurrency_troubleshooting_1_the_permanently_pending_bug_read_after_write_race_condition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "docs_redis_concurrency_troubleshooting_redis_queue_concurrency_troubleshooting_guide",
+      "target": "docs_redis_concurrency_troubleshooting_2_the_30_second_staggering_bottleneck_queue_freezing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/redis-concurrency-troubleshooting.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "docs_redis_concurrency_troubleshooting_redis_queue_concurrency_troubleshooting_guide",
+      "target": "docs_redis_concurrency_troubleshooting_3_artificial_global_rate_limiting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "executor_failure_handler"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "executor_runner"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "playwright_worker_vps_worker_playwright_detect_and_update"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L389",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "playwright_worker_vps_worker_playwright_poll_queue"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "services_captcha_service"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "services_logging_service"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "services_proxy_manager"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "services_redis_service"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "services_template_detector"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_1",
+      "target": "playwright_worker_vps_worker_playwright"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L426",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_426",
+      "target": "playwright_worker_vps_worker_playwright"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L459",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_459",
+      "target": "playwright_worker_vps_worker_playwright"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
+      "target": "client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L442",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_poll_queue",
+      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_69",
+      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
+      "target": "client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "target": "client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_82",
+      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L326",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_152",
+      "target": "playwright_worker_vps_worker_playwright_detect_and_update"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L443",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_poll_queue",
+      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L168",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_168",
+      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "target": "executor_failure_handler_failurehandler"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L390",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_rationale_390",
+      "target": "playwright_worker_vps_worker_playwright_poll_queue"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11198,60 +11658,6 @@
       "source_location": "L20",
       "weight": 1.0,
       "source": "execute_articles_route_post",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route",
-      "target": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "agentic_seo_app_api_campaigns_execute_route_ts_execute_route_post",
       "target": "supabase_server_createserviceclient"
     },
     {
@@ -15256,39 +15662,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "playwright_worker_article_worker_update_parent_task",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L167",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
       "target": "supabase_types_client"
     },
     {
@@ -19312,17 +19685,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "executor_failure_handler"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/worker.py",
       "source_location": "L42",
       "weight": 1.0,
@@ -19408,17 +19770,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "executor_failure_handler_rationale_27",
-      "target": "executor_failure_handler_failurehandler"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L179",
-      "weight": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
       "target": "executor_failure_handler_failurehandler"
     },
     {
@@ -19595,17 +19946,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "executor_runner_rationale_1",
-      "target": "executor_runner"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
       "target": "executor_runner"
     },
     {
@@ -20072,17 +20412,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/worker.py",
       "source_location": "L40",
       "weight": 1.0,
@@ -20332,17 +20661,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "services_captcha_service"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/worker.py",
       "source_location": "L38",
       "weight": 1.0,
@@ -20486,17 +20804,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "services_logging_service"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/worker.py",
       "source_location": "L37",
       "weight": 1.0,
@@ -20599,17 +20906,6 @@
       "target": "services_logging_service_log_event"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "services_proxy_manager"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/services/proxy_manager.py",
@@ -20669,17 +20965,6 @@
       "confidence_score": 1.0,
       "source": "services_proxy_manager_rationale_45",
       "target": "services_proxy_manager_proxymanager_get_working_proxy"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "services_redis_service"
     },
     {
       "relation": "imports_from",
@@ -21007,17 +21292,6 @@
       "confidence_score": 1.0,
       "source": "services_supabase_service_rationale_223",
       "target": "services_supabase_service_supabaseservice_update_site_template"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "services_template_detector"
     },
     {
       "relation": "imports_from",
@@ -22100,169 +22374,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_test_proxy",
       "target": "playwright_worker_test_proxy_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "playwright_worker_vps_worker_playwright_detect_and_update"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L389",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "playwright_worker_vps_worker_playwright_poll_queue"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L167",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_1",
-      "target": "playwright_worker_vps_worker_playwright"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L426",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_426",
-      "target": "playwright_worker_vps_worker_playwright"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L459",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_459",
-      "target": "playwright_worker_vps_worker_playwright"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L442",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_poll_queue",
-      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_69",
-      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_82",
-      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L326",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
-      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L152",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_152",
-      "target": "playwright_worker_vps_worker_playwright_detect_and_update"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L443",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_poll_queue",
-      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L168",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_168",
-      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L390",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_rationale_390",
-      "target": "playwright_worker_vps_worker_playwright_poll_queue"
     },
     {
       "relation": "contains",
@@ -24242,5 +24353,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "49057043202370835b45b6dc14123bbb6f3349d6"
+  "built_at_commit": "e43c829caec8e948d6df15d9a26526468136eb32"
 }

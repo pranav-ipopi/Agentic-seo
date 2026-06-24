@@ -33,6 +33,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing required parameters or targets array' }, { status: 400 })
     }
 
+    if (!process.env.REDIS_URL) {
+      console.error('[CRITICAL ERROR] REDIS_URL environment variable is missing. Campaign execution aborted to prevent silent queue failure.')
+      return NextResponse.json({ error: 'System Configuration Error: REDIS_URL is not set. Please add it to your Vercel environment variables.' }, { status: 500 })
+    }
+
     // 1. Fetch available target sites from inventory
     const { data: allTargetSites, error: sitesError } = await adminClient
       .from('target_sites')

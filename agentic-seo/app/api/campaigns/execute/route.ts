@@ -153,6 +153,13 @@ export async function POST(request: NextRequest) {
 
     if (taskRunsError) throw taskRunsError
 
+    // Fetch template once to attach to Redis jobs
+    const { data: workflowTemplate } = await adminClient
+      .from('workflow_templates')
+      .select('*')
+      .eq('id', templateId)
+      .single()
+
     // 5b. Push jobs to Redis queue for workers
     if (insertedTaskRuns && insertedTaskRuns.length > 0) {
       if (process.env.REDIS_URL) {
@@ -161,7 +168,11 @@ export async function POST(request: NextRequest) {
           const pipeline = redis.pipeline()
           // Ensure we push jobs using the exact same structure the worker expects
           insertedTaskRuns.forEach(run => {
-            pipeline.lpush('backlink_queue', JSON.stringify(run))
+            const redisJob = {
+              ...run,
+              workflow_templates: workflowTemplate || null
+            }
+            pipeline.lpush('backlink_queue', JSON.stringify(redisJob))
           })
           await pipeline.exec()
           await redis.quit()

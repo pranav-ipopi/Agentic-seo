@@ -464,12 +464,26 @@ async def poll_queue():
                         # Fast atomic pop from Redis
                         job = await redis_service.pop_job(timeout=1)
                         if job:
-                            # Fetch joined data from Supabase using the ID
-                            res = supabase.table('task_runs').select('*, workflow_templates(*)').eq('id', job.get('id')).execute()
-                            if res.data:
-                                task_runs = res.data
+                            if 'workflow_templates' in job and job['workflow_templates']:
+                                # Pure Redis-first execution: all data is present in payload
+                                task_runs = [job]
                             else:
-                                logger.warning(f"Job {job.get('id')} popped from Redis but not found in Supabase")
+                                # Fallback for old jobs in queue that miss the joined data (with retry for latency)
+                                res = None
+                                for attempt in range(3):
+                                    res = supabase.table('task_runs').select('*, workflow_templates(*)').eq('id', job.get('id')).execute()
+                                    if res.data:
+                                        break
+                                    await asyncio.sleep(1) # Wait 1s and retry if replication is lagging
+                                    
+                                if res and res.data:
+                                    task_runs = res.data
+                                else:
+                                    logger.warning(f"Job {job.get('id')} popped from Redis but not found in Supabase after 3 retries. Pushing back to queue.")
+                                    try:
+                                        await redis_service.client.lpush('backlink_queue', json.dumps(job))
+                                    except Exception as e:
+                                        logger.error(f"Failed to push job {job.get('id')} back to Redis: {e}")
                     else:
                         # Fallback to Supabase polling
                         fetch_limit = 1
@@ -496,8 +510,8 @@ async def poll_queue():
                         logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
                         
                         for t in task_runs:
-                            # Random delay between 50 and 60 seconds
-                            wait_seconds = random.uniform(50, 60)
+                            # Reduced delay to allow concurrent execution (2 to 5 seconds)
+                            wait_seconds = random.uniform(2, 5)
                             next_job_allowed_time = current_time + wait_seconds
                             
                             global NEXT_JOB_ALLOWED_TIME_GLOBAL
@@ -556,10 +570,19 @@ async def poll_queue():
                         logger.info("No active tasks. Closing browser to free resources...")
                         await browser_manager.close()
                         browser_started = False
-                    await asyncio.sleep(POLL_INTERVAL_SECONDS)
+                    if not redis_service.client:
+                        await asyncio.sleep(POLL_INTERVAL_SECONDS)
                 else:
-                    # Wait for at least one task to finish, or timeout after polling interval
-                    await asyncio.wait(active_tasks, return_when=asyncio.FIRST_COMPLETED, timeout=POLL_INTERVAL_SECONDS)
+                    remaining_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
+                    if remaining_slots > 0:
+                        import time
+                        now = time.time()
+                        if NEXT_JOB_ALLOWED_TIME_GLOBAL > now:
+                            await asyncio.sleep(NEXT_JOB_ALLOWED_TIME_GLOBAL - now)
+                        # We have slots available, loop back to pull next job without blocking
+                    else:
+                        # Max capacity reached, wait for at least one task to finish
+                        await asyncio.wait(active_tasks, return_when=asyncio.FIRST_COMPLETED, timeout=POLL_INTERVAL_SECONDS)
                     
             except Exception as e:
                 logger.error(f"Error polling queue: {str(e)}")

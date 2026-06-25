@@ -12,3 +12,6 @@ aiofiles==23.2.1
 # Already in stdlib
 redis
 httpx>=0.24.0
+
+xvfbwrapper==0.2.9
+pyautogui==0.9.54

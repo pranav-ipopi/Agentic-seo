@@ -4,454 +4,114 @@
   "graph": {},
   "nodes": [
     {
-      "label": "stealth_browser.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "label": "ponytail.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/ponytail.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "methods_stealth_browser",
-      "community": 4,
-      "norm_label": "stealth_browser.py"
+      "id": "rules_ponytail",
+      "community": 104,
+      "norm_label": "ponytail.md"
     },
     {
-      "label": "_should_block()",
+      "label": "ponytail",
+      "file_type": "document",
+      "source_file": ".agents/rules/ponytail.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "rules_ponytail_ponytail",
+      "community": 104,
+      "norm_label": "ponytail"
+    },
+    {
+      "label": "page.tsx",
       "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_should_block",
-      "community": 4,
-      "norm_label": "_should_block()"
-    },
-    {
-      "label": "calculate_human_path()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_calculate_human_path",
-      "community": 4,
-      "norm_label": "calculate_human_path()"
-    },
-    {
-      "label": "move_mouse_humanlike()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L88",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_move_mouse_humanlike",
-      "community": 4,
-      "norm_label": "move_mouse_humanlike()"
-    },
-    {
-      "label": "handle_cloudflare_challenge()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L107",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_handle_cloudflare_challenge",
-      "community": 4,
-      "norm_label": "handle_cloudflare_challenge()"
-    },
-    {
-      "label": "StealthBrowserManager",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L199",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager",
-      "community": 4,
-      "norm_label": "stealthbrowsermanager"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L214",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_init",
-      "community": 4,
-      "norm_label": ".__init__()"
-    },
-    {
-      "label": ".set_proxy()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L221",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_set_proxy",
-      "community": 4,
-      "norm_label": ".set_proxy()"
-    },
-    {
-      "label": ".start()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L224",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_start",
-      "community": 4,
-      "norm_label": ".start()"
-    },
-    {
-      "label": "._build_proxy_dict()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L265",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict",
-      "community": 4,
-      "norm_label": "._build_proxy_dict()"
-    },
-    {
-      "label": "._new_context()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L315",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_new_context",
-      "community": 4,
-      "norm_label": "._new_context()"
-    },
-    {
-      "label": ".get_page()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L336",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_get_page",
-      "community": 4,
-      "norm_label": ".get_page()"
-    },
-    {
-      "label": ".get_captcha_page()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L341",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
-      "community": 4,
-      "norm_label": ".get_captcha_page()"
-    },
-    {
-      "label": ".close()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L346",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_stealthbrowsermanager_close",
-      "community": 4,
-      "norm_label": ".close()"
-    },
-    {
-      "label": "Generates a smooth, human-like curved mouse path between two coordinates.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_60",
-      "community": 4,
-      "norm_label": "generates a smooth, human-like curved mouse path between two coordinates."
-    },
-    {
-      "label": "Moves Playwright's mouse from a random starting position to the target     coord",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L89",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_89",
-      "community": 4,
-      "norm_label": "moves playwright's mouse from a random starting position to the target     coord"
-    },
-    {
-      "label": "Enhanced Cloudflare Turnstile bypass with human-like mouse movement.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L108",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_108",
-      "community": 4,
-      "norm_label": "enhanced cloudflare turnstile bypass with human-like mouse movement."
-    },
-    {
-      "label": "Manages an undetected Chromium session (SeleniumBase CDP) with Playwright.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L200",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_200",
-      "community": 4,
-      "norm_label": "manages an undetected chromium session (seleniumbase cdp) with playwright."
-    },
-    {
-      "label": "Fresh isolated context, images allowed to pass Cloudflare. Close via page.contex",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L337",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_337",
-      "community": 4,
-      "norm_label": "fresh isolated context, images allowed to pass cloudflare. close via page.contex"
-    },
-    {
-      "label": "Fresh isolated context, images allowed (SolvMedia needs them).",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L342",
-      "_origin": "ast",
-      "id": "methods_stealth_browser_rationale_342",
-      "community": 4,
-      "norm_label": "fresh isolated context, images allowed (solvmedia needs them)."
-    },
-    {
-      "label": "pligg_generic.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "templates_pligg_generic",
-      "community": 10,
-      "norm_label": "pligg_generic.py"
+      "id": "login_page",
+      "community": 6,
+      "norm_label": "page.tsx"
     },
     {
-      "label": "PliggGenericTemplate",
+      "label": "LoginPage()",
       "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L36",
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
+      "source_location": "L9",
       "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate",
-      "community": 24,
-      "norm_label": "pligggenerictemplate"
+      "id": "login_page_loginpage",
+      "community": 6,
+      "norm_label": "loginpage()"
     },
     {
-      "label": "BaseTemplate",
+      "label": "actions.ts",
       "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "basetemplate",
-      "community": 24,
-      "norm_label": "basetemplate"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_init",
-      "community": 25,
-      "norm_label": ".__init__()"
-    },
-    {
-      "label": "Logger",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "logger",
-      "community": 25,
-      "norm_label": "logger"
-    },
-    {
-      "label": "Any",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "any",
-      "community": 25,
-      "norm_label": "any"
-    },
-    {
-      "label": ".run()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L63",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_run",
-      "community": 24,
-      "norm_label": ".run()"
-    },
-    {
-      "label": "Page",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "page",
-      "community": 7,
-      "norm_label": "page"
-    },
-    {
-      "label": "._navigate_home()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L91",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_navigate_home",
-      "community": 18,
-      "norm_label": "._navigate_home()"
-    },
-    {
-      "label": "._ensure_logged_in()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L100",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
-      "community": 24,
-      "norm_label": "._ensure_logged_in()"
-    },
-    {
-      "label": "._solve_captcha_2captcha()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L110",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha",
-      "community": 24,
-      "norm_label": "._solve_captcha_2captcha()"
-    },
-    {
-      "label": "._report_bad_captcha()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L184",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
-      "community": 24,
-      "norm_label": "._report_bad_captcha()"
-    },
-    {
-      "label": "._register_account()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L202",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "community": 24,
-      "norm_label": "._register_account()"
-    },
-    {
-      "label": "._submit_bookmark()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L330",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "community": 24,
-      "norm_label": "._submit_bookmark()"
-    },
-    {
-      "label": "._logout()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L502",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_pligggenerictemplate_logout",
-      "community": 24,
-      "norm_label": "._logout()"
-    },
-    {
-      "label": "Generic Pligg/Kliqqi CMS Site Template (Config-Driven)  This is a universal impl",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_1",
-      "community": 10,
-      "norm_label": "generic pligg/kliqqi cms site template (config-driven)  this is a universal impl"
+      "id": "admin_actions",
+      "community": 98,
+      "norm_label": "actions.ts"
     },
     {
-      "label": "Generic Pligg/Kliqqi submission template.     Handles:     - Cloudflare Turnstil",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L37",
+      "label": "fetchAdminStats()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L5",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_37",
-      "community": 24,
-      "norm_label": "generic pligg/kliqqi submission template.     handles:     - cloudflare turnstil"
+      "id": "admin_actions_fetchadminstats",
+      "community": 98,
+      "norm_label": "fetchadminstats()"
     },
     {
-      "label": "Main entry point. Executes the full backlink creation flow.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L64",
+      "label": "updateAdminLimit()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L52",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_64",
-      "community": 24,
-      "norm_label": "main entry point. executes the full backlink creation flow."
+      "id": "admin_actions_updateadminlimit",
+      "community": 98,
+      "norm_label": "updateadminlimit()"
     },
     {
-      "label": "Navigate to home page with retry logic and Cloudflare bypass.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L92",
+      "label": "setGlobalLimit()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L68",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_92",
-      "community": 18,
-      "norm_label": "navigate to home page with retry logic and cloudflare bypass."
+      "id": "admin_actions_setgloballimit",
+      "community": 98,
+      "norm_label": "setgloballimit()"
     },
     {
-      "label": "Register a new account if not logged in.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L101",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L1",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_101",
-      "community": 24,
-      "norm_label": "register a new account if not logged in."
+      "id": "admin_page",
+      "community": 98,
+      "norm_label": "page.tsx"
     },
     {
-      "label": "Solve SolveMedia captcha using 2Captcha service. All selectors from config.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L111",
+      "label": "ClientStats",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L7",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_111",
-      "community": 24,
-      "norm_label": "solve solvemedia captcha using 2captcha service. all selectors from config."
+      "id": "admin_page_clientstats",
+      "community": 98,
+      "norm_label": "clientstats"
     },
     {
-      "label": "Report incorrect captcha solution to 2Captcha.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L185",
+      "label": "AdminClientsPage()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_185",
-      "community": 24,
-      "norm_label": "report incorrect captcha solution to 2captcha."
-    },
-    {
-      "label": "Perform registration with generated credentials. All selectors from config.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L203",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_203",
-      "community": 24,
-      "norm_label": "perform registration with generated credentials. all selectors from config."
-    },
-    {
-      "label": "Submit the bookmark and return the created story/backlink URL. All selectors fro",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L331",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_331",
-      "community": 24,
-      "norm_label": "submit the bookmark and return the created story/backlink url. all selectors fro"
-    },
-    {
-      "label": "Logout using config-driven selectors.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L503",
-      "_origin": "ast",
-      "id": "templates_pligg_generic_rationale_503",
-      "community": 24,
-      "norm_label": "logout using config-driven selectors."
+      "id": "admin_page_adminclientspage",
+      "community": 98,
+      "norm_label": "adminclientspage()"
     },
     {
       "label": "route.ts",
@@ -459,9 +119,9 @@
       "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "execute_route",
       "community": 0,
-      "norm_label": "route.ts",
-      "id": "execute_route"
+      "norm_label": "route.ts"
     },
     {
       "label": "POST()",
@@ -469,9 +129,829 @@
       "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "execute_route_post",
       "community": 0,
-      "norm_label": "post()",
-      "id": "execute_route_post"
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/clients/[id]/limit/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "limit_route",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "PATCH()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/clients/[id]/limit/route.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "limit_route_patch",
+      "community": 0,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/clients/[id]/quota/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "quota_route",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/clients/[id]/quota/route.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "quota_route_get",
+      "community": 0,
+      "norm_label": "get()"
+    },
+    {
+      "label": "LeftSidebar.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "sidebar_leftsidebar",
+      "community": 12,
+      "norm_label": "leftsidebar.tsx"
+    },
+    {
+      "label": "NAV_ITEMS",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "sidebar_leftsidebar_nav_items",
+      "community": 12,
+      "norm_label": "nav_items"
+    },
+    {
+      "label": "LeftSidebar()",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "sidebar_leftsidebar_leftsidebar",
+      "community": 12,
+      "norm_label": "leftsidebar()"
+    },
+    {
+      "label": "RunConfigurationPanel.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "workflows_runconfigurationpanel",
+      "community": 31,
+      "norm_label": "runconfigurationpanel.tsx"
+    },
+    {
+      "label": "TargetConfig",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "workflows_runconfigurationpanel_targetconfig",
+      "community": 31,
+      "norm_label": "targetconfig"
+    },
+    {
+      "label": "RunConfigurationPanel()",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "workflows_runconfigurationpanel_runconfigurationpanel",
+      "community": 31,
+      "norm_label": "runconfigurationpanel()"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "supabase_types",
+      "community": 14,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "Database",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "supabase_types_database",
+      "community": 6,
+      "norm_label": "database"
+    },
+    {
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L422",
+      "_origin": "ast",
+      "id": "supabase_types_profile",
+      "community": 6,
+      "norm_label": "profile"
+    },
+    {
+      "label": "Client",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L423",
+      "_origin": "ast",
+      "id": "supabase_types_client",
+      "community": 1,
+      "norm_label": "client"
+    },
+    {
+      "label": "ClientMember",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L424",
+      "_origin": "ast",
+      "id": "supabase_types_clientmember",
+      "community": 14,
+      "norm_label": "clientmember"
+    },
+    {
+      "label": "ChatSession",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L425",
+      "_origin": "ast",
+      "id": "supabase_types_chatsession",
+      "community": 15,
+      "norm_label": "chatsession"
+    },
+    {
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L426",
+      "_origin": "ast",
+      "id": "supabase_types_chatmessage",
+      "community": 15,
+      "norm_label": "chatmessage"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L427",
+      "_origin": "ast",
+      "id": "supabase_types_task",
+      "community": 46,
+      "norm_label": "task"
+    },
+    {
+      "label": "Approval",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L428",
+      "_origin": "ast",
+      "id": "supabase_types_approval",
+      "community": 12,
+      "norm_label": "approval"
+    },
+    {
+      "label": "ClientMemory",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L429",
+      "_origin": "ast",
+      "id": "supabase_types_clientmemory",
+      "community": 14,
+      "norm_label": "clientmemory"
+    },
+    {
+      "label": "AgencyMemory",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L430",
+      "_origin": "ast",
+      "id": "supabase_types_agencymemory",
+      "community": 14,
+      "norm_label": "agencymemory"
+    },
+    {
+      "label": "WorkflowTemplate",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L431",
+      "_origin": "ast",
+      "id": "supabase_types_workflowtemplate",
+      "community": 31,
+      "norm_label": "workflowtemplate"
+    },
+    {
+      "label": "TaskRun",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L432",
+      "_origin": "ast",
+      "id": "supabase_types_taskrun",
+      "community": 6,
+      "norm_label": "taskrun"
+    },
+    {
+      "label": "Keyword",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L433",
+      "_origin": "ast",
+      "id": "supabase_types_keyword",
+      "community": 0,
+      "norm_label": "keyword"
+    },
+    {
+      "label": "Backlink",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L434",
+      "_origin": "ast",
+      "id": "supabase_types_backlink",
+      "community": 14,
+      "norm_label": "backlink"
+    },
+    {
+      "label": "Department",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L435",
+      "_origin": "ast",
+      "id": "supabase_types_department",
+      "community": 14,
+      "norm_label": "department"
+    },
+    {
+      "label": "DepartmentMember",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L436",
+      "_origin": "ast",
+      "id": "supabase_types_departmentmember",
+      "community": 14,
+      "norm_label": "departmentmember"
+    },
+    {
+      "label": "Skill",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L437",
+      "_origin": "ast",
+      "id": "supabase_types_skill",
+      "community": 23,
+      "norm_label": "skill"
+    },
+    {
+      "label": "TaskRunLog",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L438",
+      "_origin": "ast",
+      "id": "supabase_types_taskrunlog",
+      "community": 6,
+      "norm_label": "taskrunlog"
+    },
+    {
+      "label": "UserRole",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L440",
+      "_origin": "ast",
+      "id": "supabase_types_userrole",
+      "community": 14,
+      "norm_label": "userrole"
+    },
+    {
+      "label": "DeptRole",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L441",
+      "_origin": "ast",
+      "id": "supabase_types_deptrole",
+      "community": 14,
+      "norm_label": "deptrole"
+    },
+    {
+      "label": "DepartmentSlug",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L442",
+      "_origin": "ast",
+      "id": "supabase_types_departmentslug",
+      "community": 14,
+      "norm_label": "departmentslug"
+    },
+    {
+      "label": "TaskStatus",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L443",
+      "_origin": "ast",
+      "id": "supabase_types_taskstatus",
+      "community": 14,
+      "norm_label": "taskstatus"
+    },
+    {
+      "label": "TaskRunStatus",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L444",
+      "_origin": "ast",
+      "id": "supabase_types_taskrunstatus",
+      "community": 14,
+      "norm_label": "taskrunstatus"
+    },
+    {
+      "label": "ApprovalStatus",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L445",
+      "_origin": "ast",
+      "id": "supabase_types_approvalstatus",
+      "community": 14,
+      "norm_label": "approvalstatus"
+    },
+    {
+      "label": "BacklinkStatus",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L446",
+      "_origin": "ast",
+      "id": "supabase_types_backlinkstatus",
+      "community": 14,
+      "norm_label": "backlinkstatus"
+    },
+    {
+      "label": "DEPARTMENT_IDS",
+      "file_type": "code",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L456",
+      "_origin": "ast",
+      "id": "supabase_types_department_ids",
+      "community": 15,
+      "norm_label": "department_ids"
+    },
+    {
+      "label": "stealth_browser.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "stealth_browser.py",
+      "id": "methods_stealth_browser"
+    },
+    {
+      "label": "_should_block()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "_should_block()",
+      "id": "methods_stealth_browser_should_block"
+    },
+    {
+      "label": "calculate_human_path()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L59",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "calculate_human_path()",
+      "id": "methods_stealth_browser_calculate_human_path"
+    },
+    {
+      "label": "move_mouse_humanlike()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L88",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "move_mouse_humanlike()",
+      "id": "methods_stealth_browser_move_mouse_humanlike"
+    },
+    {
+      "label": "handle_cloudflare_challenge()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L107",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "handle_cloudflare_challenge()",
+      "id": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "label": "StealthBrowserManager",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L199",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "stealthbrowsermanager",
+      "id": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L214",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".__init__()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_init"
+    },
+    {
+      "label": ".set_proxy()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L221",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".set_proxy()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_set_proxy"
+    },
+    {
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L224",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".start()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_start"
+    },
+    {
+      "label": "._build_proxy_dict()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L265",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "._build_proxy_dict()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
+    },
+    {
+      "label": "._new_context()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L315",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "._new_context()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_new_context"
+    },
+    {
+      "label": ".get_page()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L336",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".get_page()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_get_page"
+    },
+    {
+      "label": ".get_captcha_page()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L341",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".get_captcha_page()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L346",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".close()",
+      "id": "methods_stealth_browser_stealthbrowsermanager_close"
+    },
+    {
+      "label": "Generates a smooth, human-like curved mouse path between two coordinates.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L60",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "generates a smooth, human-like curved mouse path between two coordinates.",
+      "id": "methods_stealth_browser_rationale_60"
+    },
+    {
+      "label": "Moves Playwright's mouse from a random starting position to the target     coord",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "moves playwright's mouse from a random starting position to the target     coord",
+      "id": "methods_stealth_browser_rationale_89"
+    },
+    {
+      "label": "Enhanced Cloudflare Turnstile bypass with human-like mouse movement.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L108",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "enhanced cloudflare turnstile bypass with human-like mouse movement.",
+      "id": "methods_stealth_browser_rationale_108"
+    },
+    {
+      "label": "Manages an undetected Chromium session (SeleniumBase CDP) with Playwright.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L200",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "manages an undetected chromium session (seleniumbase cdp) with playwright.",
+      "id": "methods_stealth_browser_rationale_200"
+    },
+    {
+      "label": "Fresh isolated context, images allowed to pass Cloudflare. Close via page.contex",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L337",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "fresh isolated context, images allowed to pass cloudflare. close via page.contex",
+      "id": "methods_stealth_browser_rationale_337"
+    },
+    {
+      "label": "Fresh isolated context, images allowed (SolvMedia needs them).",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L342",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "fresh isolated context, images allowed (solvmedia needs them).",
+      "id": "methods_stealth_browser_rationale_342"
+    },
+    {
+      "label": "pligg_generic.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "pligg_generic.py",
+      "id": "templates_pligg_generic"
+    },
+    {
+      "label": "PliggGenericTemplate",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "pligggenerictemplate",
+      "id": "templates_pligg_generic_pligggenerictemplate"
+    },
+    {
+      "label": "BaseTemplate",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "basetemplate",
+      "id": "basetemplate"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": ".__init__()",
+      "id": "templates_pligg_generic_pligggenerictemplate_init"
+    },
+    {
+      "label": "Logger",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "logger",
+      "id": "logger"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "any",
+      "id": "any"
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L63",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": ".run()",
+      "id": "templates_pligg_generic_pligggenerictemplate_run"
+    },
+    {
+      "label": "Page",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "page",
+      "id": "page"
+    },
+    {
+      "label": "._navigate_home()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L91",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "._navigate_home()",
+      "id": "templates_pligg_generic_pligggenerictemplate_navigate_home"
+    },
+    {
+      "label": "._ensure_logged_in()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L100",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._ensure_logged_in()",
+      "id": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
+    },
+    {
+      "label": "._solve_captcha_2captcha()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L110",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._solve_captcha_2captcha()",
+      "id": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
+    },
+    {
+      "label": "._report_bad_captcha()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L184",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._report_bad_captcha()",
+      "id": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha"
+    },
+    {
+      "label": "._register_account()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L202",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._register_account()",
+      "id": "templates_pligg_generic_pligggenerictemplate_register_account"
+    },
+    {
+      "label": "._submit_bookmark()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L330",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._submit_bookmark()",
+      "id": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
+    },
+    {
+      "label": "._logout()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L502",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "._logout()",
+      "id": "templates_pligg_generic_pligggenerictemplate_logout"
+    },
+    {
+      "label": "Generic Pligg/Kliqqi CMS Site Template (Config-Driven)  This is a universal impl",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "generic pligg/kliqqi cms site template (config-driven)  this is a universal impl",
+      "id": "templates_pligg_generic_rationale_1"
+    },
+    {
+      "label": "Generic Pligg/Kliqqi submission template.     Handles:     - Cloudflare Turnstil",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L37",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "generic pligg/kliqqi submission template.     handles:     - cloudflare turnstil",
+      "id": "templates_pligg_generic_rationale_37"
+    },
+    {
+      "label": "Main entry point. Executes the full backlink creation flow.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "main entry point. executes the full backlink creation flow.",
+      "id": "templates_pligg_generic_rationale_64"
+    },
+    {
+      "label": "Navigate to home page with retry logic and Cloudflare bypass.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L92",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "navigate to home page with retry logic and cloudflare bypass.",
+      "id": "templates_pligg_generic_rationale_92"
+    },
+    {
+      "label": "Register a new account if not logged in.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L101",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "register a new account if not logged in.",
+      "id": "templates_pligg_generic_rationale_101"
+    },
+    {
+      "label": "Solve SolveMedia captcha using 2Captcha service. All selectors from config.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L111",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "solve solvemedia captcha using 2captcha service. all selectors from config.",
+      "id": "templates_pligg_generic_rationale_111"
+    },
+    {
+      "label": "Report incorrect captcha solution to 2Captcha.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L185",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "report incorrect captcha solution to 2captcha.",
+      "id": "templates_pligg_generic_rationale_185"
+    },
+    {
+      "label": "Perform registration with generated credentials. All selectors from config.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L203",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "perform registration with generated credentials. all selectors from config.",
+      "id": "templates_pligg_generic_rationale_203"
+    },
+    {
+      "label": "Submit the bookmark and return the created story/backlink URL. All selectors fro",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L331",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "submit the bookmark and return the created story/backlink url. all selectors fro",
+      "id": "templates_pligg_generic_rationale_331"
+    },
+    {
+      "label": "Logout using config-driven selectors.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L503",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "logout using config-driven selectors.",
+      "id": "templates_pligg_generic_rationale_503"
     },
     {
       "label": "route.ts",
@@ -499,7 +979,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "rightsidebar.tsx",
       "id": "sidebar_rightsidebar"
     },
@@ -509,7 +989,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "taskrunextended",
       "id": "sidebar_rightsidebar_taskrunextended"
     },
@@ -519,7 +999,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "rightsidebar()",
       "id": "sidebar_rightsidebar_rightsidebar"
     },
@@ -629,7 +1109,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "vps_worker_playwright.py",
       "id": "playwright_worker_vps_worker_playwright"
     },
@@ -639,7 +1119,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "mark_parent_task_running()",
       "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
     },
@@ -649,7 +1129,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "client",
       "id": "client"
     },
@@ -659,7 +1139,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "check_and_update_parent_task()",
       "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
     },
@@ -669,7 +1149,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L151",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "detect_and_update()",
       "id": "playwright_worker_vps_worker_playwright_detect_and_update"
     },
@@ -679,7 +1159,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L167",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "route_and_execute()",
       "id": "playwright_worker_vps_worker_playwright_route_and_execute"
     },
@@ -689,7 +1169,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L389",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "poll_queue()",
       "id": "playwright_worker_vps_worker_playwright_poll_queue"
     },
@@ -699,7 +1179,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task",
       "id": "playwright_worker_vps_worker_playwright_rationale_1"
     },
@@ -709,7 +1189,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
       "id": "playwright_worker_vps_worker_playwright_rationale_69"
     },
@@ -719,7 +1199,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
       "id": "playwright_worker_vps_worker_playwright_rationale_82"
     },
@@ -729,7 +1209,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L152",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wr",
       "id": "playwright_worker_vps_worker_playwright_rationale_152"
     },
@@ -739,7 +1219,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L168",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for conf",
       "id": "playwright_worker_vps_worker_playwright_rationale_168"
     },
@@ -749,7 +1229,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L390",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously",
       "id": "playwright_worker_vps_worker_playwright_rationale_390"
     },
@@ -759,7 +1239,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L426",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_426"
     },
@@ -769,7 +1249,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L459",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_459"
     },
@@ -779,7 +1259,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "layout.tsx",
       "id": "dashboard_layout"
     },
@@ -789,7 +1269,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "metadata",
       "id": "dashboard_layout_metadata"
     },
@@ -799,7 +1279,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "dashboardlayout()",
       "id": "dashboard_layout_dashboardlayout"
     },
@@ -822,26 +1302,6 @@
       "community": 80,
       "norm_label": "graphify",
       "id": "rules_graphify_graphify"
-    },
-    {
-      "label": "ponytail.md",
-      "file_type": "document",
-      "source_file": ".agents/rules/ponytail.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "ponytail.md",
-      "id": "rules_ponytail"
-    },
-    {
-      "label": "ponytail",
-      "file_type": "document",
-      "source_file": ".agents/rules/ponytail.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "ponytail",
-      "id": "rules_ponytail_ponytail"
     },
     {
       "label": "SKILL.md",
@@ -1944,26 +2404,6 @@
       "id": "auth_layout_authlayout"
     },
     {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "page.tsx",
-      "id": "login_page"
-    },
-    {
-      "label": "LoginPage()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "loginpage()",
-      "id": "login_page_loginpage"
-    },
-    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "agentic-seo/app/api/approvals/route.ts",
@@ -2389,7 +2829,7 @@
       "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 31,
       "norm_label": "page.tsx",
       "id": "approvals_page"
     },
@@ -2399,7 +2839,7 @@
       "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 12,
+      "community": 31,
       "norm_label": "approvalspage()",
       "id": "approvals_page_approvalspage"
     },
@@ -2619,7 +3059,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "page.tsx",
       "id": "tasks_page"
     },
@@ -2629,7 +3069,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "taskrunextended",
       "id": "tasks_page_taskrunextended"
     },
@@ -2639,7 +3079,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "status_filters",
       "id": "tasks_page_status_filters"
     },
@@ -2649,7 +3089,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "statusfilter",
       "id": "tasks_page_statusfilter"
     },
@@ -2659,7 +3099,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 40,
+      "community": 31,
       "norm_label": "taskspage()",
       "id": "tasks_page_taskspage"
     },
@@ -2999,7 +3439,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "promptinput.tsx",
       "id": "chat_promptinput"
     },
@@ -3009,7 +3449,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "promptinputprops",
       "id": "chat_promptinput_promptinputprops"
     },
@@ -3019,7 +3459,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "promptinput()",
       "id": "chat_promptinput_promptinput"
     },
@@ -3029,7 +3469,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "clientprovider.tsx",
       "id": "layout_clientprovider"
     },
@@ -3039,7 +3479,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 1,
+      "community": 46,
       "norm_label": "clientcontextvalue",
       "id": "layout_clientprovider_clientcontextvalue"
     },
@@ -3049,7 +3489,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "clientcontext",
       "id": "layout_clientprovider_clientcontext"
     },
@@ -3059,7 +3499,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 31,
+      "community": 46,
       "norm_label": "clientprovider()",
       "id": "layout_clientprovider_clientprovider"
     },
@@ -3072,36 +3512,6 @@
       "community": 31,
       "norm_label": "useclient()",
       "id": "layout_clientprovider_useclient"
-    },
-    {
-      "label": "LeftSidebar.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 98,
-      "norm_label": "leftsidebar.tsx",
-      "id": "sidebar_leftsidebar"
-    },
-    {
-      "label": "NAV_ITEMS",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 98,
-      "norm_label": "nav_items",
-      "id": "sidebar_leftsidebar_nav_items"
-    },
-    {
-      "label": "LeftSidebar()",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 98,
-      "norm_label": "leftsidebar()",
-      "id": "sidebar_leftsidebar_leftsidebar"
     },
     {
       "label": "AnimatedTerminal.tsx",
@@ -3184,36 +3594,6 @@
       "id": "workflows_keywordsmodal_keywordsmodal"
     },
     {
-      "label": "RunConfigurationPanel.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "runconfigurationpanel.tsx",
-      "id": "workflows_runconfigurationpanel"
-    },
-    {
-      "label": "TargetConfig",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "targetconfig",
-      "id": "workflows_runconfigurationpanel_targetconfig"
-    },
-    {
-      "label": "RunConfigurationPanel()",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "runconfigurationpanel()",
-      "id": "workflows_runconfigurationpanel_runconfigurationpanel"
-    },
-    {
       "label": "SiteListModal.tsx",
       "file_type": "code",
       "source_file": "agentic-seo/components/workflows/SiteListModal.tsx",
@@ -3289,7 +3669,7 @@
       "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "skillcard()",
       "id": "workflows_skillspanel_skillcard"
     },
@@ -3319,7 +3699,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "templatenode.tsx",
       "id": "workflows_templatenode"
     },
@@ -3329,7 +3709,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "templatenodedata",
       "id": "workflows_templatenode_templatenodedata"
     },
@@ -3339,7 +3719,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "templatenodetype",
       "id": "workflows_templatenode_templatenodetype"
     },
@@ -3349,7 +3729,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "geticon()",
       "id": "workflows_templatenode_geticon"
     },
@@ -3359,7 +3739,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "gettheme()",
       "id": "workflows_templatenode_gettheme"
     },
@@ -3369,7 +3749,7 @@
       "source_file": "agentic-seo/components/workflows/TemplateNode.tsx",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "templatenode()",
       "id": "workflows_templatenode_templatenode"
     },
@@ -3409,7 +3789,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "workflowvisualizer.tsx",
       "id": "workflows_workflowvisualizer"
     },
@@ -3419,7 +3799,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "nodetypes",
       "id": "workflows_workflowvisualizer_nodetypes"
     },
@@ -3429,7 +3809,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "workflowvisualizerprops",
       "id": "workflows_workflowvisualizer_workflowvisualizerprops"
     },
@@ -3439,7 +3819,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 23,
+      "community": 93,
       "norm_label": "workflowvisualizer()",
       "id": "workflows_workflowvisualizer_workflowvisualizer"
     },
@@ -3604,282 +3984,12 @@
       "id": "supabase_server_createserviceclient"
     },
     {
-      "label": "types.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "types.ts",
-      "id": "supabase_types"
-    },
-    {
-      "label": "Database",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "database",
-      "id": "supabase_types_database"
-    },
-    {
-      "label": "Profile",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L420",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "profile",
-      "id": "supabase_types_profile"
-    },
-    {
-      "label": "Client",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L421",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "client",
-      "id": "supabase_types_client"
-    },
-    {
-      "label": "ClientMember",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L422",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "clientmember",
-      "id": "supabase_types_clientmember"
-    },
-    {
-      "label": "ChatSession",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L423",
-      "_origin": "ast",
-      "community": 98,
-      "norm_label": "chatsession",
-      "id": "supabase_types_chatsession"
-    },
-    {
-      "label": "ChatMessage",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L424",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "chatmessage",
-      "id": "supabase_types_chatmessage"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L425",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "task",
-      "id": "supabase_types_task"
-    },
-    {
-      "label": "Approval",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L426",
-      "_origin": "ast",
-      "community": 12,
-      "norm_label": "approval",
-      "id": "supabase_types_approval"
-    },
-    {
-      "label": "ClientMemory",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L427",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "clientmemory",
-      "id": "supabase_types_clientmemory"
-    },
-    {
-      "label": "AgencyMemory",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L428",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "agencymemory",
-      "id": "supabase_types_agencymemory"
-    },
-    {
-      "label": "WorkflowTemplate",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L429",
-      "_origin": "ast",
-      "community": 31,
-      "norm_label": "workflowtemplate",
-      "id": "supabase_types_workflowtemplate"
-    },
-    {
-      "label": "TaskRun",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L430",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "taskrun",
-      "id": "supabase_types_taskrun"
-    },
-    {
-      "label": "Keyword",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L431",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "keyword",
-      "id": "supabase_types_keyword"
-    },
-    {
-      "label": "Backlink",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L432",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "backlink",
-      "id": "supabase_types_backlink"
-    },
-    {
-      "label": "Department",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L433",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "department",
-      "id": "supabase_types_department"
-    },
-    {
-      "label": "DepartmentMember",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L434",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "departmentmember",
-      "id": "supabase_types_departmentmember"
-    },
-    {
-      "label": "Skill",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L435",
-      "_origin": "ast",
-      "community": 23,
-      "norm_label": "skill",
-      "id": "supabase_types_skill"
-    },
-    {
-      "label": "TaskRunLog",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L436",
-      "_origin": "ast",
-      "community": 40,
-      "norm_label": "taskrunlog",
-      "id": "supabase_types_taskrunlog"
-    },
-    {
-      "label": "UserRole",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L438",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "userrole",
-      "id": "supabase_types_userrole"
-    },
-    {
-      "label": "DeptRole",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L439",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "deptrole",
-      "id": "supabase_types_deptrole"
-    },
-    {
-      "label": "DepartmentSlug",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L440",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "departmentslug",
-      "id": "supabase_types_departmentslug"
-    },
-    {
-      "label": "TaskStatus",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L441",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "taskstatus",
-      "id": "supabase_types_taskstatus"
-    },
-    {
-      "label": "TaskRunStatus",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L442",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "taskrunstatus",
-      "id": "supabase_types_taskrunstatus"
-    },
-    {
-      "label": "ApprovalStatus",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L443",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "approvalstatus",
-      "id": "supabase_types_approvalstatus"
-    },
-    {
-      "label": "BacklinkStatus",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L444",
-      "_origin": "ast",
-      "community": 14,
-      "norm_label": "backlinkstatus",
-      "id": "supabase_types_backlinkstatus"
-    },
-    {
-      "label": "DEPARTMENT_IDS",
-      "file_type": "code",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L454",
-      "_origin": "ast",
-      "community": 15,
-      "norm_label": "department_ids",
-      "id": "supabase_types_department_ids"
-    },
-    {
       "label": "utils.ts",
       "file_type": "code",
       "source_file": "agentic-seo/lib/utils.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "utils.ts",
       "id": "lib_utils"
     },
@@ -3889,7 +3999,7 @@
       "source_file": "agentic-seo/lib/utils.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "cn()",
       "id": "lib_utils_cn"
     },
@@ -3909,7 +4019,7 @@
       "source_file": "agentic-seo/lib/utils.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 23,
+      "community": 12,
       "norm_label": "truncate()",
       "id": "lib_utils_truncate"
     },
@@ -3919,7 +4029,7 @@
       "source_file": "agentic-seo/lib/utils.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 98,
+      "community": 12,
       "norm_label": "getinitials()",
       "id": "lib_utils_getinitials"
     },
@@ -3929,7 +4039,7 @@
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "excel-generator.ts",
       "id": "utils_excel_generator"
     },
@@ -3939,7 +4049,7 @@
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 40,
+      "community": 6,
       "norm_label": "downloadcampaignexcelreport()",
       "id": "utils_excel_generator_downloadcampaignexcelreport"
     },
@@ -6859,7 +6969,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "proxy_manager.py",
       "id": "services_proxy_manager"
     },
@@ -6869,7 +6979,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "proxymanager",
       "id": "services_proxy_manager_proxymanager"
     },
@@ -6879,7 +6989,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": ".__init__()",
       "id": "services_proxy_manager_proxymanager_init"
     },
@@ -6889,7 +6999,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": ".load_proxies()",
       "id": "services_proxy_manager_proxymanager_load_proxies"
     },
@@ -6899,7 +7009,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": ".get_working_proxy()",
       "id": "services_proxy_manager_proxymanager_get_working_proxy"
     },
@@ -6909,7 +7019,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 1,
+      "community": 17,
       "norm_label": "attempts to find a working proxy by sequentially testing them.         returns t",
       "id": "services_proxy_manager_rationale_45"
     },
@@ -7879,7 +7989,7 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "readme.md",
       "id": "readme"
     },
@@ -7889,7 +7999,7 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "hermes - agentic seo platform",
       "id": "readme_hermes_agentic_seo_platform"
     },
@@ -7899,7 +8009,7 @@
       "source_file": "README.md",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "problem statement",
       "id": "readme_problem_statement"
     },
@@ -7909,7 +8019,7 @@
       "source_file": "README.md",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "mission",
       "id": "readme_mission"
     },
@@ -7919,7 +8029,7 @@
       "source_file": "README.md",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "vision",
       "id": "readme_vision"
     },
@@ -7929,7 +8039,7 @@
       "source_file": "README.md",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "strategic objectives",
       "id": "readme_strategic_objectives"
     },
@@ -7939,7 +8049,7 @@
       "source_file": "README.md",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "architecture overview",
       "id": "readme_architecture_overview"
     },
@@ -7949,7 +8059,7 @@
       "source_file": "README.md",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 3,
+      "community": 103,
       "norm_label": "getting started",
       "id": "readme_md_readme_getting_started"
     },
@@ -7999,7 +8109,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "readme.md",
       "id": "docs_readme"
     },
@@ -8009,7 +8119,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "hermes agency os \u2014 project documentation",
       "id": "docs_readme_hermes_agency_os_project_documentation"
     },
@@ -8019,7 +8129,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "documents",
       "id": "docs_readme_documents"
     },
@@ -8029,7 +8139,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "quick reference",
       "id": "docs_readme_quick_reference"
     },
@@ -8039,7 +8149,7 @@
       "source_file": "agentic-seo/docs/architecture.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "architecture.md",
       "id": "docs_architecture"
     },
@@ -8189,7 +8299,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "database_schema.md",
       "id": "docs_database_schema"
     },
@@ -8399,7 +8509,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "departments_setup.md",
       "id": "docs_departments_setup"
     },
@@ -8439,7 +8549,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 13,
+      "community": 106,
       "norm_label": "what the migration creates",
       "id": "docs_departments_setup_what_the_migration_creates"
     },
@@ -8449,7 +8559,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 13,
+      "community": 106,
       "norm_label": "new tables",
       "id": "docs_departments_setup_new_tables"
     },
@@ -8459,7 +8569,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 13,
+      "community": 106,
       "norm_label": "`departments`",
       "id": "docs_departments_setup_departments"
     },
@@ -8469,7 +8579,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 13,
+      "community": 106,
       "norm_label": "`department_members`",
       "id": "docs_departments_setup_department_members"
     },
@@ -8479,7 +8589,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 13,
+      "community": 106,
       "norm_label": "modified tables (non-breaking additions)",
       "id": "docs_departments_setup_modified_tables_non_breaking_additions"
     },
@@ -8529,7 +8639,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 13,
+      "community": 105,
       "norm_label": "how to use departments in new features",
       "id": "docs_departments_setup_how_to_use_departments_in_new_features"
     },
@@ -8539,7 +8649,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 13,
+      "community": 105,
       "norm_label": "assigning a user to a department (server-side)",
       "id": "docs_departments_setup_assigning_a_user_to_a_department_server_side"
     },
@@ -8549,7 +8659,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 13,
+      "community": 105,
       "norm_label": "filtering tasks by department",
       "id": "docs_departments_setup_filtering_tasks_by_department"
     },
@@ -8559,7 +8669,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L122",
       "_origin": "ast",
-      "community": 13,
+      "community": 105,
       "norm_label": "starting a department-aware chat session",
       "id": "docs_departments_setup_starting_a_department_aware_chat_session"
     },
@@ -8569,7 +8679,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L138",
       "_origin": "ast",
-      "community": 13,
+      "community": 105,
       "norm_label": "creating a task_run scoped to a department",
       "id": "docs_departments_setup_creating_a_task_run_scoped_to_a_department"
     },
@@ -8729,7 +8839,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 96,
       "norm_label": "gap_analysis.md",
       "id": "docs_gap_analysis"
     },
@@ -8739,7 +8849,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "v1 architecture \u2192 agency os gap analysis",
       "id": "docs_gap_analysis_v1_architecture_agency_os_gap_analysis"
     },
@@ -8749,7 +8859,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "the target hierarchy",
       "id": "docs_gap_analysis_the_target_hierarchy"
     },
@@ -8759,7 +8869,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "gap analysis results",
       "id": "docs_gap_analysis_gap_analysis_results"
     },
@@ -8769,7 +8879,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "\u2705 already supported in v1 (unchanged)",
       "id": "docs_gap_analysis_already_supported_in_v1_unchanged"
     },
@@ -8779,7 +8889,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "\u2705 fixed in phase 2 (this session)",
       "id": "docs_gap_analysis_fixed_in_phase_2_this_session"
     },
@@ -8789,7 +8899,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "\u26a0\ufe0f still outstanding (future work)",
       "id": "docs_gap_analysis_still_outstanding_future_work"
     },
@@ -8799,7 +8909,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "readiness summary (updated)",
       "id": "docs_gap_analysis_readiness_summary_updated"
     },
@@ -8809,7 +8919,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 3,
+      "community": 97,
       "norm_label": "phased roadmap",
       "id": "docs_gap_analysis_phased_roadmap"
     },
@@ -9746,6 +9856,1605 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/ponytail.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "rules_ponytail",
+      "target": "rules_ponytail_ponytail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_page",
+      "target": "login_page_loginpage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_page",
+      "target": "supabase_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_page",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "login_page_loginpage",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_fetchadminstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_setgloballimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_updateadminlimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "admin_actions",
+      "target": "supabase_server_createserviceclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_fetchadminstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_updateadminlimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "admin_page",
+      "target": "admin_page_adminclientspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "admin_page",
+      "target": "admin_page_clientstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "execute_route_post"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/clients/[id]/limit/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "limit_route",
+      "target": "limit_route_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/clients/[id]/limit/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "limit_route",
+      "target": "supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/clients/[id]/quota/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "quota_route",
+      "target": "quota_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/clients/[id]/quota/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "quota_route",
+      "target": "supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/clients/[id]/quota/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "quota_route",
+      "target": "supabase_server_createserviceclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_layout",
+      "target": "sidebar_leftsidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "lib_utils_formatrelativetime"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "lib_utils_getinitials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "sidebar_leftsidebar_leftsidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "sidebar_leftsidebar_nav_items"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_types_chatsession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_leftsidebar",
+      "target": "supabase_types_profile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "sidebar_leftsidebar_leftsidebar",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "sidebar_leftsidebar_leftsidebar",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "sidebar_leftsidebar_leftsidebar",
+      "target": "lib_utils_getinitials"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "sidebar_leftsidebar_leftsidebar",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "supabase_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "workflows_runconfigurationpanel_runconfigurationpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "workflows_runconfigurationpanel_targetconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runconfigurationpanel",
+      "target": "workflows_sitelistmodal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient",
+      "target": "workflows_runconfigurationpanel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "workflows_runconfigurationpanel_runconfigurationpanel",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "workflows_runconfigurationpanel_runconfigurationpanel",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "approvals_approvalcard",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "approvals_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatmessages",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_clientprovider",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "settings_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/skills/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "skills_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_client",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/server.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_server",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L428",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_agencymemory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L426",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_approval"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L443",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_approvalstatus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L432",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_backlink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L444",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_backlinkstatus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L424",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L423",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_chatsession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L421",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_clientmember"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L427",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_clientmemory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_database"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L433",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_department"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L454",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_department_ids"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L434",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_departmentmember"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L440",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_departmentslug"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L439",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_deptrole"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L431",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_keyword"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L420",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_profile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L435",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_skill"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L425",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_task"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L430",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L436",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_taskrunlog"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L442",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_taskrunstatus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L441",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_taskstatus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L438",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_userrole"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/types.ts",
+      "source_location": "L429",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_types",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/settings/team/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "team_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/utils/excel-generator.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_excel_generator",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_articlerunconfigurationpanel",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/workflows/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_page",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/workflows/runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runner",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_skillspanel",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowvisualizer",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_client",
+      "target": "supabase_types_database"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/supabase/server.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "supabase_server",
+      "target": "supabase_types_database"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "settings_page",
+      "target": "supabase_types_profile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/settings/team/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "team_page",
+      "target": "supabase_types_profile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_page",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_clientprovider",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_clientprovider_clientcontextvalue",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_check_articles_today",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_get_pending_job",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_get_supabase",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_lock_job",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_log_to_db",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_mark_failed",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_mark_success",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L278",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_process_job",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker_update_parent_task",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "settings_page",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_articlerunconfigurationpanel",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient_workflowdetailclientprops",
+      "target": "supabase_types_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_chatsession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatmessages",
+      "target": "supabase_types_chatmessage"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatmessages_chatmessagesprops",
+      "target": "supabase_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types_task"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "approvals_approvalcard",
+      "target": "supabase_types_approval"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "approvals_approvalcard_approvalcardprops",
+      "target": "supabase_types_approval"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "approvals_page",
+      "target": "supabase_types_approval"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_page",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_articlerunconfigurationpanel",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/workflows/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_page",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowdetailclient_workflowdetailclientprops",
+      "target": "supabase_types_workflowtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sidebar_rightsidebar",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/utils/excel-generator.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_excel_generator",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/workflows/runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runner",
+      "target": "supabase_types_taskrun"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/workflows/runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runner",
+      "target": "supabase_types_keyword"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/lib/workflows/runner.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_runner_workflowrunner_handlehermesexecution",
+      "target": "supabase_types_keyword"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/skills/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "skills_page",
+      "target": "supabase_types_skill"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_skillspanel",
+      "target": "supabase_types_skill"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_skillspanel_skillcardprops",
+      "target": "supabase_types_skill"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "workflows_workflowvisualizer",
+      "target": "supabase_types_skill"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "supabase_types_taskrunlog"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_department_ids"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10226,9 +11935,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L337",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_337",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_page",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_page"
     },
     {
       "relation": "rationale_for",
@@ -10236,9 +11945,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L342",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_342",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
     },
     {
       "relation": "re_exports",
@@ -10331,9 +12040,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "basetemplate",
-      "confidence_score": 1.0
+      "target": "basetemplate"
     },
     {
       "relation": "uses",
@@ -10441,9 +12150,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha"
     },
     {
       "relation": "method",
@@ -11291,9 +13000,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L296",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha"
     },
     {
       "relation": "calls",
@@ -11302,9 +13011,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L475",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha"
     },
     {
       "relation": "rationale_for",
@@ -11312,9 +13021,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_rationale_185",
-      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha"
     },
     {
       "relation": "calls",
@@ -11355,9 +13064,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_rationale_203",
-      "target": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
     },
     {
       "relation": "calls",
@@ -11409,9 +13118,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L331",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_rationale_331",
-      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "confidence_score": 1.0
+      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
     },
     {
       "relation": "rationale_for",
@@ -11419,41 +13128,9 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L503",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "templates_pligg_generic_rationale_503",
-      "target": "templates_pligg_generic_pligggenerictemplate_logout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "execute_route_post"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createserviceclient"
+      "target": "templates_pligg_generic_pligggenerictemplate_logout"
     },
     {
       "relation": "contains",
@@ -11627,39 +13304,6 @@
       "confidence_score": 1.0,
       "source": "sidebar_rightsidebar",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types_task"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_rightsidebar",
-      "target": "supabase_types_taskrun"
     },
     {
       "relation": "calls",
@@ -11975,17 +13619,6 @@
       "target": "client"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
-      "target": "supabase_types_client"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -12027,17 +13660,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_route_and_execute",
       "target": "client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
-      "target": "supabase_types_client"
     },
     {
       "relation": "rationale_for",
@@ -12103,17 +13725,6 @@
       "target": "executor_failure_handler_failurehandler"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L167",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
-      "target": "supabase_types_client"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/vps_worker_playwright.py",
@@ -12170,17 +13781,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "dashboard_layout",
-      "target": "sidebar_leftsidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12218,16 +13818,6 @@
       "confidence_score": 1.0,
       "source": "rules_graphify",
       "target": "rules_graphify_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/rules/ponytail.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rules_ponytail",
-      "target": "rules_ponytail_ponytail"
     },
     {
       "relation": "contains",
@@ -13148,49 +14738,6 @@
       "confidence_score": 1.0,
       "source": "auth_layout",
       "target": "auth_layout_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_page",
-      "target": "login_page_loginpage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_page",
-      "target": "supabase_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_page",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/(auth)/login/page.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "login_page_loginpage",
-      "target": "supabase_client_createclient"
     },
     {
       "relation": "contains",
@@ -14310,28 +15857,6 @@
       "target": "supabase_client_createclient"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "approvals_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "approvals_page",
-      "target": "supabase_types_approval"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -14522,39 +16047,6 @@
       "target": "supabase_client_createclient"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "settings_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "settings_page",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "settings_page",
-      "target": "supabase_types_profile"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -14597,28 +16089,6 @@
       "confidence_score": 1.0,
       "source": "team_page",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/settings/team/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "team_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/settings/team/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "team_page",
-      "target": "supabase_types_profile"
     },
     {
       "relation": "contains",
@@ -14704,28 +16174,6 @@
       "confidence_score": 1.0,
       "source": "skills_page",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/skills/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "skills_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/skills/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "skills_page",
-      "target": "supabase_types_skill"
     },
     {
       "relation": "imports_from",
@@ -14857,39 +16305,6 @@
       "confidence_score": 1.0,
       "source": "tasks_page",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types_taskrunlog"
     },
     {
       "relation": "imports_from",
@@ -15074,39 +16489,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_page",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_page",
-      "target": "supabase_types_workflowtemplate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/workflows/[id]/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15189,28 +16571,6 @@
       "confidence_score": 1.0,
       "source": "workflows_page",
       "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/workflows/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/workflows/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_page",
-      "target": "supabase_types_workflowtemplate"
     },
     {
       "relation": "contains",
@@ -15389,39 +16749,6 @@
       "target": "lib_utils_formatrelativetime"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "approvals_approvalcard",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "approvals_approvalcard",
-      "target": "supabase_types_approval"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/approvals/ApprovalCard.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "approvals_approvalcard_approvalcardprops",
-      "target": "supabase_types_approval"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15518,45 +16845,12 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatmessages",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatmessages",
-      "target": "supabase_types_chatmessage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "chat_chatworkspace",
       "target": "chat_chatmessages"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatMessages.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatmessages_chatmessagesprops",
-      "target": "supabase_types_chatmessage"
     },
     {
       "relation": "calls",
@@ -15654,50 +16948,6 @@
       "confidence_score": 1.0,
       "source": "chat_chatworkspace",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_chatmessage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_chatsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_department_ids"
     },
     {
       "relation": "calls",
@@ -15818,89 +17068,12 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_clientprovider",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_clientprovider",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "workflows_articlerunconfigurationpanel",
       "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_clientprovider_clientcontextvalue",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "layout_clientprovider_useclient"
     },
     {
       "relation": "imports",
@@ -15925,191 +17098,6 @@
       "target": "layout_clientprovider_useclient"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "workflows_runconfigurationpanel_runconfigurationpanel",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "lib_utils_formatrelativetime"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "lib_utils_getinitials"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "sidebar_leftsidebar_leftsidebar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "sidebar_leftsidebar_nav_items"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_types_chatsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sidebar_leftsidebar",
-      "target": "supabase_types_profile"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L209",
-      "weight": 1.0,
-      "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L199",
-      "weight": 1.0,
-      "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "lib_utils_getinitials"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/sidebar/LeftSidebar.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "sidebar_leftsidebar_leftsidebar",
-      "target": "supabase_client_createclient"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/tasks/AnimatedTerminal.tsx",
@@ -16128,39 +17116,6 @@
       "confidence_score": 1.0,
       "source": "tasks_animatedterminal",
       "target": "tasks_animatedterminal_simulated_logs"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_articlerunconfigurationpanel",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_articlerunconfigurationpanel",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_articlerunconfigurationpanel",
-      "target": "supabase_types_workflowtemplate"
     },
     {
       "relation": "contains",
@@ -16251,114 +17206,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "supabase_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "supabase_types_workflowtemplate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "workflows_runconfigurationpanel_runconfigurationpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "workflows_runconfigurationpanel_targetconfig"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runconfigurationpanel",
-      "target": "workflows_sitelistmodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient",
-      "target": "workflows_runconfigurationpanel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "workflows_runconfigurationpanel_runconfigurationpanel",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/workflows/SiteListModal.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -16419,28 +17266,6 @@
       "confidence_score": 1.0,
       "source": "workflows_skillspanel",
       "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_skillspanel",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_skillspanel",
-      "target": "supabase_types_skill"
     },
     {
       "relation": "imports_from",
@@ -16544,17 +17369,6 @@
       "confidence_score": 1.0,
       "source": "workflows_skillspanel",
       "target": "workflows_skillspanel_skillspanelprops"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_skillspanel_skillcardprops",
-      "target": "supabase_types_skill"
     },
     {
       "relation": "calls",
@@ -16695,39 +17509,6 @@
       "target": "lib_utils_cn"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient",
-      "target": "supabase_types_workflowtemplate"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
@@ -16757,50 +17538,6 @@
       "confidence_score": 1.0,
       "source": "workflows_workflowdetailclient",
       "target": "workflows_workflowvisualizer"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient_workflowdetailclientprops",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowdetailclient_workflowdetailclientprops",
-      "target": "supabase_types_workflowtemplate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowvisualizer",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/workflows/WorkflowVisualizer.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_workflowvisualizer",
-      "target": "supabase_types_skill"
     },
     {
       "relation": "contains",
@@ -16916,28 +17653,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/client.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_client",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/client.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_client",
-      "target": "supabase_types_database"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -17029,453 +17744,6 @@
       "confidence_score": 1.0,
       "source": "supabase_server",
       "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/server.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_server",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/server.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_server",
-      "target": "supabase_types_database"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L428",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_agencymemory"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L426",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_approval"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L443",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_approvalstatus"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L432",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_backlink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L444",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_backlinkstatus"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L424",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_chatmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L423",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_chatsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L421",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L422",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_clientmember"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L427",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_clientmemory"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_database"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L433",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_department"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L454",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_department_ids"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L434",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_departmentmember"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L440",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_departmentslug"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L439",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_deptrole"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L431",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_keyword"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L420",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_profile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L435",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_skill"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L425",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_task"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L430",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L436",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_taskrunlog"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L442",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_taskrunstatus"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L441",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_taskstatus"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L438",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_userrole"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/supabase/types.ts",
-      "source_location": "L429",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "supabase_types",
-      "target": "supabase_types_workflowtemplate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/utils/excel-generator.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_excel_generator",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/workflows/runner.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runner",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L149",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_check_articles_today",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_get_pending_job",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_get_supabase",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L98",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_lock_job",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L136",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_log_to_db",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L124",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_mark_failed",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_mark_success",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L278",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_process_job",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L169",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker_update_parent_task",
-      "target": "supabase_types_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/utils/excel-generator.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_excel_generator",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/workflows/runner.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runner",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/workflows/runner.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runner",
-      "target": "supabase_types_keyword"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/lib/workflows/runner.ts",
-      "source_location": "L112",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_runner_workflowrunner_handlehermesexecution",
-      "target": "supabase_types_keyword"
     },
     {
       "relation": "contains",
@@ -24435,5 +24703,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e6f109cb8cf916ac01c330f4c0584dd68422016f"
+  "built_at_commit": "90631d5d49db25cba6e2f9892679097a639a353b"
 }

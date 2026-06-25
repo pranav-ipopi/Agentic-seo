@@ -535,8 +535,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/methods/stealth_browser.py": {
-    "mtime": 1782115186.153953,
-    "ast_hash": "58bc859a140bd9395a3bbd55b22de07b",
+    "mtime": 1782299989.4965563,
+    "ast_hash": "a5fb17398271eb23835cad28b83f58d6",
     "semantic_hash": ""
   },
   "playwright_worker/migrations/001_add_health_tracking.sql": {
@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/templates/pligg_generic.py": {
-    "mtime": 1781849553.1047168,
-    "ast_hash": "c7dfa0006d5be8aef3871155babcef52",
+    "mtime": 1782298127.4126399,
+    "ast_hash": "e8ea516337bdde4430d2924acbbf8039",
     "semantic_hash": ""
   },
   "playwright_worker/templates/reddit.py": {

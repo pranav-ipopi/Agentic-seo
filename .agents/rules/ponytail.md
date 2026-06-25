@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Use the ponytail skill to write the laziest, shortest, and simplest code possible.
 ---
 

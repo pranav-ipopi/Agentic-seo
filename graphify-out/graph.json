@@ -4,103 +4,243 @@
   "graph": {},
   "nodes": [
     {
-      "label": "route.ts",
+      "label": "stealth_browser.py",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "execute_route",
-      "community": 0,
-      "norm_label": "route.ts"
+      "id": "methods_stealth_browser",
+      "community": 4,
+      "norm_label": "stealth_browser.py"
     },
     {
-      "label": "POST()",
+      "label": "_should_block()",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L38",
       "_origin": "ast",
-      "id": "execute_route_post",
-      "community": 0,
-      "norm_label": "post()"
+      "id": "methods_stealth_browser_should_block",
+      "community": 4,
+      "norm_label": "_should_block()"
     },
     {
-      "label": "route.ts",
+      "label": "calculate_human_path()",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L1",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L59",
       "_origin": "ast",
-      "id": "retry_route",
-      "community": 0,
-      "norm_label": "route.ts"
+      "id": "methods_stealth_browser_calculate_human_path",
+      "community": 4,
+      "norm_label": "calculate_human_path()"
     },
     {
-      "label": "POST()",
+      "label": "move_mouse_humanlike()",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L88",
       "_origin": "ast",
-      "id": "retry_route_post",
-      "community": 0,
-      "norm_label": "post()"
+      "id": "methods_stealth_browser_move_mouse_humanlike",
+      "community": 4,
+      "norm_label": "move_mouse_humanlike()"
     },
     {
-      "label": "RightSidebar.tsx",
+      "label": "handle_cloudflare_challenge()",
       "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L1",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L107",
       "_origin": "ast",
-      "id": "sidebar_rightsidebar",
-      "community": 31,
-      "norm_label": "rightsidebar.tsx"
+      "id": "methods_stealth_browser_handle_cloudflare_challenge",
+      "community": 4,
+      "norm_label": "handle_cloudflare_challenge()"
     },
     {
-      "label": "TaskRunExtended",
+      "label": "StealthBrowserManager",
       "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L24",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L199",
       "_origin": "ast",
-      "id": "sidebar_rightsidebar_taskrunextended",
-      "community": 31,
-      "norm_label": "taskrunextended"
-    },
-    {
-      "label": "RightSidebar()",
-      "file_type": "code",
-      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "sidebar_rightsidebar_rightsidebar",
-      "community": 31,
-      "norm_label": "rightsidebar()"
-    },
-    {
-      "label": "redis_service.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "services_redis_service",
-      "community": 41,
-      "norm_label": "redis_service.py"
-    },
-    {
-      "label": "RedisService",
-      "file_type": "code",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "services_redis_service_redisservice",
-      "community": 41,
-      "norm_label": "redisservice"
+      "id": "methods_stealth_browser_stealthbrowsermanager",
+      "community": 4,
+      "norm_label": "stealthbrowsermanager"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L11",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L214",
       "_origin": "ast",
-      "id": "services_redis_service_redisservice_init",
-      "community": 41,
+      "id": "methods_stealth_browser_stealthbrowsermanager_init",
+      "community": 4,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".set_proxy()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L221",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_set_proxy",
+      "community": 4,
+      "norm_label": ".set_proxy()"
+    },
+    {
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L224",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_start",
+      "community": 4,
+      "norm_label": ".start()"
+    },
+    {
+      "label": "._build_proxy_dict()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L265",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict",
+      "community": 4,
+      "norm_label": "._build_proxy_dict()"
+    },
+    {
+      "label": "._new_context()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L315",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_new_context",
+      "community": 4,
+      "norm_label": "._new_context()"
+    },
+    {
+      "label": ".get_page()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L336",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_get_page",
+      "community": 4,
+      "norm_label": ".get_page()"
+    },
+    {
+      "label": ".get_captcha_page()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L341",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
+      "community": 4,
+      "norm_label": ".get_captcha_page()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L346",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_stealthbrowsermanager_close",
+      "community": 4,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "Generates a smooth, human-like curved mouse path between two coordinates.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_60",
+      "community": 4,
+      "norm_label": "generates a smooth, human-like curved mouse path between two coordinates."
+    },
+    {
+      "label": "Moves Playwright's mouse from a random starting position to the target     coord",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_89",
+      "community": 4,
+      "norm_label": "moves playwright's mouse from a random starting position to the target     coord"
+    },
+    {
+      "label": "Enhanced Cloudflare Turnstile bypass with human-like mouse movement.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_108",
+      "community": 4,
+      "norm_label": "enhanced cloudflare turnstile bypass with human-like mouse movement."
+    },
+    {
+      "label": "Manages an undetected Chromium session (SeleniumBase CDP) with Playwright.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L200",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_200",
+      "community": 4,
+      "norm_label": "manages an undetected chromium session (seleniumbase cdp) with playwright."
+    },
+    {
+      "label": "Fresh isolated context, images allowed to pass Cloudflare. Close via page.contex",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L337",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_337",
+      "community": 4,
+      "norm_label": "fresh isolated context, images allowed to pass cloudflare. close via page.contex"
+    },
+    {
+      "label": "Fresh isolated context, images allowed (SolvMedia needs them).",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L342",
+      "_origin": "ast",
+      "id": "methods_stealth_browser_rationale_342",
+      "community": 4,
+      "norm_label": "fresh isolated context, images allowed (solvmedia needs them)."
+    },
+    {
+      "label": "pligg_generic.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "templates_pligg_generic",
+      "community": 10,
+      "norm_label": "pligg_generic.py"
+    },
+    {
+      "label": "PliggGenericTemplate",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate",
+      "community": 24,
+      "norm_label": "pligggenerictemplate"
+    },
+    {
+      "label": "BaseTemplate",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "basetemplate",
+      "community": 24,
+      "norm_label": "basetemplate"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_init",
+      "community": 25,
       "norm_label": ".__init__()"
     },
     {
@@ -114,16 +254,6 @@
       "norm_label": "logger"
     },
     {
-      "label": ".pop_job()",
-      "file_type": "code",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "services_redis_service_redisservice_pop_job",
-      "community": 41,
-      "norm_label": ".pop_job()"
-    },
-    {
       "label": "Any",
       "file_type": "code",
       "source_file": "",
@@ -134,14 +264,314 @@
       "norm_label": "any"
     },
     {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_run",
+      "community": 24,
+      "norm_label": ".run()"
+    },
+    {
+      "label": "Page",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "page",
+      "community": 7,
+      "norm_label": "page"
+    },
+    {
+      "label": "._navigate_home()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_navigate_home",
+      "community": 18,
+      "norm_label": "._navigate_home()"
+    },
+    {
+      "label": "._ensure_logged_in()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
+      "community": 24,
+      "norm_label": "._ensure_logged_in()"
+    },
+    {
+      "label": "._solve_captcha_2captcha()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha",
+      "community": 24,
+      "norm_label": "._solve_captcha_2captcha()"
+    },
+    {
+      "label": "._report_bad_captcha()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L184",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
+      "community": 24,
+      "norm_label": "._report_bad_captcha()"
+    },
+    {
+      "label": "._register_account()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L202",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "community": 24,
+      "norm_label": "._register_account()"
+    },
+    {
+      "label": "._submit_bookmark()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L330",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "community": 24,
+      "norm_label": "._submit_bookmark()"
+    },
+    {
+      "label": "._logout()",
+      "file_type": "code",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L502",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_pligggenerictemplate_logout",
+      "community": 24,
+      "norm_label": "._logout()"
+    },
+    {
+      "label": "Generic Pligg/Kliqqi CMS Site Template (Config-Driven)  This is a universal impl",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_1",
+      "community": 10,
+      "norm_label": "generic pligg/kliqqi cms site template (config-driven)  this is a universal impl"
+    },
+    {
+      "label": "Generic Pligg/Kliqqi submission template.     Handles:     - Cloudflare Turnstil",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_37",
+      "community": 24,
+      "norm_label": "generic pligg/kliqqi submission template.     handles:     - cloudflare turnstil"
+    },
+    {
+      "label": "Main entry point. Executes the full backlink creation flow.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_64",
+      "community": 24,
+      "norm_label": "main entry point. executes the full backlink creation flow."
+    },
+    {
+      "label": "Navigate to home page with retry logic and Cloudflare bypass.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_92",
+      "community": 18,
+      "norm_label": "navigate to home page with retry logic and cloudflare bypass."
+    },
+    {
+      "label": "Register a new account if not logged in.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_101",
+      "community": 24,
+      "norm_label": "register a new account if not logged in."
+    },
+    {
+      "label": "Solve SolveMedia captcha using 2Captcha service. All selectors from config.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_111",
+      "community": 24,
+      "norm_label": "solve solvemedia captcha using 2captcha service. all selectors from config."
+    },
+    {
+      "label": "Report incorrect captcha solution to 2Captcha.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L185",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_185",
+      "community": 24,
+      "norm_label": "report incorrect captcha solution to 2captcha."
+    },
+    {
+      "label": "Perform registration with generated credentials. All selectors from config.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_203",
+      "community": 24,
+      "norm_label": "perform registration with generated credentials. all selectors from config."
+    },
+    {
+      "label": "Submit the bookmark and return the created story/backlink URL. All selectors fro",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L331",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_331",
+      "community": 24,
+      "norm_label": "submit the bookmark and return the created story/backlink url. all selectors fro"
+    },
+    {
+      "label": "Logout using config-driven selectors.",
+      "file_type": "rationale",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L503",
+      "_origin": "ast",
+      "id": "templates_pligg_generic_rationale_503",
+      "community": 24,
+      "norm_label": "logout using config-driven selectors."
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "route.ts",
+      "id": "execute_route"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "post()",
+      "id": "execute_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "route.ts",
+      "id": "retry_route"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "post()",
+      "id": "retry_route_post"
+    },
+    {
+      "label": "RightSidebar.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "rightsidebar.tsx",
+      "id": "sidebar_rightsidebar"
+    },
+    {
+      "label": "TaskRunExtended",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "taskrunextended",
+      "id": "sidebar_rightsidebar_taskrunextended"
+    },
+    {
+      "label": "RightSidebar()",
+      "file_type": "code",
+      "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "rightsidebar()",
+      "id": "sidebar_rightsidebar_rightsidebar"
+    },
+    {
+      "label": "redis_service.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 41,
+      "norm_label": "redis_service.py",
+      "id": "services_redis_service"
+    },
+    {
+      "label": "RedisService",
+      "file_type": "code",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 41,
+      "norm_label": "redisservice",
+      "id": "services_redis_service_redisservice"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 41,
+      "norm_label": ".__init__()",
+      "id": "services_redis_service_redisservice_init"
+    },
+    {
+      "label": ".pop_job()",
+      "file_type": "code",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 41,
+      "norm_label": ".pop_job()",
+      "id": "services_redis_service_redisservice_pop_job"
+    },
+    {
       "label": "Block and pop a job from the Redis queue.         timeout=0 means it will block",
       "file_type": "rationale",
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "services_redis_service_rationale_26",
       "community": 41,
-      "norm_label": "block and pop a job from the redis queue.         timeout=0 means it will block"
+      "norm_label": "block and pop a job from the redis queue.         timeout=0 means it will block",
+      "id": "services_redis_service_rationale_26"
     },
     {
       "label": "redis-concurrency-troubleshooting.md",
@@ -199,7 +629,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "vps_worker_playwright.py",
       "id": "playwright_worker_vps_worker_playwright"
     },
@@ -209,7 +639,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "mark_parent_task_running()",
       "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
     },
@@ -219,7 +649,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "client",
       "id": "client"
     },
@@ -229,7 +659,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "check_and_update_parent_task()",
       "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
     },
@@ -239,7 +669,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L151",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "detect_and_update()",
       "id": "playwright_worker_vps_worker_playwright_detect_and_update"
     },
@@ -249,7 +679,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L167",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "route_and_execute()",
       "id": "playwright_worker_vps_worker_playwright_route_and_execute"
     },
@@ -259,7 +689,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L389",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "poll_queue()",
       "id": "playwright_worker_vps_worker_playwright_poll_queue"
     },
@@ -269,7 +699,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task",
       "id": "playwright_worker_vps_worker_playwright_rationale_1"
     },
@@ -279,7 +709,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
       "id": "playwright_worker_vps_worker_playwright_rationale_69"
     },
@@ -289,7 +719,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
       "id": "playwright_worker_vps_worker_playwright_rationale_82"
     },
@@ -299,7 +729,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L152",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wr",
       "id": "playwright_worker_vps_worker_playwright_rationale_152"
     },
@@ -309,7 +739,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L168",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for conf",
       "id": "playwright_worker_vps_worker_playwright_rationale_168"
     },
@@ -319,7 +749,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L390",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously",
       "id": "playwright_worker_vps_worker_playwright_rationale_390"
     },
@@ -329,7 +759,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L426",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_426"
     },
@@ -339,7 +769,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L459",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_459"
     },
@@ -4569,7 +4999,7 @@
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 4,
+      "community": 33,
       "norm_label": ".__init__()",
       "id": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init"
     },
@@ -4592,16 +5022,6 @@
       "community": 7,
       "norm_label": ".navigate_and_verify()",
       "id": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_and_verify"
-    },
-    {
-      "label": "Page",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "page",
-      "id": "page"
     },
     {
       "label": "._navigate_home()",
@@ -5299,7 +5719,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 35,
       "norm_label": "debug_sites.py",
       "id": "playwright_worker_debug_sites"
     },
@@ -5309,7 +5729,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 21,
+      "community": 35,
       "norm_label": "run_site()",
       "id": "playwright_worker_debug_sites_run_site"
     },
@@ -5319,7 +5739,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 21,
+      "community": 35,
       "norm_label": "main()",
       "id": "playwright_worker_debug_sites_main"
     },
@@ -5329,7 +5749,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 35,
       "norm_label": "debug script: run pligggenerictemplate against failing sites to reproduce and di",
       "id": "playwright_worker_debug_sites_rationale_1"
     },
@@ -5339,7 +5759,7 @@
       "source_file": "playwright_worker/debug_sites.py",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 21,
+      "community": 35,
       "norm_label": "run one site test and print result / exception.",
       "id": "playwright_worker_debug_sites_rationale_53"
     },
@@ -6219,7 +6639,7 @@
       "source_file": "playwright_worker/methods/cloudflare.py",
       "source_location": "L100",
       "_origin": "ast",
-      "community": 24,
+      "community": 18,
       "norm_label": "cloudflare_updated()",
       "id": "methods_cloudflare_cloudflare_updated"
     },
@@ -6252,206 +6672,6 @@
       "community": 4,
       "norm_label": "moves playwright's mouse from a random starting position to the target     coord",
       "id": "methods_cloudflare_rationale_71"
-    },
-    {
-      "label": "stealth_browser.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "stealth_browser.py",
-      "id": "methods_stealth_browser"
-    },
-    {
-      "label": "_should_block()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "_should_block()",
-      "id": "methods_stealth_browser_should_block"
-    },
-    {
-      "label": "calculate_human_path()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "calculate_human_path()",
-      "id": "methods_stealth_browser_calculate_human_path"
-    },
-    {
-      "label": "move_mouse_humanlike()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L88",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "move_mouse_humanlike()",
-      "id": "methods_stealth_browser_move_mouse_humanlike"
-    },
-    {
-      "label": "handle_cloudflare_challenge()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L107",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "handle_cloudflare_challenge()",
-      "id": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "label": "StealthBrowserManager",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L199",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "stealthbrowsermanager",
-      "id": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L214",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".__init__()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_init"
-    },
-    {
-      "label": ".set_proxy()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L221",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".set_proxy()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_set_proxy"
-    },
-    {
-      "label": ".start()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L224",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".start()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_start"
-    },
-    {
-      "label": "._build_proxy_dict()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L263",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "._build_proxy_dict()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
-    },
-    {
-      "label": "._new_context()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L313",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "._new_context()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_new_context"
-    },
-    {
-      "label": ".get_page()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L334",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".get_page()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_get_page"
-    },
-    {
-      "label": ".get_captcha_page()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L339",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".get_captcha_page()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
-    },
-    {
-      "label": ".close()",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L344",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": ".close()",
-      "id": "methods_stealth_browser_stealthbrowsermanager_close"
-    },
-    {
-      "label": "Generates a smooth, human-like curved mouse path between two coordinates.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L60",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "generates a smooth, human-like curved mouse path between two coordinates.",
-      "id": "methods_stealth_browser_rationale_60"
-    },
-    {
-      "label": "Moves Playwright's mouse from a random starting position to the target     coord",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L89",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "moves playwright's mouse from a random starting position to the target     coord",
-      "id": "methods_stealth_browser_rationale_89"
-    },
-    {
-      "label": "Enhanced Cloudflare Turnstile bypass with human-like mouse movement.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L108",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "enhanced cloudflare turnstile bypass with human-like mouse movement.",
-      "id": "methods_stealth_browser_rationale_108"
-    },
-    {
-      "label": "Manages an undetected Chromium session (SeleniumBase CDP) with Playwright.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L200",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "manages an undetected chromium session (seleniumbase cdp) with playwright.",
-      "id": "methods_stealth_browser_rationale_200"
-    },
-    {
-      "label": "Fresh isolated context, images allowed to pass Cloudflare. Close via page.contex",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L335",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "fresh isolated context, images allowed to pass cloudflare. close via page.contex",
-      "id": "methods_stealth_browser_rationale_335"
-    },
-    {
-      "label": "Fresh isolated context, images allowed (SolvMedia needs them).",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L340",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "fresh isolated context, images allowed (solvmedia needs them).",
-      "id": "methods_stealth_browser_rationale_340"
     },
     {
       "label": "__init__.py",
@@ -6579,7 +6799,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 26,
       "norm_label": "logging_service.py",
       "id": "services_logging_service"
     },
@@ -6589,7 +6809,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 21,
+      "community": 41,
       "norm_label": "setup_logger()",
       "id": "services_logging_service_setup_logger"
     },
@@ -6609,7 +6829,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 21,
+      "community": 26,
       "norm_label": "logging service for backlink automation engine v1  provides rotating file loggin",
       "id": "services_logging_service_rationale_1"
     },
@@ -6619,7 +6839,7 @@
       "source_file": "playwright_worker/services/logging_service.py",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 21,
+      "community": 41,
       "norm_label": "setup rotating file logger with console output.",
       "id": "services_logging_service_rationale_38"
     },
@@ -6639,7 +6859,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "proxy_manager.py",
       "id": "services_proxy_manager"
     },
@@ -6649,7 +6869,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "proxymanager",
       "id": "services_proxy_manager_proxymanager"
     },
@@ -6659,7 +6879,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": ".__init__()",
       "id": "services_proxy_manager_proxymanager_init"
     },
@@ -6669,7 +6889,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": ".load_proxies()",
       "id": "services_proxy_manager_proxymanager_load_proxies"
     },
@@ -6679,7 +6899,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": ".get_working_proxy()",
       "id": "services_proxy_manager_proxymanager_get_working_proxy"
     },
@@ -6689,7 +6909,7 @@
       "source_file": "playwright_worker/services/proxy_manager.py",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 17,
+      "community": 1,
       "norm_label": "attempts to find a working proxy by sequentially testing them.         returns t",
       "id": "services_proxy_manager_rationale_45"
     },
@@ -6939,7 +7159,7 @@
       "source_file": "playwright_worker/services/template_detector.py",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 24,
+      "community": 18,
       "norm_label": "._fetch_html()",
       "id": "services_template_detector_templatedetector_fetch_html"
     },
@@ -7009,7 +7229,7 @@
       "source_file": "playwright_worker/services/template_detector.py",
       "source_location": "L105",
       "_origin": "ast",
-      "community": 24,
+      "community": 18,
       "norm_label": "navigate to the url using the stealth browser and return raw html.          uses",
       "id": "services_template_detector_rationale_105"
     },
@@ -7049,7 +7269,7 @@
       "source_file": "playwright_worker/templates/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 10,
       "norm_label": "__init__.py",
       "id": "templates_init"
     },
@@ -7059,7 +7279,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 10,
       "norm_label": "base_template.py",
       "id": "templates_base_template"
     },
@@ -7119,7 +7339,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 10,
+      "community": 18,
       "norm_label": ".safe_goto()",
       "id": "templates_base_template_basetemplate_safe_goto"
     },
@@ -7179,7 +7399,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 10,
       "norm_label": "base template for backlink automation  abstract base class that all site templat",
       "id": "templates_base_template_rationale_1"
     },
@@ -7219,7 +7439,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 10,
+      "community": 18,
       "norm_label": "centralized defensive navigation. handles network-level retries,         forces",
       "id": "templates_base_template_rationale_73"
     },
@@ -7304,196 +7524,6 @@
       "id": "templates_medium_rationale_4"
     },
     {
-      "label": "pligg_generic.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "pligg_generic.py",
-      "id": "templates_pligg_generic"
-    },
-    {
-      "label": "PliggGenericTemplate",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "pligggenerictemplate",
-      "id": "templates_pligg_generic_pligggenerictemplate"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": ".__init__()",
-      "id": "templates_pligg_generic_pligggenerictemplate_init"
-    },
-    {
-      "label": ".run()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L63",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": ".run()",
-      "id": "templates_pligg_generic_pligggenerictemplate_run"
-    },
-    {
-      "label": "._navigate_home()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L91",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "._navigate_home()",
-      "id": "templates_pligg_generic_pligggenerictemplate_navigate_home"
-    },
-    {
-      "label": "._ensure_logged_in()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L100",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "._ensure_logged_in()",
-      "id": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
-    },
-    {
-      "label": "._solve_captcha_2captcha()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L110",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "._solve_captcha_2captcha()",
-      "id": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
-    },
-    {
-      "label": "._register_account()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L180",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "._register_account()",
-      "id": "templates_pligg_generic_pligggenerictemplate_register_account"
-    },
-    {
-      "label": "._submit_bookmark()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L307",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "._submit_bookmark()",
-      "id": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
-    },
-    {
-      "label": "._logout()",
-      "file_type": "code",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L478",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "._logout()",
-      "id": "templates_pligg_generic_pligggenerictemplate_logout"
-    },
-    {
-      "label": "Generic Pligg/Kliqqi CMS Site Template (Config-Driven)  This is a universal impl",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "generic pligg/kliqqi cms site template (config-driven)  this is a universal impl",
-      "id": "templates_pligg_generic_rationale_1"
-    },
-    {
-      "label": "Generic Pligg/Kliqqi submission template.     Handles:     - Cloudflare Turnstil",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L37",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "generic pligg/kliqqi submission template.     handles:     - cloudflare turnstil",
-      "id": "templates_pligg_generic_rationale_37"
-    },
-    {
-      "label": "Main entry point. Executes the full backlink creation flow.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L64",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "main entry point. executes the full backlink creation flow.",
-      "id": "templates_pligg_generic_rationale_64"
-    },
-    {
-      "label": "Navigate to home page with retry logic and Cloudflare bypass.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L92",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "navigate to home page with retry logic and cloudflare bypass.",
-      "id": "templates_pligg_generic_rationale_92"
-    },
-    {
-      "label": "Register a new account if not logged in.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L101",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "register a new account if not logged in.",
-      "id": "templates_pligg_generic_rationale_101"
-    },
-    {
-      "label": "Solve SolveMedia captcha using 2Captcha service. All selectors from config.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L111",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "solve solvemedia captcha using 2captcha service. all selectors from config.",
-      "id": "templates_pligg_generic_rationale_111"
-    },
-    {
-      "label": "Perform registration with generated credentials. All selectors from config.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L181",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "perform registration with generated credentials. all selectors from config.",
-      "id": "templates_pligg_generic_rationale_181"
-    },
-    {
-      "label": "Submit the bookmark and return the created story/backlink URL. All selectors fro",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L308",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "submit the bookmark and return the created story/backlink url. all selectors fro",
-      "id": "templates_pligg_generic_rationale_308"
-    },
-    {
-      "label": "Logout using config-driven selectors.",
-      "file_type": "rationale",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L479",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "logout using config-driven selectors.",
-      "id": "templates_pligg_generic_rationale_479"
-    },
-    {
       "label": "reddit.py",
       "file_type": "code",
       "source_file": "playwright_worker/templates/reddit.py",
@@ -7559,7 +7589,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 10,
       "norm_label": "wordpress_submitpro.py",
       "id": "templates_wordpress_submitpro"
     },
@@ -7849,7 +7879,7 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "readme.md",
       "id": "readme"
     },
@@ -7859,7 +7889,7 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "hermes - agentic seo platform",
       "id": "readme_hermes_agentic_seo_platform"
     },
@@ -7869,7 +7899,7 @@
       "source_file": "README.md",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "problem statement",
       "id": "readme_problem_statement"
     },
@@ -7879,7 +7909,7 @@
       "source_file": "README.md",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "mission",
       "id": "readme_mission"
     },
@@ -7889,7 +7919,7 @@
       "source_file": "README.md",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "vision",
       "id": "readme_vision"
     },
@@ -7899,7 +7929,7 @@
       "source_file": "README.md",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "strategic objectives",
       "id": "readme_strategic_objectives"
     },
@@ -7909,7 +7939,7 @@
       "source_file": "README.md",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "architecture overview",
       "id": "readme_architecture_overview"
     },
@@ -7919,7 +7949,7 @@
       "source_file": "README.md",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 96,
+      "community": 3,
       "norm_label": "getting started",
       "id": "readme_md_readme_getting_started"
     },
@@ -7969,7 +7999,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "readme.md",
       "id": "docs_readme"
     },
@@ -7979,7 +8009,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 103,
+      "community": 3,
       "norm_label": "hermes agency os \u2014 project documentation",
       "id": "docs_readme_hermes_agency_os_project_documentation"
     },
@@ -7989,7 +8019,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 103,
+      "community": 3,
       "norm_label": "documents",
       "id": "docs_readme_documents"
     },
@@ -7999,7 +8029,7 @@
       "source_file": "agentic-seo/docs/README.md",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 103,
+      "community": 3,
       "norm_label": "quick reference",
       "id": "docs_readme_quick_reference"
     },
@@ -8009,7 +8039,7 @@
       "source_file": "agentic-seo/docs/architecture.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "architecture.md",
       "id": "docs_architecture"
     },
@@ -8159,7 +8189,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "database_schema.md",
       "id": "docs_database_schema"
     },
@@ -8169,7 +8199,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 9,
       "norm_label": "database schema reference",
       "id": "docs_database_schema_database_schema_reference"
     },
@@ -8179,7 +8209,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 46,
+      "community": 9,
       "norm_label": "table summary",
       "id": "docs_database_schema_table_summary"
     },
@@ -8349,7 +8379,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L284",
       "_origin": "ast",
-      "community": 46,
+      "community": 9,
       "norm_label": "rls policy summary",
       "id": "docs_database_schema_rls_policy_summary"
     },
@@ -8359,7 +8389,7 @@
       "source_file": "agentic-seo/docs/database_schema.md",
       "source_location": "L296",
       "_origin": "ast",
-      "community": 46,
+      "community": 9,
       "norm_label": "realtime subscriptions",
       "id": "docs_database_schema_realtime_subscriptions"
     },
@@ -8369,7 +8399,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "departments_setup.md",
       "id": "docs_departments_setup"
     },
@@ -8699,7 +8729,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 3,
       "norm_label": "gap_analysis.md",
       "id": "docs_gap_analysis"
     },
@@ -8709,7 +8739,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "v1 architecture \u2192 agency os gap analysis",
       "id": "docs_gap_analysis_v1_architecture_agency_os_gap_analysis"
     },
@@ -8719,7 +8749,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "the target hierarchy",
       "id": "docs_gap_analysis_the_target_hierarchy"
     },
@@ -8729,7 +8759,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "gap analysis results",
       "id": "docs_gap_analysis_gap_analysis_results"
     },
@@ -8739,7 +8769,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "\u2705 already supported in v1 (unchanged)",
       "id": "docs_gap_analysis_already_supported_in_v1_unchanged"
     },
@@ -8749,7 +8779,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "\u2705 fixed in phase 2 (this session)",
       "id": "docs_gap_analysis_fixed_in_phase_2_this_session"
     },
@@ -8759,7 +8789,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "\u26a0\ufe0f still outstanding (future work)",
       "id": "docs_gap_analysis_still_outstanding_future_work"
     },
@@ -8769,7 +8799,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "readiness summary (updated)",
       "id": "docs_gap_analysis_readiness_summary_updated"
     },
@@ -8779,7 +8809,7 @@
       "source_file": "agentic-seo/docs/gap_analysis.md",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 93,
+      "community": 3,
       "norm_label": "phased roadmap",
       "id": "docs_gap_analysis_phased_roadmap"
     },
@@ -9716,6 +9746,1684 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/terminal_router.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_terminal_router",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_init",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser",
+      "target": "methods_stealth_browser_calculate_human_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser",
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser",
+      "target": "methods_stealth_browser_move_mouse_humanlike"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser",
+      "target": "methods_stealth_browser_should_block"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_article_worker",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/debug_gorilla.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_debug_gorilla",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/debug_sites.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_debug_sites",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/test_cloudflare_bypass.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_test_cloudflare_bypass",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/vps_worker_playwright.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_vps_worker_playwright",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/worker.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_worker",
+      "target": "methods_stealth_browser"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_move_mouse_humanlike",
+      "target": "methods_stealth_browser_calculate_human_path"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_rationale_60",
+      "target": "methods_stealth_browser_calculate_human_path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_handle_cloudflare_challenge",
+      "target": "methods_stealth_browser_move_mouse_humanlike"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_rationale_89",
+      "target": "methods_stealth_browser_move_mouse_humanlike"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "playwright_worker/methods/cloudflare.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "methods_cloudflare_cloudflare_updated",
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_rationale_108",
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/debug_gorilla.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "playwright_worker_debug_gorilla_main",
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/test_cloudflare_bypass.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "playwright_worker_test_cloudflare_bypass_main",
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L26",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_init",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_rationale_200",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L263",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L344",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L339",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_page"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L313",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L221",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_set_proxy"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager",
+      "target": "methods_stealth_browser_stealthbrowsermanager_start"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L49",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "playwright_worker_article_worker_articleworker",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/article_worker.py",
+      "source_location": "L345",
+      "weight": 1.0,
+      "source": "playwright_worker_article_worker_process_job",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/debug_gorilla.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "playwright_worker_debug_gorilla_main",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/debug_sites.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_debug_sites_main",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/debug_sites.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_debug_sites_run_site",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/test_cloudflare_bypass.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "playwright_worker_test_cloudflare_bypass_main",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/worker.py",
+      "source_location": "L40",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "playwright_worker_worker_backlinkworker",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/worker.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "playwright_worker_worker_backlinkworker_init",
+      "target": "methods_stealth_browser_stealthbrowsermanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L319",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager_new_context",
+      "target": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L341",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
+      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L336",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methods_stealth_browser_stealthbrowsermanager_get_page",
+      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L337",
+      "weight": 1.0,
+      "source": "methods_stealth_browser_rationale_337",
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/stealth_browser.py",
+      "source_location": "L342",
+      "weight": 1.0,
+      "source": "methods_stealth_browser_rationale_342",
+      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/__init__.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_init",
+      "target": "templates_pligg_generic"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic",
+      "target": "executor_errors"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic",
+      "target": "methods_cloudflare"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic",
+      "target": "templates_base_template"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic",
+      "target": "templates_pligg_generic_pligggenerictemplate"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_1",
+      "target": "templates_pligg_generic"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/executor/runner.py",
+      "source_location": "L50",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "executor_runner_templaterunner",
+      "target": "templates_pligg_generic_pligggenerictemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/__init__.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_init",
+      "target": "templates_pligg_generic_pligggenerictemplate"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "basetemplate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "executor_errors_captchafailederror"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "executor_errors_registrationfailederror"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "executor_errors_selectornotfounderror"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "executor_errors_submissionfailederror"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L26",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_base_template_basetemplate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L478",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_logout"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_run"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L307",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate",
+      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_37",
+      "target": "templates_pligg_generic_pligggenerictemplate"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_init",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/executor/failure_handler.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "executor_failure_handler_failurehandler_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/executor/runner.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "executor_runner_templaterunner_execute",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/debug_sites.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_worker_debug_sites_run_site",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/captcha_service.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_captcha_service_captchaservice_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/logging_service.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_logging_service_log_event",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/logging_service.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_logging_service_setup_logger",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_redis_service_redisservice_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/template_detector.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_template_detector_templatedetector_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_init",
+      "target": "logger"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_run",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/executor/runner.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "executor_runner_build_registry",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/executor/runner.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "executor_runner_get_registry",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/executor/runner.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "executor_runner_templaterunner_execute",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/captcha_service.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_captcha_service_captchaservice_solve",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/logging_service.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_logging_service_log_event",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/redis_service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_redis_service_redisservice_pop_job",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_get_job",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_get_pending_job",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_update_job_failed",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_update_job_success",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/supabase_service.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_supabase_service_supabaseservice_update_job_to_running",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_get_config",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_init",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L280",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_run",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_init",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_run",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "page"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "templates_pligg_generic_pligggenerictemplate_logout"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_run",
+      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_64",
+      "target": "templates_pligg_generic_pligggenerictemplate_run"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_ensure_logged_in",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L473",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_extract_backlink_url",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_is_logged_in",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L516",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_logout",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_and_verify",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_home",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L245",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_register_account",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L191",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_solve_captcha_2captcha",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_submit_bookmark",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/captcha_service.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_captcha_service_captchaservice_is_captcha_present",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/captcha_service.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_captcha_service_captchaservice_solve",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/captcha_service.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_captcha_service_captchaservice_solve_solvemedia",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/services/template_detector.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_template_detector_templatedetector_fetch_html",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_extract_backlink_url",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_is_logged_in",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L280",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_run",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/base_template.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_base_template_basetemplate_safe_goto",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L478",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_logout",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_navigate_home",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L307",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L436",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_extract_backlink_url",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_get_sitekey",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_register_account",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_run",
+      "target": "page"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_submit_bookmark",
+      "target": "page"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_navigate_home",
+      "target": "methods_cloudflare_cloudflare_updated"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_92",
+      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
+      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_101",
+      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L421",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "templates_pligg_generic_rationale_111",
+      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L475",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_rationale_185",
+      "target": "templates_pligg_generic_pligggenerictemplate_report_bad_captcha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L275",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "executor_errors_captchafailederror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "executor_errors_registrationfailederror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "target": "methods_cloudflare_cloudflare_updated"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_rationale_203",
+      "target": "templates_pligg_generic_pligggenerictemplate_register_account",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L453",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "executor_errors_captchafailederror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L347",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "executor_errors_registrationfailederror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L469",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "executor_errors_submissionfailederror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L339",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "target": "methods_cloudflare_cloudflare_updated"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_rationale_331",
+      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/templates/pligg_generic.py",
+      "source_location": "L503",
+      "weight": 1.0,
+      "source": "templates_pligg_generic_rationale_503",
+      "target": "templates_pligg_generic_pligggenerictemplate_logout",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
@@ -10060,366 +11768,14 @@
       "target": "services_redis_service_redisservice_pop_job"
     },
     {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_redis_service_redisservice_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/executor/failure_handler.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "executor_failure_handler_failurehandler_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/executor/runner.py",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "executor_runner_templaterunner_execute",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/debug_sites.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_debug_sites_run_site",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/captcha_service.py",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_captcha_service_captchaservice_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/logging_service.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_logging_service_log_event",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/logging_service.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_logging_service_setup_logger",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/template_detector.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_template_detector_templatedetector_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_init",
-      "target": "logger"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/services/redis_service.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_redis_service_rationale_26",
-      "target": "services_redis_service_redisservice_pop_job",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/redis_service.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_redis_service_redisservice_pop_job",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_run",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/executor/runner.py",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "executor_runner_build_registry",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/executor/runner.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "executor_runner_get_registry",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/executor/runner.py",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "executor_runner_templaterunner_execute",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/captcha_service.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_captcha_service_captchaservice_solve",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/logging_service.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_logging_service_log_event",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L174",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_get_job",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L65",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_get_pending_job",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L135",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_update_job_failed",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_update_job_success",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/supabase_service.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_supabase_service_supabaseservice_update_job_to_running",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_get_config",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_init",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L280",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_run",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_init",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_init",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_run",
-      "target": "any"
+      "target": "services_redis_service_redisservice_pop_job"
     },
     {
       "relation": "contains",
@@ -10482,17 +11838,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright",
       "target": "executor_runner"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_vps_worker_playwright",
-      "target": "methods_stealth_browser"
     },
     {
       "relation": "contains",
@@ -17089,17 +18434,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L25",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -17271,16 +18605,6 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L26",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
       "source_location": "L25",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -17296,17 +18620,6 @@
       "confidence_score": 1.0,
       "source": "bookmark_sites_tester_pligg_generic_terminal_rationale_43",
       "target": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_init",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
     },
     {
       "relation": "references",
@@ -17374,17 +18687,6 @@
       "target": "methods_cloudflare_cloudflare_updated"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L115",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_and_verify",
-      "target": "page"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -17426,314 +18728,6 @@
       "confidence_score": 1.0,
       "source": "bookmark_sites_tester_pligg_generic_terminal_rationale_116",
       "target": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_and_verify"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L156",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_ensure_logged_in",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L473",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_extract_backlink_url",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L173",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_is_logged_in",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L516",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_logout",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L147",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_navigate_home",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L245",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_register_account",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L191",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_solve_captcha_2captcha",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py",
-      "source_location": "L327",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_pligg_generic_terminal_pligggenerictemplate_submit_bookmark",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/captcha_service.py",
-      "source_location": "L121",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_captcha_service_captchaservice_is_captcha_present",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/captcha_service.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_captcha_service_captchaservice_solve",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/captcha_service.py",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_captcha_service_captchaservice_solve_solvemedia",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/services/template_detector.py",
-      "source_location": "L104",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_template_detector_templatedetector_fetch_html",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L229",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_extract_backlink_url",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L150",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_is_logged_in",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L280",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_run",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/base_template.py",
-      "source_location": "L72",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_base_template_basetemplate_safe_goto",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L100",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L478",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_logout",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_navigate_home",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L110",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L307",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L436",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_extract_backlink_url",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L78",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_get_sitekey",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_register_account",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_run",
-      "target": "page"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/wordpress_submitpro.py",
-      "source_location": "L198",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_wordpress_submitpro_wordpresssubmitprotemplate_submit_bookmark",
-      "target": "page"
     },
     {
       "relation": "calls",
@@ -17919,17 +18913,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/Bookmark_sites_tester/terminal_router.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmark_sites_tester_terminal_router",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/Bookmark_sites_tester/terminal_router.py",
       "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -17957,17 +18940,6 @@
       "confidence_score": 1.0,
       "source": "bookmark_sites_tester_terminal_router_main",
       "target": "bookmark_sites_tester_terminal_router_execute_task"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_article_worker",
-      "target": "methods_stealth_browser"
     },
     {
       "relation": "contains",
@@ -18324,27 +19296,6 @@
       "target": "playwright_worker_article_worker_process_job"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L345",
-      "weight": 1.0,
-      "source": "playwright_worker_article_worker_process_job",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/article_worker.py",
-      "source_location": "L49",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "playwright_worker_article_worker_articleworker",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/article_worker.py",
@@ -18677,17 +19628,6 @@
       "target": "configs_config_loader_clear_cache"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/debug_gorilla.py",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_debug_gorilla",
-      "target": "methods_stealth_browser"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/debug_gorilla.py",
@@ -18696,28 +19636,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_debug_gorilla",
       "target": "playwright_worker_debug_gorilla_main"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/debug_gorilla.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "playwright_worker_debug_gorilla_main",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/debug_gorilla.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "playwright_worker_debug_gorilla_main",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
     },
     {
       "relation": "imports_from",
@@ -18729,17 +19647,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_debug_sites",
       "target": "executor_runner"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/debug_sites.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_debug_sites",
-      "target": "methods_stealth_browser"
     },
     {
       "relation": "contains",
@@ -18834,17 +19741,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "playwright_worker_debug_sites_run_site",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/debug_sites.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_debug_sites_run_site",
       "target": "services_captcha_service_captchaservice"
     },
     {
@@ -18857,17 +19753,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_debug_sites_main",
       "target": "executor_runner_templaterunner"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/debug_sites.py",
-      "source_location": "L113",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_debug_sites_main",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
     },
     {
       "relation": "calls",
@@ -19229,17 +20114,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic",
-      "target": "executor_errors"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L9",
       "weight": 1.0,
@@ -19515,16 +20389,6 @@
       "target": "executor_errors_selectornotfounderror_init"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L28",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "executor_errors_selectornotfounderror"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -19556,38 +20420,6 @@
       "target": "executor_errors_registrationfailederror"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L28",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "executor_errors_registrationfailederror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L298",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "executor_errors_registrationfailederror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L347",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "target": "executor_errors_registrationfailederror"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/executor/errors.py",
@@ -19595,27 +20427,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "executor_errors_rationale_66",
-      "target": "executor_errors_submissionfailederror"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L28",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "executor_errors_submissionfailederror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L469",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
       "target": "executor_errors_submissionfailederror"
     },
     {
@@ -19658,38 +20469,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "executor_errors_rationale_71",
-      "target": "executor_errors_captchafailederror"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L28",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "executor_errors_captchafailederror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L275",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "executor_errors_captchafailederror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L453",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
       "target": "executor_errors_captchafailederror"
     },
     {
@@ -20139,16 +20918,6 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "playwright_worker/executor/runner.py",
-      "source_location": "L50",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "executor_runner_templaterunner",
-      "target": "templates_pligg_generic_pligggenerictemplate"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/executor/runner.py",
       "source_location": "L51",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -20229,28 +20998,6 @@
       "target": "methods_cloudflare_bypass_cloudflare"
     },
     {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/__init__.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_init",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/__init__.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_init",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/methods/cloudflare.py",
@@ -20289,17 +21036,6 @@
       "confidence_score": 1.0,
       "source": "methods_cloudflare",
       "target": "methods_cloudflare_move_mouse_humanlike"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic",
-      "target": "methods_cloudflare"
     },
     {
       "relation": "calls",
@@ -20358,17 +21094,6 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "playwright_worker/methods/cloudflare.py",
-      "source_location": "L102",
-      "weight": 1.0,
-      "source": "methods_cloudflare_cloudflare_updated",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
       "source_file": "playwright_worker/services/template_detector.py",
       "source_location": "L122",
       "weight": 1.0,
@@ -20385,349 +21110,6 @@
       "weight": 1.0,
       "source": "templates_base_template_basetemplate_safe_goto",
       "target": "methods_cloudflare_cloudflare_updated"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L95",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_navigate_home",
-      "target": "methods_cloudflare_cloudflare_updated"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L196",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "methods_cloudflare_cloudflare_updated"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L339",
-      "weight": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "target": "methods_cloudflare_cloudflare_updated"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_calculate_human_path"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_move_mouse_humanlike"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_should_block"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L199",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/test_cloudflare_bypass.py",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_test_cloudflare_bypass",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/worker.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "playwright_worker_worker",
-      "target": "methods_stealth_browser"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_move_mouse_humanlike",
-      "target": "methods_stealth_browser_calculate_human_path"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_60",
-      "target": "methods_stealth_browser_calculate_human_path"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L158",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_handle_cloudflare_challenge",
-      "target": "methods_stealth_browser_move_mouse_humanlike"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L89",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_89",
-      "target": "methods_stealth_browser_move_mouse_humanlike"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_108",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/test_cloudflare_bypass.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "playwright_worker_test_cloudflare_bypass_main",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L200",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_200",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L263",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L344",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_close"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L339",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L334",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_page"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L214",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L313",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L221",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_set_proxy"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L224",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager",
-      "target": "methods_stealth_browser_stealthbrowsermanager_start"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/test_cloudflare_bypass.py",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "playwright_worker_test_cloudflare_bypass_main",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/worker.py",
-      "source_location": "L40",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "playwright_worker_worker_backlinkworker",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "playwright_worker/worker.py",
-      "source_location": "L61",
-      "weight": 1.0,
-      "source": "playwright_worker_worker_backlinkworker_init",
-      "target": "methods_stealth_browser_stealthbrowsermanager"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L319",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager_new_context",
-      "target": "methods_stealth_browser_stealthbrowsermanager_build_proxy_dict"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L341",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page",
-      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L336",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_stealthbrowsermanager_get_page",
-      "target": "methods_stealth_browser_stealthbrowsermanager_new_context"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L335",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_335",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_page"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/methods/stealth_browser.py",
-      "source_location": "L340",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methods_stealth_browser_rationale_340",
-      "target": "methods_stealth_browser_stealthbrowsermanager_get_captcha_page"
     },
     {
       "relation": "imports_from",
@@ -21536,28 +21918,6 @@
       "context": "export",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/templates/__init__.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_init",
-      "target": "templates_pligg_generic"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/__init__.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_init",
-      "target": "templates_pligg_generic_pligggenerictemplate"
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/__init__.py",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -21604,17 +21964,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "templates_base_template_rationale_1",
-      "target": "templates_base_template"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic",
       "target": "templates_base_template"
     },
     {
@@ -21736,16 +22085,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "templates_base_template_rationale_30",
-      "target": "templates_base_template_basetemplate"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L26",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "templates_pligg_generic_pligggenerictemplate",
       "target": "templates_base_template_basetemplate"
     },
     {
@@ -21890,263 +22229,6 @@
       "confidence_score": 1.0,
       "source": "templates_medium_rationale_4",
       "target": "templates_medium_submit_article"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic",
-      "target": "templates_pligg_generic_pligggenerictemplate"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_1",
-      "target": "templates_pligg_generic"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L100",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L478",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_logout"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_run"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L110",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L307",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate",
-      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_37",
-      "target": "templates_pligg_generic_pligggenerictemplate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "templates_pligg_generic_pligggenerictemplate_logout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L73",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_run",
-      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_64",
-      "target": "templates_pligg_generic_pligggenerictemplate_run"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_92",
-      "target": "templates_pligg_generic_pligggenerictemplate_navigate_home"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in",
-      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L101",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_101",
-      "target": "templates_pligg_generic_pligggenerictemplate_ensure_logged_in"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L254",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_register_account",
-      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L421",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_pligggenerictemplate_submit_bookmark",
-      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L111",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_111",
-      "target": "templates_pligg_generic_pligggenerictemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L181",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_181",
-      "target": "templates_pligg_generic_pligggenerictemplate_register_account"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L308",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_308",
-      "target": "templates_pligg_generic_pligggenerictemplate_submit_bookmark"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "playwright_worker/templates/pligg_generic.py",
-      "source_location": "L479",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "templates_pligg_generic_rationale_479",
-      "target": "templates_pligg_generic_pligggenerictemplate_logout"
     },
     {
       "relation": "contains",
@@ -24353,5 +24435,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e5489fb12d806915dae26f4488c50f83b0ad8ef3"
+  "built_at_commit": "e6f109cb8cf916ac01c330f4c0584dd68422016f"
 }

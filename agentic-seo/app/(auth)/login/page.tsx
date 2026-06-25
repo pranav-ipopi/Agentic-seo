@@ -207,6 +207,15 @@ export default function LoginPage() {
             ← Back to sign in
           </button>
         )}
+        <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
+          <button
+            onClick={() => router.push('/admin')}
+            className="text-xs text-gray-400 hover:text-indigo-500 transition-colors flex items-center justify-center gap-1 mx-auto"
+          >
+            <Lock className="w-3 h-3" />
+            Admin Portal
+          </button>
+        </div>
       </div>
     </div>
   )

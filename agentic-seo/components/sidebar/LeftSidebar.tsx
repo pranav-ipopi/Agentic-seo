@@ -41,9 +41,32 @@ export default function LeftSidebar() {
   const [clientSearch, setClientSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [openMenuId, setOpenMenuId] = useState<string | null>(null)
+  const [quota, setQuota] = useState<{ limit: number | null, used: number, remaining: number | null } | null>(null)
   const clientSelectorRef = useRef<HTMLDivElement>(null)
   // Cache sessions keyed by clientId to avoid re-fetching on client switch
   const sessionsCache = useRef<Record<string, ChatSession[]>>({})
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout
+
+    const fetchQuota = async () => {
+      if (!activeClient) return
+      try {
+        const res = await fetch(`/api/clients/${activeClient.id}/quota`)
+        if (res.ok) {
+          const data = await res.json()
+          setQuota(data)
+        }
+      } catch (err) {
+        console.error('Failed to fetch quota', err)
+      }
+    }
+
+    fetchQuota()
+    intervalId = setInterval(fetchQuota, 15000)
+
+    return () => clearInterval(intervalId)
+  }, [activeClient])
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -413,6 +436,34 @@ export default function LeftSidebar() {
           })}
         </div>
       </div>
+
+      {/* Quota Widget */}
+      {activeClient && (
+        <div className="px-3 pb-3">
+          <div className="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-800">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs font-semibold text-gray-600 dark:text-gray-400">Daily Quota</span>
+              <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400">
+                {quota ? (quota.limit === null ? 'Unlimited' : `${quota.remaining} left`) : '...'}
+              </span>
+            </div>
+            {quota && quota.limit !== null && (
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 overflow-hidden">
+                <div 
+                  className={cn(
+                    "h-1.5 rounded-full transition-all duration-500", 
+                    quota.remaining === 0 ? "bg-red-500" : "bg-indigo-500"
+                  )} 
+                  style={{ width: `${Math.min(100, (quota.used / quota.limit) * 100)}%` }} 
+                />
+              </div>
+            )}
+            <div className="text-[10px] text-gray-400 mt-1.5 text-right">
+              {quota && quota.limit !== null ? `${quota.used} / ${quota.limit} used` : 'No limits applied'}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Profile footer */}
       <div className="p-3 border-t border-gray-200 dark:border-gray-800">

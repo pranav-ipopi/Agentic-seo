@@ -34,6 +34,7 @@ export type Database = {
           created_by: string | null
           created_at: string
           updated_at: string
+          backlink_limit: number | null
         }
         Insert: {
           id?: string
@@ -45,6 +46,7 @@ export type Database = {
           created_by?: string | null
           created_at?: string
           updated_at?: string
+          backlink_limit?: number | null
         }
         Update: Partial<Database['public']['Tables']['clients']['Insert']>
       }

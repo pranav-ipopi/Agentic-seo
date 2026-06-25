@@ -7,6 +7,7 @@ import { WorkflowTemplate, Client } from '@/lib/supabase/types'
 import { useClient } from '@/components/layout/ClientProvider'
 import { Play, Settings2, ShieldCheck, Globe, X, Plus, Trash2, Save, ChevronDown, User, AlertTriangle } from 'lucide-react'
 import SiteListModal from './SiteListModal'
+import { cn } from '@/lib/utils'
 
 interface TargetConfig {
   id: string;
@@ -65,6 +66,24 @@ export default function RunConfigurationPanel({
   // Draft feature
   const [hasDraft, setHasDraft] = useState(false)
   const draftKey = `draft_workflow_${template?.id}_${activeClient?.id}`
+
+  const [quota, setQuota] = useState<{ limit: number | null, used: number, remaining: number | null } | null>(null)
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout
+    const fetchQuota = async () => {
+      if (!activeClient) return
+      try {
+        const res = await fetch(`/api/clients/${activeClient.id}/quota`)
+        if (res.ok) setQuota(await res.json())
+      } catch (err) {
+        console.error('Failed to fetch quota', err)
+      }
+    }
+    fetchQuota()
+    intervalId = setInterval(fetchQuota, 15000)
+    return () => clearInterval(intervalId)
+  }, [activeClient])
 
   useEffect(() => {
     if (showSuccessNotification) {
@@ -291,6 +310,9 @@ export default function RunConfigurationPanel({
     if (!activeClient) return setErrorMessage('Please select a client from the sidebar first.')
     if (!campaignName.trim()) return setErrorMessage('Please provide a Campaign Name.')
     if (targets.length === 0) return setErrorMessage('Please add at least one target configuration.')
+    if (quota && quota.limit !== null && totalBacklinks > quota.remaining!) {
+      return setErrorMessage(`Daily Quota Exceeded. You only have ${quota.remaining} backlinks remaining today.`)
+    }
 
     for (let i = 0; i < targets.length; i++) {
       const t = targets[i];
@@ -344,8 +366,7 @@ export default function RunConfigurationPanel({
       localStorage.removeItem(draftKey)
       setHasDraft(false)
     } catch (err: any) {
-      console.error(err)
-      setErrorMessage('Failed to start execution: ' + err.message)
+      setErrorMessage(err.message || 'Failed to start execution')
     } finally {
       setIsSubmitting(false)
     }
@@ -604,7 +625,16 @@ export default function RunConfigurationPanel({
       <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 mt-auto shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
         <div className="flex items-center justify-between mb-3 px-1">
           <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Total Backlinks</span>
-          <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{totalBacklinks}</span>
+          <div className="flex items-center gap-2">
+            {quota && quota.limit !== null && (
+              <span className={cn("text-xs font-medium px-2 py-0.5 rounded-full transition-colors", totalBacklinks > quota.remaining! ? "bg-red-100 text-red-600 dark:bg-red-900/40 dark:text-red-400 animate-pulse" : "bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400")}>
+                {quota.remaining} remaining
+              </span>
+            )}
+            <span className={cn("text-lg font-bold transition-colors", quota && quota.limit !== null && totalBacklinks > quota.remaining! ? "text-red-500" : "text-indigo-600 dark:text-indigo-400")}>
+              {totalBacklinks}
+            </span>
+          </div>
         </div>
         
         <div className="flex gap-2">
@@ -625,12 +655,13 @@ export default function RunConfigurationPanel({
               !activeClient ||
               targets.length === 0 ||
               maxAvailableSites === 0 ||
-              totalBacklinks === 0
+              totalBacklinks === 0 ||
+              (quota !== null && quota.limit !== null && totalBacklinks > quota.remaining!)
             }
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-600/50 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-900/20 active:scale-[0.98]"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-gray-400 dark:disabled:bg-gray-700 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-900/20 active:scale-[0.98]"
           >
             <Play className="w-4 h-4" />
-            {isSubmitting ? 'Starting...' : 'Start'}
+            {isSubmitting ? 'Starting...' : (quota !== null && quota.limit !== null && totalBacklinks > quota.remaining!) ? 'Quota Exceeded' : 'Start'}
           </button>
         </div>
       </div>

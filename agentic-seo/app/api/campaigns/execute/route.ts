@@ -79,6 +79,54 @@ export async function POST(request: NextRequest) {
 
     // We don't slice targetSites globally anymore, we do it per target later.
 
+    // --- NEW: Limit Check ---
+    let totalTasksToRun = 0
+    for (const target of targets) {
+      if (!target.clientTargetUrl || !target.keywords || target.keywords.length === 0) continue
+      const targetSpecificSites = sitesWithUsage.slice(0, target.targetSitesCount || 0)
+      totalTasksToRun += targetSpecificSites.length * target.keywords.length
+    }
+
+    if (totalTasksToRun === 0) {
+      return NextResponse.json({ error: 'No task runs generated. Check targets and keywords.' }, { status: 400 })
+    }
+
+    const { data: clientData, error: clientError } = await adminClient
+      .from('clients')
+      .select('backlink_limit')
+      .eq('id', clientId)
+      .single()
+
+    if (clientError) throw clientError
+
+    if (clientData?.backlink_limit !== null && clientData?.backlink_limit !== undefined) {
+      const limit = clientData.backlink_limit
+      
+      const today = new Date()
+      today.setUTCHours(0, 0, 0, 0)
+      const startOfDay = today.toISOString()
+
+      const { count, error: countError } = await adminClient
+        .from('task_runs')
+        .select('*', { count: 'exact', head: true })
+        .eq('client_id', clientId)
+        .neq('status', 'failed')
+        .eq('type', 'backlink')
+        .gte('created_at', startOfDay)
+
+      if (countError) throw countError
+
+      const used = count || 0
+      const remaining = Math.max(0, limit - used)
+
+      if (totalTasksToRun > remaining) {
+        return NextResponse.json({ 
+          error: `Daily backlink limit exceeded. You have ${remaining} backlink(s) remaining for today, but attempted to queue ${totalTasksToRun}.` 
+        }, { status: 403 })
+      }
+    }
+    // --- END Limit Check ---
+
     // 2. Create the parent Campaign
     const finalCampaignName = campaignName || `${templateName} for ${clientName} (${submissionType})`
     const { data: campaign, error: campaignError } = await adminClient

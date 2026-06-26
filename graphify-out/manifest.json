@@ -535,8 +535,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/methods/stealth_browser.py": {
-    "mtime": 1782299989.4965563,
-    "ast_hash": "a5fb17398271eb23835cad28b83f58d6",
+    "mtime": 1782391225.5913062,
+    "ast_hash": "8b6ae5787f7eee4addcde0cbd7b4407e",
     "semantic_hash": ""
   },
   "playwright_worker/migrations/001_add_health_tracking.sql": {
@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/services/proxy_manager.py": {
-    "mtime": 1782134422.997824,
-    "ast_hash": "3f01123110a5007916a57d3fa0c48f5e",
+    "mtime": 1782372726.155192,
+    "ast_hash": "e79f0e4231666d4c714772fe8b187104",
     "semantic_hash": ""
   },
   "playwright_worker/services/redis_service.py": {
@@ -800,8 +800,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/configs/proxies.txt": {
-    "mtime": 1782134381.8045695,
-    "ast_hash": "3be35d891303856933cfe56bf15fff35",
+    "mtime": 1782369853.0306225,
+    "ast_hash": "288a11fde776a50d0a3870df822232df",
     "semantic_hash": ""
   },
   "playwright_worker/docs/DEPLOYMENT_AND_SETUP.md": {
@@ -825,8 +825,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/requirements.txt": {
-    "mtime": 1782198198.853596,
-    "ast_hash": "3b8ae1c1c827f66efe681ccbd9e6b1b5",
+    "mtime": 1782367455.3626938,
+    "ast_hash": "d9d312e3dd9564614b2206330ebf158a",
     "semantic_hash": ""
   },
   "agentic-seo/public/file.svg": {
@@ -927,6 +927,56 @@
   "agentic-seo/app/api/clients/[id]/quota/route.ts": {
     "mtime": 1782362907.7124631,
     "ast_hash": "c20a64579b8b5f1a89e8ea9e438b3810",
+    "semantic_hash": ""
+  },
+  "playwright_worker/raw_turnstile.py": {
+    "mtime": 1782387318.775442,
+    "ast_hash": "7c7f97602953f8698a9d47ece15f0ff5",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_bypass.py": {
+    "mtime": 1782380647.089077,
+    "ast_hash": "4431a0139b6e8e6fd00d73e633ef008d",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_cookies.py": {
+    "mtime": 1782386249.9630668,
+    "ast_hash": "633b47cb8562ef5310311021200c5105",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_sb.py": {
+    "mtime": 1782386141.7646253,
+    "ast_hash": "1a2295133c64c800d68b0e237845ee48",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_site.py": {
+    "mtime": 1782387664.9355564,
+    "ast_hash": "22adbf06d08e0df9c1f17c80aeaa12ec",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_tier_0.py": {
+    "mtime": 1782391901.8094468,
+    "ast_hash": "06706fe6422edee85e9e638d0f5445e6",
+    "semantic_hash": ""
+  },
+  "playwright_worker/docs/cloudflare_bypass_architecture.md": {
+    "mtime": 1782374398.5696666,
+    "ast_hash": "3a81c5fa8a915093ffb092f85d804be9",
+    "semantic_hash": ""
+  },
+  "playwright_worker/methods/bypass-cloudflare.md": {
+    "mtime": 1782365845.978062,
+    "ast_hash": "bf21ab57c425d74f5b0dc4670a1014a8",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_site_result.png": {
+    "mtime": 1782391323.8815937,
+    "ast_hash": "6c1005f484942ca7a289805d8e2ba141",
+    "semantic_hash": ""
+  },
+  "playwright_worker/tier0_result.png": {
+    "mtime": 1782391955.0968916,
+    "ast_hash": "7958bdc43d06fb988e034c419086674a",
     "semantic_hash": ""
   }
 }

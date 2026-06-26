@@ -1,0 +1,5 @@
+seleniumbase
+supabase
+python-dotenv
+redis
+websockets>=16.0

@@ -24,7 +24,7 @@ from typing import Dict, Any, Optional
 from playwright.async_api import Page, TimeoutError as PlaywrightTimeoutError
 
 from templates.base_template import BaseTemplate
-from methods.cloudflare import cloudflare_updated
+from methods.stealth_browser import handle_cloudflare_challenge
 from executor.errors import (
     SelectorNotFoundError,
     RegistrationFailedError,
@@ -92,7 +92,7 @@ class PliggGenericTemplate(BaseTemplate):
         """Navigate to home page with retry logic and Cloudflare bypass."""
         self.logger.info("Navigating to home page")
         await self.safe_goto(page, self.BASE_URL)
-        cf_cleared = await cloudflare_updated(page)
+        cf_cleared = await handle_cloudflare_challenge(page)
         if not cf_cleared:
             raise Exception("Cloudflare challenge could not be cleared on home page")
         await page.wait_for_timeout(1500)
@@ -215,7 +215,7 @@ class PliggGenericTemplate(BaseTemplate):
                                             "input[value='Create user'], button:has-text('Create user'), input[type='submit']")
 
         await self.safe_goto(page, self.REGISTER_URL)
-        cf_cleared = await cloudflare_updated(page)
+        cf_cleared = await handle_cloudflare_challenge(page)
         if not cf_cleared:
             raise Exception("Cloudflare challenge could not be cleared on registration page")
 
@@ -227,7 +227,7 @@ class PliggGenericTemplate(BaseTemplate):
             await page.wait_for_load_state("networkidle", timeout=15000)
         except Exception:
             pass  # networkidle is best-effort; continue regardless
-        cf_cleared = await cloudflare_updated(page)
+        cf_cleared = await handle_cloudflare_challenge(page)
         if not cf_cleared:
             raise Exception("Secondary Cloudflare challenge could not be cleared on registration page")
 
@@ -359,7 +359,7 @@ class PliggGenericTemplate(BaseTemplate):
         description_text = random.choice(desc_templates).format(keyword=keyword)
 
         await self.safe_goto(page, self.SUBMIT_URL)
-        cf_cleared = await cloudflare_updated(page)
+        cf_cleared = await handle_cloudflare_challenge(page)
         if not cf_cleared:
             raise Exception("Cloudflare challenge could not be cleared on submit page")
 

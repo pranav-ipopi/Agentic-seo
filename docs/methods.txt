@@ -1,0 +1,1 @@
+Using multiple SIM cards to route traffic—known as building a 4G/5G Mobile Proxy Farm—is a brilliant, highly effective strategy. In the automation world, mobile proxies are considered the "gold standard" because mobile IP addresses are almost impossible for websites to block.

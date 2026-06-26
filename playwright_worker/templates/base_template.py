@@ -76,7 +76,7 @@ class BaseTemplate(ABC):
         Returns True if successful, raises SiteDownError or returns False on failure.
         """
         from executor.errors import SiteDownError, ConnectionTimeoutError
-        from methods.cloudflare import cloudflare_updated
+        from methods.stealth_browser import handle_cloudflare_challenge
 
         for attempt in range(max_retries):
             try:
@@ -96,8 +96,8 @@ class BaseTemplate(ABC):
                     raise SiteDownError(url=url, message=f"Server error {response.status} from {url}")
 
                 # Call active mouse emulation logic immediately
-                # cloudflare_updated handles its own 15-iteration internal retry
-                challenge_cleared = await cloudflare_updated(page)
+                # handle_cloudflare_challenge handles its own internal retry
+                challenge_cleared = await handle_cloudflare_challenge(page)
                 
                 if challenge_cleared:
                     self.logger.info(f"Navigation and security check successfully passed for {url}")

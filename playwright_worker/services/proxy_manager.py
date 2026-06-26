@@ -10,7 +10,13 @@ class ProxyManager:
         self.fallback_proxies = []
         # Tier 0: proxy -> {"user_agent": str, "cookies": {domain: {"cookie": dict, "expires": float}}}
         self.cookie_pool = {}
-        self.load_proxies()
+        
+        # Check if proxies are disabled globally
+        use_proxy = str(os.environ.get("USE_PROXY", "true")).lower() == "true"
+        if use_proxy:
+            self.load_proxies()
+        else:
+            self.logger.info("[ProxyManager] USE_PROXY is false, running without proxies.")
 
     def load_proxies(self):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,6 +60,14 @@ class ProxyManager:
                             self.fallback_proxies.append(line)
                             
         self.logger.info(f"[ProxyManager] Loaded {len(self.primary_proxies)} primary proxies and {len(self.fallback_proxies)} fallback proxies.")
+
+    def get_session(self, index: int) -> str | None:
+        """
+        Returns a static proxy based on an index, ensuring 1:1 mapping for slots.
+        """
+        if not self.primary_proxies:
+            return None
+        return self.primary_proxies[index % len(self.primary_proxies)]
 
     async def get_working_proxy(self, browser_manager):
         """

@@ -419,26 +419,6 @@
     "ast_hash": "737877a29acaecfd3d9c46565b19d2e1",
     "semantic_hash": ""
   },
-  "playwright_worker/Bookmark_sites_tester/pligg_generic_terminal.py": {
-    "mtime": 1781928383.5483167,
-    "ast_hash": "e469b1ddd11a83a9e603883b0d86feb3",
-    "semantic_hash": ""
-  },
-  "playwright_worker/Bookmark_sites_tester/terminal_router.py": {
-    "mtime": 1781604671.7883694,
-    "ast_hash": "ca598f0cb6dcbbc0d70bed54465c5f73",
-    "semantic_hash": ""
-  },
-  "playwright_worker/article_worker.py": {
-    "mtime": 1782210993.9902477,
-    "ast_hash": "fb8f8cd59a49f1130244f73ffa02b33e",
-    "semantic_hash": ""
-  },
-  "playwright_worker/auth_setup.py": {
-    "mtime": 1781937054.261571,
-    "ast_hash": "4d8da54519fd688e2ffade7747eb9df0",
-    "semantic_hash": ""
-  },
   "playwright_worker/configs/__init__.py": {
     "mtime": 1781328633.330429,
     "ast_hash": "d0faf4754bff3674af13fd47f4da735f",
@@ -457,21 +437,6 @@
   "playwright_worker/configs/templates/wordpress_submitpro.json": {
     "mtime": 1781328714.0926332,
     "ast_hash": "93ec97de03f98e133e123960d726f071",
-    "semantic_hash": ""
-  },
-  "playwright_worker/debug_gorilla.py": {
-    "mtime": 1782114874.2855003,
-    "ast_hash": "e108238fe17c4d8725e5eec2e3bdccc8",
-    "semantic_hash": ""
-  },
-  "playwright_worker/debug_sites.py": {
-    "mtime": 1781849564.2016835,
-    "ast_hash": "e05d98c1994ae9a07c48b0ef04094166",
-    "semantic_hash": ""
-  },
-  "playwright_worker/debug_test.py": {
-    "mtime": 1782114840.0849397,
-    "ast_hash": "8a295adaaba6a2648bb4e7184f6cc6fe",
     "semantic_hash": ""
   },
   "playwright_worker/deploy.ps1": {
@@ -537,16 +502,6 @@
   "playwright_worker/methods/stealth_browser.py": {
     "mtime": 1782391225.5913062,
     "ast_hash": "8b6ae5787f7eee4addcde0cbd7b4407e",
-    "semantic_hash": ""
-  },
-  "playwright_worker/migrations/001_add_health_tracking.sql": {
-    "mtime": 1781330632.9503345,
-    "ast_hash": "7d489dd3858838002a8d14069441a97f",
-    "semantic_hash": ""
-  },
-  "playwright_worker/migrations/01_client_site_usage.sql": {
-    "mtime": 1781583388.9146402,
-    "ast_hash": "5faccfb58bc8f500cb61506e6295e187",
     "semantic_hash": ""
   },
   "playwright_worker/services/__init__.py": {
@@ -619,24 +574,9 @@
     "ast_hash": "a91c62ca213f4c0ab27554a419fb0ccd",
     "semantic_hash": ""
   },
-  "playwright_worker/test_cloudflare_bypass.py": {
-    "mtime": 1781780341.9752226,
-    "ast_hash": "fb6c63b2abaa923f842acbdabca3ab83",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_proxy.py": {
-    "mtime": 1781713399.2021387,
-    "ast_hash": "152f24ced5f7ec8ab9805a835b9ca36f",
-    "semantic_hash": ""
-  },
   "playwright_worker/vps_worker_playwright.py": {
     "mtime": 1782277415.922196,
     "ast_hash": "9e9bc8a9ac8a8fb80a999977ed2a1f44",
-    "semantic_hash": ""
-  },
-  "playwright_worker/worker.py": {
-    "mtime": 1782126927.987388,
-    "ast_hash": "413cc3a6449e3335f5b29bf0fd837bd0",
     "semantic_hash": ""
   },
   "read_excel.py": {
@@ -784,11 +724,6 @@
     "ast_hash": "9e9bb9049cc5fe6be321b939a8f9f1f9",
     "semantic_hash": ""
   },
-  "playwright_worker/cloudflare_stealth_architecture.md": {
-    "mtime": 1781930373.1223028,
-    "ast_hash": "05072ecf6095cd575aab61d60f9cd3be",
-    "semantic_hash": ""
-  },
   "playwright_worker/configs/2captcha_proxies.txt": {
     "mtime": 1781977346.1376932,
     "ast_hash": "c7ce5b02b870744add15a4b344f7cabe",
@@ -812,11 +747,6 @@
   "playwright_worker/docs/proxy_system.md": {
     "mtime": 1781977887.940519,
     "ast_hash": "cebf75fad62c687d89ce425360a569c9",
-    "semantic_hash": ""
-  },
-  "playwright_worker/gorilla_debug.html": {
-    "mtime": 1782114916.880412,
-    "ast_hash": "eeaa74b13e00aa7d9a98891dc2b9edff",
     "semantic_hash": ""
   },
   "playwright_worker/methods/pligg_site_automation_knowledge.md": {
@@ -852,11 +782,6 @@
   "agentic-seo/public/window.svg": {
     "mtime": 1780546325.1087508,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
-    "semantic_hash": ""
-  },
-  "playwright_worker/Bookmark_sites_tester/solvemedia_captcha.png": {
-    "mtime": 1781258551.4839857,
-    "ast_hash": "1da4b028e333089ab6bcad42dd49261a",
     "semantic_hash": ""
   },
   ".agents/rules/ponytail.md": {
@@ -929,36 +854,6 @@
     "ast_hash": "c20a64579b8b5f1a89e8ea9e438b3810",
     "semantic_hash": ""
   },
-  "playwright_worker/raw_turnstile.py": {
-    "mtime": 1782387318.775442,
-    "ast_hash": "7c7f97602953f8698a9d47ece15f0ff5",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_bypass.py": {
-    "mtime": 1782380647.089077,
-    "ast_hash": "4431a0139b6e8e6fd00d73e633ef008d",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_cookies.py": {
-    "mtime": 1782386249.9630668,
-    "ast_hash": "633b47cb8562ef5310311021200c5105",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_sb.py": {
-    "mtime": 1782386141.7646253,
-    "ast_hash": "1a2295133c64c800d68b0e237845ee48",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_site.py": {
-    "mtime": 1782387664.9355564,
-    "ast_hash": "22adbf06d08e0df9c1f17c80aeaa12ec",
-    "semantic_hash": ""
-  },
-  "playwright_worker/test_tier_0.py": {
-    "mtime": 1782391901.8094468,
-    "ast_hash": "06706fe6422edee85e9e638d0f5445e6",
-    "semantic_hash": ""
-  },
   "playwright_worker/docs/cloudflare_bypass_architecture.md": {
     "mtime": 1782374398.5696666,
     "ast_hash": "3a81c5fa8a915093ffb092f85d804be9",
@@ -969,14 +864,19 @@
     "ast_hash": "bf21ab57c425d74f5b0dc4670a1014a8",
     "semantic_hash": ""
   },
-  "playwright_worker/test_site_result.png": {
-    "mtime": 1782391323.8815937,
-    "ast_hash": "6c1005f484942ca7a289805d8e2ba141",
+  "playwright_worker/sql/001_add_health_tracking.sql": {
+    "mtime": 1781330632.9503345,
+    "ast_hash": "7d489dd3858838002a8d14069441a97f",
     "semantic_hash": ""
   },
-  "playwright_worker/tier0_result.png": {
-    "mtime": 1782391955.0968916,
-    "ast_hash": "7958bdc43d06fb988e034c419086674a",
+  "playwright_worker/sql/01_client_site_usage.sql": {
+    "mtime": 1781583388.9146402,
+    "ast_hash": "5faccfb58bc8f500cb61506e6295e187",
+    "semantic_hash": ""
+  },
+  "playwright_worker/docs/cloudflare_stealth_architecture.md": {
+    "mtime": 1781930373.1223028,
+    "ast_hash": "05072ecf6095cd575aab61d60f9cd3be",
     "semantic_hash": ""
   }
 }

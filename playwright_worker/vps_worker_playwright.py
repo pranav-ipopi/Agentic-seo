@@ -19,6 +19,7 @@ import os
 import sys
 import asyncio
 import logging
+import json
 import traceback
 from supabase import create_client, Client
 from dotenv import load_dotenv
@@ -26,7 +27,7 @@ from dotenv import load_dotenv
 # Ensure we can import from playwright_automation.backlink_automation
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from methods.stealth_browser import StealthBrowserManager
+from methods.session_pool import BrowserlessSessionPool
 from services.captcha_service import CaptchaService
 from services.logging_service import setup_logger
 from services.template_detector import TemplateDetector
@@ -48,9 +49,16 @@ POLL_INTERVAL_SECONDS = 30
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 logger = setup_logger(level=logging.INFO)
 
-# Global browser manager, proxy manager and captcha service
-browser_manager = StealthBrowserManager()
 proxy_manager = ProxyManager(logger=logger)
+
+# Global browser manager pool
+browser_manager = BrowserlessSessionPool(
+    endpoints=os.environ.get("BROWSERLESS_ENDPOINTS", "ws://localhost:3000").split(","),
+    proxy_manager=proxy_manager,
+    max_slots=MAX_CONCURRENT_SESSIONS,
+    logger=logger
+)
+
 captcha_service = CaptchaService(logger=logger)
 
 # Template runner (extensible — add new templates in executor/runner.py)
@@ -236,9 +244,14 @@ async def route_and_execute(task_run, supabase_client: Client):
 
             # Use TemplateRunner for config-driven routing
             if template_runner.is_supported(site_id):
+                slot = None
                 page = None
                 try:
-                    page = await browser_manager.get_page()
+                    slot = await browser_manager.checkout_slot()
+                    if not slot:
+                        raise Exception("Failed to checkout a Browserless slot. All slots may be broken.")
+                        
+                    page = slot["session"]["page"]
                     res = await template_runner.execute(
                         site_id=site_id,
                         target_url=target_url,
@@ -271,15 +284,8 @@ async def route_and_execute(task_run, supabase_client: Client):
                         step=step.get('name', 'execution')
                     )
                 finally:
-                    # Close the entire context, not just the page.
-                    # Each job gets a fresh isolated context (see StealthBrowserManager)
-                    # so closing it here is correct and frees all context-level resources
-                    # (cookies, CF clearance tokens, local storage, cached routes).
-                    if page:
-                        try:
-                            await page.context.close()
-                        except Exception:
-                            pass
+                    if slot:
+                        await browser_manager.checkin_slot(slot, harvest_cookies=True)
             else:
                 # Unsupported template — no registered handler
                 result = {'status': 'failed'}
@@ -394,14 +400,11 @@ async def poll_queue():
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
     logger.info(f"Supported templates: {template_runner.get_supported_templates()}")
     
-    browser_started = False
     active_tasks = set()
     task_mapping = {}  # Map asyncio.Task -> parent_task_id
-    detecting_site_ids = set()  # Track which sites are currently being detected to avoid duplicates
     
-    import time
-    import random
-    next_job_allowed_time = 0
+    # Pre-warm all persistent sessions once at startup
+    await browser_manager.initialize()
     
     try:
         while True:
@@ -418,185 +421,64 @@ async def poll_queue():
                                     logger.info(f"Parent task {p_id} was failed. Cancelling associated task_run.")
                                     t_task.cancel()
 
-                current_time = time.time()
-                can_start_job = current_time >= next_job_allowed_time
                 available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
                 
-                # 1. Fetch CONTINUING jobs (bypassing rate limit)
-                # NOTE: type='backlink' filter keeps this worker isolated from article_submission jobs
+                # Fetch NEW jobs from Redis
                 if available_slots > 0:
-                    res_cont = supabase.table('task_runs') \
-                        .select('*, workflow_templates(*)') \
-                        .eq('status', 'pending') \
-                        .eq('type', 'backlink') \
-                        .gt('current_step_index', 0) \
-                        .order('created_at') \
-                        .limit(available_slots) \
-                        .execute()
-                    
-                    continuing_runs = res_cont.data or []
-                    for t in continuing_runs:
-                        supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
-                        parent_task_id = t.get('state', {}).get('task_id')
-                        if parent_task_id:
-                            mark_parent_task_running(supabase, parent_task_id)
-                        task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
-                        active_tasks.add(task)
-                        
-                        if parent_task_id:
-                            task_mapping[task] = parent_task_id
-                            
-                        def cleanup_task_cont(fut, t_ref=task):
-                            active_tasks.discard(t_ref)
-                            task_mapping.pop(t_ref, None)
-                            
-                        task.add_done_callback(cleanup_task_cont)
-
-                # Update available slots after potentially fetching continuing jobs
-                available_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
-
-                # 2. Fetch NEW jobs (enforcing strict rate limit)
-                # NOTE: type='backlink' filter keeps this worker isolated from article_submission jobs
-                if available_slots > 0 and can_start_job:
-                    task_runs = []
-                    
                     if redis_service.client:
-                        # Fast atomic pop from Redis
-                        job = await redis_service.pop_job(timeout=1)
-                        if job:
-                            if 'workflow_templates' in job and job['workflow_templates']:
-                                # Pure Redis-first execution: all data is present in payload
-                                task_runs = [job]
-                            else:
-                                # Fallback for old jobs in queue that miss the joined data (with retry for latency)
-                                res = None
-                                for attempt in range(3):
-                                    res = supabase.table('task_runs').select('*, workflow_templates(*)').eq('id', job.get('id')).execute()
-                                    if res.data:
-                                        break
-                                    await asyncio.sleep(1) # Wait 1s and retry if replication is lagging
-                                    
-                                if res and res.data:
-                                    task_runs = res.data
-                                else:
-                                    logger.warning(f"Job {job.get('id')} popped from Redis but not found in Supabase after 3 retries. Pushing back to queue.")
-                                    try:
-                                        await redis_service.client.lpush('backlink_queue', json.dumps(job))
-                                    except Exception as e:
-                                        logger.error(f"Failed to push job {job.get('id')} back to Redis: {e}")
-                    else:
-                        # Fallback to Supabase polling
-                        fetch_limit = 1
-                        response = supabase.table('task_runs') \
-                            .select('*, workflow_templates(*)') \
-                            .eq('status', 'pending') \
-                            .eq('type', 'backlink') \
-                            .eq('current_step_index', 0) \
-                            .order('created_at') \
-                            .limit(fetch_limit) \
-                            .execute()
-                        task_runs = response.data
-                    
-                    if task_runs:
-                        if not browser_started:
-                            logger.info("Pending tasks found. Starting browser manager...")
-                            await browser_manager.start()
-                            browser_started = True
-
-                            # Automatically test and inject a working proxy for this session
-                            # It handles fallbacks, shuffling, and setting it on the browser_manager
-                            await proxy_manager.get_working_proxy(browser_manager)
-
-                        logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
-                        
-                        for t in task_runs:
-                            # Reduced delay to allow concurrent execution (2 to 5 seconds)
-                            wait_seconds = random.uniform(2, 5)
-                            next_job_allowed_time = current_time + wait_seconds
+                        # Use rpop instead of blocking brpop to prevent socket timeout errors over WAN
+                        job_json = await redis_service.client.rpop("backlink_queue")
+                        if job_json:
+                            job = json.loads(job_json)
                             
-                            global NEXT_JOB_ALLOWED_TIME_GLOBAL
-                            NEXT_JOB_ALLOWED_TIME_GLOBAL = next_job_allowed_time
+                            # Mark as processing in Redis hash for state sync
+                            await redis_service.client.hset("job_status", job['id'], "processing")
                             
-                            logger.info(f"Rate Limiter: Next job will run in {wait_seconds:.2f} seconds.")
-
-                            supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
-                            parent_task_id = t.get('state', {}).get('task_id')
+                            logger.info(f"Popped job {job['id']} from Redis queue. Active: {len(active_tasks)+1}/{MAX_CONCURRENT_SESSIONS}")
+                            
+                            parent_task_id = job.get('state', {}).get('task_id')
                             if parent_task_id:
                                 mark_parent_task_running(supabase, parent_task_id)
-                            task = asyncio.create_task(route_and_execute(t, create_client(SUPABASE_URL, SUPABASE_KEY)))
+                                
+                            task = asyncio.create_task(route_and_execute(job, create_client(SUPABASE_URL, SUPABASE_KEY)))
                             active_tasks.add(task)
                             
                             if parent_task_id:
                                 task_mapping[task] = parent_task_id
                                 
-                            def cleanup_task(fut, t_ref=task):
+                            def cleanup_task(fut, t_ref=task, j_id=job['id']):
                                 active_tasks.discard(t_ref)
                                 task_mapping.pop(t_ref, None)
+                                # Try to determine success/fail from exception
+                                try:
+                                    exc = fut.exception()
+                                    final_status = "failed" if exc else "completed"
+                                except asyncio.CancelledError:
+                                    final_status = "failed"
+                                # Mark final status in Redis
+                                asyncio.create_task(redis_service.client.hset("job_status", j_id, final_status))
                                 
                             task.add_done_callback(cleanup_task)
-
-                # --- NEW: Template Detection Tasks ---
-                # If we still have room in the concurrency pool, look for sites that need detection
-                remaining_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
-                if remaining_slots > 0:
-                    res_undetected = supabase.table('target_sites').select('id, url').is_('site_id', 'null').eq('is_active', True).limit(remaining_slots).execute()
-                    undetected_sites = res_undetected.data or []
-                    
-                    for site in undetected_sites:
-                        s_id = site.get('id')
-                        if s_id in detecting_site_ids:
-                            continue
-                            
-                        if not browser_started:
-                            logger.info("Undetected sites found. Starting browser manager...")
-                            await browser_manager.start()
-                            browser_started = True
-
-                        detecting_site_ids.add(s_id)
-                        
-                        # Wrapper to remove from detecting set when done
-                        async def do_detect(site_id_db, target_url):
-                            try:
-                                await detect_and_update(site_id_db, target_url)
-                            finally:
-                                detecting_site_ids.discard(site_id_db)
-                        
-                        det_task = asyncio.create_task(do_detect(s_id, site.get('url')))
-                        active_tasks.add(det_task)
-                        det_task.add_done_callback(active_tasks.discard)
-                
-                if not active_tasks:
-                    if browser_started:
-                        logger.info("No active tasks. Closing browser to free resources...")
-                        await browser_manager.close()
-                        browser_started = False
-                    if not redis_service.client:
-                        await asyncio.sleep(POLL_INTERVAL_SECONDS)
-                else:
-                    remaining_slots = MAX_CONCURRENT_SESSIONS - len(active_tasks)
-                    if remaining_slots > 0:
-                        import time
-                        now = time.time()
-                        if NEXT_JOB_ALLOWED_TIME_GLOBAL > now:
-                            await asyncio.sleep(NEXT_JOB_ALLOWED_TIME_GLOBAL - now)
-                        # We have slots available, loop back to pull next job without blocking
+                        else:
+                            # Queue is empty, pause briefly to prevent CPU thrashing
+                            await asyncio.sleep(2)
                     else:
-                        # Max capacity reached, wait for at least one task to finish
-                        await asyncio.wait(active_tasks, return_when=asyncio.FIRST_COMPLETED, timeout=POLL_INTERVAL_SECONDS)
+                        logger.error("Redis client not connected. Waiting...")
+                        await asyncio.sleep(5)
+                else:
+                    # Max capacity reached, wait for at least one task to finish
+                    await asyncio.wait(active_tasks, return_when=asyncio.FIRST_COMPLETED, timeout=POLL_INTERVAL_SECONDS)
                     
             except Exception as e:
                 logger.error(f"Error polling queue: {str(e)}")
-                
-                # Recover from dropped connections by recreating the client
                 try:
                     supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
                 except Exception:
                     pass
-                    
-                await asyncio.sleep(POLL_INTERVAL_SECONDS)
+                await asyncio.sleep(5)
+
     finally:
-        if browser_started:
-            await browser_manager.close()
+        pass
 
 if __name__ == "__main__":
     try:

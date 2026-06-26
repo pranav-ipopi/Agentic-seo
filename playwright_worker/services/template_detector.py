@@ -118,8 +118,8 @@ class TemplateDetector:
 
             # Attempt Cloudflare challenge bypass (uses existing helper)
             try:
-                from methods.cloudflare import cloudflare_updated
-                await cloudflare_updated(page)
+                from methods.stealth_browser import handle_cloudflare_challenge
+                await handle_cloudflare_challenge(page)
             except Exception as cf_err:
                 self.logger.debug(f"[TemplateDetector] Cloudflare bypass skipped/failed: {cf_err}")
 

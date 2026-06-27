@@ -93,7 +93,17 @@ class BaseTemplate(ABC):
                 if response.status in [403, 503, 520]:
                     self.logger.warning(f"Hit intercept status code: {response.status} at {url}")
                 elif response.status >= 500 and response.status != 520:
-                    raise SiteDownError(url=url, message=f"Server error {response.status} from {url}")
+                    self.logger.warning(f"Server error {response.status} from {url}. Retrying...")
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(5)
+                        continue
+                    else:
+                        raise SiteDownError(url=url, message=f"Server error {response.status} from {url} after {max_retries} attempts")
+                elif response.status >= 400 and response.status not in [403]:
+                    self.logger.warning(f"Client error {response.status} from {url}. Retrying...")
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(5)
+                        continue
 
                 # Call active mouse emulation logic immediately
                 # handle_cloudflare_challenge handles its own internal retry
@@ -128,16 +138,19 @@ class BaseTemplate(ABC):
                     else:
                         raise RuntimeError(f"Proxy authentication failed after {max_retries} retries on {url}. Check proxy credentials.") from e
 
-                is_connection_error = any(err in error_str for err in ['net::err_connection', 'net::err_name', 'dns', 'net::err_aborted'])
+                is_connection_error = any(err in error_str for err in ['net::err_connection', 'net::err_name', 'dns', 'net::err_aborted', 'err_http_response_code_failure', 'err_empty_response'])
                 if is_connection_error and attempt < max_retries - 1:
                     wait = (attempt + 1) * 5
-                    self.logger.warning(f"Connection error on {url}. Retrying in {wait}s...")
+                    self.logger.warning(f"Connection/Server error on {url}: {error_str}. Retrying in {wait}s...")
                     await asyncio.sleep(wait)
                 elif is_connection_error:
-                    raise SiteDownError(url=url, message=f"Site unreachable after {max_retries} attempts: {url}") from e
+                    raise SiteDownError(url=url, message=f"Site unreachable/broken after {max_retries} attempts: {url}") from e
                 else:
                     self.logger.error(f"Network error during safe_goto to {url}: {str(e)}")
-                    await page.wait_for_timeout(2000)
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(3)
+                    else:
+                        await page.wait_for_timeout(2000)
 
         return False
 

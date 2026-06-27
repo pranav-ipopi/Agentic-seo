@@ -78,6 +78,12 @@ export async function POST(request: NextRequest) {
         for (const run of runsToRetry) {
           // Push retried jobs to Redis and force step index to 0
           run.current_step_index = 0;
+          
+          // Reset retry_count inside state so the worker gets 3 fresh attempts
+          if (run.state) {
+            run.state.retry_count = 0;
+          }
+
           pipeline.lpush('backlink_queue', JSON.stringify(run));
           pushedCount++;
         }

@@ -288,7 +288,16 @@ class PliggGenericTemplate(BaseTemplate):
                 self.logger.info("Registration successful, redirected to user page.")
                 break
 
-            body_text = (await page.inner_text("body")).lower()
+            try:
+                body_text = (await page.inner_text("body", timeout=15000)).lower()
+            except PlaywrightTimeoutError:
+                self.logger.warning("Timeout getting body text during registration. Refreshing...")
+                try:
+                    await page.reload(wait_until="domcontentloaded", timeout=30000)
+                    body_text = (await page.inner_text("body", timeout=15000)).lower()
+                except Exception as e:
+                    self.logger.warning(f"Refresh also failed: {e}")
+                    body_text = ""
             if "invalid captcha" in body_text or (
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:
@@ -314,16 +323,51 @@ class PliggGenericTemplate(BaseTemplate):
                 # before proceeding — avoids the submit page silently redirecting to login.
                 await page.wait_for_timeout(2000)
                 if not await self._is_logged_in(page):
+                    # Check if we are on a login screen
+                    _current_url = page.url.lower()
+                    if "login" in _current_url or await page.locator("input[name='username']").count() > 0:
+                        self.logger.info("Redirected to login page. Attempting manual login...")
+                        try:
+                            # Fill username
+                            user_field = page.locator("input[name='username']").first
+                            if await user_field.count() > 0:
+                                await user_field.fill(self.credentials["username"])
+                            
+                            # Fill password
+                            pass_field = page.locator("input[name='password']").first
+                            if await pass_field.count() > 0:
+                                await pass_field.fill(self.credentials["password"])
+                            
+                            # Submit
+                            login_btn = page.locator("input[type='submit'][value='Sign In'], button:has-text('Sign In'), input[name='processlogin']").first
+                            if await login_btn.count() > 0:
+                                await login_btn.click()
+                                await page.wait_for_load_state("networkidle", timeout=15000)
+                                await page.wait_for_timeout(2000)
+                                
+                                # Verify again
+                                if await self._is_logged_in(page):
+                                    self.logger.info("Manual login successful.")
+                                    break
+                        except Exception as e:
+                            self.logger.warning(f"Manual login attempt failed: {e}")
+
                     self.logger.warning(
                         "Assumed-success registration but login state not confirmed. "
                         "Session not authenticated — treating as failure."
                     )
-                    raise RegistrationFailedError(
-                        message="Registration appeared to succeed but session could not be verified.",
-                        step="register",
-                        url=self.REGISTER_URL
-                    )
-                break
+                    
+                    if attempt == max_retries - 1:
+                        raise RegistrationFailedError(
+                            message="Registration appeared to succeed but session could not be verified.",
+                            step="register",
+                            url=self.REGISTER_URL
+                        )
+                    else:
+                        self.logger.info("Retrying registration from scratch...")
+                        continue
+                else:
+                    break
 
         self.logger.info("Registration flow finished")
 
@@ -467,7 +511,16 @@ class PliggGenericTemplate(BaseTemplate):
             except PlaywrightTimeoutError:
                 self.logger.warning("Timeout waiting for submit result...")
 
-            body_text = (await page.inner_text("body")).lower()
+            try:
+                body_text = (await page.inner_text("body", timeout=15000)).lower()
+            except PlaywrightTimeoutError:
+                self.logger.warning("Timeout getting body text during submission. Refreshing...")
+                try:
+                    await page.reload(wait_until="domcontentloaded", timeout=30000)
+                    body_text = (await page.inner_text("body", timeout=15000)).lower()
+                except Exception as e:
+                    self.logger.warning(f"Refresh also failed: {e}")
+                    body_text = ""
             if "invalid captcha" in body_text or (
                 "captcha" in body_text and "invalid" in body_text
             ) or "wrong answer" in body_text:

@@ -255,16 +255,29 @@ async def route_and_execute(task_run, supabase_client: Client):
                     worker.set_proxy(random.choice(proxy_manager.primary_proxies))
                 
                 async def run_automation(page):
-                    return await template_runner.execute(
-                        site_id=site_id,
-                        target_url=target_url,
-                        target_site_db_id=target_site_id,
-                        client_url=client_target_url,
-                        keyword=keyword,
-                        page=page,
-                        captcha_service=captcha_service,
-                        logger=logger
-                    )
+                    try:
+                        return await template_runner.execute(
+                            site_id=site_id,
+                            target_url=target_url,
+                            target_site_db_id=target_site_id,
+                            client_url=client_target_url,
+                            keyword=keyword,
+                            page=page,
+                            captcha_service=captcha_service,
+                            logger=logger
+                        )
+                    except Exception as err:
+                        # Handle failure while page is still active to capture screenshot
+                        await failure_handler.handle_failure(
+                            task_run_id=task_run_id,
+                            target_site_id=target_site_id,
+                            template_type=site_id or "unknown",
+                            error=err,
+                            page=page,
+                            step=step.get('name', 'execution')
+                        )
+                        err._handled_by_inner = True
+                        raise
                 
                 try:
                     res = await worker.execute_job(target_url, run_automation)
@@ -280,15 +293,16 @@ async def route_and_execute(task_run, supabase_client: Client):
                     logger.error(f"[TaskRun {task_run_id}] Execution failed: {e}")
                     result = {'status': 'failed'}
                     result_message = f"Agent failed. Error: {str(e)}"
-                    # Classify and log failure with evidence
-                    await failure_handler.handle_failure(
-                        task_run_id=task_run_id,
-                        target_site_id=target_site_id,
-                        template_type=site_id or "unknown",
-                        error=e,
-                        page=None, # Worker handles page cleanup, passing None is safer here
-                        step=step.get('name', 'execution')
-                    )
+                    # Classify and log failure with evidence (if not already handled inside run_automation)
+                    if not getattr(e, '_handled_by_inner', False):
+                        await failure_handler.handle_failure(
+                            task_run_id=task_run_id,
+                            target_site_id=target_site_id,
+                            template_type=site_id or "unknown",
+                            error=e,
+                            page=None,
+                            step=step.get('name', 'execution')
+                        )
             else:
                 # Unsupported template — no registered handler
                 result = {'status': 'failed'}
@@ -331,8 +345,27 @@ async def route_and_execute(task_run, supabase_client: Client):
 
         # Advance step
         if result and result.get('status') == 'failed':
-            supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
-            check_and_update_parent_task(supabase_client, state)
+            retry_count = state.get('retry_count', 0)
+            if retry_count < 2:  # Allows up to 3 total attempts
+                logger.info(f"[TaskRun {task_run_id}] Execution failed. Retrying ({retry_count + 1}/3)...")
+                state['retry_count'] = retry_count + 1
+                task_run['state'] = state
+                
+                supabase_client.table('task_runs').update({
+                    'status': 'pending',
+                    'state': state
+                }).eq('id', task_run_id).execute()
+                
+                import json
+                try:
+                    await redis_service.client.rpush('backlink_queue', json.dumps(task_run))
+                    logger.info(f"[TaskRun {task_run_id}] Pushed back to Redis queue for retry.")
+                except Exception as push_e:
+                    logger.error(f"[TaskRun {task_run_id}] Failed to push retry to Redis: {push_e}")
+            else:
+                logger.error(f"[TaskRun {task_run_id}] Failed after 3 attempts. Marking as permanently failed.")
+                supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
+                check_and_update_parent_task(supabase_client, state)
         else:
             next_index = current_index + 1
             if next_index >= len(steps):
@@ -382,8 +415,29 @@ async def route_and_execute(task_run, supabase_client: Client):
     except Exception as e:
         error_trace = traceback.format_exc()
         logger.error(f"[TaskRun {task_run_id}] Unexpected error:\n{error_trace}")
-        supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
-        check_and_update_parent_task(supabase_client, task_run.get('state', {}))
+        
+        state = task_run.get('state', {})
+        retry_count = state.get('retry_count', 0)
+        
+        if retry_count < 2:
+            logger.info(f"[TaskRun {task_run_id}] Unexpected error. Retrying ({retry_count + 1}/3)...")
+            state['retry_count'] = retry_count + 1
+            task_run['state'] = state
+            
+            supabase_client.table('task_runs').update({
+                'status': 'pending',
+                'state': state
+            }).eq('id', task_run_id).execute()
+            
+            import json
+            try:
+                await redis_service.client.rpush('backlink_queue', json.dumps(task_run))
+                logger.info(f"[TaskRun {task_run_id}] Pushed back to Redis queue after unexpected error.")
+            except Exception:
+                pass
+        else:
+            supabase_client.table('task_runs').update({'status': 'failed'}).eq('id', task_run_id).execute()
+            check_and_update_parent_task(supabase_client, task_run.get('state', {}))
         try:
             supabase_client.table('task_run_logs').insert({
                 'task_run_id': task_run_id,

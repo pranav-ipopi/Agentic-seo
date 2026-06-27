@@ -1,0 +1,1 @@
+pm2 start vps_worker_playwright.py --interpreter .\venv\Scripts\python.exe --name backlink-worker

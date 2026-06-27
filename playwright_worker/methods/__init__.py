@@ -1,4 +1,3 @@
-from .stealth_browser import StealthBrowserManager
+from .stealth_browser import BrowserWorker, BrowserWorkerPool
 
-
-__all__ = ["StealthBrowserManager"]
+__all__ = ["BrowserWorker", "BrowserWorkerPool"]

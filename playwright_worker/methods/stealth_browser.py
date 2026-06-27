@@ -416,7 +416,7 @@ class BrowserWorkerPool:
     def __init__(self, max_profiles: int = 4):
         self.workers = []
         self.max_profiles = max_profiles
-        self.base_dir = os.environ.get("PROFILE_BASE_DIR", r"C:\Users\HP\Documents\Agentic_SEO\chrome_profiles")
+        self.base_dir = os.environ.get("PROFILE_BASE_DIR", r"C:\Users\HP\Documents\Agentic_SEO\playwright_worker\chrome_profiles")
         self._is_started = False
         
     async def start_all(self):

@@ -135,7 +135,27 @@ class PliggGenericTemplate(BaseTemplate):
                 # Save the image locally with a unique name to avoid concurrency issues
                 unique_id = uuid.uuid4().hex
                 img_path = f"solvemedia_captcha_{unique_id}.png"
-                await captcha_img.screenshot(path=img_path)
+                
+                try:
+                    # Try native screenshot first (handles scrolling automatically)
+                    await captcha_img.screenshot(path=img_path, timeout=10000)
+                except Exception as e:
+                    self.logger.warning(f"Standard screenshot failed ({e}). Bypassing stability checks natively...")
+                    # 1. Natively scroll into view without using JS evaluate (undectable)
+                    try:
+                        await captcha_img.focus()
+                        await page.wait_for_timeout(500)
+                    except Exception:
+                        pass
+                    
+                    # 2. Get exact coordinates
+                    box = await captcha_img.bounding_box()
+                    if box:
+                        # 3. Take a screenshot of that exact rectangle, completely bypassing the "waiting for element to be stable" check
+                        await page.screenshot(path=img_path, clip=box, timeout=10000)
+                    else:
+                        self.logger.error("Could not get bounding box for captcha. Captcha might not be visible.")
+                        raise Exception("Captcha bounding box not found")
 
                 # 3. Use twocaptcha for solving
                 def run_2captcha(image_path):

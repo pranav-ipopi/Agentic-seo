@@ -257,8 +257,7 @@ class BrowserWorker:
                 except:
                     pass
                     
-        cmd = [
-            chrome_path,
+        args = [
             f"--remote-debugging-port={self.cdp_port}",
             f"--user-data-dir={self.profile_dir}",
             "--no-first-run",
@@ -266,9 +265,12 @@ class BrowserWorker:
             "--restore-last-session",
             "--start-maximized",
         ]
-        # DETACHED_PROCESS runs Chrome completely independent of the python worker
-        self.chrome_process = subprocess.Popen(cmd, creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP)
-        print(f"[Worker {self.worker_id}] Launched Chrome process on port {self.cdp_port}")
+        
+        # Using cmd /c start detaches the process completely, making explorer.exe the parent.
+        # This scrubs Python environment variables and looks like a native user click.
+        cmd_str = f'cmd.exe /c start "" "{chrome_path}" ' + " ".join(args)
+        subprocess.Popen(cmd_str, shell=True)
+        print(f"[Worker {self.worker_id}] Launched Chrome process on port {self.cdp_port} via explorer")
 
     async def start(self):
         """Starts Chrome and connects Playwright via CDP."""
@@ -297,8 +299,12 @@ class BrowserWorker:
 
     async def get_page(self):
         """Returns a new page from the persistent default context."""
-        if not self.browser:
-            raise RuntimeError("Browser not started. Call start() first.")
+        if not self.browser or not self.browser.is_connected() or len(self.browser.contexts) == 0:
+            print(f"[Worker {self.worker_id}] Browser disconnected or crashed. Restarting...")
+            await self.restart()
+            
+        if not self.browser or len(self.browser.contexts) == 0:
+            raise RuntimeError("Browser failed to restart properly.")
         
         if not self.page or self.page.is_closed():
             context = self.browser.contexts[0]
@@ -372,12 +378,17 @@ class BrowserWorker:
         
         await self.close()
         
-        # Hard kill if process handle is available
-        if self.chrome_process:
-            try:
-                self.chrome_process.kill()
-            except Exception:
-                pass
+        # Hard kill by finding the PID listening on our CDP port
+        try:
+            output = subprocess.check_output(f'netstat -ano | findstr :{self.cdp_port}', shell=True).decode()
+            for line in output.splitlines():
+                if 'LISTENING' in line:
+                    pid = line.strip().split()[-1]
+                    if pid.isdigit() and pid != '0':
+                        subprocess.run(f'taskkill /F /PID {pid}', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        break
+        except Exception:
+            pass
                 
         await asyncio.sleep(3)
         try:

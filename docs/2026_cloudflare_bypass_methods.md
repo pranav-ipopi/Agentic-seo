@@ -244,12 +244,30 @@ Browserless containers use real Chrome/Chromium (not modified), so this is handl
 
 ---
 
-## Method 7: Stealthy Playwright Mode
+## Method 12: Native OS Launch (Process Isolation)
 
-### Connect Playwright to SeleniumBase
+### Why Parent Processes & Environments Leak
 
+Even if you connect via CDP and use a stealthy browser, *how* you launch the browser process matters. 
+When a Python or Node.js automation script launches Chrome using standard methods (like `subprocess.Popen` or Playwright's `launch_persistent_context`), the browser inherits the parent process's **Environment Variables** (e.g., `PYTHONPATH`, `PM2_HOME`, `NODE_ENV`).
+
+Cloudflare's advanced telemetry can subtly detect these injected automation environments, flagging the browser as bot-driven even if the JS fingerprint is perfect. Furthermore, some anti-bot solutions check process trees (though limited by the browser sandbox, environment leakage is real).
+
+### The Fix: Native OS Execution
+
+To achieve 100% isolation, you must detach the browser from the automation script so that the OS (e.g., Windows Explorer) becomes the parent process, providing a clean environment block.
+
+**Windows Implementation (cmd.exe):**
 ```python
-from playwright.sync_api import sync_playwright
+# BAD: Inherits Python/PM2 environment
+subprocess.Popen(["chrome.exe", ...])
+
+# GOOD: explorer.exe becomes parent, clean environment block
+cmd_str = 'cmd.exe /c start "" "chrome.exe" --remote-debugging-port=9222 ...'
+subprocess.Popen(cmd_str, shell=True)
+```
+
+*Note: When launched this way, you lose the direct process handle. You must manage the browser lifecycle by querying the OS for the PID listening on your specific CDP port using `netstat` when you need to force-kill it.*
 from seleniumbase import sb_cdp
 
 sb = sb_cdp.Chrome(guest=True)

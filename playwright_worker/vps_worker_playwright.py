@@ -26,7 +26,7 @@ from dotenv import load_dotenv
 # Ensure we can import from playwright_automation.backlink_automation
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from methods.stealth_browser import StealthBrowserManager
+from methods.stealth_browser import BrowserWorkerPool
 from services.captcha_service import CaptchaService
 from services.logging_service import setup_logger
 from services.template_detector import TemplateDetector
@@ -57,6 +57,9 @@ template_runner = TemplateRunner()
 
 # Global redis service
 redis_service = RedisService(logger=logger)
+
+# Global worker pool for persistent browsers
+worker_pool = BrowserWorkerPool(max_profiles=MAX_CONCURRENT_SESSIONS)
 
 # Global tracker for rate limiter
 NEXT_JOB_ALLOWED_TIME_GLOBAL = 0
@@ -150,14 +153,22 @@ async def detect_and_update(site_id_db: str, url: str):
     and writes the detected site_id (template) back to Supabase.
     """
     logger.info(f"[Detector] Fingerprinting: {url}")
-    browser_manager = StealthBrowserManager()
+    worker = await worker_pool.get_idle_worker()
     if proxy_manager.primary_proxies:
         import random
-        browser_manager.set_proxy(random.choice(proxy_manager.primary_proxies))
-    template_detector = TemplateDetector(browser_manager, logger)
-    try:
-        await browser_manager.start(url)
+        worker.set_proxy(random.choice(proxy_manager.primary_proxies))
+        
+    async def run_detection(page):
+        # We temporarily mock the StealthBrowserManager interface by creating a class with get_page
+        class MockManager:
+            async def get_page(self): return page
+            
+        template_detector = TemplateDetector(MockManager(), logger)
         detected = await template_detector.detect(url)
+        return detected
+
+    try:
+        detected = await worker.execute_job(url, run_detection)
         if detected is not None:
             supabase.table('target_sites').update({'site_id': detected}).eq('id', site_id_db).execute()
             logger.info(f"[Detector] Updated {url} -> {detected}")
@@ -165,8 +176,6 @@ async def detect_and_update(site_id_db: str, url: str):
             logger.warning(f"[Detector] Inconclusive detection for {url} — will retry later.")
     except Exception as e:
         logger.error(f"[Detector] Failed to detect {url}: {e}")
-    finally:
-        await browser_manager.close()
 
 async def route_and_execute(task_run, supabase_client: Client):
     """
@@ -240,15 +249,13 @@ async def route_and_execute(task_run, supabase_client: Client):
 
             # Use TemplateRunner for config-driven routing
             if template_runner.is_supported(site_id):
-                page = None
-                browser_manager = StealthBrowserManager()
+                worker = await worker_pool.get_idle_worker()
                 if proxy_manager.primary_proxies:
                     import random
-                    browser_manager.set_proxy(random.choice(proxy_manager.primary_proxies))
-                try:
-                    await browser_manager.start(target_url)
-                    page = await browser_manager.get_page()
-                    res = await template_runner.execute(
+                    worker.set_proxy(random.choice(proxy_manager.primary_proxies))
+                
+                async def run_automation(page):
+                    return await template_runner.execute(
                         site_id=site_id,
                         target_url=target_url,
                         target_site_db_id=target_site_id,
@@ -258,6 +265,9 @@ async def route_and_execute(task_run, supabase_client: Client):
                         captcha_service=captcha_service,
                         logger=logger
                     )
+                
+                try:
+                    res = await worker.execute_job(target_url, run_automation)
                     result = {'status': 'completed'}
                     result_message = f"Success. Live URL: {res.get('backlink_url')}"
                     parsed_data = {
@@ -276,13 +286,9 @@ async def route_and_execute(task_run, supabase_client: Client):
                         target_site_id=target_site_id,
                         template_type=site_id or "unknown",
                         error=e,
-                        page=page,
+                        page=None, # Worker handles page cleanup, passing None is safer here
                         step=step.get('name', 'execution')
                     )
-                finally:
-                    # We no longer close the context here, as it belongs to the persistent Chrome clone.
-                    # browser_manager.close() will safely close the individual page and disconnect CDP.
-                    await browser_manager.close()
             else:
                 # Unsupported template — no registered handler
                 result = {'status': 'failed'}
@@ -396,6 +402,9 @@ async def poll_queue():
     global supabase
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
     logger.info(f"Supported templates: {template_runner.get_supported_templates()}")
+    
+    # Initialize persistent browser workers
+    await worker_pool.start_all()
     
     active_tasks = set()
     task_mapping = {}  # Map asyncio.Task -> parent_task_id

@@ -1,27 +1,69 @@
-$src = "$env:LOCALAPPDATA\Google\Chrome\User Data"
-$base_dst = "C:\Users\HP\Documents\Agentic_SEO\chrome_profiles"
+# ==========================
+# Chrome Profile Generator
+# ==========================
 
-Write-Host "Starting to clone 5 profiles from your real Chrome..."
-Write-Host "IMPORTANT: Please make sure ALL your normal Google Chrome windows are CLOSED for the best copy result, although the script will skip locked files if it has to."
-Write-Host ""
+# Chrome executable
+$Chrome = "${env:ProgramFiles}\Google\Chrome\Application\chrome.exe"
 
-for ($i = 1; $i -le 5; $i++) {
-    $dst = "$base_dst\profile_$i"
-    Write-Host "Cloning profile $i to $dst ..."
-    
-    # Copy profile, skipping huge cache folders to speed it up and save disk space
-    robocopy "$src" "$dst" /E /XD "ShaderCache" "Code Cache" "Cache" "blob_storage" /R:0 /W:0 | Out-Null
-    
-    # Remove Chrome's lock files so the cloned profiles don't think they are already running
-    $locks = @("SingletonLock", "SingletonCookie", "SingletonSocket")
-    foreach ($lock in $locks) {
-        $lockPath = "$dst\$lock"
-        if (Test-Path $lockPath) {
-            Remove-Item $lockPath -Force
-        }
-    }
-    Write-Host "Profile $i created successfully!"
-    Write-Host "---------------------------------"
+if (!(Test-Path $Chrome)) {
+    $Chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
 }
 
-Write-Host "All 5 profiles have been created successfully in $base_dst!"
+if (!(Test-Path $Chrome)) {
+    Write-Host "Chrome not found!"
+    exit
+}
+
+# Where all profiles will be stored
+$BaseDir = "C:\Users\HP\Documents\Agentic_SEO\chrome_profiles"
+
+# Number of profiles
+$TotalProfiles = 20
+
+# Create directory
+New-Item -ItemType Directory -Force -Path $BaseDir | Out-Null
+
+Write-Host ""
+Write-Host "Creating $TotalProfiles Chrome profiles..."
+Write-Host ""
+
+for ($i = 1; $i -le $TotalProfiles; $i++) {
+
+    $ProfileName = "profile_{0:D3}" -f $i
+    $ProfilePath = Join-Path $BaseDir $ProfileName
+
+    Write-Host "Creating $ProfileName"
+
+    # Launch Chrome once
+    $process = Start-Process `
+        -FilePath $Chrome `
+        -ArgumentList @(
+            "--user-data-dir=$ProfilePath",
+            "--no-first-run",
+            "--no-default-browser-check",
+            "about:blank"
+        ) `
+        -PassThru
+
+    # Wait for initialization
+    Start-Sleep -Seconds 5
+
+    # Close Chrome gracefully
+    if (!$process.HasExited) {
+        $process.CloseMainWindow() | Out-Null
+        Start-Sleep 2
+
+        if (!$process.HasExited) {
+            Stop-Process -Id $process.Id -Force
+        }
+    }
+
+    Write-Host "✓ Created $ProfileName"
+}
+
+Write-Host ""
+Write-Host "==================================="
+Write-Host "Finished creating $TotalProfiles profiles."
+Write-Host "Location:"
+Write-Host $BaseDir
+Write-Host "==================================="

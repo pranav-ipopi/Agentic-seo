@@ -21,16 +21,19 @@ LOG_DIR = Path(os.getenv("LOG_DIR", str(DEFAULT_BASE_DIR / "logs")))
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()
 SUPABASE_KEY = os.getenv("SUPABASE_KEY", "").strip()
 JOBS_TABLE = os.getenv("JOBS_TABLE", "jobs").strip()
+REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
 
 # --- Worker Settings ---
 # For 5000/day, the average successful completion target is ~208/hour.
 # Start lower, verify stability, then raise workers based on CPU/RAM and site permission.
 NUM_WORKERS = int(os.getenv("NUM_WORKERS", "10"))
+MAX_CONCURRENT_SESSIONS = int(os.getenv("MAX_CONCURRENT_SESSIONS", "10"))
 JOBS_PER_BATCH = int(os.getenv("JOBS_PER_BATCH", "1000"))
 JOBS_PER_DAY_TARGET = int(os.getenv("JOBS_PER_DAY_TARGET", "5000"))
 JOB_COOLDOWN = float(os.getenv("JOB_COOLDOWN", "1.5"))
 BROWSER_RESTART_EVERY = int(os.getenv("BROWSER_RESTART_EVERY", "150"))
 POLL_SLEEP_SECONDS = int(os.getenv("POLL_SLEEP_SECONDS", "300"))
+POLL_INTERVAL_SECONDS = int(os.getenv("POLL_INTERVAL_SECONDS", "60"))
 BATCH_SLEEP_SECONDS = int(os.getenv("BATCH_SLEEP_SECONDS", "1800"))
 
 # --- Throughput / politeness controls ---
@@ -41,6 +44,7 @@ GLOBAL_MIN_JOB_START_INTERVAL = float(
 )
 PER_HOST_MIN_JOB_START_INTERVAL = float(os.getenv("PER_HOST_MIN_JOB_START_INTERVAL", "30"))
 START_JITTER_MAX_SECONDS = float(os.getenv("START_JITTER_MAX_SECONDS", "2.0"))
+STARTUP_STAGGER_MAX = float(os.getenv("STARTUP_STAGGER_MAX", "5.0"))
 
 # --- Browser Settings ---
 # Keep headful for workflows that require visible browser interaction.

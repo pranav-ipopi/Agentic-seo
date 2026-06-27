@@ -18,6 +18,8 @@ import time
 import uuid
 from urllib.parse import urlparse
 
+from solvemedia_cache import save_captcha_answer
+
 
 class PliggTemplate:
     """
@@ -174,6 +176,8 @@ class PliggTemplate:
             resp_elem.clear()
             self._slow_type(resp_elem, pred)
             time.sleep(1)
+            # Store the answer so we can persist it if the site accepts it
+            self._last_captcha_answer = pred
             return True
 
         except ImportError:
@@ -194,7 +198,18 @@ class PliggTemplate:
                 TwoCaptcha(api_key).report(self.last_captcha_id, False)
         except Exception as e:
             self.logger.warning("Failed to report bad captcha: %s", e)
+        # Clear saved answer — it was wrong, don't persist it
+        self._last_captcha_answer = None
         self.last_captcha_id = None
+
+    def _persist_captcha_answer(self):
+        """Save the last accepted captcha answer to solvemedia.txt (dedup'd)."""
+        answer = getattr(self, "_last_captcha_answer", None)
+        if answer:
+            added = save_captcha_answer(answer)
+            if added:
+                self.logger.info("Saved new SolveMedia answer to cache: '%s'", answer)
+            self._last_captcha_answer = None
 
     # ── Registration ─────────────────────────────────────────────────────────
     def register(self, base_url: str) -> bool:
@@ -278,6 +293,7 @@ class PliggTemplate:
             current_url = self.driver.get_current_url()
             if "/user/" in current_url:
                 self.logger.info("Registration successful — redirected to /user/ page.")
+                self._persist_captcha_answer()  # answer was accepted
                 return True
 
             body_text = self.driver.get_text("body").lower()
@@ -300,6 +316,7 @@ class PliggTemplate:
                 time.sleep(2)
                 if self._is_logged_in():
                     self.logger.info("Login state confirmed — registration successful.")
+                    self._persist_captcha_answer()  # answer was accepted
                     return True
                 else:
                     self.logger.warning("Assumed-success but login state not confirmed — treating as failure.")
@@ -473,6 +490,7 @@ class PliggTemplate:
                     raise RuntimeError("Max retries exceeded due to persistent invalid captcha on submit.")
                 continue
             else:
+                self._persist_captcha_answer()  # captcha answer was accepted by site
                 break
 
         # ── Extract backlink URL (mirrors base_template._extract_backlink_url) ──

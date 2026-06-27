@@ -12,14 +12,20 @@ logger = get_logger("CFManager")
 class CloudflareBypass:
     def __init__(self, proxy_manager=None):
         self.proxy_manager = proxy_manager
-        self.session_dir = Path("sessions")
         self.session_dir.mkdir(exist_ok=True)
+        self.semaphore = asyncio.Semaphore(5)
         
         self.viewports = [
             (1920, 1080),
             (1366, 768),
             (1536, 864),
             (1440, 900),
+        ]
+        
+        self.user_agents = [
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0",
         ]
         
     def _get_session_file(self, target_domain: str, proxy: str) -> Path:
@@ -90,45 +96,109 @@ class CloudflareBypass:
 
         logger.info("Worker %s: Harvesting new cf_clearance session for %s via nodriver", worker_id, target_domain)
         
-        browser_args = []
-        if proxy:
-            browser_args.append(f'--proxy-server={proxy}')
+        async with self.semaphore:
+            browser_args = []
+            if proxy:
+                browser_args.append(f'--proxy-server={proxy}')
+                
+            viewport = random.choice(self.viewports)
+            ua = random.choice(self.user_agents)
             
-        viewport = random.choice(self.viewports)
-        browser_args.append(f'--window-size={viewport[0]},{viewport[1]}')
-        
-        # We run in headful mode because nodriver is best in headful for CF bypass
-        browser = await uc.start(
-            headless=False,
-            browser_args=browser_args
-        )
-        
-        try:
-            page = await browser.get(url)
+            browser_args.append(f'--window-size={viewport[0]},{viewport[1]}')
+            browser_args.append(f'--user-agent={ua}')
             
-            # Wait and perform human-like actions
-            await self._human_like_scrape(page)
-            
-            # Wait for CF to resolve
-            await asyncio.sleep(8)
-            
-            cookies = await browser.cookies.get_all()
-            cf_cookie_found = next(
-                (c for c in cookies if c['name'] == 'cf_clearance'),
-                None
+            browser = await uc.start(
+                headless=False,
+                browser_args=browser_args
             )
             
-            if cf_cookie_found:
-                logger.info("Worker %s: Successfully harvested cf_clearance for %s", worker_id, target_domain)
-                self.save_session(target_domain, proxy, cookies)
-                return cookies
-            else:
-                logger.warning("Worker %s: Could not find cf_clearance for %s. Might not be protected or challenge failed.", worker_id, target_domain)
-                self.save_session(target_domain, proxy, cookies)
-                return cookies
+            try:
+                # ── Browser Warmup (Mimics Real User) ──
+                logger.info("Worker %s: Warming up nodriver browser...", worker_id)
+                page = await browser.get("https://en.wikipedia.org/wiki/Main_Page")
+                await asyncio.sleep(random.uniform(2, 3.5))
+
+                logger.info("Worker %s: Navigating to target %s", worker_id, url)
+                page = await browser.get(url)
                 
-        finally:
-            browser.stop()
+                await self._human_like_scrape(page)
+                await asyncio.sleep(8)
+                
+                cookies = await browser.cookies.get_all()
+                cf_cookie_found = next(
+                    (c for c in cookies if c['name'] == 'cf_clearance'),
+                    None
+                )
+                
+                if cf_cookie_found:
+                    logger.info("Worker %s: Successfully harvested cf_clearance for %s (nodriver)", worker_id, target_domain)
+                    self.save_session(target_domain, proxy, cookies)
+                    return cookies
+                else:
+                    logger.warning("Worker %s: nodriver failed to get cf_clearance. Escalating to Tier 2 (SeleniumBase Subprocess).", worker_id)
+                    
+            finally:
+                browser.stop()
+                
+        # ── Tier 2 Fallback: Isolated SeleniumBase subprocess ──
+        return await self._tier2_seleniumbase_fallback(url, proxy, target_domain, worker_id)
+
+    async def _tier2_seleniumbase_fallback(self, url: str, proxy: str, target_domain: str, worker_id: int):
+        import subprocess
+        import sys
+        
+        logger.info("Worker %s: [Tier 2] Spawning isolated sb_cdp Chrome via subprocess for %s", worker_id, url)
+        
+        script = f"""
+from seleniumbase import SB
+import json
+import sys
+
+try:
+    with SB(uc=True, headless=True, proxy="{proxy if proxy else ''}") as sb:
+        sb.activate_cdp_mode()
+        sb.get("https://en.wikipedia.org/wiki/Main_Page")
+        sb.sleep(2.5)
+        sb.get("{url}")
+        sb.sleep(2)
+        sb.solve_captcha()
+        sb.sleep(2)
+        cookies = sb.get_cookies()
+        print(json.dumps({{"status": "success", "cookies": cookies}}))
+except Exception as e:
+    print(json.dumps({{"status": "error", "message": str(e)}}))
+    sys.exit(1)
+"""
+        try:
+            loop = asyncio.get_running_loop()
+            result = await loop.run_in_executor(
+                None,
+                lambda: subprocess.run(
+                    [sys.executable, "-c", script],
+                    capture_output=True,
+                    text=True,
+                    timeout=90
+                )
+            )
+            
+            if result.returncode == 0:
+                data = json.loads(result.stdout)
+                if data.get("status") == "success":
+                    cookies = data.get("cookies", [])
+                    cf_cookie_found = next((c for c in cookies if c['name'] == 'cf_clearance'), None)
+                    if cf_cookie_found:
+                        logger.info("Worker %s: [Tier 2] Successfully harvested cf_clearance via Subprocess", worker_id)
+                        self.save_session(target_domain, proxy, cookies)
+                        return cookies
+                    
+            logger.error("Worker %s: [Tier 2] Subprocess failed. Output: %s", worker_id, result.stdout.strip())
+        except subprocess.TimeoutExpired:
+            logger.error("Worker %s: [Tier 2] Subprocess completely timed out after 90s.", worker_id)
+        except Exception as e:
+            logger.error("Worker %s: [Tier 2] Subprocess error: %s", worker_id, e)
+            
+        return []
+
 
     def get_cf_clearance(self, url: str, worker_id: int) -> list:
         """

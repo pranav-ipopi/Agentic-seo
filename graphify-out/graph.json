@@ -4,6 +4,16 @@
   "graph": {},
   "nodes": [
     {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "methods_init",
+      "community": 17,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "stealth_browser.py",
       "file_type": "code",
       "source_file": "playwright_worker/methods/stealth_browser.py",
@@ -354,6 +364,16 @@
       "norm_label": "runs every minute to check health of workers."
     },
     {
+      "label": "profile_launcher.ps1",
+      "file_type": "code",
+      "source_file": "playwright_worker/profile_launcher.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "playwright_worker_profile_launcher",
+      "community": 117,
+      "norm_label": "profile_launcher.ps1"
+    },
+    {
       "label": "setup_profiles.ps1",
       "file_type": "code",
       "source_file": "playwright_worker/setup_profiles.ps1",
@@ -369,9 +389,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright",
-      "community": 20,
-      "norm_label": "vps_worker_playwright.py"
+      "community": 115,
+      "norm_label": "vps_worker_playwright.py",
+      "id": "playwright_worker_vps_worker_playwright"
     },
     {
       "label": "mark_parent_task_running()",
@@ -379,9 +399,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
-      "community": 20,
-      "norm_label": "mark_parent_task_running()"
+      "community": 114,
+      "norm_label": "mark_parent_task_running()",
+      "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
     },
     {
       "label": "Client",
@@ -389,9 +409,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "client",
-      "community": 20,
-      "norm_label": "client"
+      "community": 114,
+      "norm_label": "client",
+      "id": "client"
     },
     {
       "label": "check_and_update_parent_task()",
@@ -399,9 +419,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L80",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
-      "community": 20,
-      "norm_label": "check_and_update_parent_task()"
+      "community": 114,
+      "norm_label": "check_and_update_parent_task()",
+      "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
     },
     {
       "label": "detect_and_update()",
@@ -409,9 +429,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L150",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_detect_and_update",
-      "community": 20,
-      "norm_label": "detect_and_update()"
+      "community": 115,
+      "norm_label": "detect_and_update()",
+      "id": "playwright_worker_vps_worker_playwright_detect_and_update"
     },
     {
       "label": "route_and_execute()",
@@ -419,9 +439,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L180",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_route_and_execute",
-      "community": 20,
-      "norm_label": "route_and_execute()"
+      "community": 114,
+      "norm_label": "route_and_execute()",
+      "id": "playwright_worker_vps_worker_playwright_route_and_execute"
     },
     {
       "label": "poll_queue()",
@@ -429,9 +449,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L398",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_poll_queue",
-      "community": 20,
-      "norm_label": "poll_queue()"
+      "community": 114,
+      "norm_label": "poll_queue()",
+      "id": "playwright_worker_vps_worker_playwright_poll_queue"
     },
     {
       "label": "VPS Worker - Backlink Automation Orchestrator  Polls Supabase for pending task_r",
@@ -439,9 +459,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_1",
-      "community": 20,
-      "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task_r"
+      "community": 115,
+      "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task_r",
+      "id": "playwright_worker_vps_worker_playwright_rationale_1"
     },
     {
       "label": "Bumps a parent task's status from 'pending' to 'running' when a child task_run s",
@@ -449,9 +469,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L68",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_68",
-      "community": 20,
-      "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s"
+      "community": 114,
+      "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
+      "id": "playwright_worker_vps_worker_playwright_rationale_68"
     },
     {
       "label": "Checks if all task_runs for a parent task are done, and if so, updates the paren",
@@ -459,9 +479,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_81",
-      "community": 20,
-      "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren"
+      "community": 114,
+      "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
+      "id": "playwright_worker_vps_worker_playwright_rationale_81"
     },
     {
       "label": "Fingerprints an undetected site using the Playwright stealth browser     and wri",
@@ -469,9 +489,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L151",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_151",
-      "community": 20,
-      "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wri"
+      "community": 115,
+      "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wri",
+      "id": "playwright_worker_vps_worker_playwright_rationale_151"
     },
     {
       "label": "Executes a single step of a workflow task_run.     Uses TemplateRunner for confi",
@@ -479,9 +499,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L181",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_181",
-      "community": 20,
-      "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for confi"
+      "community": 114,
+      "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for confi",
+      "id": "playwright_worker_vps_worker_playwright_rationale_181"
     },
     {
       "label": "Main loop: polls Supabase for pending task_runs and executes them asynchronously",
@@ -489,9 +509,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L399",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_399",
-      "community": 20,
-      "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously"
+      "community": 114,
+      "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously",
+      "id": "playwright_worker_vps_worker_playwright_rationale_399"
     },
     {
       "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
@@ -499,9 +519,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L437",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_437",
-      "community": 20,
-      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio"
+      "community": 115,
+      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
+      "id": "playwright_worker_vps_worker_playwright_rationale_437"
     },
     {
       "label": "# NOTE: type='backlink' filter keeps this worker isolated from article_submissio",
@@ -509,9 +529,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L470",
       "_origin": "ast",
-      "id": "playwright_worker_vps_worker_playwright_rationale_470",
-      "community": 20,
-      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio"
+      "community": 115,
+      "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
+      "id": "playwright_worker_vps_worker_playwright_rationale_470"
     },
     {
       "label": "README.md",
@@ -1079,7 +1099,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "local_worker.py",
       "id": "bookmarkbot_local_worker"
     },
@@ -1089,7 +1109,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "mark_parent_task_running()",
       "id": "bookmarkbot_local_worker_mark_parent_task_running"
     },
@@ -1099,7 +1119,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 20,
+      "community": 114,
       "norm_label": "check_and_update_parent_task()",
       "id": "bookmarkbot_local_worker_check_and_update_parent_task"
     },
@@ -1109,7 +1129,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L135",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "get_redis_client()",
       "id": "bookmarkbot_local_worker_get_redis_client"
     },
@@ -1119,7 +1139,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "pop_job()",
       "id": "bookmarkbot_local_worker_pop_job"
     },
@@ -1129,7 +1149,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "redis",
       "id": "redis"
     },
@@ -1139,7 +1159,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L146",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "push_test_job()",
       "id": "bookmarkbot_local_worker_push_test_job"
     },
@@ -1149,7 +1169,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L164",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "create_driver()",
       "id": "bookmarkbot_local_worker_create_driver"
     },
@@ -1159,7 +1179,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L180",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "run_job()",
       "id": "bookmarkbot_local_worker_run_job"
     },
@@ -1169,7 +1189,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L279",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "main()",
       "id": "bookmarkbot_local_worker_main"
     },
@@ -1179,7 +1199,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "local_worker.py \u2014 standalone local worker for testing.  fetches jobs from the sa",
       "id": "bookmarkbot_local_worker_rationale_1"
     },
@@ -1189,7 +1209,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 20,
+      "community": 113,
       "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
       "id": "bookmarkbot_local_worker_rationale_63"
     },
@@ -1199,7 +1219,7 @@
       "source_file": "BookmarkBot/local_worker.py",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 20,
+      "community": 114,
       "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
       "id": "bookmarkbot_local_worker_rationale_76"
     },
@@ -3434,22 +3454,12 @@
       "id": "playwright_worker_docs_pligg_site_automation_knowledge_md_docs_pligg_site_automation_knowledge_summary_checklist_for_new_pligg_templates"
     },
     {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "playwright_worker/methods/__init__.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "__init__.py",
-      "id": "methods_init"
-    },
-    {
       "label": "session_pool.py",
       "file_type": "code",
       "source_file": "playwright_worker/methods/session_pool.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 20,
+      "community": 115,
       "norm_label": "session_pool.py",
       "id": "methods_session_pool"
     },
@@ -3869,7 +3879,7 @@
       "source_file": "playwright_worker/services/template_detector.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 115,
       "norm_label": "template_detector.py",
       "id": "services_template_detector"
     },
@@ -3919,7 +3929,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "page",
       "id": "page"
     },
@@ -3959,7 +3969,7 @@
       "source_file": "playwright_worker/services/template_detector.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 115,
       "norm_label": "template detector (playwright-based)  replaces the supabase edge function `detec",
       "id": "services_template_detector_rationale_1"
     },
@@ -4029,7 +4039,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "base_template.py",
       "id": "templates_base_template"
     },
@@ -4039,7 +4049,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "basetemplate",
       "id": "templates_base_template_basetemplate"
     },
@@ -4049,7 +4059,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "abc",
       "id": "abc"
     },
@@ -4069,7 +4079,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": ".get_selector()",
       "id": "templates_base_template_basetemplate_get_selector"
     },
@@ -4079,7 +4089,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": ".get_config()",
       "id": "templates_base_template_basetemplate_get_config"
     },
@@ -4089,7 +4099,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": ".safe_goto()",
       "id": "templates_base_template_basetemplate_safe_goto"
     },
@@ -4099,7 +4109,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L150",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "._is_logged_in()",
       "id": "templates_base_template_basetemplate_is_logged_in"
     },
@@ -4109,7 +4119,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L170",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": ".generate_random_credentials()",
       "id": "templates_base_template_basetemplate_generate_random_credentials"
     },
@@ -4119,7 +4129,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L183",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": ".generate_natural_credentials()",
       "id": "templates_base_template_basetemplate_generate_natural_credentials"
     },
@@ -4129,7 +4139,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L229",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "._extract_backlink_url()",
       "id": "templates_base_template_basetemplate_extract_backlink_url"
     },
@@ -4139,7 +4149,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L280",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": ".run()",
       "id": "templates_base_template_basetemplate_run"
     },
@@ -4149,7 +4159,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "base template for backlink automation  abstract base class that all site templat",
       "id": "templates_base_template_rationale_1"
     },
@@ -4159,7 +4169,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "abstract base template. all site automation templates extend this.      construc",
       "id": "templates_base_template_rationale_30"
     },
@@ -4169,7 +4179,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "read a selector string from the merged config.          usage:             self.",
       "id": "templates_base_template_rationale_55"
     },
@@ -4179,7 +4189,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "read any config value (not just selectors).",
       "id": "templates_base_template_rationale_65"
     },
@@ -4189,7 +4199,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "centralized defensive navigation. handles network-level retries,         forces",
       "id": "templates_base_template_rationale_73"
     },
@@ -4199,7 +4209,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L151",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "heuristic to detect logged-in state using config-driven text markers.         ch",
       "id": "templates_base_template_rationale_151"
     },
@@ -4209,7 +4219,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L171",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "generate random registration credentials for automation jobs.",
       "id": "templates_base_template_rationale_171"
     },
@@ -4219,7 +4229,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L184",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "generate more natural-looking credentials (used by wordpress submitpro).",
       "id": "templates_base_template_rationale_184"
     },
@@ -4229,7 +4239,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L230",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "try multiple strategies to find the newly created story/article url.         use",
       "id": "templates_base_template_rationale_230"
     },
@@ -4239,7 +4249,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L281",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "execute the full backlink creation flow.          args:             client_site:",
       "id": "templates_base_template_rationale_281"
     },
@@ -4249,7 +4259,7 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "pligg_generic.py",
       "id": "templates_pligg_generic"
     },
@@ -4359,7 +4369,7 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "generic pligg/kliqqi cms site template (config-driven)  this is a universal impl",
       "id": "templates_pligg_generic_rationale_1"
     },
@@ -5149,7 +5159,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L427",
       "_origin": "ast",
-      "community": 29,
+      "community": 12,
       "norm_label": "task",
       "id": "supabase_types_task"
     },
@@ -5209,7 +5219,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L433",
       "_origin": "ast",
-      "community": 0,
+      "community": 14,
       "norm_label": "keyword",
       "id": "supabase_types_keyword"
     },
@@ -5259,7 +5269,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L438",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "taskrunlog",
       "id": "supabase_types_taskrunlog"
     },
@@ -5379,7 +5389,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 29,
+      "community": 12,
       "norm_label": "rightsidebar.tsx",
       "id": "sidebar_rightsidebar"
     },
@@ -5389,7 +5399,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 29,
+      "community": 12,
       "norm_label": "taskrunextended",
       "id": "sidebar_rightsidebar_taskrunextended"
     },
@@ -5399,7 +5409,7 @@
       "source_file": "agentic-seo/components/sidebar/RightSidebar.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 29,
+      "community": 12,
       "norm_label": "rightsidebar()",
       "id": "sidebar_rightsidebar_rightsidebar"
     },
@@ -5509,7 +5519,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 29,
+      "community": 31,
       "norm_label": "layout.tsx",
       "id": "dashboard_layout"
     },
@@ -5519,7 +5529,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 29,
+      "community": 31,
       "norm_label": "metadata",
       "id": "dashboard_layout_metadata"
     },
@@ -5529,7 +5539,7 @@
       "source_file": "agentic-seo/app/dashboard/layout.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 29,
+      "community": 31,
       "norm_label": "dashboardlayout()",
       "id": "dashboard_layout_dashboardlayout"
     },
@@ -7219,7 +7229,7 @@
       "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 31,
       "norm_label": "page.tsx",
       "id": "settings_page"
     },
@@ -7229,7 +7239,7 @@
       "source_file": "agentic-seo/app/dashboard/settings/page.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 6,
+      "community": 31,
       "norm_label": "settingspage()",
       "id": "settings_page_settingspage"
     },
@@ -7309,7 +7319,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "page.tsx",
       "id": "tasks_page"
     },
@@ -7319,7 +7329,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "taskrunextended",
       "id": "tasks_page_taskrunextended"
     },
@@ -7329,7 +7339,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "status_filters",
       "id": "tasks_page_status_filters"
     },
@@ -7339,7 +7349,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "statusfilter",
       "id": "tasks_page_statusfilter"
     },
@@ -7349,7 +7359,7 @@
       "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "taskspage()",
       "id": "tasks_page_taskspage"
     },
@@ -7749,7 +7759,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 29,
+      "community": 31,
       "norm_label": "clientprovider()",
       "id": "layout_clientprovider_clientprovider"
     },
@@ -7769,7 +7779,7 @@
       "source_file": "agentic-seo/components/tasks/AnimatedTerminal.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 116,
       "norm_label": "animatedterminal.tsx",
       "id": "tasks_animatedterminal"
     },
@@ -7779,7 +7789,7 @@
       "source_file": "agentic-seo/components/tasks/AnimatedTerminal.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 14,
+      "community": 116,
       "norm_label": "simulated_logs",
       "id": "tasks_animatedterminal_simulated_logs"
     },
@@ -7789,7 +7799,7 @@
       "source_file": "agentic-seo/components/tasks/AnimatedTerminal.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 14,
+      "community": 116,
       "norm_label": "animatedterminal()",
       "id": "tasks_animatedterminal_animatedterminal"
     },
@@ -8289,7 +8299,7 @@
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "excel-generator.ts",
       "id": "utils_excel_generator"
     },
@@ -8299,7 +8309,7 @@
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 14,
+      "community": 6,
       "norm_label": "downloadcampaignexcelreport()",
       "id": "utils_excel_generator_downloadcampaignexcelreport"
     },
@@ -8329,7 +8339,7 @@
       "source_file": "agentic-seo/lib/workflows/runner.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 14,
       "norm_label": "runner.ts",
       "id": "workflows_runner"
     },
@@ -9519,7 +9529,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "errors.py",
       "id": "executor_errors"
     },
@@ -9529,7 +9539,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "automationerror",
       "id": "executor_errors_automationerror"
     },
@@ -9539,7 +9549,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": ".__init__()",
       "id": "executor_errors_automationerror_init"
     },
@@ -9549,7 +9559,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "sitedownerror",
       "id": "executor_errors_sitedownerror"
     },
@@ -9559,7 +9569,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "connectiontimeouterror",
       "id": "executor_errors_connectiontimeouterror"
     },
@@ -9569,7 +9579,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "selectornotfounderror",
       "id": "executor_errors_selectornotfounderror"
     },
@@ -9579,7 +9589,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": ".__init__()",
       "id": "executor_errors_selectornotfounderror_init"
     },
@@ -9589,7 +9599,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "loginfailederror",
       "id": "executor_errors_loginfailederror"
     },
@@ -9609,7 +9619,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "submissionfailederror",
       "id": "executor_errors_submissionfailederror"
     },
@@ -9629,7 +9639,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "unsupportedtemplateerror",
       "id": "executor_errors_unsupportedtemplateerror"
     },
@@ -9639,7 +9649,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": ".__init__()",
       "id": "executor_errors_unsupportedtemplateerror_init"
     },
@@ -9649,7 +9659,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "typed error classes for backlink automation  each error class represents a speci",
       "id": "executor_errors_rationale_1"
     },
@@ -9659,7 +9669,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "base error for all automation failures.          attributes:         error_type:",
       "id": "executor_errors_rationale_16"
     },
@@ -9669,7 +9679,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "site is unreachable \u2014 connection refused, dns failure, or http 5xx.",
       "id": "executor_errors_rationale_33"
     },
@@ -9679,7 +9689,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "page load timed out after all retry attempts.",
       "id": "executor_errors_rationale_38"
     },
@@ -9689,7 +9699,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "a required dom element could not be found.     this usually means the site chang",
       "id": "executor_errors_rationale_43"
     },
@@ -9699,7 +9709,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "login attempt failed \u2014 wrong credentials, account locked, etc.",
       "id": "executor_errors_rationale_56"
     },
@@ -9719,7 +9729,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "bookmark/article submission failed.",
       "id": "executor_errors_rationale_66"
     },
@@ -9739,7 +9749,7 @@
       "source_file": "playwright_worker/executor/errors.py",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 24,
+      "community": 29,
       "norm_label": "no template implementation exists for the given site_id.",
       "id": "executor_errors_rationale_76"
     },
@@ -9749,7 +9759,7 @@
       "source_file": "playwright_worker/executor/failure_handler.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 115,
       "norm_label": "failure_handler.py",
       "id": "executor_failure_handler"
     },
@@ -9839,7 +9849,7 @@
       "source_file": "playwright_worker/executor/failure_handler.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 115,
       "norm_label": "failure handler for backlink automation  responsibilities:     - classify errors",
       "id": "executor_failure_handler_rationale_1"
     },
@@ -10439,7 +10449,7 @@
       "source_file": "playwright_worker/templates/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "__init__.py",
       "id": "templates_init"
     },
@@ -10449,7 +10459,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 4,
       "norm_label": "wordpress_submitpro.py",
       "id": "templates_wordpress_submitpro"
     },
@@ -10459,7 +10469,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "wordpresssubmitprotemplate",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate"
     },
@@ -10479,7 +10489,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": ".run()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_run"
     },
@@ -10489,7 +10499,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "._solve_recaptcha_2captcha()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_solve_recaptcha_2captcha"
     },
@@ -10499,7 +10509,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "._get_sitekey()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_get_sitekey"
     },
@@ -10509,7 +10519,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "._register_account()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_register_account"
     },
@@ -10519,7 +10529,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L198",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "._submit_bookmark()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_submit_bookmark"
     },
@@ -10529,7 +10539,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L436",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "._extract_backlink_url()",
       "id": "templates_wordpress_submitpro_wordpresssubmitprotemplate_extract_backlink_url"
     },
@@ -10539,7 +10549,7 @@
       "source_file": "playwright_worker/templates/wordpress_submitpro.py",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 24,
+      "community": 112,
       "norm_label": "generic wordpress submitpro template.     handles registration and bookmark subm",
       "id": "templates_wordpress_submitpro_rationale_12"
     },
@@ -11916,15 +11926,48 @@
   ],
   "links": [
     {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "methods_init",
+      "target": "methods_stealth_browser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "methods_init",
+      "target": "methods_stealth_browser_browserworker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright_worker/methods/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "methods_init",
+      "target": "methods_stealth_browser_browserworkerpool",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "contains",
@@ -11932,9 +11975,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_browserworker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker"
     },
     {
       "relation": "contains",
@@ -11942,9 +11985,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L412",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_browserworkerpool",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool"
     },
     {
       "relation": "contains",
@@ -11952,9 +11995,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_calculate_human_path",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_calculate_human_path"
     },
     {
       "relation": "contains",
@@ -11962,9 +12005,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
     },
     {
       "relation": "contains",
@@ -11972,9 +12015,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_move_mouse_humanlike",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_move_mouse_humanlike"
     },
     {
       "relation": "contains",
@@ -11982,9 +12025,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_should_block",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_should_block"
     },
     {
       "relation": "contains",
@@ -11992,9 +12035,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser",
-      "target": "methods_stealth_browser_workerstate",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_workerstate"
     },
     {
       "relation": "imports_from",
@@ -12003,9 +12046,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright",
-      "target": "methods_stealth_browser",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser"
     },
     {
       "relation": "calls",
@@ -12014,9 +12057,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_move_mouse_humanlike",
-      "target": "methods_stealth_browser_calculate_human_path",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_calculate_human_path"
     },
     {
       "relation": "rationale_for",
@@ -12024,9 +12067,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_60",
-      "target": "methods_stealth_browser_calculate_human_path",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_calculate_human_path"
     },
     {
       "relation": "calls",
@@ -12035,9 +12078,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_handle_cloudflare_challenge",
-      "target": "methods_stealth_browser_move_mouse_humanlike",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_move_mouse_humanlike"
     },
     {
       "relation": "rationale_for",
@@ -12045,9 +12088,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_89",
-      "target": "methods_stealth_browser_move_mouse_humanlike",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_move_mouse_humanlike"
     },
     {
       "relation": "calls",
@@ -12056,9 +12099,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L334",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_execute_job",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
     },
     {
       "relation": "rationale_for",
@@ -12066,9 +12109,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_108",
-      "target": "methods_stealth_browser_handle_cloudflare_challenge",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_handle_cloudflare_challenge"
     },
     {
       "relation": "inherits",
@@ -12076,9 +12119,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_workerstate",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "method",
@@ -12086,9 +12129,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L390",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_close",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_close"
     },
     {
       "relation": "method",
@@ -12096,9 +12139,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L319",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_execute_job",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_execute_job"
     },
     {
       "relation": "method",
@@ -12106,9 +12149,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L298",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_get_page",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_get_page"
     },
     {
       "relation": "method",
@@ -12116,9 +12159,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_init",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_init"
     },
     {
       "relation": "method",
@@ -12126,9 +12169,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L239",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_launch_chrome",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_launch_chrome"
     },
     {
       "relation": "method",
@@ -12136,9 +12179,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L368",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_restart",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_restart"
     },
     {
       "relation": "method",
@@ -12146,9 +12189,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_set_proxy",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_set_proxy"
     },
     {
       "relation": "method",
@@ -12156,9 +12199,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker",
-      "target": "methods_stealth_browser_browserworker_start",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_start"
     },
     {
       "relation": "references",
@@ -12167,9 +12210,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L447",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool_get_idle_worker",
-      "target": "methods_stealth_browser_browserworker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker"
     },
     {
       "relation": "calls",
@@ -12178,9 +12221,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L434",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool_start_all",
-      "target": "methods_stealth_browser_browserworker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker"
     },
     {
       "relation": "rationale_for",
@@ -12188,9 +12231,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_213",
-      "target": "methods_stealth_browser_browserworker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker"
     },
     {
       "relation": "calls",
@@ -12199,9 +12242,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L276",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_start",
-      "target": "methods_stealth_browser_browserworker_launch_chrome",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_launch_chrome"
     },
     {
       "relation": "rationale_for",
@@ -12209,9 +12252,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L240",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_240",
-      "target": "methods_stealth_browser_browserworker_launch_chrome",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_launch_chrome"
     },
     {
       "relation": "calls",
@@ -12220,9 +12263,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L385",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_restart",
-      "target": "methods_stealth_browser_browserworker_start",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_start"
     },
     {
       "relation": "calls",
@@ -12231,9 +12274,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L436",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool_start_all",
-      "target": "methods_stealth_browser_browserworker_start",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_start"
     },
     {
       "relation": "rationale_for",
@@ -12241,9 +12284,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L274",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_274",
-      "target": "methods_stealth_browser_browserworker_start",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_start"
     },
     {
       "relation": "calls",
@@ -12252,9 +12295,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L328",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_execute_job",
-      "target": "methods_stealth_browser_browserworker_get_page",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_get_page"
     },
     {
       "relation": "rationale_for",
@@ -12262,9 +12305,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L299",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_299",
-      "target": "methods_stealth_browser_browserworker_get_page",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_get_page"
     },
     {
       "relation": "calls",
@@ -12273,9 +12316,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L352",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_execute_job",
-      "target": "methods_stealth_browser_browserworker_close",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_close"
     },
     {
       "relation": "calls",
@@ -12284,9 +12327,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L364",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_execute_job",
-      "target": "methods_stealth_browser_browserworker_restart",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_restart"
     },
     {
       "relation": "rationale_for",
@@ -12294,9 +12337,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L320",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_320",
-      "target": "methods_stealth_browser_browserworker_execute_job",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_execute_job"
     },
     {
       "relation": "calls",
@@ -12305,9 +12348,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L373",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworker_restart",
-      "target": "methods_stealth_browser_browserworker_close",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_close"
     },
     {
       "relation": "calls",
@@ -12316,9 +12359,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L467",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool_health_monitor",
-      "target": "methods_stealth_browser_browserworker_restart",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_restart"
     },
     {
       "relation": "rationale_for",
@@ -12326,9 +12369,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L369",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_369",
-      "target": "methods_stealth_browser_browserworker_restart",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_restart"
     },
     {
       "relation": "rationale_for",
@@ -12336,9 +12379,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L391",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_391",
-      "target": "methods_stealth_browser_browserworker_close",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworker_close"
     },
     {
       "relation": "method",
@@ -12346,9 +12389,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L447",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool",
-      "target": "methods_stealth_browser_browserworkerpool_get_idle_worker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_get_idle_worker"
     },
     {
       "relation": "method",
@@ -12356,9 +12399,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L460",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool",
-      "target": "methods_stealth_browser_browserworkerpool_health_monitor",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_health_monitor"
     },
     {
       "relation": "method",
@@ -12366,9 +12409,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L416",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool",
-      "target": "methods_stealth_browser_browserworkerpool_init",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_init"
     },
     {
       "relation": "method",
@@ -12376,9 +12419,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L422",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool",
-      "target": "methods_stealth_browser_browserworkerpool_start_all",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_start_all"
     },
     {
       "relation": "rationale_for",
@@ -12386,9 +12429,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L413",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_413",
-      "target": "methods_stealth_browser_browserworkerpool",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool"
     },
     {
       "relation": "calls",
@@ -12397,9 +12440,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L445",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_browserworkerpool_start_all",
-      "target": "methods_stealth_browser_browserworkerpool_health_monitor",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_health_monitor"
     },
     {
       "relation": "rationale_for",
@@ -12407,9 +12450,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L423",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_423",
-      "target": "methods_stealth_browser_browserworkerpool_start_all",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_start_all"
     },
     {
       "relation": "rationale_for",
@@ -12417,9 +12460,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L448",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_448",
-      "target": "methods_stealth_browser_browserworkerpool_get_idle_worker",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_get_idle_worker"
     },
     {
       "relation": "rationale_for",
@@ -12427,9 +12470,9 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L461",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "methods_stealth_browser_rationale_461",
-      "target": "methods_stealth_browser_browserworkerpool_health_monitor",
-      "confidence_score": 1.0
+      "target": "methods_stealth_browser_browserworkerpool_health_monitor"
     },
     {
       "relation": "imports_from",
@@ -12585,9 +12628,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L437",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_437",
-      "target": "playwright_worker_vps_worker_playwright",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright"
     },
     {
       "relation": "rationale_for",
@@ -12595,9 +12638,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L470",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_470",
-      "target": "playwright_worker_vps_worker_playwright",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright"
     },
     {
       "relation": "references",
@@ -12638,9 +12681,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_68",
-      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
     },
     {
       "relation": "references",
@@ -12703,9 +12746,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_81",
-      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
     },
     {
       "relation": "calls",
@@ -12724,9 +12767,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_151",
-      "target": "playwright_worker_vps_worker_playwright_detect_and_update",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright_detect_and_update"
     },
     {
       "relation": "calls",
@@ -12745,9 +12788,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_181",
-      "target": "playwright_worker_vps_worker_playwright_route_and_execute",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright_route_and_execute"
     },
     {
       "relation": "calls",
@@ -12799,9 +12842,9 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L399",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_399",
-      "target": "playwright_worker_vps_worker_playwright_poll_queue",
-      "confidence_score": 1.0
+      "target": "playwright_worker_vps_worker_playwright_poll_queue"
     },
     {
       "relation": "contains",
@@ -28531,5 +28574,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e550bfa37d603b8e53505c2a2afbfc2ae15b8bac"
+  "built_at_commit": "9590f1fbad11b869e4fc00576c621dcbb45524cd"
 }

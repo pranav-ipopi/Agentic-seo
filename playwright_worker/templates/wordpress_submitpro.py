@@ -132,18 +132,18 @@ class WordPressSubmitProTemplate(BaseTemplate):
         self.logger.info(f"Filling registration details for username={self.credentials['username']}")
         
         # Helper to safely fill fields with a short timeout
-        async def safe_fill(sel, value, timeout=3000):
+        async def safe_fill(sel, value, timeout=3000, is_sensitive=False):
             try:
                 loc = page.locator(sel).first
                 await loc.wait_for(state="visible", timeout=timeout)
-                await loc.fill(value)
+                await self.human_type(page, loc, value, is_sensitive=is_sensitive)
             except Exception:
                 pass
 
         await safe_fill(user_login_sel, self.credentials["username"])
         await safe_fill(user_email_sel, self.credentials["email"])
-        await safe_fill(user_password_sel, self.credentials["password"])
-        await safe_fill(user_cpassword_sel, self.credentials["password"])
+        await safe_fill(user_password_sel, self.credentials["password"], is_sensitive=True)
+        await safe_fill(user_cpassword_sel, self.credentials["password"], is_sensitive=True)
         await safe_fill(nickname_sel, self.credentials["username"])
 
         site_key = await self._get_sitekey(page)
@@ -178,15 +178,16 @@ class WordPressSubmitProTemplate(BaseTemplate):
         try:
             await submit_btn.wait_for(state="attached", timeout=5000)
             try:
-                await submit_btn.click(timeout=10000)
+                await self.human_click(page, submit_btn)
             except Exception:
-                self.logger.warning("Normal registration click failed or timed out. Forcing JS click.")
+                self.logger.warning("Human registration click failed. Forcing JS click.")
                 try:
                     await submit_btn.evaluate("el => el.click()", timeout=10000)
                 except Exception as js_err:
                     self.logger.warning(f"JS click also failed: {js_err}. Page may have already navigated.")
         except Exception:
             self.logger.warning("Registration submit button not found.")
+
 
         try:
             await page.wait_for_load_state("networkidle", timeout=8000)
@@ -230,11 +231,11 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
         self.logger.info("Filling article submission fields...")
         
-        async def safe_fill(sel, value, timeout=3000):
+        async def safe_fill(sel, value, timeout=3000, is_sensitive=False):
             try:
                 loc = page.locator(sel).first
                 await loc.wait_for(state="visible", timeout=timeout)
-                await loc.fill(value)
+                await self.human_type(page, loc, value, is_sensitive=is_sensitive)
             except Exception:
                 pass
 
@@ -310,7 +311,7 @@ class WordPressSubmitProTemplate(BaseTemplate):
             
         if await location_container.count() > 0:
             try:
-                await location_container.first.click()
+                await self.human_click(page, location_container.first)
                 try:
                     await page.wait_for_selector(".select2-results__option:not(.select2-results__message)", timeout=2000)
                 except Exception:
@@ -318,9 +319,9 @@ class WordPressSubmitProTemplate(BaseTemplate):
                 options = page.locator(".select2-results__option:not(.select2-results__message)")
                 count = await options.count()
                 if count > 1:
-                    await options.nth(random.randint(1, count - 1)).click()
+                    await self.human_click(page, options.nth(random.randint(1, count - 1)))
                 elif count > 0:
-                    await options.first.click()
+                    await self.human_click(page, options.first)
             except Exception as e:
                 self.logger.warning(f"Error selecting Select2 location: {e}")
 
@@ -381,9 +382,9 @@ class WordPressSubmitProTemplate(BaseTemplate):
         try:
             await submit_btn.wait_for(state="attached", timeout=5000)
             try:
-                await submit_btn.click(timeout=10000)
+                await self.human_click(page, submit_btn)
             except Exception:
-                self.logger.warning("Normal submit click failed or timed out. Forcing JS click.")
+                self.logger.warning("Human submit click failed. Forcing JS click.")
                 try:
                     await submit_btn.evaluate("el => el.click()", timeout=10000)
                 except Exception as js_err:
@@ -406,9 +407,9 @@ class WordPressSubmitProTemplate(BaseTemplate):
         if await confirm_btn.count() > 0:
             self.logger.info("Preview page detected. Clicking final submit...")
             try:
-                await confirm_btn.click(timeout=10000)
+                await self.human_click(page, confirm_btn)
             except Exception:
-                self.logger.warning("Normal confirm click failed or timed out. Forcing JS click.")
+                self.logger.warning("Human confirm click failed. Forcing JS click.")
                 try:
                     await confirm_btn.evaluate("el => el.click()", timeout=10000)
                 except Exception as js_err:

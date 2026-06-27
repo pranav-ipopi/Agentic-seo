@@ -28,7 +28,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from methods.stealth_browser import BrowserWorkerPool
 from services.captcha_service import CaptchaService
-from services.logging_service import setup_logger
+from services.logging_service import setup_logger, log_event
 from services.template_detector import TemplateDetector
 from services.proxy_manager import ProxyManager
 from executor.runner import TemplateRunner
@@ -287,10 +287,26 @@ async def route_and_execute(task_run, supabase_client: Client):
                         "live_url": res.get("backlink_url"),
                         "status": "success"
                     }
+                    
+                    # Log structured success event
+                    log_event(logger, "success", {
+                        "task_run_id": task_run_id,
+                        "target_url": target_url,
+                        "live_url": res.get("backlink_url")
+                    })
+                    
                     # Update site health on success
                     await failure_handler.handle_success(target_site_id)
                 except Exception as e:
                     logger.error(f"[TaskRun {task_run_id}] Execution failed: {e}")
+                    
+                    # Log structured failure event
+                    log_event(logger, "failure", {
+                        "task_run_id": task_run_id,
+                        "target_url": target_url,
+                        "error": str(e)
+                    })
+                    
                     result = {'status': 'failed'}
                     result_message = f"Agent failed. Error: {str(e)}"
                     # Classify and log failure with evidence (if not already handled inside run_automation)
@@ -457,6 +473,11 @@ async def poll_queue():
     logger.info(f"Starting Playwright Worker Orchestrator... Max Concurrent Sessions: {MAX_CONCURRENT_SESSIONS}")
     logger.info(f"Supported templates: {template_runner.get_supported_templates()}")
     
+    log_event(logger, "worker_started", {
+        "max_concurrent_sessions": MAX_CONCURRENT_SESSIONS,
+        "supported_templates": len(template_runner.get_supported_templates())
+    })
+    
     # Initialize persistent browser workers
     await worker_pool.start_all()
     
@@ -501,6 +522,12 @@ async def poll_queue():
                     
                     continuing_runs = res_cont.data or []
                     for t in continuing_runs:
+                        log_event(logger, "job_picked", {
+                            "task_run_id": t['id'],
+                            "type": "continuing",
+                            "step_index": t.get('current_step_index', 0)
+                        })
+                        
                         supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
                         parent_task_id = t.get('state', {}).get('task_id')
                         if parent_task_id:
@@ -574,6 +601,11 @@ async def poll_queue():
                             NEXT_JOB_ALLOWED_TIME_GLOBAL = next_job_allowed_time
                             
                             logger.info(f"Rate Limiter: Next job will run in {wait_seconds:.2f} seconds.")
+
+                            log_event(logger, "job_picked", {
+                                "task_run_id": t['id'],
+                                "type": "new"
+                            })
 
                             supabase.table('task_runs').update({'status': 'running'}).eq('id', t['id']).execute()
                             parent_task_id = t.get('state', {}).get('task_id')

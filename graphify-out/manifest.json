@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/templates/pligg_generic.py": {
-    "mtime": 1782568931.3147807,
-    "ast_hash": "d76977f1bae94dd519716533c4230f23",
+    "mtime": 1782577299.1081295,
+    "ast_hash": "74bca5fe3621c5558e7a9c15197e7899",
     "semantic_hash": ""
   },
   "playwright_worker/templates/wordpress_submitpro.py": {
@@ -915,8 +915,8 @@
     "semantic_hash": ""
   },
   "docs/2026_cloudflare_bypass_methods.md": {
-    "mtime": 1782493074.3914824,
-    "ast_hash": "84b5da919a5f9db9c6adda9e91367f39",
+    "mtime": 1782576466.4974773,
+    "ast_hash": "8985e8eaaedbc19bf1b2e2fd45ade1bc",
     "semantic_hash": ""
   },
   "docs/DEPLOYMENT_AND_SETUP.md": {
@@ -1080,8 +1080,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/methods/stealth_browser.py": {
-    "mtime": 1782560313.6986122,
-    "ast_hash": "f760f90a49f23fcb03243e9ff9c42391",
+    "mtime": 1782575632.1534219,
+    "ast_hash": "6c8d84e8fc53e722d0ec5c307eb8b19b",
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_001/ActorSafetyLists/9.3249.1600/_metadata/verified_contents.json": {
@@ -2230,8 +2230,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_001/component_crx_cache/metadata.json": {
-    "mtime": 1782561182.6059644,
-    "ast_hash": "54dc17b6c7c2bfd50268e05fb04c1c74",
+    "mtime": 1782575358.6546047,
+    "ast_hash": "7edce615998b6b03160d05692b1056a9",
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_001/extensions_crx_cache/metadata.json": {
@@ -3190,8 +3190,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_002/component_crx_cache/metadata.json": {
-    "mtime": 1782563440.3488598,
-    "ast_hash": "54dc17b6c7c2bfd50268e05fb04c1c74",
+    "mtime": 1782575345.3579333,
+    "ast_hash": "7edce615998b6b03160d05692b1056a9",
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_002/extensions_crx_cache/metadata.json": {
@@ -5320,8 +5320,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_004/component_crx_cache/metadata.json": {
-    "mtime": 1782563654.2618425,
-    "ast_hash": "54dc17b6c7c2bfd50268e05fb04c1c74",
+    "mtime": 1782575353.3941605,
+    "ast_hash": "7edce615998b6b03160d05692b1056a9",
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_004/extensions_crx_cache/metadata.json": {
@@ -28030,7 +28030,7 @@
     "semantic_hash": ""
   },
   "playwright_worker/chrome_profiles/profile_003/Default/WebStorage/3/CacheStorage/index.txt": {
-    "mtime": 1782571091.0244515,
+    "mtime": 1782575798.34072,
     "ast_hash": "d4a50c2c804bb2e0b1cccb8824980e17",
     "semantic_hash": ""
   },
@@ -28667,6 +28667,51 @@
   "playwright_worker/chrome_profiles/profile_004/Avatars/avatar_origami_corgi.png": {
     "mtime": 1782567468.296026,
     "ast_hash": "ce54457647ad272370325403f06477b4",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_001/FirstPartySetsPreloaded/2025.7.24.0/_metadata/verified_contents.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "10c5978ffe4aa0d065e11ed9153e02d5",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_001/FirstPartySetsPreloaded/2025.7.24.0/manifest.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "8ce95626b39ebc2401eee0b34c24fc7c",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_001/FirstPartySetsPreloaded/2025.7.24.0/sets.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "a6b557324d93627024ddace094cf4358",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_002/FirstPartySetsPreloaded/2025.7.24.0/_metadata/verified_contents.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "10c5978ffe4aa0d065e11ed9153e02d5",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_002/FirstPartySetsPreloaded/2025.7.24.0/manifest.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "8ce95626b39ebc2401eee0b34c24fc7c",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_002/FirstPartySetsPreloaded/2025.7.24.0/sets.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "a6b557324d93627024ddace094cf4358",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_004/FirstPartySetsPreloaded/2025.7.24.0/_metadata/verified_contents.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "10c5978ffe4aa0d065e11ed9153e02d5",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_004/FirstPartySetsPreloaded/2025.7.24.0/manifest.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "8ce95626b39ebc2401eee0b34c24fc7c",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_004/FirstPartySetsPreloaded/2025.7.24.0/sets.json": {
+    "mtime": 315532800.0,
+    "ast_hash": "a6b557324d93627024ddace094cf4358",
     "semantic_hash": ""
   }
 }

@@ -66,6 +66,22 @@ class BaseTemplate(ABC):
         return self.config.get(section, {}).get(key, default)
 
     # ----------------------------------------------------------------
+    # Human-like interaction wrappers
+    # ----------------------------------------------------------------
+
+    async def human_click(self, page: Page, locator_or_selector):
+        """Wrapper for human-like click."""
+        from methods.human_interaction import human_click
+        loc = page.locator(locator_or_selector).first if isinstance(locator_or_selector, str) else locator_or_selector
+        await human_click(page, loc)
+
+    async def human_type(self, page: Page, locator_or_selector, text: str, is_sensitive: bool = False):
+        """Wrapper for human-like typing with jitter/typos."""
+        from methods.human_interaction import human_type
+        loc = page.locator(locator_or_selector).first if isinstance(locator_or_selector, str) else locator_or_selector
+        await human_type(page, loc, text, is_sensitive)
+
+    # ----------------------------------------------------------------
     # Safe navigation with retry
     # ----------------------------------------------------------------
 
@@ -181,20 +197,12 @@ class BaseTemplate(ABC):
 
     @staticmethod
     def generate_random_credentials() -> Dict[str, str]:
-        """Generate random registration credentials for automation jobs."""
-        suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
-        username = f"user{suffix}"
-        email = f"{username}@mailinator.com"
-        password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
-        return {
-            "username": username,
-            "email": email,
-            "password": password
-        }
+        """Generate highly random but natural-looking registration credentials for automation jobs."""
+        return BaseTemplate.generate_natural_credentials()
 
     @staticmethod
     def generate_natural_credentials() -> Dict[str, str]:
-        """Generate more natural-looking credentials (used by WordPress SubmitPro)."""
+        """Generate highly robust, natural-looking, and unique credentials."""
         first_names = [
             "john", "mary", "james", "patricia", "robert", "jennifer", "michael", "elizabeth",
             "william", "linda", "david", "barbara", "richard", "susan", "joseph", "jessica",
@@ -204,7 +212,9 @@ class BaseTemplate(ABC):
             "kenneth", "carol", "kevin", "amanda", "brian", "dorothy", "george", "melissa",
             "timothy", "deborah", "ronald", "stephanie", "edward", "rebecca", "jason", "sharon",
             "jeffrey", "laura", "ryan", "cynthia", "jacob", "kathleen", "gary", "amy",
-            "nicholas", "shirley", "eric", "angela", "jonathan", "helen", "stephen", "anna"
+            "nicholas", "shirley", "eric", "angela", "jonathan", "helen", "stephen", "anna",
+            "alex", "sam", "taylor", "jordan", "morgan", "casey", "riley", "cameron", "quinn", "avery",
+            "blake", "drew", "hunter", "logan", "micah", "parker", "reese", "rowan", "spencer", "hayden"
         ]
         last_names = [
             "smith", "johnson", "williams", "brown", "jones", "garcia", "miller", "davis",
@@ -212,22 +222,34 @@ class BaseTemplate(ABC):
             "thomas", "taylor", "moore", "jackson", "martin", "lee", "perez", "thompson",
             "white", "harris", "sanchez", "clark", "ramirez", "lewis", "robinson", "walker",
             "young", "allen", "king", "wright", "scott", "torres", "nguyen", "hill",
-            "flores", "green", "adams", "nelson", "baker", "hall", "rivera", "campbell"
+            "flores", "green", "adams", "nelson", "baker", "hall", "rivera", "campbell",
+            "mitchell", "carter", "roberts", "gomez", "phillips", "evans", "turner", "diaz",
+            "parker", "cruz", "edwards", "collins", "reyes", "stewart", "morris", "morales", "murphy"
         ]
         domains = [
-            "gmail.com", "yahoo.com", "outlook.com", "hotmail.com",
-            "mail.com", "aol.com", "zoho.com", "gmx.com", "yandex.com", "mailinator.com"
+            "gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com",
+            "mail.com", "aol.com", "zoho.com", "gmx.com", "yandex.com", "protonmail.com",
+            "live.com", "msn.com", "me.com", "mac.com", "inbox.com", "rocketmail.com"
         ]
+        adjectives = ["cool", "super", "happy", "fast", "smart", "wild", "brave", "chill", "epic", "ninja", "pro", "master"]
 
         first = random.choice(first_names)
         last = random.choice(last_names)
-        sep = random.choice(["", "_", "."])
-        num = random.randint(10, 9999)
+        adj = random.choice(["", "", "", random.choice(adjectives)]) # 25% chance of adjective
+        num = random.randint(10, 99999)
+        unique_hash = ''.join(random.choices(string.ascii_lowercase + string.digits, k=4))
 
-        username = f"{first}{sep}{last}{num}"
+        if adj:
+            username = f"{adj}{first}{last}{num}{unique_hash}"
+        else:
+            username = f"{first}{last}{num}{unique_hash}"
+            
         domain = random.choice(domains)
         email = f"{username}@{domain}"
-        password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+        
+        # Robust password ensuring at least one uppercase, lowercase, digit, and special char
+        password_base = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
+        password = f"{password_base}A1!"
 
         return {
             "username": username,

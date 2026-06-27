@@ -4,7 +4,7 @@ import nodriver as uc
 async def main():
     browser = await uc.start(headless=False)
     print("Getting page...")
-    page = await browser.get("https://livebookmarking.com")
+    page = await browser.get("https://creepjs.org/")
     print("Page:", type(page))
     
     # Let's see what methods are available for cookies

@@ -34,12 +34,12 @@ import logging
 import os
 import random
 import time
+import threading
+import queue
 from argparse import ArgumentParser
-from concurrent.futures import ThreadPoolExecutor
 
 import redis
 from dotenv import load_dotenv
-from playwright.async_api import async_playwright
 from seleniumbase import Driver
 from supabase import create_client, Client
 from cdp_bezier_mouse import move_mouse_humanlike_cdp, click_cdp
@@ -58,19 +58,18 @@ from config import (
     WINDOW_HEIGHT,
     WINDOW_WIDTH,
 )
-from cf_session_manager import cf_bypass_manager
 from db import recover_stale_running_jobs
 from failure_handler import FailureHandler
 from logger_setup import get_logger
 from metrics import metrics
-from playwright_pligg_template import PlaywrightPliggTemplate
-from pligg_template import PliggTemplate           # fallback only
+from pligg_template import PliggTemplate
 from rate_limiter import rate_limiter
 
 load_dotenv()
 
 # ─── Config flags ─────────────────────────────────────────────────────────────
-USE_PLAYWRIGHT_HANDOVER = os.getenv("USE_PLAYWRIGHT_HANDOVER", "true").lower() in ("1", "true", "yes")
+# Playwright handover and complex CF tiers removed in favor of native SeleniumBase.
+USE_PLAYWRIGHT_HANDOVER = False
 
 # ─── Supabase (shared read-only across threads — REST calls are thread-safe) ──
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()
@@ -152,7 +151,14 @@ def check_and_update_parent_task(state: dict) -> None:
 def get_redis() -> redis.Redis:
     if not REDIS_URL:
         raise RuntimeError("REDIS_URL is not set in .env")
-    return redis.from_url(REDIS_URL, decode_responses=True)
+    return redis.from_url(
+        REDIS_URL, 
+        decode_responses=True,
+        socket_timeout=30,
+        socket_connect_timeout=30,
+        socket_keepalive=True,
+        health_check_interval=30
+    )
 
 
 def pop_job(r: redis.Redis):
@@ -288,8 +294,8 @@ def run_job(job: dict, worker_id: int, driver: Driver, wlog: logging.Logger) -> 
     target_site_id = job.get("target_site_id")
     template_type  = job.get("site_id", "pligg_generic")
 
-    wlog.info("Job %s → %s keyword='%s' [PW=%s]",
-              task_run_id, target_url, keyword, USE_PLAYWRIGHT_HANDOVER)
+    wlog.info("Job %s → %s keyword='%s'",
+              task_run_id, target_url, keyword)
 
     failure_handler = FailureHandler(supabase, wlog)
 
@@ -316,90 +322,13 @@ def run_job(job: dict, worker_id: int, driver: Driver, wlog: logging.Logger) -> 
         wlog.error("Pre-log failed (non-fatal): %s", e)
 
     try:
-        # ── ④ Harvest CF clearance via nodriver ───────────────────────────────
-        wlog.info("Checking/harvesting CF session for %s", target_url)
-        cookies = cf_bypass_manager.get_cf_clearance(target_url, worker_id)
-
-        # ── ⑤ SB UC navigate + handle Turnstile ──────────────────────────────
-        
-        # Browser Warmup (Mimics Real User)
-        wlog.info("Warming up browser on benign site...")
-        try:
-            driver.get("https://en.wikipedia.org/wiki/Main_Page")
-            time.sleep(random.uniform(2.0, 3.5))
-        except Exception:
-            pass
-
-        wlog.info("UC navigate → %s", target_url)
-        driver.uc_open_with_reconnect(target_url, reconnect_time=3)
-
-        # Handle CF Turnstile via Bezier CDP mouse movement
-        try:
-            iframe = driver.wait_for_element("iframe", timeout=4)
-            src = iframe.get_attribute("src") or ""
-            if "turnstile" in src or "challenge" in src:
-                wlog.info("CF Challenge detected. Attempting Fitts's Law CDP click...")
-                rect = driver.execute_script("return arguments[0].getBoundingClientRect();", iframe)
-                if rect and rect['width'] > 10:
-                    click_x = rect['x'] + 30 + random.randint(-5, 5)
-                    click_y = rect['y'] + (rect['height'] / 2) + random.randint(-3, 3)
-                    
-                    move_mouse_humanlike_cdp(driver, click_x, click_y)
-                    click_cdp(driver, click_x, click_y)
-                    time.sleep(3)
-        except Exception:
-            pass  # not every page has CF; safe to ignore
-
-        # ── ⑥ Inject pre-harvested CF cookies ────────────────────────────────
-        if cookies:
-            wlog.info("Injecting %d CF cookie(s)", len(cookies))
-            for c in cookies:
-                try:
-                    driver.add_cookie({
-                        "name":   c["name"],
-                        "value":  c["value"],
-                        "domain": c.get("domain", ""),
-                    })
-                except Exception:
-                    pass
-            driver.refresh()
-            time.sleep(2)
-
-        # ── ⑦ CDP handover to Playwright ──────────────────────────────────────
-        if USE_PLAYWRIGHT_HANDOVER:
-            cdp_ws = get_cdp_ws_url(driver)
-
-            if cdp_ws:
-                wlog.info("Handing off to Playwright via CDP → %s", cdp_ws)
-
-                async def _run_playwright() -> str:
-                    async with async_playwright() as pw:
-                        browser = await pw.chromium.connect_over_cdp(cdp_ws)
-                        # Get the tab that SB already navigated to
-                        ctx  = browser.contexts[0] if browser.contexts else await browser.new_context()
-                        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
-
-                        template = PlaywrightPliggTemplate(page, wlog)
-                        return await template.run(target_url, client_site, keyword)
-
-                # Run async Playwright inside this sync thread
-                backlink = asyncio.run(_run_playwright())
-            else:
-                # CDP endpoint unavailable — fall back to pure SB mode
-                wlog.warning("CDP WS unavailable — falling back to SeleniumBase PliggTemplate")
-                backlink = PliggTemplate(driver, wlog).run(
-                    target_site=target_url,
-                    client_site=client_site,
-                    keyword=keyword,
-                )
-        else:
-            # Explicit SB-only mode (USE_PLAYWRIGHT_HANDOVER=false in .env)
-            wlog.info("SB-only mode (USE_PLAYWRIGHT_HANDOVER=false)")
-            backlink = PliggTemplate(driver, wlog).run(
-                target_site=target_url,
-                client_site=client_site,
-                keyword=keyword,
-            )
+        # ponytail: skipped complex CF harvest & Playwright handover tiers
+        wlog.info("Executing directly via SeleniumBase template...")
+        backlink = PliggTemplate(driver, wlog).run(
+            target_site=target_url,
+            client_site=client_site,
+            keyword=keyword,
+        )
 
         wlog.info("✅ Job %s DONE — %s", task_run_id, backlink)
         metrics.inc("jobs_succeeded")
@@ -464,57 +393,68 @@ def run_job(job: dict, worker_id: int, driver: Driver, wlog: logging.Logger) -> 
 
 # ─── Worker Thread ────────────────────────────────────────────────────────────
 
-def run_worker_thread(worker_id: int, r: redis.Redis) -> None:
-    """
-    Long-running thread. Owns one persistent Driver.
+class Worker(threading.Thread):
+    def __init__(self, worker_id: int):
+        super().__init__()
+        self.worker_id = worker_id
+        self.job_queue = queue.Queue()
+        self.driver = None
+        self.job_count = 0
+        self.wlog = get_logger(f"W{worker_id:02d}")
+        self.idle_timeout = 60.0
+        self.daemon = True
 
-    Loop:
-      - rpop from Redis
-      - If empty → sleep POLL_INTERVAL_SECONDS → rpop again → exit if still empty
-      - Restart driver every BROWSER_RESTART_EVERY jobs (memory leak prevention)
-      - JOB_COOLDOWN sleep between jobs
-    """
-    wlog = get_logger(f"W{worker_id:02d}")
-    wlog.info("Thread %02d starting", worker_id)
+    def run(self):
+        self.wlog.info("Worker thread starting.")
+        try:
+            while True:
+                try:
+                    job = self.job_queue.get(timeout=self.idle_timeout)
+                    if job is None:
+                        self.wlog.info("Received shutdown signal.")
+                        break
 
-    driver = create_driver(worker_id)
-    job_count = 0
+                    if self.driver is None:
+                        self.wlog.info("Spinning up browser for new job...")
+                        self.driver = create_driver(self.worker_id)
 
-    try:
-        while True:
-            job = pop_job(r)
-            if job is None:
-                wlog.debug("Queue empty — sleeping %ds", POLL_INTERVAL_SECONDS)
-                time.sleep(POLL_INTERVAL_SECONDS)
-                job = pop_job(r)
-                if job is None:
-                    wlog.info("Thread %02d: queue still empty — shutting down.", worker_id)
+                    if self.job_count > 0 and self.job_count % BROWSER_RESTART_EVERY == 0:
+                        self.wlog.info("Restarting browser at job #%d", self.job_count)
+                        try:
+                            self.driver.quit()
+                        except Exception:
+                            pass
+                        time.sleep(2)
+                        self.driver = create_driver(self.worker_id)
+
+                    try:
+                        run_job(job, self.worker_id, self.driver, self.wlog)
+                        self.job_count += 1
+                        time.sleep(JOB_COOLDOWN)
+                    except Exception as e:
+                        self.wlog.error("Job crashed unexpectedly: %s", e, exc_info=True)
+                        if self.driver:
+                            try:
+                                self.driver.quit()
+                            except Exception:
+                                pass
+                            self.driver = None
+                    finally:
+                        self.job_queue.task_done()
+
+                except queue.Empty:
+                    self.wlog.info("Idle timeout (%.1fs) reached. Shutting down browser to free RAM.", self.idle_timeout)
                     break
 
-            # Browser restart (memory leak prevention)
-            if job_count > 0 and job_count % BROWSER_RESTART_EVERY == 0:
-                wlog.info("Thread %02d: restarting browser at job #%d", worker_id, job_count)
+        except Exception as e:
+            self.wlog.error("Thread crashed: %s", e, exc_info=True)
+        finally:
+            if self.driver:
                 try:
-                    driver.quit()
+                    self.driver.quit()
                 except Exception:
                     pass
-                time.sleep(2)
-                driver = create_driver(worker_id)
-
-            run_job(job, worker_id, driver, wlog)
-            job_count += 1
-            time.sleep(JOB_COOLDOWN)
-
-    except Exception as e:
-        wlog.error("Thread %02d crashed: %s", worker_id, e, exc_info=True)
-    finally:
-        try:
-            driver.quit()
-        except Exception:
-            pass
-        wlog.info("Thread %02d done. Jobs: %d. Metrics: %s",
-                  worker_id, job_count, metrics.snapshot())
-
+            self.wlog.info("Worker thread done. Processed %d jobs.", self.job_count)
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
@@ -544,24 +484,73 @@ def main():
         logger.warning("Stale recovery failed (non-fatal): %s", e)
 
     logger.info(
-        "Starting %d worker thread(s) | stagger=%.1fs | cooldown=%.1fs | "
+        "Starting Dynamic Dispatcher | max_concurrency=%d | cooldown=%.1fs | "
         "restart_every=%d | playwright_handover=%s",
-        MAX_CONCURRENT_SESSIONS, STARTUP_STAGGER_MAX, JOB_COOLDOWN,
+        MAX_CONCURRENT_SESSIONS, JOB_COOLDOWN,
         BROWSER_RESTART_EVERY, USE_PLAYWRIGHT_HANDOVER,
     )
 
-    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_SESSIONS) as pool:
-        futures = [
-            pool.submit(run_worker_thread, slot, r)
-            for slot in range(MAX_CONCURRENT_SESSIONS)
-        ]
-        for fut in futures:
-            try:
-                fut.result()
-            except Exception as e:
-                logger.error("Worker thread error: %s", e)
+    workers = {}  # worker_id -> Worker thread
+    worker_id_counter = 0
 
-    logger.info("All workers done. Final: %s", metrics.snapshot())
+    try:
+        while True:
+            try:
+                # Clean up dead workers
+                dead_workers = [wid for wid, w in workers.items() if not w.is_alive()]
+                for wid in dead_workers:
+                    del workers[wid]
+
+                job = pop_job(r)
+                if job is None:
+                    time.sleep(POLL_INTERVAL_SECONDS)
+                    continue
+
+                dispatched = False
+                
+                # 1. Look for an existing idle worker
+                for wid, w in workers.items():
+                    if w.job_queue.empty():
+                        w.job_queue.put(job)
+                        dispatched = True
+                        break
+
+                # 2. If no idle worker, spawn a new one (if under limit)
+                if not dispatched and len(workers) < MAX_CONCURRENT_SESSIONS:
+                    worker_id = (worker_id_counter % MAX_CONCURRENT_SESSIONS) + 1
+                    worker_id_counter += 1
+                    w = Worker(worker_id)
+                    w.start()
+                    workers[worker_id] = w
+                    w.job_queue.put(job)
+                    dispatched = True
+
+                # 3. If at concurrency limit, push job back and wait
+                if not dispatched:
+                    r.rpush(QUEUE_NAME, json.dumps(job))
+                    time.sleep(1.0)
+                    
+            except Exception as e:
+                logger.error("Network or internal error in dispatcher loop: %s", e)
+                logger.info("Attempting to reconnect to Redis and recover in 5s...")
+                time.sleep(5)
+                try:
+                    r = get_redis()
+                except Exception:
+                    pass
+
+                
+    except KeyboardInterrupt:
+        logger.info("Dispatcher received KeyboardInterrupt, shutting down...")
+    finally:
+        logger.info("Shutting down all workers gracefully...")
+        for w in workers.values():
+            if w.is_alive():
+                w.job_queue.put(None)  # Poison pill
+        for w in workers.values():
+            if w.is_alive():
+                w.join(timeout=10)
+        logger.info("All workers done. Final: %s", metrics.snapshot())
 
 
 if __name__ == "__main__":

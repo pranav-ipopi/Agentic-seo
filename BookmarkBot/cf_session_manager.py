@@ -12,6 +12,7 @@ logger = get_logger("CFManager")
 class CloudflareBypass:
     def __init__(self, proxy_manager=None):
         self.proxy_manager = proxy_manager
+        self.session_dir = Path("sessions")
         self.session_dir.mkdir(exist_ok=True)
         self.semaphore = asyncio.Semaphore(5)
         
@@ -126,14 +127,15 @@ class CloudflareBypass:
                 
                 cookies = await browser.cookies.get_all()
                 cf_cookie_found = next(
-                    (c for c in cookies if c['name'] == 'cf_clearance'),
+                    (c for c in cookies if c.name == 'cf_clearance'),
                     None
                 )
                 
                 if cf_cookie_found:
                     logger.info("Worker %s: Successfully harvested cf_clearance for %s (nodriver)", worker_id, target_domain)
-                    self.save_session(target_domain, proxy, cookies)
-                    return cookies
+                    cookie_dicts = [c.to_json() for c in cookies] if cookies else []
+                    self.save_session(target_domain, proxy, cookie_dicts)
+                    return cookie_dicts
                 else:
                     logger.warning("Worker %s: nodriver failed to get cf_clearance. Escalating to Tier 2 (SeleniumBase Subprocess).", worker_id)
                     

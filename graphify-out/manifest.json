@@ -4,11 +4,6 @@
     "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
     "semantic_hash": ""
   },
-  "add_target_url_to_keywords.sql": {
-    "mtime": 1782183064.0674677,
-    "ast_hash": "692dc856054271133328f35e7bf2e28e",
-    "semantic_hash": ""
-  },
   "agentic-seo/app/(auth)/layout.tsx": {
     "mtime": 1780969952.440748,
     "ast_hash": "6501aa8ce7693ca9f303cfa402b31677",
@@ -394,24 +389,9 @@
     "ast_hash": "03391bd1893b0dcb6f9dd287b3471e66",
     "semantic_hash": ""
   },
-  "article_workflow_migration.sql": {
-    "mtime": 1781869770.6874018,
-    "ast_hash": "de8d347e397a2cf850c3477060369147",
-    "semantic_hash": ""
-  },
-  "create_saved_campaigns_table.sql": {
-    "mtime": 1782188260.0389307,
-    "ast_hash": "3b67e96b845e479a055e682e84ca9882",
-    "semantic_hash": ""
-  },
   "docs/write-medium-article.spec.ts": {
     "mtime": 1782034197.9428136,
     "ast_hash": "276d336e6c0f2bde3f602837c0e51b9c",
-    "semantic_hash": ""
-  },
-  "generate_sql.py": {
-    "mtime": 1781520574.3376968,
-    "ast_hash": "8f0a716515c6c3172614552dde88b300",
     "semantic_hash": ""
   },
   "insert_bookmarking_sites.sql": {
@@ -444,26 +424,6 @@
     "ast_hash": "a23a9c170fafee74e461a8ca6e20f619",
     "semantic_hash": ""
   },
-  "playwright_worker/downloaded_files/proxy_ext_dir/background.js": {
-    "mtime": 1781965382.674667,
-    "ast_hash": "c408a186b832895f72c79febd3619b46",
-    "semantic_hash": ""
-  },
-  "playwright_worker/downloaded_files/proxy_ext_dir/manifest.json": {
-    "mtime": 1781965382.674667,
-    "ast_hash": "e85afa0625fd555c3615d7c2aaee9758",
-    "semantic_hash": ""
-  },
-  "playwright_worker/downloaded_files/proxy_ext_dir/proxy_ext_dir/background.js": {
-    "mtime": 1781713381.4907863,
-    "ast_hash": "9d159ab43386513e2e4863f436934c5c",
-    "semantic_hash": ""
-  },
-  "playwright_worker/downloaded_files/proxy_ext_dir/proxy_ext_dir/manifest.json": {
-    "mtime": 1781713381.4907863,
-    "ast_hash": "e85afa0625fd555c3615d7c2aaee9758",
-    "semantic_hash": ""
-  },
   "playwright_worker/ecosystem.config.js": {
     "mtime": 1782211185.8608701,
     "ast_hash": "242dc4e3c4813cdc82f283720c1be01b",
@@ -490,18 +450,13 @@
     "semantic_hash": ""
   },
   "playwright_worker/methods/__init__.py": {
-    "mtime": 1781077120.9523175,
-    "ast_hash": "3a794adda987e2fdb904347a493b3b99",
-    "semantic_hash": ""
-  },
-  "playwright_worker/methods/cloudflare.py": {
-    "mtime": 1782114998.6746516,
-    "ast_hash": "cc9dbddb49d2d9fb94ef41fbc0cf4927",
+    "mtime": 1782469858.0992947,
+    "ast_hash": "718d894b6220062401d67164c8596a15",
     "semantic_hash": ""
   },
   "playwright_worker/methods/stealth_browser.py": {
-    "mtime": 1782391225.5913062,
-    "ast_hash": "8b6ae5787f7eee4addcde0cbd7b4407e",
+    "mtime": 1782467805.613873,
+    "ast_hash": "6d8f87c78e03d0b473ae86c78b983071",
     "semantic_hash": ""
   },
   "playwright_worker/services/__init__.py": {
@@ -520,8 +475,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/services/proxy_manager.py": {
-    "mtime": 1782372726.155192,
-    "ast_hash": "e79f0e4231666d4c714772fe8b187104",
+    "mtime": 1782456340.9307344,
+    "ast_hash": "1b22507f326f6ac6e9136a2926301f93",
     "semantic_hash": ""
   },
   "playwright_worker/services/redis_service.py": {
@@ -535,8 +490,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/services/template_detector.py": {
-    "mtime": 1781352732.596596,
-    "ast_hash": "48b56e122336c548bf4d87bc5d2b5d0d",
+    "mtime": 1782469847.3767946,
+    "ast_hash": "7b2a18b5d4b7e2b4596251cbb6427aad",
     "semantic_hash": ""
   },
   "playwright_worker/templates/__init__.py": {
@@ -545,28 +500,13 @@
     "semantic_hash": ""
   },
   "playwright_worker/templates/base_template.py": {
-    "mtime": 1781928361.578985,
-    "ast_hash": "fa503c6ee24afd224fea6b4dee942f0f",
-    "semantic_hash": ""
-  },
-  "playwright_worker/templates/medium.py": {
-    "mtime": 1781937099.7305791,
-    "ast_hash": "a9886f5054e568bb87ccd98394d2ee6d",
+    "mtime": 1782469838.6720102,
+    "ast_hash": "6769bb0a42cefc3440585e0b77491446",
     "semantic_hash": ""
   },
   "playwright_worker/templates/pligg_generic.py": {
-    "mtime": 1782298127.4126399,
-    "ast_hash": "e8ea516337bdde4430d2924acbbf8039",
-    "semantic_hash": ""
-  },
-  "playwright_worker/templates/reddit.py": {
-    "mtime": 1781937119.0004106,
-    "ast_hash": "c01cab05f592cb1d3fd07e9fb6a73874",
-    "semantic_hash": ""
-  },
-  "playwright_worker/templates/wordpress.py": {
-    "mtime": 1781937120.4101138,
-    "ast_hash": "90fa3d6c89ddfd589a5c5a731960af16",
+    "mtime": 1782469829.8309429,
+    "ast_hash": "1c3cc0b01a0745c0be5379d4ac439a32",
     "semantic_hash": ""
   },
   "playwright_worker/templates/wordpress_submitpro.py": {
@@ -575,13 +515,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/vps_worker_playwright.py": {
-    "mtime": 1782277415.922196,
-    "ast_hash": "9e9bc8a9ac8a8fb80a999977ed2a1f44",
-    "semantic_hash": ""
-  },
-  "read_excel.py": {
-    "mtime": 1781519997.9931893,
-    "ast_hash": "fc010c7afa4216d4420a21568a2fb3f1",
+    "mtime": 1782453793.926646,
+    "ast_hash": "5f39dfb8459fac296195406aff7daf55",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
@@ -637,16 +572,6 @@
   ".agents/workflows/graphify.md": {
     "mtime": 1782228364.1917894,
     "ast_hash": "637776aa6f7496d069afe7520c845c8a",
-    "semantic_hash": ""
-  },
-  "Hermes_Agency_Problem_Statement_and_Vision.txt": {
-    "mtime": 1780711420.7166615,
-    "ast_hash": "e3bfbbaf3c387f64954e4a52d29ddb73",
-    "semantic_hash": ""
-  },
-  "README.md": {
-    "mtime": 1780971171.6433754,
-    "ast_hash": "adc2e691b1127f97d339a69e9c5b83a7",
     "semantic_hash": ""
   },
   "agentic-seo/README.md": {
@@ -719,11 +644,6 @@
     "ast_hash": "ca1851518de99074202a677cf48760a0",
     "semantic_hash": ""
   },
-  "playwright_worker/README.md": {
-    "mtime": 1781332845.252118,
-    "ast_hash": "9e9bb9049cc5fe6be321b939a8f9f1f9",
-    "semantic_hash": ""
-  },
   "playwright_worker/configs/2captcha_proxies.txt": {
     "mtime": 1781977346.1376932,
     "ast_hash": "c7ce5b02b870744add15a4b344f7cabe",
@@ -747,11 +667,6 @@
   "playwright_worker/docs/proxy_system.md": {
     "mtime": 1781977887.940519,
     "ast_hash": "cebf75fad62c687d89ce425360a569c9",
-    "semantic_hash": ""
-  },
-  "playwright_worker/methods/pligg_site_automation_knowledge.md": {
-    "mtime": 1781093528.5453484,
-    "ast_hash": "746e3669cc95493a176247caeb59084a",
     "semantic_hash": ""
   },
   "playwright_worker/requirements.txt": {
@@ -829,11 +744,6 @@
     "ast_hash": "1112dbae4521f7adff214469821ebb60",
     "semantic_hash": ""
   },
-  "add_backlink_limit.sql": {
-    "mtime": 1782359750.593743,
-    "ast_hash": "17cdb75a7d0a948c11b4f6d84538a616",
-    "semantic_hash": ""
-  },
   "agentic-seo/app/admin/actions.ts": {
     "mtime": 1782361455.321856,
     "ast_hash": "7de1f78b602d1400ac3740c69c21ff95",
@@ -859,24 +769,229 @@
     "ast_hash": "3a81c5fa8a915093ffb092f85d804be9",
     "semantic_hash": ""
   },
-  "playwright_worker/methods/bypass-cloudflare.md": {
+  "playwright_worker/docs/cloudflare_stealth_architecture.md": {
+    "mtime": 1782469869.7371,
+    "ast_hash": "664bc3d414648c5c6a57a825bde38acf",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/cf_session_manager.py": {
+    "mtime": 1782494317.6908548,
+    "ast_hash": "8610c991cca3d3b768eefb66bbf6f8ff",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/config.py": {
+    "mtime": 1782489126.2353268,
+    "ast_hash": "d9ac390bc6d65602530d4856b6cec064",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/db.py": {
+    "mtime": 1782494052.6829286,
+    "ast_hash": "2f241eb76c2318bf1e96018b58ef050c",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/failure_handler.py": {
+    "mtime": 1782499665.2674322,
+    "ast_hash": "ba3b950ffa569910c733ea888bf5472b",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/local_worker.py": {
+    "mtime": 1782499975.8830657,
+    "ast_hash": "d9e21b212b36e6ee1dd5ad15c170e6d5",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/logger_setup.py": {
+    "mtime": 1782489126.2553272,
+    "ast_hash": "cad34af280f526566e9021fb12b3cc17",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/main.py": {
+    "mtime": 1782489126.2653272,
+    "ast_hash": "85b232a0ef16203147916ae18d3a5886",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/metrics.py": {
+    "mtime": 1782489126.2733865,
+    "ast_hash": "86f2edf3394d3ae096e2220835a84fb8",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/pligg_template.py": {
+    "mtime": 1782498401.9699402,
+    "ast_hash": "000a0b9188affceb277d03458a37d130",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/profile_init.py": {
+    "mtime": 1782489126.2813275,
+    "ast_hash": "1c423530c282edb87d5b304d409bfc77",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/proxy_manager.py": {
+    "mtime": 1782489126.298326,
+    "ast_hash": "7020fa5a22971ac15633b7466a6582ca",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/rate_limiter.py": {
+    "mtime": 1782489126.305328,
+    "ast_hash": "ec6b0a2c72b2e26ade18123f69371e80",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/sessions/session_livebookmarking_com_noproxy.json": {
+    "mtime": 1782494222.1368341,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/supabase_schema.sql": {
+    "mtime": 1782489126.3303318,
+    "ast_hash": "c0988fce08c0d4034fad19e518a8f22f",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/test_nodriver.py": {
+    "mtime": 1782494247.5989246,
+    "ast_hash": "7735c6e02fbe82c061ca0c68572a1da7",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/worker.py": {
+    "mtime": 1782493028.5088792,
+    "ast_hash": "f33db13dbb3e7c86da71ca29417b34f8",
+    "semantic_hash": ""
+  },
+  "Solved Media.user.js": {
+    "mtime": 1782491593.103572,
+    "ast_hash": "15f5c1c87a3ddfb5290020735f73f9ab",
+    "semantic_hash": ""
+  },
+  "once-used-to-work/stealth_browser.py": {
+    "mtime": 1782467805.613873,
+    "ast_hash": "6d8f87c78e03d0b473ae86c78b983071",
+    "semantic_hash": ""
+  },
+  "playwright_worker/methods/session_pool.py": {
+    "mtime": 1782455200.6149774,
+    "ast_hash": "6bc2c1ba871d0ced1fb49b4f47b23e8d",
+    "semantic_hash": ""
+  },
+  "playwright_worker/services/queue_feeder.py": {
+    "mtime": 1782451158.7494283,
+    "ast_hash": "4bc4775f6702a0ca746df5fe922d00e4",
+    "semantic_hash": ""
+  },
+  "playwright_worker/services/sync_to_supabase.py": {
+    "mtime": 1782451172.5596933,
+    "ast_hash": "f7d5fc1a1d26a190b28696d47dee0ccb",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_nodriver/inspect_config.py": {
+    "mtime": 1782475442.860811,
+    "ast_hash": "64ed24163e67e2f9f68e252702aeaa1e",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_nodriver/test_nodriver_pw.py": {
+    "mtime": 1782477195.1454926,
+    "ast_hash": "87985e5ea49b9f47f65d114570a15fe9",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_playwright_stealth/test_pw_stealth.py": {
+    "mtime": 1782474765.3656855,
+    "ast_hash": "4329f427cd2e3ab9ad4a740e026f52dd",
+    "semantic_hash": ""
+  },
+  "playwright_worker/test_seleniumbase/test_uc_bypass.py": {
+    "mtime": 1782473359.455713,
+    "ast_hash": "4e073f7cda7a2d7ad04cfd31bc74b5eb",
+    "semantic_hash": ""
+  },
+  ".playwright-mcp/page-2026-06-26T06-50-17-918Z.yml": {
+    "mtime": 1782456617.9232564,
+    "ast_hash": "7e2c5f64e24bd28479a9fc6f1bd23c2b",
+    "semantic_hash": ""
+  },
+  ".playwright-mcp/page-2026-06-26T06-52-55-285Z.yml": {
+    "mtime": 1782456775.2895918,
+    "ast_hash": "7823e5abc1ae147acc8bd2d9e8c92c6e",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/README.md": {
+    "mtime": 1782489126.227327,
+    "ast_hash": "06b2b6d572d50cf0235671281cc730ab",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/proxies.example.txt": {
+    "mtime": 1782489126.2903397,
+    "ast_hash": "7210cc3cd88385888bff96ebf267376f",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/requirements.txt": {
+    "mtime": 1782500176.3406239,
+    "ast_hash": "6a08c68a3ec77104e6b231705a5943d9",
+    "semantic_hash": ""
+  },
+  "docs/2026_cloudflare_bypass_methods.md": {
+    "mtime": 1782493074.3914824,
+    "ast_hash": "84b5da919a5f9db9c6adda9e91367f39",
+    "semantic_hash": ""
+  },
+  "docs/DEPLOYMENT_AND_SETUP.md": {
+    "mtime": 1782208977.9517622,
+    "ast_hash": "1137f622b114076e6e7a0c3cbeab5b34",
+    "semantic_hash": ""
+  },
+  "docs/bypass-cloudflare.md": {
     "mtime": 1782365845.978062,
     "ast_hash": "bf21ab57c425d74f5b0dc4670a1014a8",
     "semantic_hash": ""
   },
-  "playwright_worker/sql/001_add_health_tracking.sql": {
-    "mtime": 1781330632.9503345,
-    "ast_hash": "7d489dd3858838002a8d14069441a97f",
+  "docs/cloudflare_bypass_architecture.md": {
+    "mtime": 1782374398.5696666,
+    "ast_hash": "3a81c5fa8a915093ffb092f85d804be9",
     "semantic_hash": ""
   },
-  "playwright_worker/sql/01_client_site_usage.sql": {
-    "mtime": 1781583388.9146402,
-    "ast_hash": "5faccfb58bc8f500cb61506e6295e187",
+  "docs/cloudflare_stealth_architecture copy.md": {
+    "mtime": 1782469869.7371,
+    "ast_hash": "664bc3d414648c5c6a57a825bde38acf",
     "semantic_hash": ""
   },
-  "playwright_worker/docs/cloudflare_stealth_architecture.md": {
-    "mtime": 1781930373.1223028,
-    "ast_hash": "05072ecf6095cd575aab61d60f9cd3be",
+  "docs/guide.txt": {
+    "mtime": 1782458240.8051124,
+    "ast_hash": "bdb1d823d73cc565a96b85e67dc67cd2",
+    "semantic_hash": ""
+  },
+  "docs/methods.txt": {
+    "mtime": 1782492552.0283697,
+    "ast_hash": "d496df3205ea5223929824ee0b5b3da5",
+    "semantic_hash": ""
+  },
+  "docs/pligg_site_automation_knowledge.md": {
+    "mtime": 1781093528.5453484,
+    "ast_hash": "746e3669cc95493a176247caeb59084a",
+    "semantic_hash": ""
+  },
+  "docs/proxy_system.md": {
+    "mtime": 1781977887.940519,
+    "ast_hash": "cebf75fad62c687d89ce425360a569c9",
+    "semantic_hash": ""
+  },
+  "playwright_worker/docs/bypass-cloudflare.md": {
+    "mtime": 1782365845.978062,
+    "ast_hash": "bf21ab57c425d74f5b0dc4670a1014a8",
+    "semantic_hash": ""
+  },
+  "playwright_worker/docs/pligg_site_automation_knowledge.md": {
+    "mtime": 1781093528.5453484,
+    "ast_hash": "746e3669cc95493a176247caeb59084a",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/debug_detail_page.png": {
+    "mtime": 1782498668.827468,
+    "ast_hash": "2774c87fc9d986bed6ef8fcb027c44fd",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/solvemedia_captcha_0debf9fbff484c9481464c6a961e8626.png": {
+    "mtime": 1782495583.0640533,
+    "ast_hash": "d1bea97a74c6c31fa295095476033838",
+    "semantic_hash": ""
+  },
+  "BookmarkBot/solvemedia_captcha_4a1bfa40ee254ba487c02560273f1c48.png": {
+    "mtime": 1782495102.4269536,
+    "ast_hash": "af798f1022c18652a47c7bd242dc95d5",
     "semantic_hash": ""
   }
 }

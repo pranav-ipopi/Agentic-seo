@@ -1,6 +1,0 @@
-2026/06/23-09:24:34.354 3f38 Reusing MANIFEST C:\Users\HP\AppData\Local\Google\Chrome\User Data\Default\Storage\ext\glic\66A834677761\Local Storage\leveldb/MANIFEST-000001
-2026/06/23-09:24:34.357 3f38 Recovering log #7
-2026/06/23-09:24:34.365 3f38 Reusing old log C:\Users\HP\AppData\Local\Google\Chrome\User Data\Default\Storage\ext\glic\66A834677761\Local Storage\leveldb/000007.log 
-2026/06/23-15:10:53.425 3940 Level-0 table #11: started
-2026/06/23-15:10:53.437 3940 Level-0 table #11: 10294 bytes OK
-2026/06/23-15:10:53.442 3940 Delete type=0 #7

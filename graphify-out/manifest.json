@@ -490,23 +490,23 @@
     "semantic_hash": ""
   },
   "playwright_worker/templates/base_template.py": {
-    "mtime": 1782568908.0693338,
-    "ast_hash": "b899e879d6b182d829acb621aa9c6e03",
+    "mtime": 1782590140.62041,
+    "ast_hash": "d11d067393f9b03ff9b9566a9b07b56d",
     "semantic_hash": ""
   },
   "playwright_worker/templates/pligg_generic.py": {
-    "mtime": 1782577299.1081295,
-    "ast_hash": "74bca5fe3621c5558e7a9c15197e7899",
+    "mtime": 1782588591.1083956,
+    "ast_hash": "51d1a10006b5cd0d66af39a9a4fe260f",
     "semantic_hash": ""
   },
   "playwright_worker/templates/wordpress_submitpro.py": {
-    "mtime": 1781930299.415983,
-    "ast_hash": "a91c62ca213f4c0ab27554a419fb0ccd",
+    "mtime": 1782588634.5074928,
+    "ast_hash": "54ff3e6722f340b05e0a427f4d598f64",
     "semantic_hash": ""
   },
   "playwright_worker/vps_worker_playwright.py": {
-    "mtime": 1782570610.1113186,
-    "ast_hash": "6710b003c983892b9f018caa2b502656",
+    "mtime": 1782581656.6634054,
+    "ast_hash": "05620474a8cf41521242ffc6e2663ed9",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/requirements.txt": {
-    "mtime": 1782367455.3626938,
-    "ast_hash": "d9d312e3dd9564614b2206330ebf158a",
+    "mtime": 1782580270.558466,
+    "ast_hash": "c83ce320d20c1075b7f72b4e8ec63638",
     "semantic_hash": ""
   },
   "agentic-seo/public/file.svg": {
@@ -28014,16 +28014,6 @@
     "ast_hash": "480c5cfb83a0b5132101868428f0b2ec",
     "semantic_hash": ""
   },
-  "playwright_worker/chrome_profiles/profile_001/Default/Service Worker/CacheStorage/379f1cbab5b08b6fc9e08681e42d8be311441c88/index.txt": {
-    "mtime": 1782562220.8866477,
-    "ast_hash": "f8d627840c67d7dcf4d3c41bedd06858",
-    "semantic_hash": ""
-  },
-  "playwright_worker/chrome_profiles/profile_001/Default/WebStorage/4/CacheStorage/index.txt": {
-    "mtime": 1782566942.5886881,
-    "ast_hash": "b90a5d3590471be66e145958c70c7dff",
-    "semantic_hash": ""
-  },
   "playwright_worker/chrome_profiles/profile_002/Subresource Filter/Unindexed Rules/9.69.0/LICENSE.txt": {
     "mtime": 1781171726.0,
     "ast_hash": "d33aaa5246e1ce0a94fa15ba0c407ae2",
@@ -28712,6 +28702,31 @@
   "playwright_worker/chrome_profiles/profile_004/FirstPartySetsPreloaded/2025.7.24.0/sets.json": {
     "mtime": 315532800.0,
     "ast_hash": "a6b557324d93627024ddace094cf4358",
+    "semantic_hash": ""
+  },
+  "playwright_worker/methods/human_interaction.py": {
+    "mtime": 1782590312.9318697,
+    "ast_hash": "786974f2ff9c60aca777cb62daf3f786",
+    "semantic_hash": ""
+  },
+  "playwright_worker/solvemedia_ocr/ocr_fuzzer.py": {
+    "mtime": 1782579399.6946967,
+    "ast_hash": "011ea451eea030a64897a630354aae69",
+    "semantic_hash": ""
+  },
+  "docs/project_progress_summary.md": {
+    "mtime": 1782586259.0178301,
+    "ast_hash": "11acbbe4ba58d2e9efe98875f23f1602",
+    "semantic_hash": ""
+  },
+  "playwright_worker/chrome_profiles/profile_001/Default/Service Worker/CacheStorage/0bf6ab7f94a21cdc9c1649f884333ec20f40a544/index.txt": {
+    "mtime": 1782587697.595704,
+    "ast_hash": "17e8b897b2cbbc1edf0222f88c5dd4a1",
+    "semantic_hash": ""
+  },
+  "playwright_worker/solvemedia_ocr/drawablank.jpeg": {
+    "mtime": 1782556144.2508094,
+    "ast_hash": "b4cac49dc1356005119232f2ffaac9fe",
     "semantic_hash": ""
   }
 }

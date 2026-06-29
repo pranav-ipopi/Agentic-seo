@@ -3,8 +3,9 @@ import { createClient } from '@/lib/supabase/server'
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const supabase = await createClient()
     const { data: { user }, error: authError } = await supabase.auth.getUser()
@@ -20,7 +21,7 @@ export async function PATCH(
     const { data, error } = await (supabase as any)
       .from('clients')
       .update({ backlink_limit: limitValue })
-      .eq('id', params.id)
+      .eq('id', id)
       .select()
       .single()
 

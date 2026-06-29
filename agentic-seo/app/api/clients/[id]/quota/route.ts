@@ -17,7 +17,8 @@ export async function GET(
     const resolvedParams = await params
     const clientId = resolvedParams.id
 
-    const { data: clientData, error: clientError } = await adminClient
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data: clientData, error: clientError } = await (adminClient as any)
       .from('clients')
       .select('backlink_limit')
       .eq('id', clientId)

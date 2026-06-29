@@ -16,7 +16,8 @@ export async function fetchAdminStats(password: string) {
 
   if (clientsError) throw new Error(clientsError.message)
 
-  const stats = await Promise.all((clientsData || []).map(async (client) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const stats = await Promise.all(((clientsData as any[]) || []).map(async (client: any) => {
     const { count: completed } = await supabase
       .from('task_runs')
       .select('*', { count: 'exact', head: true })

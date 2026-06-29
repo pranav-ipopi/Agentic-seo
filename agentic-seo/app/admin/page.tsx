@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Loader2, Lock, TrendingUp, AlertCircle, CheckCircle2, IndianRupee, Globe2 } from 'lucide-react'
+import { Loader2, Lock, TrendingUp, AlertCircle, CheckCircle2, IndianRupee, Globe2, LogOut } from 'lucide-react'
 import { fetchAdminStats, updateAdminLimit } from './actions'
 
 type ClientStats = {
@@ -124,13 +124,40 @@ export default function AdminClientsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Admin Dashboard</h1>
-            <p className="text-gray-500 mt-2">Comprehensive cost analysis and daily client limits.</p>
-          </div>
+    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-950">
+      {/* Sidebar */}
+      <div className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex-col hidden md:flex">
+        <div className="h-16 flex items-center px-6 border-b border-gray-200 dark:border-gray-800">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Admin Panel</h2>
+        </div>
+        <nav className="flex-1 py-4 px-3 space-y-1">
+          <a href="#" className="flex items-center px-3 py-2 text-sm font-medium rounded-md bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400">
+            Management
+          </a>
+        </nav>
+        <div className="p-4 border-t border-gray-200 dark:border-gray-800">
+          <button
+            onClick={() => {
+              setIsAuthenticated(false)
+              setPasswordInput('')
+            }}
+            className="flex items-center w-full px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white transition-colors"
+          >
+            <LogOut className="w-4 h-4 mr-2" />
+            Logout
+          </button>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col h-screen overflow-hidden">
+        <main className="flex-1 overflow-y-auto p-6">
+          <div className="max-w-7xl mx-auto space-y-6">
+            <div className="flex justify-between items-center">
+              <div>
+                <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Management</h1>
+                <p className="text-gray-500 mt-2">Comprehensive cost analysis and daily client limits.</p>
+              </div>
           <button 
             onClick={() => loadClients(passwordInput)} 
             disabled={isLoading}
@@ -320,6 +347,8 @@ export default function AdminClientsPage() {
             </table>
           </div>
         </div>
+      </div>
+        </main>
       </div>
     </div>
   )

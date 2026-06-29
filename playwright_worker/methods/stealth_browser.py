@@ -481,4 +481,3 @@ class BrowserWorkerPool:
                 elif worker.state == WorkerState.BUSY and (time.time() - worker.last_used) > 900:
                     print(f"[WorkerPool] Worker {worker.worker_id} seems stuck in BUSY. Forcing restart...")
                     asyncio.create_task(worker.restart())
-

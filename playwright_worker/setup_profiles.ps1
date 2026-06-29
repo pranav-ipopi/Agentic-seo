@@ -7,11 +7,13 @@ if (!(Test-Path $Chrome)) {
     exit
 }
 
-$BaseDir = "C:\Users\HP\Documents\Agentic_SEO\playwright_worker\chrome_profiles"
+# ADAPTIVE PATH: Automatically detects the folder where this script is currently saved
+$BaseDir = Join-Path $PSScriptRoot "chrome_profiles"
 $TotalProfiles = 20
 New-Item -ItemType Directory -Force -Path $BaseDir | Out-Null
 
 Write-Host "Creating $TotalProfiles Chrome profiles..."
+Write-Host "Profiles directory: $BaseDir"
 
 for ($i = 1; $i -le $TotalProfiles; $i++) {
     $ProfileName = "profile_{0:D3}" -f $i

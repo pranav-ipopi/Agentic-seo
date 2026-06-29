@@ -21,6 +21,7 @@ CREATE TABLE public.clients (
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
   category text,
+  backlink_limit integer,
   CONSTRAINT clients_pkey PRIMARY KEY (id),
   CONSTRAINT clients_created_by_fkey FOREIGN KEY (created_by) REFERENCES public.profiles(id)
 );

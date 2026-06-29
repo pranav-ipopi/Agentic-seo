@@ -62,8 +62,8 @@ export default function SettingsPage() {
     const res = await fetch('/api/clients', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        name: newClientName.trim(), 
+      body: JSON.stringify({
+        name: newClientName.trim(),
         domain: newClientDomain.trim() || null,
         description: newClientDescription.trim() || null,
         category: newClientCategory || null
@@ -179,7 +179,7 @@ export default function SettingsPage() {
                   {profile?.role?.replace('_', ' ') ?? '—'}
                 </div>
               </div>
-              
+
 
               <div className="flex items-center gap-3">
                 <button
@@ -249,6 +249,7 @@ export default function SettingsPage() {
                     <option value="education">Education</option>
                     <option value="entertainment">Entertainment</option>
                     <option value="travel">Travel</option>
+                    <option value="jewellery">jewellery</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -339,7 +340,7 @@ export default function SettingsPage() {
                 <AlertTriangle className="w-5 h-5" />
                 <h3 className="font-semibold text-gray-900 dark:text-white">Delete Client</h3>
               </div>
-              <button 
+              <button
                 onClick={() => setClientToDelete(null)}
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
               >
@@ -388,7 +389,7 @@ export default function SettingsPage() {
           <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xl w-full max-w-md overflow-hidden">
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-800">
               <h3 className="font-semibold text-gray-900 dark:text-white">Edit Client</h3>
-              <button 
+              <button
                 onClick={() => setClientToEdit(null)}
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
               >

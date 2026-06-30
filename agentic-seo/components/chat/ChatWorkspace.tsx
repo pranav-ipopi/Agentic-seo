@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useClient } from '@/components/layout/ClientProvider'
 import { createClient } from '@/lib/supabase/client'
-import { streamHermesChat } from '@/lib/hermes/client'
+import { streamAgentChat } from '@/lib/agent/client'
 import ChatMessages from '@/components/chat/ChatMessages'
 import PromptInput from '@/components/chat/PromptInput'
 import { Bot, Building2 } from 'lucide-react'
@@ -22,6 +22,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [isStreaming, setIsStreaming] = useState(false)
   const [streamingContent, setStreamingContent] = useState('')
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [toolProgress, setToolProgress] = useState<{ tool: string; status: 'started' | 'running' | 'completed' | 'failed'; message?: string }[]>([])
   const bottomRef = useRef<HTMLDivElement>(null)
   const abortControllerRef = useRef<AbortController | null>(null)
@@ -36,19 +37,60 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
 
   // Load session and messages
   useEffect(() => {
+    let pollingInterval: NodeJS.Timeout | null = null;
+    
     async function load() {
-      const [sessionRes, messagesRes] = await Promise.all([
+      const [sessionRes, messagesRes, tasksRes] = await Promise.all([
         supabase.from('chat_sessions').select('*').eq('id', sessionId).single(),
         supabase
           .from('chat_messages')
           .select('*')
           .eq('session_id', sessionId)
           .order('created_at', { ascending: true }),
+        supabase
+          .from('tasks')
+          .select('*')
+          .eq('session_id', sessionId)
+          .order('created_at', { ascending: false })
+          .limit(1)
       ])
+      
       if (sessionRes.data) setSession(sessionRes.data)
-      if (messagesRes.data) setMessages(messagesRes.data)
+      
+      let currentMessages = messagesRes.data || []
+      setMessages(currentMessages)
+      
+      const latestTask = tasksRes.data?.[0]
+      if (latestTask && latestTask.status === 'running') {
+        setIsStreaming(true)
+        
+        // Start polling for the backend's saved response
+        pollingInterval = setInterval(async () => {
+          const { data: newMsgs } = await supabase
+            .from('chat_messages')
+            .select('*')
+            .eq('session_id', sessionId)
+            .order('created_at', { ascending: true })
+            
+          if (newMsgs && newMsgs.length > currentMessages.length) {
+            setMessages(newMsgs)
+            currentMessages = newMsgs
+            
+            const lastMsg = newMsgs[newMsgs.length - 1]
+            if (lastMsg.role === 'assistant') {
+              setIsStreaming(false)
+              if (pollingInterval) clearInterval(pollingInterval)
+            }
+          }
+        }, 3000)
+      }
     }
+    
     load()
+    
+    return () => {
+      if (pollingInterval) clearInterval(pollingInterval)
+    }
   }, [sessionId])
 
   // Auto-scroll
@@ -73,22 +115,25 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         })
         .select()
         .single()
-      
+
       if (data) {
         currentSession = data
         setSession(data)
       } else {
         console.error('Failed to create session:', error)
+        setErrorMessage('Failed to create chat session. Please try again.')
+        setPromptValue(content)
         return
       }
     }
 
     setIsStreaming(true)
     setStreamingContent('')
+    setErrorMessage(null)
     setToolProgress([])
 
     // Save user message
-    const userMsgRes = await supabase
+    const { data: userMsgData, error: userMsgError } = await supabase
       .from('chat_messages')
       .insert({
         session_id: sessionId,
@@ -98,59 +143,54 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
       })
       .select()
       .single()
-    if (userMsgRes.data) {
-      setMessages((prev) => [...prev, userMsgRes.data!])
+
+    if (userMsgData) {
+      setMessages((prev) => [...prev, userMsgData])
+    } else {
+      console.error('Failed to save message:', userMsgError)
+      setErrorMessage('Failed to save your message. Please try again.')
+      setPromptValue(content)
+      setIsStreaming(false)
+      return
     }
 
-    // Create task
-    const taskRes = await supabase
-      .from('tasks')
-      .insert({
-        client_id: activeClient.id,
-        department_id: DEPARTMENT_IDS.SEO, // Phase 1: SEO only. Will be dynamic in Phase 3.
-        session_id: sessionId,
-        user_id: user.id,
-        title: content.length > 60 ? content.slice(0, 57) + '...' : content,
-        status: 'running',
-      })
-      .select()
-      .single()
-
-    // Build message history for Hermes
-    const hermesMessages = messages.map((m) => ({
+    // Task creation has been removed because seo-agent does not require it.
+    // Build message history for Agent
+    const agentMessages = messages.map((m) => ({
       role: m.role as 'user' | 'assistant',
       content: m.content,
     }))
-    hermesMessages.push({ role: 'user', content })
+    agentMessages.push({ role: 'user', content })
 
     let accumulated = ''
     let timeoutId: NodeJS.Timeout | null = null
     try {
       const abortController = new AbortController()
       abortControllerRef.current = abortController
-      
+
       // Auto-stop after 5 minutes
       timeoutId = setTimeout(() => {
         abortController.abort()
       }, 5 * 60 * 1000)
 
-      const stream = streamHermesChat({
-        messages: hermesMessages,
+      const stream = streamAgentChat({
+        messages: agentMessages,
         clientId: activeClient.id,
         clientName: activeClient.name,
         clientDomain: activeClient.domain,
         clientDescription: activeClient.description,
         clientCategory: activeClient.category,
         sessionId,
+        taskId: undefined,
         department: 'seo', // Phase 1: SEO only. Will be dynamic in Phase 3.
         signal: abortController.signal
       })
 
       for await (const chunk of stream) {
         if (chunk.type === 'error') {
-          throw new Error(chunk.error ?? 'Unknown error from Hermes')
+          throw new Error(chunk.error ?? 'Unknown error from Agent')
         }
-        
+
         if (chunk.type === 'text' && chunk.content) {
           accumulated += chunk.content
           setStreamingContent(accumulated)
@@ -170,41 +210,41 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         }
       }
 
-      // Update task status
-      if (taskRes.data) {
-        await supabase
-          .from('tasks')
-          .update({ status: 'completed', updated_at: new Date().toISOString() })
-          .eq('id', taskRes.data.id)
-      }
+      // Update task status (removed)
     } catch (err: any) {
       if (err.name === 'AbortError' || err.message?.includes('abort')) {
         console.log('Chat stream aborted by user')
       } else {
         console.error('Chat error:', err)
+        setErrorMessage('Unable to reach the AI agent — check the agent service.')
+        if (!accumulated) {
+          accumulated = '⚠️ I encountered an error connecting to my core systems. Please check if the agent service is running and try again.'
+        } else {
+          accumulated += '\n\n*(Error: Connection to agent lost)*'
+        }
       }
-      if (taskRes.data) {
-        await supabase
-          .from('tasks')
-          .update({ status: 'failed', updated_at: new Date().toISOString() })
-          .eq('id', taskRes.data.id)
-      }
+      // Fallback if backend failed to update the task (removed)
     } finally {
-      // Save assistant message even if aborted or failed
+      // If agent returned nothing and no error was thrown
+      if (!accumulated && abortControllerRef.current && !abortControllerRef.current.signal.aborted) {
+        accumulated = "I'm sorry, I wasn't able to generate a response. Please try again."
+      }
+
       if (accumulated) {
-        const assistantMsgRes = await supabase
-          .from('chat_messages')
-          .insert({
+        // Just update local state so the user sees the message
+        // DB saving is now robustly handled by the Next.js API route!
+        setMessages((prev) => [
+          ...prev, 
+          {
+            id: crypto.randomUUID(),
             session_id: sessionId,
             client_id: activeClient.id,
             role: 'assistant',
             content: accumulated,
-          })
-          .select()
-          .single()
-        if (assistantMsgRes.data) {
-          setMessages((prev) => [...prev, assistantMsgRes.data!])
-        }
+            created_at: new Date().toISOString(),
+            metadata: {}
+          }
+        ])
 
         // Update session title if first exchange
         if (messages.length === 0) {
@@ -247,7 +287,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         <div className="ml-auto flex items-center gap-2">
           <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-500">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
-            Hermes Active
+            SEO Agent
           </div>
         </div>
       </div>
@@ -266,6 +306,14 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
 
       {/* Input */}
       <div className="border-t border-gray-200 dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50">
+        {errorMessage && (
+          <div
+            role="alert"
+            className="mb-3 rounded-md bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-sm text-red-700 dark:text-red-400"
+          >
+            {errorMessage}
+          </div>
+        )}
         <PromptInput
           value={promptValue}
           onChange={setPromptValue}

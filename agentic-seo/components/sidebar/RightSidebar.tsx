@@ -77,12 +77,15 @@ export default function RightSidebar() {
     const simpleTasksRes = await supabase
       .from('tasks')
       .select('*')
+      .is('session_id', null)
       .in('status', ['running', 'pending', 'waiting_approval', 'completed', 'failed'])
       .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString())
       .order('created_at', { ascending: false })
       .limit(50)
 
-    const simpleTasks = (simpleTasksRes.data ?? []).map((t: any) => ({
+    const simpleTasks = (simpleTasksRes.data ?? [])
+      .filter((t: any) => !t.output?.is_chat)
+      .map((t: any) => ({
       ...t,
       workflow_templates: { name: `Campaign Task: ${t.title || t.type}` },
       is_simple_task: true,
@@ -109,22 +112,36 @@ export default function RightSidebar() {
         { event: '*', schema: 'public', table: 'tasks' },
         (payload) => {
           if (payload.eventType === 'INSERT') {
+            // For INSERT, we have the full row. Ignore if it has a session_id (chat tasks).
+            if (payload.new.session_id !== null && payload.new.session_id !== undefined) return
+            if (payload.new.output?.is_chat) return
+            
             if (!['running', 'pending', 'waiting_approval', 'completed', 'failed'].includes(payload.new.status)) return
             const newTask = { ...payload.new, workflow_templates: { name: `Campaign Task: ${payload.new.title || payload.new.type}` }, is_simple_task: true } as any
-            setTaskRuns((prev) => [newTask, ...prev].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 10))
+            setTaskRuns((prev) => {
+              // Prevent duplicates
+              if (prev.some(t => t.id === newTask.id)) return prev;
+              return [newTask, ...prev].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 10)
+            })
           } else if (payload.eventType === 'UPDATE') {
             const newTask = payload.new as any;
             const isCompleted = newTask.status === 'completed';
 
             setTaskRuns((prev) => {
+              if (newTask.output?.is_chat) return prev;
               const oldTask = prev.find(t => t.id === newTask.id);
-              const wasCompleted = oldTask?.status === 'completed';
+              
+              // If we don't have this task in our state, it might be a chat task update
+              // where session_id wasn't included in the payload. Safest to ignore it.
+              if (!oldTask) return prev;
+
+              const wasCompleted = oldTask.status === 'completed';
 
               if (isCompleted && !wasCompleted) {
                 setTimeout(() => {
                   addNotification({
                     ...newTask,
-                    workflow_templates: oldTask?.workflow_templates || { name: `Campaign Task: ${newTask.title || newTask.type}` },
+                    workflow_templates: oldTask.workflow_templates || { name: `Campaign Task: ${newTask.title || newTask.type}` },
                     is_simple_task: true
                   });
                 }, 0);
@@ -134,12 +151,7 @@ export default function RightSidebar() {
                 return prev.filter((t) => t.id !== newTask.id)
               }
 
-              if (oldTask) {
-                return prev.map((t) => t.id === newTask.id ? { ...newTask, workflow_templates: t.workflow_templates, is_simple_task: true } as any : t)
-              } else {
-                const addedTask = { ...newTask, workflow_templates: { name: `Campaign Task: ${newTask.title || newTask.type}` }, is_simple_task: true } as any;
-                return [addedTask, ...prev].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 10)
-              }
+              return prev.map((t) => t.id === newTask.id ? { ...newTask, workflow_templates: t.workflow_templates, is_simple_task: true } as any : t)
             })
           } else if (payload.eventType === 'DELETE') {
             setTaskRuns((prev) => prev.filter((t) => t.id !== payload.old.id))

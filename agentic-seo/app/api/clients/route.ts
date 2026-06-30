@@ -28,9 +28,12 @@ export async function POST(request: NextRequest) {
 
   if (!name) return NextResponse.json({ error: 'Client name is required' }, { status: 400 })
 
+  const rawLimit = parseInt(process.env.DEFAULT_BACKLINK_LIMIT ?? '50', 10)
+  const backlink_limit = isNaN(rawLimit) ? 50 : rawLimit
+
   const { data, error: clientError } = await supabaseAdmin
     .from('clients')
-    .insert({ name, domain, description, category, created_by: user.id } as any)
+    .insert({ name, domain, description, category, created_by: user.id, backlink_limit } as any)
     .select()
     .single()
 

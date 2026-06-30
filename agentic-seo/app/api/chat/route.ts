@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { buildClientSystemMessage } from '@/lib/hermes/client'
+import { buildClientSystemMessage } from '@/lib/agent/client'
 
-const HERMES_URL = process.env.NEXT_PUBLIC_HERMES_URL ?? 'http://localhost:8642'
-const HERMES_API_KEY = process.env.HERMES_API_KEY ?? ''
+const AGENT_URL = process.env.AGENT_URL ?? 'http://localhost:8000'
+const AGENT_API_KEY = process.env.AGENT_API_KEY ?? ''
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { messages, clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, department, stream = true } = body
+    const { messages, clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, taskId, department, stream = true } = body
 
     if (!messages || !clientId || !clientName || !sessionId) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -15,37 +15,35 @@ export async function POST(request: NextRequest) {
 
     const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, department })
 
-    console.log(`[Chat API] Sending request to Hermes at ${HERMES_URL}`)
+    console.log(`[Chat API] Sending request to Agent at ${AGENT_URL}`)
     console.log(`[Chat API] Client ID: ${clientId}, Session ID: ${sessionId}`)
 
-    // Forward to Hermes
-    const hermesResponse = await fetch(`${HERMES_URL}/v1/chat/completions`, {
+    // Forward to Agent
+    const agentResponse = await fetch(`${AGENT_URL}/chat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${HERMES_API_KEY}`,
+        Authorization: `Bearer ${AGENT_API_KEY}`,
       },
       signal: request.signal,
       body: JSON.stringify({
-        model: 'hermes-agent',
         messages: [systemMessage, ...messages],
-        stream,
       }),
     })
 
-    if (!hermesResponse.ok) {
-      const errorText = await hermesResponse.text()
-      console.error(`[Chat API] Hermes error: ${hermesResponse.status} ${errorText}`)
+    if (!agentResponse.ok) {
+      const errorText = await agentResponse.text()
+      console.error(`[Chat API] Agent error: ${agentResponse.status} ${errorText}`)
       return NextResponse.json(
-        { error: `Hermes error: ${hermesResponse.status} ${errorText}` },
+        { error: `Agent error: ${agentResponse.status} ${errorText}` },
         { status: 502 }
       )
     }
     
-    console.log(`[Chat API] Hermes connected successfully. Streaming: ${stream}`)
+    console.log(`[Chat API] Agent connected successfully. Streaming: ${stream}`)
 
     if (!stream) {
-      const data = await hermesResponse.json()
+      const data = await agentResponse.json()
       return NextResponse.json(data)
     }
 
@@ -55,10 +53,12 @@ export async function POST(request: NextRequest) {
 
     const transformedStream = new ReadableStream({
       async start(controller) {
-        const reader = hermesResponse.body!.getReader()
+        const reader = agentResponse.body!.getReader()
         const decoder = new TextDecoder()
         let buffer = ''
         let isClosed = false
+
+        let accumulatedContent = ''
 
         const safeEnqueue = (data: Uint8Array) => {
           if (!isClosed) {
@@ -70,6 +70,24 @@ export async function POST(request: NextRequest) {
           if (!isClosed) {
             isClosed = true
             try { controller.close() } catch (e) { console.error('Close error:', e) }
+          }
+        }
+
+        const saveAssistantMessage = async () => {
+          if (!accumulatedContent) return
+          try {
+            console.log('[Chat API] Saving assistant message to DB (length:', accumulatedContent.length, ')')
+            const { createServiceClient } = await import('@/lib/supabase/server')
+            const supabase = createServiceClient()
+            await supabase.from('chat_messages').insert({
+              session_id: sessionId,
+              client_id: clientId,
+              role: 'assistant',
+              content: accumulatedContent,
+            })
+            // Task update has been removed because seo-agent does not require it.
+          } catch (e) {
+            console.error('[Chat API] Failed to save assistant message:', e)
           }
         }
 
@@ -86,8 +104,8 @@ export async function POST(request: NextRequest) {
               const trimmed = line.trim()
               if (!trimmed) continue
 
-              // Log raw data from Hermes to debug streaming issues
-              console.log(`[Chat API Raw] ${trimmed}`)
+              // Log raw data from Agent to debug streaming issues
+              // console.log(`[Chat API Raw] ${trimmed}`)
 
               // Track event type
               if (trimmed.startsWith('event:')) {
@@ -100,17 +118,23 @@ export async function POST(request: NextRequest) {
                 if (data === '[DONE]') {
                   safeEnqueue(encoder.encode('data: [DONE]\n\n'))
                   safeClose()
+                  await saveAssistantMessage()
                   return
                 }
 
                 try {
                   const parsed = JSON.parse(data)
 
-                  // Hermes custom tool progress event
-                  if (prevEventType === 'hermes.tool.progress' || parsed.tool) {
+                  // Custom tool progress event from Python Agent
+                  if (prevEventType === 'agent.tool.progress' || parsed.tool) {
+                    if (typeof parsed.tool !== 'object' || parsed.tool === null) {
+                      console.warn('[Chat API] Malformed tool_progress chunk — skipping:', parsed)
+                      prevEventType = ''
+                      continue
+                    }
                     const chunk = JSON.stringify({
                       type: 'tool_progress',
-                      tool: typeof parsed.tool === 'object' && parsed.tool !== null ? parsed.tool : parsed,
+                      tool: parsed.tool,
                     })
                     safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
                     prevEventType = ''
@@ -120,6 +144,7 @@ export async function POST(request: NextRequest) {
                   // Standard text delta
                   const delta = parsed.choices?.[0]?.delta?.content
                   if (delta) {
+                    accumulatedContent += delta
                     const chunk = JSON.stringify({ type: 'text', content: delta })
                     safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
                   }
@@ -130,16 +155,19 @@ export async function POST(request: NextRequest) {
             }
           }
           safeClose()
+          await saveAssistantMessage()
         } catch (err: any) {
           if (err.name === 'AbortError' || err.message?.includes('abort')) {
              console.log('[Chat API] Request aborted by client')
              safeClose()
+             await saveAssistantMessage()
              return
           }
           console.error('[Chat API] Stream processing error:', err)
           const chunk = JSON.stringify({ type: 'error', error: String(err) })
           safeEnqueue(encoder.encode(`data: ${chunk}\n\n`))
           safeClose()
+          await saveAssistantMessage()
         } finally {
           reader.releaseLock()
         }

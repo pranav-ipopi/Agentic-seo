@@ -61,7 +61,7 @@ class PliggGenericTemplate(BaseTemplate):
         self.REGISTER_URL = f"{self.BASE_URL}{register_path}"
         self.SUBMIT_URL = f"{self.BASE_URL}{submit_path}"
 
-    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str, description: str = "", tags: str = "") -> Dict[str, Any]:
         """
         Main entry point. Executes the full backlink creation flow.
         """
@@ -77,7 +77,7 @@ class PliggGenericTemplate(BaseTemplate):
         await self._ensure_logged_in(page)
 
         # Step 3: Submit the bookmark
-        backlink_url = await self._submit_bookmark(page, client_site, keyword)
+        backlink_url = await self._submit_bookmark(page, client_site, keyword, description, tags)
 
         # Step 4: Logout
         await self._logout(page)
@@ -118,7 +118,7 @@ class PliggGenericTemplate(BaseTemplate):
     async def _call_ocr_fuzzer(self, image_path: str) -> dict:
         import httpx
         import os
-        url = os.environ.get("OCR_FUZZER_URL", "http://localhost:8000/solve")
+        url = os.environ.get("OCR_FUZZER_URL", "http://localhost:8001/solve")
         try:
             async with httpx.AsyncClient() as client:
                 with open(image_path, "rb") as f:
@@ -234,7 +234,7 @@ class PliggGenericTemplate(BaseTemplate):
                         except:
                             pass
                             
-                    if result and result.get("score", 0) >= 75:
+                    if result and result.get("score", 0) >= 80:
                         self.logger.info(f"OCR Fuzzer matched: '{result['text']}' (Score: {result['score']})")
                         log_event(self.logger, "captcha_solved", {
                             "source": "ocr_fuzzer",
@@ -546,7 +546,7 @@ class PliggGenericTemplate(BaseTemplate):
 
         self.logger.info("Registration flow finished")
 
-    async def _submit_bookmark(self, page: Page, client_site: str, keyword: str) -> str:
+    async def _submit_bookmark(self, page: Page, client_site: str, keyword: str, description: str = "", tags: str = "") -> str:
         """Submit the bookmark and return the created story/backlink URL. All selectors from config."""
         self.logger.info(f"Bookmark submission started: url={client_site}, keyword={keyword}")
 
@@ -575,7 +575,8 @@ class PliggGenericTemplate(BaseTemplate):
         desc_templates = self.config.get("description_templates", [
             "Resource related to {keyword}. Automated bookmark submission."
         ])
-        description_text = random.choice(desc_templates).format(keyword=keyword)
+        description_text = description if description else random.choice(desc_templates).format(keyword=keyword)
+        tags_text = tags if tags else keyword
 
         await self.safe_goto(page, self.SUBMIT_URL)
         cf_cleared = await handle_cloudflare_challenge(page)
@@ -620,7 +621,7 @@ class PliggGenericTemplate(BaseTemplate):
                 await asyncio.sleep(random.uniform(0.5, 1.5))
 
                 tags_loc = page.locator(f"{tags_sel}, {tags_fallback}")
-                await self.human_type(page, tags_loc.first, keyword)
+                await self.human_type(page, tags_loc.first, tags_text)
                 await asyncio.sleep(random.uniform(0.5, 1.5))
 
                 # Use fill() for description body — it can be very long text
@@ -643,7 +644,7 @@ class PliggGenericTemplate(BaseTemplate):
                 
                 tags_loc = page.locator(f"{tags_sel}, {tags_fallback}")
                 if await tags_loc.count() > 0 and await tags_loc.first.input_value() == "":
-                    await self.human_type(page, tags_loc.first, keyword)
+                    await self.human_type(page, tags_loc.first, tags_text)
                 
                 body_loc = page.locator(f"{body_sel}, {body_fallback}")
                 if await body_loc.count() > 0 and await body_loc.first.input_value() == "":
@@ -704,18 +705,18 @@ class PliggGenericTemplate(BaseTemplate):
                     await self._add_to_solvemedia_dict(self.last_captcha_text)
                 break
 
-        # Extract backlink URL (uses base class implementation with config)
-        backlink_url = await self._extract_backlink_url(page)
-        if not backlink_url:
-            current = page.url
-            if "/story" in current:
-                backlink_url = current
-            else:
-                raise SubmissionFailedError(
-                    message="Could not extract backlink URL after submission. Check site changes.",
-                    step="submit_bookmark",
-                    url=self.BASE_URL
-                )
+        # Extract backlink URL
+        # The user requested to absolutely pick up the current URL, not search for other stories.
+        current_url = page.url
+        
+        if "login" in current_url.lower() or "register" in current_url.lower():
+            raise SubmissionFailedError(
+                message="Could not extract backlink URL after submission. Redirected to login/register.",
+                step="submit_bookmark",
+                url=self.BASE_URL
+            )
+            
+        backlink_url = current_url
 
         self.logger.info(f"Bookmark submitted. Extracted backlink: {backlink_url}")
         return backlink_url

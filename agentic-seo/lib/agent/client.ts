@@ -1,37 +1,37 @@
 /**
- * Hermes Agent API client
+ * Agent Agent API client
  *
  * Wraps the internal Next.js API route (/api/chat) to securely communicate 
- * with the Hermes OpenAI-compatible endpoint.
- * Injects client_id into the system message so Hermes stays stateless
+ * with the Agent OpenAI-compatible endpoint.
+ * Injects client_id into the system message so Agent stays stateless
  * while we own client isolation in Supabase.
  *
- * Hermes API: POST /v1/chat/completions
- * Streaming: SSE with `hermes.tool.progress` custom events
+ * Agent API: POST /v1/chat/completions
+ * Streaming: SSE with `agent.tool.progress` custom events
  */
 
-export interface HermesMessage {
+export interface AgentMessage {
   role: 'system' | 'user' | 'assistant' | 'tool'
   content: string
   tool_call_id?: string
   name?: string
 }
 
-export interface HermesToolProgress {
+export interface AgentToolProgress {
   tool: string
   status: 'started' | 'running' | 'completed' | 'failed'
   message?: string
 }
 
-export interface HermesChunk {
+export interface AgentChunk {
   type: 'text' | 'tool_progress' | 'done' | 'error'
   content?: string
-  tool?: HermesToolProgress
+  tool?: AgentToolProgress
   error?: string
 }
 
 
-// Department-specific persona and capabilities injected into the Hermes system prompt
+// Department-specific persona and capabilities injected into the Agent system prompt
 const DEPARTMENT_PERSONAS: Record<string, { role: string; capabilities: string }> = {
   seo: {
     role: 'expert SEO specialist',
@@ -54,9 +54,9 @@ Canva and Figma asset management.`,
 }
 
 /**
- * Build a system message that injects client and department context into every Hermes call.
+ * Build a system message that injects client and department context into every Agent call.
  * This is how we achieve client isolation and department-specific agent personas
- * without requiring separate Hermes instances per department.
+ * without requiring separate Agent instances per department.
  */
 export function buildClientSystemMessage(params: {
   clientId: string
@@ -66,7 +66,7 @@ export function buildClientSystemMessage(params: {
   clientCategory?: string | null
   sessionId: string
   department?: string | null  // department slug: 'seo' | 'execution' | 'design'
-}): HermesMessage {
+}): AgentMessage {
   const dept = params.department ?? 'seo'
   const persona = DEPARTMENT_PERSONAS[dept] ?? DEPARTMENT_PERSONAS.seo
 
@@ -94,6 +94,9 @@ CRITICAL SECURITY GUARDRAILS:
 You have access to the following capabilities:
 ${persona.capabilities}
 
+CRITICAL TOOL INSTRUCTION:
+Do NOT output raw XML or <function> tags. You must use the native tool calling API to invoke tools.
+
 Always be specific, data-driven, and actionable in your responses.`,
   }
 }
@@ -102,17 +105,18 @@ Always be specific, data-driven, and actionable in your responses.`,
  * Stream a chat completion from the internal Next.js API.
  * Yields chunks including text deltas and tool progress events.
  */
-export async function* streamHermesChat(params: {
-  messages: HermesMessage[]
+export async function* streamAgentChat(params: {
+  messages: AgentMessage[]
   clientId: string
   clientName: string
   clientDomain?: string | null
   clientDescription?: string | null
   clientCategory?: string | null
   sessionId: string
+  taskId?: string
   department?: string | null
   signal?: AbortSignal
-}): AsyncGenerator<HermesChunk> {
+}): AsyncGenerator<AgentChunk> {
   const response = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -173,8 +177,8 @@ export async function* streamHermesChat(params: {
  * Simple non-streaming chat completion from the internal Next.js API.
  * Used for quick single-turn queries.
  */
-export async function chatWithHermes(params: {
-  messages: HermesMessage[]
+export async function chatWithAgent(params: {
+  messages: AgentMessage[]
   clientId: string
   clientName: string
   clientDomain?: string | null

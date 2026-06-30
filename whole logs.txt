@@ -1,0 +1,1016 @@
+0|backlink-worker  | 2026-06-29T18:36:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:36: 2026-06-29 18:36:36 | INFO     | backlink_automation | Navigation and security check successfully passed for https://prbookmarkingwebsites.com/submit
+0|backlink-worker  | 2026-06-29T18:36:36: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:37: 2026-06-29 18:36:37 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:36:37: 2026-06-29 18:36:37 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:36:38: 2026-06-29 18:36:38 | INFO     | backlink_automation | [TaskRun 1b4d6501-28d0-40e9-8fa8-01abf6f0b32f] Executing step 2/2: Verification & Reporting on https://prbookmarkingwebsites.com/
+0|backlink-worker  | 2026-06-29T18:36:38: 2026-06-29 18:36:38 | INFO     | backlink_automation | [TaskRun 1b4d6501-28d0-40e9-8fa8-01abf6f0b32f] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:36:39: 2026-06-29 18:36:39 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 23/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Popped job 8d49e831-90da-47f5-a9a1-14a50cd3ce41 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.12 seconds.
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=8d49e831-90da-47f5-a9a1-14a50cd3ce41 | type=new
+0|backlink-worker  | 2026-06-29T18:36:40: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Navigating to https://mediajx.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://prbookmarkingwebsites.com/story29189760/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:36:40: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:40: 
+0|backlink-worker  | 2026-06-29T18:36:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:40: 2026-06-29 18:36:40 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:36:40: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:41: 2026-06-29 18:36:41 | INFO     | backlink_automation | [TaskRun 8d49e831-90da-47f5-a9a1-14a50cd3ce41] Executing step 1/2: Submission on https://mediajx.com/
+0|backlink-worker  | 2026-06-29T18:36:41: 2026-06-29 18:36:41 | INFO     | backlink_automation | [TaskRun 8d49e831-90da-47f5-a9a1-14a50cd3ce41] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:36:42: 2026-06-29 18:36:42 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:36:42: 2026-06-29 18:36:42 | INFO     | backlink_automation | Registration started with username=georgecollins80519gly4
+0|backlink-worker  | 2026-06-29T18:36:42: 2026-06-29 18:36:42 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:36:42: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:42: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:42: 2026-06-29 18:36:42 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/register
+0|backlink-worker  | 2026-06-29T18:36:42: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:42: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:44: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:44: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:45: 2026-06-29 18:36:45 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:36:45: 2026-06-29 18:36:45 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:36:45: 2026-06-29 18:36:45 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:36:46: 2026-06-29 18:36:46 | INFO     | backlink_automation | Successfully created backlink: https://prbookmarkingwebsites.com/story29189760/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:36:46: 2026-06-29 18:36:46 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://prbookmarkingwebsites.com | client_site=https://mainstdental.us/ | keyword=Dentist in Weatherford Texas | backlink_url=https://prbookmarkingwebsites.com/story29189760/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:36:46: 2026-06-29 18:36:46 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:36:48: 2026-06-29 18:36:48 | INFO     | backlink_automation | EVENT: success | task_run_id=142b84ef-937a-4367-bbc2-b6f6297b3c83 | target_url=https://prbookmarkingwebsites.com/ | live_url=https://prbookmarkingwebsites.com/story29189760/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:36:48: 2026-06-29 18:36:48 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=142b84ef-937a-4367-bbc2-b6f6297b3c83 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:36:49: [Worker 001] Navigating to https://opensocialfactory.com/...
+0|backlink-worker  | 2026-06-29T18:36:50: 2026-06-29 18:36:50 | INFO     | backlink_automation | [TaskRun 142b84ef-937a-4367-bbc2-b6f6297b3c83] Executing step 2/2: Verification & Reporting on https://prbookmarkingwebsites.com/
+0|backlink-worker  | 2026-06-29T18:36:50: 2026-06-29 18:36:50 | INFO     | backlink_automation | [TaskRun 142b84ef-937a-4367-bbc2-b6f6297b3c83] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:36:51: 2026-06-29 18:36:51 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 24/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:36:51: 2026-06-29 18:36:51 | INFO     | backlink_automation | Popped job 2980fe8f-54b7-4f9b-8a03-af95adf53713 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:36:51: 2026-06-29 18:36:51 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:36:51: 2026-06-29 18:36:51 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.86 seconds.
+0|backlink-worker  | 2026-06-29T18:36:51: 2026-06-29 18:36:51 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=2980fe8f-54b7-4f9b-8a03-af95adf53713 | type=new
+0|backlink-worker  | 2026-06-29T18:36:53: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:53: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:53: 2026-06-29 18:36:53 | INFO     | backlink_automation | [TemplateRunner] Routing https://opensocialfactory.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:36:53: 2026-06-29 18:36:53 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://opensocialfactory.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:36:53: 2026-06-29 18:36:53 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:36:53: 2026-06-29 18:36:53 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:36:53: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:53: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:53: 2026-06-29 18:36:53 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com
+0|backlink-worker  | 2026-06-29T18:36:53: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:53: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:54: 2026-06-29 18:36:54 | INFO     | backlink_automation | [TaskRun 2980fe8f-54b7-4f9b-8a03-af95adf53713] Executing step 1/2: Submission on https://mediajx.com/
+0|backlink-worker  | 2026-06-29T18:36:55: 2026-06-29 18:36:55 | INFO     | backlink_automation | [TaskRun 2980fe8f-54b7-4f9b-8a03-af95adf53713] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:36:55: 2026-06-29 18:36:55 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:36:55: 2026-06-29 18:36:55 | INFO     | backlink_automation | Registration started with username=fastcameronmartinez80924z8t1
+0|backlink-worker  | 2026-06-29T18:36:55: 2026-06-29 18:36:55 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:36:55: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:55: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:55: 2026-06-29 18:36:55 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/register
+0|backlink-worker  | 2026-06-29T18:36:55: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:55: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:56: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:36:56: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:36:57: 2026-06-29 18:36:57 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:36:57: 2026-06-29 18:36:57 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://opensocialfactory.com
+0|backlink-worker  | 2026-06-29T18:36:57: 2026-06-29 18:36:57 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:36:59: 2026-06-29 18:36:59 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:36:59: 2026-06-29 18:36:59 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:36:59: 2026-06-29 18:36:59 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:00: 2026-06-29 18:37:00 | INFO     | backlink_automation | OCR Fuzzer matched: 'coffee can' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:37:00: 2026-06-29 18:37:00 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=coffee can | score=100.0
+0|backlink-worker  | 2026-06-29T18:37:02: 2026-06-29 18:37:02 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:02: 2026-06-29 18:37:02 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:03: 2026-06-29 18:37:03 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:37:03: 2026-06-29 18:37:03 | INFO     | backlink_automation | OCR Fuzzer matched: 'water gate' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:37:03: 2026-06-29 18:37:03 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=water gate | score=100.0
+0|backlink-worker  | 2026-06-29T18:37:06: 2026-06-29 18:37:06 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://mediajx.com | username=georgecollins80519gly4
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | Navigating to https://mediajx.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:09: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:09: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:09: 2026-06-29 18:37:09 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/submit
+0|backlink-worker  | 2026-06-29T18:37:09: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:09: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:10: 2026-06-29 18:37:10 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:37:10: 2026-06-29 18:37:10 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+0|backlink-worker  | 2026-06-29T18:37:10: 2026-06-29 18:37:10 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:10: 2026-06-29 18:37:10 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:11: 2026-06-29 18:37:11 | INFO     | backlink_automation | OCR Fuzzer matched: 'cor blimey' (Score: 90.0)
+0|backlink-worker  | 2026-06-29T18:37:11: 2026-06-29 18:37:11 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=cor blimey | score=90.0
+0|backlink-worker  | 2026-06-29T18:37:13: 2026-06-29 18:37:13 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:13: 2026-06-29 18:37:13 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:14: 2026-06-29 18:37:14 | INFO     | backlink_automation | OCR Fuzzer matched: 'draw a blank' (Score: 82.6086956521739)
+0|backlink-worker  | 2026-06-29T18:37:14: 2026-06-29 18:37:14 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=draw a blank | score=82.6086956521739
+0|backlink-worker  | 2026-06-29T18:37:14: 2026-06-29 18:37:14 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:37:17: 2026-06-29 18:37:17 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://prbookmarkingwebsites.com/story29189768/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:17: 2026-06-29 18:37:17 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:37:17: 2026-06-29 18:37:17 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://opensocialfactory.com | username=fastcameronmartinez80924z8t1
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:21: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:21: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/submit
+0|backlink-worker  | 2026-06-29T18:37:21: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:21: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:21: 2026-06-29 18:37:21 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:37:23: 2026-06-29 18:37:23 | INFO     | backlink_automation | Successfully created backlink: https://prbookmarkingwebsites.com/story29189768/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:23: 2026-06-29 18:37:23 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://prbookmarkingwebsites.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://prbookmarkingwebsites.com/story29189768/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:25: 2026-06-29 18:37:25 | INFO     | backlink_automation | EVENT: success | task_run_id=b6b91e5b-eca2-49aa-8194-2c2bdea56541 | target_url=https://prbookmarkingwebsites.com/ | live_url=https://prbookmarkingwebsites.com/story29189768/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:25: 2026-06-29 18:37:25 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=b6b91e5b-eca2-49aa-8194-2c2bdea56541 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:37:26: [Worker 004] Navigating to https://bookmarkport.com/...
+0|backlink-worker  | 2026-06-29T18:37:27: 2026-06-29 18:37:27 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:27: 2026-06-29 18:37:27 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:27: 2026-06-29 18:37:27 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:28: 2026-06-29 18:37:28 | INFO     | backlink_automation | OCR Fuzzer matched: 'blahblahblah' (Score: 92.3076923076923)
+0|backlink-worker  | 2026-06-29T18:37:28: 2026-06-29 18:37:28 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=blahblahblah | score=92.3076923076923
+0|backlink-worker  | 2026-06-29T18:37:28: 2026-06-29 18:37:28 | INFO     | backlink_automation | [TaskRun b6b91e5b-eca2-49aa-8194-2c2bdea56541] Executing step 2/2: Verification & Reporting on https://prbookmarkingwebsites.com/
+0|backlink-worker  | 2026-06-29T18:37:29: 2026-06-29 18:37:29 | INFO     | backlink_automation | [TaskRun b6b91e5b-eca2-49aa-8194-2c2bdea56541] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:37:29: 2026-06-29 18:37:29 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 25/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:37:29: 2026-06-29 18:37:29 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Popped job ed080745-6785-4bbf-8060-d0bb12d3bf9c from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.31 seconds.
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=ed080745-6785-4bbf-8060-d0bb12d3bf9c | type=new
+0|backlink-worker  | 2026-06-29T18:37:30: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:30: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkport.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkport.com for client_site=https://retailers.landrover.in/ShaktiLandRover/defender, keyword=Defender onroad price in bangalore
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:37:30: 2026-06-29 18:37:30 | INFO     | backlink_automation | Navigating to https://bookmarkport.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:30: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:31: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:31: 2026-06-29 18:37:31 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkport.com
+0|backlink-worker  | 2026-06-29T18:37:31: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:31: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:31: 2026-06-29 18:37:31 | INFO     | backlink_automation | [TaskRun ed080745-6785-4bbf-8060-d0bb12d3bf9c] Executing step 1/2: Submission on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:37:31: 2026-06-29 18:37:31 | INFO     | backlink_automation | [TaskRun ed080745-6785-4bbf-8060-d0bb12d3bf9c] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:37:32: 2026-06-29 18:37:32 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:37:32: 2026-06-29 18:37:32 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:37:32: 2026-06-29 18:37:32 | INFO     | backlink_automation | Registration started with username=haydenharris7829alz7
+0|backlink-worker  | 2026-06-29T18:37:32: 2026-06-29 18:37:32 | INFO     | backlink_automation | Navigating to https://bookmarkport.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:32: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:32: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:32: 2026-06-29 18:37:32 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkport.com/register
+0|backlink-worker  | 2026-06-29T18:37:32: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:32: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:34: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:34: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:35: 2026-06-29 18:37:35 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+0|backlink-worker  | 2026-06-29T18:37:35: 2026-06-29 18:37:35 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:37:35: 2026-06-29 18:37:35 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://bookmarkport.com
+0|backlink-worker  | 2026-06-29T18:37:35: 2026-06-29 18:37:35 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:37: 2026-06-29 18:37:37 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+0|backlink-worker  | 2026-06-29T18:37:37: 2026-06-29 18:37:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:37: 2026-06-29 18:37:37 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:37: 2026-06-29 18:37:37 | INFO     | backlink_automation | OCR Fuzzer matched: 'raspberry tart' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:37:37: 2026-06-29 18:37:37 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=raspberry tart | score=100.0
+0|backlink-worker  | 2026-06-29T18:37:41: 2026-06-29 18:37:41 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:37:41: 2026-06-29 18:37:41 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:41: 2026-06-29 18:37:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:41: 2026-06-29 18:37:41 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:42: 2026-06-29 18:37:42 | INFO     | backlink_automation | OCR Fuzzer matched: 'pie chart' (Score: 88.88888888888889)
+0|backlink-worker  | 2026-06-29T18:37:42: 2026-06-29 18:37:42 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=pie chart | score=88.88888888888889
+0|backlink-worker  | 2026-06-29T18:37:44: 2026-06-29 18:37:44 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://mediajx.com/story28725430/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:37:44: 2026-06-29 18:37:44 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:37:44: 2026-06-29 18:37:44 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:37:47: 2026-06-29 18:37:47 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://opensocialfactory.com/story26580821/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:47: 2026-06-29 18:37:47 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:37:50: 2026-06-29 18:37:50 | INFO     | backlink_automation | Successfully created backlink: https://mediajx.com/story28725430/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:37:50: 2026-06-29 18:37:50 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://mediajx.com | client_site=https://mainstdental.us/ | keyword=Dentist Near Me | backlink_url=https://mediajx.com/story28725430/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:37:50: 2026-06-29 18:37:50 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:37:50: 2026-06-29 18:37:50 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:37:51: 2026-06-29 18:37:51 | INFO     | backlink_automation | OCR Fuzzer matched: 'the other side' (Score: 78.62068965517241)
+0|backlink-worker  | 2026-06-29T18:37:51: 2026-06-29 18:37:51 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=the other side | score=78.62068965517241
+0|backlink-worker  | 2026-06-29T18:37:52: 2026-06-29 18:37:52 | INFO     | backlink_automation | EVENT: success | task_run_id=9133b772-b010-49a8-8d44-b1b57cc8c909 | target_url=https://mediajx.com/ | live_url=https://mediajx.com/story28725430/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:37:52: 2026-06-29 18:37:52 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=9133b772-b010-49a8-8d44-b1b57cc8c909 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:37:53: 2026-06-29 18:37:53 | INFO     | backlink_automation | Successfully created backlink: https://opensocialfactory.com/story26580821/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:53: 2026-06-29 18:37:53 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://opensocialfactory.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://opensocialfactory.com/story26580821/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:53: [Worker 005] Navigating to https://opensocialfactory.com/...
+0|backlink-worker  | 2026-06-29T18:37:55: 2026-06-29 18:37:55 | INFO     | backlink_automation | EVENT: success | task_run_id=aec8d1db-c49b-48d1-a844-84743df8beac | target_url=https://opensocialfactory.com/ | live_url=https://opensocialfactory.com/story26580821/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:37:55: 2026-06-29 18:37:55 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=aec8d1db-c49b-48d1-a844-84743df8beac | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:37:56: 2026-06-29 18:37:56 | INFO     | backlink_automation | [TaskRun 9133b772-b010-49a8-8d44-b1b57cc8c909] Executing step 2/2: Verification & Reporting on https://mediajx.com/
+0|backlink-worker  | 2026-06-29T18:37:56: 2026-06-29 18:37:56 | INFO     | backlink_automation | [TaskRun 9133b772-b010-49a8-8d44-b1b57cc8c909] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:37:56: 2026-06-29 18:37:56 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 26/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:37:57: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:57: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | [TemplateRunner] Routing https://opensocialfactory.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://opensocialfactory.com for client_site=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:37:57: [Worker 001] Navigating to https://mediajx.com/...
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Popped job b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.09 seconds.
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196 | type=new
+0|backlink-worker  | 2026-06-29T18:37:57: 2026-06-29 18:37:57 | INFO     | backlink_automation | [TaskRun aec8d1db-c49b-48d1-a844-84743df8beac] Executing step 2/2: Verification & Reporting on https://opensocialfactory.com/
+0|backlink-worker  | 2026-06-29T18:37:58: 2026-06-29 18:37:58 | INFO     | backlink_automation | [TaskRun aec8d1db-c49b-48d1-a844-84743df8beac] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:37:58: 2026-06-29 18:37:58 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 27/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:37:59: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:59: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:59: 2026-06-29 18:37:59 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com
+0|backlink-worker  | 2026-06-29T18:37:59: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:37:59: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:37:59: 2026-06-29 18:37:59 | INFO     | backlink_automation | Popped job 456968c0-9051-4b80-abdb-f646c1dd738f from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:37:59: 2026-06-29 18:37:59 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:37:59: 2026-06-29 18:37:59 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.83 seconds.
+0|backlink-worker  | 2026-06-29T18:37:59: 2026-06-29 18:37:59 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=456968c0-9051-4b80-abdb-f646c1dd738f | type=new
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | [TaskRun b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196] Executing step 1/2: Submission on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | [TaskRun b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://bookmarkport.com | username=haydenharris7829alz7
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | Bookmark submission started: url=https://retailers.landrover.in/ShaktiLandRover/defender, keyword=Defender onroad price in bangalore
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | Navigating to https://bookmarkport.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:00: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:00: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:00: 2026-06-29 18:38:00 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkport.com/submit
+0|backlink-worker  | 2026-06-29T18:38:00: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:00: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | Registration started with username=chillnicholastaylor4974bt76
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:38:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/register
+0|backlink-worker  | 2026-06-29T18:38:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:01: 2026-06-29 18:38:01 | INFO     | backlink_automation | [TaskRun 456968c0-9051-4b80-abdb-f646c1dd738f] Executing step 1/2: Submission on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | [TaskRun 456968c0-9051-4b80-abdb-f646c1dd738f] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:38:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | Navigating to https://mediajx.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:02: 2026-06-29 18:38:02 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:38:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:02: 
+0|backlink-worker  | 2026-06-29T18:38:03: 2026-06-29 18:38:03 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:38:03: 2026-06-29 18:38:03 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://opensocialfactory.com
+0|backlink-worker  | 2026-06-29T18:38:03: 2026-06-29 18:38:03 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:04: 2026-06-29 18:38:04 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:38:04: 2026-06-29 18:38:04 | INFO     | backlink_automation | Registration started with username=georgerobinson78707jq41
+0|backlink-worker  | 2026-06-29T18:38:04: 2026-06-29 18:38:04 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:04: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:04: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:04: 2026-06-29 18:38:04 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/register
+0|backlink-worker  | 2026-06-29T18:38:04: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:04: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:06: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:06: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:07: 2026-06-29 18:38:07 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:38:07: 2026-06-29 18:38:07 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:38:07: 2026-06-29 18:38:07 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:11: 2026-06-29 18:38:11 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:38:17: 2026-06-29 18:38:17 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:17: 2026-06-29 18:38:17 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:18: 2026-06-29 18:38:18 | INFO     | backlink_automation | OCR Fuzzer matched: 'time will tell' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:38:18: 2026-06-29 18:38:18 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=time will tell | score=100.0
+0|backlink-worker  | 2026-06-29T18:38:20: 2026-06-29 18:38:20 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:20: 2026-06-29 18:38:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:20: 2026-06-29 18:38:20 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:20: 2026-06-29 18:38:20 | INFO     | backlink_automation | OCR Fuzzer matched: 'are we there yet' (Score: 85.5)
+0|backlink-worker  | 2026-06-29T18:38:20: 2026-06-29 18:38:20 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=are we there yet | score=85.5
+0|backlink-worker  | 2026-06-29T18:38:22: 2026-06-29 18:38:22 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:22: 2026-06-29 18:38:22 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:22: 2026-06-29 18:38:22 | INFO     | backlink_automation | OCR Fuzzer matched: 'many happy returns' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:38:22: 2026-06-29 18:38:22 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=many happy returns | score=100.0
+0|backlink-worker  | 2026-06-29T18:38:24: 2026-06-29 18:38:24 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://opensocialfactory.com | username=chillnicholastaylor4974bt76
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | Navigating to https://opensocialfactory.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:25: 2026-06-29 18:38:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://opensocialfactory.com/submit
+0|backlink-worker  | 2026-06-29T18:38:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:26: 2026-06-29 18:38:26 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:38:27: 2026-06-29 18:38:27 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://mediajx.com | username=georgerobinson78707jq41
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Navigating to https://mediajx.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:29: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:29: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:29: 2026-06-29 18:38:29 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/submit
+0|backlink-worker  | 2026-06-29T18:38:29: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:29: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:30: 2026-06-29 18:38:30 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:38:30: 2026-06-29 18:38:30 | INFO     | backlink_automation | OCR Fuzzer matched: 'london calling' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:38:30: 2026-06-29 18:38:30 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=london calling | score=95.0
+0|backlink-worker  | 2026-06-29T18:38:33: 2026-06-29 18:38:33 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:38:34: 2026-06-29 18:38:34 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:38:37: 2026-06-29 18:38:37 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkport.com/story24535105/defender-onroad-price-in-bangalore
+0|backlink-worker  | 2026-06-29T18:38:37: 2026-06-29 18:38:37 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:38:38: 2026-06-29 18:38:38 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:38:41: 2026-06-29 18:38:41 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:41: 2026-06-29 18:38:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:41: 2026-06-29 18:38:41 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:42: 2026-06-29 18:38:42 | INFO     | backlink_automation | OCR Fuzzer matched: 'wheel group' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:38:42: 2026-06-29 18:38:42 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=wheel group | score=100.0
+0|backlink-worker  | 2026-06-29T18:38:43: 2026-06-29 18:38:43 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkport.com/story24535105/defender-onroad-price-in-bangalore
+0|backlink-worker  | 2026-06-29T18:38:43: 2026-06-29 18:38:43 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://bookmarkport.com | client_site=https://retailers.landrover.in/ShaktiLandRover/defender | keyword=Defender onroad price in bangalore | backlink_url=https://bookmarkport.com/story24535105/defender-onroad-price-in-bangalore
+0|backlink-worker  | 2026-06-29T18:38:45: 2026-06-29 18:38:45 | INFO     | backlink_automation | EVENT: success | task_run_id=53629aaa-5f43-462c-81ac-8a02c82e04ac | target_url=https://bookmarkport.com/ | live_url=https://bookmarkport.com/story24535105/defender-onroad-price-in-bangalore
+0|backlink-worker  | 2026-06-29T18:38:46: 2026-06-29 18:38:46 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=53629aaa-5f43-462c-81ac-8a02c82e04ac | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:38:46: [Worker 004] Navigating to https://dirstop.com/...
+0|backlink-worker  | 2026-06-29T18:38:46: 2026-06-29 18:38:46 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:38:48: 2026-06-29 18:38:48 | INFO     | backlink_automation | [TaskRun 53629aaa-5f43-462c-81ac-8a02c82e04ac] Executing step 2/2: Verification & Reporting on https://bookmarkport.com/
+0|backlink-worker  | 2026-06-29T18:38:49: 2026-06-29 18:38:49 | INFO     | backlink_automation | [TaskRun 53629aaa-5f43-462c-81ac-8a02c82e04ac] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:38:49: 2026-06-29 18:38:49 | INFO     | backlink_automation | [Task 4e5d731b-f52d-4b20-8cd0-2091ae58e8ce] Progress update: 45/50 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://opensocialfactory.com/story26580827/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:50: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:50: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:50: 
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | [TemplateRunner] Routing https://dirstop.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://dirstop.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Navigating to https://dirstop.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Popped job e12f32c3-75ba-414c-9bf9-533c73594456 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | Rate Limiter: Next job will run in 4.71 seconds.
+0|backlink-worker  | 2026-06-29T18:38:50: 2026-06-29 18:38:50 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=e12f32c3-75ba-414c-9bf9-533c73594456 | type=new
+0|backlink-worker  | 2026-06-29T18:38:51: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:51: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:51: 2026-06-29 18:38:51 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:38:51: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:51: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:51: 2026-06-29 18:38:51 | INFO     | backlink_automation | OCR Fuzzer matched: 'bob loblaw' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:38:51: 2026-06-29 18:38:51 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=bob loblaw | score=95.0
+0|backlink-worker  | 2026-06-29T18:38:51: 2026-06-29 18:38:51 | INFO     | backlink_automation | [TaskRun e12f32c3-75ba-414c-9bf9-533c73594456] Executing step 1/2: Submission on https://getsocialpr.com/
+0|backlink-worker  | 2026-06-29T18:38:52: 2026-06-29 18:38:52 | INFO     | backlink_automation | [TaskRun e12f32c3-75ba-414c-9bf9-533c73594456] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:38:52: 2026-06-29 18:38:52 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:38:52: 2026-06-29 18:38:52 | INFO     | backlink_automation | Registration started with username=margaretnguyen5439h1oz
+0|backlink-worker  | 2026-06-29T18:38:52: 2026-06-29 18:38:52 | INFO     | backlink_automation | Navigating to https://dirstop.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:38:52: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:52: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:52: 2026-06-29 18:38:52 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/register
+0|backlink-worker  | 2026-06-29T18:38:52: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:52: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:54: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:38:54: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:38:54: 2026-06-29 18:38:54 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:38:55: 2026-06-29 18:38:55 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:38:55: 2026-06-29 18:38:55 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:38:55: 2026-06-29 18:38:55 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:38:56: 2026-06-29 18:38:56 | INFO     | backlink_automation | Successfully created backlink: https://opensocialfactory.com/story26580827/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:38:56: 2026-06-29 18:38:56 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://opensocialfactory.com | client_site=https://mainstdental.us/ | keyword=Dentist Near Me | backlink_url=https://opensocialfactory.com/story26580827/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:38:57: 2026-06-29 18:38:57 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://mediajx.com/story28725437/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:38:57: 2026-06-29 18:38:57 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:38:58: 2026-06-29 18:38:58 | INFO     | backlink_automation | EVENT: success | task_run_id=eec89378-7a5e-4f6e-8ac0-41afb75ea09f | target_url=https://opensocialfactory.com/ | live_url=https://opensocialfactory.com/story26580827/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:38:58: 2026-06-29 18:38:58 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=eec89378-7a5e-4f6e-8ac0-41afb75ea09f | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:38:59: [Worker 005] Navigating to https://dirstop.com/...
+0|backlink-worker  | 2026-06-29T18:39:01: 2026-06-29 18:39:01 | INFO     | backlink_automation | [TaskRun eec89378-7a5e-4f6e-8ac0-41afb75ea09f] Executing step 2/2: Verification & Reporting on https://opensocialfactory.com/
+0|backlink-worker  | 2026-06-29T18:39:01: 2026-06-29 18:39:01 | INFO     | backlink_automation | [TaskRun eec89378-7a5e-4f6e-8ac0-41afb75ea09f] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:39:01: 2026-06-29 18:39:01 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 28/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:39:02: 2026-06-29 18:39:02 | INFO     | backlink_automation | Popped job ee8ab5ff-ea01-4ee1-9600-21a456dcdb8c from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:39:02: 2026-06-29 18:39:02 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:39:02: 2026-06-29 18:39:02 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.78 seconds.
+0|backlink-worker  | 2026-06-29T18:39:02: 2026-06-29 18:39:02 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=ee8ab5ff-ea01-4ee1-9600-21a456dcdb8c | type=new
+0|backlink-worker  | 2026-06-29T18:39:05: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:05: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | [TemplateRunner] Routing https://dirstop.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://dirstop.com for client_site=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | Navigating to https://dirstop.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | [TaskRun ee8ab5ff-ea01-4ee1-9600-21a456dcdb8c] Executing step 1/2: Submission on https://getsocialpr.com/
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | [TaskRun ee8ab5ff-ea01-4ee1-9600-21a456dcdb8c] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | Successfully created backlink: https://mediajx.com/story28725437/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://mediajx.com | client_site=https://mainstdental.us/ | keyword=Dentist in Weatherford Texas | backlink_url=https://mediajx.com/story28725437/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:05: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:05: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:05: 2026-06-29 18:39:05 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:39:05: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:05: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:07: 2026-06-29 18:39:07 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:39:07: 2026-06-29 18:39:07 | INFO     | backlink_automation | Registration started with username=smartsarahanderson26476qhgj
+0|backlink-worker  | 2026-06-29T18:39:07: 2026-06-29 18:39:07 | INFO     | backlink_automation | Navigating to https://dirstop.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:07: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:07: 
+0|backlink-worker  | 2026-06-29T18:39:07: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:07: 2026-06-29 18:39:07 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/register
+0|backlink-worker  | 2026-06-29T18:39:07: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:07: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:07: 2026-06-29 18:39:07 | INFO     | backlink_automation | EVENT: success | task_run_id=8d49e831-90da-47f5-a9a1-14a50cd3ce41 | target_url=https://mediajx.com/ | live_url=https://mediajx.com/story28725437/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:08: 2026-06-29 18:39:08 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=8d49e831-90da-47f5-a9a1-14a50cd3ce41 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:39:09: [Worker 001] Navigating to https://dirstop.com/...
+0|backlink-worker  | 2026-06-29T18:39:10: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:10: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:11: 2026-06-29 18:39:11 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:39:11: 2026-06-29 18:39:11 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:39:11: 2026-06-29 18:39:11 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:11: 2026-06-29 18:39:11 | INFO     | backlink_automation | [TaskRun 8d49e831-90da-47f5-a9a1-14a50cd3ce41] Executing step 2/2: Verification & Reporting on https://mediajx.com/
+0|backlink-worker  | 2026-06-29T18:39:12: 2026-06-29 18:39:12 | INFO     | backlink_automation | [TaskRun 8d49e831-90da-47f5-a9a1-14a50cd3ce41] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:39:12: 2026-06-29 18:39:12 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 29/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Popped job ad691d79-112b-4474-b871-66aaa9665030 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.87 seconds.
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=ad691d79-112b-4474-b871-66aaa9665030 | type=new
+0|backlink-worker  | 2026-06-29T18:39:13: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:13: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | [TemplateRunner] Routing https://dirstop.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://dirstop.com for client_site=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:39:13: 2026-06-29 18:39:13 | INFO     | backlink_automation | Navigating to https://dirstop.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:14: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:14: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:14: 2026-06-29 18:39:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:39:14: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:14: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:15: 2026-06-29 18:39:15 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:39:15: 2026-06-29 18:39:15 | INFO     | backlink_automation | Registration started with username=kimberlygomez71584hcvg
+0|backlink-worker  | 2026-06-29T18:39:15: 2026-06-29 18:39:15 | INFO     | backlink_automation | Navigating to https://dirstop.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:15: 2026-06-29 18:39:15 | INFO     | backlink_automation | [TaskRun ad691d79-112b-4474-b871-66aaa9665030] Executing step 1/2: Submission on https://getsocialpr.com/
+0|backlink-worker  | 2026-06-29T18:39:16: 2026-06-29 18:39:16 | INFO     | backlink_automation | [TaskRun ad691d79-112b-4474-b871-66aaa9665030] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:39:16: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:16: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:16: 2026-06-29 18:39:16 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/register
+0|backlink-worker  | 2026-06-29T18:39:16: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:16: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:16: 2026-06-29 18:39:16 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:16: 2026-06-29 18:39:16 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:17: 2026-06-29 18:39:17 | INFO     | backlink_automation | OCR Fuzzer matched: 'love is automatic' (Score: 94.11764705882352)
+0|backlink-worker  | 2026-06-29T18:39:17: 2026-06-29 18:39:17 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=love is automatic | score=94.11764705882352
+0|backlink-worker  | 2026-06-29T18:39:18: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:18: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:19: 2026-06-29 18:39:19 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:39:19: 2026-06-29 18:39:19 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://dirstop.com
+0|backlink-worker  | 2026-06-29T18:39:19: 2026-06-29 18:39:19 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:24: 2026-06-29 18:39:24 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:39:24: 2026-06-29 18:39:24 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://dirstop.com | username=margaretnguyen5439h1oz
+0|backlink-worker  | 2026-06-29T18:39:24: 2026-06-29 18:39:24 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:39:24: 2026-06-29 18:39:24 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:39:24: 2026-06-29 18:39:24 | INFO     | backlink_automation | Navigating to https://dirstop.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:25: 2026-06-29 18:39:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/submit
+0|backlink-worker  | 2026-06-29T18:39:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:25: 2026-06-29 18:39:25 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:39:28: 2026-06-29 18:39:28 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:28: 2026-06-29 18:39:28 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:29: 2026-06-29 18:39:29 | INFO     | backlink_automation | OCR Fuzzer matched: 'banana bread' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:39:29: 2026-06-29 18:39:29 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=banana bread | score=100.0
+0|backlink-worker  | 2026-06-29T18:39:32: 2026-06-29 18:39:32 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:32: 2026-06-29 18:39:32 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:33: 2026-06-29 18:39:33 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:39:33: 2026-06-29 18:39:33 | INFO     | backlink_automation | OCR Fuzzer matched: 'the other side' (Score: 78.62068965517241)
+0|backlink-worker  | 2026-06-29T18:39:33: 2026-06-29 18:39:33 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=the other side | score=78.62068965517241
+0|backlink-worker  | 2026-06-29T18:39:35: 2026-06-29 18:39:35 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:39:35: 2026-06-29 18:39:35 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://dirstop.com | username=smartsarahanderson26476qhgj
+0|backlink-worker  | 2026-06-29T18:39:35: 2026-06-29 18:39:35 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:39:35: 2026-06-29 18:39:35 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:39:35: 2026-06-29 18:39:35 | INFO     | backlink_automation | Navigating to https://dirstop.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:36: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:36: 2026-06-29 18:39:36 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/submit
+0|backlink-worker  | 2026-06-29T18:39:36: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:36: 2026-06-29 18:39:36 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://dirstop.com | username=kimberlygomez71584hcvg
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | Navigating to https://dirstop.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:40: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:40: 2026-06-29 18:39:40 | INFO     | backlink_automation | Navigation and security check successfully passed for https://dirstop.com/submit
+0|backlink-worker  | 2026-06-29T18:39:40: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:39:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:42: 2026-06-29 18:39:42 | INFO     | backlink_automation | OCR Fuzzer matched: 'words of wisdom' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:39:42: 2026-06-29 18:39:42 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=words of wisdom | score=95.0
+0|backlink-worker  | 2026-06-29T18:39:43: 2026-06-29 18:39:43 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:39:45: 2026-06-29 18:39:45 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:39:47: 2026-06-29 18:39:47 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:39:48: 2026-06-29 18:39:48 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:48: 2026-06-29 18:39:48 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:51: 2026-06-29 18:39:51 | INFO     | backlink_automation | OCR Fuzzer matched: 'leave me alone' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:39:51: 2026-06-29 18:39:51 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=leave me alone | score=100.0
+0|backlink-worker  | 2026-06-29T18:39:54: 2026-06-29 18:39:54 | INFO     | backlink_automation | Successfully created backlink: https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:54: 2026-06-29 18:39:54 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://dirstop.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:54: 2026-06-29 18:39:54 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:39:56: 2026-06-29 18:39:56 | INFO     | backlink_automation | EVENT: success | task_run_id=456968c0-9051-4b80-abdb-f646c1dd738f | target_url=https://dirstop.com/ | live_url=https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:56: 2026-06-29 18:39:56 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=456968c0-9051-4b80-abdb-f646c1dd738f | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:57: [Worker 004] Navigating to https://mediajx.com/...
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://dirstop.com/story29098689/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | OCR Fuzzer matched: 'once again' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:39:57: 2026-06-29 18:39:57 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=once again | score=100.0
+0|backlink-worker  | 2026-06-29T18:39:58: 2026-06-29 18:39:58 | INFO     | backlink_automation | [TaskRun 456968c0-9051-4b80-abdb-f646c1dd738f] Executing step 2/2: Verification & Reporting on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:39:59: 2026-06-29 18:39:59 | INFO     | backlink_automation | [TaskRun 456968c0-9051-4b80-abdb-f646c1dd738f] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:39:59: 2026-06-29 18:39:59 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 30/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:40:00: 2026-06-29 18:40:00 | INFO     | backlink_automation | Popped job 60df0e09-873c-4be9-ba7a-bc8d5e5b33a7 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:40:00: 2026-06-29 18:40:00 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:40:00: 2026-06-29 18:40:00 | INFO     | backlink_automation | Rate Limiter: Next job will run in 4.83 seconds.
+0|backlink-worker  | 2026-06-29T18:40:00: 2026-06-29 18:40:00 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=60df0e09-873c-4be9-ba7a-bc8d5e5b33a7 | type=new
+0|backlink-worker  | 2026-06-29T18:40:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:01: 2026-06-29 18:40:01 | INFO     | backlink_automation | [TemplateRunner] Routing https://mediajx.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:40:01: 2026-06-29 18:40:01 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://mediajx.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:40:01: 2026-06-29 18:40:01 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:40:01: 2026-06-29 18:40:01 | INFO     | backlink_automation | Navigating to https://mediajx.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:01: 2026-06-29 18:40:01 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:40:01: 
+0|backlink-worker  | 2026-06-29T18:40:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:02: 2026-06-29 18:40:02 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:40:02: 2026-06-29 18:40:02 | INFO     | backlink_automation | [TaskRun 60df0e09-873c-4be9-ba7a-bc8d5e5b33a7] Executing step 1/2: Submission on https://bookmarkloves.com/
+0|backlink-worker  | 2026-06-29T18:40:03: 2026-06-29 18:40:03 | INFO     | backlink_automation | [TaskRun 60df0e09-873c-4be9-ba7a-bc8d5e5b33a7] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:40:03: 2026-06-29 18:40:03 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:40:03: 2026-06-29 18:40:03 | INFO     | backlink_automation | Registration started with username=christopherreyes5426brgz
+0|backlink-worker  | 2026-06-29T18:40:03: 2026-06-29 18:40:03 | INFO     | backlink_automation | Navigating to https://mediajx.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:03: 2026-06-29 18:40:03 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://mediajx.com/register
+0|backlink-worker  | 2026-06-29T18:40:03: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:03: Cloudflare challenge active (attempt 1/15)...
+0|backlink-worker  | 2026-06-29T18:40:04: Cloudflare challenge active (attempt 2/15)...
+0|backlink-worker  | 2026-06-29T18:40:04: Cloudflare manual verification detected! Executing human-mouse bypass...
+0|backlink-worker  | 2026-06-29T18:40:05: 2026-06-29 18:40:05 | INFO     | backlink_automation | Successfully created backlink: https://dirstop.com/story29098689/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:40:05: 2026-06-29 18:40:05 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://dirstop.com | client_site=https://mainstdental.us/ | keyword=Dentist Near Me | backlink_url=https://dirstop.com/story29098689/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:40:06: 2026-06-29 18:40:06 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://dirstop.com/story29098690/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:40:06: 2026-06-29 18:40:06 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:40:07: 2026-06-29 18:40:07 | INFO     | backlink_automation | EVENT: success | task_run_id=ed080745-6785-4bbf-8060-d0bb12d3bf9c | target_url=https://dirstop.com/ | live_url=https://dirstop.com/story29098689/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:40:07: 2026-06-29 18:40:07 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=ed080745-6785-4bbf-8060-d0bb12d3bf9c | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:40:08: [Worker 005] Navigating to https://getsocialpr.com/...
+0|backlink-worker  | 2026-06-29T18:40:09: Executing natural hover to coordinates X:544.00, Y:333.50...
+0|backlink-worker  | 2026-06-29T18:40:10: Verification box clicked. Waiting for token processing...
+0|backlink-worker  | 2026-06-29T18:40:11: 2026-06-29 18:40:11 | INFO     | backlink_automation | [TaskRun ed080745-6785-4bbf-8060-d0bb12d3bf9c] Executing step 2/2: Verification & Reporting on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:40:11: 2026-06-29 18:40:11 | INFO     | backlink_automation | [TaskRun ed080745-6785-4bbf-8060-d0bb12d3bf9c] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 31/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:40:12: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Successfully created backlink: https://dirstop.com/story29098690/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://dirstop.com | client_site=https://mainstdental.us/ | keyword=Dentist in Weatherford Texas | backlink_url=https://dirstop.com/story29098690/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:40:12: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | [TemplateRunner] Routing https://getsocialpr.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://getsocialpr.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Navigating to https://getsocialpr.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Popped job e28363c9-3ded-4546-9dc5-4b3cd3362103 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.38 seconds.
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=e28363c9-3ded-4546-9dc5-4b3cd3362103 | type=new
+0|backlink-worker  | 2026-06-29T18:40:12: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:12: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:12: 2026-06-29 18:40:12 | INFO     | backlink_automation | Navigation and security check successfully passed for https://getsocialpr.com
+0|backlink-worker  | 2026-06-29T18:40:12: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:12: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:14: Cloudflare challenge cleared after manual click.
+0|backlink-worker  | 2026-06-29T18:40:14: 2026-06-29 18:40:14 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/register
+0|backlink-worker  | 2026-06-29T18:40:14: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:14: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:14: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:14: 
+0|backlink-worker  | 2026-06-29T18:40:14: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:14: 2026-06-29 18:40:14 | INFO     | backlink_automation | EVENT: success | task_run_id=b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196 | target_url=https://dirstop.com/ | live_url=https://dirstop.com/story29098690/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | [TaskRun e28363c9-3ded-4546-9dc5-4b3cd3362103] Executing step 1/2: Submission on https://bookmarkloves.com/
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | [TaskRun e28363c9-3ded-4546-9dc5-4b3cd3362103] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://mediajx.com
+0|backlink-worker  | 2026-06-29T18:40:15: [Worker 001] Navigating to https://bookmarkloves.com/...
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | Registration started with username=jeffreymartin968756x1b
+0|backlink-worker  | 2026-06-29T18:40:15: 2026-06-29 18:40:15 | INFO     | backlink_automation | Navigating to https://getsocialpr.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:16: 2026-06-29 18:40:16 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://getsocialpr.com/register
+0|backlink-worker  | 2026-06-29T18:40:16: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:16: Cloudflare challenge active (attempt 1/15)...
+0|backlink-worker  | 2026-06-29T18:40:17: Cloudflare challenge active (attempt 2/15)...
+0|backlink-worker  | 2026-06-29T18:40:17: Cloudflare manual verification detected! Executing human-mouse bypass...
+0|backlink-worker  | 2026-06-29T18:40:17: 2026-06-29 18:40:17 | INFO     | backlink_automation | [TaskRun b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196] Executing step 2/2: Verification & Reporting on https://dirstop.com/
+0|backlink-worker  | 2026-06-29T18:40:17: 2026-06-29 18:40:17 | INFO     | backlink_automation | [TaskRun b2fb76a3-9c6a-48ce-9f76-3dc3cf5bc196] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:40:18: 2026-06-29 18:40:18 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 32/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Popped job 4381f6a1-7b88-48f6-a6d0-6343dcbab0f3 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Rate Limiter: Next job will run in 4.14 seconds.
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=4381f6a1-7b88-48f6-a6d0-6343dcbab0f3 | type=new
+0|backlink-worker  | 2026-06-29T18:40:19: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:19: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:40:19: 2026-06-29 18:40:19 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:20: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:20: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:20: 2026-06-29 18:40:20 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com
+0|backlink-worker  | 2026-06-29T18:40:20: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:20: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:20: 2026-06-29 18:40:20 | INFO     | backlink_automation | [TaskRun 4381f6a1-7b88-48f6-a6d0-6343dcbab0f3] Executing step 1/2: Submission on https://bookmarkloves.com/
+0|backlink-worker  | 2026-06-29T18:40:21: 2026-06-29 18:40:21 | INFO     | backlink_automation | [TaskRun 4381f6a1-7b88-48f6-a6d0-6343dcbab0f3] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:40:21: 2026-06-29 18:40:21 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:40:21: 2026-06-29 18:40:21 | INFO     | backlink_automation | Registration started with username=robertdiaz11288u7t8
+0|backlink-worker  | 2026-06-29T18:40:21: 2026-06-29 18:40:21 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:21: 2026-06-29 18:40:21 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://bookmarkloves.com/register
+0|backlink-worker  | 2026-06-29T18:40:21: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:21: Cloudflare challenge active (attempt 1/15)...
+0|backlink-worker  | 2026-06-29T18:40:22: Executing natural hover to coordinates X:547.00, Y:334.50...
+0|backlink-worker  | 2026-06-29T18:40:22: Cloudflare challenge active (attempt 2/15)...
+0|backlink-worker  | 2026-06-29T18:40:23: Verification box clicked. Waiting for token processing...
+0|backlink-worker  | 2026-06-29T18:40:27: Cloudflare challenge cleared after manual click.
+0|backlink-worker  | 2026-06-29T18:40:27: 2026-06-29 18:40:27 | INFO     | backlink_automation | Navigation and security check successfully passed for https://getsocialpr.com/register
+0|backlink-worker  | 2026-06-29T18:40:27: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:27: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:27: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:27: Cloudflare manual verification detected! Executing human-mouse bypass...
+0|backlink-worker  | 2026-06-29T18:40:27: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:27: 
+0|backlink-worker  | 2026-06-29T18:40:28: 2026-06-29 18:40:28 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:40:28: 2026-06-29 18:40:28 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://getsocialpr.com
+0|backlink-worker  | 2026-06-29T18:40:28: 2026-06-29 18:40:28 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:30: 2026-06-29 18:40:30 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:30: 2026-06-29 18:40:30 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:31: 2026-06-29 18:40:31 | INFO     | backlink_automation | OCR Fuzzer matched: 'i love deadlines' (Score: 90.32258064516128)
+0|backlink-worker  | 2026-06-29T18:40:31: 2026-06-29 18:40:31 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=i love deadlines | score=90.32258064516128
+0|backlink-worker  | 2026-06-29T18:40:32: Executing natural hover to coordinates X:537.00, Y:337.50...
+0|backlink-worker  | 2026-06-29T18:40:33: Verification box clicked. Waiting for token processing...
+0|backlink-worker  | 2026-06-29T18:40:37: Cloudflare challenge cleared after manual click.
+0|backlink-worker  | 2026-06-29T18:40:37: 2026-06-29 18:40:37 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/register
+0|backlink-worker  | 2026-06-29T18:40:37: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:37: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:37: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:37: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:37: 2026-06-29 18:40:37 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+0|backlink-worker  | 2026-06-29T18:40:37: 2026-06-29 18:40:37 | INFO     | backlink_automation | Registration attempt 2/3
+0|backlink-worker  | 2026-06-29T18:40:37: 2026-06-29 18:40:37 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:37: 2026-06-29 18:40:37 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:38: 2026-06-29 18:40:38 | INFO     | backlink_automation | OCR Fuzzer matched: 'stop waisting time' (Score: 97.14285714285714)
+0|backlink-worker  | 2026-06-29T18:40:38: 2026-06-29 18:40:38 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=stop waisting time | score=97.14285714285714
+0|backlink-worker  | 2026-06-29T18:40:38: 2026-06-29 18:40:38 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:40:38: 2026-06-29 18:40:38 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://bookmarkloves.com
+0|backlink-worker  | 2026-06-29T18:40:38: 2026-06-29 18:40:38 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:39: 2026-06-29 18:40:39 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:39: 2026-06-29 18:40:39 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:40: 2026-06-29 18:40:40 | INFO     | backlink_automation | OCR Fuzzer matched: 'just dance' (Score: 85.71428571428572)
+0|backlink-worker  | 2026-06-29T18:40:40: 2026-06-29 18:40:40 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=just dance | score=85.71428571428572
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | INFO     | backlink_automation | Registration attempt 3/3
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | INFO     | backlink_automation | OCR Fuzzer matched: 'robe of saffron' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:40:45: 2026-06-29 18:40:45 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=robe of saffron | score=100.0
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://getsocialpr.com | username=jeffreymartin968756x1b
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Navigating to https://getsocialpr.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:46: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:46: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Navigation and security check successfully passed for https://getsocialpr.com/submit
+0|backlink-worker  | 2026-06-29T18:40:46: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:46: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:46: 2026-06-29 18:40:46 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://mediajx.com | username=christopherreyes5426brgz
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Navigating to https://mediajx.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:40:52: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:52: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Navigation and security check successfully passed for https://mediajx.com/submit
+0|backlink-worker  | 2026-06-29T18:40:52: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:40:52: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:40:54: 2026-06-29 18:40:54 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | OCR Fuzzer matched: 'it' (Score: 90.0)
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=it | score=90.0
+0|backlink-worker  | 2026-06-29T18:41:00: 2026-06-29 18:41:00 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Registration attempt 2/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer matched: 'love me' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=love me | score=100.0
+0|backlink-worker  | 2026-06-29T18:41:04: 2026-06-29 18:41:04 | INFO     | backlink_automation | OCR Fuzzer matched: 'power tool' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:41:04: 2026-06-29 18:41:04 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=power tool | score=95.0
+0|backlink-worker  | 2026-06-29T18:41:06: 2026-06-29 18:41:06 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:41:09: 2026-06-29 18:41:09 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://getsocialpr.com/story23537705/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:09: 2026-06-29 18:41:09 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://bookmarkloves.com | username=robertdiaz11288u7t8
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:11: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:11: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:11: 2026-06-29 18:41:11 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/submit
+0|backlink-worker  | 2026-06-29T18:41:11: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:11: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:11: 2026-06-29 18:41:11 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:41:13: 2026-06-29 18:41:13 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:13: 2026-06-29 18:41:13 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:13: 2026-06-29 18:41:13 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:14: 2026-06-29 18:41:14 | INFO     | backlink_automation | OCR Fuzzer matched: 'love is automatic' (Score: 88.23529411764706)
+0|backlink-worker  | 2026-06-29T18:41:14: 2026-06-29 18:41:14 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=love is automatic | score=88.23529411764706
+0|backlink-worker  | 2026-06-29T18:41:16: 2026-06-29 18:41:16 | INFO     | backlink_automation | Successfully created backlink: https://getsocialpr.com/story23537705/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:16: 2026-06-29 18:41:16 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://getsocialpr.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://getsocialpr.com/story23537705/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:17: 2026-06-29 18:41:17 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:41:18: 2026-06-29 18:41:18 | INFO     | backlink_automation | EVENT: success | task_run_id=ad691d79-112b-4474-b871-66aaa9665030 | target_url=https://getsocialpr.com/ | live_url=https://getsocialpr.com/story23537705/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:18: 2026-06-29 18:41:18 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=ad691d79-112b-4474-b871-66aaa9665030 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:41:19: [Worker 005] Navigating to https://bookmarkloves.com/...
+0|backlink-worker  | 2026-06-29T18:41:19: 2026-06-29 18:41:19 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:41:19: 2026-06-29 18:41:19 | INFO     | backlink_automation | [TaskRun ad691d79-112b-4474-b871-66aaa9665030] Executing step 2/2: Verification & Reporting on https://getsocialpr.com/
+0|backlink-worker  | 2026-06-29T18:41:20: 2026-06-29 18:41:20 | INFO     | backlink_automation | [TaskRun ad691d79-112b-4474-b871-66aaa9665030] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:41:20: 2026-06-29 18:41:20 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 33/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | Popped job dddc5fdd-5c11-4e9d-8e90-5e628eec4e58 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.23 seconds.
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=dddc5fdd-5c11-4e9d-8e90-5e628eec4e58 | type=new
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://mediajx.com/story28725459/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:21: 2026-06-29 18:41:21 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:41:23: 2026-06-29 18:41:23 | INFO     | backlink_automation | [TaskRun dddc5fdd-5c11-4e9d-8e90-5e628eec4e58] Executing step 1/2: Submission on https://gorillasocialwork.com/
+0|backlink-worker  | 2026-06-29T18:41:23: 2026-06-29 18:41:23 | INFO     | backlink_automation | [TaskRun dddc5fdd-5c11-4e9d-8e90-5e628eec4e58] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:41:24: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:24: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:24: 2026-06-29 18:41:24 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:41:24: 2026-06-29 18:41:24 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:41:24: 2026-06-29 18:41:24 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:41:24: 2026-06-29 18:41:24 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:25: 2026-06-29 18:41:25 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com
+0|backlink-worker  | 2026-06-29T18:41:25: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:25: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | Already logged in (detected)
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | Successfully created backlink: https://mediajx.com/story28725459/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://mediajx.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://mediajx.com/story28725459/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:26: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:26: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:26: 2026-06-29 18:41:26 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/submit
+0|backlink-worker  | 2026-06-29T18:41:26: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:26: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:27: 2026-06-29 18:41:27 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:41:28: 2026-06-29 18:41:28 | INFO     | backlink_automation | EVENT: success | task_run_id=2980fe8f-54b7-4f9b-8a03-af95adf53713 | target_url=https://mediajx.com/ | live_url=https://mediajx.com/story28725459/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:29: 2026-06-29 18:41:29 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=2980fe8f-54b7-4f9b-8a03-af95adf53713 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:41:30: [Worker 004] Navigating to https://gorillasocialwork.com/...
+0|backlink-worker  | 2026-06-29T18:41:32: 2026-06-29 18:41:32 | INFO     | backlink_automation | [TaskRun 2980fe8f-54b7-4f9b-8a03-af95adf53713] Executing step 2/2: Verification & Reporting on https://mediajx.com/
+0|backlink-worker  | 2026-06-29T18:41:32: 2026-06-29 18:41:32 | INFO     | backlink_automation | [TaskRun 2980fe8f-54b7-4f9b-8a03-af95adf53713] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:41:33: 2026-06-29 18:41:33 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 34/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:41:33: 2026-06-29 18:41:33 | INFO     | backlink_automation | Popped job 32b689c3-41f6-4a53-a002-5d24479148a4 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:41:33: 2026-06-29 18:41:33 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:41:33: 2026-06-29 18:41:33 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.39 seconds.
+0|backlink-worker  | 2026-06-29T18:41:33: 2026-06-29 18:41:33 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=32b689c3-41f6-4a53-a002-5d24479148a4 | type=new
+0|backlink-worker  | 2026-06-29T18:41:34: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:34: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:34: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:34: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:41:34: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:34: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:34: 2026-06-29 18:41:34 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:35: 2026-06-29 18:41:35 | WARNING  | backlink_automation | OCR Fuzzer low score or no match: 'dog' (Score: 60.00000000000001)
+0|backlink-worker  | 2026-06-29T18:41:35: 2026-06-29 18:41:35 | INFO     | backlink_automation | Clicking refresh captcha button...
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | [TaskRun 32b689c3-41f6-4a53-a002-5d24479148a4] Executing step 1/2: Submission on https://gorillasocialwork.com/
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | [TaskRun 32b689c3-41f6-4a53-a002-5d24479148a4] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | Registration started with username=rebeccamiller2663d53k
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:36: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:36: 2026-06-29 18:41:36 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com/register
+0|backlink-worker  | 2026-06-29T18:41:36: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:36: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:37: 2026-06-29 18:41:37 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:41:38: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:38: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:38: 2026-06-29 18:41:38 | INFO     | backlink_automation | OCR Fuzzer attempt 2/3
+0|backlink-worker  | 2026-06-29T18:41:39: 2026-06-29 18:41:39 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:41:39: 2026-06-29 18:41:39 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:41:39: 2026-06-29 18:41:39 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:39: 2026-06-29 18:41:39 | INFO     | backlink_automation | OCR Fuzzer matched: 'raspberry tart' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:41:39: 2026-06-29 18:41:39 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=raspberry tart | score=100.0
+0|backlink-worker  | 2026-06-29T18:41:42: 2026-06-29 18:41:42 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:41:45: 2026-06-29 18:41:45 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkloves.com/story24202981/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:45: 2026-06-29 18:41:45 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:41:48: 2026-06-29 18:41:48 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:48: 2026-06-29 18:41:48 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:48: 2026-06-29 18:41:48 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:49: 2026-06-29 18:41:49 | INFO     | backlink_automation | OCR Fuzzer matched: 'don' (Score: 90.0)
+0|backlink-worker  | 2026-06-29T18:41:49: 2026-06-29 18:41:49 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=don | score=90.0
+0|backlink-worker  | 2026-06-29T18:41:51: 2026-06-29 18:41:51 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkloves.com/story24202981/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:51: 2026-06-29 18:41:51 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://bookmarkloves.com | client_site=https://mainstdental.us/ | keyword=Dentist in Weatherford Texas | backlink_url=https://bookmarkloves.com/story24202981/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:52: 2026-06-29 18:41:52 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:41:52: 2026-06-29 18:41:52 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:52: 2026-06-29 18:41:52 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:52: 2026-06-29 18:41:52 | INFO     | backlink_automation | OCR Fuzzer matched: 'play hookey' (Score: 81.81818181818181)
+0|backlink-worker  | 2026-06-29T18:41:52: 2026-06-29 18:41:52 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=play hookey | score=81.81818181818181
+0|backlink-worker  | 2026-06-29T18:41:53: 2026-06-29 18:41:53 | INFO     | backlink_automation | EVENT: success | task_run_id=e28363c9-3ded-4546-9dc5-4b3cd3362103 | target_url=https://bookmarkloves.com/ | live_url=https://bookmarkloves.com/story24202981/dentist-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:53: 2026-06-29 18:41:53 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=e28363c9-3ded-4546-9dc5-4b3cd3362103 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:41:54: [Worker 001] Navigating to https://gorillasocialwork.com/...
+0|backlink-worker  | 2026-06-29T18:41:55: 2026-06-29 18:41:55 | WARNING  | backlink_automation | Invalid captcha detected on submit. Retrying...
+0|backlink-worker  | 2026-06-29T18:41:56: 2026-06-29 18:41:56 | INFO     | backlink_automation | [TaskRun e28363c9-3ded-4546-9dc5-4b3cd3362103] Executing step 2/2: Verification & Reporting on https://bookmarkloves.com/
+0|backlink-worker  | 2026-06-29T18:41:56: 2026-06-29 18:41:56 | INFO     | backlink_automation | [TaskRun e28363c9-3ded-4546-9dc5-4b3cd3362103] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:41:57: 2026-06-29 18:41:57 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 35/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:41:57: 2026-06-29 18:41:57 | INFO     | backlink_automation | Popped job 33ab4838-0e8e-46bc-a6f5-cae595720db7 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:41:57: 2026-06-29 18:41:57 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:41:57: 2026-06-29 18:41:57 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.21 seconds.
+0|backlink-worker  | 2026-06-29T18:41:57: 2026-06-29 18:41:57 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=33ab4838-0e8e-46bc-a6f5-cae595720db7 | type=new
+0|backlink-worker  | 2026-06-29T18:41:58: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:58: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:58: 2026-06-29 18:41:58 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:41:58: 2026-06-29 18:41:58 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:41:58: 2026-06-29 18:41:58 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:41:58: 2026-06-29 18:41:58 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:58: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:58: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:58: 2026-06-29 18:41:58 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:41:58: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:41:58: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 2/3)
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | Registration started with username=masterericadams1893p1zj
+0|backlink-worker  | 2026-06-29T18:41:59: 2026-06-29 18:41:59 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:00: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:00: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:00: 2026-06-29 18:42:00 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com/register
+0|backlink-worker  | 2026-06-29T18:42:00: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:00: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:00: 2026-06-29 18:42:00 | INFO     | backlink_automation | [TaskRun 33ab4838-0e8e-46bc-a6f5-cae595720db7] Executing step 1/2: Submission on https://gorillasocialwork.com/
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | [TaskRun 33ab4838-0e8e-46bc-a6f5-cae595720db7] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | OCR Fuzzer matched: 'up and away' (Score: 86.36363636363636)
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=up and away | score=86.36363636363636
+0|backlink-worker  | 2026-06-29T18:42:01: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:01: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://gorillasocialwork.com | username=rebeccamiller2663d53k
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com/submit
+0|backlink-worker  | 2026-06-29T18:42:02: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:02: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:02: 2026-06-29 18:42:02 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:42:03: 2026-06-29 18:42:03 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:42:07: 2026-06-29 18:42:07 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://bookmarkloves.com/story24202983/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:42:07: 2026-06-29 18:42:07 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:42:10: 2026-06-29 18:42:10 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:42:12: 2026-06-29 18:42:12 | INFO     | backlink_automation | Successfully created backlink: https://bookmarkloves.com/story24202983/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:42:12: 2026-06-29 18:42:12 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://bookmarkloves.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://bookmarkloves.com/story24202983/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:42:14: 2026-06-29 18:42:14 | INFO     | backlink_automation | EVENT: success | task_run_id=4381f6a1-7b88-48f6-a6d0-6343dcbab0f3 | target_url=https://bookmarkloves.com/ | live_url=https://bookmarkloves.com/story24202983/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:42:16: 2026-06-29 18:42:16 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=4381f6a1-7b88-48f6-a6d0-6343dcbab0f3 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:42:16: [Worker 005] Navigating to https://gorillasocialwork.com/...
+0|backlink-worker  | 2026-06-29T18:42:17: 2026-06-29 18:42:17 | INFO     | backlink_automation | [TaskRun 4381f6a1-7b88-48f6-a6d0-6343dcbab0f3] Executing step 2/2: Verification & Reporting on https://bookmarkloves.com/
+0|backlink-worker  | 2026-06-29T18:42:18: 2026-06-29 18:42:18 | INFO     | backlink_automation | [TaskRun 4381f6a1-7b88-48f6-a6d0-6343dcbab0f3] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:42:18: 2026-06-29 18:42:18 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 36/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | Popped job 22cffe38-0e87-4250-aa9e-c9e79dd7a067 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | Rate Limiter: Next job will run in 3.89 seconds.
+0|backlink-worker  | 2026-06-29T18:42:19: 2026-06-29 18:42:19 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=22cffe38-0e87-4250-aa9e-c9e79dd7a067 | type=new
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | OCR Fuzzer matched: 'roll again' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=roll again | score=100.0
+0|backlink-worker  | 2026-06-29T18:42:20: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:20: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:20: 
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | [TemplateRunner] Routing https://gorillasocialwork.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://gorillasocialwork.com for client_site=https://mainstdental.us/, keyword=Dental Office in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | OCR Fuzzer matched: 'good as gold' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=good as gold | score=100.0
+0|backlink-worker  | 2026-06-29T18:42:20: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:20: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:42:20: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:20: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:20: 2026-06-29 18:42:20 | INFO     | backlink_automation | [TaskRun 22cffe38-0e87-4250-aa9e-c9e79dd7a067] Executing step 1/2: Submission on https://bookmarkport.com/
+0|backlink-worker  | 2026-06-29T18:42:21: 2026-06-29 18:42:21 | INFO     | backlink_automation | [TaskRun 22cffe38-0e87-4250-aa9e-c9e79dd7a067] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:42:22: 2026-06-29 18:42:22 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:42:22: 2026-06-29 18:42:22 | INFO     | backlink_automation | Registration started with username=happyandrewgonzalez61881gq1m
+0|backlink-worker  | 2026-06-29T18:42:22: 2026-06-29 18:42:22 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:22: 2026-06-29 18:42:22 | WARNING  | backlink_automation | Hit intercept status code: 403 at https://gorillasocialwork.com/register
+0|backlink-worker  | 2026-06-29T18:42:22: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:22: Cloudflare challenge active (attempt 1/15)...
+0|backlink-worker  | 2026-06-29T18:42:23: Cloudflare challenge active (attempt 2/15)...
+0|backlink-worker  | 2026-06-29T18:42:23: Cloudflare manual verification detected! Executing human-mouse bypass...
+0|backlink-worker  | 2026-06-29T18:42:23: 2026-06-29 18:42:23 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://gorillasocialwork.com | username=masterericadams1893p1zj
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Navigating to https://gorillasocialwork.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://gorillasocialwork.com/story27675039/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:42:26: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:26: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:26: 2026-06-29 18:42:26 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com/submit
+0|backlink-worker  | 2026-06-29T18:42:26: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:26: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:27: 2026-06-29 18:42:27 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:42:28: Executing natural hover to coordinates X:541.00, Y:337.50...
+0|backlink-worker  | 2026-06-29T18:42:29: Verification box clicked. Waiting for token processing...
+0|backlink-worker  | 2026-06-29T18:42:31: 2026-06-29 18:42:31 | INFO     | backlink_automation | Successfully created backlink: https://gorillasocialwork.com/story27675039/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:42:31: 2026-06-29 18:42:31 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://gorillasocialwork.com | client_site=https://mainstdental.us/ | keyword=Dentist Near Me | backlink_url=https://gorillasocialwork.com/story27675039/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:42:33: Cloudflare challenge cleared after manual click.
+0|backlink-worker  | 2026-06-29T18:42:33: 2026-06-29 18:42:33 | INFO     | backlink_automation | Navigation and security check successfully passed for https://gorillasocialwork.com/register
+0|backlink-worker  | 2026-06-29T18:42:33: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:33: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:33: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:33: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:34: 2026-06-29 18:42:34 | INFO     | backlink_automation | EVENT: success | task_run_id=dddc5fdd-5c11-4e9d-8e90-5e628eec4e58 | target_url=https://gorillasocialwork.com/ | live_url=https://gorillasocialwork.com/story27675039/dentist-near-me
+0|backlink-worker  | 2026-06-29T18:42:34: 2026-06-29 18:42:34 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=dddc5fdd-5c11-4e9d-8e90-5e628eec4e58 | type=continuing | step_index=1
+0|backlink-worker  | 2026-06-29T18:42:35: 2026-06-29 18:42:35 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:42:35: 2026-06-29 18:42:35 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://gorillasocialwork.com
+0|backlink-worker  | 2026-06-29T18:42:35: 2026-06-29 18:42:35 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:35: [Worker 004] Navigating to https://bookmarkloves.com/...
+0|backlink-worker  | 2026-06-29T18:42:35: 2026-06-29 18:42:35 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:42:36: 2026-06-29 18:42:36 | INFO     | backlink_automation | [TaskRun dddc5fdd-5c11-4e9d-8e90-5e628eec4e58] Executing step 2/2: Verification & Reporting on https://gorillasocialwork.com/
+0|backlink-worker  | 2026-06-29T18:42:37: 2026-06-29 18:42:37 | INFO     | backlink_automation | [TaskRun dddc5fdd-5c11-4e9d-8e90-5e628eec4e58] Intercepted Reporting Step.
+0|backlink-worker  | 2026-06-29T18:42:37: 2026-06-29 18:42:37 | INFO     | backlink_automation | [Task 5eaf726b-1b70-43a0-b6f3-13700c0f391e] Progress update: 37/45 completed, 0 failed. Setting parent task status \u2192 'running'
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Popped job fa2625d9-4e33-4933-8001-339e6bfab933 from Redis queue 'backlink_queue'
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Fetched 1 new workflow runs. Adding to active pool...
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Rate Limiter: Next job will run in 2.46 seconds.
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | EVENT: job_picked | task_run_id=fa2625d9-4e33-4933-8001-339e6bfab933 | type=new
+0|backlink-worker  | 2026-06-29T18:42:38: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:38: 
+0|backlink-worker  | 2026-06-29T18:42:38: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | [TemplateRunner] Routing https://bookmarkloves.com/ \u2192 PliggGenericTemplate (site_id=pligg, config=pligg)
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Starting PliggGenericTemplate on https://bookmarkloves.com for client_site=https://mainstdental.us/, keyword=Dentist Near Me
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Navigating to home page
+0|backlink-worker  | 2026-06-29T18:42:38: 2026-06-29 18:42:38 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:39: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:39: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:39: 2026-06-29 18:42:39 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com
+0|backlink-worker  | 2026-06-29T18:42:39: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:39: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:40: 2026-06-29 18:42:40 | INFO     | backlink_automation | [TaskRun fa2625d9-4e33-4933-8001-339e6bfab933] Executing step 1/2: Submission on https://bookmarkport.com/
+0|backlink-worker  | 2026-06-29T18:42:41: 2026-06-29 18:42:41 | INFO     | backlink_automation | [TaskRun fa2625d9-4e33-4933-8001-339e6bfab933] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:42:41: 2026-06-29 18:42:41 | INFO     | backlink_automation | Not logged in. Starting registration flow.
+0|backlink-worker  | 2026-06-29T18:42:41: 2026-06-29 18:42:41 | INFO     | backlink_automation | Registration started with username=donaldsanchez933513kcl
+0|backlink-worker  | 2026-06-29T18:42:41: 2026-06-29 18:42:41 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/register (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:41: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:41: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:41: 2026-06-29 18:42:41 | INFO     | backlink_automation | Navigation and security check successfully passed for https://bookmarkloves.com/register
+0|backlink-worker  | 2026-06-29T18:42:41: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:41: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:42: Scanning page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:42: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:43: 2026-06-29 18:42:43 | INFO     | backlink_automation | Filling registration form...
+0|backlink-worker  | 2026-06-29T18:42:43: 2026-06-29 18:42:43 | INFO     | backlink_automation | EVENT: registration_started | target_url=https://bookmarkloves.com
+0|backlink-worker  | 2026-06-29T18:42:43: 2026-06-29 18:42:43 | INFO     | backlink_automation | Registration attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:46: 2026-06-29 18:42:46 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:42:46: 2026-06-29 18:42:46 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:42:46: 2026-06-29 18:42:46 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:42:46: 2026-06-29 18:42:46 | INFO     | backlink_automation | OCR Fuzzer matched: 'forbidden fruit' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:42:46: 2026-06-29 18:42:46 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=forbidden fruit | score=100.0

@@ -1,0 +1,58 @@
+
+0|backlink-worker  | 2026-06-29T18:39:40: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:41: 2026-06-29 18:39:41 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:42: 2026-06-29 18:39:42 | INFO     | backlink_automation | OCR Fuzzer matched: 'words of wisdom' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:39:42: 2026-06-29 18:39:42 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=words of wisdom | score=95.0
+0|backlink-worker  | 2026-06-29T18:39:43: 2026-06-29 18:39:43 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:39:45: 2026-06-29 18:39:45 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:39:47: 2026-06-29 18:39:47 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:39:48: 2026-06-29 18:39:48 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:48: 2026-06-29 18:39:48 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:39:50: 2026-06-29 18:39:50 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:39:51: 2026-06-29 18:39:51 | INFO     | backlink_automation | OCR Fuzzer matched: 'leave me alone' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:39:51: 2026-06-29 18:39:51 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=leave me alone | score=100.0
+0|backlink-worker  | 2026-06-29T18:39:54: 2026-06-29 18:39:54 | INFO     | backlink_automation | Successfully created backlink: https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:39:54: 2026-06-29 18:39:54 | INFO     | backlink_automation | EVENT: bookmark_submitted | target_url=https://dirstop.com | client_site=https://mainstdental.us/ | keyword=Dental Office in Weatherford Texas | backlink_url=https://dirstop.com/story29098686/dental-office-in-weatherford-texas
+
+
+0|backlink-worker  | 2026-06-29T18:40:52: 2026-06-29 18:40:52 | INFO     | backlink_automation | Step 1: Submitting URL
+0|backlink-worker  | 2026-06-29T18:40:54: 2026-06-29 18:40:54 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | OCR Fuzzer matched: 'it' (Score: 90.0)
+0|backlink-worker  | 2026-06-29T18:40:56: 2026-06-29 18:40:56 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=it | score=90.0
+0|backlink-worker  | 2026-06-29T18:41:00: 2026-06-29 18:41:00 | INFO     | backlink_automation | Step 2: Filling Article Details
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | WARNING  | backlink_automation | Invalid captcha detected. Retrying...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Registration attempt 2/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Solving captcha on submit page... (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | Attempting to solve SolveMedia captcha...
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer attempt 1/3
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | OCR Fuzzer matched: 'love me' (Score: 100.0)
+0|backlink-worker  | 2026-06-29T18:41:03: 2026-06-29 18:41:03 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=love me | score=100.0
+0|backlink-worker  | 2026-06-29T18:41:04: 2026-06-29 18:41:04 | INFO     | backlink_automation | OCR Fuzzer matched: 'power tool' (Score: 95.0)
+0|backlink-worker  | 2026-06-29T18:41:04: 2026-06-29 18:41:04 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=power tool | score=95.0
+0|backlink-worker  | 2026-06-29T18:41:06: 2026-06-29 18:41:06 | INFO     | backlink_automation | Bookmark form submitted. Waiting for result...
+0|backlink-worker  | 2026-06-29T18:41:09: 2026-06-29 18:41:09 | INFO     | backlink_automation | Bookmark submitted. Extracted backlink: https://getsocialpr.com/story23537705/dental-office-in-weatherford-texas
+0|backlink-worker  | 2026-06-29T18:41:09: 2026-06-29 18:41:09 | INFO     | backlink_automation | Attempting to log out...
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Registration successful, redirected to user page.
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | EVENT: registration_completed | target_url=https://bookmarkloves.com | username=robertdiaz11288u7t8
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Registration flow finished
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Bookmark submission started: url=https://mainstdental.us/, keyword=Dentist in Weatherford Texas
+0|backlink-worker  | 2026-06-29T18:41:10: 2026-06-29 18:41:10 | INFO     | backlink_automation | Navigating to https://bookmarkloves.com/submit (Attempt 1/3)
+0|backlink-worker  | 2026-06-29T18:41:11: Scanning page for Cloudflare verification boxes...
+
+
+ page for Cloudflare verification boxes...
+0|backlink-worker  | 2026-06-29T18:42:00: No Cloudflare challenge detected   proceeding.
+0|backlink-worker  | 2026-06-29T18:42:00: 2026-06-29 18:42:00 | INFO     | backlink_automation | [TaskRun 33ab4838-0e8e-46bc-a6f5-cae595720db7] Executing step 1/2: Submission on https://gorillasocialwork.com/
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | [TaskRun 33ab4838-0e8e-46bc-a6f5-cae595720db7] Routing to template: 'pligg' (target_site_id=None)
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | OCR Fuzzer matched: 'up and away' (Score: 86.36363636363636)
+0|backlink-worker  | 2026-06-29T18:42:01: 2026-06-29 18:42:01 | INFO     | backlink_automation | EVENT: captcha_solved | source=ocr_fuzzer | text=up and away | score=86.36363636363636
+0|backlink-worker  | 2026-06-29T18:42:01: Scanning page for Cloudflare verification boxes...

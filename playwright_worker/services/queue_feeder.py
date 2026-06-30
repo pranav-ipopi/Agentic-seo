@@ -47,7 +47,7 @@ async def feed_queue_from_supabase():
 
         # Push to Redis
         for t in task_runs:
-            await redis_service.client.lpush("backlink_queue", json.dumps(t))
+            await redis_service.client.rpush("backlink_queue", json.dumps(t))
             
         # Batch update Supabase to 'queued'
         # Since Supabase python client doesn't directly support bulk update easily without upsert,

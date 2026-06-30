@@ -9,12 +9,17 @@ import { Play, Settings2, ShieldCheck, Globe, X, Plus, Trash2, Save, ChevronDown
 import SiteListModal from './SiteListModal'
 import { cn } from '@/lib/utils'
 
+interface TargetKeyword {
+  keyword: string;
+  description: string;
+  tags: string;
+}
+
 interface TargetConfig {
   id: string;
   clientTargetUrl: string;
   targetSitesCount: number | string;
-  keywords: string[];
-  currentKeywordInput: string;
+  keywords: TargetKeyword[];
 }
 
 export default function RunConfigurationPanel({
@@ -49,7 +54,7 @@ export default function RunConfigurationPanel({
   const [errorMessage, setErrorMessage] = useState('')
 
   const [targets, setTargets] = useState<TargetConfig[]>([
-    { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }
+    { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [] }
   ])
 
   // Saved Campaigns Feature
@@ -107,6 +112,25 @@ export default function RunConfigurationPanel({
   }, [activeClient, template])
 
   // Load draft on mount
+  const sanitizeTargets = (rawTargets: any[]) => {
+    if (!Array.isArray(rawTargets)) return []
+    return rawTargets.map(t => ({
+      ...t,
+      keywords: Array.isArray(t.keywords) 
+        ? t.keywords.map((kw: any) => {
+            if (typeof kw === 'string') {
+              return { keyword: kw, description: '', tags: '' }
+            }
+            return {
+              keyword: kw?.keyword || '',
+              description: kw?.description || '',
+              tags: kw?.tags || ''
+            }
+          })
+        : []
+    }))
+  }
+
   useEffect(() => {
     if (activeClient && template) {
       const draftStr = localStorage.getItem(draftKey)
@@ -118,7 +142,7 @@ export default function RunConfigurationPanel({
           setMinPa(draft.minPa ?? 30)
           setMaxSpamScore(draft.maxSpamScore ?? 4)
           if (draft.targets && draft.targets.length > 0) {
-             setTargets(draft.targets)
+             setTargets(sanitizeTargets(draft.targets))
           }
           setIsNameEdited(true)
           setHasDraft(true)
@@ -169,7 +193,7 @@ export default function RunConfigurationPanel({
     setMinDa(30)
     setMinPa(30)
     setMaxSpamScore(4)
-    setTargets([{ id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }])
+    setTargets([{ id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [] }])
     setLoadedTemplateId(null)
   }
 
@@ -181,7 +205,7 @@ export default function RunConfigurationPanel({
       setMinPa(sc.config.minPa ?? 30)
       setMaxSpamScore(sc.config.maxSpamScore ?? 4)
       if (sc.config.targets && sc.config.targets.length > 0) {
-         setTargets(sc.config.targets)
+         setTargets(sanitizeTargets(sc.config.targets))
       }
       setCampaignName(sc.name)
       setIsNameEdited(true)
@@ -255,31 +279,18 @@ export default function RunConfigurationPanel({
     fetchMaxSites()
   }, [submissionType, minDa, minPa, maxSpamScore])
 
-  const addKeywordToTarget = async (index: number, kwRaw: string) => {
-    const kw = kwRaw.trim();
-    if (!kw) return;
+  const addEmptyKeywordToTarget = (index: number) => {
     const newTargets = [...targets];
-    if (!newTargets[index].keywords.includes(kw)) {
-      newTargets[index].keywords.push(kw);
-      
-      const targetUrl = newTargets[index].clientTargetUrl.trim();
-      if (activeClient && targetUrl) {
-         try {
-           await fetch('/api/keywords', {
-             method: 'POST',
-             headers: { 'Content-Type': 'application/json' },
-             body: JSON.stringify({
-               clientId: activeClient.id,
-               targetUrl: targetUrl,
-               keywords: [{ keyword: kw }]
-             })
-           });
-         } catch (e) {
-           console.error("Failed to autosave keyword", e);
-         }
-      }
-    }
-    newTargets[index].currentKeywordInput = '';
+    newTargets[index].keywords.push({ keyword: '', description: '', tags: '' });
+    setTargets(newTargets);
+  }
+
+  const updateKeyword = (targetIndex: number, keywordIndex: number, field: keyof TargetKeyword, value: string) => {
+    const newTargets = [...targets];
+    newTargets[targetIndex].keywords[keywordIndex] = {
+      ...newTargets[targetIndex].keywords[keywordIndex],
+      [field]: value
+    };
     setTargets(newTargets);
   }
 
@@ -303,7 +314,8 @@ export default function RunConfigurationPanel({
   const totalBacklinks = targets.reduce((sum, t) => {
     const effectiveCount = typeof t.targetSitesCount === 'number' ? t.targetSitesCount : (parseInt(t.targetSitesCount as string) || 0)
     const count = Math.min(effectiveCount, maxAvailableSites)
-    return sum + (count * t.keywords.length)
+    const validKeywordsCount = t.keywords.filter(k => k.keyword.trim() !== '' && k.description.trim() !== '' && k.tags.trim() !== '').length;
+    return sum + (count * validKeywordsCount)
   }, 0)
 
   const handleStartCampaignClick = () => {
@@ -317,7 +329,9 @@ export default function RunConfigurationPanel({
     for (let i = 0; i < targets.length; i++) {
       const t = targets[i];
       if (!t.clientTargetUrl.trim()) return setErrorMessage(`Target ${i+1} is missing a Client Target URL.`);
-      if (t.keywords.length === 0) return setErrorMessage(`Target ${i+1} must have at least one keyword.`);
+      const validKws = t.keywords.filter(k => k.keyword.trim() !== '' && k.description.trim() !== '' && k.tags.trim() !== '');
+      if (validKws.length === 0) return setErrorMessage(`Target ${i+1} must have at least one completely filled keyword row (Keyword, Description, and Tags).`);
+      if (t.keywords.length > validKws.length) return setErrorMessage(`Target ${i+1} has incomplete keyword rows. Please fill in all fields or remove empty rows.`);
     }
 
     if (maxAvailableSites === 0) return setErrorMessage('No target sites available. Please adjust your DA/PA filters.')
@@ -343,7 +357,7 @@ export default function RunConfigurationPanel({
         targets: targets.map(t => ({
            clientTargetUrl: t.clientTargetUrl.trim(),
            targetSitesCount: typeof t.targetSitesCount === 'number' ? t.targetSitesCount : (parseInt(t.targetSitesCount as string) || 0),
-           keywords: t.keywords
+           keywords: t.keywords.filter(k => k.keyword.trim() !== '' && k.description.trim() !== '' && k.tags.trim() !== '')
         })),
         campaignName: campaignName.trim()
       }
@@ -372,8 +386,16 @@ export default function RunConfigurationPanel({
     }
   }
 
+  const hasInvalidTargets = targets.some(t => {
+    if (!t.clientTargetUrl.trim()) return true;
+    const validKws = t.keywords.filter(k => k.keyword.trim() !== '' && k.description.trim() !== '' && k.tags.trim() !== '');
+    if (validKws.length === 0) return true;
+    if (t.keywords.length > validKws.length) return true;
+    return false;
+  });
+
   return (
-    <div className="w-[380px] flex-shrink-0 bg-white dark:bg-gray-900/50 overflow-y-auto flex flex-col h-full shadow-2xl relative z-20">
+    <div className="w-[500px] flex-shrink-0 bg-white dark:bg-gray-900/50 overflow-y-auto flex flex-col h-full shadow-2xl relative z-20">
 
       {/* Header */}
       <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 relative flex flex-col gap-4">
@@ -527,6 +549,7 @@ export default function RunConfigurationPanel({
             {targets.map((target, index) => {
                const effectiveTargetSites = typeof target.targetSitesCount === 'number' ? target.targetSitesCount : (parseInt(target.targetSitesCount as string) || 0);
                const actualSites = Math.min(effectiveTargetSites, maxAvailableSites);
+               const validKeywordsCount = target.keywords.filter(k => k.keyword.trim() !== '' && k.description.trim() !== '' && k.tags.trim() !== '').length;
                
                return (
                  <div key={target.id} className="p-4 bg-gray-50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl space-y-3 relative group">
@@ -537,14 +560,15 @@ export default function RunConfigurationPanel({
                    )}
                    
                    <div className="space-y-1.5">
-                     <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Target URL</label>
+                     <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Target URL <span className="text-rose-500">*</span></label>
                      <div className="flex rounded-lg shadow-sm">
                         <span className="inline-flex items-center px-2.5 rounded-l-lg border border-r-0 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-xs">
                           https://
                         </span>
                         <input
                           type="text"
-                          placeholder="site.com/page"
+                          required
+                          placeholder="site.com/page *"
                           value={target.clientTargetUrl}
                           onChange={e => {
                             let val = e.target.value.replace(/^https?:\/\//i, '');
@@ -557,33 +581,45 @@ export default function RunConfigurationPanel({
 
                    <div className="space-y-1.5">
                      <div className="flex justify-between items-center">
-                       <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Keywords</label>
-                       <span className="text-[10px] text-gray-400">{target.keywords.length} added</span>
+                       <label className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">Keywords <span className="text-rose-500">*</span></label>
+                       <span className="text-[10px] text-gray-400">{validKeywordsCount} added</span>
                      </div>
-                     <div className="flex flex-wrap gap-1.5 mb-2">
-                       {target.keywords.map((kw, kwIdx) => (
-                         <span key={kwIdx} className="bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded text-[11px] flex items-center gap-1">
-                           {kw} 
-                           <X className="w-3 h-3 cursor-pointer hover:text-indigo-900 dark:hover:text-indigo-100" onClick={() => removeKeyword(index, kwIdx)} />
-                         </span>
+                     <div className="flex flex-col gap-2 mb-2">
+                       {target.keywords.map((kwObj, kwIdx) => (
+                         <div key={kwIdx} className="flex items-start gap-2 bg-gray-100 dark:bg-gray-800/50 p-2 rounded-lg">
+                           <textarea 
+                             required
+                             rows={2}
+                             placeholder="Keyword *"
+                             value={kwObj.keyword || ''}
+                             onChange={e => updateKeyword(index, kwIdx, 'keyword', e.target.value)}
+                             className="flex-1 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none resize-y min-h-[42px]"
+                           />
+                           <textarea 
+                             required
+                             rows={2}
+                             placeholder="Description *"
+                             value={kwObj.description || ''}
+                             onChange={e => updateKeyword(index, kwIdx, 'description', e.target.value)}
+                             className="flex-1 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none resize-y min-h-[42px]"
+                           />
+                           <textarea 
+                             required
+                             rows={2}
+                             placeholder="Tags *"
+                             value={kwObj.tags || ''}
+                             onChange={e => updateKeyword(index, kwIdx, 'tags', e.target.value)}
+                             className="flex-1 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none resize-y min-h-[42px]"
+                           />
+                           <button onClick={() => removeKeyword(index, kwIdx)} className="p-1.5 mt-1 text-gray-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 rounded-lg transition-colors">
+                             <Trash2 className="w-4 h-4" />
+                           </button>
+                         </div>
                        ))}
                      </div>
-                     <div className="flex gap-2">
-                       <input 
-                         type="text" 
-                         placeholder="Type keyword and press Enter"
-                         value={target.currentKeywordInput}
-                         onChange={e => updateTarget(index, 'currentKeywordInput', e.target.value)}
-                         onKeyDown={e => {
-                           if (e.key === 'Enter') {
-                             e.preventDefault();
-                             addKeywordToTarget(index, target.currentKeywordInput);
-                           }
-                         }}
-                         className="flex-1 block w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
-                       />
-                       <button onClick={() => addKeywordToTarget(index, target.currentKeywordInput)} className="px-2.5 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-xs font-medium">
-                         Add
+                     <div className="flex">
+                       <button onClick={() => addEmptyKeywordToTarget(index)} className="w-full px-2.5 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-xs font-medium flex items-center justify-center gap-1">
+                         <Plus className="w-3 h-3" /> Add Keyword
                        </button>
                      </div>
                    </div>
@@ -604,7 +640,7 @@ export default function RunConfigurationPanel({
                    </div>
 
                    <div className="mt-2 text-xs text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-2 rounded-lg text-center shadow-sm">
-                     <span className="font-medium text-gray-700 dark:text-gray-300">{actualSites}</span> sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{target.keywords.length}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{actualSites * target.keywords.length}</span> target backlinks
+                     <span className="font-medium text-gray-700 dark:text-gray-300">{actualSites}</span> sites &times; <span className="font-medium text-gray-700 dark:text-gray-300">{validKeywordsCount}</span> keywords = <span className="font-bold text-indigo-600 dark:text-indigo-400">{actualSites * validKeywordsCount}</span> target backlinks
                    </div>
                  </div>
                )
@@ -612,7 +648,7 @@ export default function RunConfigurationPanel({
           </div>
 
           <button 
-            onClick={() => setTargets([...targets, { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [], currentKeywordInput: '' }])}
+            onClick={() => setTargets([...targets, { id: Date.now().toString(), clientTargetUrl: '', targetSitesCount: 50, keywords: [] }])}
             className="w-full flex items-center justify-center gap-2 py-2.5 border border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors text-sm font-medium mt-4"
           >
             <Plus className="w-4 h-4" /> Add Another Target
@@ -653,7 +689,9 @@ export default function RunConfigurationPanel({
             disabled={
               isSubmitting ||
               !activeClient ||
+              !campaignName.trim() ||
               targets.length === 0 ||
+              hasInvalidTargets ||
               maxAvailableSites === 0 ||
               totalBacklinks === 0 ||
               (quota !== null && quota.limit !== null && totalBacklinks > quota.remaining!)

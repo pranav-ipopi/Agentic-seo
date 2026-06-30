@@ -172,7 +172,7 @@ export async function POST(request: NextRequest) {
       const targetSpecificSites = sitesWithUsage.slice(0, targetSitesCount || 0)
       
       targetSpecificSites.forEach((site: any) => {
-        keywords.forEach((kwStr: string) => {
+        keywords.forEach((kwObj: any) => {
           taskRunsToInsert.push({
             client_id: clientId,
             department_id: departmentId || null,
@@ -188,7 +188,9 @@ export async function POST(request: NextRequest) {
               min_da: minDa,
               min_pa: minPa,
               max_spam_score: maxSpamScore,
-              keyword: kwStr,
+              keyword: kwObj.keyword,
+              description: kwObj.description || '',
+              tags: kwObj.tags || ''
             }
           })
         })

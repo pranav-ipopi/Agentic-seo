@@ -1,0 +1,23 @@
+**Per-Keyword Description Generation (Medium)**
+
+1.15 WHEN `_submit_bookmark()` builds the description field THEN the system calls
+`random.choice(desc_templates).format(keyword=keyword)`, producing the same short templated text
+for every keyword on every submission day, providing no unique SEO value per keyword.
+
+
+**Per-Keyword Description Generation**
+
+2.16 WHEN `_submit_bookmark()` prepares the description for a given keyword THEN the system SHALL
+generate (or retrieve from a per-keyword daily cache keyed on `keyword + UTC date`) a unique
+250-character SEO-style description specific to that keyword, rather than selecting from a static
+template list.
+
+2.17 WHEN a description for the same keyword was already generated on the same calendar day (UTC)
+THEN the system SHALL reuse the cached description for all submissions that day to keep output
+consistent within a single run.
+
+3.13 WHEN no LLM or generation service is available for description generation THEN the system
+SHALL CONTINUE TO fall back to selecting from `description_templates` so submissions are not
+blocked.
+
+

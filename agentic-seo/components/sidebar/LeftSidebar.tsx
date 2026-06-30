@@ -175,6 +175,16 @@ export default function LeftSidebar() {
 
   async function createNewSession() {
     if (!activeClient) return
+
+    // Prevent creating multiple empty sessions
+    const emptySession = sessions.find(s => s.title === 'New Session')
+    if (emptySession) {
+      if (pathname !== `/dashboard/chat/${emptySession.id}`) {
+        window.location.href = `/dashboard/chat/${emptySession.id}`
+      }
+      return
+    }
+
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
     const { data } = await supabase

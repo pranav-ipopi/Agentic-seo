@@ -18,3 +18,8 @@ logs/
 
 # Chrome profiles
 chrome_profiles
+__tests__
+tests
+test_nodriver
+test_playwright_stealth
+test_seleniumbase

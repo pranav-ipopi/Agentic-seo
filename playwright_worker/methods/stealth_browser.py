@@ -7,6 +7,10 @@ from playwright.async_api import async_playwright
 
 _cf_lock = asyncio.Lock()
 
+# Frozen-tab watchdog: how long to wait for a job coroutine before reloading the tab.
+# Override via environment variable (seconds). Default: 600 s (10 minutes).
+FROZEN_TAB_TIMEOUT = int(os.environ.get("FROZEN_TAB_TIMEOUT_SECONDS", 600))
+
 
 # ---------------------------------------------------------------------------
 # Resource blocking
@@ -306,7 +310,29 @@ class BrowserWorker:
         if not self.browser or len(self.browser.contexts) == 0:
             raise RuntimeError("Browser failed to restart properly.")
         
-        if not self.page or self.page.is_closed():
+        if self.page is not None:
+            try:
+                if self.page.is_closed():
+                    self.page = None
+            except Exception:
+                # Stale CDP reference — treat as closed
+                self.page = None
+
+        # URL guard: a crashed tab shows about:blank with page.is_closed() == False
+        if self.page is not None:
+            try:
+                if self.page.url == "about:blank":
+                    print(f"[Worker {self.worker_id}] Detected about:blank — closing stale tab.")
+                    try:
+                        await self.page.close()
+                    except Exception:
+                        pass
+                    self.page = None
+            except Exception:
+                # Absorb any stale-reference error raised while reading .url
+                self.page = None
+
+        if not self.page:
             context = self.browser.contexts[0]
             self.page = await context.new_page()
             
@@ -341,8 +367,19 @@ class BrowserWorker:
                 if not cleared:
                     self.captchas += 1
             
-            # Execute the actual Playwright logic using the injected coroutine factory
-            result = await job_coroutine_fn(page)
+            # Execute the actual Playwright logic using the injected coroutine factory.
+            # Wrap in a timeout watchdog so a frozen tab doesn't block the worker forever.
+            # On timeout: reload the tab to clear the stuck state, then re-raise so the
+            # existing retry path (jobs_failed counter + rpush back to queue) handles it.
+            try:
+                result = await asyncio.wait_for(job_coroutine_fn(page), timeout=FROZEN_TAB_TIMEOUT)
+            except asyncio.TimeoutError:
+                print(f"[Worker {self.worker_id}] Job timed out after {FROZEN_TAB_TIMEOUT}s — reloading frozen tab.")
+                try:
+                    await page.reload(wait_until="commit")
+                except Exception as reload_err:
+                    print(f"[Worker {self.worker_id}] Page reload failed: {reload_err}")
+                raise
             
             self.jobs_completed += 1
             return result
@@ -464,7 +501,8 @@ class BrowserWorkerPool:
                 idle_workers.sort(key=lambda w: w.last_used)
                 worker = idle_workers[0]
                 # Optimistically lock it (execute_job will also set it, but we do it here to prevent races)
-                worker.state = WorkerState.BUSY 
+                worker.state = WorkerState.BUSY
+                worker.last_used = time.time()
                 return worker
             await asyncio.sleep(1)
 

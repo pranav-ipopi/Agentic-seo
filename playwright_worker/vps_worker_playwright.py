@@ -205,6 +205,8 @@ async def route_and_execute(task_run, supabase_client: Client):
         target_url = state.get('target_site', '')
         client_target_url = state.get('client_target_url', '')
         keyword = state.get('keyword', 'Target Keyword')
+        description = state.get('description', '')
+        tags = state.get('tags', '')
         client_id = task_run.get('client_id')
         target_site_id = task_run.get('target_site_id')
         
@@ -262,6 +264,8 @@ async def route_and_execute(task_run, supabase_client: Client):
                             target_site_db_id=target_site_id,
                             client_url=client_target_url,
                             keyword=keyword,
+                            description=description,
+                            tags=tags,
                             page=page,
                             captcha_service=captcha_service,
                             logger=logger
@@ -573,7 +577,7 @@ async def poll_queue():
                                 else:
                                     logger.warning(f"Job {job.get('id')} popped from Redis but not found in Supabase after 3 retries. Pushing back to queue.")
                                     try:
-                                        await redis_service.client.lpush('backlink_queue', json.dumps(job))
+                                        await redis_service.client.rpush('backlink_queue', json.dumps(job))
                                     except Exception as e:
                                         logger.error(f"Failed to push job {job.get('id')} back to Redis: {e}")
                     else:
@@ -601,6 +605,26 @@ async def poll_queue():
                             NEXT_JOB_ALLOWED_TIME_GLOBAL = next_job_allowed_time
                             
                             logger.info(f"Rate Limiter: Next job will run in {wait_seconds:.2f} seconds.")
+
+                            # Pre-dispatch cancellation check: discard jobs whose parent task is already failed
+                            parent_task_id_check = t.get('state', {}).get('task_id')
+                            if parent_task_id_check:
+                                try:
+                                    parent_check_res = supabase.table('tasks').select('status').eq('id', parent_task_id_check).execute()
+                                    if parent_check_res.data and parent_check_res.data[0].get('status') == 'failed':
+                                        logger.info(f"[TaskRun {t['id']}] Parent task {parent_task_id_check} is already failed — discarding job without consuming a worker slot.")
+                                        continue
+                                except Exception as pre_check_err:
+                                    logger.warning(f"[TaskRun {t['id']}] Pre-dispatch parent check failed: {pre_check_err} — proceeding with dispatch.")
+
+                            # Also check the task_run's own status for cancellation
+                            try:
+                                run_check_res = supabase.table('task_runs').select('status').eq('id', t['id']).execute()
+                                if run_check_res.data and run_check_res.data[0].get('status') == 'cancelled':
+                                    logger.info(f"[TaskRun {t['id']}] Task run is cancelled — discarding job without consuming a worker slot.")
+                                    continue
+                            except Exception as run_check_err:
+                                logger.warning(f"[TaskRun {t['id']}] Pre-dispatch task_run check failed: {run_check_err} — proceeding with dispatch.")
 
                             log_event(logger, "job_picked", {
                                 "task_run_id": t['id'],

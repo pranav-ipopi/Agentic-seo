@@ -13,7 +13,7 @@ export default function KeywordsModal({
   onClose: () => void
   clientId: string
 }) {
-  const [keywords, setKeywords] = useState<{ id?: string, keyword: string }[]>([])
+  const [keywords, setKeywords] = useState<{ id?: string, keyword: string, description: string, tags: string }[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isSaving, setIsSaving] = useState(false)
   const supabase = createClient()
@@ -30,7 +30,7 @@ export default function KeywordsModal({
       const res = await fetch(`/api/keywords?client_id=${clientId}`)
       if (res.ok) {
         const data = await res.json()
-        setKeywords(data.map((k: any) => ({ id: k.id, keyword: k.keyword })))
+        setKeywords(data.map((k: any) => ({ id: k.id, keyword: k.keyword, description: k.description || '', tags: k.tags || '' })))
       }
     } catch (e) {
       console.error(e)
@@ -39,7 +39,7 @@ export default function KeywordsModal({
   }
 
   const handleAddRow = () => {
-    setKeywords([...keywords, { keyword: '' }])
+    setKeywords([...keywords, { keyword: '', description: '', tags: '' }])
   }
 
   const handleRemoveRow = async (index: number) => {
@@ -51,9 +51,9 @@ export default function KeywordsModal({
     setKeywords(keywords.filter((_, i) => i !== index))
   }
 
-  const handleChange = (index: number, val: string) => {
+  const handleChange = (index: number, field: string, val: string) => {
     const newKw = [...keywords]
-    newKw[index].keyword = val
+    newKw[index] = { ...newKw[index], [field]: val }
     setKeywords(newKw)
   }
 
@@ -98,13 +98,30 @@ export default function KeywordsModal({
           ) : (
             <div className="space-y-3">
               {keywords.map((kw, i) => (
-                <div key={kw.id || i} className="flex items-center gap-2">
+                <div key={kw.id || i} className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800/50 p-2 rounded-lg">
                   <input
                     type="text"
-                    value={kw.keyword}
-                    onChange={(e) => handleChange(i, e.target.value)}
-                    placeholder="Enter target keyword..."
-                    className="flex-1 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                    required
+                    value={kw.keyword || ''}
+                    onChange={(e) => handleChange(i, 'keyword', e.target.value)}
+                    placeholder="Keyword *"
+                    className="flex-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                  />
+                  <input
+                    type="text"
+                    required
+                    value={kw.description || ''}
+                    onChange={(e) => handleChange(i, 'description', e.target.value)}
+                    placeholder="Description *"
+                    className="flex-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                  />
+                  <input
+                    type="text"
+                    required
+                    value={kw.tags || ''}
+                    onChange={(e) => handleChange(i, 'tags', e.target.value)}
+                    placeholder="Tags *"
+                    className="flex-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500/50 outline-none"
                   />
                   <button onClick={() => handleRemoveRow(i)} className="p-2 text-red-400 hover:bg-red-400/10 rounded-lg transition-colors">
                     <Trash2 className="w-4 h-4" />

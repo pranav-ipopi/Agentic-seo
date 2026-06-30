@@ -37,9 +37,9 @@ export async function POST(request: NextRequest) {
   for (const kw of keywords) {
     if (kw.id) {
       // @ts-ignore
-      await adminClient.from('keywords').update({ keyword: kw.keyword, target_url: targetUrl || null } as any).eq('id', kw.id)
+      await adminClient.from('keywords').update({ keyword: kw.keyword, description: kw.description, tags: kw.tags, target_url: targetUrl || null } as any).eq('id', kw.id)
     } else {
-      await adminClient.from('keywords').insert({ client_id: clientId, keyword: kw.keyword, target_url: targetUrl || null } as any)
+      await adminClient.from('keywords').insert({ client_id: clientId, keyword: kw.keyword, description: kw.description, tags: kw.tags, target_url: targetUrl || null } as any)
     }
   }
 

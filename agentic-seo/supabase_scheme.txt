@@ -162,6 +162,8 @@ CREATE TABLE public.keywords (
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
   target_url text,
+  description text,
+  tags text,
   CONSTRAINT keywords_pkey PRIMARY KEY (id),
   CONSTRAINT keywords_client_id_fkey FOREIGN KEY (client_id) REFERENCES public.clients(id)
 );

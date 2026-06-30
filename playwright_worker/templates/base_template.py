@@ -16,8 +16,11 @@ All templates MUST implement:
 
 import asyncio
 import random
+import re
 import string
 import os
+
+_EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 import logging
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional, List
@@ -111,6 +114,7 @@ class BaseTemplate(ABC):
                 elif response.status >= 500 and response.status != 520:
                     self.logger.warning(f"Server error {response.status} from {url}. Retrying...")
                     if attempt < max_retries - 1:
+                        await page.reload(wait_until="commit")
                         await asyncio.sleep(5)
                         continue
                     else:
@@ -137,6 +141,25 @@ class BaseTemplate(ABC):
                     self.logger.warning(f"Connection timeout on {url} (attempt {attempt + 1}/{max_retries}). Retrying in {wait}s...")
                     await asyncio.sleep(wait)
                 else:
+                    # Final attempt exhausted — open a fresh tab so the next job
+                    # gets a clean context instead of reusing the stuck page.
+                    try:
+                        new_page = await page.context.new_page()
+                        self.logger.warning(
+                            f"All {max_retries} attempts timed out for {url}. "
+                            f"Opened fresh tab to replace stuck page."
+                        )
+                        # Store on the owning worker (BrowserWorker.page) so that
+                        # the next get_page() call returns this clean tab.
+                        worker = getattr(self, 'worker', None)
+                        if worker is not None:
+                            worker.page = new_page
+                        else:
+                            # No direct worker reference — store on self so any
+                            # subclass that exposes .page will pick it up.
+                            self.page = new_page
+                    except Exception as tab_err:
+                        self.logger.warning(f"Could not open replacement tab after timeout: {tab_err}")
                     raise ConnectionTimeoutError(url=url, message=f"Connection timed out after {max_retries} attempts: {url}") from e
 
             except (SiteDownError, ConnectionTimeoutError):
@@ -245,7 +268,26 @@ class BaseTemplate(ABC):
             username = f"{first}{last}{num}{unique_hash}"
             
         domain = random.choice(domains)
-        email = f"{username}@{domain}"
+
+        # Validate email; regenerate username parts up to 3 times on failure.
+        email = None
+        for _attempt in range(3):
+            candidate = f"{username}@{domain}"
+            if _EMAIL_RE.match(candidate):
+                email = candidate
+                break
+            # Regenerate username parts for next attempt
+            first = random.choice(first_names)
+            last = random.choice(last_names)
+            adj = random.choice(["", "", "", random.choice(adjectives)])
+            num = random.randint(10, 99999)
+            unique_hash = ''.join(random.choices(string.ascii_lowercase + string.digits, k=4))
+            if adj:
+                username = f"{adj}{first}{last}{num}{unique_hash}"
+            else:
+                username = f"{first}{last}{num}{unique_hash}"
+        if email is None:
+            raise ValueError("generate_natural_credentials: failed to produce a valid email after 3 attempts")
         
         # Robust password ensuring at least one uppercase, lowercase, digit, and special char
         password_base = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
@@ -312,7 +354,7 @@ class BaseTemplate(ABC):
     # ----------------------------------------------------------------
 
     @abstractmethod
-    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str, description: str = "", tags: str = "") -> Dict[str, Any]:
         """
         Execute the full backlink creation flow.
 

@@ -32,14 +32,14 @@ class WordPressSubmitProTemplate(BaseTemplate):
         # Sitekey fallback from config
         self.fallback_sitekey = self.get_config("captcha", "sitekey_fallback", "6LeeMUYUAAAAAF34b51Fq6QIq4eG-zHJKx6g6BId")
 
-    async def run(self, page: Page, client_site: str, keyword: str) -> Dict[str, Any]:
+    async def run(self, page: Page, client_site: str, keyword: str, description: str = "", tags: str = "") -> Dict[str, Any]:
         self.logger.info(f"Starting WordPressSubmitProTemplate on {self.BASE_URL} for client_site={client_site}, keyword={keyword}")
         
         # Step 1: Register Account
         await self._register_account(page)
 
         # Step 2: Submit Bookmark
-        backlink_url = await self._submit_bookmark(page, client_site, keyword)
+        backlink_url = await self._submit_bookmark(page, client_site, keyword, description, tags)
 
         self.logger.info(f"Successfully created WordPress backlink: {backlink_url}")
         return {
@@ -196,7 +196,7 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
         self.logger.info(f"URL after registration: {page.url}")
 
-    async def _submit_bookmark(self, page: Page, client_site: str, keyword: str) -> str:
+    async def _submit_bookmark(self, page: Page, client_site: str, keyword: str, description: str = "", tags: str = "") -> str:
         self.logger.info(f"Navigating to submit page: {self.SUBMIT_URL}")
         nav_success = False
         try:
@@ -299,7 +299,8 @@ class WordPressSubmitProTemplate(BaseTemplate):
 
         # Fill tags
         tags_sel = self.get_selector("submission", "tags", "#tagsinput, .tagsinput, input[name='tagsinput'], input[name*='tags']")
-        await safe_fill(tags_sel, f"seo, marketing, backlinks, {keyword}")
+        tags_text = tags if tags else f"seo, marketing, backlinks, {keyword}"
+        await safe_fill(tags_sel, tags_text)
 
         # Select location via Select2 dropdown
         location_container_sel = self.get_selector("submission", "location_container", "[id*='submitpro_location-container'], #select2-submitpro_location-container, .select2-submitpro_location-container")
@@ -343,8 +344,8 @@ class WordPressSubmitProTemplate(BaseTemplate):
             "Modern digital strategies rely heavily on search engine visibility and user experience to capture customer interest. Through optimization of content, metadata, and high-relevancy links, companies can dramatically improve their rankings on major search engines for keyword {keyword}."
         ]
         description_templates = self.get_config("submission", "description_templates", default_templates)
-        description_text = random.choice(description_templates).format(keyword=keyword)
-        await safe_fill(desc_sel, description_text)
+        final_description_text = description if description else random.choice(description_templates).format(keyword=keyword)
+        await safe_fill(desc_sel, final_description_text)
 
         # Check terms and agreements checkbox
         agree_sel = self.get_selector("submission", "agree_checkbox", "#agree-checkbox, input[name='agree'], input[type='checkbox']")

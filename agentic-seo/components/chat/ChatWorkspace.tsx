@@ -220,6 +220,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
             client_id: activeClient.id,
             role: 'assistant',
             content: accumulated,
+            tool_name: null,
             created_at: new Date().toISOString(),
             metadata: {}
           }

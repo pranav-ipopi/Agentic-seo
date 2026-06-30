@@ -15,9 +15,7 @@ jest.mock('@/lib/supabase/client', () => ({
   createClient: jest.fn()
 }))
 
-jest.mock('@/lib/hermes/client', () => ({
-  streamHermesChat: jest.fn()
-}))
+
 
 // Mock ChatMessages and PromptInput to isolate ChatWorkspace logic
 jest.mock('@/components/chat/ChatMessages', () => () => <div data-testid="chat-messages" />)
@@ -27,7 +25,7 @@ jest.mock('@/components/chat/PromptInput', () => ({ onSend }: any) => (
 
 import { useClient } from '@/components/layout/ClientProvider'
 import { createClient } from '@/lib/supabase/client'
-import { streamHermesChat } from '@/lib/hermes/client'
+
 
 describe('ChatWorkspace Error Visibility (Property 12)', () => {
   beforeAll(() => {
@@ -65,10 +63,11 @@ describe('ChatWorkspace Error Visibility (Property 12)', () => {
   })
 
   it('shows an alert when the stream yields an error', async () => {
-    // Make streamHermesChat yield an error
-    ;(streamHermesChat as jest.Mock).mockImplementation(async function* () {
-      yield { type: 'error', error: 'test 502' }
-    })
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 502,
+      text: () => Promise.resolve('test 502')
+    }) as jest.Mock
 
     render(<ChatWorkspace sessionId="session-1" />)
 
@@ -92,12 +91,23 @@ describe('ChatWorkspace Error Visibility (Property 12)', () => {
   })
 
   it('shows no alert on a successful stream', async () => {
-    // Make streamHermesChat yield text chunks and complete successfully
-    ;(streamHermesChat as jest.Mock).mockImplementation(async function* () {
-      yield { type: 'text', content: 'hello ' }
-      yield { type: 'text', content: 'world' }
-      yield { type: 'done' }
-    })
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      body: {
+        getReader: () => {
+          let count = 0
+          return {
+            read: jest.fn().mockImplementation(() => {
+              count++
+              if (count === 1) return Promise.resolve({ done: false, value: new TextEncoder().encode('data: {"type":"text","content":"hello "}\\n\\n') })
+              if (count === 2) return Promise.resolve({ done: false, value: new TextEncoder().encode('data: {"type":"text","content":"world"}\\n\\n') })
+              if (count === 3) return Promise.resolve({ done: false, value: new TextEncoder().encode('data: [DONE]\\n\\n') })
+              return Promise.resolve({ done: true })
+            })
+          }
+        }
+      }
+    }) as jest.Mock
 
     render(<ChatWorkspace sessionId="session-1" />)
 

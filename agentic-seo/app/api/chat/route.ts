@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { buildClientSystemMessage } from '@/lib/agent/client'
+import { createServiceClient } from '@/lib/supabase/server'
 
 const AGENT_URL = process.env.AGENT_URL ?? 'http://localhost:8000'
 const AGENT_API_KEY = process.env.AGENT_API_KEY ?? ''
@@ -76,15 +77,13 @@ export async function POST(request: NextRequest) {
         const saveAssistantMessage = async () => {
           if (!accumulatedContent) return
           try {
-            console.log('[Chat API] Saving assistant message to DB (length:', accumulatedContent.length, ')')
-            const { createServiceClient } = await import('@/lib/supabase/server')
             const supabase = createServiceClient()
-            await supabase.from('chat_messages').insert({
+            await supabase.from('chat_messages').insert([{
               session_id: sessionId,
               client_id: clientId,
               role: 'assistant',
               content: accumulatedContent,
-            })
+            }] as any)
             // Task update has been removed because seo-agent does not require it.
           } catch (e) {
             console.error('[Chat API] Failed to save assistant message:', e)

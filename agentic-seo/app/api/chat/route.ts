@@ -7,13 +7,13 @@ const AGENT_API_KEY = process.env.AGENT_API_KEY ?? ''
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { messages, clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, taskId, department, stream = true } = body
+    const { messages, clientId, clientName, clientDomain, clientDescription, clientCategory, userName, sessionId, taskId, department, stream = true } = body
 
     if (!messages || !clientId || !clientName || !sessionId) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, clientDescription, clientCategory, sessionId, department })
+    const systemMessage = buildClientSystemMessage({ clientId, clientName, clientDomain, clientDescription, clientCategory, userName, sessionId, department })
 
     console.log(`[Chat API] Sending request to Agent at ${AGENT_URL}`)
     console.log(`[Chat API] Client ID: ${clientId}, Session ID: ${sessionId}`)

@@ -1,16 +1,16 @@
-# Graph Report - Agentic_SEO  (2026-06-28)
+# Graph Report - Agentic_SEO  (2026-06-30)
 
 ## Corpus Check
-- 4165 files · ~7,900,578 words
+- 4188 files · ~7,938,187 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1219 nodes · 1653 edges · 119 communities (101 shown, 18 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 37 edges (avg confidence: 0.69)
+- 1369 nodes · 1802 edges · 148 communities (126 shown, 22 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 38 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5201b905`
+- Built from commit: `89d354d9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -113,47 +113,71 @@
 - [[_COMMUNITY_Community 115|Community 115]]
 - [[_COMMUNITY_Community 116|Community 116]]
 - [[_COMMUNITY_Community 118|Community 118]]
+- [[_COMMUNITY_Community 119|Community 119]]
+- [[_COMMUNITY_Community 120|Community 120]]
+- [[_COMMUNITY_Community 121|Community 121]]
+- [[_COMMUNITY_Community 122|Community 122]]
+- [[_COMMUNITY_Community 123|Community 123]]
+- [[_COMMUNITY_Community 124|Community 124]]
+- [[_COMMUNITY_Community 125|Community 125]]
+- [[_COMMUNITY_Community 126|Community 126]]
+- [[_COMMUNITY_Community 127|Community 127]]
+- [[_COMMUNITY_Community 128|Community 128]]
+- [[_COMMUNITY_Community 129|Community 129]]
+- [[_COMMUNITY_Community 130|Community 130]]
+- [[_COMMUNITY_Community 131|Community 131]]
+- [[_COMMUNITY_Community 132|Community 132]]
+- [[_COMMUNITY_Community 133|Community 133]]
+- [[_COMMUNITY_Community 134|Community 134]]
+- [[_COMMUNITY_Community 135|Community 135]]
+- [[_COMMUNITY_Community 136|Community 136]]
+- [[_COMMUNITY_Community 137|Community 137]]
+- [[_COMMUNITY_Community 138|Community 138]]
+- [[_COMMUNITY_Community 139|Community 139]]
+- [[_COMMUNITY_Community 141|Community 141]]
+- [[_COMMUNITY_Community 142|Community 142]]
+- [[_COMMUNITY_Community 143|Community 143]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `createServiceClient()` - 40 edges
-2. `createClient()` - 29 edges
-3. `createClient()` - 26 edges
+1. `createServiceClient()` - 42 edges
+2. `createClient()` - 31 edges
+3. `createClient()` - 27 edges
 4. `PliggGenericTemplate` - 21 edges
 5. `BaseTemplate` - 19 edges
-6. `cn()` - 18 edges
-7. `useClient()` - 17 edges
+6. `useClient()` - 18 edges
+7. `cn()` - 18 edges
 8. `PliggTemplate` - 16 edges
 9. `compilerOptions` - 16 edges
 10. `Schema Details` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `route_and_execute()` --calls--> `FailureHandler`  [INFERRED]
+  playwright_worker/vps_worker_playwright.py → BookmarkBot/failure_handler.py
 - `mark_parent_task_running()` --references--> `Client`  [EXTRACTED]
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
 - `check_and_update_parent_task()` --references--> `Client`  [EXTRACTED]
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
-- `route_and_execute()` --calls--> `FailureHandler`  [INFERRED]
-  playwright_worker/vps_worker_playwright.py → BookmarkBot/failure_handler.py
 - `route_and_execute()` --references--> `Client`  [EXTRACTED]
   playwright_worker/vps_worker_playwright.py → agentic-seo/lib/supabase/types.ts
-- `BaseTemplate` --uses--> `ConnectionTimeoutError`  [INFERRED]
-  playwright_worker/templates/base_template.py → playwright_worker/executor/errors.py
+- `POST()` --calls--> `createServiceClient()`  [INFERRED]
+  agentic-seo/app/api/workflows/execute/route.ts → agentic-seo/lib/supabase/server.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (119 total, 18 thin omitted)
+## Communities (148 total, 22 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (37): DELETE(), DELETE(), DELETE(), POST(), GET(), PATCH(), POST(), POST() (+29 more)
+Cohesion: 0.17
+Nodes (15): DELETE(), DELETE(), DELETE(), GET(), POST(), PATCH(), GET(), POST() (+7 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
 Nodes (37): 2026 CRITICAL UPDATE: Method 11, 769,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-23-65281-10-11-35-16-5-13-18-51-45-43-27-17513-21,29-23-24,0, Adds: random delays, natural mouse curves, variable typing speed, Browser auto-sets locale=de-DE, timezone=Europe/Berlin, geolocation=German IP coords, Browserless Built-in Patches, Browserless CDP Integration, Browserless Docker (Already Headed), Browserless + Playwright CDP (+29 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.04
-Nodes (45): dependencies, class-variance-authority, clsx, @copilotkit/react-core, @copilotkit/runtime, exceljs, file-saver, ioredis (+37 more)
+Cohesion: 0.07
+Nodes (30): dependencies, class-variance-authority, clsx, @copilotkit/react-core, @copilotkit/runtime, exceljs, file-saver, ioredis (+22 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.14
@@ -168,8 +192,8 @@ Cohesion: 0.08
 Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.26
-Nodes (8): ApprovalsPage(), LoginPage(), SettingsPage(), createClient(), Profile, TeamSettingsPage(), KeywordsModal(), SiteListModal()
+Cohesion: 0.29
+Nodes (7): LoginPage(), SettingsPage(), createClient(), Profile, TeamSettingsPage(), KeywordsModal(), SiteListModal()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.15
@@ -192,20 +216,20 @@ Cohesion: 0.12
 Nodes (10): Supabase Service for Backlink Automation V1  Handles all database interactions w, Mark job as completed and store the created backlink URL in state., Handle failure + retry logic.         If retry_count < max_retries: set status b, Fetch a single job by id (useful for verification)., Return active target_sites rows where site_id has not been detected yet., Write the detected CMS template back to target_sites.site_id.          Args:, ISO format timestamp for updated_at., Fetch the oldest pending backlink job.         NOTE: Filters to type='backlink' (+2 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.18
-Nodes (13): ACTION_TYPE_LABELS, ApprovalCard(), ApprovalCardProps, PromptInput(), PromptInputProps, cn(), formatRelativeTime(), getInitials() (+5 more)
+Cohesion: 0.23
+Nodes (9): ACTION_TYPE_LABELS, ApprovalCard(), ApprovalCardProps, formatRelativeTime(), getInitials(), LeftSidebar(), NAV_ITEMS, Approval (+1 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.11
-Nodes (18): `app/api/chat/route.ts`, Assigning a user to a department (server-side), Code Changes (Already Applied), Creating a task_run scoped to a department, `department_members`, `departments`, Filtering tasks by department, How to Apply the Migration (+10 more)
+Cohesion: 0.25
+Nodes (8): `app/api/chat/route.ts`, Code Changes (Already Applied), How to Apply the Migration, `lib/hermes/client.ts`, `lib/supabase/types.ts`, Phase 2 — Multi-Department Setup Guide, RLS Notes, What Was Done
 
 ### Community 14 - "Community 14"
-Cohesion: 0.09
-Nodes (21): AgencyMemory, ApprovalStatus, Backlink, BacklinkStatus, ClientMember, ClientMemory, Database, Department (+13 more)
+Cohesion: 0.13
+Nodes (14): AgencyMemory, ApprovalStatus, Backlink, BacklinkStatus, ClientMember, ClientMemory, Database, Department (+6 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.15
-Nodes (12): ChatMessages(), ChatMessagesProps, PROMPT_MAPPING, renderMarkdown(), ToolStep, ChatWorkspace(), ChatWorkspaceProps, metadata (+4 more)
+Nodes (11): ChatMessages(), ChatMessagesProps, PROMPT_MAPPING, renderMarkdown(), ToolStep, ChatWorkspace(), ChatWorkspaceProps, metadata (+3 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.17
@@ -224,8 +248,8 @@ Cohesion: 0.13
 Nodes (14): 1. Install Redis, 2. Configure for External Access & Security, 3. Open the Firewall, All VPS Workers (`playwright_automation/backlink_automation/.env`), 🏛 Architecture Overview, 📊 Monitoring the System, Multi-VPS Redis Queue Setup, Network Topology (+6 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.07
-Nodes (31): AutomationError, FailureHandler, Failure Handler for Backlink Automation (SeleniumBase version)  Responsibilities, Handles failure classification, evidence capture, and site health tracking., Capture a screenshot and HTML dump from the current SeleniumBase driver., check_and_update_parent_task(), create_driver(), get_redis_client() (+23 more)
+Cohesion: 0.22
+Nodes (5): AutomationError, FailureHandler, Failure Handler for Backlink Automation (SeleniumBase version)  Responsibilities, Handles failure classification, evidence capture, and site health tracking., Capture a screenshot and HTML dump from the current SeleniumBase driver.
 
 ### Community 21 - "Community 21"
 Cohesion: 0.13
@@ -240,8 +264,8 @@ Cohesion: 0.21
 Nodes (10): CATEGORIES, Skill, getSkillsForStepType(), HermesSkill, SKILL_CATEGORY_COLORS, CATEGORIES, CATEGORY_CARD_STYLES, CategoryKey (+2 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.11
-Nodes (13): ABC, BaseTemplate, Base Template for Backlink Automation  Abstract base class that all site templat, Heuristic to detect logged-in state using config-driven text markers.         Ch, Generate highly random but natural-looking registration credentials for automati, Generate highly robust, natural-looking, and unique credentials., Try multiple strategies to find the newly created story/article URL.         Use, Abstract base template. All site automation templates extend this.      Construc (+5 more)
+Cohesion: 0.10
+Nodes (14): ABC, BaseTemplate, Base Template for Backlink Automation  Abstract base class that all site templat, Heuristic to detect logged-in state using config-driven text markers.         Ch, Generate highly random but natural-looking registration credentials for automati, Generate highly robust, natural-looking, and unique credentials., Try multiple strategies to find the newly created story/article URL.         Use, Abstract base template. All site automation templates extend this.      Construc (+6 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.22
@@ -264,8 +288,8 @@ Cohesion: 0.13
 Nodes (9): calculate_human_path(), handle_cloudflare_challenge(), move_mouse_humanlike(), Tiered Cloudflare Turnstile bypass.     Tier 1: Atomic locate-and-click pattern., Manages an undetected Chromium session (SeleniumBase CDP or Browserless) with Pl, Deterministic endpoint selection based on proxy session ID.         Ensures same, Generates a smooth, human-like curved mouse path between two coordinates., Moves Playwright's mouse from a random starting position to the target     coord (+1 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.23
-Nodes (11): ClientContext, ClientContextValue, useClient(), Client, WorkflowTemplate, TasksPage(), ArticleRunConfigurationPanel(), DEFAULT_PLATFORMS (+3 more)
+Cohesion: 0.14
+Nodes (18): ApprovalsPage(), DashboardLayout(), metadata, ClientContext, ClientContextValue, ClientProvider(), useClient(), RightSidebar() (+10 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.47
@@ -284,8 +308,8 @@ Cohesion: 0.21
 Nodes (9): _build_registry(), _get_registry(), Template Runner for Backlink Automation  Centralized template resolution + confi, Resolves the correct template class + merged config for a given site,     then e, Return list of registered site_id values., Check if a site_id has a registered template., Build the template registry lazily to avoid circular imports.     Called once on, Get or build the template registry (cached). (+1 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.28
-Nodes (6): POST(), buildClientSystemMessage(), DEPARTMENT_PERSONAS, HermesChunk, HermesMessage, HermesToolProgress
+Cohesion: 0.16
+Nodes (11): AgentChunk, AgentMessage, AgentToolProgress, buildClientSystemMessage(), DEPARTMENT_PERSONAS, POST(), buildClientSystemMessage(), DEPARTMENT_PERSONAS (+3 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.17
@@ -388,8 +412,8 @@ Cohesion: 0.22
 Nodes (8): Boundaries, Intensity, Output, Persistence, Ponytail, Rules, The ladder, When NOT to be lazy
 
 ### Community 93 - "Community 93"
-Cohesion: 0.27
-Nodes (7): getIcon(), getTheme(), TemplateNode(), TemplateNodeData, TemplateNodeType, nodeTypes, WorkflowVisualizerProps
+Cohesion: 0.17
+Nodes (12): PromptInput(), PromptInputProps, cn(), SkillsPage(), SkillCard(), getIcon(), getTheme(), TemplateNode() (+4 more)
 
 ### Community 94 - "Community 94"
 Cohesion: 0.40
@@ -408,8 +432,8 @@ Cohesion: 0.25
 Nodes (8): ✅ Already Supported in V1 (Unchanged), ✅ Fixed in Phase 2 (This Session), Gap Analysis Results, Phased Roadmap, Readiness Summary (Updated), ⚠️ Still Outstanding (Future Work), The Target Hierarchy, V1 Architecture → Agency OS Gap Analysis
 
 ### Community 98 - "Community 98"
-Cohesion: 0.24
-Nodes (9): Site is unreachable — connection refused, DNS failure, or HTTP 5xx., Bookmark/article submission failed., SiteDownError, SubmissionFailedError, Page, Wrapper for human-like click., Centralized defensive navigation. Handles network-level retries,         forces, Generic WordPress SubmitPro template.     Handles registration and bookmark subm (+1 more)
+Cohesion: 0.29
+Nodes (8): Site is unreachable — connection refused, DNS failure, or HTTP 5xx., Bookmark/article submission failed., SiteDownError, SubmissionFailedError, Page, Centralized defensive navigation. Handles network-level retries,         forces, Generic WordPress SubmitPro template.     Handles registration and bookmark subm, WordPressSubmitProTemplate
 
 ### Community 99 - "Community 99"
 Cohesion: 0.40
@@ -452,36 +476,116 @@ Cohesion: 0.22
 Nodes (8): 1. Hybrid Captcha-Solving Engine 🧠, 2. Intelligent Queueing & Crash Recovery 🔄, 3. Automated Flow & Stealth Bypass 🥷, 🚀 Agentic SEO: Backlink Automation Progress Report, 🏆 Core Achievements, 🏗️ System Architecture, 📈 The Numbers That Matter, 🔮 What's Next?
 
 ### Community 115 - "Community 115"
-Cohesion: 0.25
-Nodes (6): DashboardLayout(), metadata, ClientProvider(), RightSidebar(), TaskRunExtended, Task
+Cohesion: 0.09
+Nodes (22): A1: FIFO Queue Ordering (`lpush` → `rpush`), A2: Cancelled Job Dispatch Without Pre-Check, A3: Least-Recently-Used Worker Selection, B1: Frozen Tab Detection and Reload (Bug 1.5), B2: `about:blank` Crash Recovery (Bug 1.6), B3: Consecutive Timeout → New Tab (Bug 1.7), B4: Externally Closed Tab Recovery (Bug 1.8), Bug Details (+14 more)
 
 ### Community 116 - "Community 116"
-Cohesion: 0.38
-Nodes (3): fetchAdminStats(), updateAdminLimit(), ClientStats
+Cohesion: 0.36
+Nodes (4): fetchAdminStats(), fetchAnalyticsData(), updateAdminLimit(), ClientStats
 
 ### Community 118 - "Community 118"
+Cohesion: 0.47
+Nodes (5): _best_score(), load_dictionary(), Return the best fuzzy score across multiple scorers.      - token_sort_ratio: so, solve_captcha(), UploadFile
+
+### Community 119 - "Community 119"
+Cohesion: 0.13
+Nodes (9): POST(), POST(), GET(), POST(), createClient(), POST(), GET(), PATCH() (+1 more)
+
+### Community 120 - "Community 120"
+Cohesion: 0.12
+Nodes (16): devDependencies, jest, jest-environment-jsdom, jest-environment-node, tailwindcss, @tailwindcss/postcss, @testing-library/dom, @testing-library/jest-dom (+8 more)
+
+### Community 121 - "Community 121"
+Cohesion: 0.18
+Nodes (14): Client, check_and_update_parent_task(), detect_and_update(), mark_parent_task_running(), poll_queue(), VPS Worker - Backlink Automation Orchestrator  Polls Supabase for pending task_r, Fingerprints an undetected site using the Playwright stealth browser     and wri, Executes a single step of a workflow task_run.     Uses TemplateRunner for confi (+6 more)
+
+### Community 122 - "Community 122"
+Cohesion: 0.14
+Nodes (14): Correctness Properties, Property 10: Email Format Validity, Property 11: New Client Default Limit, Property 12: Chat Error Visibility, Property 13: SSE Chunk Safety, Property 1: FIFO Queue Ordering, Property 2: No Slot Consumed by Cancelled Job, Property 3: LRU Worker Selection (+6 more)
+
+### Community 123 - "Community 123"
+Cohesion: 0.14
+Nodes (14): Fix A1 — FIFO Queue Ordering, Fix A2 — Pre-Dispatch Cancellation Check, Fix A3 — LRU Worker last_used Update, Fix B1 — Frozen Tab Detection, Fix B2 — about:blank Crash Recovery, Fix B3 — Consecutive Timeout → New Tab, Fix B4 — Externally Closed Tab Recovery, Fix C1/C2 — OCR Scorer (Already Applied) (+6 more)
+
+### Community 124 - "Community 124"
+Cohesion: 0.22
+Nodes (6): POST(), GET(), PATCH(), POST(), Keyword, WorkflowRunner
+
+### Community 125 - "Community 125"
+Cohesion: 0.15
+Nodes (13): A1 — FIFO Ordering, A2 — Cancelled Job Pre-Check, A3 — Worker Load Skew, B1 — Frozen Tab, B2 — about:blank Crash, B3 — Consecutive Timeout, B4 — External Tab Close, D1 — 5xx Retry Without Reload (+5 more)
+
+### Community 126 - "Community 126"
+Cohesion: 0.26
+Nodes (12): check_and_update_parent_task(), create_driver(), get_redis_client(), main(), mark_parent_task_running(), pop_job(), push_test_job(), local_worker.py — Standalone local worker for testing.  Fetches jobs from the sa (+4 more)
+
+### Community 127 - "Community 127"
+Cohesion: 0.20
+Nodes (8): TaskRun, TaskRunLog, SIMULATED_LOGS, STATUS_FILTERS, StatusFilter, TaskRunExtended, TasksPage(), downloadCampaignExcelReport()
+
+### Community 128 - "Community 128"
+Cohesion: 0.20
+Nodes (9): Backlink Worker Bugs — Bugfix Design, Expected Behavior, Glossary, Overview, Preservation Requirements, Property-Based Tests, Python Worker Tests (`playwright_worker/tests/`), Testing Strategy (+1 more)
+
+### Community 129 - "Community 129"
+Cohesion: 0.22
+Nodes (8): name, private, scripts, build, dev, start, test, version
+
+### Community 130 - "Community 130"
+Cohesion: 0.29
+Nodes (6): Bug Analysis, Bugfix Requirements Document, Current Behavior (Defect), Expected Behavior (Correct), Introduction, Unchanged Behavior (Regression Prevention)
+
+### Community 131 - "Community 131"
+Cohesion: 0.33
+Nodes (6): HTTPAuthorizationCredentials, Request, chat_endpoint(), convert_messages(), Convert Next.js OpenAI-style messages to LangChain message objects., verify_api_key()
+
+### Community 133 - "Community 133"
+Cohesion: 0.33
+Nodes (5): Implementation Plan: Backlink Worker Bugs, Notes, Overview, Task Dependency Graph, Tasks
+
+### Community 135 - "Community 135"
+Cohesion: 0.40
+Nodes (5): Assigning a user to a department (server-side), Creating a task_run scoped to a department, Filtering tasks by department, How to Use Departments in New Features, Starting a department-aware chat session
+
+### Community 136 - "Community 136"
+Cohesion: 0.40
+Nodes (5): `department_members`, `departments`, Modified Tables (Non-Breaking Additions), New Tables, What the Migration Creates
+
+### Community 137 - "Community 137"
+Cohesion: 0.60
+Nodes (4): getCachedClients(), getCachedTemplate(), metadata, WorkflowDetailPage()
+
+### Community 138 - "Community 138"
+Cohesion: 0.40
+Nodes (4): Turn a topic into a simple SEO brief., Free web search using DuckDuckGo., seo_brief(), web_search()
+
+### Community 141 - "Community 141"
+Cohesion: 0.50
+Nodes (3): npx, @playwright/mcp, playwright
+
+### Community 142 - "Community 142"
 Cohesion: 0.67
-Nodes (3): load_dictionary(), solve_captcha(), UploadFile
+Nodes (3): getCachedTemplates, metadata, WorkflowsPage()
 
 ## Knowledge Gaps
-- **413 isolated node(s):** `🏗️ System Architecture`, `1. Hybrid Captcha-Solving Engine 🧠`, `2. Intelligent Queueing & Crash Recovery 🔄`, `3. Automated Flow & Stealth Bypass 🥷`, `📈 The Numbers That Matter` (+408 more)
+- **502 isolated node(s):** `Introduction`, `Current Behavior (Defect)`, `Expected Behavior (Correct)`, `Unchanged Behavior (Regression Prevention)`, `Overview` (+497 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Client` connect `Community 31` to `Community 0`, `Community 6`, `Community 12`, `Community 14`, `Community 20`?**
-  _High betweenness centrality (0.119) - this node is a cross-community bridge._
-- **Why does `route_and_execute()` connect `Community 20` to `Community 26`, `Community 10`, `Community 31`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+- **Why does `Client` connect `Community 31` to `Community 6`, `Community 137`, `Community 12`, `Community 14`, `Community 121`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `route_and_execute()` connect `Community 121` to `Community 26`, `Community 10`, `Community 20`, `Community 31`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `mark_parent_task_running()` connect `Community 121` to `Community 31`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `createServiceClient()` (e.g. with `DELETE()` and `DELETE()`) actually correct?**
   _`createServiceClient()` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `🏗️ System Architecture`, `1. Hybrid Captcha-Solving Engine 🧠`, `2. Intelligent Queueing & Crash Recovery 🔄` to the rest of the system?**
-  _574 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06196291270918137 - nodes in this community are weakly interconnected._
+- **What connects `Introduction`, `Current Behavior (Defect)`, `Expected Behavior (Correct)` to the rest of the system?**
+  _668 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._

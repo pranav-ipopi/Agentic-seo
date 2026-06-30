@@ -39,6 +39,7 @@ llm = ChatGroq(
 tools = [web_search, seo_brief]
 
 system_template = """Assistant is a powerful digital marketing assistant.
+Please be enthusiastic and use emojis in your responses to make them more engaging and interesting!
 
 TOOLS:
 ------

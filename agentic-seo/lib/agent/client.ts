@@ -64,6 +64,7 @@ export function buildClientSystemMessage(params: {
   clientDomain?: string | null
   clientDescription?: string | null
   clientCategory?: string | null
+  userName?: string | null
   sessionId: string
   department?: string | null  // department slug: 'seo' | 'execution' | 'design'
 }): AgentMessage {
@@ -79,6 +80,7 @@ Client Name: ${params.clientName}
 ${params.clientDomain ? `Client Domain: ${params.clientDomain}` : ''}
 ${params.clientDescription ? `Client Description: ${params.clientDescription}` : ''}
 ${params.clientCategory ? `Client Category: ${params.clientCategory}` : ''}
+${params.userName ? `User Name (speaking with you): ${params.userName}` : ''}
 Session ID: ${params.sessionId}
 Department: ${dept.toUpperCase()}
 
@@ -112,6 +114,7 @@ export async function* streamAgentChat(params: {
   clientDomain?: string | null
   clientDescription?: string | null
   clientCategory?: string | null
+  userName?: string | null
   sessionId: string
   taskId?: string
   department?: string | null
@@ -184,6 +187,7 @@ export async function chatWithAgent(params: {
   clientDomain?: string | null
   clientDescription?: string | null
   clientCategory?: string | null
+  userName?: string | null
   sessionId: string
   department?: string | null
 }): Promise<string> {

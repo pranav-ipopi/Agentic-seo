@@ -60,30 +60,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
       let currentMessages = messagesRes.data || []
       setMessages(currentMessages)
       
-      const latestTask = tasksRes.data?.[0]
-      if (latestTask && latestTask.status === 'running') {
-        setIsStreaming(true)
-        
-        // Start polling for the backend's saved response
-        pollingInterval = setInterval(async () => {
-          const { data: newMsgs } = await supabase
-            .from('chat_messages')
-            .select('*')
-            .eq('session_id', sessionId)
-            .order('created_at', { ascending: true })
-            
-          if (newMsgs && newMsgs.length > currentMessages.length) {
-            setMessages(newMsgs)
-            currentMessages = newMsgs
-            
-            const lastMsg = newMsgs[newMsgs.length - 1]
-            if (lastMsg.role === 'assistant') {
-              setIsStreaming(false)
-              if (pollingInterval) clearInterval(pollingInterval)
-            }
-          }
-        }, 3000)
-      }
+      // Legacy polling for long-running tasks removed for direct streaming
     }
     
     load()
@@ -102,6 +79,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
     if (!activeClient) return
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
+    const userName = user.user_metadata?.full_name || user.email || 'User'
 
     let currentSession = session
     if (!currentSession) {
@@ -180,6 +158,7 @@ export default function ChatWorkspace({ sessionId }: ChatWorkspaceProps) {
         clientDomain: activeClient.domain,
         clientDescription: activeClient.description,
         clientCategory: activeClient.category,
+        userName,
         sessionId,
         taskId: undefined,
         department: 'seo', // Phase 1: SEO only. Will be dynamic in Phase 3.

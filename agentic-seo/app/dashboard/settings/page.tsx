@@ -242,6 +242,7 @@ export default function SettingsPage() {
                     <option value="">Select category...</option>
                     <option value="automotive">Automotive</option>
                     <option value="health">Health & Medical</option>
+                    <option value="dentist">Dentist</option>
                     <option value="technology">Technology & SaaS</option>
                     <option value="ecommerce">E-commerce</option>
                     <option value="real-estate">Real Estate</option>

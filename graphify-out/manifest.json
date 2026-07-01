@@ -265,8 +265,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/components/workflows/WorkflowDetailClient.tsx": {
-    "mtime": 1781931327.184872,
-    "ast_hash": "a56767ba68585552143b63c9d4bdcaa9",
+    "mtime": 1782924717.0661922,
+    "ast_hash": "bb2b358de13f9e1931ec44b6f5cb88a6",
     "semantic_hash": ""
   },
   "agentic-seo/components/workflows/WorkflowVisualizer.tsx": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/package.json": {
-    "mtime": 1782910099.2182765,
-    "ast_hash": "3dea97cca6fbaeb3ca9f3aca8ca094cf",
+    "mtime": 1782923521.009774,
+    "ast_hash": "0ebb135ea86b9faddaa8057351cdefb2",
     "semantic_hash": ""
   },
   "agentic-seo/postcss.config.mjs": {
@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/supabase_scheme.txt": {
-    "mtime": 1782906670.6660192,
-    "ast_hash": "b3b7ed00cb6aa17b2201dabbf9a4f22c",
+    "mtime": 1782923134.075568,
+    "ast_hash": "d0799b7f9f2abfa1556b198d4ec59aa3",
     "semantic_hash": ""
   },
   "docs/article_submission_architecture.md": {
@@ -730,13 +730,13 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/actions.ts": {
-    "mtime": 1782909765.2278442,
-    "ast_hash": "ee601d922893f63cf389b2ca5972d239",
+    "mtime": 1782921577.091252,
+    "ast_hash": "912258e3c342e335ad035b286b170ccb",
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/page.tsx": {
-    "mtime": 1782908446.599097,
-    "ast_hash": "06dc7140bb71e1593807da89410d75e3",
+    "mtime": 1782921236.8875835,
+    "ast_hash": "15d317120526ff8218f5a64ca8968190",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/clients/[id]/limit/route.ts": {
@@ -28717,6 +28717,26 @@
   "playwright_worker/recover_zombies.py": {
     "mtime": 1782900587.3430521,
     "ast_hash": "5a9940c9ab9d96b22439f439c000df57",
+    "semantic_hash": ""
+  },
+  "agentic-seo/app/api/keywords/discover/route.ts": {
+    "mtime": 1782925163.8487642,
+    "ast_hash": "bd94f197911aae44767a6ff78cd2636c",
+    "semantic_hash": ""
+  },
+  "agentic-seo/components/workflows/BacklinkDashboard.tsx": {
+    "mtime": 1782925526.7252746,
+    "ast_hash": "8c92d5938000608dbc232a6785963c03",
+    "semantic_hash": ""
+  },
+  "agentic-seo/supabase/migrations/keyword_dashboard_tables.sql": {
+    "mtime": 1782925175.3175595,
+    "ast_hash": "3f0904e92fb835104c7e51cf88b16aeb",
+    "semantic_hash": ""
+  },
+  "playwright_worker/docs/worker_recovery_guide.md": {
+    "mtime": 1782910861.273268,
+    "ast_hash": "4a9e1504defccaa73d26f876f4ace1c5",
     "semantic_hash": ""
   }
 }

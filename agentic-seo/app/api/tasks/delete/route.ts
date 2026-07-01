@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
       await (adminSupabase as any)
         .from('campaigns')
         .delete()
-        .eq('id', task.campaign_id)
+        .eq('id', (task as any).campaign_id)
     }
 
     return NextResponse.json({ success: true })

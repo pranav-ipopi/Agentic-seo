@@ -88,7 +88,8 @@ export async function resetClientQuota(password: string, clientId: string) {
   if (password !== process.env.ADMIN_PASSWORD) throw new Error('Unauthorized')
   
   const supabase = createServiceClient()
-  const { error } = await supabase
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await (supabase as any)
     .from('clients')
     .update({ quota_reset_at: new Date().toISOString() })
     .eq('id', clientId)
@@ -101,7 +102,8 @@ export async function resetGlobalQuota(password: string) {
   if (password !== process.env.ADMIN_PASSWORD) throw new Error('Unauthorized')
   
   const supabase = createServiceClient()
-  const { error } = await supabase
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await (supabase as any)
     .from('clients')
     .update({ quota_reset_at: new Date().toISOString() })
     .not('id', 'is', null)

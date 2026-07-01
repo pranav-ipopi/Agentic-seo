@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/campaigns/execute/route.ts": {
-    "mtime": 1782807994.2716777,
-    "ast_hash": "c0ec86ff36a15752da1b7788490d0ebf",
+    "mtime": 1782887506.3191524,
+    "ast_hash": "c3be2311d3a194a6a29eb757dfe3fd0f",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/campaigns/saved/route.ts": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/retry/route.ts": {
-    "mtime": 1782571489.0318713,
-    "ast_hash": "837d65a5d319039182afd6324335a342",
+    "mtime": 1782887513.9858632,
+    "ast_hash": "28c7cb3dce8600347e9862c17f806b7b",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/route.ts": {
@@ -730,8 +730,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/actions.ts": {
-    "mtime": 1782819769.194989,
-    "ast_hash": "6b9c04e8fdbfc37ef1d1fa4379548546",
+    "mtime": 1782885333.6795838,
+    "ast_hash": "54513ff689eef6aee19aebad3f1b931b",
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/page.tsx": {
@@ -757,86 +757,6 @@
   "playwright_worker/docs/cloudflare_stealth_architecture.md": {
     "mtime": 1782469869.7371,
     "ast_hash": "664bc3d414648c5c6a57a825bde38acf",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/cf_session_manager.py": {
-    "mtime": 1782540718.9470136,
-    "ast_hash": "a5ac5665323a5d13bcc2ae280bec0417",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/config.py": {
-    "mtime": 1782533076.4046576,
-    "ast_hash": "961100e17f6433251535ca0c6b99e86f",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/db.py": {
-    "mtime": 1782494052.6829286,
-    "ast_hash": "2f241eb76c2318bf1e96018b58ef050c",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failure_handler.py": {
-    "mtime": 1782499665.2674322,
-    "ast_hash": "ba3b950ffa569910c733ea888bf5472b",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/local_worker.py": {
-    "mtime": 1782543131.8609111,
-    "ast_hash": "d96cb39eb09944a5389906b073bb1a1f",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/logger_setup.py": {
-    "mtime": 1782489126.2553272,
-    "ast_hash": "cad34af280f526566e9021fb12b3cc17",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/main.py": {
-    "mtime": 1782489126.2653272,
-    "ast_hash": "85b232a0ef16203147916ae18d3a5886",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/metrics.py": {
-    "mtime": 1782489126.2733865,
-    "ast_hash": "86f2edf3394d3ae096e2220835a84fb8",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/pligg_template.py": {
-    "mtime": 1782535443.56588,
-    "ast_hash": "f7270c8ea5599d36421a4c5e575080f6",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/profile_init.py": {
-    "mtime": 1782489126.2813275,
-    "ast_hash": "1c423530c282edb87d5b304d409bfc77",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/proxy_manager.py": {
-    "mtime": 1782489126.298326,
-    "ast_hash": "7020fa5a22971ac15633b7466a6582ca",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/rate_limiter.py": {
-    "mtime": 1782489126.305328,
-    "ast_hash": "ec6b0a2c72b2e26ade18123f69371e80",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/sessions/session_livebookmarking_com_noproxy.json": {
-    "mtime": 1782494222.1368341,
-    "ast_hash": "d751713988987e9331980363e24189ce",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/supabase_schema.sql": {
-    "mtime": 1782489126.3303318,
-    "ast_hash": "c0988fce08c0d4034fad19e518a8f22f",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/test_nodriver.py": {
-    "mtime": 1782539729.874047,
-    "ast_hash": "884c3f098ab0c4f48ce704cbf73c1ace",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/worker.py": {
-    "mtime": 1782493028.5088792,
-    "ast_hash": "f33db13dbb3e7c86da71ca29417b34f8",
     "semantic_hash": ""
   },
   "Solved Media.user.js": {
@@ -894,21 +814,6 @@
     "ast_hash": "7823e5abc1ae147acc8bd2d9e8c92c6e",
     "semantic_hash": ""
   },
-  "BookmarkBot/README.md": {
-    "mtime": 1782489126.227327,
-    "ast_hash": "06b2b6d572d50cf0235671281cc730ab",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/proxies.example.txt": {
-    "mtime": 1782489126.2903397,
-    "ast_hash": "7210cc3cd88385888bff96ebf267376f",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/requirements.txt": {
-    "mtime": 1782535030.637798,
-    "ast_hash": "b8befef215ecdff316eee31cf72cf088",
-    "semantic_hash": ""
-  },
   "docs/2026_cloudflare_bypass_methods.md": {
     "mtime": 1782576466.4974773,
     "ast_hash": "8985e8eaaedbc19bf1b2e2fd45ade1bc",
@@ -964,46 +869,6 @@
     "ast_hash": "746e3669cc95493a176247caeb59084a",
     "semantic_hash": ""
   },
-  "BookmarkBot/debug_detail_page.png": {
-    "mtime": 1782498668.827468,
-    "ast_hash": "2774c87fc9d986bed6ef8fcb027c44fd",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/solvemedia_captcha_0debf9fbff484c9481464c6a961e8626.png": {
-    "mtime": 1782495583.0640533,
-    "ast_hash": "d1bea97a74c6c31fa295095476033838",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/solvemedia_captcha_4a1bfa40ee254ba487c02560273f1c48.png": {
-    "mtime": 1782495102.4269536,
-    "ast_hash": "af798f1022c18652a47c7bd242dc95d5",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/cdp_bezier_mouse.py": {
-    "mtime": 1782538305.5929575,
-    "ast_hash": "0d2baeeef65b1f378dd27fe76bd272e7",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/kill_chrome.py": {
-    "mtime": 1782541164.7543418,
-    "ast_hash": "967844c11c52a4a397f937b8fa45c225",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/playwright_pligg_template.py": {
-    "mtime": 1782535508.9015543,
-    "ast_hash": "f923cbb2d64490a2c0514949fcf477a1",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/solvemedia_cache.py": {
-    "mtime": 1782535391.9630013,
-    "ast_hash": "0c961af963040fd0f01d7af84f6857e9",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/test_creepjs.py": {
-    "mtime": 1782539101.728584,
-    "ast_hash": "d5b4cb2131727c8cdeefe1c219437e03",
-    "semantic_hash": ""
-  },
   "playwright_worker/setup_profiles.ps1": {
     "mtime": 1782714919.5841236,
     "ast_hash": "083a18bca7adfd75cd67b08688c60b35",
@@ -1022,56 +887,6 @@
   "docs/mimic_human.md": {
     "mtime": 1782545698.6791544,
     "ast_hash": "5d10df64dfc6b79f4f4c69e60db2a826",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/2509ce13-5613-41c8-9af6-ec56b2f69599_execution_1782540584.png": {
-    "mtime": 1782540584.5326796,
-    "ast_hash": "ea48b21793e79e883ba73df0c39381e7",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/2509ce13-5613-41c8-9af6-ec56b2f69599_execution_1782541006.png": {
-    "mtime": 1782541006.3916917,
-    "ast_hash": "7a9979d1defdbde5688d7d48ba0f0640",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/357720fa-b68d-45aa-b31f-5ac0afae7bfe_execution_1782544154.png": {
-    "mtime": 1782544154.4197383,
-    "ast_hash": "c679ac6af1daed03cef4c98daada9d85",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/41ec690c-2c45-41a9-9064-2f5009463369_execution_1782544000.png": {
-    "mtime": 1782544000.4871528,
-    "ast_hash": "148eeaf8ff199432c4dd3f042f1d4bee",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/4c416078-9a5b-4705-8fef-7b9c1c0ce1a5_execution_1782544959.png": {
-    "mtime": 1782544960.4495502,
-    "ast_hash": "d6c3022d5791e55d7cc4f8eb5a3fb80f",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/4c416078-9a5b-4705-8fef-7b9c1c0ce1a5_execution_1782545537.png": {
-    "mtime": 1782545537.5218925,
-    "ast_hash": "224c68cae9ea9b8d79c21ac2bf17b5eb",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/4c416078-9a5b-4705-8fef-7b9c1c0ce1a5_execution_1782546486.png": {
-    "mtime": 1782546486.2885287,
-    "ast_hash": "6a3a92582c82c34ff0a7603b8d99a40e",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/8b708098-e2fc-45bb-b74c-50caa210f558_execution_1782544500.png": {
-    "mtime": 1782544500.6446037,
-    "ast_hash": "876f538587a4367f0a8d222792bcfc35",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/bf571d1e-3df3-47c3-99ac-fbdc3eda63c9_execution_1782541151.png": {
-    "mtime": 1782541151.1734686,
-    "ast_hash": "c3e72249d39f4f7a72193f0799e26b0a",
-    "semantic_hash": ""
-  },
-  "BookmarkBot/failures/2026-06-27/f5e65d96-36fc-439a-9a62-d95dfefcb2a2_execution_1782540958.png": {
-    "mtime": 1782540958.8455868,
-    "ast_hash": "ed3a01e06eb3bf8f0b6e8eddff2776ff",
     "semantic_hash": ""
   },
   "playwright_worker/methods/stealth_browser.py": {

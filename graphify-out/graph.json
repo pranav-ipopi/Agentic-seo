@@ -4,14 +4,104 @@
   "graph": {},
   "nodes": [
     {
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "admin_actions",
+      "community": 116,
+      "norm_label": "actions.ts"
+    },
+    {
+      "label": "fetchAdminStats()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "admin_actions_fetchadminstats",
+      "community": 116,
+      "norm_label": "fetchadminstats()"
+    },
+    {
+      "label": "updateAdminLimit()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "admin_actions_updateadminlimit",
+      "community": 116,
+      "norm_label": "updateadminlimit()"
+    },
+    {
+      "label": "setGlobalLimit()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "admin_actions_setgloballimit",
+      "community": 116,
+      "norm_label": "setgloballimit()"
+    },
+    {
+      "label": "fetchAnalyticsData()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "admin_actions_fetchanalyticsdata",
+      "community": 116,
+      "norm_label": "fetchanalyticsdata()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "execute_route",
+      "community": 20,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "execute_route_post",
+      "community": 20,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "retry_route",
+      "community": 20,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "retry_route_post",
+      "community": 20,
+      "norm_label": "post()"
+    },
+    {
       "label": "ChatWorkspace.test.tsx",
       "file_type": "code",
       "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_chatworkspace_test",
       "community": 15,
-      "norm_label": "chatworkspace.test.tsx"
+      "norm_label": "chatworkspace.test.tsx",
+      "id": "components_chatworkspace_test"
     },
     {
       "label": "route.ts",
@@ -19,9 +109,9 @@
       "source_file": "agentic-seo/app/api/chat/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "chat_route",
       "community": 36,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "chat_route"
     },
     {
       "label": "POST()",
@@ -29,9 +119,9 @@
       "source_file": "agentic-seo/app/api/chat/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "chat_route_post",
       "community": 36,
-      "norm_label": "post()"
+      "norm_label": "post()",
+      "id": "chat_route_post"
     },
     {
       "label": "ChatWorkspace.tsx",
@@ -39,9 +129,9 @@
       "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "chat_chatworkspace",
       "community": 15,
-      "norm_label": "chatworkspace.tsx"
+      "norm_label": "chatworkspace.tsx",
+      "id": "chat_chatworkspace"
     },
     {
       "label": "ChatWorkspaceProps",
@@ -49,9 +139,9 @@
       "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "chat_chatworkspace_chatworkspaceprops",
       "community": 15,
-      "norm_label": "chatworkspaceprops"
+      "norm_label": "chatworkspaceprops",
+      "id": "chat_chatworkspace_chatworkspaceprops"
     },
     {
       "label": "ChatWorkspace()",
@@ -59,9 +149,9 @@
       "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "chat_chatworkspace_chatworkspace",
       "community": 15,
-      "norm_label": "chatworkspace()"
+      "norm_label": "chatworkspace()",
+      "id": "chat_chatworkspace_chatworkspace"
     },
     {
       "label": "package.json",
@@ -69,9 +159,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agentic_seo_package",
       "community": 129,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "agentic_seo_package"
     },
     {
       "label": "name",
@@ -79,9 +169,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "agentic_seo_package_name",
       "community": 129,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "agentic_seo_package_name"
     },
     {
       "label": "version",
@@ -89,9 +179,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "agentic_seo_package_version",
       "community": 129,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "agentic_seo_package_version"
     },
     {
       "label": "private",
@@ -99,9 +189,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "agentic_seo_package_private",
       "community": 129,
-      "norm_label": "private"
+      "norm_label": "private",
+      "id": "agentic_seo_package_private"
     },
     {
       "label": "scripts",
@@ -109,9 +199,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "agentic_seo_package_scripts",
       "community": 129,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "agentic_seo_package_scripts"
     },
     {
       "label": "dev",
@@ -119,9 +209,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "agentic_seo_package_scripts_dev",
       "community": 129,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "agentic_seo_package_scripts_dev"
     },
     {
       "label": "build",
@@ -129,9 +219,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "agentic_seo_package_scripts_build",
       "community": 129,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "agentic_seo_package_scripts_build"
     },
     {
       "label": "start",
@@ -139,9 +229,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "agentic_seo_package_scripts_start",
       "community": 129,
-      "norm_label": "start"
+      "norm_label": "start",
+      "id": "agentic_seo_package_scripts_start"
     },
     {
       "label": "test",
@@ -149,9 +239,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "agentic_seo_package_scripts_test",
       "community": 129,
-      "norm_label": "test"
+      "norm_label": "test",
+      "id": "agentic_seo_package_scripts_test"
     },
     {
       "label": "dependencies",
@@ -159,9 +249,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies",
       "community": 2,
-      "norm_label": "dependencies"
+      "norm_label": "dependencies",
+      "id": "agentic_seo_package_dependencies"
     },
     {
       "label": "@copilotkit/react-core",
@@ -169,9 +259,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_copilotkit_react_core",
       "community": 2,
-      "norm_label": "@copilotkit/react-core"
+      "norm_label": "@copilotkit/react-core",
+      "id": "agentic_seo_package_dependencies_copilotkit_react_core"
     },
     {
       "label": "@copilotkit/runtime",
@@ -179,9 +269,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_copilotkit_runtime",
       "community": 2,
-      "norm_label": "@copilotkit/runtime"
+      "norm_label": "@copilotkit/runtime",
+      "id": "agentic_seo_package_dependencies_copilotkit_runtime"
     },
     {
       "label": "@radix-ui/react-avatar",
@@ -189,9 +279,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_avatar",
       "community": 2,
-      "norm_label": "@radix-ui/react-avatar"
+      "norm_label": "@radix-ui/react-avatar",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_avatar"
     },
     {
       "label": "@radix-ui/react-dialog",
@@ -199,9 +289,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_dialog",
       "community": 2,
-      "norm_label": "@radix-ui/react-dialog"
+      "norm_label": "@radix-ui/react-dialog",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_dialog"
     },
     {
       "label": "@radix-ui/react-dropdown-menu",
@@ -209,9 +299,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_dropdown_menu",
       "community": 2,
-      "norm_label": "@radix-ui/react-dropdown-menu"
+      "norm_label": "@radix-ui/react-dropdown-menu",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_dropdown_menu"
     },
     {
       "label": "@radix-ui/react-label",
@@ -219,9 +309,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_label",
       "community": 2,
-      "norm_label": "@radix-ui/react-label"
+      "norm_label": "@radix-ui/react-label",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_label"
     },
     {
       "label": "@radix-ui/react-scroll-area",
@@ -229,9 +319,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_scroll_area",
       "community": 2,
-      "norm_label": "@radix-ui/react-scroll-area"
+      "norm_label": "@radix-ui/react-scroll-area",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_scroll_area"
     },
     {
       "label": "@radix-ui/react-select",
@@ -239,9 +329,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_select",
       "community": 2,
-      "norm_label": "@radix-ui/react-select"
+      "norm_label": "@radix-ui/react-select",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_select"
     },
     {
       "label": "@radix-ui/react-separator",
@@ -249,9 +339,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_separator",
       "community": 2,
-      "norm_label": "@radix-ui/react-separator"
+      "norm_label": "@radix-ui/react-separator",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_separator"
     },
     {
       "label": "@radix-ui/react-tooltip",
@@ -259,9 +349,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_tooltip",
       "community": 2,
-      "norm_label": "@radix-ui/react-tooltip"
+      "norm_label": "@radix-ui/react-tooltip",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_tooltip"
     },
     {
       "label": "@supabase/ssr",
@@ -269,9 +359,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_supabase_ssr",
       "community": 2,
-      "norm_label": "@supabase/ssr"
+      "norm_label": "@supabase/ssr",
+      "id": "agentic_seo_package_dependencies_supabase_ssr"
     },
     {
       "label": "@supabase/supabase-js",
@@ -279,9 +369,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_supabase_supabase_js",
       "community": 2,
-      "norm_label": "@supabase/supabase-js"
+      "norm_label": "@supabase/supabase-js",
+      "id": "agentic_seo_package_dependencies_supabase_supabase_js"
     },
     {
       "label": "@xyflow/react",
@@ -289,9 +379,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_xyflow_react",
       "community": 2,
-      "norm_label": "@xyflow/react"
+      "norm_label": "@xyflow/react",
+      "id": "agentic_seo_package_dependencies_xyflow_react"
     },
     {
       "label": "class-variance-authority",
@@ -299,9 +389,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_class_variance_authority",
       "community": 2,
-      "norm_label": "class-variance-authority"
+      "norm_label": "class-variance-authority",
+      "id": "agentic_seo_package_dependencies_class_variance_authority"
     },
     {
       "label": "clsx",
@@ -309,9 +399,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_clsx",
       "community": 2,
-      "norm_label": "clsx"
+      "norm_label": "clsx",
+      "id": "agentic_seo_package_dependencies_clsx"
     },
     {
       "label": "exceljs",
@@ -319,9 +409,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_exceljs",
       "community": 2,
-      "norm_label": "exceljs"
+      "norm_label": "exceljs",
+      "id": "agentic_seo_package_dependencies_exceljs"
     },
     {
       "label": "file-saver",
@@ -329,9 +419,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_file_saver",
       "community": 2,
-      "norm_label": "file-saver"
+      "norm_label": "file-saver",
+      "id": "agentic_seo_package_dependencies_file_saver"
     },
     {
       "label": "ioredis",
@@ -339,9 +429,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_ioredis",
       "community": 2,
-      "norm_label": "ioredis"
+      "norm_label": "ioredis",
+      "id": "agentic_seo_package_dependencies_ioredis"
     },
     {
       "label": "jspdf",
@@ -349,9 +439,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_jspdf",
       "community": 2,
-      "norm_label": "jspdf"
+      "norm_label": "jspdf",
+      "id": "agentic_seo_package_dependencies_jspdf"
     },
     {
       "label": "jspdf-autotable",
@@ -359,9 +449,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_jspdf_autotable",
       "community": 2,
-      "norm_label": "jspdf-autotable"
+      "norm_label": "jspdf-autotable",
+      "id": "agentic_seo_package_dependencies_jspdf_autotable"
     },
     {
       "label": "lucide-react",
@@ -369,9 +459,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_lucide_react",
       "community": 2,
-      "norm_label": "lucide-react"
+      "norm_label": "lucide-react",
+      "id": "agentic_seo_package_dependencies_lucide_react"
     },
     {
       "label": "next",
@@ -379,9 +469,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_next",
       "community": 2,
-      "norm_label": "next"
+      "norm_label": "next",
+      "id": "agentic_seo_package_dependencies_next"
     },
     {
       "label": "next-themes",
@@ -389,9 +479,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_next_themes",
       "community": 2,
-      "norm_label": "next-themes"
+      "norm_label": "next-themes",
+      "id": "agentic_seo_package_dependencies_next_themes"
     },
     {
       "label": "openai",
@@ -399,9 +489,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_openai",
       "community": 2,
-      "norm_label": "openai"
+      "norm_label": "openai",
+      "id": "agentic_seo_package_dependencies_openai"
     },
     {
       "label": "react",
@@ -409,9 +499,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_react",
       "community": 2,
-      "norm_label": "react"
+      "norm_label": "react",
+      "id": "agentic_seo_package_dependencies_react"
     },
     {
       "label": "react-dom",
@@ -419,9 +509,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_react_dom",
       "community": 2,
-      "norm_label": "react-dom"
+      "norm_label": "react-dom",
+      "id": "agentic_seo_package_dependencies_react_dom"
     },
     {
       "label": "tailwind-merge",
@@ -429,9 +519,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_tailwind_merge",
       "community": 2,
-      "norm_label": "tailwind-merge"
+      "norm_label": "tailwind-merge",
+      "id": "agentic_seo_package_dependencies_tailwind_merge"
     },
     {
       "label": "xlsx",
@@ -439,9 +529,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_xlsx",
       "community": 2,
-      "norm_label": "xlsx"
+      "norm_label": "xlsx",
+      "id": "agentic_seo_package_dependencies_xlsx"
     },
     {
       "label": "zustand",
@@ -449,9 +539,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "agentic_seo_package_dependencies_zustand",
       "community": 2,
-      "norm_label": "zustand"
+      "norm_label": "zustand",
+      "id": "agentic_seo_package_dependencies_zustand"
     },
     {
       "label": "devDependencies",
@@ -459,9 +549,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies",
       "community": 120,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "agentic_seo_package_devdependencies"
     },
     {
       "label": "@tailwindcss/postcss",
@@ -469,9 +559,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_tailwindcss_postcss",
       "community": 120,
-      "norm_label": "@tailwindcss/postcss"
+      "norm_label": "@tailwindcss/postcss",
+      "id": "agentic_seo_package_devdependencies_tailwindcss_postcss"
     },
     {
       "label": "@testing-library/dom",
@@ -479,9 +569,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_testing_library_dom",
       "community": 120,
-      "norm_label": "@testing-library/dom"
+      "norm_label": "@testing-library/dom",
+      "id": "agentic_seo_package_devdependencies_testing_library_dom"
     },
     {
       "label": "@testing-library/jest-dom",
@@ -489,9 +579,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_testing_library_jest_dom",
       "community": 120,
-      "norm_label": "@testing-library/jest-dom"
+      "norm_label": "@testing-library/jest-dom",
+      "id": "agentic_seo_package_devdependencies_testing_library_jest_dom"
     },
     {
       "label": "@testing-library/react",
@@ -499,9 +589,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L46",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_testing_library_react",
       "community": 120,
-      "norm_label": "@testing-library/react"
+      "norm_label": "@testing-library/react",
+      "id": "agentic_seo_package_devdependencies_testing_library_react"
     },
     {
       "label": "@types/dotenv",
@@ -509,9 +599,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_dotenv",
       "community": 120,
-      "norm_label": "@types/dotenv"
+      "norm_label": "@types/dotenv",
+      "id": "agentic_seo_package_devdependencies_types_dotenv"
     },
     {
       "label": "@types/file-saver",
@@ -519,9 +609,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_file_saver",
       "community": 120,
-      "norm_label": "@types/file-saver"
+      "norm_label": "@types/file-saver",
+      "id": "agentic_seo_package_devdependencies_types_file_saver"
     },
     {
       "label": "@types/jest",
@@ -529,9 +619,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_jest",
       "community": 120,
-      "norm_label": "@types/jest"
+      "norm_label": "@types/jest",
+      "id": "agentic_seo_package_devdependencies_types_jest"
     },
     {
       "label": "@types/node",
@@ -539,9 +629,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_node",
       "community": 120,
-      "norm_label": "@types/node"
+      "norm_label": "@types/node",
+      "id": "agentic_seo_package_devdependencies_types_node"
     },
     {
       "label": "@types/react",
@@ -549,9 +639,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_react",
       "community": 120,
-      "norm_label": "@types/react"
+      "norm_label": "@types/react",
+      "id": "agentic_seo_package_devdependencies_types_react"
     },
     {
       "label": "@types/react-dom",
@@ -559,9 +649,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L52",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_types_react_dom",
       "community": 120,
-      "norm_label": "@types/react-dom"
+      "norm_label": "@types/react-dom",
+      "id": "agentic_seo_package_devdependencies_types_react_dom"
     },
     {
       "label": "dotenv",
@@ -569,9 +659,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_dotenv",
       "community": 120,
-      "norm_label": "dotenv"
+      "norm_label": "dotenv",
+      "id": "agentic_seo_package_devdependencies_dotenv"
     },
     {
       "label": "jest",
@@ -579,9 +669,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_jest",
       "community": 120,
-      "norm_label": "jest"
+      "norm_label": "jest",
+      "id": "agentic_seo_package_devdependencies_jest"
     },
     {
       "label": "jest-environment-jsdom",
@@ -589,9 +679,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L55",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_jest_environment_jsdom",
       "community": 120,
-      "norm_label": "jest-environment-jsdom"
+      "norm_label": "jest-environment-jsdom",
+      "id": "agentic_seo_package_devdependencies_jest_environment_jsdom"
     },
     {
       "label": "jest-environment-node",
@@ -599,9 +689,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L56",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_jest_environment_node",
       "community": 120,
-      "norm_label": "jest-environment-node"
+      "norm_label": "jest-environment-node",
+      "id": "agentic_seo_package_devdependencies_jest_environment_node"
     },
     {
       "label": "tailwindcss",
@@ -609,9 +699,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L57",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_tailwindcss",
       "community": 120,
-      "norm_label": "tailwindcss"
+      "norm_label": "tailwindcss",
+      "id": "agentic_seo_package_devdependencies_tailwindcss"
     },
     {
       "label": "ts-jest",
@@ -619,9 +709,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L58",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_ts_jest",
       "community": 120,
-      "norm_label": "ts-jest"
+      "norm_label": "ts-jest",
+      "id": "agentic_seo_package_devdependencies_ts_jest"
     },
     {
       "label": "typescript",
@@ -629,9 +719,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "agentic_seo_package_devdependencies_typescript",
       "community": 120,
-      "norm_label": "typescript"
+      "norm_label": "typescript",
+      "id": "agentic_seo_package_devdependencies_typescript"
     },
     {
       "label": "client.ts",
@@ -1794,56 +1884,6 @@
       "id": "api_clients_test_mockcreateclient"
     },
     {
-      "label": "actions.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 116,
-      "norm_label": "actions.ts",
-      "id": "admin_actions"
-    },
-    {
-      "label": "fetchAdminStats()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 116,
-      "norm_label": "fetchadminstats()",
-      "id": "admin_actions_fetchadminstats"
-    },
-    {
-      "label": "updateAdminLimit()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 116,
-      "norm_label": "updateadminlimit()",
-      "id": "admin_actions_updateadminlimit"
-    },
-    {
-      "label": "setGlobalLimit()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L71",
-      "_origin": "ast",
-      "community": 116,
-      "norm_label": "setgloballimit()",
-      "id": "admin_actions_setgloballimit"
-    },
-    {
-      "label": "fetchAnalyticsData()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L87",
-      "_origin": "ast",
-      "community": 116,
-      "norm_label": "fetchanalyticsdata()",
-      "id": "admin_actions_fetchanalyticsdata"
-    },
-    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "agentic-seo/app/admin/page.tsx",
@@ -1872,26 +1912,6 @@
       "community": 116,
       "norm_label": "adminclientspage()",
       "id": "admin_page_adminclientspage"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "route.ts",
-      "id": "execute_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "post()",
-      "id": "execute_route_post"
     },
     {
       "label": "route.ts",
@@ -2109,7 +2129,7 @@
       "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "runconfigurationpanel.tsx",
       "id": "workflows_runconfigurationpanel"
     },
@@ -2119,7 +2139,7 @@
       "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "targetkeyword",
       "id": "workflows_runconfigurationpanel_targetkeyword"
     },
@@ -2129,7 +2149,7 @@
       "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "targetconfig",
       "id": "workflows_runconfigurationpanel_targetconfig"
     },
@@ -2139,7 +2159,7 @@
       "source_file": "agentic-seo/components/workflows/RunConfigurationPanel.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "runconfigurationpanel()",
       "id": "workflows_runconfigurationpanel_runconfigurationpanel"
     },
@@ -2349,7 +2369,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 26,
+      "community": 7,
       "norm_label": "handle_cloudflare_challenge()",
       "id": "methods_stealth_browser_handle_cloudflare_challenge"
     },
@@ -2539,7 +2559,7 @@
       "source_file": "playwright_worker/methods/stealth_browser.py",
       "source_location": "L112",
       "_origin": "ast",
-      "community": 26,
+      "community": 7,
       "norm_label": "enhanced cloudflare turnstile bypass with human-like mouse movement.",
       "id": "methods_stealth_browser_rationale_112"
     },
@@ -2849,7 +2869,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 98,
+      "community": 7,
       "norm_label": ".safe_goto()",
       "id": "templates_base_template_basetemplate_safe_goto"
     },
@@ -2969,7 +2989,7 @@
       "source_file": "playwright_worker/templates/base_template.py",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 98,
+      "community": 7,
       "norm_label": "centralized defensive navigation. handles network-level retries,         forces",
       "id": "templates_base_template_rationale_92"
     },
@@ -3069,7 +3089,7 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 26,
+      "community": 7,
       "norm_label": "._navigate_home()",
       "id": "templates_pligg_generic_pligggenerictemplate_navigate_home"
     },
@@ -3189,7 +3209,7 @@
       "source_file": "playwright_worker/templates/pligg_generic.py",
       "source_location": "L100",
       "_origin": "ast",
-      "community": 26,
+      "community": 7,
       "norm_label": "navigate to home page with retry logic and cloudflare bypass.",
       "id": "templates_pligg_generic_rationale_100"
     },
@@ -3359,7 +3379,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "vps_worker_playwright.py",
       "id": "playwright_worker_vps_worker_playwright"
     },
@@ -3369,7 +3389,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L67",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "mark_parent_task_running()",
       "id": "playwright_worker_vps_worker_playwright_mark_parent_task_running"
     },
@@ -3379,7 +3399,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "client",
       "id": "client"
     },
@@ -3389,7 +3409,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "check_and_update_parent_task()",
       "id": "playwright_worker_vps_worker_playwright_check_and_update_parent_task"
     },
@@ -3399,7 +3419,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L150",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "detect_and_update()",
       "id": "playwright_worker_vps_worker_playwright_detect_and_update"
     },
@@ -3409,7 +3429,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L180",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "route_and_execute()",
       "id": "playwright_worker_vps_worker_playwright_route_and_execute"
     },
@@ -3419,7 +3439,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L472",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "poll_queue()",
       "id": "playwright_worker_vps_worker_playwright_poll_queue"
     },
@@ -3429,7 +3449,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "vps worker - backlink automation orchestrator  polls supabase for pending task_r",
       "id": "playwright_worker_vps_worker_playwright_rationale_1"
     },
@@ -3439,7 +3459,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
       "id": "playwright_worker_vps_worker_playwright_rationale_68"
     },
@@ -3449,7 +3469,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
       "id": "playwright_worker_vps_worker_playwright_rationale_81"
     },
@@ -3459,7 +3479,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L151",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "fingerprints an undetected site using the playwright stealth browser     and wri",
       "id": "playwright_worker_vps_worker_playwright_rationale_151"
     },
@@ -3469,7 +3489,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L181",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "executes a single step of a workflow task_run.     uses templaterunner for confi",
       "id": "playwright_worker_vps_worker_playwright_rationale_181"
     },
@@ -3479,7 +3499,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L473",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "main loop: polls supabase for pending task_runs and executes them asynchronously",
       "id": "playwright_worker_vps_worker_playwright_rationale_473"
     },
@@ -3489,7 +3509,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L516",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_516"
     },
@@ -3499,7 +3519,7 @@
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L555",
       "_origin": "ast",
-      "community": 121,
+      "community": 10,
       "norm_label": "# note: type='backlink' filter keeps this worker isolated from article_submissio",
       "id": "playwright_worker_vps_worker_playwright_rationale_555"
     },
@@ -4266,26 +4286,6 @@
       "id": "basetemplate"
     },
     {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "route.ts",
-      "id": "retry_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "post()",
-      "id": "retry_route_post"
-    },
-    {
       "label": "pm2_windows.md",
       "file_type": "document",
       "source_file": "playwright_worker/docs/pm2_windows.md",
@@ -4326,176 +4326,6 @@
       "id": "playwright_worker_setup_profiles"
     },
     {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "readme.md",
-      "id": "bookmarkbot_readme"
-    },
-    {
-      "label": "BookmarkBot Windows Service Scaffold",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "bookmarkbot windows service scaffold",
-      "id": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold"
-    },
-    {
-      "label": "Production hardening added",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "production hardening added",
-      "id": "bookmarkbot_readme_production_hardening_added"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "files",
-      "id": "bookmarkbot_readme_files"
-    },
-    {
-      "label": "Windows install",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "windows install",
-      "id": "bookmarkbot_readme_windows_install"
-    },
-    {
-      "label": "Test run",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L52",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "test run",
-      "id": "bookmarkbot_readme_test_run"
-    },
-    {
-      "label": "Supported built-in actions",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L66",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "supported built-in actions",
-      "id": "bookmarkbot_readme_supported_built_in_actions"
-    },
-    {
-      "label": "`visit`",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L68",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "`visit`",
-      "id": "bookmarkbot_readme_visit"
-    },
-    {
-      "label": "`click`",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L74",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "`click`",
-      "id": "bookmarkbot_readme_click"
-    },
-    {
-      "label": "`fill_and_submit`",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L80",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "`fill_and_submit`",
-      "id": "bookmarkbot_readme_fill_and_submit"
-    },
-    {
-      "label": "Optional approved proxy routing",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L91",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "optional approved proxy routing",
-      "id": "bookmarkbot_readme_optional_approved_proxy_routing"
-    },
-    {
-      "label": "5000/day tuning",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L109",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "5000/day tuning",
-      "id": "bookmarkbot_readme_5000_day_tuning"
-    },
-    {
-      "label": "NSSM setup",
-      "file_type": "document",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L123",
-      "_origin": "ast",
-      "community": 60,
-      "norm_label": "nssm setup",
-      "id": "bookmarkbot_readme_nssm_setup"
-    },
-    {
-      "label": "cf_session_manager.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "cf_session_manager.py",
-      "id": "bookmarkbot_cf_session_manager"
-    },
-    {
-      "label": "CloudflareBypass",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "cloudflarebypass",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_init"
-    },
-    {
-      "label": "._get_session_file()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "._get_session_file()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file"
-    },
-    {
       "label": "Path",
       "file_type": "code",
       "source_file": "",
@@ -4506,414 +4336,14 @@
       "id": "path"
     },
     {
-      "label": ".load_session()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".load_session()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_load_session"
-    },
-    {
-      "label": ".save_session()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".save_session()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_save_session"
-    },
-    {
-      "label": "._human_like_scrape()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L51",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "._human_like_scrape()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_human_like_scrape"
-    },
-    {
-      "label": "._get_cf_clearance_async()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L79",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "._get_cf_clearance_async()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async"
-    },
-    {
-      "label": ".get_cf_clearance()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L133",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".get_cf_clearance()",
-      "id": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance"
-    },
-    {
-      "label": "Create a safe filename for caching sessions based on domain and proxy.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "create a safe filename for caching sessions based on domain and proxy.",
-      "id": "bookmarkbot_cf_session_manager_rationale_26"
-    },
-    {
-      "label": "Load session cookies from disk if they exist.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "load session cookies from disk if they exist.",
-      "id": "bookmarkbot_cf_session_manager_rationale_32"
-    },
-    {
-      "label": "Save session cookies to disk.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L43",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "save session cookies to disk.",
-      "id": "bookmarkbot_cf_session_manager_rationale_43"
-    },
-    {
-      "label": "Simulate human-like interactions to pass behavioral analysis.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L52",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "simulate human-like interactions to pass behavioral analysis.",
-      "id": "bookmarkbot_cf_session_manager_rationale_52"
-    },
-    {
-      "label": "Internal async method to get clearance cookie using nodriver.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L80",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "internal async method to get clearance cookie using nodriver.",
-      "id": "bookmarkbot_cf_session_manager_rationale_80"
-    },
-    {
-      "label": "Synchronous wrapper to get clearance cookies.          Creates a new event loop",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L134",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "synchronous wrapper to get clearance cookies.          creates a new event loop",
-      "id": "bookmarkbot_cf_session_manager_rationale_134"
-    },
-    {
-      "label": "config.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/config.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 108,
-      "norm_label": "config.py",
-      "id": "bookmarkbot_config"
-    },
-    {
-      "label": "Central configuration for BookmarkBot.  This scaffold is intended for automation",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/config.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 108,
-      "norm_label": "central configuration for bookmarkbot.  this scaffold is intended for automation",
-      "id": "bookmarkbot_config_rationale_1"
-    },
-    {
-      "label": "db.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "db.py",
-      "id": "bookmarkbot_db"
-    },
-    {
-      "label": "get_db()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "get_db()",
-      "id": "bookmarkbot_db_get_db"
-    },
-    {
-      "label": "_now_iso()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "_now_iso()",
-      "id": "bookmarkbot_db_now_iso"
-    },
-    {
-      "label": "fetch_pending_jobs()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "fetch_pending_jobs()",
-      "id": "bookmarkbot_db_fetch_pending_jobs"
-    },
-    {
-      "label": "mark_job_running()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L39",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "mark_job_running()",
-      "id": "bookmarkbot_db_mark_job_running"
-    },
-    {
-      "label": "mark_job_success()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L50",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "mark_job_success()",
-      "id": "bookmarkbot_db_mark_job_success"
-    },
-    {
-      "label": "mark_job_failed()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "mark_job_failed()",
-      "id": "bookmarkbot_db_mark_job_failed"
-    },
-    {
-      "label": "increment_retry()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L74",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "increment_retry()",
-      "id": "bookmarkbot_db_increment_retry"
-    },
-    {
-      "label": "recover_stale_running_jobs()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L85",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "recover_stale_running_jobs()",
-      "id": "bookmarkbot_db_recover_stale_running_jobs"
-    },
-    {
-      "label": "failure_handler.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "failure_handler.py",
-      "id": "bookmarkbot_failure_handler"
-    },
-    {
-      "label": "AutomationError",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "automationerror",
-      "id": "bookmarkbot_failure_handler_automationerror"
-    },
-    {
       "label": "Exception",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 26,
+      "community": 10,
       "norm_label": "exception",
       "id": "exception"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_failure_handler_automationerror_init"
-    },
-    {
-      "label": "FailureHandler",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "failurehandler",
-      "id": "bookmarkbot_failure_handler_failurehandler"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_failure_handler_failurehandler_init"
-    },
-    {
-      "label": ".classify_error()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".classify_error()",
-      "id": "bookmarkbot_failure_handler_failurehandler_classify_error"
-    },
-    {
-      "label": ".capture_evidence()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L58",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".capture_evidence()",
-      "id": "bookmarkbot_failure_handler_failurehandler_capture_evidence"
-    },
-    {
-      "label": ".handle_failure()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L105",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".handle_failure()",
-      "id": "bookmarkbot_failure_handler_failurehandler_handle_failure"
-    },
-    {
-      "label": ".handle_success()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L150",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": ".handle_success()",
-      "id": "bookmarkbot_failure_handler_failurehandler_handle_success"
-    },
-    {
-      "label": "._update_site_health()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L153",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "._update_site_health()",
-      "id": "bookmarkbot_failure_handler_failurehandler_update_site_health"
-    },
-    {
-      "label": "Failure Handler for Backlink Automation (SeleniumBase version)  Responsibilities",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "failure handler for backlink automation (seleniumbase version)  responsibilities",
-      "id": "bookmarkbot_failure_handler_rationale_1"
-    },
-    {
-      "label": "Handles failure classification, evidence capture, and site health tracking.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "handles failure classification, evidence capture, and site health tracking.",
-      "id": "bookmarkbot_failure_handler_rationale_27"
-    },
-    {
-      "label": "Capture a screenshot and HTML dump from the current SeleniumBase driver.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "capture a screenshot and html dump from the current seleniumbase driver.",
-      "id": "bookmarkbot_failure_handler_rationale_59"
-    },
-    {
-      "label": "local_worker.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "local_worker.py",
-      "id": "bookmarkbot_local_worker"
-    },
-    {
-      "label": "mark_parent_task_running()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "mark_parent_task_running()",
-      "id": "bookmarkbot_local_worker_mark_parent_task_running"
-    },
-    {
-      "label": "check_and_update_parent_task()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L75",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "check_and_update_parent_task()",
-      "id": "bookmarkbot_local_worker_check_and_update_parent_task"
-    },
-    {
-      "label": "get_redis_client()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L135",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "get_redis_client()",
-      "id": "bookmarkbot_local_worker_get_redis_client"
-    },
-    {
-      "label": "pop_job()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L140",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "pop_job()",
-      "id": "bookmarkbot_local_worker_pop_job"
     },
     {
       "label": "Redis",
@@ -4921,609 +4351,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 121,
+      "community": 60,
       "norm_label": "redis",
       "id": "redis"
-    },
-    {
-      "label": "push_test_job()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L146",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "push_test_job()",
-      "id": "bookmarkbot_local_worker_push_test_job"
-    },
-    {
-      "label": "create_driver()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L164",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "create_driver()",
-      "id": "bookmarkbot_local_worker_create_driver"
-    },
-    {
-      "label": "run_job()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L180",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "run_job()",
-      "id": "bookmarkbot_local_worker_run_job"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L279",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "main()",
-      "id": "bookmarkbot_local_worker_main"
-    },
-    {
-      "label": "local_worker.py \u2014 Standalone local worker for testing.  Fetches jobs from the sa",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "local_worker.py \u2014 standalone local worker for testing.  fetches jobs from the sa",
-      "id": "bookmarkbot_local_worker_rationale_1"
-    },
-    {
-      "label": "Bumps a parent task's status from 'pending' to 'running' when a child task_run s",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L63",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "bumps a parent task's status from 'pending' to 'running' when a child task_run s",
-      "id": "bookmarkbot_local_worker_rationale_63"
-    },
-    {
-      "label": "Checks if all task_runs for a parent task are done, and if so, updates the paren",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L76",
-      "_origin": "ast",
-      "community": 121,
-      "norm_label": "checks if all task_runs for a parent task are done, and if so, updates the paren",
-      "id": "bookmarkbot_local_worker_rationale_76"
-    },
-    {
-      "label": "logger_setup.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/logger_setup.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "logger_setup.py",
-      "id": "bookmarkbot_logger_setup"
-    },
-    {
-      "label": "get_logger()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/logger_setup.py",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "get_logger()",
-      "id": "bookmarkbot_logger_setup_get_logger"
-    },
-    {
-      "label": "main.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "main.py",
-      "id": "bookmarkbot_main"
-    },
-    {
-      "label": "run_batch()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "run_batch()",
-      "id": "bookmarkbot_main_run_batch"
-    },
-    {
-      "label": "metrics.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 90,
-      "norm_label": "metrics.py",
-      "id": "bookmarkbot_metrics"
-    },
-    {
-      "label": "Metrics",
-      "file_type": "code",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 90,
-      "norm_label": "metrics",
-      "id": "bookmarkbot_metrics_metrics"
-    },
-    {
-      "label": ".inc()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 90,
-      "norm_label": ".inc()",
-      "id": "bookmarkbot_metrics_metrics_inc"
-    },
-    {
-      "label": ".snapshot()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 90,
-      "norm_label": ".snapshot()",
-      "id": "bookmarkbot_metrics_metrics_snapshot"
-    },
-    {
-      "label": "pligg_template.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "pligg_template.py",
-      "id": "bookmarkbot_pligg_template"
-    },
-    {
-      "label": "PliggTemplate",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "pliggtemplate",
-      "id": "bookmarkbot_pligg_template_pliggtemplate"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_init"
-    },
-    {
-      "label": ".safe_goto()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".safe_goto()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_safe_goto"
-    },
-    {
-      "label": "._switch_to_default()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L47",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._switch_to_default()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_switch_to_default"
-    },
-    {
-      "label": "._slow_type()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L53",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._slow_type()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "label": "._is_logged_in()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._is_logged_in()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_is_logged_in"
-    },
-    {
-      "label": ".generate_random_credentials()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L74",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".generate_random_credentials()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_generate_random_credentials"
-    },
-    {
-      "label": "._wait_for_captcha()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L84",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._wait_for_captcha()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_wait_for_captcha"
-    },
-    {
-      "label": "._solve_captcha_2captcha()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L96",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._solve_captcha_2captcha()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha"
-    },
-    {
-      "label": "._report_bad_captcha()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L186",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "._report_bad_captcha()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_report_bad_captcha"
-    },
-    {
-      "label": ".register()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L200",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".register()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_register"
-    },
-    {
-      "label": ".submit_bookmark()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L312",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".submit_bookmark()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark"
-    },
-    {
-      "label": ".run()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L510",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": ".run()",
-      "id": "bookmarkbot_pligg_template_pliggtemplate_run"
-    },
-    {
-      "label": "pligg_template.py \u2014 SeleniumBase UC Mode port of playwright_worker/templates/pli",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "pligg_template.py \u2014 seleniumbase uc mode port of playwright_worker/templates/pli",
-      "id": "bookmarkbot_pligg_template_rationale_1"
-    },
-    {
-      "label": "Handles the Pligg CMS automation flow using SeleniumBase UC Mode.     Faithfully",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "handles the pligg cms automation flow using seleniumbase uc mode.     faithfully",
-      "id": "bookmarkbot_pligg_template_rationale_23"
-    },
-    {
-      "label": "Type character-by-character with random delay to mimic human input.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L54",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "type character-by-character with random delay to mimic human input.",
-      "id": "bookmarkbot_pligg_template_rationale_54"
-    },
-    {
-      "label": "Check page for logout/sign-out text \u2014 mirrors base_template._is_logged_in.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L60",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "check page for logout/sign-out text \u2014 mirrors base_template._is_logged_in.",
-      "id": "bookmarkbot_pligg_template_rationale_60"
-    },
-    {
-      "label": "Wait until the SolveMedia iframe or fallback image is visible.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L85",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "wait until the solvemedia iframe or fallback image is visible.",
-      "id": "bookmarkbot_pligg_template_rationale_85"
-    },
-    {
-      "label": "Screenshot the SolveMedia captcha image, send to 2Captcha, type the result.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L97",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "screenshot the solvemedia captcha image, send to 2captcha, type the result.",
-      "id": "bookmarkbot_pligg_template_rationale_97"
-    },
-    {
-      "label": "Mirrors pligg_generic._register_account exactly:         - Attempt 0: fill all f",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L201",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "mirrors pligg_generic._register_account exactly:         - attempt 0: fill all f",
-      "id": "bookmarkbot_pligg_template_rationale_201"
-    },
-    {
-      "label": "Mirrors pligg_generic._submit_bookmark.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L313",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "mirrors pligg_generic._submit_bookmark.",
-      "id": "bookmarkbot_pligg_template_rationale_313"
-    },
-    {
-      "label": "Execute full Pligg flow: navigate \u2192 register \u2192 submit.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L511",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "execute full pligg flow: navigate \u2192 register \u2192 submit.",
-      "id": "bookmarkbot_pligg_template_rationale_511"
-    },
-    {
-      "label": "profile_init.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/profile_init.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 105,
-      "norm_label": "profile_init.py",
-      "id": "bookmarkbot_profile_init"
-    },
-    {
-      "label": "init_profile()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/profile_init.py",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 105,
-      "norm_label": "init_profile()",
-      "id": "bookmarkbot_profile_init_init_profile"
-    },
-    {
-      "label": "Optional one-time profile initializer.  Use this only for authorized sites/accou",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/profile_init.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 105,
-      "norm_label": "optional one-time profile initializer.  use this only for authorized sites/accou",
-      "id": "bookmarkbot_profile_init_rationale_1"
-    },
-    {
-      "label": "proxy_manager.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "proxy_manager.py",
-      "id": "bookmarkbot_proxy_manager"
-    },
-    {
-      "label": "ProxyManager",
-      "file_type": "code",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "proxymanager",
-      "id": "bookmarkbot_proxy_manager_proxymanager"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_proxy_manager_proxymanager_init"
-    },
-    {
-      "label": "._load_proxies()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "._load_proxies()",
-      "id": "bookmarkbot_proxy_manager_proxymanager_load_proxies"
-    },
-    {
-      "label": ".get_proxy_for_worker()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": ".get_proxy_for_worker()",
-      "id": "bookmarkbot_proxy_manager_proxymanager_get_proxy_for_worker"
-    },
-    {
-      "label": "Optional outbound proxy assignment.      Use this only for legitimate network ro",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "optional outbound proxy assignment.      use this only for legitimate network ro",
-      "id": "bookmarkbot_proxy_manager_rationale_12"
-    },
-    {
-      "label": "rate_limiter.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": "rate_limiter.py",
-      "id": "bookmarkbot_rate_limiter"
-    },
-    {
-      "label": "RateLimiter",
-      "file_type": "code",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": "ratelimiter",
-      "id": "bookmarkbot_rate_limiter_ratelimiter"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": ".__init__()",
-      "id": "bookmarkbot_rate_limiter_ratelimiter_init"
-    },
-    {
-      "label": ".host_for_url()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": ".host_for_url()",
-      "id": "bookmarkbot_rate_limiter_ratelimiter_host_for_url"
-    },
-    {
-      "label": ".wait_for_turn()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": ".wait_for_turn()",
-      "id": "bookmarkbot_rate_limiter_ratelimiter_wait_for_turn"
-    },
-    {
-      "label": "Thread-safe start-rate limiter for production stability.      This controls job",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 77,
-      "norm_label": "thread-safe start-rate limiter for production stability.      this controls job",
-      "id": "bookmarkbot_rate_limiter_rationale_17"
-    },
-    {
-      "label": "test_nodriver.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/test_nodriver.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 109,
-      "norm_label": "test_nodriver.py",
-      "id": "bookmarkbot_test_nodriver"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/test_nodriver.py",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 109,
-      "norm_label": "main()",
-      "id": "bookmarkbot_test_nodriver_main"
-    },
-    {
-      "label": "worker.py",
-      "file_type": "code",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "worker.py",
-      "id": "bookmarkbot_worker"
-    },
-    {
-      "label": "_host_allowed()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "_host_allowed()",
-      "id": "bookmarkbot_worker_host_allowed"
-    },
-    {
-      "label": "create_driver()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "create_driver()",
-      "id": "bookmarkbot_worker_create_driver"
-    },
-    {
-      "label": "execute_job()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L65",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "execute_job()",
-      "id": "bookmarkbot_worker_execute_job"
-    },
-    {
-      "label": "run_worker()",
-      "file_type": "code",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L141",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "run_worker()",
-      "id": "bookmarkbot_worker_run_worker"
     },
     {
       "label": "Queue",
@@ -5534,26 +4364,6 @@
       "community": 78,
       "norm_label": "queue",
       "id": "queue"
-    },
-    {
-      "label": "Create a browser driver for this worker using SeleniumBase UC mode.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "create a browser driver for this worker using seleniumbase uc mode.",
-      "id": "bookmarkbot_worker_rationale_41"
-    },
-    {
-      "label": "Run one authorized job. Handles Cloudflare bypass and Pligg flow.",
-      "file_type": "rationale",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L66",
-      "_origin": "ast",
-      "community": 78,
-      "norm_label": "run one authorized job. handles cloudflare bypass and pligg flow.",
-      "id": "bookmarkbot_worker_rationale_66"
     },
     {
       "label": "Solved Media.user.js",
@@ -7781,7 +6591,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L423",
       "_origin": "ast",
-      "community": 31,
+      "community": 10,
       "norm_label": "client",
       "id": "supabase_types_client"
     },
@@ -7801,7 +6611,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L425",
       "_origin": "ast",
-      "community": 12,
+      "community": 15,
       "norm_label": "chatsession",
       "id": "supabase_types_chatsession"
     },
@@ -7861,7 +6671,7 @@
       "source_file": "agentic-seo/lib/supabase/types.ts",
       "source_location": "L431",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "workflowtemplate",
       "id": "supabase_types_workflowtemplate"
     },
@@ -9611,7 +8421,7 @@
       "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "page.tsx",
       "id": "approvals_page"
     },
@@ -9621,7 +8431,7 @@
       "source_file": "agentic-seo/app/dashboard/approvals/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "approvalspage()",
       "id": "approvals_page_approvalspage"
     },
@@ -9811,7 +8621,7 @@
       "source_file": "agentic-seo/app/dashboard/skills/page.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "skillspage()",
       "id": "skills_page_skillspage"
     },
@@ -10191,7 +9001,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "promptinput.tsx",
       "id": "chat_promptinput"
     },
@@ -10201,7 +9011,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "promptinputprops",
       "id": "chat_promptinput_promptinputprops"
     },
@@ -10211,7 +9021,7 @@
       "source_file": "agentic-seo/components/chat/PromptInput.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "promptinput()",
       "id": "chat_promptinput_promptinput"
     },
@@ -10261,7 +9071,7 @@
       "source_file": "agentic-seo/components/layout/ClientProvider.tsx",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 31,
+      "community": 6,
       "norm_label": "useclient()",
       "id": "layout_clientprovider_useclient"
     },
@@ -10301,7 +9111,7 @@
       "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "articlerunconfigurationpanel.tsx",
       "id": "workflows_articlerunconfigurationpanel"
     },
@@ -10311,7 +9121,7 @@
       "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "default_platforms",
       "id": "workflows_articlerunconfigurationpanel_default_platforms"
     },
@@ -10321,7 +9131,7 @@
       "source_file": "agentic-seo/components/workflows/ArticleRunConfigurationPanel.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "articlerunconfigurationpanel()",
       "id": "workflows_articlerunconfigurationpanel_articlerunconfigurationpanel"
     },
@@ -10401,7 +9211,7 @@
       "source_file": "agentic-seo/components/workflows/SkillsPanel.tsx",
       "source_location": "L75",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "skillcard()",
       "id": "workflows_skillspanel_skillcard"
     },
@@ -10491,7 +9301,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "workflowdetailclient.tsx",
       "id": "workflows_workflowdetailclient"
     },
@@ -10501,7 +9311,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "workflowdetailclientprops",
       "id": "workflows_workflowdetailclient_workflowdetailclientprops"
     },
@@ -10511,7 +9321,7 @@
       "source_file": "agentic-seo/components/workflows/WorkflowDetailClient.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 31,
+      "community": 14,
       "norm_label": "workflowdetailclient()",
       "id": "workflows_workflowdetailclient_workflowdetailclient"
     },
@@ -10731,7 +9541,7 @@
       "source_file": "agentic-seo/lib/utils.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 93,
+      "community": 12,
       "norm_label": "cn()",
       "id": "lib_utils_cn"
     },
@@ -12811,7 +11621,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 136,
+      "community": 13,
       "norm_label": "what the migration creates",
       "id": "docs_departments_setup_what_the_migration_creates"
     },
@@ -12821,7 +11631,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 136,
+      "community": 13,
       "norm_label": "new tables",
       "id": "docs_departments_setup_new_tables"
     },
@@ -12831,7 +11641,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 136,
+      "community": 13,
       "norm_label": "`departments`",
       "id": "docs_departments_setup_departments"
     },
@@ -12841,7 +11651,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 136,
+      "community": 13,
       "norm_label": "`department_members`",
       "id": "docs_departments_setup_department_members"
     },
@@ -12851,7 +11661,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 136,
+      "community": 13,
       "norm_label": "modified tables (non-breaking additions)",
       "id": "docs_departments_setup_modified_tables_non_breaking_additions"
     },
@@ -12901,7 +11711,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 135,
+      "community": 13,
       "norm_label": "how to use departments in new features",
       "id": "docs_departments_setup_how_to_use_departments_in_new_features"
     },
@@ -12911,7 +11721,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 135,
+      "community": 13,
       "norm_label": "assigning a user to a department (server-side)",
       "id": "docs_departments_setup_assigning_a_user_to_a_department_server_side"
     },
@@ -12921,7 +11731,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L111",
       "_origin": "ast",
-      "community": 135,
+      "community": 13,
       "norm_label": "filtering tasks by department",
       "id": "docs_departments_setup_filtering_tasks_by_department"
     },
@@ -12931,7 +11741,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L122",
       "_origin": "ast",
-      "community": 135,
+      "community": 13,
       "norm_label": "starting a department-aware chat session",
       "id": "docs_departments_setup_starting_a_department_aware_chat_session"
     },
@@ -12941,7 +11751,7 @@
       "source_file": "agentic-seo/docs/departments_setup.md",
       "source_location": "L138",
       "_origin": "ast",
-      "community": 135,
+      "community": 13,
       "norm_label": "creating a task_run scoped to a department",
       "id": "docs_departments_setup_creating_a_task_run_scoped_to_a_department"
     },
@@ -13698,6 +12508,198 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_fetchadminstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_fetchanalyticsdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_setgloballimit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_updateadminlimit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_fetchadminstats"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_updateadminlimit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_fetchanalyticsdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "execute_route_post"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "retry_route_post"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -14409,9 +13411,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agentic_seo_package_devdependencies",
-      "target": "agentic_seo_package_devdependencies_dotenv",
-      "confidence_score": 1.0
+      "target": "agentic_seo_package_devdependencies_dotenv"
     },
     {
       "relation": "contains",
@@ -14509,9 +13511,9 @@
       "source_file": "agentic-seo/package.json",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agentic_seo_package_devdependencies",
-      "target": "agentic_seo_package_devdependencies_types_dotenv",
-      "confidence_score": 1.0
+      "target": "agentic_seo_package_devdependencies_types_dotenv"
     },
     {
       "relation": "contains",
@@ -14705,28 +13707,6 @@
       "confidence_score": 1.0,
       "source": "seo_agent_app_rationale_78",
       "target": "seo_agent_app_convert_messages"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_fetch_pending_jobs",
-      "target": "any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L65",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_execute_job",
-      "target": "any"
     },
     {
       "relation": "references",
@@ -15934,101 +14914,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_fetchadminstats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_fetchanalyticsdata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_setgloballimit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_updateadminlimit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_fetchadminstats"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_updateadminlimit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_fetchanalyticsdata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/admin/page.tsx",
       "source_location": "L17",
       "weight": 1.0,
@@ -16045,38 +14930,6 @@
       "confidence_score": 1.0,
       "source": "admin_page",
       "target": "admin_page_clientstats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "execute_route_post"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createserviceclient"
     },
     {
       "relation": "contains",
@@ -17165,28 +16018,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "executor_runner_templaterunner_execute",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_init",
-      "target": "logger"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/logger_setup.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_logger_setup_get_logger",
       "target": "logger"
     },
     {
@@ -19705,28 +18536,6 @@
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_check_and_update_parent_task",
-      "target": "client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_mark_parent_task_running",
-      "target": "client"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
       "source_file": "playwright_worker/vps_worker_playwright.py",
       "source_location": "L81",
       "weight": 1.0,
@@ -19807,17 +18616,6 @@
       "confidence_score": 1.0,
       "source": "playwright_worker_vps_worker_playwright_rationale_181",
       "target": "playwright_worker_vps_worker_playwright_route_and_execute"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "playwright_worker/vps_worker_playwright.py",
-      "source_location": "L187",
-      "weight": 1.0,
-      "source": "playwright_worker_vps_worker_playwright_route_and_execute",
-      "target": "bookmarkbot_failure_handler_failurehandler"
     },
     {
       "relation": "calls",
@@ -20633,779 +19431,6 @@
       "target": "docs_2026_cloudflare_bypass_methods_why_parent_processes_environments_leak"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "retry_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "retry_route_post",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme",
-      "target": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L109",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_5000_day_tuning"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_files"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L123",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_nssm_setup"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_optional_approved_proxy_routing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_production_hardening_added"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_supported_built_in_actions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_test_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_bookmarkbot_windows_service_scaffold",
-      "target": "bookmarkbot_readme_windows_install"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_supported_built_in_actions",
-      "target": "bookmarkbot_readme_click"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_supported_built_in_actions",
-      "target": "bookmarkbot_readme_fill_and_submit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/README.md",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_readme_supported_built_in_actions",
-      "target": "bookmarkbot_readme_visit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L133",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_human_like_scrape"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_load_session"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_save_session"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_init",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file",
-      "target": "path"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_load_session",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_save_session",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_26",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_session_file"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "bookmarkbot_proxy_manager_proxymanager_load_proxies",
-      "target": "path"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_load_session"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_32",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_load_session"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L123",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_save_session"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_43",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_save_session"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L110",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_human_like_scrape"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_52",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_human_like_scrape"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_80",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance_async"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/cf_session_manager.py",
-      "source_location": "L134",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_cf_session_manager_rationale_134",
-      "target": "bookmarkbot_cf_session_manager_cloudflarebypass_get_cf_clearance"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/config.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_config_rationale_1",
-      "target": "bookmarkbot_config"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_fetch_pending_jobs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_increment_retry"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_mark_job_failed"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_mark_job_running"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_mark_job_success"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db",
-      "target": "bookmarkbot_db_recover_stale_running_jobs"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_fetch_pending_jobs",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_increment_retry",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_failed",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_running",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_success",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_recover_stale_running_jobs",
-      "target": "bookmarkbot_db_get_db"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_increment_retry",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_failed",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_running",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_mark_job_success",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/db.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_db_recover_stale_running_jobs",
-      "target": "bookmarkbot_db_now_iso"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "bookmarkbot_main_run_batch",
-      "target": "bookmarkbot_db_fetch_pending_jobs"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L162",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_db_mark_job_running"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L175",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_db_mark_job_success"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L191",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_db_mark_job_failed"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L186",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_db_increment_retry"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "bookmarkbot_main_run_batch",
-      "target": "bookmarkbot_db_recover_stale_running_jobs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler",
-      "target": "bookmarkbot_failure_handler_automationerror"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler",
-      "target": "bookmarkbot_failure_handler_failurehandler"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_rationale_1",
-      "target": "bookmarkbot_failure_handler"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_automationerror",
-      "target": "bookmarkbot_failure_handler_automationerror_init"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_automationerror",
-      "target": "exception"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_classify_error",
-      "target": "exception"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_handle_failure",
-      "target": "exception"
-    },
-    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "playwright_worker/executor/errors.py",
@@ -21436,1118 +19461,6 @@
       "confidence_score": 1.0,
       "source": "executor_failure_handler_failurehandler_handle_failure",
       "target": "exception"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_automationerror_init",
-      "target": "bookmarkbot_failure_handler_failurehandler_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_capture_evidence"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_classify_error"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_handle_failure"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L150",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_handle_success"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L153",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler",
-      "target": "bookmarkbot_failure_handler_failurehandler_update_site_health"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_rationale_27",
-      "target": "bookmarkbot_failure_handler_failurehandler"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L196",
-      "weight": 1.0,
-      "source": "bookmarkbot_local_worker_run_job",
-      "target": "bookmarkbot_failure_handler_failurehandler"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L119",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_handle_failure",
-      "target": "bookmarkbot_failure_handler_failurehandler_classify_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L127",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_handle_failure",
-      "target": "bookmarkbot_failure_handler_failurehandler_capture_evidence"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_rationale_59",
-      "target": "bookmarkbot_failure_handler_failurehandler_capture_evidence"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L148",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_handle_failure",
-      "target": "bookmarkbot_failure_handler_failurehandler_update_site_health"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/failure_handler.py",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_failure_handler_failurehandler_handle_success",
-      "target": "bookmarkbot_failure_handler_failurehandler_update_site_health"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_check_and_update_parent_task"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L164",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_create_driver"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L135",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_get_redis_client"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L279",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_mark_parent_task_running"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_pop_job"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L146",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_push_test_job"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "bookmarkbot_local_worker_run_job"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker",
-      "target": "redis"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_rationale_1",
-      "target": "bookmarkbot_local_worker"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_rationale_63",
-      "target": "bookmarkbot_local_worker_mark_parent_task_running"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L200",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_run_job",
-      "target": "bookmarkbot_local_worker_mark_parent_task_running"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_rationale_76",
-      "target": "bookmarkbot_local_worker_check_and_update_parent_task"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L276",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_run_job",
-      "target": "bookmarkbot_local_worker_check_and_update_parent_task"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L288",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_main",
-      "target": "bookmarkbot_local_worker_get_redis_client"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L312",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_main",
-      "target": "bookmarkbot_local_worker_pop_job"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_pop_job",
-      "target": "redis"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L146",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_push_test_job",
-      "target": "redis"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L292",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_main",
-      "target": "bookmarkbot_local_worker_push_test_job"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L211",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_local_worker_run_job",
-      "target": "bookmarkbot_local_worker_create_driver"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/local_worker.py",
-      "source_location": "L215",
-      "weight": 1.0,
-      "source": "bookmarkbot_local_worker_run_job",
-      "target": "bookmarkbot_pligg_template_pliggtemplate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/logger_setup.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_logger_setup",
-      "target": "bookmarkbot_logger_setup_get_logger"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L142",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_logger_setup_get_logger"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_main",
-      "target": "bookmarkbot_main_run_batch"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/main.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_main",
-      "target": "queue"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_metrics",
-      "target": "bookmarkbot_metrics_metrics"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_metrics_metrics",
-      "target": "bookmarkbot_metrics_metrics_inc"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/metrics.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_metrics_metrics",
-      "target": "bookmarkbot_metrics_metrics_snapshot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template",
-      "target": "bookmarkbot_pligg_template_pliggtemplate"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_1",
-      "target": "bookmarkbot_pligg_template"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_generate_random_credentials"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_is_logged_in"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L200",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_register"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L186",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_report_bad_captcha"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L510",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_run"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_safe_goto"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L96",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L312",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_switch_to_default"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_wait_for_captcha"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_23",
-      "target": "bookmarkbot_pligg_template_pliggtemplate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L113",
-      "weight": 1.0,
-      "source": "bookmarkbot_worker_execute_job",
-      "target": "bookmarkbot_pligg_template_pliggtemplate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L210",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_safe_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L512",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_run",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_safe_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L315",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_safe_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L123",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_switch_to_default"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L234",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L175",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L337",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_54",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_slow_type"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L301",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_is_logged_in"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_60",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_is_logged_in"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L207",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_generate_random_credentials"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_wait_for_captcha"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_85",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_wait_for_captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L254",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L427",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_97",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_solve_captcha_2captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L288",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_register",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_report_bad_captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L471",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_report_bad_captcha"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L518",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_run",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_register"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L201",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_201",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_register"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L522",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_pliggtemplate_run",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L313",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_313",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_submit_bookmark"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/pligg_template.py",
-      "source_location": "L511",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_pligg_template_rationale_511",
-      "target": "bookmarkbot_pligg_template_pliggtemplate_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/profile_init.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_profile_init",
-      "target": "bookmarkbot_profile_init_init_profile"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/profile_init.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_profile_init_rationale_1",
-      "target": "bookmarkbot_profile_init"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager",
-      "target": "bookmarkbot_proxy_manager_proxymanager"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager_proxymanager",
-      "target": "bookmarkbot_proxy_manager_proxymanager_get_proxy_for_worker"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager_proxymanager",
-      "target": "bookmarkbot_proxy_manager_proxymanager_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager_proxymanager",
-      "target": "bookmarkbot_proxy_manager_proxymanager_load_proxies"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager_rationale_12",
-      "target": "bookmarkbot_proxy_manager_proxymanager"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/proxy_manager.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_proxy_manager_proxymanager_init",
-      "target": "bookmarkbot_proxy_manager_proxymanager_load_proxies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter",
-      "target": "bookmarkbot_rate_limiter_ratelimiter"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter_ratelimiter",
-      "target": "bookmarkbot_rate_limiter_ratelimiter_host_for_url"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter_ratelimiter",
-      "target": "bookmarkbot_rate_limiter_ratelimiter_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter_ratelimiter",
-      "target": "bookmarkbot_rate_limiter_ratelimiter_wait_for_turn"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter_rationale_17",
-      "target": "bookmarkbot_rate_limiter_ratelimiter"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/rate_limiter.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_rate_limiter_ratelimiter_wait_for_turn",
-      "target": "bookmarkbot_rate_limiter_ratelimiter_host_for_url"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/test_nodriver.py",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_test_nodriver",
-      "target": "bookmarkbot_test_nodriver_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker",
-      "target": "bookmarkbot_worker_create_driver"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L65",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker",
-      "target": "bookmarkbot_worker_execute_job"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker",
-      "target": "bookmarkbot_worker_host_allowed"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker",
-      "target": "bookmarkbot_worker_run_worker"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker",
-      "target": "queue"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_execute_job",
-      "target": "bookmarkbot_worker_host_allowed"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_rationale_41",
-      "target": "bookmarkbot_worker_create_driver"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L149",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_worker_create_driver"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_rationale_66",
-      "target": "bookmarkbot_worker_execute_job"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L174",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "bookmarkbot_worker_execute_job"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "BookmarkBot/worker.py",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "bookmarkbot_worker_run_worker",
-      "target": "queue"
     },
     {
       "relation": "contains",
@@ -32350,5 +29263,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d546f4f27749c31a80c2fcd1b217bac875c1035d"
+  "built_at_commit": "1e9929bbd5c1cdf62bee89a0435fa067e039bb32"
 }

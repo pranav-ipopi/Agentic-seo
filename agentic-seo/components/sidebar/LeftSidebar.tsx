@@ -105,7 +105,7 @@ export default function LeftSidebar() {
             setLoading(false)
           }
         }
-      } catch {}
+      } catch { }
 
       try {
         const res = await fetch('/api/clients')
@@ -219,7 +219,7 @@ export default function LeftSidebar() {
   }
 
   return (
-    <aside className="flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
+    <aside className={cn("flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 transition-all duration-300", clientOpen ? "w-[340px]" : "w-[260px]")}>
       {/* Header — Client Selector */}
       <div className="p-3 border-b border-gray-200 dark:border-gray-800">
         <div className="relative" ref={clientSelectorRef}>
@@ -246,6 +246,12 @@ export default function LeftSidebar() {
             <div className="absolute top-full left-0 right-0 mt-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-xl z-50 overflow-hidden animate-fade-in">
               {/* Search bar */}
               <div className="p-2 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center justify-between px-1 mb-2">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Clients</span>
+                  <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded-md">
+                    {clients.length}
+                  </span>
+                </div>
                 <div className="flex items-center gap-2 px-2.5 py-1.5 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-600 focus-within:border-indigo-400 transition-colors">
                   <Search className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
                   <input
@@ -284,7 +290,7 @@ export default function LeftSidebar() {
                     {clients.length === 0 ? 'No clients yet' : 'No matching clients'}
                   </div>
                 ) : (
-                  <div className="py-1 max-h-44 overflow-y-auto">
+                  <div className="py-1 max-h-[60vh] overflow-y-auto">
                     {filtered.map((client) => (
                       <button
                         key={client.id}
@@ -360,7 +366,7 @@ export default function LeftSidebar() {
               </Link>
             )
           })}
-          
+
           {/* Workflow Skills portal removed as per user request */}
         </div>
 
@@ -377,7 +383,7 @@ export default function LeftSidebar() {
           {sessions.map((session) => {
             const isActive = pathname === `/dashboard/chat/${session.id}`
             const isMenuOpen = openMenuId === session.id
-            
+
             return (
               <div
                 key={session.id}
@@ -420,7 +426,7 @@ export default function LeftSidebar() {
 
                 {/* Dropdown Menu */}
                 {isMenuOpen && (
-                  <div 
+                  <div
                     className="absolute right-2 top-full mt-1 w-32 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden"
                     onClick={(e) => {
                       e.preventDefault();
@@ -459,12 +465,12 @@ export default function LeftSidebar() {
             </div>
             {quota && quota.limit !== null && (
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 overflow-hidden">
-                <div 
+                <div
                   className={cn(
-                    "h-1.5 rounded-full transition-all duration-500", 
+                    "h-1.5 rounded-full transition-all duration-500",
                     quota.remaining === 0 ? "bg-red-500" : "bg-indigo-500"
-                  )} 
-                  style={{ width: `${Math.min(100, (quota.used / quota.limit) * 100)}%` }} 
+                  )}
+                  style={{ width: `${Math.min(100, (quota.used / quota.limit) * 100)}%` }}
                 />
               </div>
             )}

@@ -18,8 +18,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
   return (
     <ClientProvider>
       <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 relative">
-        {/* Left Sidebar — 260px */}
-        <div className="w-[260px] flex-shrink-0 h-full overflow-hidden">
+        {/* Left Sidebar */}
+        <div className="flex-shrink-0 h-full z-40 relative">
           <LeftSidebar />
         </div>
 

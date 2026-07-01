@@ -276,7 +276,12 @@ export default function SettingsPage() {
 
             {/* Existing clients */}
             <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
-              <h2 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Your Clients</h2>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Total Clients</h2>
+                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">
+                  {clients.length} {clients.length === 1 ? 'Client' : 'Clients'}
+                </span>
+              </div>
               {clients.length === 0 ? (
                 <p className="text-sm text-gray-500 dark:text-gray-500">No clients yet. Add one below.</p>
               ) : (

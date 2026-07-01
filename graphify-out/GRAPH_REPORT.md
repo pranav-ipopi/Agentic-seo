@@ -1,7 +1,7 @@
 # Graph Report - Agentic_SEO  (2026-07-01)
 
 ## Corpus Check
-- 4164 files · ~7,908,557 words
+- 4168 files · ~7,910,143 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1e9929bb`
+- Built from commit: `9c76e529`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -527,7 +527,7 @@ Cohesion: 0.50
 Nodes (3): npx, @playwright/mcp, playwright
 
 ## Knowledge Gaps
-- **494 isolated node(s):** `ChatWorkspaceProps`, `name`, `version`, `private`, `dev` (+489 more)
+- **494 isolated node(s):** `TaskRunExtended`, `STATUS_FILTERS`, `StatusFilter`, `name`, `version` (+489 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -535,12 +535,12 @@ Nodes (3): npx, @playwright/mcp, playwright
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Client` connect `Community 10` to `Community 6`, `Community 12`, `Community 14`, `Community 126`, `Community 31`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+  _High betweenness centrality (0.076) - this node is a cross-community bridge._
 - **Why does `createServiceClient()` connect `Community 0` to `Community 36`, `Community 37`, `Community 132`, `Community 20`, `Community 116`, `Community 119`, `Community 124`, `Community 126`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `createServiceClient()` (e.g. with `DELETE()` and `DELETE()`) actually correct?**
   _`createServiceClient()` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `ChatWorkspaceProps`, `name`, `version` to the rest of the system?**
+- **What connects `TaskRunExtended`, `STATUS_FILTERS`, `StatusFilter` to the rest of the system?**
   _633 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._

@@ -16,6 +16,7 @@ type ClientStats = {
 
 export default function AdminClientsPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isInitializing, setIsInitializing] = useState(true)
   const [passwordInput, setPasswordInput] = useState('')
   const [clients, setClients] = useState<ClientStats[]>([])
   const [isLoading, setIsLoading] = useState(false)
@@ -27,16 +28,26 @@ export default function AdminClientsPage() {
   // Configuration State
   const [usdToInr, setUsdToInr] = useState(94)
   const [vpsCostUsd, setVpsCostUsd] = useState(0)
-  const [proxyPriceUsd, setProxyPriceUsd] = useState(2)
-  const [proxyMb, setProxyMb] = useState(5)
-  const [captchaPriceUsd, setCaptchaPriceUsd] = useState(1)
-  const [captchaCount, setCaptchaCount] = useState(2)
+  const [proxyPriceUsd, setProxyPriceUsd] = useState(0)
+  const [proxyMb, setProxyMb] = useState(0)
+  const [captchaPriceUsd, setCaptchaPriceUsd] = useState(0)
+  const [captchaCount, setCaptchaCount] = useState(0)
   const [globalLimit, setGlobalLimitInput] = useState('')
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     loadClients(passwordInput)
   }
+
+  useEffect(() => {
+    const savedPass = localStorage.getItem('admin_pass')
+    if (savedPass) {
+      setPasswordInput(savedPass)
+      loadClients(savedPass).finally(() => setIsInitializing(false))
+    } else {
+      setIsInitializing(false)
+    }
+  }, [])
 
   const loadClients = async (pass: string) => {
     setIsLoading(true)
@@ -46,10 +57,12 @@ export default function AdminClientsPage() {
       const analytics = await fetchAnalyticsData(pass)
       setAnalyticsData(analytics)
       setIsAuthenticated(true)
+      localStorage.setItem('admin_pass', pass)
     } catch (error: any) {
       alert('Incorrect password or failed to load data')
       setPasswordInput('')
       setIsAuthenticated(false)
+      localStorage.removeItem('admin_pass')
     } finally {
       setIsLoading(false)
     }
@@ -122,6 +135,17 @@ export default function AdminClientsPage() {
   const totalCostInr = globalVpsInr + totalVariableCostInr
   const costPerSuccessfulInr = totalCompleted > 0 ? (totalCostInr / totalCompleted) : 0
 
+  if (isInitializing) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-gray-50 dark:bg-[#0B0C0E]">
+        <div className="text-gray-500 flex flex-col items-center gap-3">
+          <Loader2 className="w-6 h-6 animate-spin text-blue-500" />
+          <span className="text-sm font-medium">Checking session...</span>
+        </div>
+      </div>
+    )
+  }
+
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">
@@ -168,6 +192,7 @@ export default function AdminClientsPage() {
             onClick={() => {
               setIsAuthenticated(false)
               setPasswordInput('')
+              localStorage.removeItem('admin_pass')
             }}
             className="flex items-center w-full px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white transition-colors"
           >
@@ -421,49 +446,66 @@ export default function AdminClientsPage() {
                     <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">{analyticsData.currentlyRunning}</div>
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 text-gray-500 mb-1"><Server className="w-4 h-4"/> <span className="font-medium text-sm">Total Lifetime Jobs</span></div>
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white">{analyticsData.totalJobs}</div>
+                    <div className="flex items-center gap-2 text-gray-500 mb-1"><Server className="w-4 h-4"/> <span className="font-medium text-sm">Today's Jobs</span></div>
+                    <div className="text-3xl font-bold text-gray-900 dark:text-white">{analyticsData.todaysJobs}</div>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
                   <h3 className="font-medium text-sm text-gray-500 mb-4 flex items-center gap-2"><Cpu className="w-4 h-4"/> Worker Health (VPS)</h3>
                   <div className="space-y-3">
-                    {analyticsData.workerHealth.map((worker: any) => (
-                      <div key={worker.name} className="flex justify-between items-center border-b border-gray-100 dark:border-gray-800 pb-2 last:border-0 last:pb-0">
-                        <div>
-                          <div className="font-medium text-sm text-gray-900 dark:text-white flex items-center gap-2">
-                            <span className={`w-2 h-2 rounded-full ${worker.status === 'online' ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                            {worker.name}
+                    {analyticsData.workerHealth && analyticsData.workerHealth.length > 0 ? (
+                      analyticsData.workerHealth.map((worker: any) => (
+                        <div key={worker.name} className="flex justify-between items-center border-b border-gray-100 dark:border-gray-800 pb-2 last:border-0 last:pb-0">
+                          <div>
+                            <div className="font-medium text-sm text-gray-900 dark:text-white flex items-center gap-2">
+                              <span className={`w-2 h-2 rounded-full ${worker.status === 'online' ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                              {worker.name}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">Memory: {worker.memory} • Restarts: {worker.restarts}</div>
                           </div>
-                          <div className="text-xs text-gray-500 mt-1">Memory: {worker.memory} • Restarts: {worker.restarts}</div>
+                          <span className={`px-2 py-1 text-xs font-medium rounded-md ${worker.status === 'online' ? 'bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400'}`}>{worker.status}</span>
                         </div>
-                        <span className={`px-2 py-1 text-xs font-medium rounded-md ${worker.status === 'online' ? 'bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400'}`}>{worker.status}</span>
+                      ))
+                    ) : (
+                      <div className="text-sm text-gray-500 text-center py-6 border border-dashed border-gray-200 dark:border-gray-800 rounded-lg">
+                        No PM2 workers running on this node.
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
               
               <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm">
-                <h3 className="font-medium text-sm text-gray-500 mb-6 flex items-center gap-2"><BarChart3 className="w-4 h-4"/> Backlink Execution (Last 7 Days)</h3>
+                <h3 className="font-medium text-sm text-gray-500 mb-6 flex items-center gap-2"><BarChart3 className="w-4 h-4"/> Job Execution (Last 7 Days)</h3>
                 <div className="h-64 flex items-end justify-between gap-2 px-2">
                   {analyticsData.graphData.map((day: any) => {
-                    const total = day.success + day.failed
-                    const maxTotal = Math.max(...analyticsData.graphData.map((d: any) => d.success + d.failed), 1)
+                    const total = day.success + day.failed + day.pending + day.running
+                    const maxTotal = Math.max(...analyticsData.graphData.map((d: any) => d.success + d.failed + d.pending + d.running), 1)
                     const heightPct = (total / maxTotal) * 100
                     const successPct = total > 0 ? (day.success / total) * 100 : 0
                     const failedPct = total > 0 ? (day.failed / total) * 100 : 0
+                    const pendingPct = total > 0 ? (day.pending / total) * 100 : 0
+                    const runningPct = total > 0 ? (day.running / total) * 100 : 0
                     
                     return (
-                      <div key={day.date} className="flex flex-col items-center flex-1 group">
-                        <div className="w-full relative bg-gray-100 dark:bg-gray-800 rounded-t-sm flex flex-col justify-end overflow-hidden" style={{ height: `${heightPct}%`, minHeight: '4px' }}>
-                          <div className="w-full bg-red-400 transition-all duration-300" style={{ height: `${failedPct}%` }}></div>
-                          <div className="w-full bg-green-500 transition-all duration-300" style={{ height: `${successPct}%` }}></div>
+                      <div key={day.date} className="flex flex-col justify-end items-center flex-1 group h-full">
+                        <div className="w-full relative flex flex-col justify-end" style={{ height: `${heightPct}%`, minHeight: '4px' }}>
                           
                           {/* Tooltip */}
-                          <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap z-10 transition-opacity">
+                          <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs px-2 py-1 rounded pointer-events-none whitespace-nowrap z-50 transition-opacity">
+                            <div className="font-medium text-gray-300 border-b border-gray-700 pb-1 mb-1">Total Run: {day.success + day.failed}</div>
                             <div>Success: {day.success}</div>
                             <div>Failed: {day.failed}</div>
+                            <div>Pending: {day.pending}</div>
+                            <div>Running: {day.running}</div>
+                          </div>
+
+                          {/* Bars */}
+                          <div className="w-full h-full relative bg-gray-100 dark:bg-gray-800 rounded-t-sm flex flex-col justify-end overflow-hidden">
+                            <div className="w-full bg-blue-500 transition-all duration-300" style={{ height: `${runningPct}%` }}></div>
+                            <div className="w-full bg-yellow-400 transition-all duration-300" style={{ height: `${pendingPct}%` }}></div>
+                            <div className="w-full bg-red-400 transition-all duration-300" style={{ height: `${failedPct}%` }}></div>
+                            <div className="w-full bg-green-500 transition-all duration-300" style={{ height: `${successPct}%` }}></div>
                           </div>
                         </div>
                         <div className="text-[10px] text-gray-400 mt-2 rotate-45 md:rotate-0 origin-left md:origin-center">{day.date.split('-').slice(1).join('/')}</div>
@@ -474,6 +516,8 @@ export default function AdminClientsPage() {
                 <div className="flex justify-center gap-6 mt-6">
                   <div className="flex items-center gap-2 text-xs text-gray-500"><span className="w-3 h-3 bg-green-500 rounded-sm"></span> Successful</div>
                   <div className="flex items-center gap-2 text-xs text-gray-500"><span className="w-3 h-3 bg-red-400 rounded-sm"></span> Failed</div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500"><span className="w-3 h-3 bg-yellow-400 rounded-sm"></span> Pending</div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500"><span className="w-3 h-3 bg-blue-500 rounded-sm"></span> Running</div>
                 </div>
               </div>
             </>

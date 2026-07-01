@@ -25,13 +25,13 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/campaigns/execute-articles/route.ts": {
-    "mtime": 1781869201.6359987,
-    "ast_hash": "ec2dde89461563d831d133f9f8d915b5",
+    "mtime": 1782910222.5142848,
+    "ast_hash": "9020db432829ca97789ede14d2a0664b",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/campaigns/execute/route.ts": {
-    "mtime": 1782887506.3191524,
-    "ast_hash": "c3be2311d3a194a6a29eb757dfe3fd0f",
+    "mtime": 1782905574.5609052,
+    "ast_hash": "1fbc9373f8d406be620807f1d67d5b80",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/campaigns/saved/route.ts": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/retry/route.ts": {
-    "mtime": 1782887513.9858632,
-    "ast_hash": "28c7cb3dce8600347e9862c17f806b7b",
+    "mtime": 1782901876.1178496,
+    "ast_hash": "cbd44a3ad0a9f82554f6a39e3f2bac49",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/tasks/route.ts": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/dashboard/tasks/page.tsx": {
-    "mtime": 1782297175.696297,
-    "ast_hash": "cc8e09661ab13a81740dbbaaaf9c8a91",
+    "mtime": 1782909981.0097375,
+    "ast_hash": "82d7bebb2e2ef7534609712a21238774",
     "semantic_hash": ""
   },
   "agentic-seo/app/dashboard/workflows/[id]/loading.tsx": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/components/sidebar/LeftSidebar.tsx": {
-    "mtime": 1782890196.2920156,
-    "ast_hash": "f04a68fc8b3ff0fe5314795edf4baf9d",
+    "mtime": 1782908898.182369,
+    "ast_hash": "0054df247c8abda5e2750fe6b09d4ebe",
     "semantic_hash": ""
   },
   "agentic-seo/components/sidebar/RightSidebar.tsx": {
@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/components/workflows/RunConfigurationPanel.tsx": {
-    "mtime": 1782816571.977571,
-    "ast_hash": "12e4cc35ac31b5d3b3a51eaf36b8a3e6",
+    "mtime": 1782908914.8566184,
+    "ast_hash": "2772f917108c81c8ea8d796d07d01d79",
     "semantic_hash": ""
   },
   "agentic-seo/components/workflows/SiteListModal.tsx": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/package.json": {
-    "mtime": 1782832966.4279675,
-    "ast_hash": "b177c461f61c8c01cfa7a1656b8474d2",
+    "mtime": 1782910099.2182765,
+    "ast_hash": "3dea97cca6fbaeb3ca9f3aca8ca094cf",
     "semantic_hash": ""
   },
   "agentic-seo/postcss.config.mjs": {
@@ -500,8 +500,8 @@
     "semantic_hash": ""
   },
   "playwright_worker/vps_worker_playwright.py": {
-    "mtime": 1782813987.619463,
-    "ast_hash": "d009d817110b8c56dd01514a8b770b06",
+    "mtime": 1782902061.7539556,
+    "ast_hash": "1ddd94ab375c784ebbc516cd9a8b1b57",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
@@ -600,7 +600,7 @@
     "semantic_hash": ""
   },
   "agentic-seo/supabase_scheme.txt": {
-    "mtime": 1782812208.9275596,
+    "mtime": 1782906670.6660192,
     "ast_hash": "b3b7ed00cb6aa17b2201dabbf9a4f22c",
     "semantic_hash": ""
   },
@@ -730,13 +730,13 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/actions.ts": {
-    "mtime": 1782885333.6795838,
-    "ast_hash": "54513ff689eef6aee19aebad3f1b931b",
+    "mtime": 1782909765.2278442,
+    "ast_hash": "ee601d922893f63cf389b2ca5972d239",
     "semantic_hash": ""
   },
   "agentic-seo/app/admin/page.tsx": {
-    "mtime": 1782819649.4138782,
-    "ast_hash": "6aee8fdc97b467f5a6aa56b3b7690c23",
+    "mtime": 1782908446.599097,
+    "ast_hash": "06dc7140bb71e1593807da89410d75e3",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/clients/[id]/limit/route.ts": {
@@ -745,8 +745,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/clients/[id]/quota/route.ts": {
-    "mtime": 1782707937.8166983,
-    "ast_hash": "0c856a5c96326d94b730ad5a18dc33c4",
+    "mtime": 1782908889.1230676,
+    "ast_hash": "63eedc7d4420d4ed01761eb9a381bdf6",
     "semantic_hash": ""
   },
   "playwright_worker/docs/cloudflare_bypass_architecture.md": {
@@ -28697,6 +28697,26 @@
   "whole logs.txt": {
     "mtime": 1782738921.959628,
     "ast_hash": "07faaa9d6d77cd19ecc47020cd33b505",
+    "semantic_hash": ""
+  },
+  "agentic-seo/app/api/tasks/delete/route.ts": {
+    "mtime": 1782909856.6317923,
+    "ast_hash": "85bc0199038095f574628f4b73887654",
+    "semantic_hash": ""
+  },
+  "playwright_worker/check_new.py": {
+    "mtime": 1782906630.9279752,
+    "ast_hash": "92d63e21cd8a9fdcb352009bcb9a513e",
+    "semantic_hash": ""
+  },
+  "playwright_worker/migrate_payloads.py": {
+    "mtime": 1782905649.2810187,
+    "ast_hash": "a73f6ea416d0a948e9abed577b4654ed",
+    "semantic_hash": ""
+  },
+  "playwright_worker/recover_zombies.py": {
+    "mtime": 1782900587.3430521,
+    "ast_hash": "5a9940c9ab9d96b22439f439c000df57",
     "semantic_hash": ""
   }
 }

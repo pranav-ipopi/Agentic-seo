@@ -4,14 +4,654 @@
   "graph": {},
   "nodes": [
     {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "execute_articles_route",
+      "community": 20,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "execute_articles_route_post",
+      "community": 20,
+      "norm_label": "post()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tasks_page",
+      "community": 127,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "TaskRunExtended",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "tasks_page_taskrunextended",
+      "community": 127,
+      "norm_label": "taskrunextended"
+    },
+    {
+      "label": "STATUS_FILTERS",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "tasks_page_status_filters",
+      "community": 127,
+      "norm_label": "status_filters"
+    },
+    {
+      "label": "StatusFilter",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "tasks_page_statusfilter",
+      "community": 127,
+      "norm_label": "statusfilter"
+    },
+    {
+      "label": "TasksPage()",
+      "file_type": "code",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "tasks_page_taskspage",
+      "community": 127,
+      "norm_label": "taskspage()"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agentic_seo_package",
+      "community": 129,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "agentic_seo_package_name",
+      "community": 129,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "agentic_seo_package_version",
+      "community": 129,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "agentic_seo_package_private",
+      "community": 129,
+      "norm_label": "private"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "agentic_seo_package_scripts",
+      "community": 129,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "agentic_seo_package_scripts_dev",
+      "community": 129,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "agentic_seo_package_scripts_build",
+      "community": 129,
+      "norm_label": "build"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "agentic_seo_package_scripts_start",
+      "community": 129,
+      "norm_label": "start"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "agentic_seo_package_scripts_test",
+      "community": 129,
+      "norm_label": "test"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies",
+      "community": 2,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@copilotkit/react-core",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_copilotkit_react_core",
+      "community": 2,
+      "norm_label": "@copilotkit/react-core"
+    },
+    {
+      "label": "@copilotkit/runtime",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_copilotkit_runtime",
+      "community": 2,
+      "norm_label": "@copilotkit/runtime"
+    },
+    {
+      "label": "@radix-ui/react-avatar",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_avatar",
+      "community": 2,
+      "norm_label": "@radix-ui/react-avatar"
+    },
+    {
+      "label": "@radix-ui/react-dialog",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_dialog",
+      "community": 2,
+      "norm_label": "@radix-ui/react-dialog"
+    },
+    {
+      "label": "@radix-ui/react-dropdown-menu",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_dropdown_menu",
+      "community": 2,
+      "norm_label": "@radix-ui/react-dropdown-menu"
+    },
+    {
+      "label": "@radix-ui/react-label",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_label",
+      "community": 2,
+      "norm_label": "@radix-ui/react-label"
+    },
+    {
+      "label": "@radix-ui/react-scroll-area",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_scroll_area",
+      "community": 2,
+      "norm_label": "@radix-ui/react-scroll-area"
+    },
+    {
+      "label": "@radix-ui/react-select",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_select",
+      "community": 2,
+      "norm_label": "@radix-ui/react-select"
+    },
+    {
+      "label": "@radix-ui/react-separator",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_separator",
+      "community": 2,
+      "norm_label": "@radix-ui/react-separator"
+    },
+    {
+      "label": "@radix-ui/react-tooltip",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_radix_ui_react_tooltip",
+      "community": 2,
+      "norm_label": "@radix-ui/react-tooltip"
+    },
+    {
+      "label": "@supabase/ssr",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_supabase_ssr",
+      "community": 2,
+      "norm_label": "@supabase/ssr"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_supabase_supabase_js",
+      "community": 2,
+      "norm_label": "@supabase/supabase-js"
+    },
+    {
+      "label": "@xyflow/react",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_xyflow_react",
+      "community": 2,
+      "norm_label": "@xyflow/react"
+    },
+    {
+      "label": "class-variance-authority",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_class_variance_authority",
+      "community": 2,
+      "norm_label": "class-variance-authority"
+    },
+    {
+      "label": "clsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_clsx",
+      "community": 2,
+      "norm_label": "clsx"
+    },
+    {
+      "label": "exceljs",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_exceljs",
+      "community": 2,
+      "norm_label": "exceljs"
+    },
+    {
+      "label": "file-saver",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_file_saver",
+      "community": 2,
+      "norm_label": "file-saver"
+    },
+    {
+      "label": "ioredis",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_ioredis",
+      "community": 2,
+      "norm_label": "ioredis"
+    },
+    {
+      "label": "jspdf",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_jspdf",
+      "community": 2,
+      "norm_label": "jspdf"
+    },
+    {
+      "label": "jspdf-autotable",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_jspdf_autotable",
+      "community": 2,
+      "norm_label": "jspdf-autotable"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_lucide_react",
+      "community": 2,
+      "norm_label": "lucide-react"
+    },
+    {
+      "label": "next",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_next",
+      "community": 2,
+      "norm_label": "next"
+    },
+    {
+      "label": "next-themes",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_next_themes",
+      "community": 2,
+      "norm_label": "next-themes"
+    },
+    {
+      "label": "openai",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_openai",
+      "community": 2,
+      "norm_label": "openai"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_react_dom",
+      "community": 2,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "tailwind-merge",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_tailwind_merge",
+      "community": 2,
+      "norm_label": "tailwind-merge"
+    },
+    {
+      "label": "xlsx",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_xlsx",
+      "community": 2,
+      "norm_label": "xlsx"
+    },
+    {
+      "label": "zustand",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "agentic_seo_package_dependencies_zustand",
+      "community": 2,
+      "norm_label": "zustand"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies",
+      "community": 120,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@tailwindcss/postcss",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_tailwindcss_postcss",
+      "community": 120,
+      "norm_label": "@tailwindcss/postcss"
+    },
+    {
+      "label": "@testing-library/dom",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_testing_library_dom",
+      "community": 120,
+      "norm_label": "@testing-library/dom"
+    },
+    {
+      "label": "@testing-library/jest-dom",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_testing_library_jest_dom",
+      "community": 120,
+      "norm_label": "@testing-library/jest-dom"
+    },
+    {
+      "label": "@testing-library/react",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_testing_library_react",
+      "community": 120,
+      "norm_label": "@testing-library/react"
+    },
+    {
+      "label": "@types/dotenv",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_dotenv",
+      "community": 120,
+      "norm_label": "@types/dotenv"
+    },
+    {
+      "label": "@types/file-saver",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_file_saver",
+      "community": 120,
+      "norm_label": "@types/file-saver"
+    },
+    {
+      "label": "@types/jest",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_jest",
+      "community": 120,
+      "norm_label": "@types/jest"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_node",
+      "community": 120,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_react",
+      "community": 120,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_types_react_dom",
+      "community": 120,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "dotenv",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_dotenv",
+      "community": 120,
+      "norm_label": "dotenv"
+    },
+    {
+      "label": "jest",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_jest",
+      "community": 120,
+      "norm_label": "jest"
+    },
+    {
+      "label": "jest-environment-jsdom",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_jest_environment_jsdom",
+      "community": 120,
+      "norm_label": "jest-environment-jsdom"
+    },
+    {
+      "label": "jest-environment-node",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_jest_environment_node",
+      "community": 120,
+      "norm_label": "jest-environment-node"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_tailwindcss",
+      "community": 120,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "ts-jest",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_ts_jest",
+      "community": 120,
+      "norm_label": "ts-jest"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "agentic-seo/package.json",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "agentic_seo_package_devdependencies_typescript",
+      "community": 120,
+      "norm_label": "typescript"
+    },
+    {
       "label": "actions.ts",
       "file_type": "code",
       "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "admin_actions",
       "community": 116,
-      "norm_label": "actions.ts"
+      "norm_label": "actions.ts",
+      "id": "admin_actions"
     },
     {
       "label": "fetchAdminStats()",
@@ -19,9 +659,9 @@
       "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "admin_actions_fetchadminstats",
       "community": 116,
-      "norm_label": "fetchadminstats()"
+      "norm_label": "fetchadminstats()",
+      "id": "admin_actions_fetchadminstats"
     },
     {
       "label": "updateAdminLimit()",
@@ -29,9 +669,9 @@
       "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "id": "admin_actions_updateadminlimit",
       "community": 116,
-      "norm_label": "updateadminlimit()"
+      "norm_label": "updateadminlimit()",
+      "id": "admin_actions_updateadminlimit"
     },
     {
       "label": "setGlobalLimit()",
@@ -39,9 +679,9 @@
       "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L71",
       "_origin": "ast",
-      "id": "admin_actions_setgloballimit",
       "community": 116,
-      "norm_label": "setgloballimit()"
+      "norm_label": "setgloballimit()",
+      "id": "admin_actions_setgloballimit"
     },
     {
       "label": "fetchAnalyticsData()",
@@ -49,9 +689,9 @@
       "source_file": "agentic-seo/app/admin/actions.ts",
       "source_location": "L87",
       "_origin": "ast",
-      "id": "admin_actions_fetchanalyticsdata",
       "community": 116,
-      "norm_label": "fetchanalyticsdata()"
+      "norm_label": "fetchanalyticsdata()",
+      "id": "admin_actions_fetchanalyticsdata"
     },
     {
       "label": "route.ts",
@@ -59,9 +699,9 @@
       "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "execute_route",
       "community": 20,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "execute_route"
     },
     {
       "label": "POST()",
@@ -69,9 +709,9 @@
       "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "execute_route_post",
       "community": 20,
-      "norm_label": "post()"
+      "norm_label": "post()",
+      "id": "execute_route_post"
     },
     {
       "label": "route.ts",
@@ -79,9 +719,9 @@
       "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "retry_route",
       "community": 20,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "retry_route"
     },
     {
       "label": "POST()",
@@ -89,9 +729,9 @@
       "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "retry_route_post",
       "community": 20,
-      "norm_label": "post()"
+      "norm_label": "post()",
+      "id": "retry_route_post"
     },
     {
       "label": "ChatWorkspace.test.tsx",
@@ -152,576 +792,6 @@
       "community": 15,
       "norm_label": "chatworkspace()",
       "id": "chat_chatworkspace_chatworkspace"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "package.json",
-      "id": "agentic_seo_package"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "name",
-      "id": "agentic_seo_package_name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "version",
-      "id": "agentic_seo_package_version"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "private",
-      "id": "agentic_seo_package_private"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "scripts",
-      "id": "agentic_seo_package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "dev",
-      "id": "agentic_seo_package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "build",
-      "id": "agentic_seo_package_scripts_build"
-    },
-    {
-      "label": "start",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "start",
-      "id": "agentic_seo_package_scripts_start"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 129,
-      "norm_label": "test",
-      "id": "agentic_seo_package_scripts_test"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "dependencies",
-      "id": "agentic_seo_package_dependencies"
-    },
-    {
-      "label": "@copilotkit/react-core",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@copilotkit/react-core",
-      "id": "agentic_seo_package_dependencies_copilotkit_react_core"
-    },
-    {
-      "label": "@copilotkit/runtime",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@copilotkit/runtime",
-      "id": "agentic_seo_package_dependencies_copilotkit_runtime"
-    },
-    {
-      "label": "@radix-ui/react-avatar",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-avatar",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_avatar"
-    },
-    {
-      "label": "@radix-ui/react-dialog",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-dialog",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_dialog"
-    },
-    {
-      "label": "@radix-ui/react-dropdown-menu",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-dropdown-menu",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_dropdown_menu"
-    },
-    {
-      "label": "@radix-ui/react-label",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-label",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_label"
-    },
-    {
-      "label": "@radix-ui/react-scroll-area",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-scroll-area",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_scroll_area"
-    },
-    {
-      "label": "@radix-ui/react-select",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-select",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_select"
-    },
-    {
-      "label": "@radix-ui/react-separator",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-separator",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_separator"
-    },
-    {
-      "label": "@radix-ui/react-tooltip",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@radix-ui/react-tooltip",
-      "id": "agentic_seo_package_dependencies_radix_ui_react_tooltip"
-    },
-    {
-      "label": "@supabase/ssr",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@supabase/ssr",
-      "id": "agentic_seo_package_dependencies_supabase_ssr"
-    },
-    {
-      "label": "@supabase/supabase-js",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@supabase/supabase-js",
-      "id": "agentic_seo_package_dependencies_supabase_supabase_js"
-    },
-    {
-      "label": "@xyflow/react",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@xyflow/react",
-      "id": "agentic_seo_package_dependencies_xyflow_react"
-    },
-    {
-      "label": "class-variance-authority",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "class-variance-authority",
-      "id": "agentic_seo_package_dependencies_class_variance_authority"
-    },
-    {
-      "label": "clsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "clsx",
-      "id": "agentic_seo_package_dependencies_clsx"
-    },
-    {
-      "label": "exceljs",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "exceljs",
-      "id": "agentic_seo_package_dependencies_exceljs"
-    },
-    {
-      "label": "file-saver",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "file-saver",
-      "id": "agentic_seo_package_dependencies_file_saver"
-    },
-    {
-      "label": "ioredis",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "ioredis",
-      "id": "agentic_seo_package_dependencies_ioredis"
-    },
-    {
-      "label": "jspdf",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "jspdf",
-      "id": "agentic_seo_package_dependencies_jspdf"
-    },
-    {
-      "label": "jspdf-autotable",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "jspdf-autotable",
-      "id": "agentic_seo_package_dependencies_jspdf_autotable"
-    },
-    {
-      "label": "lucide-react",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "lucide-react",
-      "id": "agentic_seo_package_dependencies_lucide_react"
-    },
-    {
-      "label": "next",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "next",
-      "id": "agentic_seo_package_dependencies_next"
-    },
-    {
-      "label": "next-themes",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L34",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "next-themes",
-      "id": "agentic_seo_package_dependencies_next_themes"
-    },
-    {
-      "label": "openai",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "openai",
-      "id": "agentic_seo_package_dependencies_openai"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react",
-      "id": "agentic_seo_package_dependencies_react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L37",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react-dom",
-      "id": "agentic_seo_package_dependencies_react_dom"
-    },
-    {
-      "label": "tailwind-merge",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "tailwind-merge",
-      "id": "agentic_seo_package_dependencies_tailwind_merge"
-    },
-    {
-      "label": "xlsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L39",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "xlsx",
-      "id": "agentic_seo_package_dependencies_xlsx"
-    },
-    {
-      "label": "zustand",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "zustand",
-      "id": "agentic_seo_package_dependencies_zustand"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "devdependencies",
-      "id": "agentic_seo_package_devdependencies"
-    },
-    {
-      "label": "@tailwindcss/postcss",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L43",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@tailwindcss/postcss",
-      "id": "agentic_seo_package_devdependencies_tailwindcss_postcss"
-    },
-    {
-      "label": "@testing-library/dom",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L44",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@testing-library/dom",
-      "id": "agentic_seo_package_devdependencies_testing_library_dom"
-    },
-    {
-      "label": "@testing-library/jest-dom",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L45",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@testing-library/jest-dom",
-      "id": "agentic_seo_package_devdependencies_testing_library_jest_dom"
-    },
-    {
-      "label": "@testing-library/react",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L46",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@testing-library/react",
-      "id": "agentic_seo_package_devdependencies_testing_library_react"
-    },
-    {
-      "label": "@types/dotenv",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L47",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/dotenv",
-      "id": "agentic_seo_package_devdependencies_types_dotenv"
-    },
-    {
-      "label": "@types/file-saver",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/file-saver",
-      "id": "agentic_seo_package_devdependencies_types_file_saver"
-    },
-    {
-      "label": "@types/jest",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L49",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/jest",
-      "id": "agentic_seo_package_devdependencies_types_jest"
-    },
-    {
-      "label": "@types/node",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L50",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/node",
-      "id": "agentic_seo_package_devdependencies_types_node"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L51",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/react",
-      "id": "agentic_seo_package_devdependencies_types_react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L52",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "@types/react-dom",
-      "id": "agentic_seo_package_devdependencies_types_react_dom"
-    },
-    {
-      "label": "dotenv",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L53",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "dotenv",
-      "id": "agentic_seo_package_devdependencies_dotenv"
-    },
-    {
-      "label": "jest",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L54",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "jest",
-      "id": "agentic_seo_package_devdependencies_jest"
-    },
-    {
-      "label": "jest-environment-jsdom",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "jest-environment-jsdom",
-      "id": "agentic_seo_package_devdependencies_jest_environment_jsdom"
-    },
-    {
-      "label": "jest-environment-node",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L56",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "jest-environment-node",
-      "id": "agentic_seo_package_devdependencies_jest_environment_node"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "tailwindcss",
-      "id": "agentic_seo_package_devdependencies_tailwindcss"
-    },
-    {
-      "label": "ts-jest",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L58",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "ts-jest",
-      "id": "agentic_seo_package_devdependencies_ts_jest"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "agentic-seo/package.json",
-      "source_location": "L59",
-      "_origin": "ast",
-      "community": 120,
-      "norm_label": "typescript",
-      "id": "agentic_seo_package_devdependencies_typescript"
     },
     {
       "label": "client.ts",
@@ -8138,26 +8208,6 @@
     {
       "label": "route.ts",
       "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "route.ts",
-      "id": "execute_articles_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "post()",
-      "id": "execute_articles_route_post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
       "source_file": "agentic-seo/app/api/campaigns/saved/route.ts",
       "source_location": "L1",
       "_origin": "ast",
@@ -8644,56 +8694,6 @@
       "community": 82,
       "norm_label": "tasksloading()",
       "id": "tasks_loading_tasksloading"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 127,
-      "norm_label": "page.tsx",
-      "id": "tasks_page"
-    },
-    {
-      "label": "TaskRunExtended",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 127,
-      "norm_label": "taskrunextended",
-      "id": "tasks_page_taskrunextended"
-    },
-    {
-      "label": "STATUS_FILTERS",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 127,
-      "norm_label": "status_filters",
-      "id": "tasks_page_status_filters"
-    },
-    {
-      "label": "StatusFilter",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 127,
-      "norm_label": "statusfilter",
-      "id": "tasks_page_statusfilter"
-    },
-    {
-      "label": "TasksPage()",
-      "file_type": "code",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 127,
-      "norm_label": "taskspage()",
-      "id": "tasks_page_taskspage"
     },
     {
       "label": "loading.tsx",
@@ -12510,171 +12510,44 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L5",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_fetchadminstats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_fetchanalyticsdata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_setgloballimit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "admin_actions_updateadminlimit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/actions.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_actions",
-      "target": "supabase_server_createserviceclient"
+      "source": "execute_articles_route",
+      "target": "execute_articles_route_post"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_fetchadminstats"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_updateadminlimit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/admin/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "admin_actions_fetchanalyticsdata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "execute_route_post"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
-      "target": "retry_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "retry_route",
+      "source": "execute_articles_route",
       "target": "supabase_server"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "retry_route",
+      "source": "execute_articles_route",
       "target": "supabase_server_createclient"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "retry_route",
+      "source": "execute_articles_route",
       "target": "supabase_server_createserviceclient"
     },
     {
@@ -12682,10 +12555,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L7",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
+      "source_location": "L14",
       "weight": 1.0,
-      "source": "retry_route_post",
+      "source": "execute_articles_route_post",
       "target": "supabase_server_createclient"
     },
     {
@@ -12693,304 +12566,204 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
-      "source_location": "L26",
+      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
+      "source_location": "L20",
       "weight": 1.0,
-      "source": "retry_route_post",
+      "source": "execute_articles_route_post",
       "target": "supabase_server_createserviceclient"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
-      "source_location": "L8",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "components_chatworkspace_test",
-      "target": "chat_chatworkspace"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_chatworkspace_test",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_chatworkspace_test",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "agent_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "agent_client_buildclientsystemmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "chat_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "hermes_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "hermes_client_buildclientsystemmessage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "chat_route_post",
-      "target": "agent_client_buildclientsystemmessage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/chat/route.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "chat_route_post",
-      "target": "hermes_client_buildclientsystemmessage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "agent_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "chat_chatmessages"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "chat_chatworkspace_chatworkspace"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "chat_chatworkspace_chatworkspaceprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "chat_promptinput"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "hermes_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
+      "source": "tasks_page",
       "target": "layout_clientprovider"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L4",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
+      "source": "tasks_page",
       "target": "layout_clientprovider_useclient"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L5",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
+      "source": "tasks_page",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "lib_utils_formatrelativetime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
       "target": "supabase_client"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L5",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
+      "source": "tasks_page",
       "target": "supabase_client_createclient"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L11",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
+      "source": "tasks_page",
       "target": "supabase_types"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_chatmessage"
+      "source": "tasks_page",
+      "target": "supabase_types_taskrun"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_chatsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_chatworkspace",
-      "target": "supabase_types_department_ids"
+      "source": "tasks_page",
+      "target": "supabase_types_taskrunlog"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/chat/[sessionId]/page.tsx",
-      "source_location": "L1",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "sessionid_page",
-      "target": "chat_chatworkspace"
+      "source": "tasks_page",
+      "target": "tasks_animatedterminal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "tasks_page_status_filters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "tasks_page_statusfilter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "tasks_page_taskrunextended"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "tasks_page_taskspage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "utils_excel_generator"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_page",
+      "target": "utils_excel_generator_downloadcampaignexcelreport"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L20",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L28",
       "weight": 1.0,
-      "source": "chat_chatworkspace_chatworkspace",
+      "source": "tasks_page_taskspage",
       "target": "layout_clientprovider_useclient"
     },
     {
@@ -12998,22 +12771,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
-      "source_location": "L19",
+      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
+      "source_location": "L27",
       "weight": 1.0,
-      "source": "chat_chatworkspace_chatworkspace",
+      "source": "tasks_page_taskspage",
       "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/chat/[sessionId]/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sessionid_page",
-      "target": "chat_chatworkspace_chatworkspace"
     },
     {
       "relation": "contains",
@@ -13574,6 +13336,514 @@
       "confidence_score": 1.0,
       "source": "agentic_seo_package_devdependencies",
       "target": "agentic_seo_package_devdependencies_typescript"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_fetchadminstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_fetchanalyticsdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_setgloballimit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "admin_actions_updateadminlimit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/actions.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_actions",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_fetchadminstats"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_updateadminlimit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "admin_actions_fetchanalyticsdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "execute_route_post"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/campaigns/execute/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "execute_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "retry_route_post"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "retry_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/tasks/retry/route.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "retry_route_post",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_chatworkspace_test",
+      "target": "chat_chatworkspace"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_chatworkspace_test",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/__tests__/components/ChatWorkspace.test.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_chatworkspace_test",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "agent_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "agent_client_buildclientsystemmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "chat_route_post"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "hermes_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "hermes_client_buildclientsystemmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_route",
+      "target": "supabase_server_createserviceclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "chat_route_post",
+      "target": "agent_client_buildclientsystemmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/app/api/chat/route.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "chat_route_post",
+      "target": "hermes_client_buildclientsystemmessage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "agent_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "chat_chatmessages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "chat_chatworkspace_chatworkspace"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "chat_chatworkspace_chatworkspaceprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "chat_promptinput"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "hermes_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "layout_clientprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_chatsession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_chatworkspace",
+      "target": "supabase_types_department_ids"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/chat/[sessionId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessionid_page",
+      "target": "chat_chatworkspace"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "chat_chatworkspace_chatworkspace",
+      "target": "layout_clientprovider_useclient"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agentic-seo/components/chat/ChatWorkspace.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "chat_chatworkspace_chatworkspace",
+      "target": "supabase_client_createclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agentic-seo/app/dashboard/chat/[sessionId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessionid_page",
+      "target": "chat_chatworkspace_chatworkspace"
     },
     {
       "relation": "contains",
@@ -22160,17 +22430,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/dashboard/settings/team/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -22490,17 +22749,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types_taskrun"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/lib/utils/excel-generator.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -22584,17 +22832,6 @@
       "confidence_score": 1.0,
       "source": "workflows_workflowvisualizer",
       "target": "supabase_types_skill"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_types_taskrunlog"
     },
     {
       "relation": "contains",
@@ -23856,71 +24093,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_articles_route",
-      "target": "execute_articles_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_articles_route",
-      "target": "supabase_server"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_articles_route",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "execute_articles_route",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "execute_articles_route_post",
-      "target": "supabase_server_createclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/api/campaigns/execute-articles/route.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "execute_articles_route_post",
-      "target": "supabase_server_createserviceclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "agentic-seo/app/api/campaigns/saved/route.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -24955,178 +25127,6 @@
       "confidence_score": 1.0,
       "source": "tasks_loading",
       "target": "tasks_loading_tasksloading"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "layout_clientprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "lib_utils_formatrelativetime"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "supabase_client_createclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "tasks_animatedterminal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "tasks_page_status_filters"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "tasks_page_statusfilter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "tasks_page_taskrunextended"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "tasks_page_taskspage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "utils_excel_generator"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_page",
-      "target": "utils_excel_generator_downloadcampaignexcelreport"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "tasks_page_taskspage",
-      "target": "layout_clientprovider_useclient"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agentic-seo/app/dashboard/tasks/page.tsx",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "tasks_page_taskspage",
-      "target": "supabase_client_createclient"
     },
     {
       "relation": "contains",
@@ -29263,5 +29263,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1e9929bbd5c1cdf62bee89a0435fa067e039bb32"
+  "built_at_commit": "9c76e529bd109fbecc46f6d493f550f20eacc368"
 }

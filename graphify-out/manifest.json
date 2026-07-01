@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/app/api/chat/route.ts": {
-    "mtime": 1782832601.1054778,
-    "ast_hash": "81319940843d01da5ba38cda7beb8fa1",
+    "mtime": 1782832864.144323,
+    "ast_hash": "e8d6cac0cba1b598a80562b49b668713",
     "semantic_hash": ""
   },
   "agentic-seo/app/api/clients/[id]/route.ts": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/package.json": {
-    "mtime": 1782800337.993084,
-    "ast_hash": "790e121bd7308a1c54d1b76790dc1e35",
+    "mtime": 1782832966.4279675,
+    "ast_hash": "b177c461f61c8c01cfa7a1656b8474d2",
     "semantic_hash": ""
   },
   "agentic-seo/postcss.config.mjs": {
@@ -28745,8 +28745,8 @@
     "semantic_hash": ""
   },
   "agentic-seo/__tests__/components/ChatWorkspace.test.tsx": {
-    "mtime": 1782800571.9496558,
-    "ast_hash": "cdd0b807911579fa6cc59cba63cd1e82",
+    "mtime": 1782833283.8170278,
+    "ast_hash": "b53f91bce4a5a0321064fd4d07a5f458",
     "semantic_hash": ""
   },
   "agentic-seo/check.js": {

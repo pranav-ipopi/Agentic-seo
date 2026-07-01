@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
             run.state.retry_count = 0;
           }
 
-          pipeline.lpush('backlink_queue', JSON.stringify(run));
+          pipeline.rpush('backlink_queue', JSON.stringify(run));
           pushedCount++;
         }
 

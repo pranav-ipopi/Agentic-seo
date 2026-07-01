@@ -135,15 +135,33 @@ export async function fetchAnalyticsData(password: string, days: number = 7) {
   try {
     const { execSync } = require('child_process')
     const stdout = execSync('pm2 jlist').toString()
-    const pm2List = JSON.parse(stdout)
-    workerHealth = pm2List.map((p: any) => ({
-      name: p.name,
-      status: p.pm2_env.status,
-      restarts: p.pm2_env.restart_time,
-      memory: Math.round(p.monit.memory / 1024 / 1024) + ' MB'
-    }))
+    
+    let pm2List = null
+    const lines = stdout.split('\n')
+    for (const line of lines) {
+      if (line.trim().startsWith('[')) {
+        try {
+          const parsed = JSON.parse(line)
+          if (Array.isArray(parsed)) {
+            pm2List = parsed
+            break
+          }
+        } catch(e) {}
+      }
+    }
+
+    if (pm2List) {
+      workerHealth = pm2List.map((p: any) => ({
+        name: p.name,
+        status: p.pm2_env.status,
+        restarts: p.pm2_env.restart_time,
+        memory: Math.round(p.monit.memory / 1024 / 1024) + ' MB'
+      }))
+    } else {
+      workerHealth = [{ name: 'PM2 Query Failed (No JSON)', status: 'error', restarts: 0, memory: 'N/A' }]
+    }
   } catch (e: any) {
-    workerHealth = [{ name: 'PM2 Query Failed', status: 'error', restarts: 0, memory: 'N/A' }]
+    workerHealth = [{ name: 'PM2 Execution Failed', status: 'error', restarts: 0, memory: 'N/A' }]
   }
 
   return {

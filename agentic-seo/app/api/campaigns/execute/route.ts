@@ -228,7 +228,7 @@ export async function POST(request: NextRequest) {
               ...run,
               workflow_templates: workflowTemplate || null
             }
-            pipeline.lpush('backlink_queue', JSON.stringify(redisJob))
+            pipeline.rpush('backlink_queue', JSON.stringify(redisJob))
           })
           await pipeline.exec()
           await redis.quit()

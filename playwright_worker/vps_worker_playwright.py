@@ -42,6 +42,8 @@ SUPABASE_URL = os.environ.get("NEXT_PUBLIC_SUPABASE_URL") or os.environ.get("SUP
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "YOUR_SUPABASE_SERVICE_ROLE_KEY")
 
 MAX_CONCURRENT_SESSIONS = int(os.environ.get("MAX_CONCURRENT_SESSIONS", 4))
+RATE_LIMIT_MIN_SECONDS = float(os.environ.get("RATE_LIMIT_MIN_SECONDS", 2.0))
+RATE_LIMIT_MAX_SECONDS = float(os.environ.get("RATE_LIMIT_MAX_SECONDS", 5.0))
 POLL_INTERVAL_SECONDS = 30
 
 # Initialize global Supabase client (can be shared for async reading)
@@ -597,8 +599,8 @@ async def poll_queue():
                         logger.info(f"Fetched {len(task_runs)} new workflow runs. Adding to active pool...")
                         
                         for t in task_runs:
-                            # Reduced delay to allow concurrent execution (2 to 5 seconds)
-                            wait_seconds = random.uniform(2, 5)
+                            # Configurable delay to allow concurrent execution
+                            wait_seconds = random.uniform(RATE_LIMIT_MIN_SECONDS, RATE_LIMIT_MAX_SECONDS)
                             next_job_allowed_time = current_time + wait_seconds
                             
                             global NEXT_JOB_ALLOWED_TIME_GLOBAL
@@ -620,8 +622,8 @@ async def poll_queue():
                             # Also check the task_run's own status for cancellation
                             try:
                                 run_check_res = supabase.table('task_runs').select('status').eq('id', t['id']).execute()
-                                if run_check_res.data and run_check_res.data[0].get('status') == 'cancelled':
-                                    logger.info(f"[TaskRun {t['id']}] Task run is cancelled — discarding job without consuming a worker slot.")
+                                if run_check_res.data and run_check_res.data[0].get('status') in ['cancelled', 'completed']:
+                                    logger.info(f"[TaskRun {t['id']}] Task run is {run_check_res.data[0].get('status')} — discarding job without consuming a worker slot.")
                                     continue
                             except Exception as run_check_err:
                                 logger.warning(f"[TaskRun {t['id']}] Pre-dispatch task_run check failed: {run_check_err} — proceeding with dispatch.")

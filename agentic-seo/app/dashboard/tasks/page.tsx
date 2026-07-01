@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
 import { useClient } from '@/components/layout/ClientProvider'
 import {
-  CheckCircle2, XCircle, Clock, Loader2, RefreshCw, Filter, ChevronDown, ChevronUp, Download, MonitorPlay, FileSpreadsheet
+  CheckCircle2, XCircle, Clock, Loader2, RefreshCw, Filter, ChevronDown, ChevronUp, Download, MonitorPlay, FileSpreadsheet, Settings2, Trash2
 } from 'lucide-react'
 import { cn, formatRelativeTime } from '@/lib/utils'
 import type { TaskRun, TaskRunLog } from '@/lib/supabase/types'
@@ -24,6 +25,7 @@ const STATUS_FILTERS = ['all', 'running', 'pending', 'completed', 'failed'] as c
 type StatusFilter = typeof STATUS_FILTERS[number]
 
 export default function TasksPage() {
+  const router = useRouter()
   const supabase = createClient()
   const { activeClient } = useClient()
   const [tasks, setTasks] = useState<TaskRunExtended[]>([])
@@ -38,6 +40,10 @@ export default function TasksPage() {
   const [loadingLogs, setLoadingLogs] = useState<Record<string, boolean>>({})
   const [taskToCancel, setTaskToCancel] = useState<string | null>(null)
   const [retryingTasks, setRetryingTasks] = useState<Record<string, boolean>>({})
+
+  const [taskToDelete, setTaskToDelete] = useState<string | null>(null)
+  const [deleteClientName, setDeleteClientName] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
 
   // State for download report
   const [groupRowCount, setGroupRowCount] = useState<string>("10")
@@ -248,6 +254,59 @@ export default function TasksPage() {
     }
   }
 
+  const handleDeleteTask = async () => {
+    if (!taskToDelete || !activeClient) return
+    if (deleteClientName !== activeClient.name) {
+      alert("Client name doesn't match.")
+      return
+    }
+
+    setIsDeleting(true)
+    try {
+      const res = await fetch('/api/tasks/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ taskId: taskToDelete })
+      })
+      if (!res.ok) {
+        const errorText = await res.text()
+        console.error('Failed to delete task:', res.status, errorText)
+        alert('Failed to delete task.')
+      } else {
+        // Optimistically remove from UI
+        setTasks(prev => prev.filter(t => t.id !== taskToDelete))
+        setTaskToDelete(null)
+        setDeleteClientName('')
+      }
+    } catch (err) {
+      console.error('Error deleting task:', err)
+      alert('Error deleting task.')
+    } finally {
+      setIsDeleting(false)
+    }
+  }
+
+  const handleEditSettings = (task: TaskRunExtended) => {
+    if (!task.payload || !task.payload.templateId || !activeClient) return
+
+    try {
+      const draftKey = `draft_workflow_${task.payload.templateId}_${activeClient.id}`
+      
+      const draft = {
+        campaignName: task.payload.campaignName || task.title,
+        minDa: task.payload.minDa ?? 30,
+        minPa: task.payload.minPa ?? 30,
+        maxSpamScore: task.payload.maxSpamScore ?? 4,
+        targets: task.payload.targets || []
+      }
+
+      localStorage.setItem(draftKey, JSON.stringify(draft))
+      router.push(`/dashboard/workflows/${task.payload.templateId}`)
+    } catch (err) {
+      console.error('Failed to prepare draft for editing:', err)
+    }
+  }
+
   const statusIcon = (status: string) => {
     switch (status) {
       case 'running': return <Loader2 className="w-4 h-4 text-indigo-400 animate-spin" />
@@ -430,6 +489,23 @@ export default function TasksPage() {
                               {task.result?.is_cancelled ? 'Resume Job' : 'Retry Failed'}
                             </button>
                           )}
+                          {task.payload && task.payload.targets && task.payload.templateId ? (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleEditSettings(task); }}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500/20 rounded text-xs font-medium transition-colors"
+                            >
+                              <Settings2 className="w-3.5 h-3.5" />
+                              Edit Settings
+                            </button>
+                          ) : (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); console.log('Task Payload Debug:', task.payload); alert('Payload missing! Check console.'); }}
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:bg-gray-500/20 rounded text-xs font-medium transition-colors"
+                            >
+                              <Settings2 className="w-3.5 h-3.5" />
+                              Debug Payload
+                            </button>
+                          )}
                           {(task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval') && (
                             <button
                               onClick={(e) => { e.stopPropagation(); setTaskToCancel(task.id); }}
@@ -439,6 +515,13 @@ export default function TasksPage() {
                               Stop Job
                             </button>
                           )}
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setTaskToDelete(task.id); }}
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 text-red-600 dark:text-red-500 hover:bg-red-500/20 rounded text-xs font-medium transition-colors"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            Delete Task
+                          </button>
                           {(task.status === 'completed' || task.status === 'failed' || (!task.is_simple_task && (task.status === 'running' || task.status === 'pending' || task.status === 'waiting_approval'))) && (
                             <div className="flex items-center gap-2">
                               <label className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 cursor-pointer">
@@ -459,6 +542,9 @@ export default function TasksPage() {
                                   onChange={(e) => setGroupRowCount(e.target.value)}
                                   className="w-12 text-xs bg-transparent border-none p-0 focus:ring-0 text-gray-900 dark:text-white"
                                   placeholder="All"
+                                  autoComplete="off"
+                                  data-lpignore="true"
+                                  data-form-type="other"
                                 />
                               </div>
                               <button
@@ -550,6 +636,47 @@ export default function TasksPage() {
                 className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors"
               >
                 Confirm Stop
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {taskToDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 max-w-sm w-full shadow-xl">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Delete Task</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Are you sure you want to completely delete this task and its campaign? This action cannot be undone.
+            </p>
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Type <span className="font-bold text-gray-900 dark:text-white">{activeClient?.name}</span> to confirm
+              </label>
+              <input
+                type="text"
+                value={deleteClientName}
+                onChange={(e) => setDeleteClientName(e.target.value)}
+                placeholder={activeClient?.name}
+                className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              />
+            </div>
+            <div className="flex items-center justify-end gap-3">
+              <button
+                onClick={() => { setTaskToDelete(null); setDeleteClientName(''); }}
+                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                disabled={isDeleting}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDeleteTask}
+                disabled={deleteClientName !== activeClient?.name || isDeleting}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isDeleting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
+                Delete Task
               </button>
             </div>
           </div>

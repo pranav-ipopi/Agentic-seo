@@ -80,6 +80,30 @@ export default function AdminClientsPage() {
     }
   }
 
+  const handleResetClientQuota = async (clientId: string) => {
+    if (!confirm("Are you sure you want to reset this client's quota for today?")) return
+    try {
+      const { resetClientQuota } = await import('./actions')
+      await resetClientQuota(passwordInput, clientId)
+      alert('Client quota reset successfully for today')
+      loadClients(passwordInput)
+    } catch (error: any) {
+      alert(error.message)
+    }
+  }
+
+  const handleResetGlobalQuota = async () => {
+    if (!confirm("Are you sure you want to reset ALL clients' quotas for today?")) return
+    try {
+      const { resetGlobalQuota } = await import('./actions')
+      await resetGlobalQuota(passwordInput)
+      alert('Global quota reset successfully for today')
+      loadClients(passwordInput)
+    } catch (error: any) {
+      alert(error.message)
+    }
+  }
+
   // --- Calculations ---
   const totalCompleted = clients.reduce((acc, c) => acc + c.completed, 0)
   const totalFailed = clients.reduce((acc, c) => acc + c.failed, 0)
@@ -274,6 +298,12 @@ export default function AdminClientsPage() {
               <button onClick={handleGlobalLimit} className="w-full py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
                 Apply to All Clients
               </button>
+              <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+                <button onClick={handleResetGlobalQuota} className="w-full py-2 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-900/50 rounded-lg text-sm font-medium hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors">
+                  Reset Global Quota Today
+                </button>
+                <p className="text-[10px] text-gray-400 mt-2 text-center">This resets today's usage to 0 for everyone without deleting history.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -327,15 +357,25 @@ export default function AdminClientsPage() {
                               <span className="font-medium text-gray-900 dark:text-white">
                                 {client.backlink_limit === null ? 'Unlimited' : client.backlink_limit}
                               </span>
-                              <button 
-                                onClick={() => {
-                                  setLimitInput(client.backlink_limit === null ? '' : String(client.backlink_limit))
-                                  setEditingLimitId(client.id)
-                                }}
-                                className="text-indigo-600 dark:text-indigo-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity hover:underline"
-                              >
-                                Edit
-                              </button>
+                              <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button 
+                                  onClick={() => {
+                                    setLimitInput(client.backlink_limit === null ? '' : String(client.backlink_limit))
+                                    setEditingLimitId(client.id)
+                                  }}
+                                  className="text-indigo-600 dark:text-indigo-400 text-xs hover:underline"
+                                >
+                                  Edit
+                                </button>
+                                <span className="text-gray-300 dark:text-gray-700">|</span>
+                                <button 
+                                  onClick={() => handleResetClientQuota(client.id)}
+                                  className="text-red-500 dark:text-red-400 text-xs hover:underline"
+                                  title="Reset today's quota to 0"
+                                >
+                                  Reset
+                                </button>
+                              </div>
                             </div>
                           )}
                         </td>

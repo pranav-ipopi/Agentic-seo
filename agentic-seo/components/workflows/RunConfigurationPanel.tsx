@@ -79,7 +79,7 @@ export default function RunConfigurationPanel({
     const fetchQuota = async () => {
       if (!activeClient) return
       try {
-        const res = await fetch(`/api/clients/${activeClient.id}/quota`)
+        const res = await fetch(`/api/clients/${activeClient.id}/quota`, { cache: 'no-store' })
         if (res.ok) setQuota(await res.json())
       } catch (err) {
         console.error('Failed to fetch quota', err)
@@ -114,8 +114,9 @@ export default function RunConfigurationPanel({
   // Load draft on mount
   const sanitizeTargets = (rawTargets: any[]) => {
     if (!Array.isArray(rawTargets)) return []
-    return rawTargets.map(t => ({
+    return rawTargets.map((t, i) => ({
       ...t,
+      id: t.id || (Date.now() + i).toString(),
       keywords: Array.isArray(t.keywords) 
         ? t.keywords.map((kw: any) => {
             if (typeof kw === 'string') {

@@ -84,6 +84,32 @@ export async function setGlobalLimit(password: string, limit: number | null) {
   return true
 }
 
+export async function resetClientQuota(password: string, clientId: string) {
+  if (password !== process.env.ADMIN_PASSWORD) throw new Error('Unauthorized')
+  
+  const supabase = createServiceClient()
+  const { error } = await supabase
+    .from('clients')
+    .update({ quota_reset_at: new Date().toISOString() })
+    .eq('id', clientId)
+
+  if (error) throw new Error(error.message)
+  return true
+}
+
+export async function resetGlobalQuota(password: string) {
+  if (password !== process.env.ADMIN_PASSWORD) throw new Error('Unauthorized')
+  
+  const supabase = createServiceClient()
+  const { error } = await supabase
+    .from('clients')
+    .update({ quota_reset_at: new Date().toISOString() })
+    .not('id', 'is', null)
+
+  if (error) throw new Error(error.message)
+  return true
+}
+
 export async function fetchAnalyticsData(password: string, days: number = 7) {
   if (password !== ADMIN_PASS) throw new Error('Unauthorized')
   

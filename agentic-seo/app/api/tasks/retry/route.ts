@@ -36,15 +36,15 @@ export async function POST(request: NextRequest) {
       .from('task_runs')
       .select('*, workflow_templates(*)')
       .eq('state->>task_id', taskId)
-      .eq('status', 'failed')
+      .neq('status', 'completed')
 
     // 1b. Update failed task_runs to pending and reset step index
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error: runUpdateError } = await (adminSupabase as any)
       .from('task_runs')
-      .update({ status: 'pending', current_step_index: 0, updated_at: new Date().toISOString() })
+      .update({ status: 'queued', current_step_index: 0, updated_at: new Date().toISOString() })
       .eq('state->>task_id', taskId)
-      .eq('status', 'failed')
+      .neq('status', 'completed')
 
     if (runUpdateError) {
       return NextResponse.json({ error: runUpdateError.message }, { status: 500 })
@@ -76,6 +76,11 @@ export async function POST(request: NextRequest) {
         let pushedCount = 0
 
         for (const run of runsToRetry) {
+          // Prevent duplicates: If it was already pending or queued, it's already in the Redis queue!
+          if (run.status === 'pending' || run.status === 'queued') {
+            continue;
+          }
+
           // Push retried jobs to Redis and force step index to 0
           run.current_step_index = 0;
           

@@ -154,7 +154,8 @@ export async function POST(request: NextRequest) {
         user_id: userId,
         title: finalCampaignName,
         status: 'pending',
-        output: { campaign_id: (campaign as any).id }
+        output: { campaign_id: (campaign as any).id },
+        payload: body
       } as any)
       .select()
       .single()

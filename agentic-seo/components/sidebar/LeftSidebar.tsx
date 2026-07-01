@@ -52,7 +52,7 @@ export default function LeftSidebar() {
     const fetchQuota = async () => {
       if (!activeClient) return
       try {
-        const res = await fetch(`/api/clients/${activeClient.id}/quota`)
+        const res = await fetch(`/api/clients/${activeClient.id}/quota`, { cache: 'no-store' })
         if (res.ok) {
           const data = await res.json()
           setQuota(data)

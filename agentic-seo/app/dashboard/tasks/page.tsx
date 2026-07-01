@@ -18,7 +18,8 @@ type TaskRunExtended = TaskRun & {
   is_simple_task?: boolean,
   output?: any,
   result?: any,
-  payload?: any
+  payload?: any,
+  title?: string
 }
 
 const STATUS_FILTERS = ['all', 'running', 'pending', 'completed', 'failed'] as const
@@ -89,7 +90,8 @@ export default function TasksPage() {
         payload: t.payload,
         result: t.result,
         output: t.output,
-        summary: t.result?.summary ?? null
+        summary: t.result?.summary ?? null,
+        title: t.title
       }))
 
       tasksCache.current[cacheKey] = formattedTasks as any

@@ -69,7 +69,7 @@ export async function updateAdminLimit(password: string, clientId: string, limit
 }
 
 export async function setGlobalLimit(password: string, limit: number | null) {
-  if (password !== ADMIN_PASS) {
+  if (password !== getAdminPass()) {
     throw new Error('Unauthorized')
   }
   
